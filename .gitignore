@@ -3,6 +3,12 @@ view/.DS_Store
 view/node_modules
 view/dist
 
+# vagrant
+.vagrant/
+.cache/
+.gnupg/
+.bash_history
+.sudo_as_admin_successful
 
 # local env files
 view/.env.local
