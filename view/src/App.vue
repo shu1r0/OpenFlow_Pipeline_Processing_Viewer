@@ -1,9 +1,11 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
+    <router-link to="/">CreatingVet</router-link> |
     <router-link to="/about">About</router-link>
   </div>
-  <router-view />
+  <div id="wrapper">
+    <router-view />
+  </div>
 </template>
 
 <style>
