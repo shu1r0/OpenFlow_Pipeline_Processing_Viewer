@@ -27,17 +27,17 @@ export default defineComponent({
     let switchSrc = ref("img/workgroup_switch.jpg")
     let workstationSrc = ref("img/workstation.jpg")
 
-    let dragged: HTMLElement = null;
+    let dragged: HTMLImageElement = null;
     /**
      * dragstart event handler
      * @param {DragEvent} event 
      * @returns {void} 
      */
     const dragstartHandler = (event: DragEvent) => {
-      dragged = event.target as HTMLElement
+      dragged = event.target as HTMLImageElement
       /**
        * noticefy to drag
-       * @property {HTMLElement} dragged - dragged element
+       * @property {HTMLImageElement} dragged - dragged element
        */
       ctx.emit("setDragged", dragged)
     }

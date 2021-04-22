@@ -17,6 +17,17 @@ View
   * methods
 
     * 各アクセッサ
-    
+
+* 低レベルなデバイスのassets
+
+  * デバイスの種類とイメージをもたせる？
+  * HTML要素の名前などと一致させたいため
+
+* 高レベルなデバイスクラス
+
+  * cytoscapeのdata, pos, style？を持つ．
+
+* デバイスのFactory
+
 
 
