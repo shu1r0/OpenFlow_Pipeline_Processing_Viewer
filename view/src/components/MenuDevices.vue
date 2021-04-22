@@ -5,30 +5,48 @@
       alt="workgroup switch"
       draggable="true"
       @dragstart="dragstartHandler"
-      :src="deviceSrc"
+      :src="switchSrc"
+    >
+    <img 
+      id="workstation_device"
+      alt="workstation"
+      draggable="true"
+      @dragstart="dragstartHandler"
+      :src="workstationSrc"
     >
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
-  props: {
-    deviceSrc: String
-  },
   setup(props, ctx){
-    console.log(props)
-    let dragged: HTMLElement = null;
     
+    // image sources
+    let switchSrc = ref("img/workgroup_switch.jpg")
+    let workstationSrc = ref("img/workstation.jpg")
+
+    let dragged: HTMLElement = null;
+    /**
+     * dragstart event handler
+     * @param {DragEvent} event 
+     * @returns {void} 
+     */
     const dragstartHandler = (event: DragEvent) => {
       dragged = event.target as HTMLElement
-      // event.dataTransfer.setData("text", dragged.id)
-      console.log(dragged)
+      /**
+       * noticefy to drag
+       * @property {HTMLElement} dragged - dragged element
+       */
       ctx.emit("setDragged", dragged)
     }
 
-    return { dragstartHandler }
+    return { 
+      switchSrc,
+      workstationSrc,
+      dragstartHandler
+    }
   }
 })
 </script>
@@ -36,7 +54,13 @@ export default defineComponent({
 
 <style lang="scss">
 #device_menu{
-  background-color: #dddddd;
+  // background-color: #dddddd;
+  height: 10rem;
+  padding: 1rem;
+  border-bottom: 3px solid #dddddd;
+  img{
+    margin: 1rem;
+  }
 }
 
 </style>

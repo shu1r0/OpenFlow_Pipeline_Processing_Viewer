@@ -4,7 +4,6 @@
     class="creating_vnet">
     <MenuDevices
       id="device_menu"
-      deviceSrc="img/workgroup_switch.jpg"
       @setDragged="setDragged" />
     <div 
       id="vnet_canvas"
@@ -24,7 +23,6 @@ export default defineComponent({
   },
   prop: {},
   setup(props, ctx){
-    console.log(props)
 
     let dragged: HTMLElement = null
     
@@ -41,9 +39,17 @@ export default defineComponent({
     const dropHandler = (event: DragEvent) => {
       event.preventDefault()
       const dropTarget: HTMLElement = event.target as HTMLElement
-      const draggedCopy = dragged.cloneNode(true)
-      dropTarget.appendChild(draggedCopy)
+      const offsetX = event.offsetX
+      const offsetY = event.offsetY 
       
+      // where to make the switch
+      if(dragged){
+        const draggedCopy = dragged.cloneNode(true) as HTMLImageElement
+        draggedCopy.style.top = offsetY + "px"
+        draggedCopy.style.left = offsetX + "px"
+        dropTarget.appendChild(draggedCopy)
+        dragged = null
+      }
     }
 
     return { setDragged, dragoverHandler, dropHandler }
@@ -53,11 +59,16 @@ export default defineComponent({
 
 <style lang="scss">
 .creating_vnet{
-  background-color: #eeeeee;
+  // background-color: #eeeeee;
 
   #vnet_canvas{
+    position: relative;  // basis for the position of child elements
     height: 1000px;
     width: 1000px;
+
+    *{
+      position: absolute;
+    }
   }
 }
 </style>
