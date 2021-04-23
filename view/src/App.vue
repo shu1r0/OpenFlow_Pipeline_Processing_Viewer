@@ -41,7 +41,13 @@ html {
   
   #header{
     grid-area: header;
-    background-color: #f0f0f9;
+    // background-color: #f0f0f9;
+    border-bottom: 0.5rem solid #2c3e50;
+    padding: 1rem;
+    h1{
+      margin: 1rem;
+      font-size: 3rem;
+    }
   }
 
   #nav {

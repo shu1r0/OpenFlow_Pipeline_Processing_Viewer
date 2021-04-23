@@ -15,7 +15,9 @@
 <script lang="ts">
 import { defineComponent, onMounted } from 'vue'
 import MenuDevices from '../components/MenuDevices.vue'
-import cytoscape from 'cytoscape'
+import { createDevice, createEdge } from '../vnet/factory'
+import cytoscape, { EventObject } from 'cytoscape'
+import { Core } from "cytoscape"
 
 export default defineComponent({
   name: "CreatingVNet",
@@ -25,9 +27,10 @@ export default defineComponent({
   prop: {},
   setup(props, ctx){
     // cytoscape obj
-    let cy: any = null
+    //@note move parent component????
+    let cy: Core = null
     // temporary list to create edge
-    let edge: number[] = []
+    let edge: string[] = []
     // dragged element (if no element is dragged, this is null)
     let dragged: HTMLImageElement = null
 
@@ -36,52 +39,47 @@ export default defineComponent({
         container: document.getElementById('vnet_canvas'),
         style: [
           {
-            selector: 'node',
+            selector: '*',
             style: {
-              'shape': "rectangle",
-              'label': 'data(id)',
-              'height': 50,
-              'width': 100,
-              'background-image': 'url(img/workgroup_switch.jpg)'
+              'label': 'data(id)'
             }
           }
         ]
       })
-      console.log(cy)
       // 'tap' event handler on node
-      cy.on('tap', 'node', function(event: any){
+      //@note set timeout
+      cy.on('tap', 'node', function(event: EventObject){
         let target = event.target
         edge.push(target.id())
         if(edge.length >= 2){
           if( edge[0] !== edge[1]){
-            cy.add({
-              group: 'edges',
-              data: {
-                id: 'e' + Math.floor(Math.random()*100),
-                source: edge[0],
-                target: edge[1]
-              }
-            })
+            cy.add(Object.assign(createEdge(edge[0], edge[1])))
           }
           edge = []
         }
       })
     })
     
+    /**
+     * handle setDragged event from MenuDevices component
+     * @param d - dragged element
+     */
     const setDragged = (d: HTMLImageElement) => {
       dragged = d
     }
 
+    /**
+     * dragover event handler. prevent default action.
+     * @param event
+     */
     const dragoverHandler = (event: DragEvent) => {
       event.preventDefault()
-      const dragged: HTMLImageElement = event.target as HTMLImageElement
-      // console.log(dragged)
     }
 
     /**
-     * drop event handler
+     * Drop event handler. 
      * Create the device when an element is dropped on the canvas
-     * @property {DragEvent} event
+     * @param event
      */
     const dropHandler = (event: DragEvent) => {
       event.preventDefault()
@@ -91,29 +89,9 @@ export default defineComponent({
       
       // where to make the switch
       if(dragged){
-        // const draggedCopy = dragged.cloneNode(true) as HTMLImageElement
-        // draggedCopy.style.top = offsetY + "px"
-        // draggedCopy.style.left = offsetX + "px"
-        // dropTarget.appendChild(draggedCopy)
-        cy.add({
-          group: 'nodes',
-          data: {
-            id: 's' + Math.floor(Math.random()*100),
-            image: 'img/workgroup_switch.jpg'
-          },
-          position: {
-            x: offsetX,
-            y: offsetY
-          },
-          style: {
-            'shape': "rectangle",
-            'height': dragged.offsetHeight,
-            'width': dragged.offsetWidth,
-            'background-image': dragged.src
-          }
-        })
+        const v = cy.add(Object.assign(createDevice(dragged, offsetX, offsetY)))
         dragged = null
-        console.log(cy.nodes())
+        console.log(v[0])
       }
     }
 

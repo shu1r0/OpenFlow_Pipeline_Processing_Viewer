@@ -2,6 +2,7 @@
   <div id="device_menu">
     <img 
       id="switch_device"
+      :class="DEVICE_TYPE.OFSWITCH"
       alt="workgroup switch"
       draggable="true"
       @dragstart="dragstartHandler"
@@ -9,6 +10,7 @@
     >
     <img 
       id="workstation_device"
+      :class="DEVICE_TYPE.HOST"
       alt="workstation"
       draggable="true"
       @dragstart="dragstartHandler"
@@ -19,6 +21,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
+import { DEVICE_TYPE } from '../vnet/devices'
 
 export default defineComponent({
   setup(props, ctx){
@@ -27,14 +30,14 @@ export default defineComponent({
     let switchSrc = ref("img/workgroup_switch.jpg")
     let workstationSrc = ref("img/workstation.jpg")
 
-    let dragged: HTMLImageElement = null;
     /**
-     * dragstart event handler
-     * @param {DragEvent} event 
-     * @returns {void} 
+     * dragstart event handler. 
+     * emit 'setDragged' event
+     * @param event 
+     * @returns void 
      */
     const dragstartHandler = (event: DragEvent) => {
-      dragged = event.target as HTMLImageElement
+      const dragged = event.target as HTMLImageElement
       /**
        * noticefy to drag
        * @property {HTMLImageElement} dragged - dragged element
@@ -45,7 +48,8 @@ export default defineComponent({
     return { 
       switchSrc,
       workstationSrc,
-      dragstartHandler
+      dragstartHandler,
+      DEVICE_TYPE
     }
   }
 })
