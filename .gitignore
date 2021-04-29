@@ -9,6 +9,8 @@ view/dist
 .gnupg/
 .bash_history
 .sudo_as_admin_successful
+module/
+log/
 
 # local env files
 view/.env.local

@@ -39,8 +39,8 @@
     
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="基本設計" href="../design/abstract_design.html" />
-    <link rel="prev" title="関連技術" href="../relate_technic/tec.html" /> 
+    <link rel="next" title="関連技術" href="../relate_technic/tec.html" />
+    <link rel="prev" title="OpenFlowパイプラインの可視化によるOpenFlowコントローラ開発支援システム" href="../index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,13 +87,18 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../relate_technic/tec.html">関連技術</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">要件定義</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id2">目的</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id3">システム要件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">ユースケース1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">ユースケース2</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../relate_technic/tec.html">関連技術</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../design/abstract_design.html">基本設計</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/abstract_design.html#api">API設計</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/class_design.html">クラス設計</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../errors/BOFUSS_build.html">BOFUSSのビルド時エラー</a></li>
 </ul>
 
             
@@ -174,7 +179,24 @@
 <ul class="simple">
 <li><p>パケットの経路を掲示できる</p></li>
 <li><p>パケットのOpenFlowパイプラインを表示できる</p></li>
+<li><p>OpenFlowのネットワークを構築できる</p></li>
+<li><p>(option) リプレイ機能をつける</p></li>
+<li><p>(option) 他のMininet拡張と互換性を保つ</p></li>
 </ul>
+</div>
+<div class="section" id="id4">
+<h2>ユースケース1<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ol class="arabic simple">
+<li><p>デバックしたいコントローラを設置</p></li>
+<li><p>システムを起動する</p></li>
+<li><p>仮想ネットワークを構築する</p></li>
+<li><p>仮想ネットワーク上で流すパケットを生成</p></li>
+<li><p>仮想ネットワーク上に流れたパケットを確認</p></li>
+<li><p>OpenFlowパイプラインを確認する</p></li>
+</ol>
+</div>
+<div class="section" id="id5">
+<h2>ユースケース2<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
 </div>
 </div>
 
@@ -184,8 +206,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../design/abstract_design.html" class="btn btn-neutral float-right" title="基本設計" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="../relate_technic/tec.html" class="btn btn-neutral float-left" title="関連技術" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../relate_technic/tec.html" class="btn btn-neutral float-right" title="関連技術" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="OpenFlowパイプラインの可視化によるOpenFlowコントローラ開発支援システム" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

@@ -13,6 +13,8 @@ OpenFlowパイプラインの可視化によるOpenFlowコントローラ開発�
    requirement_definition/rdd.rst
    relate_technic/tec.rst
    design/abstract_design.rst
+   design/class_design.rst
+   errors/BOFUSS_build.rst
 
 
 
