@@ -38,14 +38,14 @@ class AbstractTracingOFPipeline(metaclass=ABCMeta):
     This provides interfaces to start and stop system, to start and stop tracing and more.
     """
 
-    def __init__(self, log_level=DEBUG, log_file=None):
+    def __init__(self, local_port=63333, log_level=DEBUG, log_file=None):
         self.event_loop = asyncio.get_event_loop()
         default_logfile = "log/" + "ofcapture-" + datetime.datetime.now().strftime('%Y-%m-%d-%H-%M') + ".log"  # debug用
-        self.ofcapture: OFCapture = OFCapture(log_file=default_logfile, local_port=63334)
+        self.ofcapture = OFCapture(log_file=default_logfile, local_port=local_port)
         if log_file:
             setup_tracingnet_logger(log_level=log_level, log_handler=get_log_handler(log_file))
             setup_logger(log_level=log_level, log_handler=get_log_handler(log_file))
-        self.tracing_net = TracingNet(controller_port=6653)
+        self.tracing_net = TracingNet(controller_port=local_port)
         self.tracing_server = None
         self.analyzer = Analyzer(self.tracing_net,
                                  self.ofcapture,
@@ -89,8 +89,10 @@ if __name__ == '__main__':
     tracing = TracingOFPipeline(log_file=log_file)
     net = tracing.tracing_net
     tracing.start()
+    controller = net.of_controller
+    # start controller
+    controller.cmd("ryu-manager test/ryu_controller/app/simple_switch_13.py")
     s1 = net.add_switch('s1')
-
     # add_hostとリンクはセットにしないとエラー(インタフェースの設定がおかしくなる)
     h1 = net.add_host('h1')
     net.add_link('l2', 's1', 'h1')

@@ -1,5 +1,6 @@
 import datetime
 import multiprocessing
+import threading
 from abc import ABCMeta, abstractmethod
 from logging import getLogger, setLoggerClass, Logger
 
@@ -86,8 +87,11 @@ class FlowTableManager(AbstractFlowTableManager):
             self.start_poller(switch)
 
     def _create_poller(self, switch):
-        monitor = FlowMonitor(switch, self.repository, event_loop=self.event_loop)
+        parent_conn, child_conn = multiprocessing.Pipe()
+        monitor = FlowMonitor(switch, parent_conn, event_loop=self.event_loop)
         p = multiprocessing.Process(target=monitor.start_poll)
+        t = threading.Thread(target=self._receive_data, args=(child_conn,))
+        t.start()
         p.daemon = True
         self.pollers[switch] = p
         return p
@@ -102,6 +106,11 @@ class FlowTableManager(AbstractFlowTableManager):
 
     def is_polling(self, switch):
         raise NotImplementedError
+
+    async def _receive_data(self, child_conn):
+        while True:
+            data = child_conn.recv()
+            self.repository.add(*data)
 
 #
 # class FlowTablePoller():

@@ -73,41 +73,46 @@ class Analyzer(AbstractAnalyzer):
         self._interval = 1
         self.start_time = None
         self.count = 0
+        # tmp repo
         self.tmp_packets = {}
         self.tmp_flowtable = {}
         self.tmp_packetinout = {}
 
     def start_analyzing(self, call_back=None):
         self.start_time = datetime.datetime.now().timestamp()
+        # set interval
         signal.signal(signal.SIGALRM, self.analyze)
         signal.setitimer(signal.ITIMER_REAL, 1, 1)
 
     def analyze(self, *args):
         self._polling(self.count)
+        # get packet out
         for s, p_io in self.tmp_packetinout.items():
             if p_io:
-                if p_io.message_type == Type.OFPT_PACKET_OUT:
-                    name = self.of_capture.capture.get_port_name(self.get_port(s), p_io.of_msg.actions.port)
-                    logger.debug("I will processing packetout({}), port({})".format(p_io, name))
+                for p in p_io:
+                    if p.message_type == Type.OFPT_PACKET_OUT:
+                        name = self.of_capture.capture.get_port_name(self.get_port(s), p.of_msg.actions.port)
+                        logger.debug("I will processing packetout({}), port({})".format(p, name))
+                        # never visited edges
+                        queue = []
+                        # self._update_msg(msg, next_port=next_port)
+                        # self._enqueue(queue, src_node, msg, first_edge, next_tables, next_port)
+        for pkt in self.tmp_packets:
+            pass
         self.count += 1
 
-    def BFS(self, src_node, msg, edge, first_edge, next_tables, next_port):
+    def BFS(self, queue):
         """BFS"""
         # packet traces
         trace = PacketTrace()
         # visited edges
         visited = []
-        # never visited edges
-        queue = []
-        # append (edge, node, port)
-        queue.append((src_node, msg, first_edge, next_tables, next_port))  # 仮
 
-        visited.append(first_edge)
-        # set in_port
-        self._update_msg(msg, next_port=next_port)
-        while queue:
-            logger.debug("processing msg {}".format(msg))
+        while queue
+            # get processing data from queue
             src_node, msg, edge, dst_node, dst_port = queue.pop(0)
+            logger.debug("processing msg {}".format(msg))
+            visited.append(edge)
             packet_arc = PacketArc(src=src_node, msg=msg)
             msg: Msg = msg
             # update arc
@@ -119,12 +124,17 @@ class Analyzer(AbstractAnalyzer):
             # next
             if isinstance(dst_node, FlowTables):
                 # next ports
-                ports_to_msg: list[tuple[str, Msg]] = apply_pipeline(msg, flowtables=dst_node)
+                ports_to_msg: list[tuple[str or int, Msg]] = apply_pipeline(msg, flowtables=dst_node)
                 # This m is used only to get the msg
                 for p, m in ports_to_msg:
                     # next switch, port, edge
-                    next_switch, next_port, next_edge = self._get_next_and_edge(p)
-                    if self._is_switch(next_switch):
+                    next_switch, next_port, next_edge = None, None, None
+                    if isinstance(p, str):
+                        next_switch, next_port, next_edge = self._get_next_and_edge(p)
+                    elif p > 1000:  # TODO controller
+                        next_switch = "controller"
+
+                    if isinstance(next_switch, str) and self._is_switch(next_switch): # switch
                         self._update_msg(msg, next_port=next_port)
                         if next_edge not in visited:  # loop?
                             # get packet
@@ -135,10 +145,14 @@ class Analyzer(AbstractAnalyzer):
                             queue.append((msg, next_edge, flowtable, next_port))
                         else:
                             logger.debug("already visited edge")
-                    else:
-                        if next_port > 1000:  #TODO: controller
+                    else: # not switch
+                        # set finish
+                        if next_switch == "controller":  #TODO: controller
                             logger.debug("to controller message")
                             # get packet_in
+                        elif self._is_terminal_edge(edge):
+                            pass
+        return trace
 
     def _update_msg(self, msg, next_port):
         """
@@ -233,3 +247,9 @@ class Analyzer(AbstractAnalyzer):
 
     def _is_switch(self, switch):
         return self.tracing_net.is_switch(switch)
+
+    def _is_terminal_edge(self, edge):
+        return self.tracing_net.is_terminal_edge(edge)
+
+    def _enqueue(self, queue, src_node, msg, first_edge, next_tables, next_port):
+        queue.append((src_node, msg, first_edge, next_tables, next_port))

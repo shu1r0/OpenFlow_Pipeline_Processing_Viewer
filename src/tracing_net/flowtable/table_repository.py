@@ -115,18 +115,24 @@ class TableRepository(AbstractTableRepository):
         return self.repository.pop(switch)
 
     def _pop_until(self, switch, until):
-        tmp = []
+        tmp_i = []
         tables = self.repository[switch]
         for i in range(len(tables)):
             if tables[i].timestamp < until:
-                tmp.append(tables.pop(i))
+                tmp_i.append(i)
+        tmp = []
+        for i in tmp_i[::-1]:
+            tmp.insert(0, tables.pop(i))
         return tmp
 
     def _pop_count(self, switch, count):
-        tmp = []
+        tmp_i = []
         tables = self.repository[switch]
         for i in range(min(len(tables), count)):
-            tmp.append(tables.pop(i))
+            tmp_i.append(i)
+        tmp = []
+        for i in tmp_i[::-1]:
+            tmp.insert(0, tables.pop(i))
         return tmp
 
     def get(self, switch, at_time=None):

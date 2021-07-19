@@ -8,7 +8,6 @@ Todo:
 import asyncio
 from logging import getLogger, setLoggerClass, Logger
 import datetime
-import multiprocessing
 import threading
 
 from mininet.cli import CLI

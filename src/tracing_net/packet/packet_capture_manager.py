@@ -1,5 +1,7 @@
 import datetime
 import multiprocessing
+import threading
+import asyncio
 from abc import ABCMeta, abstractmethod
 from logging import getLogger, setLoggerClass, Logger
 
@@ -98,8 +100,11 @@ class PacketCaptureManager(AbstractPacketCaptureManager):
         """
         date = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
         file_name = 'log/pcap/' + interface_name + '-' + date + '.pcap'
-        capture = PacketCapture(interface_name, self.repository, file_name, event_loop=self.event_loop)
+        parent_conn, child_conn = multiprocessing.Pipe()
+        capture = PacketCapture(interface_name, parent_conn, file_name, event_loop=self.event_loop)
         p = multiprocessing.Process(target=capture.start_capture)
+        t = threading.Thread(target=self._receive_data, args=(child_conn,))
+        t.start()
         p.daemon = True
         self.captures[interface_name] = p
         return p
@@ -119,3 +124,8 @@ class PacketCaptureManager(AbstractPacketCaptureManager):
 
     def _get_int(self, edge):
         return self.links.get_int_name_pairs(edge)[0]
+
+    def _receive_data(self, child_conn):
+        while True:
+            data = child_conn.recv()
+            self.repository.add(*data)

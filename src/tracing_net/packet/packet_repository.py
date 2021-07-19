@@ -62,7 +62,6 @@ class PacketRepository(AbstractPacketRepository):
         Returns:
             list[Msg] :
         """
-        logger.debug("pop msg from packet repo {}".format(self.repository))
         try:
             if until is not None:
                 return self._pop_until(edge, until)
@@ -78,18 +77,24 @@ class PacketRepository(AbstractPacketRepository):
         return self.repository.pop(edge)
 
     def _pop_until(self, edge, until):
-        tmp = []
+        tmp_i = []
         packets = self.repository[edge]
         for i in range(len(packets)):
             if packets[i].sniff_timestamp < until:
-                tmp.append(packets.pop(i))
+                tmp_i.append(i)
+        tmp = []
+        for i in tmp_i[::-1]:
+            tmp.insert(0, packets.pop(i))
         return tmp
 
     def _pop_count(self, edge, count):
-        tmp = []
+        tmp_i = []
         packets = self.repository[edge]
         for i in range(min(len(packets), count)):
-            tmp.append(packets.pop(i))
+                tmp_i.append(i)
+        tmp = []
+        for i in tmp_i[::-1]:
+            tmp.insert(0, packets.pop(i))
         return tmp
 
 

@@ -16,11 +16,11 @@ class Capture(metaclass=ABCMeta):
     """This captures packet in mininet. The packets saved in packet repository.
 
     Attributes:
-        repository (PacketRepository) : repository
+        parent_conn (Connection) : parent_conn
     """
 
-    def __init__(self, repository):
-        self.repository = repository
+    def __init__(self, parent_conn):
+        self.parent_conn = parent_conn
 
     @abstractmethod
     def start_capture(self):
@@ -37,14 +37,14 @@ class PacketCapture(Capture):
         capture (pyshark.LiveCapture)
     """
 
-    def __init__(self, interface, repository, output_file=None, event_loop=None):
+    def __init__(self, interface, parent_conn, output_file=None, event_loop=None):
         """init
 
         Args:
             interface (str) : interface name
             output_file (str) : output pcap file name
         """
-        super(PacketCapture, self).__init__(repository)
+        super(PacketCapture, self).__init__(parent_conn)
         self.interface = interface
         self.event_loop = event_loop if event_loop is not None else asyncio.get_event_loop()
         self._output_file = output_file
@@ -70,7 +70,8 @@ class PacketCapture(Capture):
             pkt (Packet) : packet
         """
         logger.debug("sniff {} : {}".format(pkt.sniff_timestamp, pkt.__class__))
-        self.repository.add(self.interface, Msg(self.interface, pkt.sniff_timestamp, pkt))
+        self.parent_conn.send([self.interface, Msg(self.interface, float(pkt.sniff_timestamp), pkt)])
+        # self.parent_conn.send(1)
         if self._output_file:
             wrpcap(self._output_file, pkt.get_raw_packet(), append=True)
 
