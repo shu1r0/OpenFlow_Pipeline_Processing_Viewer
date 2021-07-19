@@ -163,3 +163,36 @@ wiresharkとの互換性の問題
   scons: building terminated because of errors.
 
 * `これ <https://github.com/legoscia/ofdissector.git>`_ を試してみる( `issue 2 <https://github.com/CPqD/ofdissector/issues/2>`_ )
+
+
+
+BOFUSSに依存するライブラリがインストールできない( ``vagrat-2021-04-29-11-38.log`` )
+========================================================================================
+
+.. code-block::
+
+  ==> default: Running provisioner: shell...
+    default: Running: inline script
+    default: WARNING: 
+    default: apt
+    default:  
+    default: does not have a stable CLI interface. 
+    default: Use with caution in scripts.
+    default: Reading package lists...
+    default: Building dependency tree...
+    default: Reading state information...
+    default: E
+    default: : 
+    default: Unable to locate package libxerces-c3.1
+    default: E
+    default: : 
+    default: Couldn't find any package by glob 'libxerces-c3.1'
+    default: E
+    default: : 
+    default: Couldn't find any package by regex 'libxerces-c3.1'
+
+
+解決策
+--------
+* ``libxerces-c3.2`` を変わりにインストールする
+

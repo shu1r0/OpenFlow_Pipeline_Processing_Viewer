@@ -98,6 +98,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#mininetwarning">mininetのインストールでwarning出しまくっている問題</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#wireshark">wiresharkとの互換性の問題</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bofuss-vagrat-2021-04-29-11-38-log">BOFUSSに依存するライブラリがインストールできない( <code class="docutils literal notranslate"><span class="pre">vagrat-2021-04-29-11-38.log</span></code> )</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">解決策</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -340,6 +344,36 @@ default: make[2]: Warning: File &#39;nbnetvm/tools/netvmburg/CMakeFiles/netvmbur
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/legoscia/ofdissector.git">これ</a> を試してみる( <a class="reference external" href="https://github.com/CPqD/ofdissector/issues/2">issue 2</a> )</p></li>
 </ul>
+</div>
+<div class="section" id="bofuss-vagrat-2021-04-29-11-38-log">
+<h2>BOFUSSに依存するライブラリがインストールできない( <code class="docutils literal notranslate"><span class="pre">vagrat-2021-04-29-11-38.log</span></code> )<a class="headerlink" href="#bofuss-vagrat-2021-04-29-11-38-log" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span> <span class="n">Running</span> <span class="n">provisioner</span><span class="p">:</span> <span class="n">shell</span><span class="o">...</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">Running</span><span class="p">:</span> <span class="n">inline</span> <span class="n">script</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">WARNING</span><span class="p">:</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">apt</span>
+  <span class="n">default</span><span class="p">:</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">have</span> <span class="n">a</span> <span class="n">stable</span> <span class="n">CLI</span> <span class="n">interface</span><span class="o">.</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">Use</span> <span class="k">with</span> <span class="n">caution</span> <span class="ow">in</span> <span class="n">scripts</span><span class="o">.</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">Reading</span> <span class="n">package</span> <span class="n">lists</span><span class="o">...</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">Building</span> <span class="n">dependency</span> <span class="n">tree</span><span class="o">...</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">Reading</span> <span class="n">state</span> <span class="n">information</span><span class="o">...</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">E</span>
+  <span class="n">default</span><span class="p">:</span> <span class="p">:</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">Unable</span> <span class="n">to</span> <span class="n">locate</span> <span class="n">package</span> <span class="n">libxerces</span><span class="o">-</span><span class="n">c3</span><span class="o">.</span><span class="mi">1</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">E</span>
+  <span class="n">default</span><span class="p">:</span> <span class="p">:</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">Couldn</span><span class="s1">&#39;t find any package by glob &#39;</span><span class="n">libxerces</span><span class="o">-</span><span class="n">c3</span><span class="o">.</span><span class="mi">1</span><span class="s1">&#39;</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">E</span>
+  <span class="n">default</span><span class="p">:</span> <span class="p">:</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">Couldn</span><span class="s1">&#39;t find any package by regex &#39;</span><span class="n">libxerces</span><span class="o">-</span><span class="n">c3</span><span class="o">.</span><span class="mi">1</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<div class="section" id="id4">
+<h3>解決策<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">libxerces-c3.2</span></code> を変わりにインストールする</p></li>
+</ul>
+</div>
 </div>
 </div>
 

@@ -1,0 +1,38 @@
+vlans:
+    vlan100:
+        vid: 100
+    vlan200:
+        vid: 200
+    vlan300:
+        vid: 300
+dps:
+    sw1:
+        dp_id: 0x1
+        hardware: "Open vSwitch"
+        interfaces:
+            1:
+                name: "host1"
+                description: "host2 network namespace"
+                native_vlan: vlan100
+            2:
+                name: "host2"
+                description: "host2 network namespace"
+                native_vlan: vlan100
+            3:
+                name: "host3"
+                tagged_vlans: [vlan100]
+            4:
+                name: "host4"
+                tagged_vlans: [vlan100]
+            5:
+                name: "host5"
+                native_vlan: vlan200
+            6:
+                name: "host6"
+                native_vlan: vlan200
+            7:
+                name: "host7"
+                tagged_vlans: [vlan300]
+            8:
+                name: "host8"
+                tagged_vlans: [vlan300]

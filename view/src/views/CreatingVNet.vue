@@ -2,22 +2,26 @@
   <div 
     id="creating_vnet_view"
     class="creating_vnet">
+
     <MenuDevices
       id="device_menu"
       @setDragged="setDragged" />
-    <div 
+    <div
       id="vnet_canvas"
       @drop="dropHandler"
       @dragover="dragoverHandler" />
+
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, onMounted } from 'vue'
 import MenuDevices from '../components/MenuDevices.vue'
-import { createDevice, createEdge } from '../vnet/factory'
-import cytoscape, { EventObject } from 'cytoscape'
-import { Core } from "cytoscape"
+import { VNet } from '../vnet/vnet'
+import { CollectionReturnValue } from 'cytoscape'
+
+import { DummyRemoteClient, RemoteClient } from '../api/remoteClient'
+import { DEVICE_TYPE } from '@/vnet/devices'
 
 export default defineComponent({
   name: "CreatingVNet",
@@ -26,38 +30,17 @@ export default defineComponent({
   },
   prop: {},
   setup(props, ctx){
-    // cytoscape obj
-    //@note move parent component????
-    let cy: Core = null
-    // temporary list to create edge
-    let edge: string[] = []
+    // cytescape obj
+    let vnet: VNet = null
     // dragged element (if no element is dragged, this is null)
     let dragged: HTMLImageElement = null
+    // client
+    const grpc_client: RemoteClient = new DummyRemoteClient('10.0.0.109', '50051')
 
     onMounted(()=>{
-      cy = cytoscape({
-        container: document.getElementById('vnet_canvas'),
-        style: [
-          {
-            selector: '*',
-            style: {
-              'label': 'data(id)'
-            }
-          }
-        ]
-      })
-      // 'tap' event handler on node
-      //@note set timeout
-      cy.on('tap', 'node', function(event: EventObject){
-        let target = event.target
-        edge.push(target.id())
-        if(edge.length >= 2){
-          if( edge[0] !== edge[1]){
-            cy.add(Object.assign(createEdge(edge[0], edge[1])))
-          }
-          edge = []
-        }
-      })
+      if(vnet === null){
+        vnet = new VNet(document.getElementById('vnet_canvas'))
+      }
     })
     
     /**
@@ -84,14 +67,14 @@ export default defineComponent({
     const dropHandler = (event: DragEvent) => {
       event.preventDefault()
       const dropTarget: HTMLImageElement = event.target as HTMLImageElement
-      const offsetX = event.offsetX
-      const offsetY = event.offsetY 
+      const offsetX: number = event.offsetX
+      const offsetY: number = event.offsetY 
       
       // where to make the switch
       if(dragged){
-        const v = cy.add(Object.assign(createDevice(dragged, offsetX, offsetY)))
+        const createdDvice: CollectionReturnValue = vnet.addDevice(dragged, offsetX, offsetY)
+        grpc_client.addDevice(dragged.className as DEVICE_TYPE, createdDvice.id())
         dragged = null
-        console.log(v[0])
       }
     }
 

@@ -59,11 +59,11 @@ export default defineComponent({
 <style lang="scss">
 #device_menu{
   // background-color: #dddddd;
-  height: 10rem;
-  padding: 1rem;
+  height: 9rem;
+  padding: 0 1rem;
   border-bottom: 3px solid #dddddd;
   img{
-    margin: 1rem;
+    margin: 1rem 1.5rem;
   }
 }
 

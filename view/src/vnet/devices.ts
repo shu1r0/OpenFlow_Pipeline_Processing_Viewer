@@ -2,7 +2,7 @@ export const DEVICE_TYPE = {
   OFSWITCH: 'ofswitch',
   HOST: 'host'
 } as const;
-type DEVICE_TYPE = typeof DEVICE_TYPE[keyof typeof DEVICE_TYPE]
+export type DEVICE_TYPE = typeof DEVICE_TYPE[keyof typeof DEVICE_TYPE]
 
 
 export interface cytoscapeData{

@@ -4,6 +4,8 @@
 ===========
 図はこちら :ref:`draw.io <https://app.diagrams.net/#G1tSwW1bH3QNKV8Uuwrbea-TjOKw7qt9PJ>`
 
+.. image:: ../images/system/system.drawio.svg
+
 View設計
 ==================
 * ３つの機能でタブを分ける？
@@ -12,7 +14,7 @@ View設計
 
 
 パイプライン可視化設計
-=====================
+============================
 
 アルゴリズム
 -----------

@@ -1,4 +1,6 @@
 import { DEVICE_TYPE } from "./devices"
+import { ElementDefinition } from 'cytoscape'
+import { VNet } from "./vnet"
 
 const count: number[] = [0, 0, 0]
 /**
@@ -9,14 +11,22 @@ const count: number[] = [0, 0, 0]
  * @param y - node position
  * @returns obj - device obj
  */
-export const createDevice = (element: HTMLImageElement, x: number, y: number) => {
+export const createDevice = (element: HTMLImageElement, x: number, y: number, vnet?: VNet) => {
   let id: string
   if(element.classList[0] === DEVICE_TYPE.OFSWITCH){
     id = 's' + count[0]++
   }else if(element.classList[0] === DEVICE_TYPE.HOST){
     id = 'h' + count[1]++
   }
-  const device = {
+  vnet = vnet ?? null
+  // fix position
+  if(vnet){
+    const position = vnet.getCytoscape().pan()
+    const zoom = vnet.getCytoscape().zoom()
+    x = (x - position.x)/zoom
+    y = (y - position.y)/zoom
+  }
+  const device: ElementDefinition = {
     group: 'nodes',
     data: {
       id: id
@@ -42,7 +52,7 @@ export const createDevice = (element: HTMLImageElement, x: number, y: number) =>
  * @returns 
  */
 export const createEdge = (source: string, target: string) => {
-  const edge = {
+  const edge: ElementDefinition = {
     group: 'edges',
     data: {
       id: 'e' + count[2]++,

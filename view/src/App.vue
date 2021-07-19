@@ -1,19 +1,33 @@
 <template>
   <header id="header">
-    <h1>仮タイトル</h1>
+    <h1>タイトル</h1>
   </header>
+
   <div id="nav">
     <div class="nav-item">
-      <router-link to="/">CreatingVet</router-link>
+      <router-link to="/">Mininet</router-link>
     </div>
     <div class="nav-item">
       <router-link to="/trace">Trace</router-link>
     </div>
   </div>
+
   <div id="wrapper">
-    <router-view />
+    <router-view v-slot="{ Component }">
+      <keep-alive>
+        <component :is="Component" />
+      </keep-alive>
+    </router-view>
   </div>
 </template>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  name: "App"
+})
+</script>
 
 <style lang="scss">
 
@@ -25,14 +39,13 @@ html {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  // text-align: center;
   color: #2c3e50;
   display: grid;
   grid-template-areas: 
     " header header"
     " nav wrapper";
   grid-auto-rows: 
-    10rem
+    7rem
     minmax(50rem, auto);
   grid-auto-columns: 
     5rem
@@ -43,10 +56,10 @@ html {
     grid-area: header;
     // background-color: #f0f0f9;
     border-bottom: 0.5rem solid #2c3e50;
-    padding: 1rem;
+    // padding: 1.5rem;
     h1{
-      margin: 1rem;
-      font-size: 3rem;
+      margin: 1rem 2rem;
+      font-size: 2.5rem;
     }
   }
 
@@ -54,7 +67,7 @@ html {
     grid-area: nav;
     background-color: #f0f0f9;
     word-break : break-all;  // refrain
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     // padding: 30px;
     .nav-item{
       display: grid;

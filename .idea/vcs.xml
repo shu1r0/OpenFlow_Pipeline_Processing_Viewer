@@ -2,5 +2,16 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/module/mininet" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/module/netbee" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/module/oflops" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/module/ofsoftswitch13" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/module/oftest" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/module/openflow" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/module/pox" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/python-openflow" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/python-openflow/src/kytos-sphinx-theme" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/ofcapture" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/test/ryu_controller/ryu_based_simple_router" vcs="Git" />
   </component>
 </project>

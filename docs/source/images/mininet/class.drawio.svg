@@ -1,0 +1,482 @@
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="871px" height="584px" viewBox="-0.5 -0.5 871 584" content="&lt;mxfile&gt;&lt;diagram id=&quot;_vMhRZ9BiCaKD7wvhb8B&quot; name=&quot;ページ1&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;">
+    <defs>
+        <clipPath id="mx-clip-4-31-152-26-0">
+            <rect x="4" y="31" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-4-57-152-26-0">
+            <rect x="4" y="57" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-4-83-152-26-0">
+            <rect x="4" y="83" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-4-109-152-26-0">
+            <rect x="4" y="109" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-4-135-152-26-0">
+            <rect x="4" y="135" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-4-161-152-26-0">
+            <rect x="4" y="161" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-4-195-152-26-0">
+            <rect x="4" y="195" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-4-221-152-26-0">
+            <rect x="4" y="221" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-4-247-152-26-0">
+            <rect x="4" y="247" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-4-273-152-26-0">
+            <rect x="4" y="273" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-4-299-152-26-0">
+            <rect x="4" y="299" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-4-325-152-26-0">
+            <rect x="4" y="325" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-4-351-152-26-0">
+            <rect x="4" y="351" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-4-377-152-26-0">
+            <rect x="4" y="377" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-4-403-152-26-0">
+            <rect x="4" y="403" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-4-429-152-26-0">
+            <rect x="4" y="429" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-4-455-152-26-0">
+            <rect x="4" y="455" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-4-481-152-26-0">
+            <rect x="4" y="481" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-4-507-152-26-0">
+            <rect x="4" y="507" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-4-533-152-26-0">
+            <rect x="4" y="533" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-4-559-152-26-0">
+            <rect x="4" y="559" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-284-81-152-26-0">
+            <rect x="284" y="81" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-284-107-152-26-0">
+            <rect x="284" y="107" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-284-133-152-26-0">
+            <rect x="284" y="133" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-284-167-152-26-0">
+            <rect x="284" y="167" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-284-193-152-26-0">
+            <rect x="284" y="193" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-284-219-152-26-0">
+            <rect x="284" y="219" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-284-245-152-26-0">
+            <rect x="284" y="245" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-284-271-152-26-0">
+            <rect x="284" y="271" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-474-81-152-26-0">
+            <rect x="474" y="81" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-474-107-152-26-0">
+            <rect x="474" y="107" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-474-133-152-26-0">
+            <rect x="474" y="133" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-474-159-152-26-0">
+            <rect x="474" y="159" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-474-185-152-26-0">
+            <rect x="474" y="185" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-474-211-152-26-0">
+            <rect x="474" y="211" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-474-237-152-26-0">
+            <rect x="474" y="237" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-474-263-152-26-0">
+            <rect x="474" y="263" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-474-289-152-26-0">
+            <rect x="474" y="289" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-474-315-152-26-0">
+            <rect x="474" y="315" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-474-341-152-26-0">
+            <rect x="474" y="341" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-474-367-152-26-0">
+            <rect x="474" y="367" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-474-393-152-26-0">
+            <rect x="474" y="393" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-714-91-152-26-0">
+            <rect x="714" y="91" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-714-117-152-26-0">
+            <rect x="714" y="117" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-714-143-152-26-0">
+            <rect x="714" y="143" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-714-169-152-26-0">
+            <rect x="714" y="169" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-714-195-152-26-0">
+            <rect x="714" y="195" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-714-221-152-26-0">
+            <rect x="714" y="221" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-714-247-152-26-0">
+            <rect x="714" y="247" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-714-273-152-26-0">
+            <rect x="714" y="273" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-714-299-152-26-0">
+            <rect x="714" y="299" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-714-325-152-26-0">
+            <rect x="714" y="325" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-714-351-152-26-0">
+            <rect x="714" y="351" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-714-385-152-26-0">
+            <rect x="714" y="385" width="152" height="26"/>
+        </clipPath>
+        <clipPath id="mx-clip-714-411-152-26-0">
+            <rect x="714" y="411" width="152" height="26"/>
+        </clipPath>
+    </defs>
+    <g>
+        <path d="M 0 26 L 0 0 L 160 0 L 160 26" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 0 26 L 0 580 L 160 580 L 160 26" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 0 26 L 160 26" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="#000000" font-family="Helvetica" font-weight="bold" pointer-events="none" text-anchor="middle" font-size="12px">
+            <text x="79.5" y="17.5">
+                Intf
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-4-31-152-26-0)" font-size="12px">
+            <text x="5.5" y="43.5">
+                node: Node
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-4-57-152-26-0)" font-size="12px">
+            <text x="5.5" y="69.5">
+                name: str
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-4-83-152-26-0)" font-size="12px">
+            <text x="5.5" y="95.5">
+                link: Link
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-4-109-152-26-0)" font-size="12px">
+            <text x="5.5" y="121.5">
+                mac: str
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-4-135-152-26-0)" font-size="12px">
+            <text x="5.5" y="147.5">
+                ip: str
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-4-161-152-26-0)" font-size="12px">
+            <text x="5.5" y="173.5">
+                prefixlen: str
+            </text>
+        </g>
+        <path d="M 0 186 L 160 186" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-4-195-152-26-0)" font-size="12px">
+            <text x="5.5" y="207.5">
+                cmd(*args, **kwargs): str
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-4-221-152-26-0)" font-size="12px">
+            <text x="5.5" y="233.5">
+                ifconfig(*args): str
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-4-247-152-26-0)" font-size="12px">
+            <text x="5.5" y="259.5">
+                setIP(ipstr, prefixLen=None): str
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-4-273-152-26-0)" font-size="12px">
+            <text x="5.5" y="285.5">
+                setMAC(macstr): str
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-4-299-152-26-0)" font-size="12px">
+            <text x="5.5" y="311.5">
+                updateIP(): str
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-4-325-152-26-0)" font-size="12px">
+            <text x="5.5" y="337.5">
+                updateMAC(): str
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-4-351-152-26-0)" font-size="12px">
+            <text x="5.5" y="363.5">
+                updateAddr(): tuple
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-4-377-152-26-0)" font-size="12px">
+            <text x="5.5" y="389.5">
+                IP(): str
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-4-403-152-26-0)" font-size="12px">
+            <text x="5.5" y="415.5">
+                MAC(): mac
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-4-429-152-26-0)" font-size="12px">
+            <text x="5.5" y="441.5">
+                isUp(): bool
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-4-455-152-26-0)" font-size="12px">
+            <text x="5.5" y="467.5">
+                rename(newname): str
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-4-481-152-26-0)" font-size="12px">
+            <text x="5.5" y="493.5">
+                setParam(results, method, **param): str or None
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-4-507-152-26-0)" font-size="12px">
+            <text x="5.5" y="519.5">
+                config(mac, ip, ifconfig, up, **_params): dict
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-4-533-152-26-0)" font-size="12px">
+            <text x="5.5" y="545.5">
+                delete()
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-4-559-152-26-0)" font-size="12px">
+            <text x="5.5" y="571.5">
+                status(): str
+            </text>
+        </g>
+        <path d="M 280 76 L 280 50 L 440 50 L 440 76" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 280 76 L 280 292 L 440 292 L 440 76" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 280 76 L 440 76" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="#000000" font-family="Helvetica" font-weight="bold" pointer-events="none" text-anchor="middle" font-size="12px">
+            <text x="359.5" y="67.5">
+                Link
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-284-81-152-26-0)" font-size="12px">
+            <text x="285.5" y="93.5">
+                fast: bool
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-284-107-152-26-0)" font-size="12px">
+            <text x="285.5" y="119.5">
+                intf1: Intf
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-284-133-152-26-0)" font-size="12px">
+            <text x="285.5" y="145.5">
+                intf2: Intf
+            </text>
+        </g>
+        <path d="M 280 158 L 440 158" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-284-167-152-26-0)" font-size="12px">
+            <text x="285.5" y="179.5">
+                intfName(node, n): str
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-284-193-152-26-0)" font-size="12px">
+            <text x="285.5" y="205.5">
+                makeIntfPainer(intfname1, infname2, addr1, addr2, node1, node2, deleteIntfs):
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-284-219-152-26-0)" font-size="12px">
+            <text x="285.5" y="231.5">
+                delete()
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-284-245-152-26-0)" font-size="12px">
+            <text x="285.5" y="257.5">
+                stop()
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-284-271-152-26-0)" font-size="12px">
+            <text x="285.5" y="283.5">
+                status()
+            </text>
+        </g>
+        <path d="M 470 76 L 470 50 L 630 50 L 630 76" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 470 76 L 470 422 L 630 422 L 630 76" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 470 76 L 630 76" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="#000000" font-family="Helvetica" font-weight="bold" pointer-events="none" text-anchor="middle" font-size="12px">
+            <text x="549.5" y="67.5">
+                Node
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-474-81-152-26-0)" font-size="12px">
+            <text x="475.5" y="93.5">
+                name: str
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-474-107-152-26-0)" font-size="12px">
+            <text x="475.5" y="119.5">
+                privateDirs
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-474-133-152-26-0)" font-size="12px">
+            <text x="475.5" y="145.5">
+                inNamespace
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-474-159-152-26-0)" font-size="12px">
+            <text x="475.5" y="171.5">
+                waitExited
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-474-185-152-26-0)" font-size="12px">
+            <text x="475.5" y="197.5">
+                params
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-474-211-152-26-0)" font-size="12px">
+            <text x="475.5" y="223.5">
+                intfs: dict
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-474-237-152-26-0)" font-size="12px">
+            <text x="475.5" y="249.5">
+                ports: dict
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-474-263-152-26-0)" font-size="12px">
+            <text x="475.5" y="275.5">
+                nameToIntf: dict
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-474-289-152-26-0)" font-size="12px">
+            <text x="475.5" y="301.5">
+                waiting: bool
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-474-315-152-26-0)" font-size="12px">
+            <text x="475.5" y="327.5">
+                readbuf
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-474-341-152-26-0)" font-size="12px">
+            <text x="475.5" y="353.5">
+                decoder
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-474-367-152-26-0)" font-size="12px">
+            <text x="475.5" y="379.5">
+                master
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-474-393-152-26-0)" font-size="12px">
+            <text x="475.5" y="405.5">
+                slave
+            </text>
+        </g>
+        <path d="M 470 418 L 630 418" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 710 86 L 710 60 L 870 60 L 870 86" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 710 86 L 710 432 L 870 432 L 870 86" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 710 86 L 870 86" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="#000000" font-family="Helvetica" font-weight="bold" pointer-events="none" text-anchor="middle" font-size="12px">
+            <text x="789.5" y="77.5">
+                Switch
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-714-91-152-26-0)" font-size="12px">
+            <text x="715.5" y="103.5">
+                dpip
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-714-117-152-26-0)" font-size="12px">
+            <text x="715.5" y="129.5">
+                opts
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-714-143-152-26-0)" font-size="12px">
+            <text x="715.5" y="155.5">
+                listenPort
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-714-169-152-26-0)" font-size="12px">
+            <text x="715.5" y="181.5">
+                controlIntf
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-714-195-152-26-0)" font-size="12px">
+            <text x="715.5" y="207.5">
+                params
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-714-221-152-26-0)" font-size="12px">
+            <text x="715.5" y="233.5">
+                intfs: dict
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-714-247-152-26-0)" font-size="12px">
+            <text x="715.5" y="259.5">
+                ports: dict
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-714-273-152-26-0)" font-size="12px">
+            <text x="715.5" y="285.5">
+                nameToIntf: dict
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-714-299-152-26-0)" font-size="12px">
+            <text x="715.5" y="311.5">
+                waiting: bool
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-714-325-152-26-0)" font-size="12px">
+            <text x="715.5" y="337.5">
+                readbuf
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-714-351-152-26-0)" font-size="12px">
+            <text x="715.5" y="363.5">
+                decoder
+            </text>
+        </g>
+        <path d="M 710 376 L 870 376" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-714-385-152-26-0)" font-size="12px">
+            <text x="715.5" y="397.5">
+                defaultDpip(dpip): str
+            </text>
+        </g>
+        <g fill="#000000" font-family="Helvetica" pointer-events="none" clip-path="url(#mx-clip-714-411-152-26-0)" font-size="12px">
+            <text x="715.5" y="423.5">
+                defaultIntf(): str
+            </text>
+        </g>
+    </g>
+</svg>

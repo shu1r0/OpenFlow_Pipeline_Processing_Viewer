@@ -1,0 +1,39 @@
+/**
+ * TODO:
+ *    * define flow entry structure
+ *    * define flow table structure
+ */
+
+syntax = "proto3";
+
+package api.proto;
+
+enum NodeType{
+  HOST = 0;
+  SWITCH = 1;
+}
+
+// a protocol for request
+message Node{
+  optional NodeType node_type = 1;
+  optional string name = 2;
+}
+
+message Link{
+  optional string name = 1;
+  optional string host_name1 = 2;
+  optional string host_name2 = 3;
+}
+
+message Result{
+  optional sint32 status = 1;
+}
+
+service TracerNetService{
+  rpc addNode(Node) returns (Result){};
+  rpc removeNode(Node) returns (Result){};
+  rpc addLink(Link) returns (Result){};
+  rpc removeLink(Link) returns (Result){};
+//  rpc captureStart() retruns ;
+}
+
