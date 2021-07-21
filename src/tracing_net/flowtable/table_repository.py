@@ -136,17 +136,20 @@ class TableRepository(AbstractTableRepository):
         return tmp
 
     def get(self, switch, at_time=None):
-        if at_time:
-            for t in self.repository[switch]:
-                if t.timestamp > at_time:
-                    pass
-                else:
-                    return t
-        else:
-            if len(self.repository[switch]) > 0:
-                return self.repository[switch][-1]
+        try:
+            if at_time:
+                for t in self.repository[switch][::-1]:
+                    if t.timestamp > at_time:
+                        pass
+                    else:
+                        return t
             else:
-                return None
+                if len(self.repository[switch]) > 0:
+                    return self.repository[switch][-1]
+                else:
+                    return None
+        except KeyError:
+            return None
 
 
 table_repository = TableRepository()

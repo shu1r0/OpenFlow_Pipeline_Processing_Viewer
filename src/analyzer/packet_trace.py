@@ -1,8 +1,14 @@
+"""
+Models of packet trace
+"""
+
 from abc import ABCMeta, abstractmethod
+
+from src.tracing_net.ofproto.table import FlowTables
 
 
 class PacketArc:
-    """
+    """Packet arc between src to dst
 
     Attributes:
         src_switch_tables (str) :
@@ -25,23 +31,45 @@ class PacketArc:
 
     @property
     def src_switch(self):
-        return self.src_switch_tables.switch_name
+        return self.src.switch_name
 
     @property
     def dst_switch(self):
-        return self.dst_switch_tables.switch_name
+        return self.dst.switch_name
 
-    def set_src(self, switch_tables, msg):
-        self.src_switch_tables = switch_tables
-        self.msg = msg
-
-    def set_dst(self, switch_tables, interface):
-        self.dst_switch_tables = switch_tables
-        self.dst_interface = interface
+    @property
+    def timestamp(self):
+        if getattr(self.msg, 'sniff_timestamp', None):
+            return self.msg.sniff_timestamp
+        elif getattr(self.msg, 'timestamp', None):
+            return self.msg.timestamp
 
     @classmethod
     def get_packet_link(cls):
         pass
+
+    def to_dict(self):
+        src = self.src
+        dst = self.dst
+        if isinstance(self.src, FlowTables):
+            src = self.src.switch_name
+        if isinstance(self.dst, FlowTables):
+            dst = self.dst.switch_name
+        msg = self.msg
+        if getattr(msg, 'pkt', None):
+            msg = self.msg.pkt.__repr__()  # TODO to json
+        elif getattr(msg, 'of_msg', None):
+            msg = self.msg.of_msg.__repr__()
+        d = {
+            'src': src,  # TODO to json
+            'msg': msg,  # TODO to json
+            'edge': self.edge,
+            'dst': dst,  # TODO to json
+        }
+        return d
+
+    def __repr__(self):
+        return "(src={}, msg={}, edge={}, dst={}, dst_interface={})".format(self.src, self.msg, self.edge, self.dst, self.dst_interface)
 
 
 class AbstractPacketTrace(metaclass=ABCMeta):
@@ -73,3 +101,12 @@ class PacketTrace(AbstractPacketTrace):
 
     def add_arc(self, arc):
         self.arcs.append(arc)
+
+    def to_dict(self):
+        l = []
+        for arc in self.arcs:
+            l.append(arc.to_dict())
+        return l
+
+    def __repr__(self):
+        return "<PacketTrace {}>".format(self.arcs)

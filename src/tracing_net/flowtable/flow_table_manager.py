@@ -107,7 +107,7 @@ class FlowTableManager(AbstractFlowTableManager):
     def is_polling(self, switch):
         raise NotImplementedError
 
-    async def _receive_data(self, child_conn):
+    def _receive_data(self, child_conn):
         while True:
             data = child_conn.recv()
             self.repository.add(*data)

@@ -26,6 +26,10 @@ class InstructionResult:
         self.out_ports = out_ports if out_ports else []
         self.table_id = table_id
 
+    def __repr__(self):
+        return "<InstructionResult msg={} action_set={} out_ports={} table_id={}>"\
+            .format(self.msg, self.action_set, self.out_ports, self.table_id)
+
 
 class InstructionType(IntEnum):
     """List of instructions that are currently defined."""
@@ -78,6 +82,9 @@ class Instruction(metaclass=ABCMeta):
         """
         raise NotImplementedError
 
+    def __repr__(self):
+        return "<{} type={}>".format(self.__class__.__name__, self.instruction_type.value)
+
 
 class InstructionApplyAction(Instruction):
     """OFPIT_APPLY_ACTIONS"""
@@ -105,7 +112,7 @@ class InstructionApplyAction(Instruction):
         for action in self.actions:
             action_result = action.action(msg=instruction_result.msg)
             instruction_result.msg = action_result.msg
-            instruction_result.out_ports.append(*action_result.out_ports)
+            instruction_result.out_ports.extend(action_result.out_ports)
         return instruction_result
 
     @classmethod

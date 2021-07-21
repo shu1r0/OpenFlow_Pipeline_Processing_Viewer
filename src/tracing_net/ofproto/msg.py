@@ -48,7 +48,23 @@ class Msg:
             return None
 
     @property
+    def dl_dst(self):
+        """for ovs flow"""
+        try:
+            return self.pkt.eth.dst
+        except AttributeError:
+            return None
+
+    @property
     def eth_src(self):
+        try:
+            return self.pkt.eth.src
+        except AttributeError:
+            return None
+
+    @property
+    def dl_src(self):
+        """for ovs flow"""
         try:
             return self.pkt.eth.src
         except AttributeError:
@@ -298,6 +314,10 @@ class Msg:
 
     def to_json(self):
         raise NotImplementedError
+
+    def __repr__(self):
+        return "<Msg captured_interface={}, sniff_timestamp={}, pkt={}, in_port={}, in_phy_port={}>"\
+            .format(self.captured_interface, self.sniff_timestamp, self.pkt.__repr__(), self.in_port, self.in_phy_port)
 
 
 #

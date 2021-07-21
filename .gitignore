@@ -12,6 +12,10 @@ view/dist
 module/
 log/
 
+.ICEauthority-c
+.mininet_history
+.python_history
+
 # local env files
 view/.env.local
 view/.env.*.local
@@ -23,8 +27,8 @@ view/yarn-error.log*
 view/pnpm-debug.log*
 
 # Editor directories and files
-.idea
-.vscode
+.idea/
+.vscode/
 *.suo
 *.ntvs*
 *.njsproj

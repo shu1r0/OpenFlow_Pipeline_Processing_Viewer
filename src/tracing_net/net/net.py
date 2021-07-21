@@ -70,9 +70,9 @@ class Links:
             (str, str, str) : interface, edge name
         """
         for n, l in self.links.items():
-            if l.inft1.name == interface:
+            if l.intf1.name == interface:
                 return l.intf2.node.name, l.intf2.name, n
-            elif l.inft2.name == interface:
+            elif l.intf2.name == interface:
                 return l.intf1.node.name, l.intf1.name, n
         return None
 
@@ -411,7 +411,7 @@ class OnDemandNet(Mininet):
 
     def get_datapath_id(self, switch):
         datapath = self.getNodeByName(switch)
-        if isinstance(datapath, OVSSwitch):
+        if isinstance(datapath, Switch):
             return datapath.dpid
 
     def get_switch_names(self):
@@ -429,6 +429,33 @@ class OnDemandNet(Mininet):
             return True
         else:
             return False
+
+    def get_terminal_edge(self, edge):
+        """
+
+        Args:
+            edge:
+
+        Returns:
+            str, str, str : Host, Switch, str
+        """
+        link = self.name_to_link.get(edge)
+        node1 = link.intf1.node
+        node2 = link.intf2.node
+        if isinstance(node1, Host) :
+            return node1.name, node2.name, link.intf2.name
+        elif isinstance(node2, Host):
+            return node2.name, node1.name, link.intf1.name
+
+    def get_ofport_from_interface(self, switch ,interface_name):
+        intf = self.get(switch).nameToIntf[interface_name]
+        return self.get(switch).ports[intf]
+
+    def get_interface_from_ofport(self, switch, ofport):
+        return self.get(switch).intfs[ofport].name
+
+    def get_interface_from_link(self, link):
+        return self.name_to_link.get_int_name_pairs(link)[0]
 
 
 class TracingNet(OnDemandNet):

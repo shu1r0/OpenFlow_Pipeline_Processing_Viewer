@@ -21,7 +21,7 @@ logger = getLogger('tracing_net.flowtable.flow_monitor')
 
 
 class Poller(metaclass=ABCMeta):
-    """フローをポーリングする基底クラス
+    """Base class for polling the flow
 
     Attributes:
         parent_conn (Connection) : parent_conn
@@ -74,9 +74,10 @@ class FlowMonitor(Poller):
         if len(result) >= 2:
             flows = parse_dump_flows(result[1:])
             table = FlowTables(switch_name=self.switch, timestamp=time_stamp, flows=flows)
-            logger.debug("send to flow mana")
             self.parent_conn.send([self.switch, table])
             logger.debug("parsed result to table {} : {}".format(time_stamp, table))
+        else:
+            logger.warning("No result dumping flow")
 
     def flow_monitor(self):
         """flow monitor"""

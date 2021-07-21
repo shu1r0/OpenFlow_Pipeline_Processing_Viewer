@@ -1,3 +1,10 @@
+"""
+Open Flow Actions
+
+TODO:
+    * implement all the actions
+"""
+
 from enum import IntEnum
 from abc import ABCMeta, abstractmethod
 from logging import getLogger, setLoggerClass, Logger
@@ -7,6 +14,7 @@ from pyof.foundation.basic_types import UBInt16
 
 setLoggerClass(Logger)
 logger = getLogger('tracing_net.action')
+
 
 class ActionResult:
 
@@ -18,41 +26,42 @@ class ActionResult:
 class ActionType(IntEnum):
     """Actions associated with flows and packets."""
 
-    #: Output to switch port.
+    # Output to switch port.
     OFPAT_OUTPUT = 0
-    #: Copy TTL "outwards" -- from next-to-outermost to outermost
+    # Copy TTL "outwards" -- from next-to-outermost to outermost
     OFPAT_COPY_TTL_OUT = 11
-    #: Copy TTL "inwards" -- from outermost to next-to-outermost
+    # Copy TTL "inwards" -- from outermost to next-to-outermost
     OFPAT_COPY_TTL_IN = 12
-    #: MPLS TTL
+    # MPLS TTL
     OFPAT_SET_MPLS_TTL = 15
-    #: Decrement MPLS TTL
+    # Decrement MPLS TTL
     OFPAT_DEC_MPLS_TTL = 16
-    #: Push a new VLAN tag
+    # Push a new VLAN tag
     OFPAT_PUSH_VLAN = 17
-    #: Pop the outer VLAN tag
+    # Pop the outer VLAN tag
     OFPAT_POP_VLAN = 18
-    #: Push a new MPLS tag
+    # Push a new MPLS tag
     OFPAT_PUSH_MPLS = 19
-    #: Pop the outer MPLS tag
+    # Pop the outer MPLS tag
     OFPAT_POP_MPLS = 20
-    #: Set queue id when outputting to a port
+    # Set queue id when outputting to a port
     OFPAT_SET_QUEUE = 21
-    #: Apply group.
+    # Apply group.
     OFPAT_GROUP = 22
-    #: IP TTL.
+    # IP TTL.
     OFPAT_SET_NW_TTL = 23
-    #: Decrement IP TTL.
+    # Decrement IP TTL.
     OFPAT_DEC_NW_TTL = 24
-    #: Set a header field using OXM TLV format.
+    # Set a header field using OXM TLV format.
     OFPAT_SET_FIELD = 25
-    #: Push a new PBB service tag (I-TAG)
+    # Push a new PBB service tag (I-TAG)
     OFPAT_PUSH_PBB = 26
-    #: Pop the outer PBB service tag (I-TAG)
+    # Pop the outer PBB service tag (I-TAG)
     OFPAT_POP_PBB = 27
-    #: Experimenter type
+    # Experimenter type
     OFPAT_EXPERIMENTER = 0xffff
 
+    # Notes: This is not OpenFlow action
     DROP =99
 
 
@@ -77,6 +86,9 @@ class ActionBase:
             ActionResult
         """
         raise NotImplementedError
+
+    def __repr__(self):
+        return "<{} type={}>".format(self.__class__.__name__, self.action_type.value)
 
 
 # class ActionExperimenter(ActionBase):

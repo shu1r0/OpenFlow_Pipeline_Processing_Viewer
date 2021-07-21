@@ -333,11 +333,18 @@ def match_to_dict(match):
             value = value[1:-1]
         value = value.split('/')
         if len(value) == 1:
-            value = {'value': value[0], 'mask': None}
+            value = {'value': _value_to_int(value[0]), 'mask': None}
         else:
-            value = {'value': value[0], 'mask': value[1]}
+            value = {'value': _value_to_int(value[0]), 'mask': value[1]}
         dict_match[key] = value
     return dict_match
+
+
+def _value_to_int(value):
+    if isinstance(value, str):
+        if value.isdigit():
+            return int(value)
+    return value
 
 
 def parse_dump_flow(output_flow):
@@ -369,7 +376,7 @@ def parse_dump_flow(output_flow):
                 action_list = []
                 instructions = []
                 for a in actions:
-                    if isinstance(a, instruction.Instruction):
+                    if not isinstance(a, instruction.Instruction):
                         action_list.append(a)
                     else:
                         instructions.append(a)

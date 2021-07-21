@@ -49,7 +49,7 @@ class PacketRepository(AbstractPacketRepository):
         """
         self.repository.setdefault(edge, [])
         self.repository[edge].append(msg)
-        logger.debug("added msg {} to packet repo {}".format(msg, self.repository))
+        # logger.debug("added msg {} to packet repo {}".format(msg, self.repository))
 
     def pop(self, edge, until=None, count=None):
         """
