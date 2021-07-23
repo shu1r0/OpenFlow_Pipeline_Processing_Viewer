@@ -11,9 +11,9 @@ class PacketArc:
     """Packet arc between src to dst
 
     Attributes:
-        src_switch_tables (str) :
+        src (str or FlowTables) :
         msg (Msg) : message
-        dst_switch_tables (str) :
+        dst (str or FlowTables) :
         dst_interface (str) :
     """
 

@@ -74,6 +74,7 @@ class Analyzer(AbstractAnalyzer):
 
     def __init__(self, tracing_net, of_capture, packet_repo, table_repo, packet_inout_repo):
         super(Analyzer, self).__init__(tracing_net, of_capture, packet_repo, table_repo, packet_inout_repo)
+        # analyzing interval
         self._interval = 2
         self.start_time = None
         self.count = 0
@@ -95,7 +96,7 @@ class Analyzer(AbstractAnalyzer):
         # update tmp repository
         self._polling(self.count)
 
-        # get packet out
+        # Search from packet out.
         for s, p_io in self.tmp_packetinout.items():
             if p_io:
                 for p in p_io:
@@ -142,7 +143,7 @@ class Analyzer(AbstractAnalyzer):
                         # self._update_msg(msg, next_port=next_port)
                         # self._enqueue(queue, src_node, msg, first_edge, next_tables, next_port)
 
-        # packet
+        # Search from packets sent by a host
         for edge, pkts in self.tmp_packets.items():
             intf = self.tracing_net.get_interface_from_link(edge)
 
