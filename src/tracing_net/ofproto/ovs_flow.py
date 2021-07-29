@@ -15,6 +15,8 @@ setLoggerClass(Logger)
 logger = getLogger('tracing_net.ovs_flow')
 
 # FLOW ENTRY ELEMENTS
+# The words appear in the ovs ctl result in OVS.
+# word : regular expression
 OVS_FLOW_OUTPUT = {
     'table': r'table=(?P<table>\w+)',
     'duration': r'duration=(?P<duration>[\w.]+)s',
@@ -28,6 +30,7 @@ OVS_FLOW_OUTPUT = {
     'idle_age': r'idle_timeout=(?P<idle_age>\w+)',
     'hard_age': r'hard_timeout=(?P<hard_age>\w+)',
     'importance': r'importance=(?P<importance\w+)',
+    # flags
     'send_flow_rem': r'(?P<send_flow_rem>send_flow_rem)',
     'check_overlap': r'(?P<check_overlap>check_overlap)',
     'reset_counts': r'(?P<reset_counts>reset_counts)',
@@ -36,6 +39,7 @@ OVS_FLOW_OUTPUT = {
     'out_port': r'out_port=(?P<out_port\w+)',
     'out_group': r'out_group=(?P<out_group>=\w+)'
 }
+# ovs-ofctl result
 re_flow_entry = OVS_FLOW_OUTPUT['cookie'] + r'[\s,.]+' \
                 + OVS_FLOW_OUTPUT['duration'] + r'[\s,.]+' \
                 + OVS_FLOW_OUTPUT['table'] + r'[\s,.]+' \
@@ -47,6 +51,9 @@ re_flow_entry = OVS_FLOW_OUTPUT['cookie'] + r'[\s,.]+' \
 
 
 # link: https://man7.org/linux/man-pages/man7/ovs-actions.7.html
+# Actions can be taken with OVS.
+# The parser converts the action into an object
+# and takes the value obtained from the regular expression as an argument.
 OVS_ACTIONS = {
     'drop': {
         're': 'drop',
@@ -245,7 +252,7 @@ OVS_INSTRUCTIONS = {
         'parser': instruction.InstructionMeter.parser
         },
     'apply_actions': {
-        're': None,
+        're': None,  # No explicitly written in OVS.
         'parser': instruction.InstructionApplyAction.parser
         },
     'clear_actions': {
@@ -296,30 +303,33 @@ def parse_actions(actions):
     obj_actions = []
     re_actions = {}
     re_actions.update(**OVS_ACTIONS, **OVS_INSTRUCTIONS)
+
     for action in actions_list:
-        for key, value in re_actions.items():
+        for key, value in re_actions.items():  # value is re and parser
             # action match
             match = re.search(value['re'], action) if value['re'] else None
-            if match:
+            if match is not None:
                 params = match.groupdict()
                 if key == 'write_actions':
                     params = parse_actions(params['actions'])
+                # convert the action into an object
                 if value['parser']:
                     parser = value['parser']
                     if isinstance(params, dict):
                         obj_actions.append(parser(**params))
-                    elif isinstance(params, list):  # action list
+                    elif isinstance(params, list):  # action list. e.g.) write_actions
                         obj_actions.append(parser(params))
-                    else:
+                    else:  # no params actions
                         obj_actions.append(parser())
                 else:
-                    print("no parser")
+                    logger.warning("no parser (action: {})".format(key))
     return obj_actions
 
 
 def match_to_dict(match):
     list_match = match.split(',')
     dict_match = {}
+    # omitted words
     for i in range(len(list_match)):
         if list_match[i] in OVS_MATCH_ETH.keys():
             ovs_m = OVS_MATCH_ETH[list_match[i]].split(',')
@@ -337,6 +347,7 @@ def match_to_dict(match):
         else:
             value = {'value': _value_to_int(value[0]), 'mask': value[1]}
         dict_match[key] = value
+
     return dict_match
 
 
@@ -348,24 +359,13 @@ def _value_to_int(value):
 
 
 def parse_dump_flow(output_flow):
-    """ovs-ofctl dump-flows result parser
+    """parse a flow of ovs-ofctl dump-flows result
 
     Args:
         output_flow (str) : ovs-ofctl dump-flow
 
     Returns:
         dict
-
-    Examples:
-        result1 = [' cookie=0x100007a585b6f, duration=2.162s, table=0, n_packets=1, n_bytes=139, send_flow_rem priority=40000,dl_type=0x8942 actions=CONTROLLER:65535,clear_actions',
-                   ' cookie=0x100009465555a, duration=2.162s, table=0, n_packets=1, n_bytes=139, send_flow_rem priority=40000,dl_type=0x88cc actions=CONTROLLER:65535,clear_actions',
-                   ' cookie=0x10000ea6f4b8e, duration=2.162s, table=0, n_packets=0, n_bytes=0, send_flow_rem priority=40000,arp actions=CONTROLLER:65535,clear_actions']
-        for r in result1:
-            d = entry_to_dict(r)
-            print(d)
-        # {'cookie': '0x100009465555a', 'duration': '2.162', 'table': '0', 'n_packets': '1', 'n_bytes': '139', 'priority': '40000', 'match': 'dl_type=0x88cc', 'actions': 'CONTROLLER:65535,clear_actions'}
-        # {'cookie': '0x100009465555a', 'duration': '2.162', 'table': '0', 'n_packets': '1', 'n_bytes': '139', 'priority': '40000', 'match': {'dl_type': {'value': '0x88cc', 'mask': None}}, 'actions': {'controller': {'controller': '65535'}, 'clear_actions': {}}}
-        # {'cookie': '0x10000ea6f4b8e', 'duration': '2.162', 'table': '0', 'n_packets': '0', 'n_bytes': '0', 'priority': '40000', 'match': {'eth_type': {'value': '0x0806', 'mask': None}}, 'actions': {'controller': {'controller': '65535'}, 'clear_actions': {}}}
     """
     m = re.search(re_flow_entry, output_flow)
     if m:
@@ -391,7 +391,49 @@ def parse_dump_flow(output_flow):
     else:
         raise Exception("False to parse flow entry")
 
+
 def parse_dump_flows(flows):
+    """ovs-ofctl dump-flows result parser
+
+    Args:
+        flows (list[str]) : ovs-ofctl dump-flows
+
+    Returns:
+        list[Flow] :
+    Examples:
+        result = ['cookie=0x0, duration=12.851s, table=0, n_packets=21, n_bytes=1571, priority=0 actions=goto_table:5',
+               ' cookie=0x0, duration=12.841s, table=5, n_packets=8, n_bytes=372, priority=1,arp actions=goto_table:10',
+               ' cookie=0x0, duration=12.841s, table=5, n_packets=9, n_bytes=882, priority=1,ip actions=goto_table:20',
+               ' cookie=0x0, duration=12.841s, table=10, n_packets=2, n_bytes=84, priority=1,arp,in_port="s1-eth1",arp_tpa=192.168.1.1,arp_op=1 actions=CONTROLLER:65509',
+               ' cookie=0x0, duration=12.841s, table=10, n_packets=4, n_bytes=168, priority=1,arp,in_port="s1-eth1",arp_tpa=192.168.1.1,arp_op=2 actions=CONTROLLER:65509',
+               ' cookie=0x0, duration=12.841s, table=10, n_packets=1, n_bytes=60, priority=1,arp,in_port="s1-eth2",arp_tpa=192.168.2.1,arp_op=1 actions=CONTROLLER:65509',
+               ' cookie=0x0, duration=12.841s, table=10, n_packets=1, n_bytes=60, priority=1,arp,in_port="s1-eth2",arp_tpa=192.168.2.1,arp_op=2 actions=CONTROLLER:65509',
+               ' cookie=0x0, duration=12.841s, table=20, n_packets=0, n_bytes=0, priority=58364,ip,nw_dst=192.168.2.0/24 actions=CONTROLLER:65509',
+               ' cookie=0x0, duration=12.841s, table=20, n_packets=4, n_bytes=392, priority=58364,ip,nw_dst=192.168.1.0/24 actions=CONTROLLER:65509',
+               ' cookie=0x0, duration=12.841s, table=20, n_packets=5, n_bytes=490, priority=58360,ip,nw_dst=192.168.3.0/24 actions=write_actions(output:"s1-eth2"),write_metadata:0xc0a80202/0xffffffff,goto_table:30',
+               ' cookie=0x0, duration=12.841s, table=20, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65509',
+               ' cookie=0x0, duration=9.481s, table=30, n_packets=3, n_bytes=294, priority=16,ip,metadata=0xc0a80202/0xffffffff actions=set_field:1e:2c:3d:36:ff:3d->eth_src,set_field:2a:0c:db:9c:46:e5->eth_dst,goto_table:100',
+               ' cookie=0x0, duration=3.820s, table=30, n_packets=0, n_bytes=0, priority=16,ip,metadata=0xc0a80102/0xffffffff actions=set_field:2a:5d:49:62:93:9f->eth_src,set_field:fa:bc:93:fb:5c:d0->eth_dst,goto_table:100',
+               ' cookie=0x0, duration=12.841s, table=30, n_packets=2, n_bytes=196, priority=0,ip actions=CONTROLLER:65509,clear_actions',
+               ' cookie=0x0, duration=12.841s, table=100, n_packets=3, n_bytes=294, priority=0 actions=drop']
+        pased_result = parse_dump_flows(result)
+        print(parsed_result)
+        [<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>, <InstructionGotoTable type=1>])>,
+        <Flow(table=5, priority=1, match={'eth_type': {'value': '0x0806', 'mask': None}}, actions=[<InstructionApplyAction type=4>, <InstructionGotoTable type=1>])>,
+        <Flow(table=5, priority=1, match={'eth_type': {'value': '0x0800', 'mask': None}}, actions=[<InstructionApplyAction type=4>, <InstructionGotoTable type=1>])>,
+        <Flow(table=10, priority=1, match={'in_port': {'value': 's1-eth1', 'mask': None}, 'arp_tpa': {'value': '192.168.1.1', 'mask': None}, 'arp_op': {'value': 1, 'mask': None}, 'eth_type': {'value': '0x0806', 'mask': None}}, actions=[<InstructionApplyAction type=4>])>,
+        <Flow(table=10, priority=1, match={'in_port': {'value': 's1-eth1', 'mask': None}, 'arp_tpa': {'value': '192.168.1.1', 'mask': None}, 'arp_op': {'value': 2, 'mask': None}, 'eth_type': {'value': '0x0806', 'mask': None}}, actions=[<InstructionApplyAction type=4>])>,
+        <Flow(table=10, priority=1, match={'in_port': {'value': 's1-eth2', 'mask': None}, 'arp_tpa': {'value': '192.168.2.1', 'mask': None}, 'arp_op': {'value': 1, 'mask': None}, 'eth_type': {'value': '0x0806', 'mask': None}}, actions=[<InstructionApplyAction type=4>])>,
+        <Flow(table=10, priority=1, match={'in_port': {'value': 's1-eth2', 'mask': None}, 'arp_tpa': {'value': '192.168.2.1', 'mask': None}, 'arp_op': {'value': 2, 'mask': None}, 'eth_type': {'value': '0x0806', 'mask': None}}, actions=[<InstructionApplyAction type=4>])>,
+        <Flow(table=20, priority=58364, match={'nw_dst': {'value': '192.168.2.0', 'mask': '24'}, 'eth_type': {'value': '0x0800', 'mask': None}}, actions=[<InstructionApplyAction type=4>])>,
+        <Flow(table=20, priority=58364, match={'nw_dst': {'value': '192.168.1.0', 'mask': '24'}, 'eth_type': {'value': '0x0800', 'mask': None}}, actions=[<InstructionApplyAction type=4>])>,
+        <Flow(table=20, priority=58360, match={'nw_dst': {'value': '192.168.3.0', 'mask': '24'}, 'eth_type': {'value': '0x0800', 'mask': None}}, actions=[<InstructionApplyAction type=4>, <InstructionWriteAction type=3>, <InstructionWriteMetadata type=2>, <InstructionGotoTable type=1>])>,
+        <Flow(table=20, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>,
+        <Flow(table=30, priority=16, match={'metadata': {'value': '0xc0a80202', 'mask': '0xffffffff'}, 'eth_type': {'value': '0x0800', 'mask': None}}, actions=[<InstructionApplyAction type=4>, <InstructionGotoTable type=1>])>,
+        <Flow(table=30, priority=16, match={'metadata': {'value': '0xc0a80102', 'mask': '0xffffffff'}, 'eth_type': {'value': '0x0800', 'mask': None}}, actions=[<InstructionApplyAction type=4>, <InstructionGotoTable type=1>])>,
+        <Flow(table=30, priority=0, match={'eth_type': {'value': '0x0800', 'mask': None}}, actions=[<InstructionApplyAction type=4>, <InstructionClearAction type=5>])>,
+        <Flow(table=100, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>]
+    """
     parsed_flows = []
     for f in flows:
         flow = Flow()
@@ -406,7 +448,6 @@ def parse_dump_flows(flows):
         flow.actions = parsed_flow.get('actions', None)
         parsed_flows.append(flow)
     return parsed_flows
-
 
 
 if __name__ == '__main__':

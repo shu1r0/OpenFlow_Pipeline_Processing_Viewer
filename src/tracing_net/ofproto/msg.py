@@ -234,6 +234,7 @@ class OpenFlowPacket(metaclass=ABCMeta):
         if not isinstance(other, OpenFlowPacket):
             return False
 
+        # Do the packet's attributes that can be handled by OpenFlow match?
         for p in OpenFlowMatchingProperties:
             p1 = getattr(self, p, None)
             p2 = getattr(other, p, None)
@@ -242,7 +243,23 @@ class OpenFlowPacket(metaclass=ABCMeta):
         return True
 
 
-class Msg(OpenFlowPacket):
+class MsgBase(metaclass=ABCMeta, OpenFlowPacket):
+
+    def __init__(self):
+        super(MsgBase, self).__init__()
+        self.pkt = None
+        self.metadata = None
+        self.pushed_vlan = None
+        self.pushed_mpls = None
+
+    def set_vlan(self, vlan_id):
+        self.pushed_vlan = vlan_id
+
+    def set_mpls(self, mpls_label):
+        self.pushed_mpls = mpls_label
+
+
+class Msg(MsgBase):
     """Packet message
     This is an abstraction of the packets of flowing in the data plane.
 
@@ -391,11 +408,11 @@ class Msg(OpenFlowPacket):
 
     @property
     def sctp_src(self):
-        raise NotImplementedError
+        return None
 
     @property
     def sctp_dst(self):
-        raise NotImplementedError
+        return None
 
     @property
     def icmpv4_type(self):
@@ -534,12 +551,6 @@ class Msg(OpenFlowPacket):
     @property
     def actset_output(self):
         return None
-
-    def set_vlan(self, vlan_id):
-        self.pushed_vlan = vlan_id
-
-    def set_mpls(self, mpls_label):
-        self.pushed_mpls = mpls_label
 
     def to_json(self):
         raise NotImplementedError

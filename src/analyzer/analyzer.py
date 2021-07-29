@@ -1,7 +1,7 @@
 from abc import ABCMeta, abstractmethod
 import datetime
 import copy
-# unix
+# only unix
 import signal
 import time
 from logging import getLogger, setLoggerClass, Logger
@@ -125,7 +125,7 @@ class Analyzer(AbstractAnalyzer):
                                 trace.add_arc(packet_arc)
 
                                 next_node, next_port, edge = next_and_edge
-                                msg = self._pop_packet(edge, p.timestamp)
+                                msg = self._pop_packet(edge, p)
                                 if msg:
                                     self._update_msg(msg, next_port=next_port)
                                     if self._is_terminal_edge(edge):
@@ -145,17 +145,12 @@ class Analyzer(AbstractAnalyzer):
 
         # Search from packets sent by a host
         for edge, pkts in self.tmp_packets.items():
-            intf = self.tracing_net.get_interface_from_link(edge)
+            if pkts:  # Do the packets exist?
+                if self._is_terminal_edge(edge):
+                    host, switch, switch_port = self.tracing_net.get_terminal_edge(edge)
 
-            if pkts:
-                for p in pkts:
-                    get_next_and_edge = self._get_next_and_edge(intf)
-                    if get_next_and_edge:
-                        _, _, edge = get_next_and_edge
-                        if self._is_terminal_edge(edge):
-                            host, switch, switch_port = self.tracing_net.get_terminal_edge(edge)
-                            logger.debug("terminal edge host={}, switch={}, switch_port={}".format(host, switch, switch_port))
-
+                    for p in pkts:
+                        if p.eth_src in self._get_hosts_mac():  # Is the packet from the host?
                             self._update_msg(p, next_port=switch_port)
                             flow_table = self._get_flowtable(switch, p.sniff_timestamp)
 
@@ -165,25 +160,26 @@ class Analyzer(AbstractAnalyzer):
                             trace = self.BFS(queue)
                             packet_trace_repository.add(trace)
                         else:
-                            logger.warning("Packet {} is not terminal edge".format(p))
-                    else:
-                        logger.warning("Failed to get ({})'s next switch, port and edge ".format(intf))
+                            logger.warning("Packet {} is not from host".format(p))
+                else:
+                    logger.warning("edge {} is not terminal edge".format(edge))
             else:
-                logger.warning("Fuck!!!!!!!! {}".format(intf))
+                logger.warning("No packet in edge {}".format(edge))
 
         self.count += 1
 
-    def BFS(self, queue):
+    def BFS(self, queue, trace=None, visited=None):
         """BFS"""
         # packet traces
-        trace = PacketTrace()
-        # visited edges
-        visited = []
+        if trace is None:
+            trace = PacketTrace()
+        # visited edges (However, the controller is not included.)
+        if visited is None:
+            visited = []
 
         # BFS loop
         while queue:
             # get processing data from queue
-            # init packet arc
             src_node, msg, edge, dst_node, dst_port = queue.pop(0)
 
             logger.debug("processing msg {}".format(msg))
@@ -202,7 +198,7 @@ class Analyzer(AbstractAnalyzer):
 
             # next node is Switch
             if isinstance(dst_node, FlowTables):
-                # next ports
+                # Perform OpenFlow processing and get the port for the next packet
                 ports_to_msg: list[tuple[str, Msg]] = apply_pipeline(msg, flowtables=dst_node)
                 logger.debug("After applyed pipeline, out_ports to msg {}".format(ports_to_msg))
 
@@ -212,6 +208,8 @@ class Analyzer(AbstractAnalyzer):
                     next_switch, next_port, next_edge = None, None, None
                     # convert interface
                     p = self._ofport_to_interface(dst_node.switch_name, p)
+
+                    # get where packet is going next.
                     if not self._is_controller(p):
                         next_switch, next_port, next_edge = self._get_next_and_edge(p)
                     else:  # TODO controller
@@ -220,18 +218,19 @@ class Analyzer(AbstractAnalyzer):
                     # set next switch and port
                     if isinstance(next_switch, str) and self._is_switch(next_switch):  # switch
                         self._update_msg(msg, next_port=next_port)
+
                         if next_edge not in visited:  # loop?
                             # get packet
-                            msg = self._pop_packet(next_edge, m.sniff_timestamp)
+                            msg = self._pop_packet(next_edge, m)
                             # get flowtable
                             flowtable = self._get_flowtable(next_switch, m.sniff_timestamp)
-                            self._enqueue(queue, src_node=dst_node, msg=msg, first_edge=next_edge, next_tables=flowtable, next_port=next_port)
+                            self._enqueue(queue, src_node=dst_node, msg=msg, first_edge=next_edge,
+                                          next_tables=flowtable, next_port=next_port)
                         else:
                             logger.warning("already visited edge {}".format(next_edge))
-                    else:  # not switch
-                        # set finish
-                        if next_switch == "controller":  # TODO: controller
-                            logger.debug("to controller message")
+                    else:  # The next node is not switch.
+                        # If next node is not switch, it is considered as an endpoint adn add to PacketTrace.
+                        if next_switch == "controller":  # TODO: get packet in
                             packet_arc = PacketArc(src=dst_node,
                                                    msg=msg,
                                                    edge=next_edge,
@@ -256,7 +255,6 @@ class Analyzer(AbstractAnalyzer):
         """
 
         Args:
-            instruction_result:
             msg:
 
         Returns:
@@ -271,38 +269,32 @@ class Analyzer(AbstractAnalyzer):
     #     pass
 
     def _polling(self, count):
-        # logger.debug("{}, {}".format(self.tracing_net.name_to_link.get_edges(), self.tracing_net.get_switch_names()))
+        # Packet
         tmp_packets = self._poll_packet_repo(count=count, edges=self.tracing_net.name_to_link.get_edges())
         for e, pkts in tmp_packets.items():
             self.tmp_packets.setdefault(e, [])
             if pkts:
                 self.tmp_packets[e].extend(pkts)
-        # self.tmp_flowtable = self._poll_table_repo(count=count, switches=self.tracing_net.get_switch_names())
+
+        # Packet Out and Packet In
         tmp_packetinout = self._poll_packet_inout_repo(count=count, switches=self.tracing_net.get_switch_names())
         for s, pkts in tmp_packetinout.items():
             self.tmp_packetinout.setdefault(s, [])
             # logger.debug("s={}, pkts={}".format(s, pkts))
             if pkts:
                 self.tmp_packetinout[s].extend(pkts)
-        logger.debug("polled (start_time={}, until={}) values = {} {} {}"
+
+        logger.debug("polled repository (start_time={}, until={}) values = {} {} {}"
                      .format(self.start_time, self.count, self.tmp_packets, self.tmp_flowtable, self.tmp_packetinout))
 
     def _poll_packet_repo(self, count, edges):
         packets = {}
         until = self.start_time + self._interval * count
         for edge in edges:
-            interface = self.tracing_net.name_to_link.get_int_name_pairs(edge)[0]
+            interface = self.tracing_net.get_interface_from_link(edge)
             tmp_packets = self.packet_repo.pop(interface, until=until)
             packets[edge] = tmp_packets
         return packets
-
-    # def _poll_table_repo(self, count, switches):
-    #     tables = {}
-    #     until = self.start_time + self._interval * count
-    #     for switch in switches:
-    #         tmp_table = self.table_repo.pop(switch=switch, until=until)
-    #         tables[switch] = tmp_table
-    #     return tables
 
     def _poll_packet_inout_repo(self, count, switches):
         packet_inouts = {}
@@ -321,36 +313,24 @@ class Analyzer(AbstractAnalyzer):
         topo = self.tracing_net.get_topo()
         return topo
 
-    # def get_port(self, switch):
-    #     datapath_id = self.tracing_net.get_datapath_id(switch)
-    #     return self.of_capture.capture.get_port(datapath_id)
-
     def _get_next_and_edge(self, interface):
         return self.tracing_net.name_to_link.get_next_and_edge(interface)
 
-    def _pop_packet(self, edge, timestamp, msg=None):
-        """
+    def _pop_packet(self, edge, msg):
+        """Get the same packet as the msg.
+        The msg attributes and timestamp are used to determine if it is the same packet.
 
         Args:
             edge (str) :
-            timestamp (float) :
             msg (Msg) :
 
         Returns:
-
-        Notes:
-            * to implement a check for match
+            Msg : same packet as the msg
         """
         if self.tmp_packets[edge]:
             for p in self.tmp_packets[edge]:
-                if p.sniff_timestamp >= timestamp:
+                if p.sniff_timestamp >= msg.sniff_timestamp and p == msg:
                     return p
-
-    # def _pop_flowtable(self, switch, timestamp):
-    #     if self.tmp_flowtable[switch]:
-    #         for table in self.tmp_flowtable[switch]:
-    #             if table.timestamp > timestamp:
-    #                 return table
 
     def _get_flowtable(self, switch, timestamp):
         return self.table_repo.get(switch, timestamp)
@@ -366,6 +346,7 @@ class Analyzer(AbstractAnalyzer):
         return self.tracing_net.is_switch(switch)
 
     def _is_controller(self, port: str):
+        """Is the port connected controller?"""
         if isinstance(port, str) and port.isdigit():
             port = int(port)
         if isinstance(port, int) and port > 1000:
@@ -384,6 +365,11 @@ class Analyzer(AbstractAnalyzer):
         if isinstance(ofport, int) and ofport < 1000:
             return self.tracing_net.get_interface_from_ofport(switch, ofport)
         return ofport
+
+    def _get_hosts_mac(self):
+        hosts = self.tracing_net.hosts
+        mac_addresses = [host.MAC() for host in hosts]
+        return mac_addresses
 
     def _get_flooding_ports_and_edges(self, switch, of_port):
         """

@@ -431,23 +431,23 @@ class OnDemandNet(Mininet):
             return False
 
     def get_terminal_edge(self, edge):
-        """
+        """get host and switch
 
         Args:
-            edge:
+            edge (str) : edge name
 
         Returns:
-            str, str, str : Host, Switch, str
+            str, str, str : Host, Switch, switch intf
         """
         link = self.name_to_link.get(edge)
         node1 = link.intf1.node
         node2 = link.intf2.node
-        if isinstance(node1, Host) :
+        if isinstance(node1, Host):
             return node1.name, node2.name, link.intf2.name
         elif isinstance(node2, Host):
             return node2.name, node1.name, link.intf1.name
 
-    def get_ofport_from_interface(self, switch ,interface_name):
+    def get_ofport_from_interface(self, switch, interface_name):
         intf = self.get(switch).nameToIntf[interface_name]
         return self.get(switch).ports[intf]
 
@@ -459,7 +459,7 @@ class OnDemandNet(Mininet):
 
 
 class TracingNet(OnDemandNet):
-    """trace sdn network
+    """trace OpenFlow network
 
     * packet capture
     * monitor flow

@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package proto;
+
+message Host{
+  optional string name = 1;
+  optional string ip = 2;
+  optional string mac = 3;
+}
+
+message Switch{
+  optional string name = 1;
+  optional string datapath_id = 2;
+}
+
+message Link{
+  optional string name = 1;
+  optional string host1 = 2;
+  optional string host2 = 3;
+}
+
+
+message PacketArc{
+
+}
+message PacketTrace{
+  repeated PacketArc arcs = 1;
+}
+
+//message Port{
+//
+//}
+
+message TopoChangeResult{
+  optional sint32 status = 1;
+}
+
+message HostCommand{
+  optional string host = 1;
+  optional string command = 2;
+}
+
+message MininetCommand{
+  optional string command = 1;
+}

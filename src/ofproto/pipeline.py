@@ -28,15 +28,19 @@ def apply_pipeline(msg, flowtables):
     if not isinstance(msg, Msg):
         raise TypeError("{} not supported, should be Msg".format(type(msg)))
     if not isinstance(flowtables, FlowTables):
-        raise TypeError
+        raise TypeError("{} not supported, should be FlowTables".format(type(flowtables)))
+
     action_set = ActionSet()
     out_ports = []
     next_table = 0
+
     while next_table is not None:
         msg = copy.deepcopy(msg)
         current_table = next_table
+
         flow = flowtables.match(msg, current_table)
-        if flow:
+
+        if flow:  # Is matching flow?
             result = flow.action(msg, action_set)
             logger.debug("action result={} msg={}".format(result, msg))
             for p in result.out_ports:
@@ -46,9 +50,12 @@ def apply_pipeline(msg, flowtables):
             else:
                 next_table = None
         else:  # no match
+            # default action drop
             logger.debug("No match")
             next_table = None
+
     # TODO: exec ActionSet
+
     return out_ports
 
 

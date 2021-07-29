@@ -102,6 +102,7 @@ class PacketCaptureManager(AbstractPacketCaptureManager):
         file_name = 'log/pcap/' + interface_name + '-' + date + '.pcap'
         parent_conn, child_conn = multiprocessing.Pipe()
         capture = PacketCapture(interface_name, parent_conn, file_name, event_loop=self.event_loop)
+        # server stop??
         p = multiprocessing.Process(target=capture.start_capture)
         t = threading.Thread(target=self._receive_data, args=(child_conn,))
         t.start()
