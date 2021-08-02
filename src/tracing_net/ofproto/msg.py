@@ -230,6 +230,14 @@ class OpenFlowPacket(metaclass=ABCMeta):
     def to_json(self):
         raise NotImplementedError
 
+    def get_openflow_properties(self):
+        """for debug"""
+        properties = {}
+        for p in OpenFlowMatchingProperties:
+            v = getattr(self, p, None)
+            properties[p] = v
+        return properties
+
     def __eq__(self, other):
         if not isinstance(other, OpenFlowPacket):
             return False
@@ -243,7 +251,7 @@ class OpenFlowPacket(metaclass=ABCMeta):
         return True
 
 
-class MsgBase(metaclass=ABCMeta, OpenFlowPacket):
+class MsgBase(OpenFlowPacket, metaclass=ABCMeta):
 
     def __init__(self):
         super(MsgBase, self).__init__()

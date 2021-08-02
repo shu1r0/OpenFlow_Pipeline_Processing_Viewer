@@ -58,5 +58,8 @@ def apply_pipeline(msg, flowtables):
 
     return out_ports
 
+def apply_pipeline_for_packetout():
+    raise NotImplementedError
+
 
 

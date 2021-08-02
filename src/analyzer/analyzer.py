@@ -18,6 +18,7 @@ from src.tracing_net.ofproto.table import FlowTables
 from src.tracing_net.ofproto.msg import Msg
 from src.ofcapture.capture.of_msg_repository import PacketInOutRepository
 from src.ofproto.pipeline import apply_pipeline
+from src.ofproto.msg import create_MsgForOFMsg
 from src.analyzer.packet_trace import PacketArc, PacketTrace
 from src.analyzer.trace_repository import packet_trace_repository
 
@@ -101,45 +102,7 @@ class Analyzer(AbstractAnalyzer):
             if p_io:
                 for p in p_io:
                     if p.message_type == Type.OFPT_PACKET_OUT:
-
-                        # TODO: move to a method handling packet out
-                        logger.debug("I will processing packetout({})".format(p))
-                        if isinstance(p.of_msg.actions[0].port, UBInt32):
-                            if int(p.of_msg.actions[0].port) in list(PortNo):
-                                p.of_msg.actions[0].port = PortNo(int(p.of_msg.actions[0].port))
-                            else:
-                                logger.warning("not flooding packet out")
-                        if p.of_msg.actions[0].port == PortNo.OFPP_FLOOD:
-                            logger.debug("packet out's in_port {}".format(p.of_msg.in_port))
-                            queue = []
-                            ports_to_edges = self._get_flooding_ports_and_edges(s, int(p.of_msg.in_port))
-                            # logger.debug("ports_to_edges {}".format(ports_to_edges))
-                            for intf, next_and_edge in ports_to_edges.items():
-                                # packet traces
-                                trace = PacketTrace()
-                                packet_arc = PacketArc(src="controller",
-                                                       msg=p,
-                                                       edge=None,
-                                                       dst=s,
-                                                       dst_interface="")
-                                trace.add_arc(packet_arc)
-
-                                next_node, next_port, edge = next_and_edge
-                                msg = self._pop_packet(edge, p)
-                                if msg:
-                                    self._update_msg(msg, next_port=next_port)
-                                    if self._is_terminal_edge(edge):
-                                        packet_arc = PacketArc(src=s,
-                                                               msg=msg,
-                                                               edge=edge,
-                                                               dst=next_node,
-                                                               dst_interface=next_port)
-                                        trace.add_arc(packet_arc)
-                                    else:
-                                        pass
-                                else:
-                                    logger.warning("msg not found")
-                                packet_trace_repository.add(trace)
+                        self._analyze_packet_out(p, s)
                         # self._update_msg(msg, next_port=next_port)
                         # self._enqueue(queue, src_node, msg, first_edge, next_tables, next_port)
 
@@ -160,13 +123,66 @@ class Analyzer(AbstractAnalyzer):
                             trace = self.BFS(queue)
                             packet_trace_repository.add(trace)
                         else:
-                            logger.warning("Packet {} is not from host".format(p))
+                            logger.warning("Packet {} is not from host. The analysis done before may not have been done properly.".format(p))
                 else:
-                    logger.warning("edge {} is not terminal edge".format(edge))
+                    logger.warning("edge {} is not terminal edge. The analysis done before may not have been done properly.".format(edge))
             else:
                 logger.warning("No packet in edge {}".format(edge))
 
         self.count += 1
+
+    def _analyze_packet_out(self, packet_msg, switch):
+        """
+
+        Args:
+            packet_msg (OFMsg) :
+            switch (str) :
+        """
+        logger.debug("I will processing packetout({})".format(packet_msg))
+        # port convert
+        if isinstance(packet_msg.of_msg.actions[0].port, UBInt32):
+            # port is specific port? (e.g. OFPP_FLOOD)
+            tmp_port = int(packet_msg.of_msg.actions[0].port)
+            if tmp_port in list(PortNo):
+                packet_msg.of_msg.actions[0].port = PortNo(tmp_port)
+            else:
+                packet_msg.of_msg.actions[0].port = tmp_port
+
+        if packet_msg.of_msg.actions[0].port == PortNo.OFPP_FLOOD:
+            logger.debug("packet out's in_port {}".format(packet_msg.of_msg.in_port))
+            queue = []
+            ports_to_edges = self._get_flooding_ports_and_edges(switch, int(packet_msg.of_msg.in_port))
+            # logger.debug("ports_to_edges {}".format(ports_to_edges))
+
+            for intf, next_and_edge in ports_to_edges.items():
+                # packet traces
+                trace = PacketTrace()
+                packet_arc = PacketArc(src="controller",
+                                       msg=packet_msg,
+                                       edge=None,
+                                       dst=switch,
+                                       dst_interface="")
+                trace.add_arc(packet_arc)
+
+                next_node, next_port, edge = next_and_edge
+                net_msg = create_MsgForOFMsg(packet_msg)
+                msg = self._pop_packet(edge, net_msg)
+                if msg:
+                    self._update_msg(msg, next_port=next_port)
+                    if self._is_terminal_edge(edge):
+                        packet_arc = PacketArc(src=switch,
+                                               msg=msg,
+                                               edge=edge,
+                                               dst=next_node,
+                                               dst_interface=next_port)
+                        trace.add_arc(packet_arc)
+                    else:
+                        logger.warning("Msg is not in terminal edge. This processing is not implemented")
+                else:
+                    logger.warning("cannot pop pakcet next_edge={} m={}".format(edge, net_msg))
+                    # TODO:
+                    #   * If there is no matching packet, it is analyzed in the next interval
+                packet_trace_repository.add(trace)
 
     def BFS(self, queue, trace=None, visited=None):
         """BFS"""
@@ -222,12 +238,19 @@ class Analyzer(AbstractAnalyzer):
                         if next_edge not in visited:  # loop?
                             # get packet
                             msg = self._pop_packet(next_edge, m)
-                            # get flowtable
-                            flowtable = self._get_flowtable(next_switch, m.sniff_timestamp)
-                            self._enqueue(queue, src_node=dst_node, msg=msg, first_edge=next_edge,
-                                          next_tables=flowtable, next_port=next_port)
+                            if msg:
+                                # get flowtable
+                                flowtable = self._get_flowtable(next_switch, m.sniff_timestamp)
+                                self._enqueue(queue, src_node=dst_node, msg=msg, first_edge=next_edge,
+                                              next_tables=flowtable, next_port=next_port)
+                            else:
+                                logger.warning("cannot pop pakcet next_edge={} m={}".format(next_edge, m))
+                                # TODO:
+                                #   * If there is no matching packet, it is analyzed in the next interval
                         else:
                             logger.warning("already visited edge {}".format(next_edge))
+                            # TODO:
+                            #   * Terminate the analysis or throw an error
                     else:  # The next node is not switch.
                         # If next node is not switch, it is considered as an endpoint adn add to PacketTrace.
                         if next_switch == "controller":  # TODO: get packet in
@@ -248,7 +271,8 @@ class Analyzer(AbstractAnalyzer):
                         else:
                             logger.warning("next switch is no matching device ({})".format(next_switch))
             else:  # not switch
-                logger.debug("dst {} is not flowtable".format(dst_node))
+                logger.warning("dst {} is not flowtable".format(dst_node))
+                # Note: then, the analysis done before may not have been done properly.
         return trace
 
     def _update_msg(self, msg, next_port):
