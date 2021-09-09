@@ -1,4 +1,4 @@
-#!/Users/shu_ruhe/lesson/Network/trace_ovs_pipeline/venv/bin/python
+#!/Users/shu_ruhe/lesson/Network/tracing_of_pipeline/venv/bin/python
 
 # $Id: rst2odt_prepstyles.py 8346 2019-08-26 12:11:32Z milde $
 # Author: Dave Kuhlman <dkuhlman@rexx.com>

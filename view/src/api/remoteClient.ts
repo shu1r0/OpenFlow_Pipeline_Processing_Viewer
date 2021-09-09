@@ -3,8 +3,18 @@ import { Link, Node, NodeType, Result } from '../api/tracer_net_pb';
 
 import { DEVICE_TYPE } from '@/vnet/devices';
 
+/**
+ * A client connect to the server.
+ */
 export abstract class RemoteClient{
+  /**
+   * server ip address
+   */
   private ip: string
+
+  /**
+   * server port number
+   */
   private port: string
 
   constructor(ip: string, port: string){
@@ -12,32 +22,38 @@ export abstract class RemoteClient{
     this.port = port
   }
 
-  abstract addDevice(type: DEVICE_TYPE, device_id: string): void
+  abstract addDevice(type: DEVICE_TYPE, name: string): void
 
-  abstract removeDevce(type: DEVICE_TYPE, device_id: string): void
+  /**
+   * add host to mininet
+   * @param name : host name
+   * @param ip : host ip address
+   * @param mac : host mac address
+   */
+  abstract addHost(name: string, ip?: string, mac?: string): void
+
+  /**
+   * remove host
+   * @param name : host name
+   */
+  abstract removeHost(name: string): void
+
+  /**
+   * add openflow switch
+   * @param name : switch name
+   * @param datapath_id : switch datapath id
+   */
+  abstract addSwitch(name: string, datapath_id: string): void
+
+  /**
+   * remove openflow switch
+   * @param name : switch name
+   */
+  abstract removeSwitch(name: string): void
 
   abstract addLink(link: string, edge1: string, edge2: string): void
 
   abstract removeLink(link: string): void
-
-  createNodeMessage(type: DEVICE_TYPE, device_id: string): Node{
-    const nodeMsg = new Node()
-    if(type === DEVICE_TYPE.OFSWITCH){
-      nodeMsg.setNodeType(NodeType.SWITCH)
-    }else if(type === DEVICE_TYPE.HOST){
-      nodeMsg.setNodeType(NodeType.HOST)
-    }
-    nodeMsg.setName(device_id)
-    return nodeMsg
-  }
-
-  createLinkMessage(link: string, edge1: string, edge2: string): Link{
-    const linkMsg = new Link()
-    linkMsg.setName(link)
-    linkMsg.setHostName1(edge1)
-    linkMsg.setHostName2(edge2)
-    return linkMsg
-  }
 
   getIp(){
     return this.ip;
@@ -48,53 +64,36 @@ export abstract class RemoteClient{
   }
 }
 
-// export class RESTRemoteClient extends RemoteClient{
-//   constructor(ip: string, port: string){
-//     super(ip, port)
-//   }
-
-//   addDevice(type: DEVICE_TYPE, device_id: string): void{
-    
-//   }
-// }
-
-// export class gRPCRemoteClient extends RemoteClient{
-//   private grpc_client: TracerNetServiceClient
-
-//   constructor(ip: string, port: string){
-//     super(ip, port)
-//     this.grpc_client = new TracerNetServiceClient('http://' + this.getIp() + ':' + this.getPort())
-//   }
-
-//   addDevice(type: DEVICE_TYPE, device_id: string){
-//     const nodeReq = this.createNodeMessage(type, device_id)
-
-//     this.grpc_client.addNode(nodeReq, {}, (err: any, response: Result)=>{
-//       console.log(err)
-//       const status = response.getStatus()
-//       console.log("status from grpc server is " + status)
-//     })
-//   }
-// }
-
 
 export class DummyRemoteClient extends RemoteClient{
+
   constructor(ip: string, port: string){
     super(ip, port)
   }
 
+  addDevice(type: DEVICE_TYPE, name: string): void{
+    console.log("add Device")
+  }
 
-  addDevice(type: DEVICE_TYPE, device_id: string): void {
-    // pass
+  addHost(name: string, ip?: string, mac?: string): void {
+    console.log("add host!!")
   }
-  removeDevce(type: DEVICE_TYPE, device_id: string): void {
-    // pass
+  removeHost(name: string): void {
+    console.log("remove host!!")
   }
+  addSwitch(name: string, datapath_id: string): void {
+    console.log("add switch!!")
+  }
+  removeSwitch(name: string): void {
+    console.log("remove switch!!")
+  }
+
   addLink(link: string, edge1: string, edge2: string): void {
-    // pass
+    console.log("add link!!")
   }
+
   removeLink(link: string): void {
-    // pass
+    console.log("remove link!!")
   }
 
 }

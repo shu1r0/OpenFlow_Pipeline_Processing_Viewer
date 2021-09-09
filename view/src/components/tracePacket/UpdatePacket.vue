@@ -112,6 +112,7 @@
 import { defineComponent, ref } from 'vue'
 
 /**
+ * パケットのアップデートを表示．
  * 
  * This component required the information following:
  * * packet
@@ -121,6 +122,9 @@ import { defineComponent, ref } from 'vue'
 export default defineComponent({
   name: "UpdatePacket",
   props: {
+    /**
+     * 更新する前のパケット
+     */
     packetBefore: {
       type: Object,
       default: ()=>{  // test data
@@ -135,6 +139,9 @@ export default defineComponent({
         }
       }
     },
+    /**
+     * 更新された後のパケット
+     */
     packetAfter: {
       type: Object,
       default: ()=>{  // test data
@@ -150,6 +157,9 @@ export default defineComponent({
         }
       }
     },
+    /**
+     * 適用されたアクション
+     */
     applyedActions: {
       type: Array,
       default: ()=>{  // test data

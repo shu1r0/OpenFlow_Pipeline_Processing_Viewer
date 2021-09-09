@@ -3,8 +3,36 @@
 関連技術
 ===========
 
+SDN
+=======
+#. アーキテクチャの概要
+#. ノースバンドインターフェースについて
+
 OpenFlow
 ==========
+#. OpenFlowコントローラとOpenFlowスイッチの通信を規定したプロトコル．
+#. だれがいつ作ったか．
+#. 当初の目的は
+#. 特徴
+#. メリット・デメリット
+#. OpenFlowの動作
+
+OpenFlowはコントローラプレーンとデータプレーンの通信を規定したプロトコルです．
+実験ネットワークを容易に作成することを目的としてスタンフォード大学で開発されました．[1]
+現在はOpen Networking Foudation (ONF) [] が主導となりOpenFlowの仕様が取りまとめられています．
+
+OpenFlowでは，イーサネットアドレスやVLANタグ，IPアドレス，TCP/UDPポートなどのパケットの特徴を「フロー」として扱い，それらの特徴をベースに経路選択やパケットの特徴を書き換えたりすることで，柔軟にパケットを操作できます．
+
+
+OpenFlowコントローラ
+-------------------
+
+OpenFlowスイッチ
+-------------------
+
+OpenFlowの動作
+--------------
+OpenFlowでは
 
 ============ ====================================
 fields       description
@@ -60,3 +88,11 @@ Flowtable
 * Flowエントリのマッチについて
     Flow entries match packets in priority order,
     with the first matching entry in each table being used.
+
+
+Mininet
+------------
+
+
+
+

@@ -1,12 +1,13 @@
 <template>
   <div id="update-action-set">
 
+    <!-- Action Set -->
     <div 
       id="action-set-before-update"
       class="action-set-table">
       <span
         class="action"
-        v-for="action in action_set_before"
+        v-for="action in actionSetBefore"
         :key="action.id"
       >
       {{ action }}
@@ -38,12 +39,13 @@
       </div>
     </div>
 
+    <!-- Action Set -->
     <div 
       id="action-set-after-update"
       class="action-set-table">
       <span
         class="action"
-        v-for="action in action_set_after"
+        v-for="action in actionSetAfter"
         :key="action.id"
       >
       {{ action }}
@@ -57,14 +59,25 @@ import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
   name: "UpdateActionSet",
-  setup(){
+  props: {
+    actionSetBefore: {
+      type: Array,
+      default: () => {
+        const defaultList: string[] = []
+        return defaultList
+      }
+    },
+    actionSetAfter: {
+      type: Array,
+      default: () => {
+        return ["output: 1"]
+      }
+    }
+  },
+  setup(props){
     const arrowColor = ref("#2F3437")
-    const action_set_before: string[] = []
-    const action_set_after = ["output: 1"]
     console.log("UpdateActionSet")
     return {
-      action_set_before,
-      action_set_after,
       arrowColor
     }
   }

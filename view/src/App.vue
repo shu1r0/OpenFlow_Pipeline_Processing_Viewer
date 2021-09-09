@@ -8,7 +8,10 @@
       <router-link to="/">Mininet</router-link>
     </div>
     <div class="nav-item">
-      <router-link to="/trace">Trace</router-link>
+      <router-link to="/tracing_net">Tracing Net</router-link>
+    </div>
+    <div class="nav-item">
+      <router-link to="/tracing_packet">Tracing Packet</router-link>
     </div>
   </div>
 
@@ -19,13 +22,18 @@
       </keep-alive>
     </router-view>
   </div>
+
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { VNet } from './vnet/vnet'
 
 export default defineComponent({
-  name: "App"
+  name: "App",
+  setup(){
+    // pass
+  }
 })
 </script>
 

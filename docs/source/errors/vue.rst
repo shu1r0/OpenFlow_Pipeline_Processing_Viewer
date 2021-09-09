@@ -1,0 +1,60 @@
+==============
+Vueのエラー
+==============
+
+Syntax Error: TypeError: Cannot read property 'parseComponent' of undefined
+============
+解決法 `https://github.com/vuejs/component-compiler-utils/issues/82`
+
+``"@vue/cli-service`` のバージョンを変更
+
+
+.. code-block::
+  {
+    "name": "view",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+      "serve": "vue-cli-service serve",
+      "build": "vue-cli-service build",
+      "test:unit": "vue-cli-service test:unit",
+      "lint": "vue-cli-service lint"
+    },
+    "dependencies": {
+      "@types/google-protobuf": "^3.15.2",
+      "core-js": "^3.6.5",
+      "cytoscape": "^3.18.2",
+      "cytoscape-qtip": "^2.8.0",
+      "google-protobuf": "*",
+      "grpc-web": "^1.2.1",
+      "node-sass": "^6.0.1",
+      "vue": "^3.0.0",
+      "vue-router": "^4.0.0-0",
+      "vuex": "^4.0.0-0"
+    },
+    "devDependencies": {
+      "@types/cytoscape": "^3.14.13",
+      "@types/jest": "^24.0.19",
+      "@typescript-eslint/eslint-plugin": "^4.18.0",
+      "@typescript-eslint/parser": "^4.18.0",
+      "@vue/cli-plugin-babel": "~4.5.0",
+      "@vue/cli-plugin-eslint": "^3.1.1",
+      "@vue/cli-plugin-router": "~4.5.0",
+      "@vue/cli-plugin-typescript": "~4.5.0",
+      "@vue/cli-plugin-unit-jest": "^4.5.13",
+      "@vue/cli-plugin-vuex": "~4.5.0",
+      "@vue/cli-service": "^4.5.12",
+      "@vue/compiler-sfc": "^3.0.0",
+      "@vue/eslint-config-prettier": "^6.0.0",
+      "@vue/eslint-config-typescript": "^7.0.0",
+      "@vue/test-utils": "^2.0.0-0",
+      "eslint": "^6.7.2",
+      "eslint-plugin-prettier": "^3.3.1",
+      "eslint-plugin-vue": "^7.0.0",
+      "prettier": "^2.2.1",
+      "sass-loader": "^10.0.5",
+      "typescript": "~4.1.5",
+      "vue-jest": "^5.0.0-0"
+    }
+  }
+

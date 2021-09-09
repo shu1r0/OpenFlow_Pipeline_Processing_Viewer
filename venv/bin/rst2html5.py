@@ -1,4 +1,4 @@
-#!/Users/shu_ruhe/lesson/Network/trace_ovs_pipeline/venv/bin/python
+#!/Users/shu_ruhe/lesson/Network/tracing_of_pipeline/venv/bin/python
 # -*- coding: utf8 -*-
 # :Copyright: © 2015 Günter Milde.
 # :License: Released under the terms of the `2-Clause BSD license`_, in short:

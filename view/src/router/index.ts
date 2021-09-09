@@ -1,17 +1,26 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import CreatingVNet from "../views/CreatingVNet.vue";
-import TracePacket from "../views/TracePacket.vue"
+import TracingPacket from "../views/TracingPacket.vue";
+import TracingVNet from "../views/TracingVNet.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "VNet",
     component: CreatingVNet,
+    // props: {
+    //   "vnet": vnet
+    // }
   },
   {
-    path: "/trace",
-    name: "trace",
-    component: TracePacket,
+    path: "/tracing_net",
+    name: "tracing_net",
+    component: TracingVNet
+  },
+  {
+    path: "/tracing_packet",
+    name: "trace_packet",
+    component: TracingPacket,
   }
 ];
 

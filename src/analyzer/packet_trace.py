@@ -97,7 +97,7 @@ class PacketTrace(AbstractPacketTrace):
 
     def __init__(self):
         super(PacketTrace, self).__init__()
-        self._is_finish = False
+        self.is_finish = False
 
     def add_arc(self, arc):
         self.arcs.append(arc)

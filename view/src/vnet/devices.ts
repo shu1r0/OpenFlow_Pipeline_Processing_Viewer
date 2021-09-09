@@ -1,3 +1,7 @@
+
+/**
+ * device type
+ */
 export const DEVICE_TYPE = {
   OFSWITCH: 'ofswitch',
   HOST: 'host'

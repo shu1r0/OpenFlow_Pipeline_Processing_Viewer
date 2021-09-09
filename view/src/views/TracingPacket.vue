@@ -18,6 +18,8 @@ import UpdatePacket from '../components/tracePacket/UpdatePacket.vue'
  * これはスイッチが選択されたときに追加されます．
  * よって，スイッチのidは得ることができます．
  * パイプラインの情報はデータベースから得る
+ * 
+ * このコンポーネントは，パケットの経路情報とその付随する情報が必要
  */
 export default defineComponent({
   name: "TracePacket",
@@ -26,7 +28,17 @@ export default defineComponent({
     UpdatePacket,
     UpdateActionSet
   },
-  // props: {id},
+  props: {
+    /**
+     * packets
+     */
+    packets: {
+      type: Array,
+      default: () => {
+        return ["test", "test"]
+      }
+    }
+  },
   setup(props, ctx){
     // props.id
     const packetEx1 = {

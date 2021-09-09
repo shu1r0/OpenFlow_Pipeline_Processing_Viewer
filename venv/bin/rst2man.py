@@ -1,4 +1,4 @@
-#!/Users/shu_ruhe/lesson/Network/trace_ovs_pipeline/venv/bin/python
+#!/Users/shu_ruhe/lesson/Network/tracing_of_pipeline/venv/bin/python
 
 # Author:
 # Contact: grubert@users.sf.net

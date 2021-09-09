@@ -1,4 +1,4 @@
-#!/Users/shu_ruhe/lesson/Network/trace_ovs_pipeline/venv/bin/python
+#!/Users/shu_ruhe/lesson/Network/tracing_of_pipeline/venv/bin/python
 
 # $Id: rst2xetex.py 7847 2015-03-17 17:30:47Z milde $
 # Author: Guenter Milde

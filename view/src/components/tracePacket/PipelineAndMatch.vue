@@ -64,11 +64,17 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: "PipelineAndMatch",
   props: {
+    /**
+     * pipeline
+     */
     pipeline: {
       type: Array,
       default: () => [1, 2, 3],
       required: true
     },
+    /**
+     * flow table
+     */
     flow_table: {
       type: Array,
       default: () => { // test data
