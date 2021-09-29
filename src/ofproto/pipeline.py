@@ -69,6 +69,7 @@ def apply_pipeline_for_packetout():
     Returns:
         list[tuple[port, Msg]]: msg, outports
     """
+    pass
 
 
 

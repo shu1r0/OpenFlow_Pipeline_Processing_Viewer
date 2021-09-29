@@ -5,6 +5,7 @@ up:
 	cd view; npm run build; cd ..
 	vagrant up 2>&1 | tee log/vagrant-`date +'%Y-%m-%d-%H-%M'`.log
 
+
 destroy:
 	vagrant destroy -f
 	# rm -rf module/*

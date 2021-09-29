@@ -1,8 +1,12 @@
 """
 Open Flow Actions
 
+This module is a model of OpenFlow Action.
+The actual appliction of the action is in ``src.ofproto.pipeline``
+
 TODO:
     * implement all the actions
+    * パケットの書き換え履歴の保存の実装ができていない
 """
 
 from enum import IntEnum
@@ -17,10 +21,19 @@ logger = getLogger('tracing_net.action')
 
 
 class ActionResult:
+    """
+    アクション実行後の結果.
 
-    def __init__(self, msg, out_ports=None, table_id=None):
+    Attributes:
+        msg (Msg) : message applied action
+        out_ports (list) : out port
+        changed_msg_history (dict) :  パケットの変更履歴 (e.g. {'ip': '192.168.11.4'})
+    """
+
+    def __init__(self, msg, out_ports=None, chaged_msg_history=None, table_id=None):
         self.msg = msg
         self.out_ports = out_ports if out_ports else []
+        self.changed_msg_history = chaged_msg_history if chaged_msg_history else {}
 
 
 class ActionType(IntEnum):

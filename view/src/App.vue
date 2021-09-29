@@ -26,13 +26,24 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import { VNet } from './vnet/vnet'
+import { defineComponent, onMounted } from "vue";
+import { DummyRemoteClient, RemoteClient, WSClient } from "./api/remoteClient";
+import { changeableVNet } from './vnet/vnet'
+
+import Configuration from './config/config'
 
 export default defineComponent({
   name: "App",
   setup(){
-    // pass
+    const remoteClient: RemoteClient = new WSClient(Configuration.WS_SERVER_ADDRESS, Configuration.WS_SERVER_PORT, Configuration.WS_NAMESPACE)
+    changeableVNet.setRemoteClient(remoteClient)
+
+    onMounted(() => {
+      /**
+       * connection to remote client
+       */
+      remoteClient.connect()
+    })
   }
 })
 </script>

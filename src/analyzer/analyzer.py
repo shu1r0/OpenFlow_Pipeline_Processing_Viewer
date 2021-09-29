@@ -4,6 +4,7 @@ Analyze packet
 
 TODO:
     * check trace is finished before trace is appended to packet_trace_list
+    * パケットinoutをカプセル化する
 """
 
 from abc import ABCMeta, abstractmethod
@@ -103,6 +104,7 @@ class Analyzer(AbstractAnalyzer):
         signal.setitimer(signal.ITIMER_REAL, self._interval, self._interval)
 
     def stop_analyzing(self):
+        """stop the analyzing interval"""
         signal.alarm(0)
 
     def analyze(self, *args):
@@ -258,7 +260,9 @@ class Analyzer(AbstractAnalyzer):
                     # get where packet is going next.
                     if not self._is_controller(p):
                         next_switch, next_port, next_edge = self._get_next_and_edge(p)
-                    else:  # TODO controller
+                    else:
+                        #@Note:
+                        # This will eventually be an enumerate
                         next_switch = "controller"
 
                     # set next switch and port
@@ -286,7 +290,9 @@ class Analyzer(AbstractAnalyzer):
                             #   * Terminate the analysis or throw an error
                     else:
                         # If next node is not switch, it is considered as an endpoint adn add to PacketTrace.
-                        if next_switch == "controller":  # TODO: get packet in
+                        if next_switch == "controller":
+                            # TODO: get packet in
+                            #   まだ，packet_inメッセージがカプセル化されていないのでそこを考える
                             packet_arc = PacketArc(src=dst_node,
                                                    msg=msg,
                                                    edge=next_edge,

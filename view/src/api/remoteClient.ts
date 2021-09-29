@@ -1,12 +1,13 @@
-import { TracerNetServiceClient } from "./tracer_net_grpc_web_pb";
-import { Link, Node, NodeType, Result } from '../api/tracer_net_pb';
+import { io, Socket } from 'socket.io-client';
 
 import { DEVICE_TYPE } from '@/vnet/devices';
+import { proto } from './net'
 
 /**
  * A client connect to the server.
  */
 export abstract class RemoteClient{
+
   /**
    * server ip address
    */
@@ -22,6 +23,27 @@ export abstract class RemoteClient{
     this.port = port
   }
 
+  /**
+   * connect to server
+   */
+  abstract connect(): void
+
+  /**
+   * start tracing
+   */
+  abstract startTracing(): void
+
+  /**
+   * stop tracing
+   */
+  abstract stopTracing(): void
+
+  /**
+   * add device
+   * This is a more abstract method.
+   * @param type : device type
+   * @param name : device name
+   */
   abstract addDevice(type: DEVICE_TYPE, name: string): void
 
   /**
@@ -51,24 +73,57 @@ export abstract class RemoteClient{
    */
   abstract removeSwitch(name: string): void
 
-  abstract addLink(link: string, edge1: string, edge2: string): void
+  /**
+   * 
+   * @param link : link name
+   * @param node1 : node1
+   * @param node2 : node2
+   */
+  abstract addLink(link: string, node1: string, node2: string): void
 
+  /**
+   * remove link
+   * @param link : link name
+   */
   abstract removeLink(link: string): void
 
+  /**
+   * target ip address
+   * @returns string
+   */
   getIp(){
     return this.ip;
   }
 
+  /**
+   * target port number
+   * @returns string
+   */
   getPort(){
     return this.port
   }
 }
 
 
+/**
+ * Debug client
+ */
 export class DummyRemoteClient extends RemoteClient{
 
   constructor(ip: string, port: string){
     super(ip, port)
+  }
+
+  connect(){
+    console.log("connect to server")
+  }
+
+  startTracing(){
+    console.log("start tracing")
+  }
+
+  stopTracing(){
+    console.log("stop tracing")
   }
 
   addDevice(type: DEVICE_TYPE, name: string): void{
@@ -88,7 +143,7 @@ export class DummyRemoteClient extends RemoteClient{
     console.log("remove switch!!")
   }
 
-  addLink(link: string, edge1: string, edge2: string): void {
+  addLink(link: string, node1: string, node2: string): void {
     console.log("add link!!")
   }
 
@@ -96,4 +151,122 @@ export class DummyRemoteClient extends RemoteClient{
     console.log("remove link!!")
   }
 
+}
+
+
+/**
+ * WebSocket Client
+ */
+export class WSClient extends RemoteClient {
+
+  /**
+   * Socket
+   */
+  private socket: Socket;
+
+  /**
+   * Web Socket Namespace
+   */
+  private namespace = ""
+
+  constructor(ip: string, port: string, namespace?: string){
+    super(ip, port)
+    this.namespace = namespace || ""
+    this.socket = io('http://' + this.getIp() + ":" + this.getPort() + "/" + this.namespace)
+  }
+
+  setupEvent(){
+    this.socket.on('trace', (data) => {
+      console.log(data)
+    })
+  }
+
+  /**
+   * connect to server
+   */
+  connect(){
+    this.socket.connect()
+  }
+  
+  /**
+   * emit to server
+   * @param event : event name
+   * @param data : sent data
+   */
+  emit(event: string, data: any){
+    console.log("try to emit event=" + event + " data=" + data)
+    this.socket.emit(event, data)
+  }
+
+  /**
+   * start tracing request
+   */
+  startTracing(){
+    const req = new proto.StartTracingRequest()
+    req.option = 1
+    this.emit('start_tracing', req.serialize())
+  }
+
+  /**
+   * stop tracing request
+   */
+  stopTracing(){
+    const req = new proto.StopTracingRequest()
+    req.option = 1
+    this.emit('stop_tracing', req.serialize())
+  }
+
+  addDevice(type: DEVICE_TYPE, name: string): void {
+    if(type === DEVICE_TYPE.OFSWITCH){
+      this.addSwitch(name)
+    }else if(type === DEVICE_TYPE.HOST){
+      this.addHost(name)
+    }
+  }
+
+  addHost(name: string, ip?: string, mac?: string): void {
+    const host = new proto.Host()
+    host.name = name
+    host.ip = ip
+    host.mac = mac
+    this.emit('add_host', host.serialize())
+  }
+
+  removeHost(name: string): void {
+    const host = new proto.Host()
+    host.name = name
+    this.emit('remove_host', host.serialize())
+  }
+
+  addSwitch(name: string, datapath_id?: string): void {
+    const sw = new proto.Switch()
+    sw.name = name
+    sw.datapath_id = datapath_id
+    this.emit('add_switch', sw.serialize())
+  }
+
+  removeSwitch(name: string): void {
+    const sw = new proto.Switch()
+    sw.name = name
+    this.emit('remove_switch', sw.serialize())
+  }
+
+  addLink(link: string, node1: string, node2: string): void {
+    const l = new proto.Link()
+    l.name = link
+    l.host1 = node1
+    l.host2 = node2
+    this.emit('add_link', l.serialize())
+  }
+
+  removeLink(link: string): void {
+    const l = new proto.Link()
+    l.name = link
+    this.emit('remove_link', l.serialize())
+  }
+
+  // getTracing(): proto.PacketTrace[] {
+  //   // pass
+  // }
+  
 }

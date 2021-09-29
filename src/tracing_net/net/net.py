@@ -20,6 +20,7 @@ from mininet.log import setLogLevel
 from src.tracing_net.api.grpc_server import TracerNetServer
 from src.tracing_net.flowtable.flow_table_manager import FlowTableManager
 from src.tracing_net.packet.packet_capture_manager import PacketCaptureManager
+from src.config import conf
 from .cli import TracingCLI
 
 setLoggerClass(Logger)
@@ -111,8 +112,10 @@ class OnDemandNet(Mininet):
         """
         if not self.is_node(name):
             logger.debug("added the switch ({})".format(name))
-            # TODO: added_switch = self.addSwitch(name, cls=cls, dpid=dpid, listenPort=listenPort)
-            added_switch = self.addSwitch(name, cls=cls)
+            params = {}
+            if dpid:
+                params['dpid'] = dpid
+            added_switch = self.addSwitch(name, cls=cls, **params)
             return added_switch
         else:
             raise NameError("The switch's name already exists")
@@ -468,8 +471,8 @@ class TracingNet(OnDemandNet):
         grpc_server (TracerNetServer) : grpc server
     """
 
-    def __init__(self, controller_ip='127.0.0.1', controller_port=63333):
-        super(TracingNet, self).__init__(controller_ip=controller_ip, controller_port=controller_port)
+    def __init__(self, controller_ip='127.0.0.1', controller_port=63333, mininet_log_level='info'):
+        super(TracingNet, self).__init__(controller_ip=controller_ip, controller_port=controller_port, mininet_log_level=mininet_log_level)
         self.event_loop = asyncio.get_event_loop()
         self.grpc_server = TracerNetServer(self)
         self.table_manager = FlowTableManager(event_loop=self.event_loop)
@@ -513,6 +516,13 @@ class TracingNet(OnDemandNet):
 
     def start_tracing(self):
         """start tracing"""
+        if conf.DISABLE_IPV6:
+            logger.debug("desable ipv6")
+            for node in self.nameToNode.values():
+                node.cmd("sysctl -w net.ipv6.conf.all.disable_ipv6=1")
+                node.cmd("sysctl -w net.ipv6.conf.default.disable_ipv6=1")
+                node.cmd("sysctl -w net.ipv6.conf.lo.disable_ipv6=1")
+
         self.has_been_tracing = True
         edges = self.name_to_link.get_edges()
         switches = self.switches

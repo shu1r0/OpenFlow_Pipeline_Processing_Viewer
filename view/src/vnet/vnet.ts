@@ -29,14 +29,44 @@ abstract class VNetBase{
    */
   cytoscape: Core;
 
+  /**
+   * Element Definitions of ofswitch
+   */
   switches: {[key: string]: ElementDefinition} = {}
+
+  /**
+   * Element Definitions of host
+   */
   hosts: {[key: string]: ElementDefinition} = {}
+
+  /**
+   * Element Definitions of edge
+   */
   edges: {[key: string]: ElementDefinition} = {}
 
   // constructor(){}
 
+  /**
+   * add device from HTMLImageElement
+   * @param element : added HTMLElement
+   * @param x : x position
+   * @param y : y position
+   * @param style : Device Style
+   */
   abstract addDevice(element: HTMLImageElement, x: number, y: number, style?: StyleSheet): CollectionReturnValue
+
+  /**
+   * add edge
+   * @param node1 : node1
+   * @param node2 : node2
+   * @param style : edge style
+   */
   abstract addEdge(node1: string, node2: string, style?: StyleSheet): CollectionReturnValue
+
+  /**
+   * remove element
+   * @param id : removed element id
+   */
   abstract remove(id: string): CollectionReturnValue
 
   /**
@@ -78,13 +108,13 @@ interface Mountable{
 
 
 /**
- * 
- * @note
- * * 別にcytoscapeを２つもたせるとかありじゃね？？
- * * もしくは，VNetのCytoscapeを分離して，setup時にvnet部分のオブジェクトを返すとか？？
+ * Vertual Network Base
  */
 export class VNet extends VNetBase{
 
+  /**
+   * Cytoscape Options
+   */
   options: CytoscapeOptions = {}
 
   /**
@@ -94,14 +124,20 @@ export class VNet extends VNetBase{
 
   /**
    * remote client
-   * @todo
-   * * 後でapiを追加
    */
   private remoteClient: RemoteClient = null
 
   constructor(remoteClient?: RemoteClient){
     super()
     this.remoteClient = remoteClient
+  }
+
+  /**
+   * getter for client
+   * @returns RemoteClient
+   */
+  getRemoteClient(){
+    return this.remoteClient
   }
 
   /**
@@ -192,7 +228,10 @@ export class VNet extends VNetBase{
 
     if(this.remoteClient){
       this.remoteClient.addDevice(element.className as DEVICE_TYPE, collection.id())
+    }else{
+      console.warn("There is no remote client.")
     }
+
     return collection
   }
 
@@ -212,7 +251,10 @@ export class VNet extends VNetBase{
 
     if(this.remoteClient){
       this.remoteClient.addLink(collection.id(), node1, node2)
+    }else{
+      console.warn("There is no remote client.")
     }
+
     return collection
   }
 
@@ -220,20 +262,34 @@ export class VNet extends VNetBase{
    * remove element
    * @param id element id
    * @returns CollectionReturnValue
-   * 
-   * @todo:
-   *  * リモートの削除処理
    */
   remove(id: string){
     const e: CollectionArgument = this.get(id)
+    const removedElement: CollectionReturnValue = this.cytoscape.remove(e)
     if(id in this.switches){
       delete this.switches[id]
+      if(this.remoteClient){
+        this.remoteClient.removeSwitch(id)
+      }else{
+        console.warn("There is no remote client.")
+      }
     }else if(id in this.hosts){
       delete this.hosts[id]
+      if(this.remoteClient){
+        this.remoteClient.removeHost(id)
+      }else{
+        console.warn("There is no remote client.")
+      }
     }else if(id in this.edges){
       delete this.edges[id]
+      if(this.remoteClient){
+        this.remoteClient.removeLink(id)
+      }else{
+        console.warn("There is no remote client.")
+      }
     }
-    return this.cytoscape.remove(e)
+
+    return removedElement
   }
 }
 
@@ -272,6 +328,8 @@ class ChangeableVNet extends VNet implements Mountable{
 
 /**
  * パケットの経路を表示するためのクラス
+ * 
+ * このクラスにはパケットの経路の保存とそれらの表示があります．
  */
 export class TracingVNet extends VNet implements Mountable{
 
@@ -311,6 +369,7 @@ export class TracingVNet extends VNet implements Mountable{
         'target-arrow-shape': 'triangle',
         'line-color': '#ee2222',
         'curve-style': 'bezier',
+        'width' : 5
         // 'control-point-distance': 10,
         // 'z-index': 2,
       }
@@ -350,6 +409,30 @@ export class TracingVNet extends VNet implements Mountable{
     }
     const collection: CollectionReturnValue = this.cytoscape.add(Object.assign(addedEdge))
     return collection
+  }
+
+  /**
+   * remove element (Override Method)
+   * @param id : removed element id
+   * @returns CollectionReturnValue
+   */
+  remove(id: string): CollectionReturnValue {
+    let removedElement: CollectionReturnValue = null
+    if(id in this.packetEdges){
+      delete this.packetEdges[id]
+      const e: CollectionArgument = this.get(id)
+      removedElement = this.cytoscape.remove(e)
+    }else{
+      removedElement = super.remove(id)
+    }
+
+    return removedElement
+  }
+
+  removeAllPacketEdges(){
+    for(const [_, value] of Object.entries(this.packetEdges)){
+      this.remove(value.data.id)
+    }
   }
 }
 

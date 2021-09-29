@@ -41,11 +41,10 @@ from src.ofcapture.capture.of_msg_repository import packet_in_out_repo
 from tracing_net.utils.log import setup_tracingnet_logger
 from tracing_net.net.net import TracingNet
 from src.analyzer.analyzer import Analyzer
+from src.api.ws_server import ws_server_start, get_messsage_hub, exec_wsevent_action
+from src.config import conf
 
 from utils.log import get_log_handler, setup_logger
-
-
-MODE_DEBUGGING = True
 
 
 class AbstractTracingOFPipeline(metaclass=ABCMeta):
@@ -55,21 +54,34 @@ class AbstractTracingOFPipeline(metaclass=ABCMeta):
     This provides interfaces to start and stop system, to start and stop tracing and more.
     """
 
-    def __init__(self, local_port=63333, log_level=DEBUG, log_file=None):
+    def __init__(self):
+        self.conf = conf
         self.event_loop = asyncio.get_event_loop()
 
-        parent_conn, child_conn = multiprocessing.Pipe()
-        default_logfile = "log/" + "ofcapture-" + datetime.datetime.now().strftime('%Y-%m-%d-%H-%M') + ".log"  # debug用
-        self.ofcapture = OFCaptureWithPipe(log_file=default_logfile, local_port=local_port,
-                                   event_loop=self.event_loop, parent_conn=parent_conn)
-        self._child_conn_thread = threading.Thread(target=self._handle_child_conn, args=(child_conn, ))
+        # ofcapture
+        ofc_parent_conn, ofc_child_conn = multiprocessing.Pipe()
+        default_logfile = self.conf.LOGFILE_OFCAPTURE
+        self.ofcapture = OFCaptureWithPipe(log_file=default_logfile, local_port=self.conf.LOCAL_PORT,
+                                           controller_ip=self.conf.CONTROLLER_IP, controller_port=self.conf.CONTROLLER_PORT,
+                                           event_loop=self.event_loop, parent_conn=ofc_parent_conn)
+        self._ofc_process = multiprocessing.Process(target=self.ofcapture.start_server, daemon=True)
+        self._ofc_child_conn_thread = threading.Thread(target=self._handle_ofc_child_conn, args=(ofc_child_conn, ))
 
+        # mininet network
+        log_file = self.conf.LOGFILE_OFPIPELINE_TRACER
         if log_file:
-            setup_tracingnet_logger(log_level=log_level, log_handler=get_log_handler(log_file))
-            setup_logger(log_level=log_level, log_handler=get_log_handler(log_file))
-        self.tracing_net = TracingNet(controller_port=local_port)
+            setup_tracingnet_logger(log_level=self.conf.LOGLEVEL_OFPIPELINE_TRACER, log_handler=get_log_handler(log_file))
+            setup_logger(log_level=self.conf.LOGLEVEL_OFPIPELINE_TRACER, log_handler=get_log_handler(log_file))
+        self.tracing_net = TracingNet(controller_port=self.conf.LOCAL_PORT, mininet_log_level=self.conf.MININET_LOG_LEVEL)
+
         # web server
-        self.tracing_server = None
+        if self.conf.ENABLE_WS_SERVER:
+            ws_parent_conn, ws_child_conn = multiprocessing.Pipe()
+            message_hub = get_messsage_hub(ws_parent_conn, ws_child_conn)
+            self._ws_child_conn_thread = threading.Thread(target=message_hub.get_from_client, args=(self.tracing_net ,exec_wsevent_action))
+            self._ws_process = multiprocessing.Process(target=ws_server_start, args=(self.conf.WS_SERVER_IPADDRESS, self.conf.WS_SERVER_PORT), daemon=True)
+
+        # analyzer
         self.analyzer = Analyzer(self.tracing_net,
                                  self.ofcapture,
                                  self.tracing_net.packet_repo(),
@@ -85,17 +97,26 @@ class AbstractTracingOFPipeline(metaclass=ABCMeta):
         #. web server start
         #. config network
         #. start network
-
-        Returns:
-
         """
-        p = multiprocessing.Process(target=self.ofcapture.start_server, daemon=True)
-        p.start()
-        self._child_conn_thread.daemon = True
-        self._child_conn_thread.start()
+        # proxy start
+        self._ofc_process.start()
+        self._ofc_child_conn_thread.daemon = True
+        self._ofc_child_conn_thread.start()
+
+        # web socket server start
+        if self.conf.ENABLE_WS_SERVER:
+            self._ws_process.start()
+            self._ws_child_conn_thread.daemon = True
+            self._ws_child_conn_thread.start()
+
+        # mininet start
         self.tracing_net.start()
 
     def stop(self):
+        self._ofc_process.terminate()
+        if self.conf.ENABLE_WS_SERVER:
+            self._ws_process.terminate()
+
         self.tracing_net.stop()
 
     def start_tracing(self):
@@ -105,7 +126,7 @@ class AbstractTracingOFPipeline(metaclass=ABCMeta):
     def stop_tracing(self):
         self.tracing_net.stop_tracing()
 
-    def _handle_child_conn(self, child_conn):
+    def _handle_ofc_child_conn(self, child_conn):
         while True:
             data = child_conn.recv_bytes()
             msg = pickle.loads(data)
@@ -116,13 +137,12 @@ class AbstractTracingOFPipeline(metaclass=ABCMeta):
 
 class TracingOFPipeline(AbstractTracingOFPipeline):
 
-    def __init__(self, log_file=None):
-        super(TracingOFPipeline, self).__init__(log_file=log_file)
+    def __init__(self):
+        super(TracingOFPipeline, self).__init__()
 
 
-if __name__ == '__main__':
-    log_file = 'log/' + "tracing_of_pipeline-" + datetime.datetime.now().strftime('%Y-%m-%d-%H-%M') + ".log"  # debug用
-    tracing = TracingOFPipeline(log_file=log_file)
+def run_local():
+    tracing = TracingOFPipeline()
     net = tracing.tracing_net
     tracing.start()
     controller = net.of_controller
@@ -138,7 +158,24 @@ if __name__ == '__main__':
 
     h2 = net.add_host('h2')
     net.add_link('l3', 's2', 'h2')
+
     tracing.start_tracing()
     net.cli_run()
     tracing.stop_tracing()
     tracing.stop()
+
+
+def run_with_web():
+    tracing = TracingOFPipeline()
+    net = tracing.tracing_net
+    tracing.start()
+    controller = net.of_controller
+    controller.cmd("ryu-manager test/ryu_controller/app/simple_switch_13.py &")
+
+    net.cli_run()
+    tracing.stop_tracing()
+    tracing.stop()
+
+
+if __name__ == '__main__':
+    run_with_web()

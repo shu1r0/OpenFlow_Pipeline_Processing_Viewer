@@ -6,7 +6,9 @@ from logging import getLogger, setLoggerClass, Logger
 
 from scapy.all import wrpcap
 from pyshark.packet.packet import Packet
+
 from src.tracing_net.ofproto.msg import Msg
+from src.config import conf
 
 setLoggerClass(Logger)
 logger = getLogger('tracing_net.util.packet_capture')
@@ -69,12 +71,12 @@ class PacketCapture(Capture):
         Args:
             pkt (Packet) : packet
         """
-        logger.debug("sniff {} : {}".format(pkt.sniff_timestamp, pkt.__class__))
+        if conf.OUTPUT_PACKETS_TO_LOGFILE:
+            logger.debug("sniff {} : {}".format(pkt.sniff_timestamp, pkt.__class__))
         self.parent_conn.send([self.interface, Msg(self.interface, float(pkt.sniff_timestamp), pkt)])
         # self.parent_conn.send(1)
         if self._output_file:
             wrpcap(self._output_file, pkt.get_raw_packet(), append=True)
-
 
 
 if __name__ == '__main__':

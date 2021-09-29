@@ -42,6 +42,8 @@ sudo pip3 install grpcio-tools
 sudo pip3 install pyshark
 sudo pip3 install scapy
 sudo pip3 install mininet
+# sudo pip3 install aiohttp
+# sudo pip3 install python-socketio
 SCRIPT
 
 # install mininet witch bofuss
@@ -140,6 +142,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.network 'private_network', ip: '10.0.0.100'
     # port forward for ONOS
     config.vm.network 'forwarded_port', guest: 8181, host: 8181
+    # port forward for tracing net web socket server
+    config.vm.network 'forwarded_port', guest: 8888, host: 8888
+
     # share directory
     config.vm.synced_folder './', '/home/vagrant'
     # config.vm.synced_folder '../tracer_net', '/home/vagrant/tracer_net'

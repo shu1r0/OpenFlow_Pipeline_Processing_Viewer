@@ -1,5 +1,8 @@
 """
-インストラクションの再現
+OpenFlow Instructions
+
+This module is a model of OpenFlow Instruction.
+The actual appliction of the instruction is in ``src.ofproto.pipeline``
 """
 from enum import IntEnum
 from abc import ABCMeta, abstractmethod
@@ -11,6 +14,14 @@ logger = getLogger('tracing_net.instruction')
 
 
 class InstructionResult:
+    """
+    インストラクション実行後の結果．
+
+    TODO:
+        * 変更履歴を保存したい
+        * アクションセットをリストにすればよくね？？？
+        * 自分のインストラクションを保存したい気持ちあります．
+    """
 
     def __init__(self, msg, action_set=None, out_ports=None, table_id=None):
         """

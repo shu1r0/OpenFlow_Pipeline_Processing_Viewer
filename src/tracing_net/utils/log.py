@@ -6,6 +6,7 @@ import datetime
 
 
 def setup_log_handler(log_handler=None):
+    """set log formatter and file handler"""
     if log_handler:
         return log_handler
     else:
@@ -25,6 +26,7 @@ def setup_log_handler(log_handler=None):
 
 
 def setup_tracingnet_logger(log_level=INFO, log_handler=None):
+    """set up logger in 'tracing_net'"""
     setLoggerClass(Logger)
     logger = getLogger('tracing_net')
     logger.setLevel(log_level)

@@ -19,17 +19,86 @@ message Link{
   optional string host2 = 3;
 }
 
+// TODO 将来変える
+message Packet{
 
-message PacketArc{
-
+  optional string eth_dst = 1;
+  optional string eth_src = 3;
+  optional string eth_type = 5;
+  optional string vlan_vid = 7;
+  optional string vlan_pcp = 9;
+  optional string ip_dscp = 11;
+  optional string ip_ecn = 13;
+  optional string ip_proto = 15;
+  optional string ipv4_src = 17;
+  optional string ipv4_dst = 19;
+  optional string tcp_src = 21;
+  optional string tcp_dst  = 23;
+  optional string udp_src = 25;
+  optional string udp_dst = 27;
+  optional string sctp_src = 29;
+  optional string sctp_dst = 31;
+  optional string icmpv4_type = 33;
+  optional string icmpv4_code = 35;
+  optional string arp_op = 37;
+  optional string arp_spa = 39;
+  optional string arp_tpa = 41;
+  optional string arp_sha = 43;
+  optional string arp_tha = 45;
+  optional string ipv6_src = 47;
+  optional string ipv6_dst = 49;
+  optional string ipv6_flabel = 51;
+  optional string icmpv6_type = 53;
+  optional string icmpv6_code = 55;
+  optional string ipv6_nd_target = 57;
+  optional string ipv6_nd_sll = 59;
+  optional string ipv6_nd_tll = 61;
+  optional string mpls_label = 63;
+  optional string mpls_tc = 65;
+  optional string mpls_bos = 67;
+  optional string pbb_isid = 69;
+  optional string tunnel_id = 71;
+  optional string ipv6_exthdr = 73;
+  optional string pbb_uca = 75;
+  optional string tcp_flags = 77;
+  optional string actset_output = 101;
 }
+
+// TODO 将来変える
+/*
+ * なんか，マッチしたアクション欲しくね？？
+
+ ソース化dstどちらかで，どのように処理されたかの情報を内包したい
+ */
+message PacketArc{
+  optional string src = 1;
+  optional Packet pkt = 2;
+  optional string dst = 3;
+}
+
+
 message PacketTrace{
   repeated PacketArc arcs = 1;
+
+
+  optional string protocol = 2;
 }
 
 //message Port{
 //
 //}
+
+message StartTracingRequest {
+  optional sint32 option = 1;
+}
+
+message StopTracingRequest {
+  optional sint32 option = 1;
+}
+
+message GetTraceRequest {
+  optional sint32 option = 1;
+}
 
 message TopoChangeResult{
   optional sint32 status = 1;
@@ -42,4 +111,8 @@ message HostCommand{
 
 message MininetCommand{
   optional string command = 1;
+}
+
+message CommandResult {
+  optional string result = 1;
 }

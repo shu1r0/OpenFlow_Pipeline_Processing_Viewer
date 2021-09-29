@@ -7,6 +7,10 @@ logger = getLogger('tracing_of_pipeline.packet_trace_handler')
 
 
 class AbstractPacketTraceList(metaclass=ABCMeta):
+    """A Abstract Class to store packet trace
+
+    This class recives the computed packet routes.
+    """
 
     def __init__(self):
         self.traces = []
