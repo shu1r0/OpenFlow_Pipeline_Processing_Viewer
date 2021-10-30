@@ -50,6 +50,27 @@ export const createDevice = (element: HTMLImageElement, x: number, y: number, vn
   return device
 }
 
+export const createController = (x?: number, y?: number) => {
+  const controller: ElementDefinition = {
+    group: 'nodes',
+    data: {
+      id: "controller"
+    },
+    position: {
+      x: x ?? 0,
+      y: y ?? 0
+    },
+    classes: "controller",
+    style: {
+      'sharpe': 'rectangle',
+      'height': 58,
+      'width': 44,
+      'background-image': 'img/file_server.jpg'
+    }
+  }
+  return controller
+}
+
 /**
  * Create a cytoscape edge. Give it a continuous identifier.
  * @param source 

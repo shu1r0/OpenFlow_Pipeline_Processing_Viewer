@@ -1,40 +1,138 @@
-import sys
 import subprocess
+import threading
+import signal
+import time
+import queue
 from logging import getLogger, setLoggerClass, Logger
 from cmd import Cmd
 from abc import ABCMeta, abstractmethod
 
-from mininet.log import info, output, error
-from mininet.cli import CLI
-
 from src.tracing_net.flowtable.table_repository import table_repository
 
+# 依存関係がくそ
+from src.config import conf
+from src.api.ws_server import WSEvent
+# from src.api.proto.net_pb2 import CommandResult, CommandResultType
+from src.api.proto import net_pb2
 
 setLoggerClass(Logger)
 logger = getLogger('tracing_net.cli')
 
 
-class Writable(metaclass=ABCMeta):
+def input_stdin(queue):
+    while True:
+        s = input()
+        queue.put(s)
+
+
+class QStream:
+    """input stream for CLI"""
+
+    def __init__(self):
+        self.queue = queue.Queue()
+
+        # stdin
+        t = threading.Thread(target=input_stdin, args=(self.queue,))
+        t.daemon = True
+        t.start()
+
+    def write(self, line):
+        """input"""
+        self.queue.put(line)
+
+    def readline(self):
+        return self.queue.get()
+
+
+class CLIConnection(metaclass=ABCMeta):
+    """This Class is interface for CLI
+
+    Attributes:
+        stdin : CLI's stdin
+    """
+
+    def __init__(self, stdin):
+        self.stdin = stdin
+
+    @abstractmethod
+    def input(self, msg):
+        """write to stdin
+
+        Args:
+            msg:
+
+        Examples:
+            def input(self, msg):
+                self.stdin.write(msg)
+                self.stdin.flush()
+        """
+        raise NotImplementedError
 
     @abstractmethod
     def output(self, msg):
+        """This is called by CLI
+
+        Args:
+            msg (str) : output message
+        """
         raise NotImplementedError
 
     @abstractmethod
     def error(self, msg):
+        """This is called by CLI.
+
+        Args:
+            msg (str) : error message
+        """
+        raise NotImplementedError
+
+    @abstractmethod
+    def send_end_command_signal(self):
+        """this is called by ``post_cmd()``"""
         raise NotImplementedError
 
 
-class Printer(Writable):
+class WSCLIConnection(CLIConnection):
+    """This class is MininetCLI interface for WebSocket.
+
+    * It issues WebSocket Protobuf message and sends them to the MessageHub of WebSocket.
+    """
+
+    def __init__(self, message_hub):
+        self.stream = QStream()
+        super(WSCLIConnection, self).__init__(self.stream)
+        self.message_hub = message_hub
+
+    def input(self, msg):
+        if conf.OUTPUT_CLI_TO_LOGFILE:
+            logger.debug("CLI input {}".format(msg))
+        # self.stdin.write(msg)
+        # self.stdin.flush()
+        self.stream.write(msg)
 
     def output(self, msg):
-        pass
+        if conf.OUTPUT_CLI_TO_LOGFILE:
+            logger.debug("CLI output {}".format(msg))
+        result = net_pb2.CommandResult()
+        result.type = net_pb2.CommandResultType.OUTPUT
+        result.result = msg
+        self.message_hub.emit2client(WSEvent.EXEC_MININET_COMMAND_RESULT, result.SerializeToString())
 
     def error(self, msg):
-        pass
+        if conf.OUTPUT_CLI_TO_LOGFILE:
+            logger.debug("CLI error {}".format(msg))
+        result = net_pb2.CommandResult()
+        result.type = net_pb2.CommandResultType.ERROR
+        result.result = msg
+        self.message_hub.emit2client(WSEvent.EXEC_MININET_COMMAND_RESULT, result.SerializeToString())
 
-
-writer = Printer()
+    def send_end_command_signal(self):
+        if conf.OUTPUT_CLI_TO_LOGFILE:
+            logger.debug("CLI send end command signal")
+        result = net_pb2.CommandResult()
+        result.type = net_pb2.CommandResultType.END_SIGNAL
+        result.result = ""
+        self.message_hub.emit2client(WSEvent.EXEC_MININET_COMMAND_RESULT, result.SerializeToString())
 
 
 class TracingCLI(Cmd):
@@ -47,28 +145,35 @@ class TracingCLI(Cmd):
 
     prompt = 'mininet> '
 
-    def __init__(self, mininet):
-        super(TracingCLI, self).__init__()
-        self.output = writer.output
-        self.error = writer.error
+    def __init__(self, mininet, cli_connection: CLIConnection):
+        super(TracingCLI, self).__init__(stdin=cli_connection.stdin)
+        self.cli_connection = cli_connection
+        self.output = cli_connection.output
+        self.error = cli_connection.error
+        self.send_end_command_signal = cli_connection.send_end_command_signal
+
+        self.running_popen = None
 
         self.mn = mininet
         # Local variable bindings for py command
-        self.locals = { 'net': mininet }
-        # Attempt to handle input
-        self.inPoller = poll()
-        self.inPoller.register( stdin )
+        self.locals = {'net': mininet}
 
-        write('*** Starting CLI:\n')
+        self.use_rawinput = False
+
+        # write('*** Starting CLI:\n')
+
+    def run(self):
+        """CLI run"""
+        self.cmdloop()
 
     def emptyline(self):
         """Don't repeat last command when you hit return."""
         pass
 
-    # def getLocals(self):
-    #     """Local variable bindings for py command"""
-    #     self.locals.update(self.mn)
-    #     return self.locals
+    def getLocals(self):
+        """Local variable bindings for py command"""
+        self.locals.update(self.mn)
+        return self.locals
 
     help_str = (
         'You may also send a command to a node using:\n'
@@ -100,13 +205,13 @@ class TracingCLI(Cmd):
         nodes = ' '.join(sorted(self.mn))
         self.output('available nodes are: \n%s\n' % nodes)
 
-    def do_ports(self, _line):
-        """display ports and interfaces for each switch"""
-        dumpPorts(self.mn.switches)
-
-    def do_net(self, _line):
-        """List network connections."""
-        dumpNodeConnections(self.mn.values())
+    # def do_ports(self, _line):
+    #     """display ports and interfaces for each switch"""
+    #     dumpPorts(self.mn.switches)
+    #
+    # def do_net(self, _line):
+    #     """List network connections."""
+    #     dumpNodeConnections(self.mn.values())
 
     def do_sh(self, line):
         """Run an external shell command
@@ -137,22 +242,22 @@ class TracingCLI(Cmd):
     #         exec( line, globals(), self.getLocals() )
     #     except Exception as e:
     #         output( str( e ) + '\n' )
-
-    def do_pingall(self, line):
-        """Ping between all hosts."""
-        self.mn.pingAll(line)
-
-    def do_pingpair(self, _line):
-        """Ping between first two hosts, useful for testing."""
-        self.mn.pingPair()
-
-    def do_pingallfull(self, _line):
-        """Ping between all hosts, returns all ping results."""
-        self.mn.pingAllFull()
-
-    def do_pingpairfull(self, _line):
-        """Ping between first two hosts, returns all ping results."""
-        self.mn.pingPairFull()
+    #
+    # def do_pingall(self, line):
+    #     """Ping between all hosts."""
+    #     self.mn.pingAll(line)
+    #
+    # def do_pingpair(self, _line):
+    #     """Ping between first two hosts, useful for testing."""
+    #     self.mn.pingPair()
+    #
+    # def do_pingallfull(self, _line):
+    #     """Ping between all hosts, returns all ping results."""
+    #     self.mn.pingAllFull()
+    #
+    # def do_pingpairfull(self, _line):
+    #     """Ping between first two hosts, returns all ping results."""
+    #     self.mn.pingPairFull()
 
     def do_iperf(self, line):
         """Simple iperf TCP test between two (optionally specified) hosts.
@@ -203,7 +308,7 @@ class TracingCLI(Cmd):
     def do_dump(self, _line):
         """Dump node info."""
         for node in self.mn.values():
-            self.output('%s\n' % repr( node ))
+            self.output('%s\n' % repr(node))
 
     def do_link(self, line):
         """Bring link(s) between two nodes up or down.
@@ -211,10 +316,10 @@ class TracingCLI(Cmd):
         args = line.split()
         if len(args) != 3:
             self.error('invalid number of args: link end1 end2 [up down]\n')
-        elif args[ 2 ] not in [ 'up', 'down' ]:
+        elif args[2] not in ['up', 'down']:
             self.error('invalid type: link end1 end2 [up down]\n')
         else:
-            self.mn.configLinkStatus( *args )
+            self.mn.configLinkStatus(*args)
 
     def do_xterm( self, line, term='xterm' ):
         """Spawn xterm(s) for the given node(s).
@@ -232,32 +337,32 @@ class TracingCLI(Cmd):
            Usage: gterm node1 node2 ..."""
         self.error("This command is not supported")
 
-    def do_exit( self, _line ):
+    def do_exit(self, _line):
         """Exit"""
         self.output('exited by user command')
         return True
 
-    def do_quit( self, line ):
-        "Exit"
-        return self.do_exit( line )
+    def do_quit(self, _line):
+        """Exit"""
+        return self.do_exit(_line)
 
-    def do_EOF( self, line ):
-        "Exit"
-        output( '\n' )
-        return self.do_exit( line )
+    def do_EOF(self, _line):
+        """Exit"""
+        self.output('\n')
+        # return self.do_exit(_line)
 
-    def isatty( self ):
-        "Is our standard input a tty?"
-        return isatty( self.stdin.fileno() )
+    # def isatty( self ):
+    #     "Is our standard input a tty?"
+    #     return isatty( self.stdin.fileno() )
 
-    def do_noecho( self, line ):
-        """Run an interactive command with echoing turned off.
-           Usage: noecho [cmd args]"""
-        if self.isatty():
-            quietRun( 'stty -echo' )
-        self.default( line )
-        if self.isatty():
-            quietRun( 'stty echo' )
+    # def do_noecho( self, line ):
+    #     """Run an interactive command with echoing turned off.
+    #        Usage: noecho [cmd args]"""
+    #     if self.isatty():
+    #         quietRun( 'stty -echo' )
+    #     self.default( line )
+    #     if self.isatty():
+    #         quietRun( 'stty echo' )
 
     def do_source( self, line ):
         """Read commands from an input file.
@@ -275,7 +380,7 @@ class TracingCLI(Cmd):
             self.output('*** ' + sw.name + ' ' + ('-' * 72) + '\n')
             self.output(sw.dpctl(*args))
 
-    def do_time( self, line ):
+    def do_time(self, line):
         "Measure time taken for any command in Mininet."
         start = time.time()
         self.onecmd(line)
@@ -285,10 +390,10 @@ class TracingCLI(Cmd):
     def do_links(self, _line):
         """Report on links"""
         for link in self.mn.links:
-            self.output(link, link.status(), '\n')
+            self.output(link + link.status() + '\n')
 
     def do_switch(self, line):
-        "Starts or stops a switch"
+        """Starts or stops a switch"""
         args = line.split()
         if len(args) != 2:
             self.error('invalid number of args: switch <switch name>{start, stop}\n')
@@ -311,6 +416,17 @@ class TracingCLI(Cmd):
         """Wait until all switches have connected to a controller"""
         self.mn.waitConnected()
 
+    def do_starttracing(self, _line):
+        """経路分析を開始する
+
+        Args:
+            _line:
+
+        Returns:
+
+        """
+        self.mn.start_tracing()
+
     def default(self, line):
         """Called on an input line when the command prefix is not recognized.
            Overridden to run shell commands when a node is the first
@@ -331,69 +447,23 @@ class TracingCLI(Cmd):
                     if arg in self.mn else arg
                     for arg in rest]
             rest = ' '.join(rest)
-            # Run cmd on node:
-            node.sendCmd(rest)
-            self.waitForNode(node)
+
+            # Run cmd on node until sigint is sent:
+            self.running_popen = node.popen(rest, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            while self.running_popen.poll() is None:
+                self.output(self.running_popen.stdout.readline().decode().strip())
+            self.output(self.running_popen.stdout.read().decode().strip())
+            self.running_popen = None
         else:
             self.error('*** Unknown command: %s\n' % line)
 
-    def waitForNode( self, node ):
-        """Wait for a node to finish, and print its output."""
-        # Pollers
-        nodePoller = poll()
-        nodePoller.register( node.stdout )
-        bothPoller = poll()
-        bothPoller.register( self.stdin, POLLIN )
-        bothPoller.register( node.stdout, POLLIN )
-        if self.isatty():
-            # Buffer by character, so that interactive
-            # commands sort of work
-            quietRun( 'stty -icanon min 1' )
-        while True:
-            try:
-                bothPoller.poll()
-                # XXX BL: this doesn't quite do what we want.
-                if False and self.inputFile:
-                    key = self.inputFile.read( 1 )
-                    if key != '':
-                        node.output(key)
-                    else:
-                        self.inputFile = None
-                if isReadable( self.inPoller ):
-                    key = self.stdin.read( 1 )
-                    node.output(key)
-                if isReadable( nodePoller ):
-                    data = node.monitor()
-                    output( data )
-                if not node.waiting:
-                    break
-            except KeyboardInterrupt:
-                # There is an at least one race condition here, since
-                # it's possible to interrupt ourselves after we've
-                # read data but before it has been printed.
-                node.sendInt()
-            except select.error as e:
-                # pylint: disable=unpacking-non-sequence
-                # pylint: disable=unbalanced-tuple-unpacking
-                errno_, errmsg = e.args
-                if errno_ != errno.EINTR:
-                    error( "select.error: %s, %s" % (errno_, errmsg) )
-                    node.sendInt()
+    def send_sigint(self):
+        """send keyboard interrupt to running popen"""
+        if self.running_popen:
+            if self.running_popen.poll() is None:
+                # send keyboard interrupt
+                self.running_popen.send_signal(signal.SIGINT)
 
-    def precmd(self, line):
-        """allow for comments in the cli"""
-        if '#' in line:
-            line = line.split('#')[0]
-        return line
-
-
-# Helper functions
-
-def isReadable( poller ):
-    "Check whether a Poll object has a readable fd."
-    for fdmask in poller.poll( 0 ):
-        mask = fdmask[ 1 ]
-        if mask & POLLIN:
-            return True
-        return False
-
+    def postcmd(self, stop: bool, line: str) -> bool:
+        self.send_end_command_signal()
+        return stop

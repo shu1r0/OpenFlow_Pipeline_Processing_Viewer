@@ -1,3 +1,9 @@
+"""
+
+TODO:
+    * メッセージの方が違うのでそこをどうにかする
+"""
+
 # from scapy.layers.l2 import Ether as , ARP, Dot1Q, Dot1AD
 # from scapy.layers.inet import IP, ICMP, TCP, UDP
 from scapy.layers.inet6 import _ICMPv6
@@ -15,9 +21,15 @@ class MsgForOFMsg(MsgBase):
     """
 
     def __init__(self, ofcapture_msg, pkt):
-        super(MsgForOFMsg, self).__init__()
+        """
+
+        Args:
+            ofcapture_msg (src.ofcapture.util.packet.OFMsg) : openflow message
+            pkt: scapy packet data
+        """
+        super(MsgForOFMsg, self).__init__(pkt=pkt, timestamp=ofcapture_msg.timestamp)
         self.ofcapture_msg = ofcapture_msg
-        self.pkt = pkt
+        # Packet inではin_portは使わないので，Packet outようにcontrollerにしている
         self.in_port = PortNo.OFPP_CONTROLLER
 
     @property
@@ -26,7 +38,17 @@ class MsgForOFMsg(MsgBase):
 
     @property
     def of_msg(self):
+        """
+
+        Returns:
+            src.ofcapture.util.packet.OFMsg
+        """
         return self.ofcapture_msg.of_msg
+
+    @property
+    def message_type(self):
+        """OpenFlow Message Type"""
+        return self.ofcapture_msg.message_type
 
     @property
     def eth_dst(self):

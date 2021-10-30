@@ -100,6 +100,10 @@ class ActionBase:
         """
         raise NotImplementedError
 
+    def __str__(self):
+        """This str is used by the visualization feature"""
+        return "{}()".format(self.__class__.__name__)
+
     def __repr__(self):
         return "<{} type={}>".format(self.__class__.__name__, self.action_type.value)
 
@@ -146,6 +150,9 @@ class ActionGroup(ActionBase):
     def action(self, msg):
         raise NotImplementedError
 
+    def __str__(self):
+        return "{}(group_id={})".format(self.__class__.__name__, self.group_id)
+
 
 class ActionDecMPLSTTL(ActionBase):
     """OFPAT_DEC_MPLS_TTL
@@ -180,6 +187,9 @@ class ActionSetMPLSTTL(ActionBase):
 
     def action(self, msg):
         raise NotImplementedError
+
+    def __str__(self):
+        return "{}(mpls_ttl={})".format(self.__class__.__name__, self.mpls_ttl)
 
 
 class ActionCopyTTLIn(ActionBase):
@@ -275,6 +285,9 @@ class ActionSetNWTTL(ActionBase):
     def action(self, msg):
         raise NotImplementedError
 
+    def __str__(self):
+        return "{}(nw_ttl={})".format(self.__class__.__name__, self.nw_ttl)
+
 
 class ActionOutput(ActionBase):
     """Defines the actions output.
@@ -298,6 +311,9 @@ class ActionOutput(ActionBase):
         result = ActionResult(msg=msg)
         result.out_ports.append(self.port)
         return result
+
+    def __str__(self):
+        return "{}(port={})".format(self.__class__.__name__, self.port)
 
     def __repr__(self):
         return f"{type(self).__name__}(port={self.port})"
@@ -354,6 +370,9 @@ class ActionPopMPLS(ActionBase):
     def action(self, msg):
         raise NotImplementedError
 
+    def __str__(self):
+        return "{}(ethertype={})".format(self.__class__.__name__, self.ethertype)
+
 
 class ActionPush(ActionBase):
     """OFPAT_PUSH_[VLAN/MPLS/PBB]
@@ -374,6 +393,9 @@ class ActionPush(ActionBase):
 
     def action(self, msg):
         raise NotImplementedError
+
+    def __str__(self):
+        return "{}(ethertype={})".format(self.__class__.__name__, self.ethertype)
 
     @classmethod
     def parser_vlan(cls, ethertype=None):
@@ -402,6 +424,9 @@ class ActionSetField(ActionBase):
     def action(self, msg):
         raise NotImplementedError
 
+    def __str__(self):
+        return "{}(value={}, mask={}, dst={})".format(self.__class__.__name__, self.value, self.mask, self.dst)
+
     # def __repr__(self):
     #     return (f"{type(self).__name__}({self.field.oxm_field!s}, "
     #             f"{self.field.oxm_value})")
@@ -429,6 +454,9 @@ class ActionSetQueue(ActionBase):
     def action(self, msg):
         raise NotImplementedError
 
+    def __str__(self):
+        return "{}(queue_id={})".format(self.__class__.__name__, self.queue_id)
+
 
 class ActionsList:
     """Action list"""
@@ -449,115 +477,3 @@ class ActionSet:
     def clear(self):
         pass
 
-
-
-
-# def action(action_name, msg, *args):
-#     """
-#
-#     Args:
-#         action_name:
-#         msg:
-#         **params:
-#
-#     Returns:
-#         ActionResult: msg, out_ports
-#     """
-#     try:
-#         args = 'msg,' + ','.join(args)
-#         msg, out_ports = eval(action_name + '(' + args + ')')
-#         return msg, out_ports
-#     except NotImplementedError:
-#         raise Exception('This action do not supported: name={}, args={}'.format(action_name, args))
-#     except Exception as e:
-#         raise Exception('Failed to call action method: name={}, args={}'.format(action_name, args))
-#
-#
-# def drop(msg):
-#     out_ports = []
-#     return ActionResult(msg, out_ports)
-#
-#
-# def output(msg, port):
-#     out_ports = [port]
-#     return ActionResult(msg, out_ports)
-#
-#
-# def controller(msg, controller):
-#     out_ports = [controller]
-#     return ActionResult(msg, out_ports)
-#
-#
-# def enqueue(msg):
-#     raise NotImplementedError
-#
-#
-# def bundle(msg):
-#     raise NotImplementedError
-#
-#
-# def group(msg):
-#     raise NotImplementedError
-#
-#
-# def strip_vlan(msg):
-#     raise NotImplementedError
-#
-#
-# def pop_vlan(msg):
-#     raise NotImplementedError
-#
-#
-# def push_vlan(msg, eth_type):
-#     out_ports = []
-#     if msg.vlan_vid:
-#         msg.vlan_vid = eth_type
-#     return ActionResult(msg, out_ports)
-#
-#
-# def push_mpls(msg, eth_type):
-#     out_ports = []
-#     msg.mpls_label = eth_type
-#     return ActionResult(msg, out_ports)
-#
-#
-# def pop_mpls(msg, eth_type):
-#     raise NotImplementedError
-#
-#
-# def encap(msg):
-#     raise NotImplementedError
-#
-#
-# def decap(msg):
-#     raise NotImplementedError
-#
-#
-# def set_field(msg, value, mask, dst):
-#     out_ports = []
-#     dst = value & mask
-#     raise NotImplementedError
-#
-#
-# def move(msg, src, dst):
-#     raise NotImplementedError
-#
-#
-# def mod_dl_src(msg, mac):
-#     raise NotImplementedError
-#
-#
-# def mod_dl_dst(msg, mac):
-#     raise NotImplementedError
-#
-#
-# def learn(msg):
-#     raise NotImplementedError
-#
-#
-# def resubmit(msg, port, table, ct):
-#     raise NotImplementedError
-#
-#
-# def clone(msg):
-#     raise NotImplementedError

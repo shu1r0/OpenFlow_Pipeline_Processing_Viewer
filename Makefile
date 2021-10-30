@@ -5,6 +5,12 @@ up:
 	cd view; npm run build; cd ..
 	vagrant up 2>&1 | tee log/vagrant-`date +'%Y-%m-%d-%H-%M'`.log
 
+reload:
+	vagrant halt
+	vagrant up
+
+halt:
+	vagrant halt
 
 destroy:
 	vagrant destroy -f

@@ -8,6 +8,8 @@ from enum import IntEnum
 from abc import ABCMeta, abstractmethod
 from logging import getLogger, setLoggerClass, Logger
 
+from src.api.proto import net_pb2
+
 
 setLoggerClass(Logger)
 logger = getLogger('tracing_net.instruction')
@@ -30,7 +32,7 @@ class InstructionResult:
             msg (Msg) :
             action_set (ActionSet) :
             out_ports (list) :
-            table_id (int) :
+            table_id (int) : next table id
         """
         self.msg = msg
         self.action_set = action_set
@@ -93,6 +95,15 @@ class Instruction(metaclass=ABCMeta):
         """
         raise NotImplementedError
 
+    @abstractmethod
+    def get_protobuf_message(self):
+        """This method convert this instance to a protocol buffer's obj
+
+        Returns:
+            net_pb2.Instruction
+        """
+        raise NotImplementedError
+
     def __repr__(self):
         return "<{} type={}>".format(self.__class__.__name__, self.instruction_type.value)
 
@@ -118,6 +129,9 @@ class InstructionApplyAction(Instruction):
 
         Returns:
             InstructionResult : result
+
+        TODO:
+            * 適用順序を保証する
         """
         instruction_result = InstructionResult(msg=msg, action_set=action_set)
         for action in self.actions:
@@ -125,6 +139,20 @@ class InstructionApplyAction(Instruction):
             instruction_result.msg = action_result.msg
             instruction_result.out_ports.extend(action_result.out_ports)
         return instruction_result
+
+    def get_protobuf_message(self):
+        """This method convert this instance to a protocol buffer's obj
+
+        Returns:
+            net_pb2.Instruction
+        """
+        instruction_msg = net_pb2.Instruction()
+        instruction_msg.type = net_pb2.InstructionType.OFIT_APPLY_ACTIONS
+        data = net_pb2.InstructionActions()
+        for a in self.actions:
+            data.actions.append(str(a))
+        instruction_msg.data = data
+        return instruction_msg
 
     @classmethod
     def parser(cls, actions):
@@ -156,6 +184,20 @@ class InstructionClearAction(Instruction):
         action_set.clear()
         return InstructionResult(msg=msg, action_set=action_set)
 
+    def get_protobuf_message(self):
+        """This method convert this instance to a protocol buffer's obj
+
+        Returns:
+            net_pb2.Instruction
+        """
+        instruction_msg = net_pb2.Instruction()
+        instruction_msg.type = net_pb2.InstructionType.OFIT_CLEAR_ACTIONS
+        data = net_pb2.InstructionActions()
+        for a in self.actions:
+            data.actions.append(str(a))
+        instruction_msg.data = data
+        return instruction_msg
+
     @classmethod
     def parser(cls):
         return cls()
@@ -186,6 +228,19 @@ class InstructionGotoTable(Instruction):
         result = InstructionResult(msg=msg, action_set=action_set)
         result.table_id = self.table_id
         return result
+
+    def get_protobuf_message(self):
+        """This method convert this instance to a protocol buffer's obj
+
+        Returns:
+            net_pb2.Instruction
+        """
+        instruction_msg = net_pb2.Instruction()
+        instruction_msg.type = net_pb2.InstructionType.OFIT_GOTO_TABLE
+        data = net_pb2.InstructionGotoTable()
+        data.table_id = self.table_id
+        instruction_msg.data = data
+        return instruction_msg
 
     @classmethod
     def parser(cls, table=None):
@@ -219,6 +274,19 @@ class InstructionMeter(Instruction):
         """
         pass
 
+    def get_protobuf_message(self):
+        """This method convert this instance to a protocol buffer's obj
+
+        Returns:
+            net_pb2.Instruction
+        """
+        instruction_msg = net_pb2.Instruction()
+        instruction_msg.type = net_pb2.InstructionType.OFIT_METER
+        data = net_pb2.InstructionMeter()
+        data.meter_id = self.meter_id
+        instruction_msg.data = data
+        return instruction_msg
+
     @classmethod
     def parser(cls, meter_id=None):
         return cls(meter_id=meter_id)
@@ -247,6 +315,20 @@ class InstructionWriteAction(Instruction):
             InstructionResult : result
         """
         pass
+
+    def get_protobuf_message(self):
+        """This method convert this instance to a protocol buffer's obj
+
+        Returns:
+            net_pb2.Instruction
+        """
+        instruction_msg = net_pb2.Instruction()
+        instruction_msg.type = net_pb2.InstructionType.OFIT_WRITE_ACTIONS
+        data = net_pb2.InstructionActions()
+        for a in self.actions:
+            data.actions.append(str(a))
+        instruction_msg.data = data
+        return instruction_msg
 
     @classmethod
     def parser(cls, actions):
@@ -291,55 +373,22 @@ class InstructionWriteMetadata(Instruction):
         """
         pass
 
+    def get_protobuf_message(self):
+        """This method convert this instance to a protocol buffer's obj
+
+        Returns:
+            net_pb2.Instruction
+        """
+        instruction_msg = net_pb2.Instruction()
+        instruction_msg.type = net_pb2.InstructionType.OFIT_WRITE_METADATA
+        data = net_pb2.InstructionWriteMetadata
+        data.metadata = self.metadata
+        data.metadata_mask = self.metadata_mask
+        instruction_msg.data = data
+        return instruction_msg
+
     @classmethod
     def parser(cls, metadata=0, mask=0):
+        if not (isinstance(metadata, int) and isinstance(mask, int)):
+            raise TypeError
         return cls(metadata=metadata, metadata_mask=mask)
-
-
-
-# def apply_instruction(msg, instruction_name, actions, action_set, *args):
-#     """
-#
-#     Todo:
-#         * アクション順にしたい
-#
-#     Args:
-#         msg:
-#         instruction_name:
-#         actions:
-#         action_set:
-#         *args:
-#
-#     Returns:
-#
-#     """
-#     raise NotImplementedError
-#
-#
-# def merter(msg):
-#     raise NotImplementedError
-#
-#
-# def apply_actions(msg, actions):
-#     raise NotImplementedError
-#
-#
-# def write_actions(msg, actions, action_set):
-#     raise NotImplementedError
-#
-#
-# def clear_actions(msg, action_set):
-#     raise NotImplementedError
-#
-#
-# def write_metadata(msg, data, mask):
-#     raise NotImplementedError
-#
-#
-# def stat_trigger(msg, *args):
-#     raise NotImplementedError
-#
-#
-# def goto_table(msg, table_id):
-#     raise NotImplementedError
-

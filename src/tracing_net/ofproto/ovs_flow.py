@@ -1,13 +1,15 @@
 """
 This is a module for Open vSwitch flow.
 
-
+TODO:
+  * implement parse flow monitor
 """
 
 import re
 from logging import getLogger, setLoggerClass, Logger
 
 from src.tracing_net.ofproto import action, instruction
+from src.tracing_net.ofproto.match import Match
 from src.tracing_net.ofproto.table import Flow
 
 
@@ -326,9 +328,17 @@ def parse_actions(actions):
     return obj_actions
 
 
-def match_to_dict(match):
+def match_to_obj(match):
+    """
+
+    Args:
+        match:
+
+    Returns:
+        list
+    """
     list_match = match.split(',')
-    dict_match = {}
+    list_match_obj = []
     # omitted words
     for i in range(len(list_match)):
         if list_match[i] in OVS_MATCH_ETH.keys():
@@ -342,13 +352,15 @@ def match_to_dict(match):
         if value[0] == '"':
             value = value[1:-1]
         value = value.split('/')
+        obj_match = Match(field_name=key)
         if len(value) == 1:
-            value = {'value': _value_to_int(value[0]), 'mask': None}
+            obj_match.value = _value_to_int(value[0])
         else:
-            value = {'value': _value_to_int(value[0]), 'mask': value[1]}
-        dict_match[key] = value
+            obj_match.value = _value_to_int(value[0])
+            obj_match.mask = value[1]
+        list_match_obj.append(obj_match)
 
-    return dict_match
+    return list_match_obj
 
 
 def _value_to_int(value):
@@ -384,7 +396,7 @@ def parse_dump_flow(output_flow):
                 dict_entry['actions'] = [apply_actions_parser(action_list)] + instructions
         if 'match' in dict_entry.keys():
             if dict_entry['match']:
-                dict_entry['match'] = match_to_dict(dict_entry['match'])
+                dict_entry['match'] = match_to_obj(dict_entry['match'])
             else:
                 dict_entry['match'] = {}  # all match
         return dict_entry
@@ -400,6 +412,10 @@ def parse_dump_flows(flows):
 
     Returns:
         list[Flow] :
+
+    TODO:
+        * fix example
+
     Examples:
         result = ['cookie=0x0, duration=12.851s, table=0, n_packets=21, n_bytes=1571, priority=0 actions=goto_table:5',
                ' cookie=0x0, duration=12.841s, table=5, n_packets=8, n_bytes=372, priority=1,arp actions=goto_table:10',
@@ -448,6 +464,34 @@ def parse_dump_flows(flows):
         flow.actions = parsed_flow.get('actions', None)
         parsed_flows.append(flow)
     return parsed_flows
+
+
+def parse_flow_monitor(result):
+    """parse flow monitor result
+
+    Args:
+        result (str) :
+
+    Returns:
+        tuple(str, str, list) : tuple(event, xid, flow)
+
+    TODO:
+        * まだ移行しただけで，何も変えてない
+
+    """
+    result = result.split()
+    if result[0] == "NXST_FLOW_MONITOR":
+        xid = re.search(r'0x\d', result[2]).group()
+        return {"msg_type": result[0], "type": result[1], "xid": xid}
+    elif result[0].split("=")[0] == 'event':
+        flow_dict = {}
+        for r in result:
+            r = r.split("=")
+            if len(r) >= 2:
+                flow_dict[r[0]] = r[1]
+        return flow_dict
+    else:
+        return {'result': result}
 
 
 if __name__ == '__main__':

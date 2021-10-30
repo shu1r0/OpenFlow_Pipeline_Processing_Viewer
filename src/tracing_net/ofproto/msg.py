@@ -7,13 +7,20 @@ Notes:
 from abc import ABCMeta, abstractmethod
 from logging import getLogger, setLoggerClass, Logger
 
+from src.api.proto import net_pb2
+
 
 setLoggerClass(Logger)
 logger = getLogger('tracing_net.msg')
 
 # Notes:
-#    * do not include in_port and in_phy_port
-OpenFlowMatchingProperties = ["eth_dst", "eth_src", "eth_type", "vlan_vid", "vlan_pcp", "ip_dscp", "ip_ecn", "ip_proto", "ipv4_src", "ipv4_dst", "tcp_src", "tcp_dst ", "udp_src", "udp_dst", "sctp_src", "sctp_dst", "icmpv4_type", "icmpv4_code", "arp_op", "arp_spa", "arp_tpa", "arp_sha", "arp_tha", "ipv6_src", "ipv6_dst", "ipv6_flabel", "icmpv6_type", "icmpv6_code", "ipv6_nd_target", "ipv6_nd_sll", "ipv6_nd_tll", "mpls_label", "mpls_tc", "mpls_bos", "pbb_isid", "tunnel_id", "ipv6_exthdr", "pbb_uca", "tcp_flags", "actset_output"]
+#    * in_port and in_phy_port are not included
+OpenFlowMatchingProperties = ["eth_dst", "eth_src", "eth_type", "vlan_vid", "vlan_pcp", "ip_dscp", "ip_ecn", "ip_proto",
+                              "ipv4_src", "ipv4_dst", "tcp_src", "tcp_dst ", "udp_src", "udp_dst", "sctp_src",
+                              "sctp_dst", "icmpv4_type", "icmpv4_code", "arp_op", "arp_spa", "arp_tpa", "arp_sha",
+                              "arp_tha", "ipv6_src", "ipv6_dst", "ipv6_flabel", "icmpv6_type", "icmpv6_code",
+                              "ipv6_nd_target", "ipv6_nd_sll", "ipv6_nd_tll", "mpls_label", "mpls_tc", "mpls_bos",
+                              "pbb_isid", "tunnel_id", "ipv6_exthdr", "pbb_uca", "tcp_flags", "actset_output"]
 
 
 class OpenFlowPacket(metaclass=ABCMeta):
@@ -226,10 +233,6 @@ class OpenFlowPacket(metaclass=ABCMeta):
     def actset_output(self):
         raise NotImplementedError
 
-    @abstractmethod
-    def to_json(self):
-        raise NotImplementedError
-
     def get_openflow_properties(self):
         """for debug"""
         properties = {}
@@ -238,24 +241,18 @@ class OpenFlowPacket(metaclass=ABCMeta):
             properties[p] = v
         return properties
 
-    def __eq__(self, other):
-        if not isinstance(other, OpenFlowPacket):
-            return False
-
-        # Do the packet's attributes that can be handled by OpenFlow match?
-        for p in OpenFlowMatchingProperties:
-            p1 = getattr(self, p, None)
-            p2 = getattr(other, p, None)
-            if p1 != p2:
-                return False
-        return True
-
 
 class MsgBase(OpenFlowPacket, metaclass=ABCMeta):
+    """
 
-    def __init__(self):
+    TODO:
+        * タイムスタンプで並び替えられるようにする
+    """
+
+    def __init__(self, pkt, timestamp):
         super(MsgBase, self).__init__()
-        self.pkt = None
+        self.pkt = pkt
+        self.timestamp = timestamp
         self.metadata = None
         self.pushed_vlan = None
         self.pushed_mpls = None
@@ -265,6 +262,63 @@ class MsgBase(OpenFlowPacket, metaclass=ABCMeta):
 
     def set_mpls(self, mpls_label):
         self.pushed_mpls = mpls_label
+
+    def get_protobuf_message(self):
+        """This method convert this instance to a protocol buffer's obj
+
+        Returns:
+            net_pb2.Packet
+        """
+        packet_msg = net_pb2.Packet()
+        for p in OpenFlowMatchingProperties:
+            v = getattr(self, p, None)
+            if v:
+                packet_msg.fields[p] = str(v)
+        return packet_msg
+
+    def is_equal(self, other):
+        """OpenFlowプロパティの比較を行う"""
+        if not isinstance(other, OpenFlowPacket):
+            raise TypeError("It should be OpenFlow Packet")
+
+        # Do the packet's attributes that can be handled by OpenFlow match?
+        for p in OpenFlowMatchingProperties:
+            p1 = getattr(self, p, None)
+            p2 = getattr(other, p, None)
+
+            if p1 is not None and p2 is not None and type(p1) == type(p2):
+                raise TypeError("Property TypeError")
+
+            if p1 != p2:
+                return False
+        return True
+
+    def __lt__(self, other):
+        if other is None or not isinstance(other, MsgBase):
+            return TypeError
+        return int(self.timestamp) < int(self.timestamp)
+
+    def __le__(self, other):
+        if other is None or not isinstance(other, MsgBase):
+            return TypeError
+        return int(self.timestamp) <= int(self.timestamp)
+
+    def __eq__(self, other):
+        """
+        Warnings:
+            * メッセージのプロパティの比較はここでは行わない．(検索などでおかしくなるから)
+        """
+        return super.__eq__(self, other)
+
+    def __gt__(self, other):
+        if other is None or not isinstance(other, MsgBase):
+            return TypeError
+        return int(self.timestamp) > int(self.timestamp)
+
+    def __ge__(self, other):
+        if other is None or not isinstance(other, MsgBase):
+            return TypeError
+        return int(self.timestamp) >= int(self.timestamp)
 
 
 class Msg(MsgBase):
@@ -287,15 +341,13 @@ class Msg(MsgBase):
     """
 
     def __init__(self, captured_interface, sniff_timestamp, pkt, in_port=None, in_phy_port=None):
-        super(Msg, self).__init__()
+        super(Msg, self).__init__(pkt=pkt, timestamp=sniff_timestamp)
         self.captured_interface = captured_interface
+        # TODO: delete
         self.sniff_timestamp = sniff_timestamp
-        self.pkt = pkt
-        self.metadata = None
+
         self.in_port = in_port if in_port else self.captured_interface
         self.in_phy_port = in_phy_port if in_phy_port else self.captured_interface
-        self.pushed_vlan = None
-        self.pushed_mpls = None
 
     @property
     def eth_dst(self):
@@ -559,9 +611,6 @@ class Msg(MsgBase):
     @property
     def actset_output(self):
         return None
-
-    def to_json(self):
-        raise NotImplementedError
 
     def __repr__(self):
         return "<Msg captured_interface={}, sniff_timestamp={}, pkt={}, in_port={}, in_phy_port={}>"\

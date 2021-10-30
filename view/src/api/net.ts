@@ -7,6 +7,21 @@
  *  */
 import * as pb_1 from "google-protobuf";
 export namespace proto {
+    export enum InstructionType {
+        OFPIT_INVALID = 0,
+        OFPIT_GOTO_TABLE = 1,
+        OFPIT_WRITE_METADATA = 2,
+        OFPIT_WRITE_ACTIONS = 3,
+        OFPIT_APPLY_ACTIONS = 4,
+        OFPIT_CLEAR_ACTIONS = 5,
+        OFPIT_METER = 6,
+        OFPIT_EXPERIMENTER = 65535
+    }
+    export enum CommandResultType {
+        OUTPUT = 0,
+        ERROR = 1,
+        END_SIGNAL = 100
+    }
     export class Host extends pb_1.Message {
         constructor(data?: any[] | ({} & (({
             name?: string;
@@ -351,974 +366,33 @@ export namespace proto {
         }
     }
     export class Packet extends pb_1.Message {
-        constructor(data?: any[] | ({} & (({
-            eth_dst?: string;
-        }) | ({
-            eth_src?: string;
-        }) | ({
-            eth_type?: string;
-        }) | ({
-            vlan_vid?: string;
-        }) | ({
-            vlan_pcp?: string;
-        }) | ({
-            ip_dscp?: string;
-        }) | ({
-            ip_ecn?: string;
-        }) | ({
-            ip_proto?: string;
-        }) | ({
-            ipv4_src?: string;
-        }) | ({
-            ipv4_dst?: string;
-        }) | ({
-            tcp_src?: string;
-        }) | ({
-            tcp_dst?: string;
-        }) | ({
-            udp_src?: string;
-        }) | ({
-            udp_dst?: string;
-        }) | ({
-            sctp_src?: string;
-        }) | ({
-            sctp_dst?: string;
-        }) | ({
-            icmpv4_type?: string;
-        }) | ({
-            icmpv4_code?: string;
-        }) | ({
-            arp_op?: string;
-        }) | ({
-            arp_spa?: string;
-        }) | ({
-            arp_tpa?: string;
-        }) | ({
-            arp_sha?: string;
-        }) | ({
-            arp_tha?: string;
-        }) | ({
-            ipv6_src?: string;
-        }) | ({
-            ipv6_dst?: string;
-        }) | ({
-            ipv6_flabel?: string;
-        }) | ({
-            icmpv6_type?: string;
-        }) | ({
-            icmpv6_code?: string;
-        }) | ({
-            ipv6_nd_target?: string;
-        }) | ({
-            ipv6_nd_sll?: string;
-        }) | ({
-            ipv6_nd_tll?: string;
-        }) | ({
-            mpls_label?: string;
-        }) | ({
-            mpls_tc?: string;
-        }) | ({
-            mpls_bos?: string;
-        }) | ({
-            pbb_isid?: string;
-        }) | ({
-            tunnel_id?: string;
-        }) | ({
-            ipv6_exthdr?: string;
-        }) | ({
-            pbb_uca?: string;
-        }) | ({
-            tcp_flags?: string;
-        }) | ({
-            actset_output?: string;
-        })))) {
+        constructor(data?: any[] | {
+            fields?: Map<string, string>;
+        }) {
             super();
-            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], [[1], [3], [5], [7], [9], [11], [13], [15], [17], [19], [21], [23], [25], [27], [29], [31], [33], [35], [37], [39], [41], [43], [45], [47], [49], [51], [53], [55], [57], [59], [61], [63], [65], [67], [69], [71], [73], [75], [77], [101]]);
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], []);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("eth_dst" in data && data.eth_dst != undefined) {
-                    this.eth_dst = data.eth_dst;
-                }
-                if ("eth_src" in data && data.eth_src != undefined) {
-                    this.eth_src = data.eth_src;
-                }
-                if ("eth_type" in data && data.eth_type != undefined) {
-                    this.eth_type = data.eth_type;
-                }
-                if ("vlan_vid" in data && data.vlan_vid != undefined) {
-                    this.vlan_vid = data.vlan_vid;
-                }
-                if ("vlan_pcp" in data && data.vlan_pcp != undefined) {
-                    this.vlan_pcp = data.vlan_pcp;
-                }
-                if ("ip_dscp" in data && data.ip_dscp != undefined) {
-                    this.ip_dscp = data.ip_dscp;
-                }
-                if ("ip_ecn" in data && data.ip_ecn != undefined) {
-                    this.ip_ecn = data.ip_ecn;
-                }
-                if ("ip_proto" in data && data.ip_proto != undefined) {
-                    this.ip_proto = data.ip_proto;
-                }
-                if ("ipv4_src" in data && data.ipv4_src != undefined) {
-                    this.ipv4_src = data.ipv4_src;
-                }
-                if ("ipv4_dst" in data && data.ipv4_dst != undefined) {
-                    this.ipv4_dst = data.ipv4_dst;
-                }
-                if ("tcp_src" in data && data.tcp_src != undefined) {
-                    this.tcp_src = data.tcp_src;
-                }
-                if ("tcp_dst" in data && data.tcp_dst != undefined) {
-                    this.tcp_dst = data.tcp_dst;
-                }
-                if ("udp_src" in data && data.udp_src != undefined) {
-                    this.udp_src = data.udp_src;
-                }
-                if ("udp_dst" in data && data.udp_dst != undefined) {
-                    this.udp_dst = data.udp_dst;
-                }
-                if ("sctp_src" in data && data.sctp_src != undefined) {
-                    this.sctp_src = data.sctp_src;
-                }
-                if ("sctp_dst" in data && data.sctp_dst != undefined) {
-                    this.sctp_dst = data.sctp_dst;
-                }
-                if ("icmpv4_type" in data && data.icmpv4_type != undefined) {
-                    this.icmpv4_type = data.icmpv4_type;
-                }
-                if ("icmpv4_code" in data && data.icmpv4_code != undefined) {
-                    this.icmpv4_code = data.icmpv4_code;
-                }
-                if ("arp_op" in data && data.arp_op != undefined) {
-                    this.arp_op = data.arp_op;
-                }
-                if ("arp_spa" in data && data.arp_spa != undefined) {
-                    this.arp_spa = data.arp_spa;
-                }
-                if ("arp_tpa" in data && data.arp_tpa != undefined) {
-                    this.arp_tpa = data.arp_tpa;
-                }
-                if ("arp_sha" in data && data.arp_sha != undefined) {
-                    this.arp_sha = data.arp_sha;
-                }
-                if ("arp_tha" in data && data.arp_tha != undefined) {
-                    this.arp_tha = data.arp_tha;
-                }
-                if ("ipv6_src" in data && data.ipv6_src != undefined) {
-                    this.ipv6_src = data.ipv6_src;
-                }
-                if ("ipv6_dst" in data && data.ipv6_dst != undefined) {
-                    this.ipv6_dst = data.ipv6_dst;
-                }
-                if ("ipv6_flabel" in data && data.ipv6_flabel != undefined) {
-                    this.ipv6_flabel = data.ipv6_flabel;
-                }
-                if ("icmpv6_type" in data && data.icmpv6_type != undefined) {
-                    this.icmpv6_type = data.icmpv6_type;
-                }
-                if ("icmpv6_code" in data && data.icmpv6_code != undefined) {
-                    this.icmpv6_code = data.icmpv6_code;
-                }
-                if ("ipv6_nd_target" in data && data.ipv6_nd_target != undefined) {
-                    this.ipv6_nd_target = data.ipv6_nd_target;
-                }
-                if ("ipv6_nd_sll" in data && data.ipv6_nd_sll != undefined) {
-                    this.ipv6_nd_sll = data.ipv6_nd_sll;
-                }
-                if ("ipv6_nd_tll" in data && data.ipv6_nd_tll != undefined) {
-                    this.ipv6_nd_tll = data.ipv6_nd_tll;
-                }
-                if ("mpls_label" in data && data.mpls_label != undefined) {
-                    this.mpls_label = data.mpls_label;
-                }
-                if ("mpls_tc" in data && data.mpls_tc != undefined) {
-                    this.mpls_tc = data.mpls_tc;
-                }
-                if ("mpls_bos" in data && data.mpls_bos != undefined) {
-                    this.mpls_bos = data.mpls_bos;
-                }
-                if ("pbb_isid" in data && data.pbb_isid != undefined) {
-                    this.pbb_isid = data.pbb_isid;
-                }
-                if ("tunnel_id" in data && data.tunnel_id != undefined) {
-                    this.tunnel_id = data.tunnel_id;
-                }
-                if ("ipv6_exthdr" in data && data.ipv6_exthdr != undefined) {
-                    this.ipv6_exthdr = data.ipv6_exthdr;
-                }
-                if ("pbb_uca" in data && data.pbb_uca != undefined) {
-                    this.pbb_uca = data.pbb_uca;
-                }
-                if ("tcp_flags" in data && data.tcp_flags != undefined) {
-                    this.tcp_flags = data.tcp_flags;
-                }
-                if ("actset_output" in data && data.actset_output != undefined) {
-                    this.actset_output = data.actset_output;
+                if ("fields" in data && data.fields != undefined) {
+                    this.fields = data.fields;
                 }
             }
+            if (!this.fields)
+                this.fields = new Map()
         }
-        get eth_dst() {
-            return pb_1.Message.getField(this, 1) as string;
+        get fields() {
+            return pb_1.Message.getField(this, 1) as any as Map<string, string>;
         }
-        set eth_dst(value: string) {
-            pb_1.Message.setOneofField(this, 1, [1], value);
-        }
-        get eth_src() {
-            return pb_1.Message.getField(this, 3) as string;
-        }
-        set eth_src(value: string) {
-            pb_1.Message.setOneofField(this, 3, [3], value);
-        }
-        get eth_type() {
-            return pb_1.Message.getField(this, 5) as string;
-        }
-        set eth_type(value: string) {
-            pb_1.Message.setOneofField(this, 5, [5], value);
-        }
-        get vlan_vid() {
-            return pb_1.Message.getField(this, 7) as string;
-        }
-        set vlan_vid(value: string) {
-            pb_1.Message.setOneofField(this, 7, [7], value);
-        }
-        get vlan_pcp() {
-            return pb_1.Message.getField(this, 9) as string;
-        }
-        set vlan_pcp(value: string) {
-            pb_1.Message.setOneofField(this, 9, [9], value);
-        }
-        get ip_dscp() {
-            return pb_1.Message.getField(this, 11) as string;
-        }
-        set ip_dscp(value: string) {
-            pb_1.Message.setOneofField(this, 11, [11], value);
-        }
-        get ip_ecn() {
-            return pb_1.Message.getField(this, 13) as string;
-        }
-        set ip_ecn(value: string) {
-            pb_1.Message.setOneofField(this, 13, [13], value);
-        }
-        get ip_proto() {
-            return pb_1.Message.getField(this, 15) as string;
-        }
-        set ip_proto(value: string) {
-            pb_1.Message.setOneofField(this, 15, [15], value);
-        }
-        get ipv4_src() {
-            return pb_1.Message.getField(this, 17) as string;
-        }
-        set ipv4_src(value: string) {
-            pb_1.Message.setOneofField(this, 17, [17], value);
-        }
-        get ipv4_dst() {
-            return pb_1.Message.getField(this, 19) as string;
-        }
-        set ipv4_dst(value: string) {
-            pb_1.Message.setOneofField(this, 19, [19], value);
-        }
-        get tcp_src() {
-            return pb_1.Message.getField(this, 21) as string;
-        }
-        set tcp_src(value: string) {
-            pb_1.Message.setOneofField(this, 21, [21], value);
-        }
-        get tcp_dst() {
-            return pb_1.Message.getField(this, 23) as string;
-        }
-        set tcp_dst(value: string) {
-            pb_1.Message.setOneofField(this, 23, [23], value);
-        }
-        get udp_src() {
-            return pb_1.Message.getField(this, 25) as string;
-        }
-        set udp_src(value: string) {
-            pb_1.Message.setOneofField(this, 25, [25], value);
-        }
-        get udp_dst() {
-            return pb_1.Message.getField(this, 27) as string;
-        }
-        set udp_dst(value: string) {
-            pb_1.Message.setOneofField(this, 27, [27], value);
-        }
-        get sctp_src() {
-            return pb_1.Message.getField(this, 29) as string;
-        }
-        set sctp_src(value: string) {
-            pb_1.Message.setOneofField(this, 29, [29], value);
-        }
-        get sctp_dst() {
-            return pb_1.Message.getField(this, 31) as string;
-        }
-        set sctp_dst(value: string) {
-            pb_1.Message.setOneofField(this, 31, [31], value);
-        }
-        get icmpv4_type() {
-            return pb_1.Message.getField(this, 33) as string;
-        }
-        set icmpv4_type(value: string) {
-            pb_1.Message.setOneofField(this, 33, [33], value);
-        }
-        get icmpv4_code() {
-            return pb_1.Message.getField(this, 35) as string;
-        }
-        set icmpv4_code(value: string) {
-            pb_1.Message.setOneofField(this, 35, [35], value);
-        }
-        get arp_op() {
-            return pb_1.Message.getField(this, 37) as string;
-        }
-        set arp_op(value: string) {
-            pb_1.Message.setOneofField(this, 37, [37], value);
-        }
-        get arp_spa() {
-            return pb_1.Message.getField(this, 39) as string;
-        }
-        set arp_spa(value: string) {
-            pb_1.Message.setOneofField(this, 39, [39], value);
-        }
-        get arp_tpa() {
-            return pb_1.Message.getField(this, 41) as string;
-        }
-        set arp_tpa(value: string) {
-            pb_1.Message.setOneofField(this, 41, [41], value);
-        }
-        get arp_sha() {
-            return pb_1.Message.getField(this, 43) as string;
-        }
-        set arp_sha(value: string) {
-            pb_1.Message.setOneofField(this, 43, [43], value);
-        }
-        get arp_tha() {
-            return pb_1.Message.getField(this, 45) as string;
-        }
-        set arp_tha(value: string) {
-            pb_1.Message.setOneofField(this, 45, [45], value);
-        }
-        get ipv6_src() {
-            return pb_1.Message.getField(this, 47) as string;
-        }
-        set ipv6_src(value: string) {
-            pb_1.Message.setOneofField(this, 47, [47], value);
-        }
-        get ipv6_dst() {
-            return pb_1.Message.getField(this, 49) as string;
-        }
-        set ipv6_dst(value: string) {
-            pb_1.Message.setOneofField(this, 49, [49], value);
-        }
-        get ipv6_flabel() {
-            return pb_1.Message.getField(this, 51) as string;
-        }
-        set ipv6_flabel(value: string) {
-            pb_1.Message.setOneofField(this, 51, [51], value);
-        }
-        get icmpv6_type() {
-            return pb_1.Message.getField(this, 53) as string;
-        }
-        set icmpv6_type(value: string) {
-            pb_1.Message.setOneofField(this, 53, [53], value);
-        }
-        get icmpv6_code() {
-            return pb_1.Message.getField(this, 55) as string;
-        }
-        set icmpv6_code(value: string) {
-            pb_1.Message.setOneofField(this, 55, [55], value);
-        }
-        get ipv6_nd_target() {
-            return pb_1.Message.getField(this, 57) as string;
-        }
-        set ipv6_nd_target(value: string) {
-            pb_1.Message.setOneofField(this, 57, [57], value);
-        }
-        get ipv6_nd_sll() {
-            return pb_1.Message.getField(this, 59) as string;
-        }
-        set ipv6_nd_sll(value: string) {
-            pb_1.Message.setOneofField(this, 59, [59], value);
-        }
-        get ipv6_nd_tll() {
-            return pb_1.Message.getField(this, 61) as string;
-        }
-        set ipv6_nd_tll(value: string) {
-            pb_1.Message.setOneofField(this, 61, [61], value);
-        }
-        get mpls_label() {
-            return pb_1.Message.getField(this, 63) as string;
-        }
-        set mpls_label(value: string) {
-            pb_1.Message.setOneofField(this, 63, [63], value);
-        }
-        get mpls_tc() {
-            return pb_1.Message.getField(this, 65) as string;
-        }
-        set mpls_tc(value: string) {
-            pb_1.Message.setOneofField(this, 65, [65], value);
-        }
-        get mpls_bos() {
-            return pb_1.Message.getField(this, 67) as string;
-        }
-        set mpls_bos(value: string) {
-            pb_1.Message.setOneofField(this, 67, [67], value);
-        }
-        get pbb_isid() {
-            return pb_1.Message.getField(this, 69) as string;
-        }
-        set pbb_isid(value: string) {
-            pb_1.Message.setOneofField(this, 69, [69], value);
-        }
-        get tunnel_id() {
-            return pb_1.Message.getField(this, 71) as string;
-        }
-        set tunnel_id(value: string) {
-            pb_1.Message.setOneofField(this, 71, [71], value);
-        }
-        get ipv6_exthdr() {
-            return pb_1.Message.getField(this, 73) as string;
-        }
-        set ipv6_exthdr(value: string) {
-            pb_1.Message.setOneofField(this, 73, [73], value);
-        }
-        get pbb_uca() {
-            return pb_1.Message.getField(this, 75) as string;
-        }
-        set pbb_uca(value: string) {
-            pb_1.Message.setOneofField(this, 75, [75], value);
-        }
-        get tcp_flags() {
-            return pb_1.Message.getField(this, 77) as string;
-        }
-        set tcp_flags(value: string) {
-            pb_1.Message.setOneofField(this, 77, [77], value);
-        }
-        get actset_output() {
-            return pb_1.Message.getField(this, 101) as string;
-        }
-        set actset_output(value: string) {
-            pb_1.Message.setOneofField(this, 101, [101], value);
-        }
-        get _eth_dst() {
-            const cases: {
-                [index: number]: "none" | "eth_dst";
-            } = {
-                0: "none",
-                1: "eth_dst"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [1])];
-        }
-        get _eth_src() {
-            const cases: {
-                [index: number]: "none" | "eth_src";
-            } = {
-                0: "none",
-                3: "eth_src"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [3])];
-        }
-        get _eth_type() {
-            const cases: {
-                [index: number]: "none" | "eth_type";
-            } = {
-                0: "none",
-                5: "eth_type"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [5])];
-        }
-        get _vlan_vid() {
-            const cases: {
-                [index: number]: "none" | "vlan_vid";
-            } = {
-                0: "none",
-                7: "vlan_vid"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [7])];
-        }
-        get _vlan_pcp() {
-            const cases: {
-                [index: number]: "none" | "vlan_pcp";
-            } = {
-                0: "none",
-                9: "vlan_pcp"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [9])];
-        }
-        get _ip_dscp() {
-            const cases: {
-                [index: number]: "none" | "ip_dscp";
-            } = {
-                0: "none",
-                11: "ip_dscp"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [11])];
-        }
-        get _ip_ecn() {
-            const cases: {
-                [index: number]: "none" | "ip_ecn";
-            } = {
-                0: "none",
-                13: "ip_ecn"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [13])];
-        }
-        get _ip_proto() {
-            const cases: {
-                [index: number]: "none" | "ip_proto";
-            } = {
-                0: "none",
-                15: "ip_proto"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [15])];
-        }
-        get _ipv4_src() {
-            const cases: {
-                [index: number]: "none" | "ipv4_src";
-            } = {
-                0: "none",
-                17: "ipv4_src"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [17])];
-        }
-        get _ipv4_dst() {
-            const cases: {
-                [index: number]: "none" | "ipv4_dst";
-            } = {
-                0: "none",
-                19: "ipv4_dst"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [19])];
-        }
-        get _tcp_src() {
-            const cases: {
-                [index: number]: "none" | "tcp_src";
-            } = {
-                0: "none",
-                21: "tcp_src"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [21])];
-        }
-        get _tcp_dst() {
-            const cases: {
-                [index: number]: "none" | "tcp_dst";
-            } = {
-                0: "none",
-                23: "tcp_dst"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [23])];
-        }
-        get _udp_src() {
-            const cases: {
-                [index: number]: "none" | "udp_src";
-            } = {
-                0: "none",
-                25: "udp_src"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [25])];
-        }
-        get _udp_dst() {
-            const cases: {
-                [index: number]: "none" | "udp_dst";
-            } = {
-                0: "none",
-                27: "udp_dst"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [27])];
-        }
-        get _sctp_src() {
-            const cases: {
-                [index: number]: "none" | "sctp_src";
-            } = {
-                0: "none",
-                29: "sctp_src"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [29])];
-        }
-        get _sctp_dst() {
-            const cases: {
-                [index: number]: "none" | "sctp_dst";
-            } = {
-                0: "none",
-                31: "sctp_dst"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [31])];
-        }
-        get _icmpv4_type() {
-            const cases: {
-                [index: number]: "none" | "icmpv4_type";
-            } = {
-                0: "none",
-                33: "icmpv4_type"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [33])];
-        }
-        get _icmpv4_code() {
-            const cases: {
-                [index: number]: "none" | "icmpv4_code";
-            } = {
-                0: "none",
-                35: "icmpv4_code"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [35])];
-        }
-        get _arp_op() {
-            const cases: {
-                [index: number]: "none" | "arp_op";
-            } = {
-                0: "none",
-                37: "arp_op"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [37])];
-        }
-        get _arp_spa() {
-            const cases: {
-                [index: number]: "none" | "arp_spa";
-            } = {
-                0: "none",
-                39: "arp_spa"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [39])];
-        }
-        get _arp_tpa() {
-            const cases: {
-                [index: number]: "none" | "arp_tpa";
-            } = {
-                0: "none",
-                41: "arp_tpa"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [41])];
-        }
-        get _arp_sha() {
-            const cases: {
-                [index: number]: "none" | "arp_sha";
-            } = {
-                0: "none",
-                43: "arp_sha"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [43])];
-        }
-        get _arp_tha() {
-            const cases: {
-                [index: number]: "none" | "arp_tha";
-            } = {
-                0: "none",
-                45: "arp_tha"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [45])];
-        }
-        get _ipv6_src() {
-            const cases: {
-                [index: number]: "none" | "ipv6_src";
-            } = {
-                0: "none",
-                47: "ipv6_src"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [47])];
-        }
-        get _ipv6_dst() {
-            const cases: {
-                [index: number]: "none" | "ipv6_dst";
-            } = {
-                0: "none",
-                49: "ipv6_dst"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [49])];
-        }
-        get _ipv6_flabel() {
-            const cases: {
-                [index: number]: "none" | "ipv6_flabel";
-            } = {
-                0: "none",
-                51: "ipv6_flabel"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [51])];
-        }
-        get _icmpv6_type() {
-            const cases: {
-                [index: number]: "none" | "icmpv6_type";
-            } = {
-                0: "none",
-                53: "icmpv6_type"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [53])];
-        }
-        get _icmpv6_code() {
-            const cases: {
-                [index: number]: "none" | "icmpv6_code";
-            } = {
-                0: "none",
-                55: "icmpv6_code"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [55])];
-        }
-        get _ipv6_nd_target() {
-            const cases: {
-                [index: number]: "none" | "ipv6_nd_target";
-            } = {
-                0: "none",
-                57: "ipv6_nd_target"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [57])];
-        }
-        get _ipv6_nd_sll() {
-            const cases: {
-                [index: number]: "none" | "ipv6_nd_sll";
-            } = {
-                0: "none",
-                59: "ipv6_nd_sll"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [59])];
-        }
-        get _ipv6_nd_tll() {
-            const cases: {
-                [index: number]: "none" | "ipv6_nd_tll";
-            } = {
-                0: "none",
-                61: "ipv6_nd_tll"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [61])];
-        }
-        get _mpls_label() {
-            const cases: {
-                [index: number]: "none" | "mpls_label";
-            } = {
-                0: "none",
-                63: "mpls_label"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [63])];
-        }
-        get _mpls_tc() {
-            const cases: {
-                [index: number]: "none" | "mpls_tc";
-            } = {
-                0: "none",
-                65: "mpls_tc"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [65])];
-        }
-        get _mpls_bos() {
-            const cases: {
-                [index: number]: "none" | "mpls_bos";
-            } = {
-                0: "none",
-                67: "mpls_bos"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [67])];
-        }
-        get _pbb_isid() {
-            const cases: {
-                [index: number]: "none" | "pbb_isid";
-            } = {
-                0: "none",
-                69: "pbb_isid"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [69])];
-        }
-        get _tunnel_id() {
-            const cases: {
-                [index: number]: "none" | "tunnel_id";
-            } = {
-                0: "none",
-                71: "tunnel_id"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [71])];
-        }
-        get _ipv6_exthdr() {
-            const cases: {
-                [index: number]: "none" | "ipv6_exthdr";
-            } = {
-                0: "none",
-                73: "ipv6_exthdr"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [73])];
-        }
-        get _pbb_uca() {
-            const cases: {
-                [index: number]: "none" | "pbb_uca";
-            } = {
-                0: "none",
-                75: "pbb_uca"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [75])];
-        }
-        get _tcp_flags() {
-            const cases: {
-                [index: number]: "none" | "tcp_flags";
-            } = {
-                0: "none",
-                77: "tcp_flags"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [77])];
-        }
-        get _actset_output() {
-            const cases: {
-                [index: number]: "none" | "actset_output";
-            } = {
-                0: "none",
-                101: "actset_output"
-            };
-            return cases[pb_1.Message.computeOneofCase(this, [101])];
+        set fields(value: Map<string, string>) {
+            pb_1.Message.setField(this, 1, (value as any));
         }
         toObject() {
             const data: {
-                eth_dst?: string;
-                eth_src?: string;
-                eth_type?: string;
-                vlan_vid?: string;
-                vlan_pcp?: string;
-                ip_dscp?: string;
-                ip_ecn?: string;
-                ip_proto?: string;
-                ipv4_src?: string;
-                ipv4_dst?: string;
-                tcp_src?: string;
-                tcp_dst?: string;
-                udp_src?: string;
-                udp_dst?: string;
-                sctp_src?: string;
-                sctp_dst?: string;
-                icmpv4_type?: string;
-                icmpv4_code?: string;
-                arp_op?: string;
-                arp_spa?: string;
-                arp_tpa?: string;
-                arp_sha?: string;
-                arp_tha?: string;
-                ipv6_src?: string;
-                ipv6_dst?: string;
-                ipv6_flabel?: string;
-                icmpv6_type?: string;
-                icmpv6_code?: string;
-                ipv6_nd_target?: string;
-                ipv6_nd_sll?: string;
-                ipv6_nd_tll?: string;
-                mpls_label?: string;
-                mpls_tc?: string;
-                mpls_bos?: string;
-                pbb_isid?: string;
-                tunnel_id?: string;
-                ipv6_exthdr?: string;
-                pbb_uca?: string;
-                tcp_flags?: string;
-                actset_output?: string;
+                fields?: {
+                    [key: string]: string;
+                };
             } = {};
-            if (this.eth_dst != null) {
-                data.eth_dst = this.eth_dst;
-            }
-            if (this.eth_src != null) {
-                data.eth_src = this.eth_src;
-            }
-            if (this.eth_type != null) {
-                data.eth_type = this.eth_type;
-            }
-            if (this.vlan_vid != null) {
-                data.vlan_vid = this.vlan_vid;
-            }
-            if (this.vlan_pcp != null) {
-                data.vlan_pcp = this.vlan_pcp;
-            }
-            if (this.ip_dscp != null) {
-                data.ip_dscp = this.ip_dscp;
-            }
-            if (this.ip_ecn != null) {
-                data.ip_ecn = this.ip_ecn;
-            }
-            if (this.ip_proto != null) {
-                data.ip_proto = this.ip_proto;
-            }
-            if (this.ipv4_src != null) {
-                data.ipv4_src = this.ipv4_src;
-            }
-            if (this.ipv4_dst != null) {
-                data.ipv4_dst = this.ipv4_dst;
-            }
-            if (this.tcp_src != null) {
-                data.tcp_src = this.tcp_src;
-            }
-            if (this.tcp_dst != null) {
-                data.tcp_dst = this.tcp_dst;
-            }
-            if (this.udp_src != null) {
-                data.udp_src = this.udp_src;
-            }
-            if (this.udp_dst != null) {
-                data.udp_dst = this.udp_dst;
-            }
-            if (this.sctp_src != null) {
-                data.sctp_src = this.sctp_src;
-            }
-            if (this.sctp_dst != null) {
-                data.sctp_dst = this.sctp_dst;
-            }
-            if (this.icmpv4_type != null) {
-                data.icmpv4_type = this.icmpv4_type;
-            }
-            if (this.icmpv4_code != null) {
-                data.icmpv4_code = this.icmpv4_code;
-            }
-            if (this.arp_op != null) {
-                data.arp_op = this.arp_op;
-            }
-            if (this.arp_spa != null) {
-                data.arp_spa = this.arp_spa;
-            }
-            if (this.arp_tpa != null) {
-                data.arp_tpa = this.arp_tpa;
-            }
-            if (this.arp_sha != null) {
-                data.arp_sha = this.arp_sha;
-            }
-            if (this.arp_tha != null) {
-                data.arp_tha = this.arp_tha;
-            }
-            if (this.ipv6_src != null) {
-                data.ipv6_src = this.ipv6_src;
-            }
-            if (this.ipv6_dst != null) {
-                data.ipv6_dst = this.ipv6_dst;
-            }
-            if (this.ipv6_flabel != null) {
-                data.ipv6_flabel = this.ipv6_flabel;
-            }
-            if (this.icmpv6_type != null) {
-                data.icmpv6_type = this.icmpv6_type;
-            }
-            if (this.icmpv6_code != null) {
-                data.icmpv6_code = this.icmpv6_code;
-            }
-            if (this.ipv6_nd_target != null) {
-                data.ipv6_nd_target = this.ipv6_nd_target;
-            }
-            if (this.ipv6_nd_sll != null) {
-                data.ipv6_nd_sll = this.ipv6_nd_sll;
-            }
-            if (this.ipv6_nd_tll != null) {
-                data.ipv6_nd_tll = this.ipv6_nd_tll;
-            }
-            if (this.mpls_label != null) {
-                data.mpls_label = this.mpls_label;
-            }
-            if (this.mpls_tc != null) {
-                data.mpls_tc = this.mpls_tc;
-            }
-            if (this.mpls_bos != null) {
-                data.mpls_bos = this.mpls_bos;
-            }
-            if (this.pbb_isid != null) {
-                data.pbb_isid = this.pbb_isid;
-            }
-            if (this.tunnel_id != null) {
-                data.tunnel_id = this.tunnel_id;
-            }
-            if (this.ipv6_exthdr != null) {
-                data.ipv6_exthdr = this.ipv6_exthdr;
-            }
-            if (this.pbb_uca != null) {
-                data.pbb_uca = this.pbb_uca;
-            }
-            if (this.tcp_flags != null) {
-                data.tcp_flags = this.tcp_flags;
-            }
-            if (this.actset_output != null) {
-                data.actset_output = this.actset_output;
+            if (this.fields.size > 0) {
+                data.fields = Object.fromEntries(this.fields);
             }
             return data;
         }
@@ -1326,86 +400,12 @@ export namespace proto {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (typeof this.eth_dst === "string" && this.eth_dst.length)
-                writer.writeString(1, this.eth_dst);
-            if (typeof this.eth_src === "string" && this.eth_src.length)
-                writer.writeString(3, this.eth_src);
-            if (typeof this.eth_type === "string" && this.eth_type.length)
-                writer.writeString(5, this.eth_type);
-            if (typeof this.vlan_vid === "string" && this.vlan_vid.length)
-                writer.writeString(7, this.vlan_vid);
-            if (typeof this.vlan_pcp === "string" && this.vlan_pcp.length)
-                writer.writeString(9, this.vlan_pcp);
-            if (typeof this.ip_dscp === "string" && this.ip_dscp.length)
-                writer.writeString(11, this.ip_dscp);
-            if (typeof this.ip_ecn === "string" && this.ip_ecn.length)
-                writer.writeString(13, this.ip_ecn);
-            if (typeof this.ip_proto === "string" && this.ip_proto.length)
-                writer.writeString(15, this.ip_proto);
-            if (typeof this.ipv4_src === "string" && this.ipv4_src.length)
-                writer.writeString(17, this.ipv4_src);
-            if (typeof this.ipv4_dst === "string" && this.ipv4_dst.length)
-                writer.writeString(19, this.ipv4_dst);
-            if (typeof this.tcp_src === "string" && this.tcp_src.length)
-                writer.writeString(21, this.tcp_src);
-            if (typeof this.tcp_dst === "string" && this.tcp_dst.length)
-                writer.writeString(23, this.tcp_dst);
-            if (typeof this.udp_src === "string" && this.udp_src.length)
-                writer.writeString(25, this.udp_src);
-            if (typeof this.udp_dst === "string" && this.udp_dst.length)
-                writer.writeString(27, this.udp_dst);
-            if (typeof this.sctp_src === "string" && this.sctp_src.length)
-                writer.writeString(29, this.sctp_src);
-            if (typeof this.sctp_dst === "string" && this.sctp_dst.length)
-                writer.writeString(31, this.sctp_dst);
-            if (typeof this.icmpv4_type === "string" && this.icmpv4_type.length)
-                writer.writeString(33, this.icmpv4_type);
-            if (typeof this.icmpv4_code === "string" && this.icmpv4_code.length)
-                writer.writeString(35, this.icmpv4_code);
-            if (typeof this.arp_op === "string" && this.arp_op.length)
-                writer.writeString(37, this.arp_op);
-            if (typeof this.arp_spa === "string" && this.arp_spa.length)
-                writer.writeString(39, this.arp_spa);
-            if (typeof this.arp_tpa === "string" && this.arp_tpa.length)
-                writer.writeString(41, this.arp_tpa);
-            if (typeof this.arp_sha === "string" && this.arp_sha.length)
-                writer.writeString(43, this.arp_sha);
-            if (typeof this.arp_tha === "string" && this.arp_tha.length)
-                writer.writeString(45, this.arp_tha);
-            if (typeof this.ipv6_src === "string" && this.ipv6_src.length)
-                writer.writeString(47, this.ipv6_src);
-            if (typeof this.ipv6_dst === "string" && this.ipv6_dst.length)
-                writer.writeString(49, this.ipv6_dst);
-            if (typeof this.ipv6_flabel === "string" && this.ipv6_flabel.length)
-                writer.writeString(51, this.ipv6_flabel);
-            if (typeof this.icmpv6_type === "string" && this.icmpv6_type.length)
-                writer.writeString(53, this.icmpv6_type);
-            if (typeof this.icmpv6_code === "string" && this.icmpv6_code.length)
-                writer.writeString(55, this.icmpv6_code);
-            if (typeof this.ipv6_nd_target === "string" && this.ipv6_nd_target.length)
-                writer.writeString(57, this.ipv6_nd_target);
-            if (typeof this.ipv6_nd_sll === "string" && this.ipv6_nd_sll.length)
-                writer.writeString(59, this.ipv6_nd_sll);
-            if (typeof this.ipv6_nd_tll === "string" && this.ipv6_nd_tll.length)
-                writer.writeString(61, this.ipv6_nd_tll);
-            if (typeof this.mpls_label === "string" && this.mpls_label.length)
-                writer.writeString(63, this.mpls_label);
-            if (typeof this.mpls_tc === "string" && this.mpls_tc.length)
-                writer.writeString(65, this.mpls_tc);
-            if (typeof this.mpls_bos === "string" && this.mpls_bos.length)
-                writer.writeString(67, this.mpls_bos);
-            if (typeof this.pbb_isid === "string" && this.pbb_isid.length)
-                writer.writeString(69, this.pbb_isid);
-            if (typeof this.tunnel_id === "string" && this.tunnel_id.length)
-                writer.writeString(71, this.tunnel_id);
-            if (typeof this.ipv6_exthdr === "string" && this.ipv6_exthdr.length)
-                writer.writeString(73, this.ipv6_exthdr);
-            if (typeof this.pbb_uca === "string" && this.pbb_uca.length)
-                writer.writeString(75, this.pbb_uca);
-            if (typeof this.tcp_flags === "string" && this.tcp_flags.length)
-                writer.writeString(77, this.tcp_flags);
-            if (typeof this.actset_output === "string" && this.actset_output.length)
-                writer.writeString(101, this.actset_output);
+            for (const [key, value] of this.fields) {
+                writer.writeMessage(1, this.fields, () => {
+                    writer.writeString(1, key);
+                    writer.writeString(2, value);
+                })
+            }
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -1416,124 +416,7 @@ export namespace proto {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.eth_dst = reader.readString();
-                        break;
-                    case 3:
-                        message.eth_src = reader.readString();
-                        break;
-                    case 5:
-                        message.eth_type = reader.readString();
-                        break;
-                    case 7:
-                        message.vlan_vid = reader.readString();
-                        break;
-                    case 9:
-                        message.vlan_pcp = reader.readString();
-                        break;
-                    case 11:
-                        message.ip_dscp = reader.readString();
-                        break;
-                    case 13:
-                        message.ip_ecn = reader.readString();
-                        break;
-                    case 15:
-                        message.ip_proto = reader.readString();
-                        break;
-                    case 17:
-                        message.ipv4_src = reader.readString();
-                        break;
-                    case 19:
-                        message.ipv4_dst = reader.readString();
-                        break;
-                    case 21:
-                        message.tcp_src = reader.readString();
-                        break;
-                    case 23:
-                        message.tcp_dst = reader.readString();
-                        break;
-                    case 25:
-                        message.udp_src = reader.readString();
-                        break;
-                    case 27:
-                        message.udp_dst = reader.readString();
-                        break;
-                    case 29:
-                        message.sctp_src = reader.readString();
-                        break;
-                    case 31:
-                        message.sctp_dst = reader.readString();
-                        break;
-                    case 33:
-                        message.icmpv4_type = reader.readString();
-                        break;
-                    case 35:
-                        message.icmpv4_code = reader.readString();
-                        break;
-                    case 37:
-                        message.arp_op = reader.readString();
-                        break;
-                    case 39:
-                        message.arp_spa = reader.readString();
-                        break;
-                    case 41:
-                        message.arp_tpa = reader.readString();
-                        break;
-                    case 43:
-                        message.arp_sha = reader.readString();
-                        break;
-                    case 45:
-                        message.arp_tha = reader.readString();
-                        break;
-                    case 47:
-                        message.ipv6_src = reader.readString();
-                        break;
-                    case 49:
-                        message.ipv6_dst = reader.readString();
-                        break;
-                    case 51:
-                        message.ipv6_flabel = reader.readString();
-                        break;
-                    case 53:
-                        message.icmpv6_type = reader.readString();
-                        break;
-                    case 55:
-                        message.icmpv6_code = reader.readString();
-                        break;
-                    case 57:
-                        message.ipv6_nd_target = reader.readString();
-                        break;
-                    case 59:
-                        message.ipv6_nd_sll = reader.readString();
-                        break;
-                    case 61:
-                        message.ipv6_nd_tll = reader.readString();
-                        break;
-                    case 63:
-                        message.mpls_label = reader.readString();
-                        break;
-                    case 65:
-                        message.mpls_tc = reader.readString();
-                        break;
-                    case 67:
-                        message.mpls_bos = reader.readString();
-                        break;
-                    case 69:
-                        message.pbb_isid = reader.readString();
-                        break;
-                    case 71:
-                        message.tunnel_id = reader.readString();
-                        break;
-                    case 73:
-                        message.ipv6_exthdr = reader.readString();
-                        break;
-                    case 75:
-                        message.pbb_uca = reader.readString();
-                        break;
-                    case 77:
-                        message.tcp_flags = reader.readString();
-                        break;
-                    case 101:
-                        message.actset_output = reader.readString();
+                        reader.readMessage(message, () => pb_1.Map.deserializeBinary((message.fields as any), reader, reader.readString, reader.readString));
                         break;
                     default: reader.skipField();
                 }
@@ -1547,16 +430,1099 @@ export namespace proto {
             return Packet.deserialize(bytes);
         }
     }
+    export class Action extends pb_1.Message {
+        constructor(data?: any[] | ({} & (({
+            str?: string;
+        })))) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], [[1]]);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("str" in data && data.str != undefined) {
+                    this.str = data.str;
+                }
+            }
+        }
+        get str() {
+            return pb_1.Message.getField(this, 1) as string;
+        }
+        set str(value: string) {
+            pb_1.Message.setOneofField(this, 1, [1], value);
+        }
+        get _str() {
+            const cases: {
+                [index: number]: "none" | "str";
+            } = {
+                0: "none",
+                1: "str"
+            };
+            return cases[pb_1.Message.computeOneofCase(this, [1])];
+        }
+        toObject() {
+            const data: {
+                str?: string;
+            } = {};
+            if (this.str != null) {
+                data.str = this.str;
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (typeof this.str === "string" && this.str.length)
+                writer.writeString(1, this.str);
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): Action {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new Action();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.str = reader.readString();
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): Action {
+            return Action.deserialize(bytes);
+        }
+    }
+    export class Instruction extends pb_1.Message {
+        constructor(data?: any[] | ({} & (({
+            goto_table?: InstructionGotoTable;
+            write_metadata?: never;
+            actions?: never;
+            meter?: never;
+        } | {
+            goto_table?: never;
+            write_metadata?: InstructionWriteMetadata;
+            actions?: never;
+            meter?: never;
+        } | {
+            goto_table?: never;
+            write_metadata?: never;
+            actions?: InstructionActions;
+            meter?: never;
+        } | {
+            goto_table?: never;
+            write_metadata?: never;
+            actions?: never;
+            meter?: InstructionMeter;
+        }) | ({
+            type?: InstructionType;
+        })))) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], [[2, 3, 4, 5], [1]]);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("type" in data && data.type != undefined) {
+                    this.type = data.type;
+                }
+                if ("goto_table" in data && data.goto_table != undefined) {
+                    this.goto_table = data.goto_table;
+                }
+                if ("write_metadata" in data && data.write_metadata != undefined) {
+                    this.write_metadata = data.write_metadata;
+                }
+                if ("actions" in data && data.actions != undefined) {
+                    this.actions = data.actions;
+                }
+                if ("meter" in data && data.meter != undefined) {
+                    this.meter = data.meter;
+                }
+            }
+        }
+        get type() {
+            return pb_1.Message.getField(this, 1) as InstructionType;
+        }
+        set type(value: InstructionType) {
+            pb_1.Message.setOneofField(this, 1, [1], value);
+        }
+        get goto_table() {
+            return pb_1.Message.getWrapperField(this, InstructionGotoTable, 2) as InstructionGotoTable;
+        }
+        set goto_table(value: InstructionGotoTable) {
+            pb_1.Message.setOneofWrapperField(this, 2, [2, 3, 4, 5], value);
+        }
+        get write_metadata() {
+            return pb_1.Message.getWrapperField(this, InstructionWriteMetadata, 3) as InstructionWriteMetadata;
+        }
+        set write_metadata(value: InstructionWriteMetadata) {
+            pb_1.Message.setOneofWrapperField(this, 3, [2, 3, 4, 5], value);
+        }
+        get actions() {
+            return pb_1.Message.getWrapperField(this, InstructionActions, 4) as InstructionActions;
+        }
+        set actions(value: InstructionActions) {
+            pb_1.Message.setOneofWrapperField(this, 4, [2, 3, 4, 5], value);
+        }
+        get meter() {
+            return pb_1.Message.getWrapperField(this, InstructionMeter, 5) as InstructionMeter;
+        }
+        set meter(value: InstructionMeter) {
+            pb_1.Message.setOneofWrapperField(this, 5, [2, 3, 4, 5], value);
+        }
+        get data() {
+            const cases: {
+                [index: number]: "none" | "goto_table" | "write_metadata" | "actions" | "meter";
+            } = {
+                0: "none",
+                2: "goto_table",
+                3: "write_metadata",
+                4: "actions",
+                5: "meter"
+            };
+            return cases[pb_1.Message.computeOneofCase(this, [2, 3, 4, 5])];
+        }
+        get _type() {
+            const cases: {
+                [index: number]: "none" | "type";
+            } = {
+                0: "none",
+                1: "type"
+            };
+            return cases[pb_1.Message.computeOneofCase(this, [1])];
+        }
+        toObject() {
+            const data: {
+                type?: InstructionType;
+                goto_table?: ReturnType<typeof InstructionGotoTable.prototype.toObject>;
+                write_metadata?: ReturnType<typeof InstructionWriteMetadata.prototype.toObject>;
+                actions?: ReturnType<typeof InstructionActions.prototype.toObject>;
+                meter?: ReturnType<typeof InstructionMeter.prototype.toObject>;
+            } = {};
+            if (this.type != null) {
+                data.type = this.type;
+            }
+            if (this.goto_table != null) {
+                data.goto_table = this.goto_table.toObject();
+            }
+            if (this.write_metadata != null) {
+                data.write_metadata = this.write_metadata.toObject();
+            }
+            if (this.actions != null) {
+                data.actions = this.actions.toObject();
+            }
+            if (this.meter != null) {
+                data.meter = this.meter.toObject();
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (this.type !== undefined)
+                writer.writeEnum(1, this.type);
+            if (this.goto_table !== undefined)
+                writer.writeMessage(2, this.goto_table, () => this.goto_table.serialize(writer));
+            if (this.write_metadata !== undefined)
+                writer.writeMessage(3, this.write_metadata, () => this.write_metadata.serialize(writer));
+            if (this.actions !== undefined)
+                writer.writeMessage(4, this.actions, () => this.actions.serialize(writer));
+            if (this.meter !== undefined)
+                writer.writeMessage(5, this.meter, () => this.meter.serialize(writer));
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): Instruction {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new Instruction();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.type = reader.readEnum();
+                        break;
+                    case 2:
+                        reader.readMessage(message.goto_table, () => message.goto_table = InstructionGotoTable.deserialize(reader));
+                        break;
+                    case 3:
+                        reader.readMessage(message.write_metadata, () => message.write_metadata = InstructionWriteMetadata.deserialize(reader));
+                        break;
+                    case 4:
+                        reader.readMessage(message.actions, () => message.actions = InstructionActions.deserialize(reader));
+                        break;
+                    case 5:
+                        reader.readMessage(message.meter, () => message.meter = InstructionMeter.deserialize(reader));
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): Instruction {
+            return Instruction.deserialize(bytes);
+        }
+    }
+    export class InstructionGotoTable extends pb_1.Message {
+        constructor(data?: any[] | {
+            table_id?: number;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], []);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("table_id" in data && data.table_id != undefined) {
+                    this.table_id = data.table_id;
+                }
+            }
+        }
+        get table_id() {
+            return pb_1.Message.getField(this, 1) as number;
+        }
+        set table_id(value: number) {
+            pb_1.Message.setField(this, 1, value);
+        }
+        toObject() {
+            const data: {
+                table_id?: number;
+            } = {};
+            if (this.table_id != null) {
+                data.table_id = this.table_id;
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (this.table_id !== undefined)
+                writer.writeUint32(1, this.table_id);
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): InstructionGotoTable {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new InstructionGotoTable();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.table_id = reader.readUint32();
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): InstructionGotoTable {
+            return InstructionGotoTable.deserialize(bytes);
+        }
+    }
+    export class InstructionWriteMetadata extends pb_1.Message {
+        constructor(data?: any[] | {
+            metadata?: number;
+            metadata_mask?: number;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], []);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("metadata" in data && data.metadata != undefined) {
+                    this.metadata = data.metadata;
+                }
+                if ("metadata_mask" in data && data.metadata_mask != undefined) {
+                    this.metadata_mask = data.metadata_mask;
+                }
+            }
+        }
+        get metadata() {
+            return pb_1.Message.getField(this, 1) as number;
+        }
+        set metadata(value: number) {
+            pb_1.Message.setField(this, 1, value);
+        }
+        get metadata_mask() {
+            return pb_1.Message.getField(this, 2) as number;
+        }
+        set metadata_mask(value: number) {
+            pb_1.Message.setField(this, 2, value);
+        }
+        toObject() {
+            const data: {
+                metadata?: number;
+                metadata_mask?: number;
+            } = {};
+            if (this.metadata != null) {
+                data.metadata = this.metadata;
+            }
+            if (this.metadata_mask != null) {
+                data.metadata_mask = this.metadata_mask;
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (this.metadata !== undefined)
+                writer.writeUint32(1, this.metadata);
+            if (this.metadata_mask !== undefined)
+                writer.writeUint32(2, this.metadata_mask);
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): InstructionWriteMetadata {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new InstructionWriteMetadata();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.metadata = reader.readUint32();
+                        break;
+                    case 2:
+                        message.metadata_mask = reader.readUint32();
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): InstructionWriteMetadata {
+            return InstructionWriteMetadata.deserialize(bytes);
+        }
+    }
+    export class InstructionActions extends pb_1.Message {
+        constructor(data?: any[] | {
+            actions?: Action[];
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [1], []);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("actions" in data && data.actions != undefined) {
+                    this.actions = data.actions;
+                }
+            }
+        }
+        get actions() {
+            return pb_1.Message.getRepeatedWrapperField(this, Action, 1) as Action[];
+        }
+        set actions(value: Action[]) {
+            pb_1.Message.setRepeatedWrapperField(this, 1, value);
+        }
+        toObject() {
+            const data: {
+                actions?: ReturnType<typeof Action.prototype.toObject>[];
+            } = {};
+            if (this.actions != null) {
+                data.actions = this.actions.map((item: Action) => item.toObject());
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (this.actions !== undefined)
+                writer.writeRepeatedMessage(1, this.actions, (item: Action) => item.serialize(writer));
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): InstructionActions {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new InstructionActions();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        reader.readMessage(message.actions, () => pb_1.Message.addToRepeatedWrapperField(message, 1, Action.deserialize(reader), Action));
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): InstructionActions {
+            return InstructionActions.deserialize(bytes);
+        }
+    }
+    export class InstructionMeter extends pb_1.Message {
+        constructor(data?: any[] | {
+            meter_id?: number;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], []);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("meter_id" in data && data.meter_id != undefined) {
+                    this.meter_id = data.meter_id;
+                }
+            }
+        }
+        get meter_id() {
+            return pb_1.Message.getField(this, 1) as number;
+        }
+        set meter_id(value: number) {
+            pb_1.Message.setField(this, 1, value);
+        }
+        toObject() {
+            const data: {
+                meter_id?: number;
+            } = {};
+            if (this.meter_id != null) {
+                data.meter_id = this.meter_id;
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (this.meter_id !== undefined)
+                writer.writeUint32(1, this.meter_id);
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): InstructionMeter {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new InstructionMeter();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.meter_id = reader.readUint32();
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): InstructionMeter {
+            return InstructionMeter.deserialize(bytes);
+        }
+    }
+    export class Match extends pb_1.Message {
+        constructor(data?: any[] | ({} & (({
+            field_name?: string;
+        }) | ({
+            value?: string;
+        }) | ({
+            mask?: string;
+        })))) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], [[1], [2], [3]]);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("field_name" in data && data.field_name != undefined) {
+                    this.field_name = data.field_name;
+                }
+                if ("value" in data && data.value != undefined) {
+                    this.value = data.value;
+                }
+                if ("mask" in data && data.mask != undefined) {
+                    this.mask = data.mask;
+                }
+            }
+        }
+        get field_name() {
+            return pb_1.Message.getField(this, 1) as string;
+        }
+        set field_name(value: string) {
+            pb_1.Message.setOneofField(this, 1, [1], value);
+        }
+        get value() {
+            return pb_1.Message.getField(this, 2) as string;
+        }
+        set value(value: string) {
+            pb_1.Message.setOneofField(this, 2, [2], value);
+        }
+        get mask() {
+            return pb_1.Message.getField(this, 3) as string;
+        }
+        set mask(value: string) {
+            pb_1.Message.setOneofField(this, 3, [3], value);
+        }
+        get _field_name() {
+            const cases: {
+                [index: number]: "none" | "field_name";
+            } = {
+                0: "none",
+                1: "field_name"
+            };
+            return cases[pb_1.Message.computeOneofCase(this, [1])];
+        }
+        get _value() {
+            const cases: {
+                [index: number]: "none" | "value";
+            } = {
+                0: "none",
+                2: "value"
+            };
+            return cases[pb_1.Message.computeOneofCase(this, [2])];
+        }
+        get _mask() {
+            const cases: {
+                [index: number]: "none" | "mask";
+            } = {
+                0: "none",
+                3: "mask"
+            };
+            return cases[pb_1.Message.computeOneofCase(this, [3])];
+        }
+        toObject() {
+            const data: {
+                field_name?: string;
+                value?: string;
+                mask?: string;
+            } = {};
+            if (this.field_name != null) {
+                data.field_name = this.field_name;
+            }
+            if (this.value != null) {
+                data.value = this.value;
+            }
+            if (this.mask != null) {
+                data.mask = this.mask;
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (typeof this.field_name === "string" && this.field_name.length)
+                writer.writeString(1, this.field_name);
+            if (typeof this.value === "string" && this.value.length)
+                writer.writeString(2, this.value);
+            if (typeof this.mask === "string" && this.mask.length)
+                writer.writeString(3, this.mask);
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): Match {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new Match();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.field_name = reader.readString();
+                        break;
+                    case 2:
+                        message.value = reader.readString();
+                        break;
+                    case 3:
+                        message.mask = reader.readString();
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): Match {
+            return Match.deserialize(bytes);
+        }
+    }
+    export class Flow extends pb_1.Message {
+        constructor(data?: any[] | ({
+            match?: Match[];
+            actions?: Instruction[];
+        } & (({
+            cookie?: string;
+        }) | ({
+            duration?: number;
+        }) | ({
+            table?: number;
+        }) | ({
+            n_packets?: number;
+        }) | ({
+            n_bytes?: number;
+        }) | ({
+            priority?: number;
+        }) | ({
+            flow_id?: number;
+        })))) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [7, 8], [[1], [2], [3], [4], [5], [6], [9]]);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("cookie" in data && data.cookie != undefined) {
+                    this.cookie = data.cookie;
+                }
+                if ("duration" in data && data.duration != undefined) {
+                    this.duration = data.duration;
+                }
+                if ("table" in data && data.table != undefined) {
+                    this.table = data.table;
+                }
+                if ("n_packets" in data && data.n_packets != undefined) {
+                    this.n_packets = data.n_packets;
+                }
+                if ("n_bytes" in data && data.n_bytes != undefined) {
+                    this.n_bytes = data.n_bytes;
+                }
+                if ("priority" in data && data.priority != undefined) {
+                    this.priority = data.priority;
+                }
+                if ("match" in data && data.match != undefined) {
+                    this.match = data.match;
+                }
+                if ("actions" in data && data.actions != undefined) {
+                    this.actions = data.actions;
+                }
+                if ("flow_id" in data && data.flow_id != undefined) {
+                    this.flow_id = data.flow_id;
+                }
+            }
+        }
+        get cookie() {
+            return pb_1.Message.getField(this, 1) as string;
+        }
+        set cookie(value: string) {
+            pb_1.Message.setOneofField(this, 1, [1], value);
+        }
+        get duration() {
+            return pb_1.Message.getField(this, 2) as number;
+        }
+        set duration(value: number) {
+            pb_1.Message.setOneofField(this, 2, [2], value);
+        }
+        get table() {
+            return pb_1.Message.getField(this, 3) as number;
+        }
+        set table(value: number) {
+            pb_1.Message.setOneofField(this, 3, [3], value);
+        }
+        get n_packets() {
+            return pb_1.Message.getField(this, 4) as number;
+        }
+        set n_packets(value: number) {
+            pb_1.Message.setOneofField(this, 4, [4], value);
+        }
+        get n_bytes() {
+            return pb_1.Message.getField(this, 5) as number;
+        }
+        set n_bytes(value: number) {
+            pb_1.Message.setOneofField(this, 5, [5], value);
+        }
+        get priority() {
+            return pb_1.Message.getField(this, 6) as number;
+        }
+        set priority(value: number) {
+            pb_1.Message.setOneofField(this, 6, [6], value);
+        }
+        get match() {
+            return pb_1.Message.getRepeatedWrapperField(this, Match, 7) as Match[];
+        }
+        set match(value: Match[]) {
+            pb_1.Message.setRepeatedWrapperField(this, 7, value);
+        }
+        get actions() {
+            return pb_1.Message.getRepeatedWrapperField(this, Instruction, 8) as Instruction[];
+        }
+        set actions(value: Instruction[]) {
+            pb_1.Message.setRepeatedWrapperField(this, 8, value);
+        }
+        get flow_id() {
+            return pb_1.Message.getField(this, 9) as number;
+        }
+        set flow_id(value: number) {
+            pb_1.Message.setOneofField(this, 9, [9], value);
+        }
+        get _cookie() {
+            const cases: {
+                [index: number]: "none" | "cookie";
+            } = {
+                0: "none",
+                1: "cookie"
+            };
+            return cases[pb_1.Message.computeOneofCase(this, [1])];
+        }
+        get _duration() {
+            const cases: {
+                [index: number]: "none" | "duration";
+            } = {
+                0: "none",
+                2: "duration"
+            };
+            return cases[pb_1.Message.computeOneofCase(this, [2])];
+        }
+        get _table() {
+            const cases: {
+                [index: number]: "none" | "table";
+            } = {
+                0: "none",
+                3: "table"
+            };
+            return cases[pb_1.Message.computeOneofCase(this, [3])];
+        }
+        get _n_packets() {
+            const cases: {
+                [index: number]: "none" | "n_packets";
+            } = {
+                0: "none",
+                4: "n_packets"
+            };
+            return cases[pb_1.Message.computeOneofCase(this, [4])];
+        }
+        get _n_bytes() {
+            const cases: {
+                [index: number]: "none" | "n_bytes";
+            } = {
+                0: "none",
+                5: "n_bytes"
+            };
+            return cases[pb_1.Message.computeOneofCase(this, [5])];
+        }
+        get _priority() {
+            const cases: {
+                [index: number]: "none" | "priority";
+            } = {
+                0: "none",
+                6: "priority"
+            };
+            return cases[pb_1.Message.computeOneofCase(this, [6])];
+        }
+        get _flow_id() {
+            const cases: {
+                [index: number]: "none" | "flow_id";
+            } = {
+                0: "none",
+                9: "flow_id"
+            };
+            return cases[pb_1.Message.computeOneofCase(this, [9])];
+        }
+        toObject() {
+            const data: {
+                cookie?: string;
+                duration?: number;
+                table?: number;
+                n_packets?: number;
+                n_bytes?: number;
+                priority?: number;
+                match?: ReturnType<typeof Match.prototype.toObject>[];
+                actions?: ReturnType<typeof Instruction.prototype.toObject>[];
+                flow_id?: number;
+            } = {};
+            if (this.cookie != null) {
+                data.cookie = this.cookie;
+            }
+            if (this.duration != null) {
+                data.duration = this.duration;
+            }
+            if (this.table != null) {
+                data.table = this.table;
+            }
+            if (this.n_packets != null) {
+                data.n_packets = this.n_packets;
+            }
+            if (this.n_bytes != null) {
+                data.n_bytes = this.n_bytes;
+            }
+            if (this.priority != null) {
+                data.priority = this.priority;
+            }
+            if (this.match != null) {
+                data.match = this.match.map((item: Match) => item.toObject());
+            }
+            if (this.actions != null) {
+                data.actions = this.actions.map((item: Instruction) => item.toObject());
+            }
+            if (this.flow_id != null) {
+                data.flow_id = this.flow_id;
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (typeof this.cookie === "string" && this.cookie.length)
+                writer.writeString(1, this.cookie);
+            if (this.duration !== undefined)
+                writer.writeSint32(2, this.duration);
+            if (this.table !== undefined)
+                writer.writeSint32(3, this.table);
+            if (this.n_packets !== undefined)
+                writer.writeSint32(4, this.n_packets);
+            if (this.n_bytes !== undefined)
+                writer.writeSint32(5, this.n_bytes);
+            if (this.priority !== undefined)
+                writer.writeSint32(6, this.priority);
+            if (this.match !== undefined)
+                writer.writeRepeatedMessage(7, this.match, (item: Match) => item.serialize(writer));
+            if (this.actions !== undefined)
+                writer.writeRepeatedMessage(8, this.actions, (item: Instruction) => item.serialize(writer));
+            if (this.flow_id !== undefined)
+                writer.writeSint32(9, this.flow_id);
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): Flow {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new Flow();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.cookie = reader.readString();
+                        break;
+                    case 2:
+                        message.duration = reader.readSint32();
+                        break;
+                    case 3:
+                        message.table = reader.readSint32();
+                        break;
+                    case 4:
+                        message.n_packets = reader.readSint32();
+                        break;
+                    case 5:
+                        message.n_bytes = reader.readSint32();
+                        break;
+                    case 6:
+                        message.priority = reader.readSint32();
+                        break;
+                    case 7:
+                        reader.readMessage(message.match, () => pb_1.Message.addToRepeatedWrapperField(message, 7, Match.deserialize(reader), Match));
+                        break;
+                    case 8:
+                        reader.readMessage(message.actions, () => pb_1.Message.addToRepeatedWrapperField(message, 8, Instruction.deserialize(reader), Instruction));
+                        break;
+                    case 9:
+                        message.flow_id = reader.readSint32();
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): Flow {
+            return Flow.deserialize(bytes);
+        }
+    }
+    export class FlowTable extends pb_1.Message {
+        constructor(data?: any[] | {
+            flows?: Flow[];
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [1], []);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("flows" in data && data.flows != undefined) {
+                    this.flows = data.flows;
+                }
+            }
+        }
+        get flows() {
+            return pb_1.Message.getRepeatedWrapperField(this, Flow, 1) as Flow[];
+        }
+        set flows(value: Flow[]) {
+            pb_1.Message.setRepeatedWrapperField(this, 1, value);
+        }
+        toObject() {
+            const data: {
+                flows?: ReturnType<typeof Flow.prototype.toObject>[];
+            } = {};
+            if (this.flows != null) {
+                data.flows = this.flows.map((item: Flow) => item.toObject());
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (this.flows !== undefined)
+                writer.writeRepeatedMessage(1, this.flows, (item: Flow) => item.serialize(writer));
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): FlowTable {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new FlowTable();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        reader.readMessage(message.flows, () => pb_1.Message.addToRepeatedWrapperField(message, 1, Flow.deserialize(reader), Flow));
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): FlowTable {
+            return FlowTable.deserialize(bytes);
+        }
+    }
+    export class PacketProcessing extends pb_1.Message {
+        constructor(data?: any[] | ({
+            pkts?: Packet[];
+            matched_flows?: number[];
+        } & (({
+            switch?: string;
+        }) | ({
+            flow_table?: FlowTable;
+        })))) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [2, 3], [[1], [4]]);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("switch" in data && data.switch != undefined) {
+                    this.switch = data.switch;
+                }
+                if ("flow_table" in data && data.flow_table != undefined) {
+                    this.flow_table = data.flow_table;
+                }
+                if ("pkts" in data && data.pkts != undefined) {
+                    this.pkts = data.pkts;
+                }
+                if ("matched_flows" in data && data.matched_flows != undefined) {
+                    this.matched_flows = data.matched_flows;
+                }
+            }
+        }
+        get switch() {
+            return pb_1.Message.getField(this, 1) as string;
+        }
+        set switch(value: string) {
+            pb_1.Message.setOneofField(this, 1, [1], value);
+        }
+        get flow_table() {
+            return pb_1.Message.getWrapperField(this, FlowTable, 4) as FlowTable;
+        }
+        set flow_table(value: FlowTable) {
+            pb_1.Message.setOneofWrapperField(this, 4, [4], value);
+        }
+        get pkts() {
+            return pb_1.Message.getRepeatedWrapperField(this, Packet, 2) as Packet[];
+        }
+        set pkts(value: Packet[]) {
+            pb_1.Message.setRepeatedWrapperField(this, 2, value);
+        }
+        get matched_flows() {
+            return pb_1.Message.getField(this, 3) as number[];
+        }
+        set matched_flows(value: number[]) {
+            pb_1.Message.setField(this, 3, value);
+        }
+        get _switch() {
+            const cases: {
+                [index: number]: "none" | "switch";
+            } = {
+                0: "none",
+                1: "switch"
+            };
+            return cases[pb_1.Message.computeOneofCase(this, [1])];
+        }
+        get _flow_table() {
+            const cases: {
+                [index: number]: "none" | "flow_table";
+            } = {
+                0: "none",
+                4: "flow_table"
+            };
+            return cases[pb_1.Message.computeOneofCase(this, [4])];
+        }
+        toObject() {
+            const data: {
+                switch?: string;
+                flow_table?: ReturnType<typeof FlowTable.prototype.toObject>;
+                pkts?: ReturnType<typeof Packet.prototype.toObject>[];
+                matched_flows?: number[];
+            } = {};
+            if (this.switch != null) {
+                data.switch = this.switch;
+            }
+            if (this.flow_table != null) {
+                data.flow_table = this.flow_table.toObject();
+            }
+            if (this.pkts != null) {
+                data.pkts = this.pkts.map((item: Packet) => item.toObject());
+            }
+            if (this.matched_flows != null) {
+                data.matched_flows = this.matched_flows;
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (typeof this.switch === "string" && this.switch.length)
+                writer.writeString(1, this.switch);
+            if (this.flow_table !== undefined)
+                writer.writeMessage(4, this.flow_table, () => this.flow_table.serialize(writer));
+            if (this.pkts !== undefined)
+                writer.writeRepeatedMessage(2, this.pkts, (item: Packet) => item.serialize(writer));
+            if (this.matched_flows !== undefined)
+                writer.writePackedSint32(3, this.matched_flows);
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): PacketProcessing {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new PacketProcessing();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.switch = reader.readString();
+                        break;
+                    case 4:
+                        reader.readMessage(message.flow_table, () => message.flow_table = FlowTable.deserialize(reader));
+                        break;
+                    case 2:
+                        reader.readMessage(message.pkts, () => pb_1.Message.addToRepeatedWrapperField(message, 2, Packet.deserialize(reader), Packet));
+                        break;
+                    case 3:
+                        pb_1.Message.addToRepeatedField(message, 3, reader.readPackedSint32());
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): PacketProcessing {
+            return PacketProcessing.deserialize(bytes);
+        }
+    }
     export class PacketArc extends pb_1.Message {
         constructor(data?: any[] | ({} & (({
             src?: string;
         }) | ({
             pkt?: Packet;
         }) | ({
+            packet_processing?: PacketProcessing;
+        }) | ({
+            edge?: string;
+        }) | ({
             dst?: string;
+        }) | ({
+            dst_interface?: string;
         })))) {
             super();
-            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], [[1], [2], [3]]);
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], [[1], [2], [4], [5], [3], [6]]);
             if (!Array.isArray(data) && typeof data == "object") {
                 if ("src" in data && data.src != undefined) {
                     this.src = data.src;
@@ -1564,8 +1530,17 @@ export namespace proto {
                 if ("pkt" in data && data.pkt != undefined) {
                     this.pkt = data.pkt;
                 }
+                if ("packet_processing" in data && data.packet_processing != undefined) {
+                    this.packet_processing = data.packet_processing;
+                }
+                if ("edge" in data && data.edge != undefined) {
+                    this.edge = data.edge;
+                }
                 if ("dst" in data && data.dst != undefined) {
                     this.dst = data.dst;
+                }
+                if ("dst_interface" in data && data.dst_interface != undefined) {
+                    this.dst_interface = data.dst_interface;
                 }
             }
         }
@@ -1581,11 +1556,29 @@ export namespace proto {
         set pkt(value: Packet) {
             pb_1.Message.setOneofWrapperField(this, 2, [2], value);
         }
+        get packet_processing() {
+            return pb_1.Message.getWrapperField(this, PacketProcessing, 4) as PacketProcessing;
+        }
+        set packet_processing(value: PacketProcessing) {
+            pb_1.Message.setOneofWrapperField(this, 4, [4], value);
+        }
+        get edge() {
+            return pb_1.Message.getField(this, 5) as string;
+        }
+        set edge(value: string) {
+            pb_1.Message.setOneofField(this, 5, [5], value);
+        }
         get dst() {
             return pb_1.Message.getField(this, 3) as string;
         }
         set dst(value: string) {
             pb_1.Message.setOneofField(this, 3, [3], value);
+        }
+        get dst_interface() {
+            return pb_1.Message.getField(this, 6) as string;
+        }
+        set dst_interface(value: string) {
+            pb_1.Message.setOneofField(this, 6, [6], value);
         }
         get _src() {
             const cases: {
@@ -1605,6 +1598,24 @@ export namespace proto {
             };
             return cases[pb_1.Message.computeOneofCase(this, [2])];
         }
+        get _packet_processing() {
+            const cases: {
+                [index: number]: "none" | "packet_processing";
+            } = {
+                0: "none",
+                4: "packet_processing"
+            };
+            return cases[pb_1.Message.computeOneofCase(this, [4])];
+        }
+        get _edge() {
+            const cases: {
+                [index: number]: "none" | "edge";
+            } = {
+                0: "none",
+                5: "edge"
+            };
+            return cases[pb_1.Message.computeOneofCase(this, [5])];
+        }
         get _dst() {
             const cases: {
                 [index: number]: "none" | "dst";
@@ -1614,11 +1625,23 @@ export namespace proto {
             };
             return cases[pb_1.Message.computeOneofCase(this, [3])];
         }
+        get _dst_interface() {
+            const cases: {
+                [index: number]: "none" | "dst_interface";
+            } = {
+                0: "none",
+                6: "dst_interface"
+            };
+            return cases[pb_1.Message.computeOneofCase(this, [6])];
+        }
         toObject() {
             const data: {
                 src?: string;
                 pkt?: ReturnType<typeof Packet.prototype.toObject>;
+                packet_processing?: ReturnType<typeof PacketProcessing.prototype.toObject>;
+                edge?: string;
                 dst?: string;
+                dst_interface?: string;
             } = {};
             if (this.src != null) {
                 data.src = this.src;
@@ -1626,8 +1649,17 @@ export namespace proto {
             if (this.pkt != null) {
                 data.pkt = this.pkt.toObject();
             }
+            if (this.packet_processing != null) {
+                data.packet_processing = this.packet_processing.toObject();
+            }
+            if (this.edge != null) {
+                data.edge = this.edge;
+            }
             if (this.dst != null) {
                 data.dst = this.dst;
+            }
+            if (this.dst_interface != null) {
+                data.dst_interface = this.dst_interface;
             }
             return data;
         }
@@ -1639,8 +1671,14 @@ export namespace proto {
                 writer.writeString(1, this.src);
             if (this.pkt !== undefined)
                 writer.writeMessage(2, this.pkt, () => this.pkt.serialize(writer));
+            if (this.packet_processing !== undefined)
+                writer.writeMessage(4, this.packet_processing, () => this.packet_processing.serialize(writer));
+            if (typeof this.edge === "string" && this.edge.length)
+                writer.writeString(5, this.edge);
             if (typeof this.dst === "string" && this.dst.length)
                 writer.writeString(3, this.dst);
+            if (typeof this.dst_interface === "string" && this.dst_interface.length)
+                writer.writeString(6, this.dst_interface);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -1656,8 +1694,17 @@ export namespace proto {
                     case 2:
                         reader.readMessage(message.pkt, () => message.pkt = Packet.deserialize(reader));
                         break;
+                    case 4:
+                        reader.readMessage(message.packet_processing, () => message.packet_processing = PacketProcessing.deserialize(reader));
+                        break;
+                    case 5:
+                        message.edge = reader.readString();
+                        break;
                     case 3:
                         message.dst = reader.readString();
+                        break;
+                    case 6:
+                        message.dst_interface = reader.readString();
                         break;
                     default: reader.skipField();
                 }
@@ -1955,6 +2002,63 @@ export namespace proto {
             return GetTraceRequest.deserialize(bytes);
         }
     }
+    export class GetTraceResult extends pb_1.Message {
+        constructor(data?: any[] | {
+            packet_traces?: PacketTrace[];
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [1], []);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("packet_traces" in data && data.packet_traces != undefined) {
+                    this.packet_traces = data.packet_traces;
+                }
+            }
+        }
+        get packet_traces() {
+            return pb_1.Message.getRepeatedWrapperField(this, PacketTrace, 1) as PacketTrace[];
+        }
+        set packet_traces(value: PacketTrace[]) {
+            pb_1.Message.setRepeatedWrapperField(this, 1, value);
+        }
+        toObject() {
+            const data: {
+                packet_traces?: ReturnType<typeof PacketTrace.prototype.toObject>[];
+            } = {};
+            if (this.packet_traces != null) {
+                data.packet_traces = this.packet_traces.map((item: PacketTrace) => item.toObject());
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (this.packet_traces !== undefined)
+                writer.writeRepeatedMessage(1, this.packet_traces, (item: PacketTrace) => item.serialize(writer));
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): GetTraceResult {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new GetTraceResult();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        reader.readMessage(message.packet_traces, () => pb_1.Message.addToRepeatedWrapperField(message, 1, PacketTrace.deserialize(reader), PacketTrace));
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): GetTraceResult {
+            return GetTraceResult.deserialize(bytes);
+        }
+    }
     export class TopoChangeResult extends pb_1.Message {
         constructor(data?: any[] | ({} & (({
             status?: number;
@@ -2184,35 +2288,59 @@ export namespace proto {
     }
     export class CommandResult extends pb_1.Message {
         constructor(data?: any[] | ({} & (({
+            type?: CommandResultType;
+        }) | ({
             result?: string;
         })))) {
             super();
-            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], [[1]]);
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], [[1], [2]]);
             if (!Array.isArray(data) && typeof data == "object") {
+                if ("type" in data && data.type != undefined) {
+                    this.type = data.type;
+                }
                 if ("result" in data && data.result != undefined) {
                     this.result = data.result;
                 }
             }
         }
+        get type() {
+            return pb_1.Message.getField(this, 1) as CommandResultType;
+        }
+        set type(value: CommandResultType) {
+            pb_1.Message.setOneofField(this, 1, [1], value);
+        }
         get result() {
-            return pb_1.Message.getField(this, 1) as string;
+            return pb_1.Message.getField(this, 2) as string;
         }
         set result(value: string) {
-            pb_1.Message.setOneofField(this, 1, [1], value);
+            pb_1.Message.setOneofField(this, 2, [2], value);
+        }
+        get _type() {
+            const cases: {
+                [index: number]: "none" | "type";
+            } = {
+                0: "none",
+                1: "type"
+            };
+            return cases[pb_1.Message.computeOneofCase(this, [1])];
         }
         get _result() {
             const cases: {
                 [index: number]: "none" | "result";
             } = {
                 0: "none",
-                1: "result"
+                2: "result"
             };
-            return cases[pb_1.Message.computeOneofCase(this, [1])];
+            return cases[pb_1.Message.computeOneofCase(this, [2])];
         }
         toObject() {
             const data: {
+                type?: CommandResultType;
                 result?: string;
             } = {};
+            if (this.type != null) {
+                data.type = this.type;
+            }
             if (this.result != null) {
                 data.result = this.result;
             }
@@ -2222,8 +2350,10 @@ export namespace proto {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
+            if (this.type !== undefined)
+                writer.writeEnum(1, this.type);
             if (typeof this.result === "string" && this.result.length)
-                writer.writeString(1, this.result);
+                writer.writeString(2, this.result);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -2234,6 +2364,9 @@ export namespace proto {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
+                        message.type = reader.readEnum();
+                        break;
+                    case 2:
                         message.result = reader.readString();
                         break;
                     default: reader.skipField();

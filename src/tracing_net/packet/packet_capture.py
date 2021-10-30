@@ -1,3 +1,10 @@
+"""
+Packet Capture
+
+Notes:
+    * In the future, the creation of pcap files may be moved to the packet_repository
+"""
+
 from abc import ABCMeta, abstractmethod
 import pyshark
 import asyncio
@@ -44,7 +51,7 @@ class PacketCapture(Capture):
 
         Args:
             interface (str) : interface name
-            output_file (str) : output pcap file name
+            output_file (str) : output pcap file name. if it is None, packets are not output.
         """
         super(PacketCapture, self).__init__(parent_conn)
         self.interface = interface
@@ -55,11 +62,11 @@ class PacketCapture(Capture):
     def start_capture(self):
         """packet capture run"""
         try:
-            logger.info("capture start on {}".format(self.interface))
+            logger.info("packet capture start on {}".format(self.interface))
             coroutine = self._get_packet_handler_coro()
             self.event_loop.run_until_complete(coroutine)
         except KeyboardInterrupt as e:
-            logger.info("finish capture on {}".format(self.interface))
+            logger.info("finish packet capture on {}".format(self.interface))
 
     def _get_packet_handler_coro(self):
         return self.capture.packets_from_tshark(self._packet_handler)
@@ -74,7 +81,6 @@ class PacketCapture(Capture):
         if conf.OUTPUT_PACKETS_TO_LOGFILE:
             logger.debug("sniff {} : {}".format(pkt.sniff_timestamp, pkt.__class__))
         self.parent_conn.send([self.interface, Msg(self.interface, float(pkt.sniff_timestamp), pkt)])
-        # self.parent_conn.send(1)
         if self._output_file:
             wrpcap(self._output_file, pkt.get_raw_packet(), append=True)
 

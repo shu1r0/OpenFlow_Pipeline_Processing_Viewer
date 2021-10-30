@@ -10,7 +10,7 @@
 
 import cytoscape, { EventObject, Core, CollectionReturnValue, CytoscapeOptions, NodeSingular, EdgeSingular, ElementDefinition, CollectionArgument } from 'cytoscape'
 import { DEVICE_TYPE } from '../vnet/devices'
-import { createDevice, createEdge, createPacketEdge } from '../vnet/factory'
+import { createDevice, createEdge, createPacketEdge, createController } from '../vnet/factory'
 import { RemoteClient } from '../api/remoteClient'
 // @ts-ignore
 import gtip from 'cytoscape-qtip'
@@ -150,21 +150,56 @@ export class VNet extends VNetBase{
 
   /**
    * setup from property
+   * 
+   * Note:
+   *     * 追加するデバイスがない場合，返り値の値は信用できない
    */
   setUpDefaultElements(){
+    const shape = {
+      top: -99999,
+      bottom: 99999,
+      left: 99999,
+      right: -99999
+    }
+    const updateShape = (e: ElementDefinition) => {
+      const x = e.position.x
+      const y = e.position.y
+      if(y > shape.top){
+        shape.top = y
+      }
+      if(y < shape.bottom){
+        shape.bottom = y
+      }
+      if(x < shape.left){
+        shape.left = x
+      }
+      if(x > shape.right){
+        shape.right = x
+      }
+    }
     if(this.cytoscape){
       for(const [_, value] of Object.entries(this.switches)){
+        updateShape(value)
         this.cytoscape.add(Object.assign(value))
       }
       for(const [_, value] of Object.entries(this.hosts)){
+        updateShape(value)
         this.cytoscape.add(Object.assign(value))
       }
       for(const [_, value] of Object.entries(this.edges)){
+        updateShape(value)
         this.cytoscape.add(Object.assign(value))
       }
     }else{
       console.error("no cytoscape instance")
     }
+    if(shape.top === -99999){
+      shape.top = 0
+      shape.bottom = 0
+      shape.left = 0
+      shape.right = 0
+    }
+    return shape
   }
 
   /**
@@ -350,6 +385,11 @@ export class TracingVNet extends VNet implements Mountable{
     }
   }
 
+  /**
+   * setupCytoscape
+   * 
+   * @param element : mounted element
+   */
   setupCytoscape(element: HTMLElement): void {
     this.options.container = element
     this.options.style = [{
@@ -385,13 +425,30 @@ export class TracingVNet extends VNet implements Mountable{
   setupFrom(vnet: VNet, element: HTMLElement){
     this.setupCytoscape(element)
     this.setProperties(vnet.switches, vnet.hosts, vnet.edges)
-    this.setUpDefaultElements()
+    const shape = this.setUpDefaultElements()
+    this.addController(shape.right - shape.left, shape.top + 10)
   }
 
   private setProperties(switches: {[key: string]: ElementDefinition}, hosts: {[key: string]: ElementDefinition}, edges: {[key: string]: ElementDefinition}){
     this.switches = switches
     this.hosts = hosts
     this.edges = edges
+  }
+
+  /**
+   * tap event
+   * @param callback : event callback
+   */
+  onTapEventsInSwitch(callback: (nodeId: string) => void){
+    this.cytoscape.on('tap', '.switch', (event: EventObject) => {
+      callback(event.target.id)
+    })
+  }
+
+  private addController(x: number, y: number){
+    const controller = createController()
+    const collection = this.cytoscape.add(Object.assign(controller))
+    return collection
   }
 
   /**

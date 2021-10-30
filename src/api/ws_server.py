@@ -3,19 +3,31 @@ Web socket API
 
 TODO:
     * まずは，接続し，ホストなどを配置できるようにする．
+    * テーブル情報を取得するインターフェースの追加
+
+Notes:
+    * Mininetコマンド実行中はたぶん経路情報の受け取りができない．
+        * 同時にすることないでしょ
+
+Errors:
+    * コマンドの結果を返す際に，con.poll()でBlockされ，送信ができない
+        => コマンドの結果を返すときは，Threadを止めるかなにかする
 """
 from enum import Enum
 from aiohttp import web
 from abc import abstractmethod, ABCMeta
+import asyncio
 import socketio
 from logging import getLogger, setLoggerClass, Logger
+
+from src.config import conf
+from src.analyzer.packet_trace_handler import packet_trace_list
+from .proto.net_pb2 import Host, Switch, Link, PacketTrace, StartTracingRequest, StopTracingRequest, MininetCommand,\
+    CommandResultType, CommandResult, GetTraceRequest, GetTraceResult
 
 
 setLoggerClass(Logger)
 logger = getLogger('tracing_net.api.ws_server')
-
-
-from .proto.net_pb2 import Host, Switch, Link, PacketTrace, StartTracingRequest, StopTracingRequest
 
 
 class WSEvent(Enum):
@@ -44,6 +56,8 @@ class WSEvent(Enum):
     EXEC_NODE_COMMAND = "exec_cmd"
     # まだ，実装できていない
     EXEC_MININET_COMMAND = "exec_mininet_cmd"
+    EXEC_MININET_COMMAND_RESULT = "exec_mininet_cmd_result"
+    EXEC_KEYBOARD_INTERRUPT = "exec_keyboard_interrupt"
 
     # error
     TOPOLOGY_CHANGE_ERROR = "topology_change_error"
@@ -69,7 +83,7 @@ class MessageHubBase(metaclass=ABCMeta):
 
         Args:
             event (WSEvent) :
-            param (dict) :
+            param (dict) : This is used by callback function of ``get_from_client``.
         """
         raise NotImplementedError
 
@@ -79,7 +93,7 @@ class MessageHubBase(metaclass=ABCMeta):
         raise NotImplementedError
 
     @abstractmethod
-    def get_from_client(self, net, call_back):
+    def get_from_client(self, tracer, net, call_back):
         """receive message sent from client"""
         raise NotImplementedError
 
@@ -89,20 +103,64 @@ class MessageHub(MessageHubBase):
 
     def __init__(self, parent_con=None, child_con=None):
         super(MessageHub, self).__init__(parent_con, child_con)
+        self.waiting_from_net = False
 
     def emit2net(self, event: WSEvent, param):
-        logger.debug("MessageHub receives messages from clients and emits them to the vnet. (event={}, param={})".format(event, param))
+        if conf.OUTPUT_MESSAGE_HUB_TO_LOGFILE:
+            logger.debug("MessageHub receives messages from clients and emits them to the vnet. (event={}, param={})".format(event, param))
         event = event.value
         self.parent_con.send({'event': event, 'param': param})
 
-    def emit2client(self, event: WSEvent, param):
-        pass
+    def emit2client(self, event: WSEvent, protoMsg):
+        if conf.OUTPUT_MESSAGE_HUB_TO_LOGFILE:
+            logger.debug("MessageHub receives messages from net and emits them to clients. (event={}, param={})".format(event, protoMsg))
+        self.child_con.send({'event': event, 'proto': protoMsg})
 
-    def get_from_client(self, net, call_back):
+    def get_from_client(self, tracer, net, call_back):
         while True:
             if self.child_con.poll():
                 response = self.child_con.recv()
-                call_back(net, event=response['event'], param=response['param'])
+                if conf.OUTPUT_MESSAGE_HUB_TO_LOGFILE:
+                    logger.debug("MessageHub receives messages from clients. (response={})".format(response))
+                call_back(tracer, net, event=response['event'], param=response['param'])
+
+    def wait_command_result(self, callback):
+        """This sends the command result to callback.
+        * This method waits for the command to finish
+
+        Args:
+            callback : call back
+
+        """
+        # 待機する
+        self.waiting_from_net = True
+        while True:
+            if not self.waiting_from_net:
+                break
+            if self.parent_con.poll():
+                # response from net
+                response = self.parent_con.recv()
+                response['proto'] = CommandResult.ParseFromString(response['proto'])
+                if conf.OUTPUT_MESSAGE_HUB_TO_LOGFILE:
+                    logger.debug("MessageHub receives command result from net. (response={})".format(response))
+                if isinstance(response['proto'], CommandResult):
+                    callback(response['event'], response['proto'])
+                    # Note: END_SIGNALが送られないとストップしない
+                    if response['proto'].type == CommandResultType.END_SIGNAL:
+                        self.waiting_from_net = False
+
+    def wait_traces(self):
+        """
+
+        Returns:
+            string: trace trace
+        """
+        if conf.OUTPUT_MESSAGE_HUB_TO_LOGFILE:
+            logger.debug("wait packet trace.....")
+        traces = self.parent_con.recv()['proto']
+        if conf.OUTPUT_MESSAGE_HUB_TO_LOGFILE:
+            logger.debug("MessageHub receives traces from vnet. (traces length={})".format(len(traces)))
+        return traces
 
 
 class TestMessageHub(MessageHubBase):
@@ -119,8 +177,13 @@ class TestMessageHub(MessageHubBase):
     def emit2client(self, event: WSEvent, param):
         pass
 
-    def get_from_client(self, net, call_back):
+    def get_from_client(self, tracer, net, call_back):
         pass
+
+
+#
+# ↓ init variables
+#
 
 
 # message hub instance
@@ -129,15 +192,21 @@ message_hub = MessageHub()
 
 
 def get_messsage_hub(parent_con, child_con):
+    """getter for message hub
+
+    Args:
+        parent_con:
+        child_con:
+
+    Returns:
+        MessageHub
+    """
     message_hub.parent_con = parent_con
     message_hub.child_con = child_con
-    return child_con
+    return message_hub
 
-#
-# Web Socket Server
-#
-#
 
+# Web Socket Server Name space
 NAME_SPACE = ''
 
 
@@ -149,6 +218,65 @@ socketio_server = socketio.AsyncServer(cors_allowed_origins='*')
 web_app = web.Application()
 socketio_server.attach(web_app)
 
+
+#
+# ↓ Web Event Handler
+#
+
+def exec_wsevent_action(tracer, net, event: WSEvent, param):
+    """callback for messagehub
+
+    * get_from_client handler
+
+    Args:
+        tracer (AbstractTracingOFPipeline) :
+        net:
+        event:
+        param:
+
+    TODO:
+        * 経路情報に関して，インターフェースがnetで良いのか(Tracerにするか)要検討
+    """
+    if event == WSEvent.EXEC_MININET_COMMAND.value:
+        connection = net.cli.cli_connection
+        # todo: ここでBlockさせてもいいな
+        connection.input(param["command"])
+    elif event == WSEvent.GET_TRACE.value:
+        traces = packet_trace_list.pop_protobuf_message()
+        traces_msg = GetTraceResult()
+        traces_msg.packet_traces.extend(traces)
+        message_hub.emit2client(WSEvent.GET_TRACE, traces_msg.SerializeToString())
+    elif event == WSEvent.START_TRACING.value:
+        # 直接tracerにわたすと，cliにBlockされる？？？ => CLIにわたす
+        # tracer.start_tracing()
+        connection = net.cli.cli_connection
+        connection.input("starttracing")
+    elif event == WSEvent.STOP_TRACING.value:
+        tracer.stop_tracing()
+    else:
+        handler_string = event
+        if isinstance(handler_string, WSEvent):
+            handler_string = handler_string.value
+        handler = getattr(net, handler_string, None)
+        if not handler:
+            raise Exception("No WebSocket handler exception. event={}, {}".format(event, param))
+        if param:
+            handler(**param)
+        else:
+            handler()
+
+
+def exec_mininet_command_result_handler(event, result):
+    if event == WSEvent.EXEC_MININET_COMMAND_RESULT \
+            and isinstance(result, CommandResult):
+        socketio_server.emit(event.event_name, result)
+    else:
+        logger.error("type error")
+
+
+#
+# ↓ Web Socket event
+#
 
 @socketio_server.event(namespace=NAME_SPACE)
 def connect(sid, environ, auth):
@@ -291,7 +419,30 @@ def remove_link(sid, data):
 
 @socketio_server.on(WSEvent.GET_TRACE.event_name, namespace=NAME_SPACE)
 def get_trace(sid, data):
-    raise NotImplementedError
+    """
+    #. メッセージを受け取る
+    #. tracesを受け取るためのメッセージを送る
+    #. tracesを受け取るためにparent.recv()で待つ
+    #. tracesを受け取る
+    #. tracesをprotobufに変換(変換されていたらなし)
+    #. 送信する
+    """
+    event = WSEvent.GET_TRACE
+    get_trace_req = GetTraceRequest()
+    get_trace_req.ParseFromString(data)
+    message_hub.emit2net(event=event, param={})
+    traces = message_hub.wait_traces()
+    asyncio.ensure_future(socketio_server.emit(event='get_trace', data=traces))
+
+
+@socketio_server.on(WSEvent.EXEC_MININET_COMMAND.event_name, namespace=NAME_SPACE)
+def exec_mininet_command(sid, data):
+    event = WSEvent.EXEC_MININET_COMMAND
+    mininet_command = MininetCommand()
+    mininet_command.ParseFromString(data)
+    message_hub.emit2net(event=event, param={"command": mininet_command.command})
+    logger.debug("wait mininet command")
+    message_hub.wait_command_result(exec_mininet_command_result_handler)
 
 
 @socketio_server.on(WSEvent.EXEC_NODE_COMMAND.event_name, namespace=NAME_SPACE)
@@ -299,33 +450,16 @@ def exec_node_command(sid, data):
     raise NotImplementedError
 
 
+#
+# ↓ Web server start and stop
+#
+
 def ws_server_start(ip="0.0.0.0", port=8888):
     web.run_app(web_app, host=ip, port=port)
 
 
-def exec_wsevent_action(net, event: WSEvent, param):
-    """callback for messagehub
-
-    Args:
-        net:
-        event:
-        param:
-
-    Returns:
-
-    """
-    handler_string = event.value
-    handler = getattr(net, handler_string)
-    if not handler:
-        raise Exception("No WebSocket handler exception")
-    if param:
-        handler(**param)
-    else:
-        handler()
-
-#
-# def ws_server_stop():
-#     web_app.shutdown()
+def ws_server_stop():
+    asyncio.ensure_future(web_app.shutdown())
 
 
 if __name__ == '__main__':

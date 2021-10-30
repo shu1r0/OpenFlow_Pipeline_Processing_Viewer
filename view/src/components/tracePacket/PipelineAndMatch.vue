@@ -5,7 +5,7 @@
       <!-- in packet -->
       <span id="in-packet">In packet</span>
 
-      <!-- table and arrow -->
+      <!-- table and arrow  (複数テーブルにやる) -->
       <svg class="pipeline-arrow">
         <marker 
           id="arrow" 
@@ -24,9 +24,13 @@
           marker-end="url(#arrow)" /> 
       </svg>
       <template 
-        v-for="tableNumber in pipeline"
+        v-for="(tableNumber, index) in pipeline"
         :key="tableNumber.id">
-        <span class="table">{{ tableNumber }}</span>
+        <span 
+          class="table"
+          @click="changeTable(index)">
+          {{ tableNumber }}
+        </span>
         <svg class="pipeline-arrow">
           <use xlink:href="#pipeline-arrow" />
         </svg>
@@ -60,6 +64,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { Flow } from '../../utils/tracing_packet'
 
 export default defineComponent({
   name: "PipelineAndMatch",
@@ -76,35 +81,18 @@ export default defineComponent({
      * flow table
      */
     flow_table: {
-      type: Array,
-      default: () => { // test data
-        return [{
-            "priority": 10000, 
-            "match": "inPort=1", 
-            "instruction": "Apply(pushVlan:1), Goto:2, Write(Output:1)",
-            "class" : "matched_entry"
-          },{
-            "priority": 10000, 
-            "match": "inPort=2", 
-            "instruction": "Apply(pushVlan:1), Goto:2, Write(Output:2)",
-            "class" : ""
-          },{
-            "priority": 10000, 
-            "match": "inPort=3", 
-            "instruction": "Apply(pushVlan:1), Goto:2, Write(Output:3)",
-            "class" : ""
-          },{
-            "priority": 10000, 
-            "match": "inPort=4", 
-            "instruction": "Apply(pushVlan:1), Goto:2, Write(Output:4)",
-            "class" : ""
-          }
-        ]
-      }
+      type: Array
     }
   },
   setup(props, ctx){
-    // pass
+    const changeTable = (clickedIndex: number) => {
+      console.log("click index " + clickedIndex.toString())
+      ctx.emit('change-table', clickedIndex)
+    }
+
+    return {
+      changeTable
+    }
   }
 })
 </script>

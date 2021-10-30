@@ -91,6 +91,7 @@ class FlowTableManager(AbstractFlowTableManager):
         monitor = FlowMonitor(switch, parent_conn, event_loop=self.event_loop)
         p = multiprocessing.Process(target=monitor.start_poll)
         t = threading.Thread(target=self._receive_data, args=(child_conn,))
+        t.daemon = True
         t.start()
         p.daemon = True
         self.pollers[switch] = p
@@ -109,47 +110,8 @@ class FlowTableManager(AbstractFlowTableManager):
 
     def _receive_data(self, child_conn):
         while True:
-            data = child_conn.recv()
-            self.repository.add(*data)
-
-#
-# class FlowTablePoller():
-#     pass
-
-# class FlowTableManager():
-#     """flow table manager for flow monitor"""
-#
-#     def __init__(self):
-#         self.flow_table = FlowTable()
-#         self.flow_table_archive = []
-#         self.flow_table_max = 100
-#
-#     def add(self, flow, timestamp):
-#         if self.flow_table.timestamp == timestamp:
-#             self.flow_table.flows.append(flow)
-#         else:
-#             self.table_change(timestamp)
-#             self.flow_table.flows.append(flow)
-#
-#     def delete(self, flow, timestamp):
-#         if self.flow_table.timestamp == timestamp:
-#             self.flow_table.flows.remove(flow)
-#         else:
-#             self.table_change(timestamp)
-#             self.flow_table.flows.remove(flow)
-#
-#     def set_table(self, table):
-#         if len(table['flows']) == len(table['flows']):
-#
-#
-#     def get_table(self, table_id, at_time=None):
-#         pass
-#
-#     def get_tables(self, at_time=None):
-#         pass
-#
-#     def table_change(self, timestamp):
-#         self.flow_table_archive.append(self.flow_table)
-#         self.flow_table = self.flow_table.copy()
-#         self.flow_table['timestamp'] = timestamp
-
+            try:
+                data = child_conn.recv()
+                self.repository.add(*data)
+            except EOFError:
+                break

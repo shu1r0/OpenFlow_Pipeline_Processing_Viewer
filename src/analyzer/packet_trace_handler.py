@@ -24,6 +24,7 @@ class PacketTraceList(AbstractPacketTraceList):
 
     def __init__(self):
         super(PacketTraceList, self).__init__()
+        self.index = 0
 
     def append(self, trace):
         self.traces.append(trace)
@@ -33,7 +34,22 @@ class PacketTraceList(AbstractPacketTraceList):
         raise NotImplementedError
 
     def print(self):
-        print(self.traces)
+        self.traces.sort()
+        for trace in self.traces:
+            print(str(trace))
+
+    def pop_protobuf_message(self):
+        """
+
+        Returns:
+            list[net_pb2.PacketTrace]
+        """
+        traces = []
+        if len(self.traces) > self.index + 1:
+            for t in self.traces[self.index:]:
+                traces.append(t.get_protobuf_message())
+            self.index = len(self.traces) + 1
+        return traces
 
 
 packet_trace_list = PacketTraceList()

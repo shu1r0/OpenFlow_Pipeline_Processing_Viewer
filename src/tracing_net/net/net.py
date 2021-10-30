@@ -16,12 +16,14 @@ from mininet.node import RemoteController, Switch, OVSSwitch, Host
 from mininet.link import Link
 from mininet.log import setLogLevel
 
-
 from src.tracing_net.api.grpc_server import TracerNetServer
+
 from src.tracing_net.flowtable.flow_table_manager import FlowTableManager
 from src.tracing_net.packet.packet_capture_manager import PacketCaptureManager
 from src.config import conf
-from .cli import TracingCLI
+from .cli import TracingCLI, WSCLIConnection
+
+from src.api.ws_server import message_hub
 
 setLoggerClass(Logger)
 logger = getLogger('tracing_net.net')
@@ -476,7 +478,11 @@ class TracingNet(OnDemandNet):
         self.event_loop = asyncio.get_event_loop()
         self.grpc_server = TracerNetServer(self)
         self.table_manager = FlowTableManager(event_loop=self.event_loop)
-        self.capture_manager = PacketCaptureManager(self.name_to_link, event_loop=self.event_loop)
+        self.capture_manager = PacketCaptureManager(self.name_to_link, event_loop=self.event_loop,
+                                                    packet_to_pcap_file=conf.OUTPUT_PACKETS_TO_PCAP_FILE,
+                                                    pacp_file_directory=conf.PCAP_FILE_DIRECTORY)
+
+        self.cli = None
         self.has_been_tracing = False
 
     def add_switch(self, name, cls=OVSSwitch, dpid=None, listenPort=None):
@@ -516,8 +522,9 @@ class TracingNet(OnDemandNet):
 
     def start_tracing(self):
         """start tracing"""
+        logger.info("tracing start")
         if conf.DISABLE_IPV6:
-            logger.debug("desable ipv6")
+            logger.debug("ipv6 is disable")
             for node in self.nameToNode.values():
                 node.cmd("sysctl -w net.ipv6.conf.all.disable_ipv6=1")
                 node.cmd("sysctl -w net.ipv6.conf.default.disable_ipv6=1")
@@ -531,6 +538,7 @@ class TracingNet(OnDemandNet):
 
     def stop_tracing(self):
         """start tracing"""
+        logger.info("tracing stop")
         self.has_been_tracing = False
         self.capture_manager.stop_all_captures()
         self.table_manager.stop_all_poller()
@@ -550,10 +558,24 @@ class TracingNet(OnDemandNet):
         self.grpc_server.stop()
 
     def cli_run(self):
+        """
+
+        Args:
+            cli_connection:
+
+        TODO:
+            * 実装する
+            * webサーバが無いときどうする？？？
+        """
         # cli_thread = threading.Thread(name="cli", target=CLI, args=(self,))
         # cli_thread.start()
         # cli_thread.join()
-        TracingCLI(self)
+        if conf.ENABLE_WS_SERVER and conf.ENABLE_WS_CLI:
+            cli_connection = WSCLIConnection(message_hub=message_hub)
+            self.cli = TracingCLI(self, cli_connection=cli_connection)
+            self.cli.run()
+        else:
+            CLI(self)
 
     def packet_repo(self):
         """alias to the packet repository"""

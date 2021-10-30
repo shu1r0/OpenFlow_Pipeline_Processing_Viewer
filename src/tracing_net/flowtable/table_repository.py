@@ -1,6 +1,8 @@
 from abc import ABCMeta, abstractmethod
 from logging import getLogger, setLoggerClass, Logger
 
+from src.config import conf
+
 setLoggerClass(Logger)
 logger = getLogger('tracing_net.flowtable.table_repository')
 
@@ -85,9 +87,11 @@ class TableRepository(AbstractTableRepository):
         self.repository.setdefault(switch, [])
         if self._is_new_table(switch, new_table):
             self.repository[switch].append(new_table)
-        logger.debug("Table repo added table {}".format(new_table))
+            if conf.OUTPUT_FLOW_TABLE_UPDATE_TO_LOGFILE:
+                logger.debug("flow table update to new_table={} on switch = {}".format(new_table, switch))
 
     def _is_new_table(self, switch, new_table):
+        """Is not the new_table different from last entry of repository"""
         if len(self.repository[switch]) > 0 and self.repository[switch][-1] == new_table:
             return False
         else:
@@ -100,6 +104,16 @@ class TableRepository(AbstractTableRepository):
         self.repository[switch][-1].delete(flow)
 
     def pop(self, switch, until=None, count=None):
+        """
+
+        Args:
+            switch:
+            until:
+            count:
+
+        Returns:
+            list or None : まだフローテーブルが取得できていない状況だとNone
+        """
         try:
             if until is not None:
                 return self._pop_until(switch, until)

@@ -2,6 +2,7 @@ import { io, Socket } from 'socket.io-client';
 
 import { DEVICE_TYPE } from '@/vnet/devices';
 import { proto } from './net'
+import { packetTracesRepository } from '../utils/packet_traces_repository'
 
 /**
  * A client connect to the server.
@@ -88,6 +89,14 @@ export abstract class RemoteClient{
   abstract removeLink(link: string): void
 
   /**
+   * execute mininet command
+   * @param command : executed command
+   */
+  abstract execMininetCommand(command: string, commandHandler: (command: proto.CommandResult) => void): void
+
+  abstract getTrace(): void
+
+  /**
    * target ip address
    * @returns string
    */
@@ -151,6 +160,14 @@ export class DummyRemoteClient extends RemoteClient{
     console.log("remove link!!")
   }
 
+  execMininetCommand(command: string, commandHandler: (command: proto.CommandResult) => void): void {
+    console.log("exec mininet command")
+  }
+
+  getTrace(){
+    console.log("get trace")
+  }
+
 }
 
 
@@ -169,15 +186,37 @@ export class WSClient extends RemoteClient {
    */
   private namespace = ""
 
+  private execMininetCommandResultHandler: (command: proto.CommandResult) => void = null
+
   constructor(ip: string, port: string, namespace?: string){
     super(ip, port)
     this.namespace = namespace || ""
     this.socket = io('http://' + this.getIp() + ":" + this.getPort() + "/" + this.namespace)
+    this.setupEvent()
   }
 
   setupEvent(){
-    this.socket.on('trace', (data) => {
+    this.socket.on("connect", () => {
+      console.log("connect!!")
+    })
+    
+    this.socket.on("disconnect", () => {
+      console.log("disconnect!!")
+    })
+
+    this.socket.on('get_trace', (data) => {
+      const getTraceResult =  proto.GetTraceResult.deserialize(data)
+      const packetTraces = getTraceResult.packet_traces
+      console.log("receive packet trace")
+      console.log(packetTraces)
+      packetTracesRepository.extend(packetTraces)
+    })
+
+    this.socket.on('exec_mininet_command_result', (data) => {
+      console.log("receive mininet command result")
       console.log(data)
+      const result = proto.CommandResult.deserialize(data)
+      this.execMininetCommandResultHandler(result)
     })
   }
 
@@ -198,75 +237,117 @@ export class WSClient extends RemoteClient {
     this.socket.emit(event, data)
   }
 
-  /**
-   * start tracing request
-   */
+  // /**
+  //  * start tracing request
+  //  */
+  // startTracing(){
+  //   const req = new proto.StartTracingRequest()
+  //   req.option = 1
+  //   this.emit('start_tracing', req.serialize())
+  // }
+
+  // /**
+  //  * stop tracing request
+  //  */
+  // stopTracing(){
+  //   const req = new proto.StopTracingRequest()
+  //   req.option = 1
+  //   this.emit('stop_tracing', req.serialize())
+  // }
+
+  // addDevice(type: DEVICE_TYPE, name: string): void {
+  //   if(type === DEVICE_TYPE.OFSWITCH){
+  //     this.addSwitch(name)
+  //   }else if(type === DEVICE_TYPE.HOST){
+  //     this.addHost(name)
+  //   }
+  // }
+
+  // addHost(name: string, ip?: string, mac?: string): void {
+  //   const host = new proto.Host()
+  //   host.name = name
+  //   host.ip = ip
+  //   host.mac = mac
+  //   this.emit('add_host', host.serialize())
+  // }
+
+  // removeHost(name: string): void {
+  //   const host = new proto.Host()
+  //   host.name = name
+  //   this.emit('remove_host', host.serialize())
+  // }
+
+  // addSwitch(name: string, datapath_id?: string): void {
+  //   const sw = new proto.Switch()
+  //   sw.name = name
+  //   sw.datapath_id = datapath_id
+  //   this.emit('add_switch', sw.serialize())
+  // }
+
+  // removeSwitch(name: string): void {
+  //   const sw = new proto.Switch()
+  //   sw.name = name
+  //   this.emit('remove_switch', sw.serialize())
+  // }
+
+  // addLink(link: string, node1: string, node2: string): void {
+  //   const l = new proto.Link()
+  //   l.name = link
+  //   l.host1 = node1
+  //   l.host2 = node2
+  //   this.emit('add_link', l.serialize())
+  // }
+
+  // removeLink(link: string): void {
+  //   const l = new proto.Link()
+  //   l.name = link
+  //   this.emit('remove_link', l.serialize())
+  // }
+
   startTracing(){
-    const req = new proto.StartTracingRequest()
-    req.option = 1
-    this.emit('start_tracing', req.serialize())
+    console.log("start tracing")
   }
 
-  /**
-   * stop tracing request
-   */
   stopTracing(){
-    const req = new proto.StopTracingRequest()
-    req.option = 1
-    this.emit('stop_tracing', req.serialize())
+    console.log("stop tracing")
   }
 
-  addDevice(type: DEVICE_TYPE, name: string): void {
-    if(type === DEVICE_TYPE.OFSWITCH){
-      this.addSwitch(name)
-    }else if(type === DEVICE_TYPE.HOST){
-      this.addHost(name)
-    }
+  addDevice(type: DEVICE_TYPE, name: string): void{
+    console.log("add Device")
   }
 
   addHost(name: string, ip?: string, mac?: string): void {
-    const host = new proto.Host()
-    host.name = name
-    host.ip = ip
-    host.mac = mac
-    this.emit('add_host', host.serialize())
+    console.log("add host!!")
   }
-
   removeHost(name: string): void {
-    const host = new proto.Host()
-    host.name = name
-    this.emit('remove_host', host.serialize())
+    console.log("remove host!!")
   }
-
-  addSwitch(name: string, datapath_id?: string): void {
-    const sw = new proto.Switch()
-    sw.name = name
-    sw.datapath_id = datapath_id
-    this.emit('add_switch', sw.serialize())
+  addSwitch(name: string, datapath_id: string): void {
+    console.log("add switch!!")
   }
-
   removeSwitch(name: string): void {
-    const sw = new proto.Switch()
-    sw.name = name
-    this.emit('remove_switch', sw.serialize())
+    console.log("remove switch!!")
   }
 
   addLink(link: string, node1: string, node2: string): void {
-    const l = new proto.Link()
-    l.name = link
-    l.host1 = node1
-    l.host2 = node2
-    this.emit('add_link', l.serialize())
+    console.log("add link!!")
   }
 
   removeLink(link: string): void {
-    const l = new proto.Link()
-    l.name = link
-    this.emit('remove_link', l.serialize())
+    console.log("remove link!!")
   }
 
-  // getTracing(): proto.PacketTrace[] {
-  //   // pass
-  // }
+  execMininetCommand(command: string, commandHandler: (command: proto.CommandResult) => void): void{
+    this.execMininetCommandResultHandler = commandHandler
+    const c = new proto.MininetCommand()
+    c.command = command
+    this.emit('exec_mininet_command', c.serialize())
+  }
+
+  getTrace() {
+    const r = new proto.GetTraceRequest()
+    r.option = 0
+    this.emit('get_trace', r.serialize())
+  }
   
 }

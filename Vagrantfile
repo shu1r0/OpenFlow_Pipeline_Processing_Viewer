@@ -12,6 +12,9 @@ EOS
 # python, git ...etc
 # TODO:
 #    * tsharkを追加する
+# 
+# Notes:
+#    * 
 $install_package = <<SCRIPT
 # install package
 sudo apt-get -y update
@@ -25,13 +28,16 @@ sudo apt-get -y install python3.8-dev python3.8
 # sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 20
 # sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 10
 # sudo alternatives --auto python3
+
 python3.8 -m pip install -U pip
 sudo apt-get -y remove python-pexpect python3-pexpect
 
 sudo apt-get -y install libssl-dev libffi-dev libxml2-dev libxslt1-dev zlib1g-dev
 sudo apt-get -y install git
 sudo apt-get -y install curl
-sudo apt-get -y install tshark
+sudo apt-get -y install wireshark-dev
+# 途中に確認が入るので，手動でインストールする
+# sudo apt-get -y install tshark
 sudo apt-get -y install ubuntu-desktop
 
 #NOTE: Should is used venv???
@@ -42,8 +48,10 @@ sudo pip3 install grpcio-tools
 sudo pip3 install pyshark
 sudo pip3 install scapy
 sudo pip3 install mininet
-# sudo pip3 install aiohttp
-# sudo pip3 install python-socketio
+sudo pip3 install aiohttp
+sudo pip3 install python-socketio
+sudo pip3 install nest_asyncio
+sudo pip3 install python-openflow
 SCRIPT
 
 # install mininet witch bofuss
