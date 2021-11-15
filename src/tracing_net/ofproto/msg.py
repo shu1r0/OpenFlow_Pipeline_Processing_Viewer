@@ -3,10 +3,14 @@ See `wireshark <https://www.wireshark.org/docs/dfref/>`_ for mapping of packet o
 
 Notes:
     * Unable to get in_port
+
+TODO:
+    * メッセージの判定
 """
 from abc import ABCMeta, abstractmethod
 from logging import getLogger, setLoggerClass, Logger
 
+from src.config import conf
 from src.api.proto import net_pb2
 
 
@@ -29,6 +33,9 @@ class OpenFlowPacket(metaclass=ABCMeta):
     def __init__(self):
         self.in_port = None
         self.in_phy_port = None
+        self._properties = {}
+        for p in OpenFlowMatchingProperties:
+            self._properties[p] = None
 
     @property
     @abstractmethod
@@ -233,6 +240,9 @@ class OpenFlowPacket(metaclass=ABCMeta):
     def actset_output(self):
         raise NotImplementedError
 
+    def set_properties(self, key, value):
+        self._properties[key] = value
+
     def get_openflow_properties(self):
         """for debug"""
         properties = {}
@@ -276,20 +286,28 @@ class MsgBase(OpenFlowPacket, metaclass=ABCMeta):
                 packet_msg.fields[p] = str(v)
         return packet_msg
 
-    def is_equal(self, other):
-        """OpenFlowプロパティの比較を行う"""
+    def is_equal_msg(self, other):
+        """Compare OpenFlow properties."""
         if not isinstance(other, OpenFlowPacket):
             raise TypeError("It should be OpenFlow Packet")
 
-        # Do the packet's attributes that can be handled by OpenFlow match?
-        for p in OpenFlowMatchingProperties:
-            p1 = getattr(self, p, None)
-            p2 = getattr(other, p, None)
+        # todo: 本来はすべて判定すべき
+        MatchingProperties = ["eth_dst", "eth_src", "eth_type",
+                              "ip_proto", "ipv4_src", "ipv4_dst"]
 
-            if p1 is not None and p2 is not None and type(p1) == type(p2):
-                raise TypeError("Property TypeError")
+        # Do the packet's attributes that can be handled by OpenFlow match?
+        for p in MatchingProperties:
+            p1 = digitable2str(getattr(self, p, None))
+            p2 = digitable2str(getattr(other, p, None))
+
+            if p1 is not None and p2 is not None and type(p1) != type(p2):
+                raise TypeError("Property TypeError (pro={}, type1={}{}, type2={}{})"
+                                .format(p, type(p1), p1, type(p2), p2))
 
             if p1 != p2:
+                if conf.OUTPUT_PACKET_MATTING_TO_LOGFILE:
+                    logger.debug("Packet {} and packet {} have different {}. (self:{}, other:{})"
+                                 .format(self, other, p, p1, p2))
                 return False
         return True
 
@@ -307,8 +325,11 @@ class MsgBase(OpenFlowPacket, metaclass=ABCMeta):
         """
         Warnings:
             * メッセージのプロパティの比較はここでは行わない．(検索などでおかしくなるから)
+            * 正しい比較方法で無いことに注意
         """
-        return super.__eq__(self, other)
+        if other is None or not isinstance(other, MsgBase):
+            return False
+        return self.is_equal_msg(other) and self.timestamp == other.timestamp and self.in_phy_port == other.in_phy_port
 
     def __gt__(self, other):
         if other is None or not isinstance(other, MsgBase):
@@ -351,8 +372,10 @@ class Msg(MsgBase):
 
     @property
     def eth_dst(self):
+        if self._properties["eth_dst"]:
+            return self._properties["eth_dst"]
         try:
-            return self.pkt.eth.dst
+            return str(self.pkt.eth.dst)
         except AttributeError:
             return None
 
@@ -360,14 +383,16 @@ class Msg(MsgBase):
     def dl_dst(self):
         """for ovs flow"""
         try:
-            return self.pkt.eth.dst
+            return str(self.pkt.eth.dst)
         except AttributeError:
             return None
 
     @property
     def eth_src(self):
+        if self._properties["eth_src"]:
+            return self._properties["eth_src"]
         try:
-            return self.pkt.eth.src
+            return str(self.pkt.eth.src)
         except AttributeError:
             return None
 
@@ -375,192 +400,246 @@ class Msg(MsgBase):
     def dl_src(self):
         """for ovs flow"""
         try:
-            return self.pkt.eth.src
+            return str(self.pkt.eth.src)
         except AttributeError:
             return None
 
     @property
     def eth_type(self):
+        if self._properties["eth_type"]:
+            return self._properties["eth_type"]
         try:
-            return self.pkt.eth.type
+            return str(self.pkt.eth.type)
         except AttributeError:
             return None
 
     @property
     def vlan_vid(self):
+        if self._properties["vlan_vid"]:
+            return self._properties["vlan_vid"]
         try:
             if self.pushed_vlan:
                 return self.pushed_vlan
-            return self.pkt.vlan.id
+            return str(self.pkt.vlan.id)
         except AttributeError:
             return None
 
     @property
     def vlan_pcp(self):
+        if self._properties["vlan_pcp"]:
+            return self._properties["vlan_pcp"]
         try:
-            return self.pkt.vlan.priority
+            return str(self.pkt.vlan.priority)
         except AttributeError:
             return None
 
     @property
     def ip_dscp(self):
+        if self._properties["ip_dscp"]:
+            return self._properties["ip_dscp"]
         try:
-            return self.pkt.ip.dsfield.dscp
+            return str(self.pkt.ip.dsfield.dscp)
         except AttributeError:
             return None
 
     @property
     def ip_ecn(self):
+        if self._properties["ip_ecn"]:
+            return self._properties["ip_ecn"]
         try:
-            return self.pkt.ip.dsfield.ecn
+            return str(self.pkt.ip.dsfield.ecn)
         except AttributeError:
             return None
 
     @property
     def ip_proto(self):
+        if self._properties["ip_proto"]:
+            return self._properties["ip_proto"]
         try:
-            return self.pkt.ip.proto
+            return str(self.pkt.ip.proto)
         except AttributeError:
             return None
 
     @property
     def ipv4_src(self):
+        if self._properties["ipv4_src"]:
+            return self._properties["ipv4_src"]
         try:
-            return self.pkt.ip.src
+            return str(self.pkt.ip.src)
         except AttributeError:
             return None
     @property
     def ipv4_dst(self):
+        if self._properties["ipv4_dst"]:
+            return self._properties["ipv4_dst"]
         try:
-            return self.pkt.ip.dst
+            return str(self.pkt.ip.dst)
         except AttributeError:
             return None
 
     @property
     def tcp_src(self):
         """TCP source port"""
+        if self._properties["tcp_src"]:
+            return self._properties["tcp_src"]
         try:
-            return self.pkt.tcp.srcport
+            return str(self.pkt.tcp.srcport)
         except AttributeError:
             return None
 
     @property
     def tcp_dst(self):
         """TCP destination port"""
+        if self._properties["tcp_dst"]:
+            return self._properties["tcp_dst"]
         try:
-            return self.pkt.tcp.dstport
+            return str(self.pkt.tcp.dstport)
         except AttributeError:
             return None
 
     @property
     def udp_src(self):
+        if self._properties["udp_src"]:
+            return self._properties["udp_src"]
         try:
-            return self.pkt.udp.srcport
+            return str(self.pkt.udp.srcport)
         except AttributeError:
             return None
 
     @property
     def udp_dst(self):
+        if self._properties["udp_dst"]:
+            return self._properties["udp_dst"]
         try:
-            return self.pkt.udp.dstport
+            return str(self.pkt.udp.dstport)
         except AttributeError:
             return None
 
     @property
     def sctp_src(self):
+        if self._properties["sctp_src"]:
+            return self._properties["sctp_src"]
         return None
 
     @property
     def sctp_dst(self):
+        if self._properties["sctp_dst"]:
+            return self._properties["sctp_dst"]
         return None
 
     @property
     def icmpv4_type(self):
+        if self._properties["icmpv4_type"]:
+            return self._properties["icmpv4_type"]
         try:
-            return self.pkt.icmp.type
+            return str(self.pkt.icmp.type)
         except AttributeError:
             return None
 
     @property
     def icmpv4_code(self):
+        if self._properties["icmpv4_code"]:
+            return self._properties["icmpv4_code"]
         try:
-            return self.pkt.icmp.code
+            return str(self.pkt.icmp.code)
         except AttributeError:
             return None
 
     @property
     def arp_op(self):
+        if self._properties["arp_op"]:
+            return self._properties["arp_op"]
         try:
-            return self.pkt.arp.opcode
+            return str(self.pkt.arp.opcode)
         except AttributeError:
             return None
 
     @property
     def arp_spa(self):
+        if self._properties["arp_spa"]:
+            return self._properties["arp_spa"]
         try:
-            return self.pkt.arp.src.proto_ipv4
+            return str(self.pkt.arp.src.proto_ipv4)
         except AttributeError:
             return None
 
     @property
     def arp_tpa(self):
+        if self._properties["arp_tpa"]:
+            return self._properties["arp_tpa"]
         try:
-            return self.pkt.arp.dst.proto_ipv4
+            return str(self.pkt.arp.dst.proto_ipv4)
         except AttributeError:
             return None
 
     @property
     def arp_sha(self):
+        if self._properties["arp_sha"]:
+            return self._properties["arp_sha"]
         try:
-            return self.pkt.arp.src.hw_mac
+            return str(self.pkt.arp.src.hw_mac)
         except AttributeError:
             return None
 
     @property
     def arp_tha(self):
+        if self._properties["arp_tha"]:
+            return self._properties["arp_tha"]
         try:
-            return self.pkt.arp.dst.hw_mac
+            return str(self.pkt.arp.dst.hw_mac)
         except AttributeError:
             return None
 
     @property
     def ipv6_src(self):
+        if self._properties["ipv6_src"]:
+            return self._properties["ipv6_src"]
         try:
-            return self.pkt.ipv6.src
+            return str(self.pkt.ipv6.src)
         except AttributeError:
             return None
 
     @property
     def ipv6_dst(self):
+        if self._properties["ipv6_dst"]:
+            return self._properties["ipv6_dst"]
         try:
-            return self.pkt.ipv6.dst
+            return str(self.pkt.ipv6.dst)
         except AttributeError:
             return None
 
     @property
     def ipv6_flabel(self):
         """IPv6 Flow Label"""
+        if self._properties["ipv6_flabel"]:
+            return self._properties["ipv6_flabel"]
         try:
-            return self.pkt.ipv6.flow
+            return str(self.pkt.ipv6.flow)
         except AttributeError:
             return None
 
     @property
     def icmpv6_type(self):
+        if self._properties["icmpv6_type"]:
+            return self._properties["icmpv6_type"]
         try:
-            return self.pkt.icmpv6.type
+            return str(self.pkt.icmpv6.type)
         except AttributeError:
             return None
 
     @property
     def icmpv6_code(self):
+        if self._properties["icmpv6_code"]:
+            return self._properties["icmpv6_code"]
         try:
-            return self.pkt.icmpv6.code
+            return str(self.pkt.icmpv6.code)
         except AttributeError:
             return None
 
     @property
     def ipv6_nd_target(self):
+        if self._properties["ipv6_nd_target"]:
+            return self._properties["ipv6_nd_target"]
         return None
 
     @property
@@ -663,3 +742,16 @@ def layer_to_dict(obj, expect_raw=True):
         return data
     else:
         return obj
+
+
+def digitable2str(digitable):
+    if isinstance(digitable, str):
+        if digitable.isdigit():
+            return int(digitable)
+        elif len(digitable) >= 2 and digitable[0:2] == "0b":
+            return int(digitable, 2)
+        elif len(digitable) >= 2 and digitable[0:2] == "0x":
+            return int(digitable, 16)
+        else:
+            return digitable
+    return digitable

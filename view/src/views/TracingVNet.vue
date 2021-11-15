@@ -41,10 +41,11 @@
     </div>
 
     <!-- ここにレンダリング(予定) -->
-    <tracing-packet
+    <TracingPacket
       v-if="isShowingPacketProcessing"
-      :getPacketProcessing="getPacketProcessingForTracinPacket">
-    </tracing-packet>
+      :getPacketProcessing="getPacketProcessingForTracinPacket"
+      @close="">
+    </TracingPacket>
 
   </div>
 </template>
@@ -91,10 +92,16 @@ export default defineComponent({
     let drawingPacketTrace: proto.PacketTrace = null
     let drawingPacketTraceid: number = null
 
+    /**
+     * パケットの処理
+     */
     let isShowingPacketProcessing = ref(false)
     let showingPacketProcessing = ref<proto.PacketProcessing>(null)
     let showingPacketProcessingSwitch = ref("")
 
+    /**
+     * テスト用
+     */
     let trace_list_test: proto.PacketTrace[] = []
     const trace1 = new proto.PacketTrace()
     trace1.protocol = 'icmp'
@@ -188,13 +195,20 @@ export default defineComponent({
       return data
     }
 
+    /**
+     * Tracing Start
+     */
     const startTrace = () => {
       changeableVNet.getRemoteClient().startTracing()
     }
 
+    /**
+     * set getTrace Interval
+     */
     const startTraceInterval = () => {
       const getTrace = () => {
         changeableVNet.getRemoteClient().getTrace()
+        // reset trace list
         trace_list.splice(0, trace_list.length)
         packetTracesRepository.getPacketTraces().forEach(t => {
           console.log("push to list")
@@ -232,6 +246,7 @@ export default defineComponent({
 
   #vnet_and_list{
     display: grid;
+
     grid-template-areas: 
       "vnet-canvas trace-list"
       "console trace-list";
@@ -269,6 +284,12 @@ export default defineComponent({
 
   #packet_list_table{
     width: 100%;
+  }
+
+
+  // todo: 実装する
+  .tracing_packet{
+
   }
 }
 }

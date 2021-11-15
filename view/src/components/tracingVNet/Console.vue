@@ -21,7 +21,15 @@ export default defineComponent({
   //   }
   // },
   setup(props){
+
+    /**
+     * 
+     * @param command {string} : command
+     * @param writeln {(s: string) => void} : write method (out)
+     * @param writePrompt {() => void} : write prompt (out)
+     */
     const commandHandler = (command: string, writeln: (s: string)=> void, writePrompt: ()=> void): void => {
+      
       const commandHandler = (command: proto.CommandResult) => {
         const str = command.result
         if(command.type === proto.CommandResultType.OUTPUT){
@@ -37,6 +45,9 @@ export default defineComponent({
     }
 
       onMounted(()=>{
+          /**
+           * terminal object
+           */
           const term = new Terminal({
               rendererType: "canvas", //Rendering type
               rows: 20, //Rows 

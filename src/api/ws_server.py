@@ -98,11 +98,11 @@ class MessageHubBase(metaclass=ABCMeta):
         raise NotImplementedError
 
 
-class MessageHub(MessageHubBase):
+class MessageHubForMultiprocess(MessageHubBase):
     """for multiprocess."""
 
     def __init__(self, parent_con=None, child_con=None):
-        super(MessageHub, self).__init__(parent_con, child_con)
+        super(MessageHubForMultiprocess, self).__init__(parent_con, child_con)
         self.waiting_from_net = False
 
     def emit2net(self, event: WSEvent, param):
@@ -163,6 +163,74 @@ class MessageHub(MessageHubBase):
         return traces
 
 
+class MessageHub(MessageHubBase):
+    """for main process."""
+
+    def __init__(self, tracer=None, net=None, socketio=None):
+        super(MessageHub, self).__init__(None, None)
+        self.waiting_from_net = False
+
+        self.tracer = tracer
+        self.net = net
+        self.server_handler = None
+
+        self.socketio = socketio
+        self.client_handler = None
+
+    def emit2net(self, event: WSEvent, param):
+        """net is mininet"""
+        event = event.value
+        self.server_handler(self.tracer, self.net, event=event, param=param)
+
+    def emit2client(self, event: WSEvent, protoMsg):
+        """client is websocket server"""
+        self.child_con.send({'event': event, 'proto': protoMsg})
+
+    def get_from_client(self, tracer, net, call_back):
+        self.tracer = tracer
+        self.net = net
+        self.server_handler = call_back
+
+    def get_from_server(self, socketio, call_back):
+        self.socketio = socketio
+        self.client_handler = call_back
+
+    def wait_command_result(self, callback):
+        """This sends the command result to callback.
+        * This method waits for the command to finish
+
+        Args:
+            callback : call back
+
+        """
+        # 待機する
+        self.waiting_from_net = True
+        while True:
+            if not self.waiting_from_net:
+                break
+            if self.parent_con.poll():
+                # response from net
+                response = self.parent_con.recv()
+                response['proto'] = CommandResult.ParseFromString(response['proto'])
+                if conf.OUTPUT_MESSAGE_HUB_TO_LOGFILE:
+                    logger.debug("MessageHub receives command result from net. (response={})".format(response))
+                if isinstance(response['proto'], CommandResult):
+                    callback(response['event'], response['proto'])
+                    # Note: END_SIGNALが送られないとストップしない
+                    if response['proto'].type == CommandResultType.END_SIGNAL:
+                        self.waiting_from_net = False
+
+    def wait_traces(self):
+        """
+
+        Returns:
+            string: trace trace
+        """
+        if conf.OUTPUT_MESSAGE_HUB_TO_LOGFILE:
+            logger.debug("wait packet trace.....")
+        traces = self.parent_con.recv()['proto']
+
+
 class TestMessageHub(MessageHubBase):
     """for debug"""
 
@@ -217,6 +285,8 @@ socketio_server = socketio.AsyncServer(cors_allowed_origins='*')
 # web application
 web_app = web.Application()
 socketio_server.attach(web_app)
+runner = web.AppRunner(web_app)
+
 
 
 #
@@ -460,6 +530,17 @@ def ws_server_start(ip="0.0.0.0", port=8888):
 
 def ws_server_stop():
     asyncio.ensure_future(web_app.shutdown())
+
+
+async def ws_server_start_coro(ip="0.0.0.0", port=8888):
+    await runner.setup()
+    site = web.TCPSite(runner, host=ip, port=port)
+    await site.start()
+    await asyncio.Event().wait()
+
+
+async def ws_server_stop_coro():
+    await runner.cleanup()
 
 
 if __name__ == '__main__':

@@ -6,7 +6,8 @@ The actual appliction of the action is in ``src.ofproto.pipeline``
 
 TODO:
     * implement all the actions
-    * パケットの書き換え履歴の保存の実装ができていない
+    * パケットの書き換え履歴の保存の実装ができていない(保存はInstructionでいい，もっというならパイプラインの前でいい)
+    * todo POPをどうするか？
 """
 
 from enum import IntEnum
@@ -14,6 +15,9 @@ from abc import ABCMeta, abstractmethod
 from logging import getLogger, setLoggerClass, Logger
 
 from pyof.foundation.basic_types import UBInt16
+
+from src.tracing_net.ofproto.instruction import InstructionResult
+from src.api.proto import net_pb2
 
 
 setLoggerClass(Logger)
@@ -77,6 +81,19 @@ class ActionType(IntEnum):
     # Notes: This is not OpenFlow action
     DROP =99
 
+    @classmethod
+    def ActionSetOrder(cls):
+        order = [cls.OFPAT_COPY_TTL_IN,
+                 cls.OFPAT_POP_MPLS, cls.OFPAT_POP_PBB, cls.OFPAT_POP_VLAN,
+                 cls.OFPAT_PUSH_MPLS, cls.OFPAT_PUSH_PBB, cls.OFPAT_PUSH_VLAN,
+                 cls.OFPAT_COPY_TTL_OUT,
+                 cls.OFPAT_DEC_NW_TTL, cls.OFPAT_DEC_MPLS_TTL,
+                 cls.OFPAT_SET_FIELD,
+                 cls.OFPAT_SET_QUEUE,
+                 cls.OFPAT_GROUP,
+                 cls.OFPAT_OUTPUT]
+        return order
+
 
 # Classes
 
@@ -99,6 +116,16 @@ class ActionBase:
             ActionResult
         """
         raise NotImplementedError
+
+    def get_protobuf_message(self):
+        action_msg = net_pb2.Action()
+        action_msg.str = str(self)
+        return action_msg
+
+    def __eq__(self, other):
+        if other is None or not isinstance(other, ActionBase):
+            raise TypeError("Action can not compare other type")
+        return str(self) == str(other)
 
     def __str__(self):
         """This str is used by the visualization feature"""
@@ -234,6 +261,8 @@ class ActionPopVLAN(ActionBase):
         super().__init__(action_type=ActionType.OFPAT_POP_VLAN)
 
     def action(self, msg):
+        # msg.set_properties("vlan_vid", None)
+        # result = ActionResult(msg=msg)
         raise NotImplementedError
 
 
@@ -422,6 +451,10 @@ class ActionSetField(ActionBase):
         self.dst = dst
 
     def action(self, msg):
+        current_value = getattr(msg, self.value)
+        current_value = current_value & ~self.mask
+        dst = self.dst & self.mask
+        msg.set_properties(self.value, current_value + dst)
         raise NotImplementedError
 
     def __str__(self):
@@ -472,8 +505,54 @@ class ActionSet:
         self.actions = actions if actions else []
 
     def write(self, action):
-        pass
+        if isinstance(action, ActionBase):
+            self.actions.append(action)
+        else:
+            logger.error("Type {} can't add to ActionSet. Only ActionBase".format(type(action)))
 
     def clear(self):
-        pass
+        self.actions = []
+
+    def action(self, msg):
+        """
+
+        Args:
+            msg:
+
+        Returns:
+            InstructionResult
+        """
+        result = InstructionResult(msg=msg, action_set=self)
+        self._sort()
+        for action in self.actions:
+            action_result = action.action(msg=msg)
+            result.out_ports.extend(action_result.out_ports)
+        return result
+
+    def _sort(self):
+        tmp_actions = []
+        for t in ActionType.ActionSetOrder():
+            actions = self._get_type(t)
+            for a in actions:
+                tmp_actions.append(a)
+        self.actions = tmp_actions
+
+    def _get_type(self, action_type: ActionType):
+        actions = []
+        for action in self.actions:
+            if action.action_type == action_type:
+                actions.append(action)
+        return actions
+
+    def get_protobuf_message(self):
+        """
+
+        Returns:
+            net_pb2.ActionSet
+        """
+        self._sort()
+        action_set = net_pb2.ActionSet()
+        for action in self.actions:
+            action_set.actions.append(action.get_protobuf_message())
+        return action_set
 

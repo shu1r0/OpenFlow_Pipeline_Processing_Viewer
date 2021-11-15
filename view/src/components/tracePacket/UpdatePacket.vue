@@ -126,7 +126,7 @@ export default defineComponent({
      * 更新する前のパケット
      */
     packetBefore: {
-      type: Object,
+      type: Map,
       default: ()=>{  // test data
         return {
           "InPort" : "1",
@@ -143,7 +143,7 @@ export default defineComponent({
      * 更新された後のパケット
      */
     packetAfter: {
-      type: Object,
+      type: Map,
       default: ()=>{  // test data
         return {
           "InPort" : "1",

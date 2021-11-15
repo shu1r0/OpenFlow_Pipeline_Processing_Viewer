@@ -147,11 +147,11 @@ class InstructionApplyAction(Instruction):
             net_pb2.Instruction
         """
         instruction_msg = net_pb2.Instruction()
-        instruction_msg.type = net_pb2.InstructionType.OFIT_APPLY_ACTIONS
-        data = net_pb2.InstructionActions()
+        instruction_msg.type = net_pb2.InstructionType.OFPIT_APPLY_ACTIONS
+        actions = net_pb2.InstructionActions()
         for a in self.actions:
-            data.actions.append(str(a))
-        instruction_msg.data = data
+            actions.actions.append(a.get_protobuf_message())
+        instruction_msg.actions.CopyFrom(actions)
         return instruction_msg
 
     @classmethod
@@ -191,11 +191,11 @@ class InstructionClearAction(Instruction):
             net_pb2.Instruction
         """
         instruction_msg = net_pb2.Instruction()
-        instruction_msg.type = net_pb2.InstructionType.OFIT_CLEAR_ACTIONS
-        data = net_pb2.InstructionActions()
+        instruction_msg.type = net_pb2.InstructionType.OFPIT_CLEAR_ACTIONS
+        actions = net_pb2.InstructionActions()
         for a in self.actions:
-            data.actions.append(str(a))
-        instruction_msg.data = data
+            actions.actions.append(a.get_protobuf_message())
+        instruction_msg.actions.CopyFrom(actions)
         return instruction_msg
 
     @classmethod
@@ -236,10 +236,10 @@ class InstructionGotoTable(Instruction):
             net_pb2.Instruction
         """
         instruction_msg = net_pb2.Instruction()
-        instruction_msg.type = net_pb2.InstructionType.OFIT_GOTO_TABLE
-        data = net_pb2.InstructionGotoTable()
-        data.table_id = self.table_id
-        instruction_msg.data = data
+        instruction_msg.type = net_pb2.InstructionType.OFPIT_GOTO_TABLE
+        goto_table = net_pb2.InstructionGotoTable()
+        goto_table.table_id = self.table_id
+        instruction_msg.goto_table.CopyFrom(goto_table)
         return instruction_msg
 
     @classmethod
@@ -272,7 +272,7 @@ class InstructionMeter(Instruction):
         Returns:
             InstructionResult : result
         """
-        pass
+        raise NotImplementedError
 
     def get_protobuf_message(self):
         """This method convert this instance to a protocol buffer's obj
@@ -281,10 +281,10 @@ class InstructionMeter(Instruction):
             net_pb2.Instruction
         """
         instruction_msg = net_pb2.Instruction()
-        instruction_msg.type = net_pb2.InstructionType.OFIT_METER
-        data = net_pb2.InstructionMeter()
-        data.meter_id = self.meter_id
-        instruction_msg.data = data
+        instruction_msg.type = net_pb2.InstructionType.OFPIT_METER
+        meter = net_pb2.InstructionMeter()
+        meter.meter_id = self.meter_id
+        instruction_msg.meter.CopyFrom(meter)
         return instruction_msg
 
     @classmethod
@@ -314,7 +314,10 @@ class InstructionWriteAction(Instruction):
         Returns:
             InstructionResult : result
         """
-        pass
+        result = InstructionResult(msg=msg, action_set=action_set)
+        for action in self.actions:
+            result.action_set.write(action)
+        return result
 
     def get_protobuf_message(self):
         """This method convert this instance to a protocol buffer's obj
@@ -323,11 +326,11 @@ class InstructionWriteAction(Instruction):
             net_pb2.Instruction
         """
         instruction_msg = net_pb2.Instruction()
-        instruction_msg.type = net_pb2.InstructionType.OFIT_WRITE_ACTIONS
-        data = net_pb2.InstructionActions()
+        instruction_msg.type = net_pb2.InstructionType.OFPIT_WRITE_ACTIONS
+        actions = net_pb2.InstructionActions()
         for a in self.actions:
-            data.actions.append(str(a))
-        instruction_msg.data = data
+            actions.actions.append(a.get_protobuf_message())
+        instruction_msg.actions.CopyFrom(actions)
         return instruction_msg
 
     @classmethod
@@ -371,7 +374,11 @@ class InstructionWriteMetadata(Instruction):
         Returns:
             InstructionResult : result
         """
-        pass
+        result = InstructionResult(msg=msg, action_set=action_set)
+        if msg.metadata is not None:
+            msg.metadata = msg.metadata & ~self.metadata_mask
+            msg.metadata = msg.metadata + (self.metadata & self.metadata_mask)
+        return result
 
     def get_protobuf_message(self):
         """This method convert this instance to a protocol buffer's obj
@@ -380,11 +387,11 @@ class InstructionWriteMetadata(Instruction):
             net_pb2.Instruction
         """
         instruction_msg = net_pb2.Instruction()
-        instruction_msg.type = net_pb2.InstructionType.OFIT_WRITE_METADATA
-        data = net_pb2.InstructionWriteMetadata
-        data.metadata = self.metadata
-        data.metadata_mask = self.metadata_mask
-        instruction_msg.data = data
+        instruction_msg.type = net_pb2.InstructionType.OFPIT_WRITE_METADATA
+        write_metadata = net_pb2.InstructionWriteMetadata
+        write_metadata.metadata = self.metadata
+        write_metadata.metadata_mask = self.metadata_mask
+        instruction_msg.write_metadata.CopyFrom(write_metadata)
         return instruction_msg
 
     @classmethod

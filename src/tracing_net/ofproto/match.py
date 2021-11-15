@@ -46,8 +46,8 @@ class Match:
         """
         match = net_pb2.Match()
         match.field_name = self.field_name
-        match.value = self.value
-        match.mask = self.mask
+        match.value = str(self.value)
+        match.mask = str(self.mask)
         return match
 
     def __repr__(self):

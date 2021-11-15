@@ -118,6 +118,13 @@ message Action {
 }
 
 /**
+ * Action Set
+ */
+message ActionSet{
+  repeated Action actions = 1;
+}
+
+/**
  * OpenFlow Instruction struct
  */
 message Instruction{
@@ -173,7 +180,7 @@ message Match{
  */
 message Flow{
   optional string cookie = 1;
-  optional sint32 duration = 2;
+  optional float duration = 2;
   optional sint32 table = 3;
   optional sint32 n_packets = 4;
   optional sint32 n_bytes = 5;
@@ -199,8 +206,12 @@ message FlowTable{
 message PacketProcessing{
   optional string switch = 1;
   optional FlowTable flow_table = 4;
+  optional ActionSet action_set = 5;
   repeated Packet pkts = 2;
   repeated sint32 matched_flows = 3;
+
+  optional Packet packet_after_action_set = 6;
+  map<string, Packet> outs = 7;
 }
 
 // TODO 将来変える

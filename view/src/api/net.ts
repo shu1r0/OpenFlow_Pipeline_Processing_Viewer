@@ -496,6 +496,63 @@ export namespace proto {
             return Action.deserialize(bytes);
         }
     }
+    export class ActionSet extends pb_1.Message {
+        constructor(data?: any[] | {
+            actions?: Action[];
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [1], []);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("actions" in data && data.actions != undefined) {
+                    this.actions = data.actions;
+                }
+            }
+        }
+        get actions() {
+            return pb_1.Message.getRepeatedWrapperField(this, Action, 1) as Action[];
+        }
+        set actions(value: Action[]) {
+            pb_1.Message.setRepeatedWrapperField(this, 1, value);
+        }
+        toObject() {
+            const data: {
+                actions?: ReturnType<typeof Action.prototype.toObject>[];
+            } = {};
+            if (this.actions != null) {
+                data.actions = this.actions.map((item: Action) => item.toObject());
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (this.actions !== undefined)
+                writer.writeRepeatedMessage(1, this.actions, (item: Action) => item.serialize(writer));
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): ActionSet {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new ActionSet();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        reader.readMessage(message.actions, () => pb_1.Message.addToRepeatedWrapperField(message, 1, Action.deserialize(reader), Action));
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): ActionSet {
+            return ActionSet.deserialize(bytes);
+        }
+    }
     export class Instruction extends pb_1.Message {
         constructor(data?: any[] | ({} & (({
             goto_table?: InstructionGotoTable;
@@ -1253,7 +1310,7 @@ export namespace proto {
             if (typeof this.cookie === "string" && this.cookie.length)
                 writer.writeString(1, this.cookie);
             if (this.duration !== undefined)
-                writer.writeSint32(2, this.duration);
+                writer.writeFloat(2, this.duration);
             if (this.table !== undefined)
                 writer.writeSint32(3, this.table);
             if (this.n_packets !== undefined)
@@ -1281,7 +1338,7 @@ export namespace proto {
                         message.cookie = reader.readString();
                         break;
                     case 2:
-                        message.duration = reader.readSint32();
+                        message.duration = reader.readFloat();
                         break;
                     case 3:
                         message.table = reader.readSint32();
@@ -1381,9 +1438,13 @@ export namespace proto {
             switch?: string;
         }) | ({
             flow_table?: FlowTable;
+        }) | ({
+            action_set?: ActionSet;
+        }) | ({
+            packet_after_action_set?: Packet;
         })))) {
             super();
-            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [2, 3], [[1], [4]]);
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [2, 3], [[1], [4], [5], [6]]);
             if (!Array.isArray(data) && typeof data == "object") {
                 if ("switch" in data && data.switch != undefined) {
                     this.switch = data.switch;
@@ -1391,11 +1452,17 @@ export namespace proto {
                 if ("flow_table" in data && data.flow_table != undefined) {
                     this.flow_table = data.flow_table;
                 }
+                if ("action_set" in data && data.action_set != undefined) {
+                    this.action_set = data.action_set;
+                }
                 if ("pkts" in data && data.pkts != undefined) {
                     this.pkts = data.pkts;
                 }
                 if ("matched_flows" in data && data.matched_flows != undefined) {
                     this.matched_flows = data.matched_flows;
+                }
+                if ("packet_after_action_set" in data && data.packet_after_action_set != undefined) {
+                    this.packet_after_action_set = data.packet_after_action_set;
                 }
             }
         }
@@ -1411,6 +1478,12 @@ export namespace proto {
         set flow_table(value: FlowTable) {
             pb_1.Message.setOneofWrapperField(this, 4, [4], value);
         }
+        get action_set() {
+            return pb_1.Message.getWrapperField(this, ActionSet, 5) as ActionSet;
+        }
+        set action_set(value: ActionSet) {
+            pb_1.Message.setOneofWrapperField(this, 5, [5], value);
+        }
         get pkts() {
             return pb_1.Message.getRepeatedWrapperField(this, Packet, 2) as Packet[];
         }
@@ -1422,6 +1495,12 @@ export namespace proto {
         }
         set matched_flows(value: number[]) {
             pb_1.Message.setField(this, 3, value);
+        }
+        get packet_after_action_set() {
+            return pb_1.Message.getWrapperField(this, Packet, 6) as Packet;
+        }
+        set packet_after_action_set(value: Packet) {
+            pb_1.Message.setOneofWrapperField(this, 6, [6], value);
         }
         get _switch() {
             const cases: {
@@ -1441,12 +1520,32 @@ export namespace proto {
             };
             return cases[pb_1.Message.computeOneofCase(this, [4])];
         }
+        get _action_set() {
+            const cases: {
+                [index: number]: "none" | "action_set";
+            } = {
+                0: "none",
+                5: "action_set"
+            };
+            return cases[pb_1.Message.computeOneofCase(this, [5])];
+        }
+        get _packet_after_action_set() {
+            const cases: {
+                [index: number]: "none" | "packet_after_action_set";
+            } = {
+                0: "none",
+                6: "packet_after_action_set"
+            };
+            return cases[pb_1.Message.computeOneofCase(this, [6])];
+        }
         toObject() {
             const data: {
                 switch?: string;
                 flow_table?: ReturnType<typeof FlowTable.prototype.toObject>;
+                action_set?: ReturnType<typeof ActionSet.prototype.toObject>;
                 pkts?: ReturnType<typeof Packet.prototype.toObject>[];
                 matched_flows?: number[];
+                packet_after_action_set?: ReturnType<typeof Packet.prototype.toObject>;
             } = {};
             if (this.switch != null) {
                 data.switch = this.switch;
@@ -1454,11 +1553,17 @@ export namespace proto {
             if (this.flow_table != null) {
                 data.flow_table = this.flow_table.toObject();
             }
+            if (this.action_set != null) {
+                data.action_set = this.action_set.toObject();
+            }
             if (this.pkts != null) {
                 data.pkts = this.pkts.map((item: Packet) => item.toObject());
             }
             if (this.matched_flows != null) {
                 data.matched_flows = this.matched_flows;
+            }
+            if (this.packet_after_action_set != null) {
+                data.packet_after_action_set = this.packet_after_action_set.toObject();
             }
             return data;
         }
@@ -1470,10 +1575,14 @@ export namespace proto {
                 writer.writeString(1, this.switch);
             if (this.flow_table !== undefined)
                 writer.writeMessage(4, this.flow_table, () => this.flow_table.serialize(writer));
+            if (this.action_set !== undefined)
+                writer.writeMessage(5, this.action_set, () => this.action_set.serialize(writer));
             if (this.pkts !== undefined)
                 writer.writeRepeatedMessage(2, this.pkts, (item: Packet) => item.serialize(writer));
             if (this.matched_flows !== undefined)
                 writer.writePackedSint32(3, this.matched_flows);
+            if (this.packet_after_action_set !== undefined)
+                writer.writeMessage(6, this.packet_after_action_set, () => this.packet_after_action_set.serialize(writer));
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -1489,11 +1598,17 @@ export namespace proto {
                     case 4:
                         reader.readMessage(message.flow_table, () => message.flow_table = FlowTable.deserialize(reader));
                         break;
+                    case 5:
+                        reader.readMessage(message.action_set, () => message.action_set = ActionSet.deserialize(reader));
+                        break;
                     case 2:
                         reader.readMessage(message.pkts, () => pb_1.Message.addToRepeatedWrapperField(message, 2, Packet.deserialize(reader), Packet));
                         break;
                     case 3:
                         pb_1.Message.addToRepeatedField(message, 3, reader.readPackedSint32());
+                        break;
+                    case 6:
+                        reader.readMessage(message.packet_after_action_set, () => message.packet_after_action_set = Packet.deserialize(reader));
                         break;
                     default: reader.skipField();
                 }

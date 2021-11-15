@@ -94,6 +94,9 @@ export abstract class RemoteClient{
    */
   abstract execMininetCommand(command: string, commandHandler: (command: proto.CommandResult) => void): void
 
+  /**
+   * get packet trace request
+   */
   abstract getTrace(): void
 
   /**
@@ -119,8 +122,8 @@ export abstract class RemoteClient{
  */
 export class DummyRemoteClient extends RemoteClient{
 
-  constructor(ip: string, port: string){
-    super(ip, port)
+  constructor(ip?: string, port?: string){
+    super(ip ?? "127.0.0.1", port ?? "8080")
   }
 
   connect(){
@@ -164,7 +167,7 @@ export class DummyRemoteClient extends RemoteClient{
     console.log("exec mininet command")
   }
 
-  getTrace(){
+  getTrace(): void{
     console.log("get trace")
   }
 
@@ -237,104 +240,71 @@ export class WSClient extends RemoteClient {
     this.socket.emit(event, data)
   }
 
-  // /**
-  //  * start tracing request
-  //  */
-  // startTracing(){
-  //   const req = new proto.StartTracingRequest()
-  //   req.option = 1
-  //   this.emit('start_tracing', req.serialize())
-  // }
-
-  // /**
-  //  * stop tracing request
-  //  */
-  // stopTracing(){
-  //   const req = new proto.StopTracingRequest()
-  //   req.option = 1
-  //   this.emit('stop_tracing', req.serialize())
-  // }
-
-  // addDevice(type: DEVICE_TYPE, name: string): void {
-  //   if(type === DEVICE_TYPE.OFSWITCH){
-  //     this.addSwitch(name)
-  //   }else if(type === DEVICE_TYPE.HOST){
-  //     this.addHost(name)
-  //   }
-  // }
-
-  // addHost(name: string, ip?: string, mac?: string): void {
-  //   const host = new proto.Host()
-  //   host.name = name
-  //   host.ip = ip
-  //   host.mac = mac
-  //   this.emit('add_host', host.serialize())
-  // }
-
-  // removeHost(name: string): void {
-  //   const host = new proto.Host()
-  //   host.name = name
-  //   this.emit('remove_host', host.serialize())
-  // }
-
-  // addSwitch(name: string, datapath_id?: string): void {
-  //   const sw = new proto.Switch()
-  //   sw.name = name
-  //   sw.datapath_id = datapath_id
-  //   this.emit('add_switch', sw.serialize())
-  // }
-
-  // removeSwitch(name: string): void {
-  //   const sw = new proto.Switch()
-  //   sw.name = name
-  //   this.emit('remove_switch', sw.serialize())
-  // }
-
-  // addLink(link: string, node1: string, node2: string): void {
-  //   const l = new proto.Link()
-  //   l.name = link
-  //   l.host1 = node1
-  //   l.host2 = node2
-  //   this.emit('add_link', l.serialize())
-  // }
-
-  // removeLink(link: string): void {
-  //   const l = new proto.Link()
-  //   l.name = link
-  //   this.emit('remove_link', l.serialize())
-  // }
-
-  startTracing(){
-    console.log("start tracing")
+  /**
+   * start tracing request
+   */
+  startTracing(all=true){
+    const req = new proto.StartTracingRequest()
+    req.option = 1
+    this.emit('start_tracing', req.serialize())
   }
 
+  /**
+   * stop tracing request
+   */
   stopTracing(){
-    console.log("stop tracing")
+    const req = new proto.StopTracingRequest()
+    req.option = 1
+    this.emit('stop_tracing', req.serialize())
   }
 
-  addDevice(type: DEVICE_TYPE, name: string): void{
-    console.log("add Device")
+  addDevice(type: DEVICE_TYPE, name: string): void {
+    if(type === DEVICE_TYPE.OFSWITCH){
+      this.addSwitch(name)
+    }else if(type === DEVICE_TYPE.HOST){
+      this.addHost(name)
+    }
   }
 
   addHost(name: string, ip?: string, mac?: string): void {
-    console.log("add host!!")
+    const host = new proto.Host()
+    host.name = name
+    host.ip = ip
+    host.mac = mac
+    this.emit('add_host', host.serialize())
   }
+
   removeHost(name: string): void {
-    console.log("remove host!!")
+    const host = new proto.Host()
+    host.name = name
+    this.emit('remove_host', host.serialize())
   }
-  addSwitch(name: string, datapath_id: string): void {
-    console.log("add switch!!")
+
+  addSwitch(name: string, datapath_id?: string): void {
+    const sw = new proto.Switch()
+    sw.name = name
+    sw.datapath_id = datapath_id
+    this.emit('add_switch', sw.serialize())
   }
+
   removeSwitch(name: string): void {
-    console.log("remove switch!!")
+    const sw = new proto.Switch()
+    sw.name = name
+    this.emit('remove_switch', sw.serialize())
   }
 
   addLink(link: string, node1: string, node2: string): void {
-    console.log("add link!!")
+    const l = new proto.Link()
+    l.name = link
+    l.host1 = node1
+    l.host2 = node2
+    this.emit('add_link', l.serialize())
   }
 
   removeLink(link: string): void {
-    console.log("remove link!!")
+    const l = new proto.Link()
+    l.name = link
+    this.emit('remove_link', l.serialize())
   }
 
   execMininetCommand(command: string, commandHandler: (command: proto.CommandResult) => void): void{

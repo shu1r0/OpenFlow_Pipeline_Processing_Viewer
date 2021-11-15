@@ -2,6 +2,8 @@
 import datetime
 from logging import getLogger, setLoggerClass, Logger
 
+from google.protobuf.json_format import MessageToDict
+
 from src.tracing_net.ofproto.instruction import InstructionResult, Instruction
 from src.tracing_net.ofproto.match import Match
 from src.tracing_net.ofproto.msg import Msg
@@ -19,7 +21,7 @@ class Flow:
 
     Attributes:
         cookie (str) : cookie
-        duration (int) : duration
+        duration (float) : duration
         table (int) : table id
         n_packets (int) : counter of packets
         n_bytes (int) : counter of packet bytes
@@ -35,7 +37,7 @@ class Flow:
     def __init__(self, cookie="", duration=0, table=0, n_packets=0, n_bytes=0,
                  priority=0, match=None, actions=None):
         self.cookie = cookie
-        self.duration = duration if isinstance(duration, int) else int(duration)
+        self.duration = duration if isinstance(duration, float) else float(duration)
         self.table = table if isinstance(table, int) else int(table)
         self.n_packets = n_packets if isinstance(n_packets, int) else int(n_packets)
         self.n_bytes = n_bytes if isinstance(n_bytes, int) else int(n_bytes)
@@ -251,6 +253,9 @@ class FlowTables:
         for f in self.flows:
             flowtable_msg.flows.append(f.get_protobuf_message())
         return flowtable_msg
+
+    def to_dict(self):
+        return MessageToDict(self.get_protobuf_message())
 
     def __lt__(self, other):
         if other is None or not isinstance(other, FlowTables):

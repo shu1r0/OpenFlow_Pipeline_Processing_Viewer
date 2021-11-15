@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\tnet.proto\x12\x05proto\"T\n\x04Host\x12\x11\n\x04name\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x0f\n\x02ip\x18\x02 \x01(\tH\x01\x88\x01\x01\x12\x10\n\x03mac\x18\x03 \x01(\tH\x02\x88\x01\x01\x42\x07\n\x05_nameB\x05\n\x03_ipB\x06\n\x04_mac\"N\n\x06Switch\x12\x11\n\x04name\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x18\n\x0b\x64\x61tapath_id\x18\x02 \x01(\tH\x01\x88\x01\x01\x42\x07\n\x05_nameB\x0e\n\x0c_datapath_id\"^\n\x04Link\x12\x11\n\x04name\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x12\n\x05host1\x18\x02 \x01(\tH\x01\x88\x01\x01\x12\x12\n\x05host2\x18\x03 \x01(\tH\x02\x88\x01\x01\x42\x07\n\x05_nameB\x08\n\x06_host1B\x08\n\x06_host2\"b\n\x06Packet\x12)\n\x06\x66ields\x18\x01 \x03(\x0b\x32\x19.proto.Packet.FieldsEntry\x1a-\n\x0b\x46ieldsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\"\n\x06\x41\x63tion\x12\x10\n\x03str\x18\x01 \x01(\tH\x00\x88\x01\x01\x42\x06\n\x04_str\"\x8f\x02\n\x0bInstruction\x12)\n\x04type\x18\x01 \x01(\x0e\x32\x16.proto.InstructionTypeH\x01\x88\x01\x01\x12\x31\n\ngoto_table\x18\x02 \x01(\x0b\x32\x1b.proto.InstructionGotoTableH\x00\x12\x39\n\x0ewrite_metadata\x18\x03 \x01(\x0b\x32\x1f.proto.InstructionWriteMetadataH\x00\x12,\n\x07\x61\x63tions\x18\x04 \x01(\x0b\x32\x19.proto.InstructionActionsH\x00\x12(\n\x05meter\x18\x05 \x01(\x0b\x32\x17.proto.InstructionMeterH\x00\x42\x06\n\x04\x64\x61taB\x07\n\x05_type\"(\n\x14InstructionGotoTable\x12\x10\n\x08table_id\x18\x01 \x01(\r\"C\n\x18InstructionWriteMetadata\x12\x10\n\x08metadata\x18\x01 \x01(\r\x12\x15\n\rmetadata_mask\x18\x02 \x01(\r\"4\n\x12InstructionActions\x12\x1e\n\x07\x61\x63tions\x18\x01 \x03(\x0b\x32\r.proto.Action\"$\n\x10InstructionMeter\x12\x10\n\x08meter_id\x18\x01 \x01(\r\"i\n\x05Match\x12\x17\n\nfield_name\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x12\n\x05value\x18\x02 \x01(\tH\x01\x88\x01\x01\x12\x11\n\x04mask\x18\x03 \x01(\tH\x02\x88\x01\x01\x42\r\n\x0b_field_nameB\x08\n\x06_valueB\x07\n\x05_mask\"\xb8\x02\n\x04\x46low\x12\x13\n\x06\x63ookie\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x15\n\x08\x64uration\x18\x02 \x01(\x11H\x01\x88\x01\x01\x12\x12\n\x05table\x18\x03 \x01(\x11H\x02\x88\x01\x01\x12\x16\n\tn_packets\x18\x04 \x01(\x11H\x03\x88\x01\x01\x12\x14\n\x07n_bytes\x18\x05 \x01(\x11H\x04\x88\x01\x01\x12\x15\n\x08priority\x18\x06 \x01(\x11H\x05\x88\x01\x01\x12\x1b\n\x05match\x18\x07 \x03(\x0b\x32\x0c.proto.Match\x12#\n\x07\x61\x63tions\x18\x08 \x03(\x0b\x32\x12.proto.Instruction\x12\x14\n\x07\x66low_id\x18\t \x01(\x11H\x06\x88\x01\x01\x42\t\n\x07_cookieB\x0b\n\t_durationB\x08\n\x06_tableB\x0c\n\n_n_packetsB\n\n\x08_n_bytesB\x0b\n\t_priorityB\n\n\x08_flow_id\"\'\n\tFlowTable\x12\x1a\n\x05\x66lows\x18\x01 \x03(\x0b\x32\x0b.proto.Flow\"\xa0\x01\n\x10PacketProcessing\x12\x13\n\x06switch\x18\x01 \x01(\tH\x00\x88\x01\x01\x12)\n\nflow_table\x18\x04 \x01(\x0b\x32\x10.proto.FlowTableH\x01\x88\x01\x01\x12\x1b\n\x04pkts\x18\x02 \x03(\x0b\x32\r.proto.Packet\x12\x15\n\rmatched_flows\x18\x03 \x03(\x11\x42\t\n\x07_switchB\r\n\x0b_flow_table\"\x81\x02\n\tPacketArc\x12\x10\n\x03src\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x1f\n\x03pkt\x18\x02 \x01(\x0b\x32\r.proto.PacketH\x01\x88\x01\x01\x12\x37\n\x11packet_processing\x18\x04 \x01(\x0b\x32\x17.proto.PacketProcessingH\x02\x88\x01\x01\x12\x11\n\x04\x65\x64ge\x18\x05 \x01(\tH\x03\x88\x01\x01\x12\x10\n\x03\x64st\x18\x03 \x01(\tH\x04\x88\x01\x01\x12\x1a\n\rdst_interface\x18\x06 \x01(\tH\x05\x88\x01\x01\x42\x06\n\x04_srcB\x06\n\x04_pktB\x14\n\x12_packet_processingB\x07\n\x05_edgeB\x06\n\x04_dstB\x10\n\x0e_dst_interface\"Q\n\x0bPacketTrace\x12\x1e\n\x04\x61rcs\x18\x01 \x03(\x0b\x32\x10.proto.PacketArc\x12\x15\n\x08protocol\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_protocol\"5\n\x13StartTracingRequest\x12\x13\n\x06option\x18\x01 \x01(\x11H\x00\x88\x01\x01\x42\t\n\x07_option\"4\n\x12StopTracingRequest\x12\x13\n\x06option\x18\x01 \x01(\x11H\x00\x88\x01\x01\x42\t\n\x07_option\"1\n\x0fGetTraceRequest\x12\x13\n\x06option\x18\x01 \x01(\x11H\x00\x88\x01\x01\x42\t\n\x07_option\";\n\x0eGetTraceResult\x12)\n\rpacket_traces\x18\x01 \x03(\x0b\x32\x12.proto.PacketTrace\"2\n\x10TopoChangeResult\x12\x13\n\x06status\x18\x01 \x01(\x11H\x00\x88\x01\x01\x42\t\n\x07_status\"K\n\x0bHostCommand\x12\x11\n\x04host\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x14\n\x07\x63ommand\x18\x02 \x01(\tH\x01\x88\x01\x01\x42\x07\n\x05_hostB\n\n\x08_command\"2\n\x0eMininetCommand\x12\x14\n\x07\x63ommand\x18\x01 \x01(\tH\x00\x88\x01\x01\x42\n\n\x08_command\"e\n\rCommandResult\x12+\n\x04type\x18\x01 \x01(\x0e\x32\x18.proto.CommandResultTypeH\x00\x88\x01\x01\x12\x13\n\x06result\x18\x02 \x01(\tH\x01\x88\x01\x01\x42\x07\n\x05_typeB\t\n\x07_result*\xca\x01\n\x0fInstructionType\x12\x11\n\rOFPIT_INVALID\x10\x00\x12\x14\n\x10OFPIT_GOTO_TABLE\x10\x01\x12\x18\n\x14OFPIT_WRITE_METADATA\x10\x02\x12\x17\n\x13OFPIT_WRITE_ACTIONS\x10\x03\x12\x17\n\x13OFPIT_APPLY_ACTIONS\x10\x04\x12\x17\n\x13OFPIT_CLEAR_ACTIONS\x10\x05\x12\x0f\n\x0bOFPIT_METER\x10\x06\x12\x18\n\x12OFPIT_EXPERIMENTER\x10\xff\xff\x03*:\n\x11\x43ommandResultType\x12\n\n\x06OUTPUT\x10\x00\x12\t\n\x05\x45RROR\x10\x01\x12\x0e\n\nEND_SIGNAL\x10\x64\x62\x06proto3'
+  serialized_pb=b'\n\tnet.proto\x12\x05proto\"T\n\x04Host\x12\x11\n\x04name\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x0f\n\x02ip\x18\x02 \x01(\tH\x01\x88\x01\x01\x12\x10\n\x03mac\x18\x03 \x01(\tH\x02\x88\x01\x01\x42\x07\n\x05_nameB\x05\n\x03_ipB\x06\n\x04_mac\"N\n\x06Switch\x12\x11\n\x04name\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x18\n\x0b\x64\x61tapath_id\x18\x02 \x01(\tH\x01\x88\x01\x01\x42\x07\n\x05_nameB\x0e\n\x0c_datapath_id\"^\n\x04Link\x12\x11\n\x04name\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x12\n\x05host1\x18\x02 \x01(\tH\x01\x88\x01\x01\x12\x12\n\x05host2\x18\x03 \x01(\tH\x02\x88\x01\x01\x42\x07\n\x05_nameB\x08\n\x06_host1B\x08\n\x06_host2\"b\n\x06Packet\x12)\n\x06\x66ields\x18\x01 \x03(\x0b\x32\x19.proto.Packet.FieldsEntry\x1a-\n\x0b\x46ieldsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\"\n\x06\x41\x63tion\x12\x10\n\x03str\x18\x01 \x01(\tH\x00\x88\x01\x01\x42\x06\n\x04_str\"+\n\tActionSet\x12\x1e\n\x07\x61\x63tions\x18\x01 \x03(\x0b\x32\r.proto.Action\"\x8f\x02\n\x0bInstruction\x12)\n\x04type\x18\x01 \x01(\x0e\x32\x16.proto.InstructionTypeH\x01\x88\x01\x01\x12\x31\n\ngoto_table\x18\x02 \x01(\x0b\x32\x1b.proto.InstructionGotoTableH\x00\x12\x39\n\x0ewrite_metadata\x18\x03 \x01(\x0b\x32\x1f.proto.InstructionWriteMetadataH\x00\x12,\n\x07\x61\x63tions\x18\x04 \x01(\x0b\x32\x19.proto.InstructionActionsH\x00\x12(\n\x05meter\x18\x05 \x01(\x0b\x32\x17.proto.InstructionMeterH\x00\x42\x06\n\x04\x64\x61taB\x07\n\x05_type\"(\n\x14InstructionGotoTable\x12\x10\n\x08table_id\x18\x01 \x01(\r\"C\n\x18InstructionWriteMetadata\x12\x10\n\x08metadata\x18\x01 \x01(\r\x12\x15\n\rmetadata_mask\x18\x02 \x01(\r\"4\n\x12InstructionActions\x12\x1e\n\x07\x61\x63tions\x18\x01 \x03(\x0b\x32\r.proto.Action\"$\n\x10InstructionMeter\x12\x10\n\x08meter_id\x18\x01 \x01(\r\"i\n\x05Match\x12\x17\n\nfield_name\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x12\n\x05value\x18\x02 \x01(\tH\x01\x88\x01\x01\x12\x11\n\x04mask\x18\x03 \x01(\tH\x02\x88\x01\x01\x42\r\n\x0b_field_nameB\x08\n\x06_valueB\x07\n\x05_mask\"\xb8\x02\n\x04\x46low\x12\x13\n\x06\x63ookie\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x15\n\x08\x64uration\x18\x02 \x01(\x02H\x01\x88\x01\x01\x12\x12\n\x05table\x18\x03 \x01(\x11H\x02\x88\x01\x01\x12\x16\n\tn_packets\x18\x04 \x01(\x11H\x03\x88\x01\x01\x12\x14\n\x07n_bytes\x18\x05 \x01(\x11H\x04\x88\x01\x01\x12\x15\n\x08priority\x18\x06 \x01(\x11H\x05\x88\x01\x01\x12\x1b\n\x05match\x18\x07 \x03(\x0b\x32\x0c.proto.Match\x12#\n\x07\x61\x63tions\x18\x08 \x03(\x0b\x32\x12.proto.Instruction\x12\x14\n\x07\x66low_id\x18\t \x01(\x11H\x06\x88\x01\x01\x42\t\n\x07_cookieB\x0b\n\t_durationB\x08\n\x06_tableB\x0c\n\n_n_packetsB\n\n\x08_n_bytesB\x0b\n\t_priorityB\n\n\x08_flow_id\"\'\n\tFlowTable\x12\x1a\n\x05\x66lows\x18\x01 \x03(\x0b\x32\x0b.proto.Flow\"\x98\x03\n\x10PacketProcessing\x12\x13\n\x06switch\x18\x01 \x01(\tH\x00\x88\x01\x01\x12)\n\nflow_table\x18\x04 \x01(\x0b\x32\x10.proto.FlowTableH\x01\x88\x01\x01\x12)\n\naction_set\x18\x05 \x01(\x0b\x32\x10.proto.ActionSetH\x02\x88\x01\x01\x12\x1b\n\x04pkts\x18\x02 \x03(\x0b\x32\r.proto.Packet\x12\x15\n\rmatched_flows\x18\x03 \x03(\x11\x12\x33\n\x17packet_after_action_set\x18\x06 \x01(\x0b\x32\r.proto.PacketH\x03\x88\x01\x01\x12/\n\x04outs\x18\x07 \x03(\x0b\x32!.proto.PacketProcessing.OutsEntry\x1a:\n\tOutsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1c\n\x05value\x18\x02 \x01(\x0b\x32\r.proto.Packet:\x02\x38\x01\x42\t\n\x07_switchB\r\n\x0b_flow_tableB\r\n\x0b_action_setB\x1a\n\x18_packet_after_action_set\"\x81\x02\n\tPacketArc\x12\x10\n\x03src\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x1f\n\x03pkt\x18\x02 \x01(\x0b\x32\r.proto.PacketH\x01\x88\x01\x01\x12\x37\n\x11packet_processing\x18\x04 \x01(\x0b\x32\x17.proto.PacketProcessingH\x02\x88\x01\x01\x12\x11\n\x04\x65\x64ge\x18\x05 \x01(\tH\x03\x88\x01\x01\x12\x10\n\x03\x64st\x18\x03 \x01(\tH\x04\x88\x01\x01\x12\x1a\n\rdst_interface\x18\x06 \x01(\tH\x05\x88\x01\x01\x42\x06\n\x04_srcB\x06\n\x04_pktB\x14\n\x12_packet_processingB\x07\n\x05_edgeB\x06\n\x04_dstB\x10\n\x0e_dst_interface\"Q\n\x0bPacketTrace\x12\x1e\n\x04\x61rcs\x18\x01 \x03(\x0b\x32\x10.proto.PacketArc\x12\x15\n\x08protocol\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_protocol\"5\n\x13StartTracingRequest\x12\x13\n\x06option\x18\x01 \x01(\x11H\x00\x88\x01\x01\x42\t\n\x07_option\"4\n\x12StopTracingRequest\x12\x13\n\x06option\x18\x01 \x01(\x11H\x00\x88\x01\x01\x42\t\n\x07_option\"1\n\x0fGetTraceRequest\x12\x13\n\x06option\x18\x01 \x01(\x11H\x00\x88\x01\x01\x42\t\n\x07_option\";\n\x0eGetTraceResult\x12)\n\rpacket_traces\x18\x01 \x03(\x0b\x32\x12.proto.PacketTrace\"2\n\x10TopoChangeResult\x12\x13\n\x06status\x18\x01 \x01(\x11H\x00\x88\x01\x01\x42\t\n\x07_status\"K\n\x0bHostCommand\x12\x11\n\x04host\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x14\n\x07\x63ommand\x18\x02 \x01(\tH\x01\x88\x01\x01\x42\x07\n\x05_hostB\n\n\x08_command\"2\n\x0eMininetCommand\x12\x14\n\x07\x63ommand\x18\x01 \x01(\tH\x00\x88\x01\x01\x42\n\n\x08_command\"e\n\rCommandResult\x12+\n\x04type\x18\x01 \x01(\x0e\x32\x18.proto.CommandResultTypeH\x00\x88\x01\x01\x12\x13\n\x06result\x18\x02 \x01(\tH\x01\x88\x01\x01\x42\x07\n\x05_typeB\t\n\x07_result*\xca\x01\n\x0fInstructionType\x12\x11\n\rOFPIT_INVALID\x10\x00\x12\x14\n\x10OFPIT_GOTO_TABLE\x10\x01\x12\x18\n\x14OFPIT_WRITE_METADATA\x10\x02\x12\x17\n\x13OFPIT_WRITE_ACTIONS\x10\x03\x12\x17\n\x13OFPIT_APPLY_ACTIONS\x10\x04\x12\x17\n\x13OFPIT_CLEAR_ACTIONS\x10\x05\x12\x0f\n\x0bOFPIT_METER\x10\x06\x12\x18\n\x12OFPIT_EXPERIMENTER\x10\xff\xff\x03*:\n\x11\x43ommandResultType\x12\n\n\x06OUTPUT\x10\x00\x12\t\n\x05\x45RROR\x10\x01\x12\x0e\n\nEND_SIGNAL\x10\x64\x62\x06proto3'
 )
 
 _INSTRUCTIONTYPE = _descriptor.EnumDescriptor(
@@ -73,8 +73,8 @@ _INSTRUCTIONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2370,
-  serialized_end=2572,
+  serialized_start=2663,
+  serialized_end=2865,
 )
 _sym_db.RegisterEnumDescriptor(_INSTRUCTIONTYPE)
 
@@ -104,8 +104,8 @@ _COMMANDRESULTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2574,
-  serialized_end=2632,
+  serialized_start=2867,
+  serialized_end=2925,
 )
 _sym_db.RegisterEnumDescriptor(_COMMANDRESULTTYPE)
 
@@ -402,6 +402,38 @@ _ACTION = _descriptor.Descriptor(
 )
 
 
+_ACTIONSET = _descriptor.Descriptor(
+  name='ActionSet',
+  full_name='proto.ActionSet',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='actions', full_name='proto.ActionSet.actions', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=418,
+  serialized_end=461,
+)
+
+
 _INSTRUCTION = _descriptor.Descriptor(
   name='Instruction',
   full_name='proto.Instruction',
@@ -467,8 +499,8 @@ _INSTRUCTION = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=419,
-  serialized_end=690,
+  serialized_start=464,
+  serialized_end=735,
 )
 
 
@@ -499,8 +531,8 @@ _INSTRUCTIONGOTOTABLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=692,
-  serialized_end=732,
+  serialized_start=737,
+  serialized_end=777,
 )
 
 
@@ -538,8 +570,8 @@ _INSTRUCTIONWRITEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=734,
-  serialized_end=801,
+  serialized_start=779,
+  serialized_end=846,
 )
 
 
@@ -570,8 +602,8 @@ _INSTRUCTIONACTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=803,
-  serialized_end=855,
+  serialized_start=848,
+  serialized_end=900,
 )
 
 
@@ -602,8 +634,8 @@ _INSTRUCTIONMETER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=857,
-  serialized_end=893,
+  serialized_start=902,
+  serialized_end=938,
 )
 
 
@@ -663,8 +695,8 @@ _MATCH = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=895,
-  serialized_end=1000,
+  serialized_start=940,
+  serialized_end=1045,
 )
 
 
@@ -685,8 +717,8 @@ _FLOW = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='duration', full_name='proto.Flow.duration', index=1,
-      number=2, type=17, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      number=2, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -786,8 +818,8 @@ _FLOW = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1003,
-  serialized_end=1315,
+  serialized_start=1048,
+  serialized_end=1360,
 )
 
 
@@ -818,10 +850,48 @@ _FLOWTABLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1317,
-  serialized_end=1356,
+  serialized_start=1362,
+  serialized_end=1401,
 )
 
+
+_PACKETPROCESSING_OUTSENTRY = _descriptor.Descriptor(
+  name='OutsEntry',
+  full_name='proto.PacketProcessing.OutsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='proto.PacketProcessing.OutsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='proto.PacketProcessing.OutsEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1685,
+  serialized_end=1743,
+)
 
 _PACKETPROCESSING = _descriptor.Descriptor(
   name='PacketProcessing',
@@ -846,15 +916,36 @@ _PACKETPROCESSING = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='pkts', full_name='proto.PacketProcessing.pkts', index=2,
+      name='action_set', full_name='proto.PacketProcessing.action_set', index=2,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='pkts', full_name='proto.PacketProcessing.pkts', index=3,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='matched_flows', full_name='proto.PacketProcessing.matched_flows', index=3,
+      name='matched_flows', full_name='proto.PacketProcessing.matched_flows', index=4,
       number=3, type=17, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='packet_after_action_set', full_name='proto.PacketProcessing.packet_after_action_set', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='outs', full_name='proto.PacketProcessing.outs', index=6,
+      number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -862,7 +953,7 @@ _PACKETPROCESSING = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_PACKETPROCESSING_OUTSENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -880,9 +971,19 @@ _PACKETPROCESSING = _descriptor.Descriptor(
       index=1, containing_type=None,
       create_key=_descriptor._internal_create_key,
     fields=[]),
+    _descriptor.OneofDescriptor(
+      name='_action_set', full_name='proto.PacketProcessing._action_set',
+      index=2, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+    _descriptor.OneofDescriptor(
+      name='_packet_after_action_set', full_name='proto.PacketProcessing._packet_after_action_set',
+      index=3, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
   ],
-  serialized_start=1359,
-  serialized_end=1519,
+  serialized_start=1404,
+  serialized_end=1812,
 )
 
 
@@ -978,8 +1079,8 @@ _PACKETARC = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1522,
-  serialized_end=1779,
+  serialized_start=1815,
+  serialized_end=2072,
 )
 
 
@@ -1022,8 +1123,8 @@ _PACKETTRACE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1781,
-  serialized_end=1862,
+  serialized_start=2074,
+  serialized_end=2155,
 )
 
 
@@ -1059,8 +1160,8 @@ _STARTTRACINGREQUEST = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1864,
-  serialized_end=1917,
+  serialized_start=2157,
+  serialized_end=2210,
 )
 
 
@@ -1096,8 +1197,8 @@ _STOPTRACINGREQUEST = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1919,
-  serialized_end=1971,
+  serialized_start=2212,
+  serialized_end=2264,
 )
 
 
@@ -1133,8 +1234,8 @@ _GETTRACEREQUEST = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1973,
-  serialized_end=2022,
+  serialized_start=2266,
+  serialized_end=2315,
 )
 
 
@@ -1165,8 +1266,8 @@ _GETTRACERESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2024,
-  serialized_end=2083,
+  serialized_start=2317,
+  serialized_end=2376,
 )
 
 
@@ -1202,8 +1303,8 @@ _TOPOCHANGERESULT = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=2085,
-  serialized_end=2135,
+  serialized_start=2378,
+  serialized_end=2428,
 )
 
 
@@ -1251,8 +1352,8 @@ _HOSTCOMMAND = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=2137,
-  serialized_end=2212,
+  serialized_start=2430,
+  serialized_end=2505,
 )
 
 
@@ -1288,8 +1389,8 @@ _MININETCOMMAND = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=2214,
-  serialized_end=2264,
+  serialized_start=2507,
+  serialized_end=2557,
 )
 
 
@@ -1337,8 +1438,8 @@ _COMMANDRESULT = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=2266,
-  serialized_end=2367,
+  serialized_start=2559,
+  serialized_end=2660,
 )
 
 _HOST.oneofs_by_name['_name'].fields.append(
@@ -1370,6 +1471,7 @@ _PACKET.fields_by_name['fields'].message_type = _PACKET_FIELDSENTRY
 _ACTION.oneofs_by_name['_str'].fields.append(
   _ACTION.fields_by_name['str'])
 _ACTION.fields_by_name['str'].containing_oneof = _ACTION.oneofs_by_name['_str']
+_ACTIONSET.fields_by_name['actions'].message_type = _ACTION
 _INSTRUCTION.fields_by_name['type'].enum_type = _INSTRUCTIONTYPE
 _INSTRUCTION.fields_by_name['goto_table'].message_type = _INSTRUCTIONGOTOTABLE
 _INSTRUCTION.fields_by_name['write_metadata'].message_type = _INSTRUCTIONWRITEMETADATA
@@ -1424,14 +1526,25 @@ _FLOW.oneofs_by_name['_flow_id'].fields.append(
   _FLOW.fields_by_name['flow_id'])
 _FLOW.fields_by_name['flow_id'].containing_oneof = _FLOW.oneofs_by_name['_flow_id']
 _FLOWTABLE.fields_by_name['flows'].message_type = _FLOW
+_PACKETPROCESSING_OUTSENTRY.fields_by_name['value'].message_type = _PACKET
+_PACKETPROCESSING_OUTSENTRY.containing_type = _PACKETPROCESSING
 _PACKETPROCESSING.fields_by_name['flow_table'].message_type = _FLOWTABLE
+_PACKETPROCESSING.fields_by_name['action_set'].message_type = _ACTIONSET
 _PACKETPROCESSING.fields_by_name['pkts'].message_type = _PACKET
+_PACKETPROCESSING.fields_by_name['packet_after_action_set'].message_type = _PACKET
+_PACKETPROCESSING.fields_by_name['outs'].message_type = _PACKETPROCESSING_OUTSENTRY
 _PACKETPROCESSING.oneofs_by_name['_switch'].fields.append(
   _PACKETPROCESSING.fields_by_name['switch'])
 _PACKETPROCESSING.fields_by_name['switch'].containing_oneof = _PACKETPROCESSING.oneofs_by_name['_switch']
 _PACKETPROCESSING.oneofs_by_name['_flow_table'].fields.append(
   _PACKETPROCESSING.fields_by_name['flow_table'])
 _PACKETPROCESSING.fields_by_name['flow_table'].containing_oneof = _PACKETPROCESSING.oneofs_by_name['_flow_table']
+_PACKETPROCESSING.oneofs_by_name['_action_set'].fields.append(
+  _PACKETPROCESSING.fields_by_name['action_set'])
+_PACKETPROCESSING.fields_by_name['action_set'].containing_oneof = _PACKETPROCESSING.oneofs_by_name['_action_set']
+_PACKETPROCESSING.oneofs_by_name['_packet_after_action_set'].fields.append(
+  _PACKETPROCESSING.fields_by_name['packet_after_action_set'])
+_PACKETPROCESSING.fields_by_name['packet_after_action_set'].containing_oneof = _PACKETPROCESSING.oneofs_by_name['_packet_after_action_set']
 _PACKETARC.fields_by_name['pkt'].message_type = _PACKET
 _PACKETARC.fields_by_name['packet_processing'].message_type = _PACKETPROCESSING
 _PACKETARC.oneofs_by_name['_src'].fields.append(
@@ -1490,6 +1603,7 @@ DESCRIPTOR.message_types_by_name['Switch'] = _SWITCH
 DESCRIPTOR.message_types_by_name['Link'] = _LINK
 DESCRIPTOR.message_types_by_name['Packet'] = _PACKET
 DESCRIPTOR.message_types_by_name['Action'] = _ACTION
+DESCRIPTOR.message_types_by_name['ActionSet'] = _ACTIONSET
 DESCRIPTOR.message_types_by_name['Instruction'] = _INSTRUCTION
 DESCRIPTOR.message_types_by_name['InstructionGotoTable'] = _INSTRUCTIONGOTOTABLE
 DESCRIPTOR.message_types_by_name['InstructionWriteMetadata'] = _INSTRUCTIONWRITEMETADATA
@@ -1556,6 +1670,13 @@ Action = _reflection.GeneratedProtocolMessageType('Action', (_message.Message,),
   })
 _sym_db.RegisterMessage(Action)
 
+ActionSet = _reflection.GeneratedProtocolMessageType('ActionSet', (_message.Message,), {
+  'DESCRIPTOR' : _ACTIONSET,
+  '__module__' : 'net_pb2'
+  # @@protoc_insertion_point(class_scope:proto.ActionSet)
+  })
+_sym_db.RegisterMessage(ActionSet)
+
 Instruction = _reflection.GeneratedProtocolMessageType('Instruction', (_message.Message,), {
   'DESCRIPTOR' : _INSTRUCTION,
   '__module__' : 'net_pb2'
@@ -1613,11 +1734,19 @@ FlowTable = _reflection.GeneratedProtocolMessageType('FlowTable', (_message.Mess
 _sym_db.RegisterMessage(FlowTable)
 
 PacketProcessing = _reflection.GeneratedProtocolMessageType('PacketProcessing', (_message.Message,), {
+
+  'OutsEntry' : _reflection.GeneratedProtocolMessageType('OutsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _PACKETPROCESSING_OUTSENTRY,
+    '__module__' : 'net_pb2'
+    # @@protoc_insertion_point(class_scope:proto.PacketProcessing.OutsEntry)
+    })
+  ,
   'DESCRIPTOR' : _PACKETPROCESSING,
   '__module__' : 'net_pb2'
   # @@protoc_insertion_point(class_scope:proto.PacketProcessing)
   })
 _sym_db.RegisterMessage(PacketProcessing)
+_sym_db.RegisterMessage(PacketProcessing.OutsEntry)
 
 PacketArc = _reflection.GeneratedProtocolMessageType('PacketArc', (_message.Message,), {
   'DESCRIPTOR' : _PACKETARC,
@@ -1691,4 +1820,5 @@ _sym_db.RegisterMessage(CommandResult)
 
 
 _PACKET_FIELDSENTRY._options = None
+_PACKETPROCESSING_OUTSENTRY._options = None
 # @@protoc_insertion_point(module_scope)

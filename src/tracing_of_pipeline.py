@@ -58,6 +58,7 @@ from tracing_net.net.net import TracingNet
 from src.analyzer.analyzer import Analyzer
 from src.analyzer.packet_trace_handler import packet_trace_list
 from src.api.ws_server import ws_server_start, get_messsage_hub, exec_wsevent_action
+from src.tracing_net.flowtable.table_repository import table_repository
 from src.config import conf
 
 from utils.log import get_log_handler, setup_logger
@@ -79,7 +80,8 @@ class AbstractTracingOFPipeline(metaclass=ABCMeta):
         default_logfile = self.conf.LOGFILE_OFCAPTURE
         self.ofcapture = OFCaptureWithPipe(log_file=default_logfile, local_port=self.conf.LOCAL_PORT,
                                            controller_ip=self.conf.CONTROLLER_IP, controller_port=self.conf.CONTROLLER_PORT,
-                                           event_loop=self.event_loop, parent_conn=ofc_parent_conn)
+                                           event_loop=self.event_loop, parent_conn=ofc_parent_conn,
+                                           log_level=self.conf.LOGLEVEL_OFCAPTURE)
         self._ofc_process = multiprocessing.Process(target=self.ofcapture.start_server, daemon=True)
         self._ofc_child_conn_thread = threading.Thread(target=self._handle_ofc_child_conn, args=(ofc_child_conn, ))
 
@@ -168,6 +170,18 @@ class AbstractTracingOFPipeline(metaclass=ABCMeta):
         """stop packet capture and polling flow table
         """
         self.tracing_net.stop_tracing()
+        self.analyzer.stop_analyzing()
+        if conf.OUTPUT_FLOWTABLES_TO_FILE:
+            table_repository.output()
+
+    def wait_cli_event(self):
+        """
+         * Web系はサブプロセスとして，メインプロセスではCLIと
+            => WEB CLI はメインプロセスでまとめる
+        Returns:
+
+        """
+        raise NotImplementedError
 
     def _handle_ofc_child_conn(self, child_conn):
         while True:
@@ -228,7 +242,7 @@ def run_local2():
     tracing.start()
     controller = net.of_controller
     # start controller
-    controller.cmd("ryu-manager test/ryu_controller/app/simple_switch_13.py &")
+    controller.cmd("ryu-manager test/ryu_controller/logging_app/simple_switch_13_with_log.py &")
     s1 = net.add_switch('s1')
     # add_hostとリンクはセットにしないとエラー(インタフェースの設定がおかしくなる)
     h1 = net.add_host('h1')

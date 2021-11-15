@@ -96,5 +96,5 @@ class FlowMonitor(Poller):
             if 'event' in monitor_result_dict.keys():
                 pass  # TODO: update flow table
             if conf.OUTPUT_FLOWMONITOR_TO_LOGFILE:
-                logger.debug("flow monitor get result {}".format(monitor_result))
+                logger.debug("flow monitor get result_dict {}".format(monitor_result_dict))
         return monitor_popen.returncode

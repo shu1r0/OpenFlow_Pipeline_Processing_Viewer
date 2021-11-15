@@ -1,3 +1,5 @@
+import datetime
+import yaml
 from abc import ABCMeta, abstractmethod
 from logging import getLogger, setLoggerClass, Logger
 
@@ -164,6 +166,19 @@ class TableRepository(AbstractTableRepository):
                     return None
         except KeyError:
             return None
+
+    def output(self):
+        """repository output to file"""
+        file_name = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M') + "-" + "flowtable" + ".yaml"
+        file_path = conf.FLOWTABLES_DIRECTORY + file_name
+        with open(file_path, 'w') as f:
+            repo_dict = {"switches": []}
+            for switch, flow_tables in self.repository.items():
+                repo_dict["switches"].append({
+                    "switch": switch,
+                    "flow_tables": [flow_table.to_dict() for flow_table in flow_tables]
+                })
+            f.write(yaml.dump(repo_dict))
 
 
 table_repository = TableRepository()

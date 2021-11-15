@@ -13,6 +13,8 @@ export interface UpdatePacket {
   packetAfter: Map<string, string>,
   applyedFlow: proto.Flow,
   applyedActions: string[]
+  beforeActionSet: string[]
+  afterActionSet: string[]
 }
 
 /**
@@ -57,6 +59,43 @@ export const protoActions2Strings = (actions: proto.Action[]): string[] =>{
   return str
 }
 
+interface UpdateActionSet {
+  before: string[],
+  after: string[]
+}
+
+/**
+ * 
+ * @param beforeFlows : マッチしたFlowの前のflow
+ * @param currentWriteActions : 今回書き込むActionSet
+ * @returns UpdateActionSet
+ */
+const getActionSetBeforeAfter = (beforeFlows: proto.Flow[], currentWriteActions: string[]): UpdateActionSet => {
+  const beforeActions: string[] = []
+
+  beforeFlows.forEach(flow => {
+    const insts: proto.Instruction[] = flow.actions
+    // Instructionの解析
+    insts.forEach(inst => {
+      if(inst.type === proto.InstructionType.OFPIT_WRITE_ACTIONS){
+        protoActions2Strings(inst.actions.actions).forEach(s => {
+          beforeActions.push(s)
+        })
+      }
+    })
+  })
+
+  const afterActions: string[] = Array.from(beforeActions)
+  currentWriteActions.forEach(s => {
+    afterActions.push(s)
+  })
+
+  return {
+    'before': beforeActions, 
+    'after': afterActions
+  }
+}
+
 /**
  * パケット更新を表示
  * 
@@ -67,23 +106,44 @@ export const protoActions2Strings = (actions: proto.Action[]): string[] =>{
  * @returns UpdatePacket
  */
 export const getPacketBeforeAfter = (pkts: proto.Packet[], matchedFlows: number[], currentIndex: number, flowTable: proto.FlowTable): UpdatePacket => {
-  const updataPacket = {} as UpdatePacket
-  updataPacket.packetBefore = pkts[currentIndex].fields
+  // return value
+  const updatePacket = {} as UpdatePacket
+
+  updatePacket.packetBefore = pkts[currentIndex].fields
+
+  // for actionset
+  const beforeFlows: proto.Flow[] = []
+  matchedFlows.slice(0, currentIndex).forEach(flow_number => {
+    beforeFlows.push(getFlow(flowTable, flow_number))
+  })
+  let currentActionSet: string[] = []
+
   if(pkts.length > currentIndex){
-    updataPacket.packetAfter = pkts[++currentIndex].fields
+    updatePacket.packetAfter = pkts[++currentIndex].fields
     const flow: proto.Flow = getFlow(flowTable, matchedFlows[currentIndex])
-    updataPacket.applyedFlow = flow
+
+    updatePacket.applyedFlow = flow
+
     const insts: proto.Instruction[] = flow.actions
+    // Instructionの解析
     insts.forEach(inst => {
       if(inst.type === proto.InstructionType.OFPIT_APPLY_ACTIONS){
-        updataPacket.applyedActions = protoActions2Strings(inst.actions.actions)
+        updatePacket.applyedActions = protoActions2Strings(inst.actions.actions)
+      }else if(inst.type === proto.InstructionType.OFPIT_WRITE_ACTIONS){
+        currentActionSet = protoActions2Strings(inst.actions.actions)
       }
     })
   }else{
-    updataPacket.packetAfter = updataPacket.packetBefore
-    updataPacket.applyedActions = ["NoMatch"]
+    updatePacket.packetAfter = updatePacket.packetBefore
+    updatePacket.applyedActions = ["NoMatch"]
   }
-  return updataPacket
+
+  // ActionSetの解析
+  const updateActionSet: UpdateActionSet = getActionSetBeforeAfter(beforeFlows, currentActionSet)
+  updatePacket.beforeActionSet = updateActionSet.before
+  updatePacket.afterActionSet = updateActionSet.after
+
+  return updatePacket
 }
 
 /**

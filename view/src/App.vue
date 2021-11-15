@@ -35,7 +35,10 @@ import Configuration from './config/config'
 export default defineComponent({
   name: "App",
   setup(){
-    const remoteClient: RemoteClient = new WSClient(Configuration.WS_SERVER_ADDRESS, Configuration.WS_SERVER_PORT, Configuration.WS_NAMESPACE)
+    let remoteClient: RemoteClient = new WSClient(Configuration.WS_SERVER_ADDRESS, Configuration.WS_SERVER_PORT, Configuration.WS_NAMESPACE)
+    if(Configuration.USE_DUMMY_CLIENT){
+      remoteClient = new DummyRemoteClient()
+    }
     changeableVNet.setRemoteClient(remoteClient)
 
     onMounted(() => {

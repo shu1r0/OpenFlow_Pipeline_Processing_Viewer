@@ -52,6 +52,8 @@ sudo pip3 install aiohttp
 sudo pip3 install python-socketio
 sudo pip3 install nest_asyncio
 sudo pip3 install python-openflow
+sudo pip3 install flask
+sudo pip3 install flask_socketio
 SCRIPT
 
 # install mininet witch bofuss

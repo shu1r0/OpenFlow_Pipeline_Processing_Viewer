@@ -263,6 +263,10 @@ class PacketProcessing:
         self.msg_list = []
         self.matched_flowentry_list = []
 
+        self.action_set = None
+        self.packet_after_action_set = None
+        self.outport2msg = []
+
     def get_protobuf_message(self):
         """This method convert this instance to a protocol buffer's obj
 
@@ -272,18 +276,23 @@ class PacketProcessing:
         packet_processing = net_pb2.PacketProcessing()
         packet_processing.switch = self.switch
         packet_processing.flow_table.CopyFrom(self.flow_table.get_protobuf_message())
+        packet_processing.action_set.CopyFrom(self.action_set.get_protobuf_message())
+        packet_processing.packet_after_action_set.CopyFrom(self.packet_after_action_set.get_protobuf_message())
         for m in self.msg_list:
             packet_processing.pkts.append(m.get_protobuf_message())
         for f_i in self.matched_flowentry_list:
             packet_processing.matched_flows.append(f_i)
+        for p2m in self.outport2msg:
+            packet_processing.outs[str(p2m[0])] = p2m[1].get_protobuf_message()
         return packet_processing
 
-    def add_msg(self, msg):
+    def add_msg(self, msg, table_id):
         """処理されたパケット．
         * 処理対象と処理後のパケットの列なので，配列はフローエントリの配列より1つ多い
 
         Args:
             msg (Msg) :
+            table_id (int) : todo
         """
         self.msg_list.append(msg)
 

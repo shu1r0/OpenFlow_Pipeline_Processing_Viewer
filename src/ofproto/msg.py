@@ -55,6 +55,8 @@ class MsgForOFMsg(MsgBase):
         """
         https://scapy.readthedocs.io/en/latest/api/scapy.layers.l2.html#scapy.layers.l2.Ether
         """
+        if self._properties["eth_dst"]:
+            return self._properties["eth_dst"]
         if Ether in self.pkt:
             return self.pkt[Ether].dst
         else:
@@ -62,6 +64,8 @@ class MsgForOFMsg(MsgBase):
 
     @property
     def eth_src(self):
+        if self._properties["eth_src"]:
+            return self._properties["eth_src"]
         if Ether in self.pkt:
             return self.pkt[Ether].src
         else:
@@ -69,6 +73,8 @@ class MsgForOFMsg(MsgBase):
 
     @property
     def eth_type(self):
+        if self._properties["eth_type"]:
+            return self._properties["eth_type"]
         if Ether in self.pkt:
             return self.pkt[Ether].type
         else:
@@ -76,6 +82,8 @@ class MsgForOFMsg(MsgBase):
 
     @property
     def vlan_vid(self):
+        if self._properties["vlan_vid"]:
+            return self._properties["vlan_vid"]
         if self.pushed_vlan:
             return self.pushed_vlan
         if Dot1Q in self.pkt:
@@ -87,6 +95,8 @@ class MsgForOFMsg(MsgBase):
 
     @property
     def vlan_pcp(self):
+        if self._properties["vlan_pcp"]:
+            return self._properties["vlan_pcp"]
         if Dot1Q in self.pkt:
             return self.pkt[Dot1Q].prio
         if Dot1AD in self.pkt:
@@ -96,6 +106,8 @@ class MsgForOFMsg(MsgBase):
 
     @property
     def ip_dscp(self):
+        if self._properties["ip_dscp"]:
+            return self._properties["ip_dscp"]
         if IP in self.pkt:
             return self.pkt[IP].tos & 0b11111100
         else:
@@ -103,6 +115,8 @@ class MsgForOFMsg(MsgBase):
 
     @property
     def ip_ecn(self):
+        if self._properties["ip_ecn"]:
+            return self._properties["ip_ecn"]
         if IP in self.pkt:
             return self.pkt[IP].tos & 0b00000011
         else:
@@ -110,6 +124,8 @@ class MsgForOFMsg(MsgBase):
 
     @property
     def ip_proto(self):
+        if self._properties["ip_proto"]:
+            return self._properties["ip_proto"]
         if IP in self.pkt:
             return self.pkt[IP].proto
         else:
@@ -117,6 +133,8 @@ class MsgForOFMsg(MsgBase):
 
     @property
     def ipv4_src(self):
+        if self._properties["ipv4_src"]:
+            return self._properties["ipv4_src"]
         if IP in self.pkt:
             return self.pkt[IP].src
         else:
@@ -124,6 +142,8 @@ class MsgForOFMsg(MsgBase):
 
     @property
     def ipv4_dst(self):
+        if self._properties["ipv4_dst"]:
+            return self._properties["ipv4_dst"]
         if IP in self.pkt:
             return self.pkt[IP].dst
         else:
@@ -134,6 +154,8 @@ class MsgForOFMsg(MsgBase):
         """
         https://scapy.readthedocs.io/en/latest/api/scapy.layers.inet.html#scapy.layers.inet.TCP
         """
+        if self._properties["tcp_src"]:
+            return self._properties["tcp_src"]
         if TCP in self.pkt:
             return self.pkt[TCP].sport
         else:
@@ -141,6 +163,8 @@ class MsgForOFMsg(MsgBase):
 
     @property
     def tcp_dst(self):
+        if self._properties["tcp_dst"]:
+            return self._properties["tcp_dst"]
         if TCP in self.pkt:
             return self.pkt[TCP].dport
         else:
@@ -151,6 +175,8 @@ class MsgForOFMsg(MsgBase):
         """
         https://scapy.readthedocs.io/en/latest/api/scapy.layers.inet.html#scapy.layers.inet.UDP
         """
+        if self._properties["udp_src"]:
+            return self._properties["udp_src"]
         if UDP in self.pkt:
             return self.pkt[UDP].sport
         else:
@@ -158,6 +184,8 @@ class MsgForOFMsg(MsgBase):
 
     @property
     def udp_dst(self):
+        if self._properties["udp_dst"]:
+            return self._properties["udp_dst"]
         if UDP in self.pkt:
             return self.pkt[UDP].dport
         else:
@@ -165,10 +193,14 @@ class MsgForOFMsg(MsgBase):
 
     @property
     def sctp_src(self):
+        if self._properties["sctp_src"]:
+            return self._properties["sctp_src"]
         return None
 
     @property
     def sctp_dst(self):
+        if self._properties["sctp_dst"]:
+            return self._properties["sctp_dst"]
         return None
 
     @property
@@ -176,6 +208,8 @@ class MsgForOFMsg(MsgBase):
         """
         https://scapy.readthedocs.io/en/latest/api/scapy.layers.inet.html#scapy.layers.inet.ICMP
         """
+        if self._properties["icmpv4_type"]:
+            return self._properties["icmpv4_type"]
         if ICMP in self.pkt:
             return self.pkt[ICMP].type
         else:
@@ -183,6 +217,8 @@ class MsgForOFMsg(MsgBase):
 
     @property
     def icmpv4_code(self):
+        if self._properties["icmpv4_code"]:
+            return self._properties["icmpv4_code"]
         if ICMP in self.pkt:
             return self.pkt[ICMP].code
         else:
@@ -193,6 +229,8 @@ class MsgForOFMsg(MsgBase):
         """
         https://scapy.readthedocs.io/en/latest/api/scapy.layers.l2.html#scapy.layers.l2.ARP
         """
+        if self._properties["arp_op"]:
+            return self._properties["arp_op"]
         if ARP in self.pkt:
             return self.pkt[ARP].op
         else:
@@ -200,6 +238,8 @@ class MsgForOFMsg(MsgBase):
 
     @property
     def arp_spa(self):
+        if self._properties["arp_spa"]:
+            return self._properties["arp_spa"]
         if ARP in self.pkt:
             return self.pkt[ARP].psrc
         else:
@@ -207,6 +247,8 @@ class MsgForOFMsg(MsgBase):
 
     @property
     def arp_tpa(self):
+        if self._properties["arp_tpa"]:
+            return self._properties["arp_tpa"]
         if ARP in self.pkt:
             return self.pkt[ARP].pdst
         else:
@@ -214,6 +256,8 @@ class MsgForOFMsg(MsgBase):
 
     @property
     def arp_sha(self):
+        if self._properties["arp_sha"]:
+            return self._properties["arp_sha"]
         if ARP in self.pkt:
             return self.pkt[ARP].hwsrc
         else:
@@ -221,6 +265,8 @@ class MsgForOFMsg(MsgBase):
 
     @property
     def arp_tha(self):
+        if self._properties["arp_tha"]:
+            return self._properties["arp_tha"]
         if ARP in self.pkt:
             return self.pkt[ARP].hwdst
         else:
@@ -231,6 +277,8 @@ class MsgForOFMsg(MsgBase):
         """
         https://scapy.readthedocs.io/en/latest/api/scapy.layers.inet6.html#scapy.layers.inet6.IPv6
         """
+        if self._properties["ipv6_src"]:
+            return self._properties["ipv6_src"]
         if IPv6 in self.pkt:
             return self.pkt[IPv6].src
         else:
@@ -238,6 +286,8 @@ class MsgForOFMsg(MsgBase):
 
     @property
     def ipv6_dst(self):
+        if self._properties["ipv6_dst"]:
+            return self._properties["ipv6_dst"]
         if IPv6 in self.pkt:
             return self.pkt[IPv6].dst
         else:
@@ -245,6 +295,8 @@ class MsgForOFMsg(MsgBase):
 
     @property
     def ipv6_flabel(self):
+        if self._properties["ipv6_flabel"]:
+            return self._properties["ipv6_flabel"]
         if IPv6 in self.pkt:
             return self.pkt[IPv6].fl
         else:
@@ -257,6 +309,8 @@ class MsgForOFMsg(MsgBase):
         TODO:
             * verify later
         """
+        if self._properties["icmpv6_type"]:
+            return self._properties["icmpv6_type"]
         for layer in self.pkt.layers():
             if isinstance(layer, _ICMPv6):
                 return layer.type
@@ -264,6 +318,8 @@ class MsgForOFMsg(MsgBase):
 
     @property
     def icmpv6_code(self):
+        if self._properties["icmpv6_code"]:
+            return self._properties["icmpv6_code"]
         for layer in self.pkt.layers():
             if isinstance(layer, _ICMPv6):
                 return layer.code
@@ -271,6 +327,8 @@ class MsgForOFMsg(MsgBase):
 
     @property
     def ipv6_nd_target(self):
+        if self._properties["ipv6_nd_target"]:
+            return self._properties["ipv6_nd_target"]
         return None
 
     @property

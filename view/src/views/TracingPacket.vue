@@ -3,11 +3,14 @@
     <PipelineAndMatch
       @change-table="onChangeTable"
       :pipeline="matchedTables"
-      :flow_table="flowTable"></PipelineAndMatch>
+      :flow_table="flowTable" />
     <UpdateActionSet
       :actionSetBefore="beforeActionSet"
-      :actionSetAfter="afterActionSet"></UpdateActionSet>
-    <UpdatePacket></UpdatePacket>
+      :actionSetAfter="afterActionSet" />
+    <UpdatePacket
+      :packetBefore="beforePacketFields"
+      :packetAfter="afterPacketFields"
+      :applyedActions="applyedActions" />
 
     <button @click="close()">close</button>
   </div>
@@ -79,8 +82,8 @@ export default defineComponent({
     /**
      * 後で考える
      */
-    const beforeActionSet = ref<string[]>(null)
-    const afterActionSet = ref<string[]>(null)
+    const beforeActionSet = ref<string[]>([])
+    const afterActionSet = ref<string[]>([])
 
     /**
      * Examples:
@@ -120,9 +123,8 @@ export default defineComponent({
       const matchedFlow = updatePacket.applyedFlow
 
       // ActionSet
-      console.warn("Not Implement")
-      beforeActionSet.value = []
-      afterActionSet.value = []
+      beforeActionSet.value = updatePacket.beforeActionSet
+      afterActionSet.value = updatePacket.afterActionSet
 
       // MatchedTables
       matchedTables.value = matchedFlows2matchedTables(packetProcessing.matched_flows, packetProcessing.flow_table)
@@ -198,7 +200,10 @@ export default defineComponent({
       matchedTables,
       flowTable,
       beforeActionSet,
-      afterActionSet
+      afterActionSet,
+      beforePacketFields,
+      afterPacketFileds,
+      applyedActions
     }
   }
 })

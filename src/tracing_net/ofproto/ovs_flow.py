@@ -31,14 +31,14 @@ OVS_FLOW_OUTPUT = {
     'hard_timeout': r'hard_timeout=(?P<hard_timeout>\w+)',
     'idle_age': r'idle_timeout=(?P<idle_age>\w+)',
     'hard_age': r'hard_timeout=(?P<hard_age>\w+)',
-    'importance': r'importance=(?P<importance\w+)',
+    'importance': r'importance=(?P<importance>\w+)',
     # flags
     'send_flow_rem': r'(?P<send_flow_rem>send_flow_rem)',
     'check_overlap': r'(?P<check_overlap>check_overlap)',
     'reset_counts': r'(?P<reset_counts>reset_counts)',
     'no_packet_counts': r'(?P<no_packet_counts>no_packet_counts)',
     'no_byte_counts': r'(?P<no_byte_counts>no_byte_counts)',
-    'out_port': r'out_port=(?P<out_port\w+)',
+    'out_port': r'out_port=(?P<out_port>\w+)',
     'out_group': r'out_group=(?P<out_group>=\w+)'
 }
 # ovs-ofctl result
@@ -49,6 +49,12 @@ re_flow_entry = OVS_FLOW_OUTPUT['cookie'] + r'[\s,.]+' \
                 + OVS_FLOW_OUTPUT['n_bytes'] + r'[\s,.]+' \
                 + '[' + OVS_FLOW_OUTPUT['send_flow_rem'] + r'[\s,.]+' + ']*' \
                 + OVS_FLOW_OUTPUT['priority'] + r'[\s,.]+' \
+                + OVS_FLOW_OUTPUT['actions']
+
+re_flow_monitor = r'event=(?P<event>\w+)' + r'[\s,.]+' \
+                + OVS_FLOW_OUTPUT['table'] + r'[\s,.]+' \
+                + OVS_FLOW_OUTPUT['cookie'] + r'[\s,.]+' \
+                + '(' + r'(?P<match>[\w,./\->=:;()"]*)' + r'[\s,.]+' + ')?' \
                 + OVS_FLOW_OUTPUT['actions']
 
 
@@ -452,18 +458,46 @@ def parse_dump_flows(flows):
     """
     parsed_flows = []
     for f in flows:
-        flow = Flow()
         parsed_flow = parse_dump_flow(f)
-        flow.cookie = parsed_flow.get('cookie', '')
-        flow.duration = parsed_flow.get('duration', 0)
-        flow.table = parsed_flow.get('table', -1)
-        flow.n_packets = parsed_flow.get('n_packets', 0)
-        flow.n_bytes = parsed_flow.get('n_bytes', 0)
-        flow.priority = parsed_flow.get('priority', 0)
-        flow.match = parsed_flow.get('match', 0)
-        flow.actions = parsed_flow.get('actions', None)
+        cookie = parsed_flow.get('cookie', '')
+        duration = parsed_flow.get('duration', 0)
+        table = parsed_flow.get('table', -1)
+        n_packets = parsed_flow.get('n_packets', 0)
+        n_bytes = parsed_flow.get('n_bytes', 0)
+        priority = parsed_flow.get('priority', 0)
+        match = parsed_flow.get('match', 0)
+        actions = parsed_flow.get('actions', None)
+        flow = Flow(cookie, duration, table, n_packets, n_bytes, priority, match, actions)
         parsed_flows.append(flow)
     return parsed_flows
+
+
+def _parse_flow_monitor(result):
+    m = re.search(re_flow_monitor, result)
+    if m:
+        dict_entry = m.groupdict()
+        if 'actions' in dict_entry.keys():
+            if dict_entry['actions']:
+                actions = parse_actions(dict_entry['actions'])
+                action_list = []
+                instructions = []
+                for a in actions:
+                    if not isinstance(a, instruction.Instruction):
+                        action_list.append(a)
+                    else:
+                        instructions.append(a)
+                apply_actions_parser = OVS_INSTRUCTIONS['apply_actions']['parser']
+                dict_entry['actions'] = [apply_actions_parser(action_list)] + instructions
+        if 'match' in dict_entry.keys():
+            if dict_entry['match']:
+                dict_entry['match'] = match_to_obj(dict_entry['match'])
+            else:
+                dict_entry['match'] = {}  # all match
+        else:
+            dict_entry['match'] = {}  # all match
+        return dict_entry
+    else:
+        raise Exception("False to parse flow entry")
 
 
 def parse_flow_monitor(result):
@@ -479,16 +513,16 @@ def parse_flow_monitor(result):
         * まだ移行しただけで，何も変えてない
 
     """
-    result = result.split()
-    if result[0] == "NXST_FLOW_MONITOR":
-        xid = re.search(r'0x\d', result[2]).group()
-        return {"msg_type": result[0], "type": result[1], "xid": xid}
-    elif result[0].split("=")[0] == 'event':
-        flow_dict = {}
-        for r in result:
-            r = r.split("=")
-            if len(r) >= 2:
-                flow_dict[r[0]] = r[1]
+    result_list = result.split()
+    if result_list[0] == "NXST_FLOW_MONITOR":
+        xid = re.search(r'0x\d', result_list[2]).group()
+        return {"msg_type": result_list[0], "type": result_list[1], "xid": xid}
+    elif result_list[0].split("=")[0] == 'event':
+        flow_dict = _parse_flow_monitor(result)
+        # for r in result:
+        #     r = r.split("=")
+        #     if len(r) >= 2:
+        #         flow_dict[r[0]] = r[1]
         return flow_dict
     else:
         return {'result': result}
