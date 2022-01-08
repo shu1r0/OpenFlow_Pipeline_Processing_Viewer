@@ -21,7 +21,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { DEVICE_TYPE } from '../vnet/devices'
+import { DEVICE_TYPE } from '../scripts/vnet/devices'
 
 export default defineComponent({
   setup(props, ctx){

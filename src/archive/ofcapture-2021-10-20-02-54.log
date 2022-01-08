@@ -1,0 +1,106 @@
+2021-10-20 02:54:21,723 | 3132 | ofcapture.proxy.proxy, start_server, 231 | INFO | Server on ('127.0.0.1', 63333)
+2021-10-20 02:54:21,726 | 3132 | ofcapture.proxy.proxy, start_server, 234 | INFO | Server serve forever ('127.0.0.1', 63333)
+2021-10-20 02:54:22,577 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40650) is connected
+2021-10-20 02:54:22,596 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:23,175 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40654) is connected
+2021-10-20 02:54:23,178 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:23,183 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40656) is connected
+2021-10-20 02:54:23,185 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:23,683 | 3122 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:54:23,684 | 3122 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:54:24,177 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40662) is connected
+2021-10-20 02:54:24,179 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40664) is connected
+2021-10-20 02:54:24,180 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:24,191 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:25,181 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40670) is connected
+2021-10-20 02:54:25,197 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40672) is connected
+2021-10-20 02:54:25,209 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:25,215 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:25,754 | 3122 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:54:25,785 | 3122 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:54:26,186 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40678) is connected
+2021-10-20 02:54:26,187 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40680) is connected
+2021-10-20 02:54:26,188 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:26,279 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:27,178 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40686) is connected
+2021-10-20 02:54:27,179 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40688) is connected
+2021-10-20 02:54:27,181 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:27,185 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:27,706 | 3122 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:54:27,792 | 3122 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:54:28,177 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40694) is connected
+2021-10-20 02:54:28,179 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40696) is connected
+2021-10-20 02:54:28,180 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:28,182 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:29,179 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40702) is connected
+2021-10-20 02:54:29,180 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40704) is connected
+2021-10-20 02:54:29,182 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:29,183 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:29,870 | 3122 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:54:29,885 | 3122 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:54:30,182 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40770) is connected
+2021-10-20 02:54:30,183 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40772) is connected
+2021-10-20 02:54:30,223 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:30,246 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:31,178 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40778) is connected
+2021-10-20 02:54:31,193 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40780) is connected
+2021-10-20 02:54:31,201 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:31,216 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:31,691 | 3122 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:54:31,723 | 3122 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:54:32,179 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40786) is connected
+2021-10-20 02:54:32,214 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40788) is connected
+2021-10-20 02:54:32,230 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:32,235 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:33,186 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40794) is connected
+2021-10-20 02:54:33,205 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40796) is connected
+2021-10-20 02:54:33,265 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:33,266 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:33,687 | 3122 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:54:33,718 | 3122 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:54:34,183 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40862) is connected
+2021-10-20 02:54:34,184 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40864) is connected
+2021-10-20 02:54:34,185 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:34,186 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:35,177 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40870) is connected
+2021-10-20 02:54:35,188 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40872) is connected
+2021-10-20 02:54:35,189 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:35,190 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:35,688 | 3122 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:54:35,690 | 3122 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:54:36,182 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40878) is connected
+2021-10-20 02:54:36,190 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40880) is connected
+2021-10-20 02:54:36,207 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:36,210 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:37,188 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40886) is connected
+2021-10-20 02:54:37,199 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40888) is connected
+2021-10-20 02:54:37,204 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:37,205 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:37,689 | 3122 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:54:37,691 | 3122 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:54:38,198 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40894) is connected
+2021-10-20 02:54:38,243 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40896) is connected
+2021-10-20 02:54:38,245 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:38,246 | 3132 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:54:39,187 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40902) is connected
+2021-10-20 02:54:39,194 | 3132 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 40904) is connected
+2021-10-20 02:54:39,200 | 3132 | ofcapture.proxy.proxy, handle_controller, 364 | INFO | connected Controller ('127.0.0.1', 6633)
+2021-10-20 02:54:39,209 | 3132 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_HELLO Hello(xid=UBInt32(68)) {'header': {'version': 4, 'message_type': 0, 'length': 8, 'xid': 68}, 'elements': []}
+2021-10-20 02:54:39,214 | 3132 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_HELLO Hello(xid=UBInt32(69)) {'header': {'version': 4, 'message_type': 0, 'length': 8, 'xid': 69}, 'elements': []}
+2021-10-20 02:54:39,225 | 3132 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_HELLO Hello(xid=UBInt32(3175427481)) {'header': {'version': 4, 'message_type': 0, 'length': 8, 'xid': 3175427481}, 'elements': []}
+2021-10-20 02:54:39,264 | 3132 | ofcapture.proxy.proxy, handle_controller, 364 | INFO | connected Controller ('127.0.0.1', 6633)
+2021-10-20 02:54:39,291 | 3132 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_HELLO Hello(xid=UBInt32(4061043379)) {'header': {'version': 4, 'message_type': 0, 'length': 8, 'xid': 4061043379}, 'elements': [{'element_type': 1029, 'length': 8, 'content': b'\xf2\x0e\x9a\xb4'}]}
+2021-10-20 02:54:39,294 | 3132 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_FEATURES_REQUEST FeaturesRequest(xid=UBInt32(3175427482)) {'header': {'version': 4, 'message_type': 5, 'length': 8, 'xid': 3175427482}}
+2021-10-20 02:54:39,315 | 3132 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_FEATURES_REPLY FeaturesReply(xid=UBInt32(4061043380)) {'header': {'version': 4, 'message_type': 6, 'length': 32, 'xid': 4061043380}, 'datapath_id': '00:00:00:00:00:00:00:02', 'n_buffers': 0, 'n_tables': 254, 'auxiliary_id': 0, 'pad': None, 'capabilities': '79', 'reserved': 0}
+2021-10-20 02:54:39,328 | 3132 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_FEATURES_REPLY FeaturesReply(xid=UBInt32(3175427482)) {'header': {'version': 4, 'message_type': 6, 'length': 32, 'xid': 3175427482}, 'datapath_id': '00:00:00:00:00:00:00:01', 'n_buffers': 0, 'n_tables': 254, 'auxiliary_id': 0, 'pad': None, 'capabilities': '79', 'reserved': 0}
+2021-10-20 02:54:39,338 | 3132 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_MULTIPART_REQUEST MultipartRequest(xid=UBInt32(4061043381)) {'header': {'version': 4, 'message_type': 18, 'length': 16, 'xid': 4061043381}, 'multipart_type': 13, 'flags': {}, 'pad': None, 'body': b'\x04\x0e\x00P\xf2\x0e\x9a\xb6\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x04\x00\x00\x00\x00\x00\x04\x00\x18\x00\x00\x00\x00\x00\x00\x00\x10\xff\xff\xff\xfd\xff\xff\x00\x00\x00\x00\x00\x00'}
+2021-10-20 02:54:39,351 | 3132 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_MULTIPART_REQUEST MultipartRequest(xid=UBInt32(3175427483)) {'header': {'version': 4, 'message_type': 18, 'length': 16, 'xid': 3175427483}, 'multipart_type': 13, 'flags': {}, 'pad': None, 'body': b'\x04\x0e\x00P\xbdE-\x9c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x04\x00\x00\x00\x00\x00\x04\x00\x18\x00\x00\x00\x00\x00\x00\x00\x10\xff\xff\xff\xfd\xff\xff\x00\x00\x00\x00\x00\x00'}
+2021-10-20 02:54:39,383 | 3132 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_MULTIPART_REPLY MultipartReply(xid=UBInt32(4061043381)) {'header': {'version': 4, 'message_type': 19, 'length': 208, 'xid': 4061043381}, 'multipart_type': 13, 'flags': 0, 'pad': None, 'body': [{'port_no': 4294967294, 'pad': None, 'hw_addr': '96:67:58:17:a7:4b', 'pad2': None, 'name': 's2', 'config': '1', 'state': '1', 'curr': '0', 'advertised': '0', 'supported': '0', 'peer': '0', 'curr_speed': 0, 'max_speed': 0}, {'port_no': 1, 'pad': None, 'hw_addr': '32:59:89:74:64:f6', 'pad2': None, 'name': 's2-eth1', 'config': '0', 'state': '4', 'curr': '2112', 'advertised': '0', 'supported': '0', 'peer': '0', 'curr_speed': 10000000, 'max_speed': 0}, {'port_no': 2, 'pad': None, 'hw_addr': 'b2:d1:15:00:25:fb', 'pad2': None, 'name': 's2-eth2', 'config': '0', 'state': '4', 'curr': '2112', 'advertised': '0', 'supported': '0', 'peer': '0', 'curr_speed': 10000000, 'max_speed': 0}]}
+2021-10-20 02:54:39,391 | 3132 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_MULTIPART_REPLY MultipartReply(xid=UBInt32(3175427483)) {'header': {'version': 4, 'message_type': 19, 'length': 208, 'xid': 3175427483}, 'multipart_type': 13, 'flags': 0, 'pad': None, 'body': [{'port_no': 4294967294, 'pad': None, 'hw_addr': '4e:ca:35:bd:85:45', 'pad2': None, 'name': 's1', 'config': '1', 'state': '1', 'curr': '0', 'advertised': '0', 'supported': '0', 'peer': '0', 'curr_speed': 0, 'max_speed': 0}, {'port_no': 1, 'pad': None, 'hw_addr': '62:fd:75:33:6c:18', 'pad2': None, 'name': 's1-eth1', 'config': '0', 'state': '4', 'curr': '2112', 'advertised': '0', 'supported': '0', 'peer': '0', 'curr_speed': 10000000, 'max_speed': 0}, {'port_no': 2, 'pad': None, 'hw_addr': '8e:7c:31:d8:06:65', 'pad2': None, 'name': 's1-eth2', 'config': '0', 'state': '4', 'curr': '2112', 'advertised': '0', 'supported': '0', 'peer': '0', 'curr_speed': 10000000, 'max_speed': 0}]}
+2021-10-20 02:54:39,692 | 3122 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:54:39,698 | 3122 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:54:40,746 | 3132 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_PACKET_IN PacketIn(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 10, 'length': 84, 'xid': 0}, 'buffer_id': 4294967295, 'total_len': 42, 'reason': {}, 'table_id': 0, 'cookie': 0, 'match': {'match_type': {}, 'length': 12, 'oxm_match_fields': [{'oxm_class': {}, 'oxm_field_and_mask': 0, 'oxm_length': 4, 'oxm_value': [0, 0, 0, 1], 'oxm_field': 0, 'oxm_hasmask': False}]}, 'pad': None, 'data': b'\xff\xff\xff\xff\xff\xff\xea4\x889\xd38\x08\x06\x00\x01\x08\x00\x06\x04\x00\x01\xea4\x889\xd38\n\x00\x00\x01\x00\x00\x00\x00\x00\x00\n\x00\x00\x02'}
+2021-10-20 02:54:40,787 | 3132 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_PACKET_OUT PacketOut(xid=UBInt32(3175427485)) {'header': {'version': 4, 'message_type': 13, 'length': 82, 'xid': 3175427485}, 'buffer_id': 4294967295, 'in_port': 1, 'actions_len': 16, 'pad': None, 'actions': [{'action_type': {}, 'length': 16, 'port': 4294967291, 'max_length': 65509, 'pad': None}], 'data': b'\xff\xff\xff\xff\xff\xff\xea4\x889\xd38\x08\x06\x00\x01\x08\x00\x06\x04\x00\x01\xea4\x889\xd38\n\x00\x00\x01\x00\x00\x00\x00\x00\x00\n\x00\x00\x02'}
+2021-10-20 02:54:40,804 | 3132 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_PACKET_IN PacketIn(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 10, 'length': 84, 'xid': 0}, 'buffer_id': 4294967295, 'total_len': 42, 'reason': {}, 'table_id': 0, 'cookie': 0, 'match': {'match_type': {}, 'length': 12, 'oxm_match_fields': [{'oxm_class': {}, 'oxm_field_and_mask': 0, 'oxm_length': 4, 'oxm_value': [0, 0, 0, 1], 'oxm_field': 0, 'oxm_hasmask': False}]}, 'pad': None, 'data': b'\xff\xff\xff\xff\xff\xff\xea4\x889\xd38\x08\x06\x00\x01\x08\x00\x06\x04\x00\x01\xea4\x889\xd38\n\x00\x00\x01\x00\x00\x00\x00\x00\x00\n\x00\x00\x02'}
+2021-10-20 02:54:40,834 | 3132 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_PACKET_OUT PacketOut(xid=UBInt32(4061043383)) {'header': {'version': 4, 'message_type': 13, 'length': 82, 'xid': 4061043383}, 'buffer_id': 4294967295, 'in_port': 1, 'actions_len': 16, 'pad': None, 'actions': [{'action_type': {}, 'length': 16, 'port': 4294967291, 'max_length': 65509, 'pad': None}], 'data': b'\xff\xff\xff\xff\xff\xff\xea4\x889\xd38\x08\x06\x00\x01\x08\x00\x06\x04\x00\x01\xea4\x889\xd38\n\x00\x00\x01\x00\x00\x00\x00\x00\x00\n\x00\x00\x02'}
+2021-10-20 02:54:40,842 | 3132 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_PACKET_IN PacketIn(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 10, 'length': 84, 'xid': 0}, 'buffer_id': 4294967295, 'total_len': 42, 'reason': {}, 'table_id': 0, 'cookie': 0, 'match': {'match_type': {}, 'length': 12, 'oxm_match_fields': [{'oxm_class': {}, 'oxm_field_and_mask': 0, 'oxm_length': 4, 'oxm_value': [0, 0, 0, 2], 'oxm_field': 0, 'oxm_hasmask': False}]}, 'pad': None, 'data': b'\xea4\x889\xd38\x96.[\xe7\x07\xdb\x08\x06\x00\x01\x08\x00\x06\x04\x00\x02\x96.[\xe7\x07\xdb\n\x00\x00\x02\xea4\x889\xd38\n\x00\x00\x01'}

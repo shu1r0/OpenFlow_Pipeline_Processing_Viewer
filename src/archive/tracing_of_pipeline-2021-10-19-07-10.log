@@ -1,0 +1,30 @@
+2021-10-19 07:10:21,501 | 2820 | tracing_net.net, __init__, 99 | INFO | set up on-demand mininet
+2021-10-19 07:10:21,507 | 2820 | tracing_of_pipeline, start, 102 | INFO | OpenFlow Tracer Start
+2021-10-19 07:10:21,615 | 2820 | tracing_net.net, start, 312 | INFO | mininet start
+2021-10-19 07:10:59,155 | 2832 | tracing_net.api.ws_server, connect, 267 | INFO | connect sid=RBx3mqVTqD1IO-hBAAAB
+2021-10-19 07:12:16,677 | 2832 | tracing_net.api.ws_server, emit2net, 105 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_SWITCH, param={'name': 's0', 'dpid': ''})
+2021-10-19 07:12:16,685 | 2820 | tracing_net.api.ws_server, get_from_client, 119 | DEBUG | MessageHub receives messages from clients. (response={'event': 'add_switch', 'param': {'name': 's0', 'dpid': ''}})
+2021-10-19 07:12:16,686 | 2820 | tracing_net.net, add_switch, 116 | DEBUG | added the switch (s0)
+2021-10-19 07:12:21,338 | 2832 | tracing_net.api.ws_server, emit2net, 105 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_HOST, param={'name': 'h0', 'ip': '', 'mac': ''})
+2021-10-19 07:12:21,346 | 2820 | tracing_net.api.ws_server, get_from_client, 119 | DEBUG | MessageHub receives messages from clients. (response={'event': 'add_host', 'param': {'name': 'h0', 'ip': '', 'mac': ''}})
+2021-10-19 07:12:21,354 | 2820 | tracing_net.net, add_host, 164 | DEBUG | added the host (h0)
+2021-10-19 07:12:22,717 | 2832 | tracing_net.api.ws_server, emit2net, 105 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_HOST, param={'name': 'h1', 'ip': '', 'mac': ''})
+2021-10-19 07:12:22,729 | 2820 | tracing_net.api.ws_server, get_from_client, 119 | DEBUG | MessageHub receives messages from clients. (response={'event': 'add_host', 'param': {'name': 'h1', 'ip': '', 'mac': ''}})
+2021-10-19 07:12:22,732 | 2820 | tracing_net.net, add_host, 164 | DEBUG | added the host (h1)
+2021-10-19 07:12:24,353 | 2832 | tracing_net.api.ws_server, emit2net, 105 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_LINK, param={'link_name': 'e0', 'host_name1': 'h0', 'host_name2': 's0'})
+2021-10-19 07:12:24,354 | 2820 | tracing_net.api.ws_server, get_from_client, 119 | DEBUG | MessageHub receives messages from clients. (response={'event': 'add_link', 'param': {'link_name': 'e0', 'host_name1': 'h0', 'host_name2': 's0'}})
+2021-10-19 07:12:24,355 | 2820 | tracing_net.net, add_link, 203 | DEBUG | added the link (e0) between h0 and s0
+2021-10-19 07:12:25,686 | 2832 | tracing_net.api.ws_server, emit2net, 105 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_LINK, param={'link_name': 'e1', 'host_name1': 'h1', 'host_name2': 's0'})
+2021-10-19 07:12:25,692 | 2820 | tracing_net.api.ws_server, get_from_client, 119 | DEBUG | MessageHub receives messages from clients. (response={'event': 'add_link', 'param': {'link_name': 'e1', 'host_name1': 'h1', 'host_name2': 's0'}})
+2021-10-19 07:12:25,693 | 2820 | tracing_net.net, add_link, 203 | DEBUG | added the link (e1) between h1 and s0
+2021-10-19 07:12:31,713 | 2832 | tracing_net.api.ws_server, emit2net, 105 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.EXEC_MININET_COMMAND, param={'command': 'c0 ls'})
+2021-10-19 07:12:31,715 | 2820 | tracing_net.api.ws_server, get_from_client, 119 | DEBUG | MessageHub receives messages from clients. (response={'event': 'exec_mininet_cmd', 'param': {'command': 'c0 ls'}})
+2021-10-19 07:12:31,716 | 2820 | tracing_net.cli, input, 83 | DEBUG | CLI input c0 ls
+2021-10-19 07:13:25,046 | 2820 | tracing_net.cli, output, 89 | DEBUG | CLI output exited by user command
+2021-10-19 07:13:25,047 | 2820 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x16exited by user command')
+2021-10-19 07:13:25,048 | 2820 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:13:25,049 | 2820 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:13:25,050 | 2820 | tracing_net.net, stop_tracing, 541 | INFO | tracing stop
+2021-10-19 07:13:25,123 | 2832 | tracing_net.api.ws_server, disconnect, 272 | INFO | disconnect sid=RBx3mqVTqD1IO-hBAAAB
+2021-10-19 07:13:25,197 | 2832 | tracing_net.api.ws_server, connect, 267 | INFO | connect sid=ZlQ-3c0k9S3FbB7XAAAE
+2021-10-19 07:14:15,143 | 2832 | tracing_net.api.ws_server, disconnect, 272 | INFO | disconnect sid=ZlQ-3c0k9S3FbB7XAAAE

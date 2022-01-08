@@ -1,0 +1,1561 @@
+switches:
+- flow_tables:
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 0.515
+      flowId: -1
+      nBytes: 0
+      nPackets: 0
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 0.061
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 98
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 0.047
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 0
+      nPackets: 0
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 22.514
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 1.076
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 98
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 1.062
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 0
+      nPackets: 0
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 23.529
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 2.06
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 98
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 2.046
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 0
+      nPackets: 0
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 24.513
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 3.091
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 98
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 3.077
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 0
+      nPackets: 0
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 25.544
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 4.066
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 98
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 4.052
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 0
+      nPackets: 0
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 26.519
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 5.108
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 98
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 5.094
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 0
+      nPackets: 0
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 27.561
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 6.063
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 140
+      nPackets: 2
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 6.05
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 42
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 28.517
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 7.06
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 140
+      nPackets: 2
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 7.046
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 42
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 29.513
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 8.061
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 140
+      nPackets: 2
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 8.047
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 42
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 30.514
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 9.059
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 140
+      nPackets: 2
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 9.045
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 42
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 31.512
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 10.062
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 140
+      nPackets: 2
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 10.048
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 42
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 32.515
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 11.064
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 140
+      nPackets: 2
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 11.05
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 42
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 33.517
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 12.061
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 140
+      nPackets: 2
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 12.047
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 42
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 34.514
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 13.061
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 140
+      nPackets: 2
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 13.047
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 42
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 35.514
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 14.062
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 140
+      nPackets: 2
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 14.049
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 42
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 36.516
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 15.062
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 140
+      nPackets: 2
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 15.048
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 42
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 37.515
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 16.063
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 140
+      nPackets: 2
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 16.049
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 42
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 38.516
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  switch: s1
+- flow_tables:
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 0.531
+      flowId: -1
+      nBytes: 0
+      nPackets: 0
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 0.108
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 98
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 0.057
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 0
+      nPackets: 0
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 22.528
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 1.113
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 98
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 1.062
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 0
+      nPackets: 0
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 23.533
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 2.109
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 98
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 2.058
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 0
+      nPackets: 0
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 24.529
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 3.117
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 98
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 3.066
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 0
+      nPackets: 0
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 25.537
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 4.122
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 98
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 4.071
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 0
+      nPackets: 0
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 26.542
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 5.189
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 98
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 5.138
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 0
+      nPackets: 0
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 27.609
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 6.114
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 140
+      nPackets: 2
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 6.063
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 42
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 28.534
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 7.11
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 140
+      nPackets: 2
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 7.059
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 42
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 29.53
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 8.11
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 140
+      nPackets: 2
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 8.059
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 42
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 30.53
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 9.107
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 140
+      nPackets: 2
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 9.056
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 42
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 31.527
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 10.117
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 140
+      nPackets: 2
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 10.066
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 42
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 32.537
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 11.112
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 140
+      nPackets: 2
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 11.061
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 42
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 33.532
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 12.109
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 140
+      nPackets: 2
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 12.058
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 42
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 34.529
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 13.109
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 140
+      nPackets: 2
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 13.058
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 42
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 35.529
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 14.112
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 140
+      nPackets: 2
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 14.061
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 42
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 36.532
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 15.11
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 140
+      nPackets: 2
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 15.059
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 42
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 37.53
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  - flows:
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=1)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 16.11
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '2'}
+      - {fieldName: dl_src, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      - {fieldName: dl_dst, mask: None, value: '4a:81:c9:11:13:bb'}
+      nBytes: 140
+      nPackets: 2
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=2)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 16.059
+      flowId: -1
+      match:
+      - {fieldName: in_port, mask: None, value: '1'}
+      - {fieldName: dl_src, mask: None, value: '4a:81:c9:11:13:bb'}
+      - {fieldName: dl_dst, mask: None, value: 'f6:8e:a7:57:9c:1e'}
+      nBytes: 42
+      nPackets: 1
+      priority: 1
+      table: 0
+    - actions:
+      - actions:
+          actions:
+          - {str: ActionOutput(port=65535)}
+        type: OFPIT_APPLY_ACTIONS
+      cookie: '0x0'
+      duration: 38.53
+      flowId: -1
+      nBytes: 182
+      nPackets: 3
+      priority: 0
+      table: 0
+  switch: s2

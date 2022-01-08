@@ -1,0 +1,19 @@
+2021-10-19 05:53:03,410 | 4938 | tracing_net.net, __init__, 99 | INFO | set up on-demand mininet
+2021-10-19 05:53:03,412 | 4938 | tracing_of_pipeline, start, 102 | INFO | OpenFlow Tracer Start
+2021-10-19 05:53:03,430 | 4938 | tracing_net.net, start, 312 | INFO | mininet start
+2021-10-19 05:53:07,766 | 4950 | tracing_net.api.ws_server, connect, 267 | INFO | connect sid=JXxjujDvD8k4NOqmAAAB
+2021-10-19 05:53:13,388 | 4950 | tracing_net.api.ws_server, emit2net, 105 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.EXEC_MININET_COMMAND, param={'command': 'c0 ls'})
+2021-10-19 05:53:13,396 | 4938 | tracing_net.api.ws_server, get_from_client, 119 | DEBUG | MessageHub receives messages from clients. (response={'event': 'exec_mininet_cmd', 'param': {'command': 'c0 ls'}})
+2021-10-19 05:57:44,562 | 4938 | tracing_net.cli, send_end_command_signal, 104 | DEBUG | CLI send end command signal
+2021-10-19 05:57:44,591 | 4938 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 05:57:44,735 | 4950 | tracing_net.api.ws_server, disconnect, 272 | INFO | disconnect sid=JXxjujDvD8k4NOqmAAAB
+2021-10-19 05:57:45,828 | 4950 | tracing_net.api.ws_server, connect, 267 | INFO | connect sid=_npduRsmZQb2MwR0AAAL
+2021-10-19 05:57:47,263 | 4938 | tracing_net.cli, output, 88 | DEBUG | CLI output exited by user command
+2021-10-19 05:57:47,264 | 4938 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x16exited by user command')
+2021-10-19 05:57:47,265 | 4938 | tracing_net.cli, send_end_command_signal, 104 | DEBUG | CLI send end command signal
+2021-10-19 05:57:47,266 | 4938 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 05:57:47,267 | 4938 | tracing_net.net, stop_tracing, 541 | INFO | tracing stop
+2021-10-19 05:57:47,267 | 4938 | tracing_of_pipeline, stop, 118 | INFO | OpenFlow Tracer Stop
+2021-10-19 05:57:47,268 | 4938 | tracing_net.net, stop_tracing, 541 | INFO | tracing stop
+2021-10-19 05:57:47,268 | 4938 | tracing_net.net, stop, 317 | INFO | mininet stop
+2021-10-19 05:57:47,270 | 4938 | tracing_net.net, stop, 550 | DEBUG | mininet stopped and all capture processes closed

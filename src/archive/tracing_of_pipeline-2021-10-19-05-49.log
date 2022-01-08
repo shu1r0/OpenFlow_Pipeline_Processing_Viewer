@@ -1,0 +1,4 @@
+2021-10-19 05:49:06,557 | 4877 | tracing_net.net, __init__, 99 | INFO | set up on-demand mininet
+2021-10-19 05:49:06,559 | 4877 | tracing_of_pipeline, start, 102 | INFO | OpenFlow Tracer Start
+2021-10-19 05:49:06,576 | 4877 | tracing_net.net, start, 312 | INFO | mininet start
+2021-10-19 05:49:08,828 | 4889 | tracing_net.api.ws_server, connect, 267 | INFO | connect sid=u23AQ8KURovHVT9CAAAB

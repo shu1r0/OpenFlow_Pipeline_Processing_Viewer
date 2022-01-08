@@ -1,0 +1,103 @@
+2021-10-20 01:25:21,097 | 6609 | tracing_net.net, __init__, 99 | INFO | set up on-demand mininet
+2021-10-20 01:25:21,100 | 6609 | tracing_of_pipeline, start, 105 | INFO | OpenFlow Tracer Start
+2021-10-20 01:25:21,113 | 6609 | tracing_net.net, start, 312 | INFO | mininet start
+2021-10-20 01:25:21,114 | 6609 | tracing_of_pipeline.analyzer, start_analyzing, 103 | INFO | start analyzing
+2021-10-20 01:25:23,200 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=0) values = {} {} {}
+2021-10-20 01:25:23,646 | 6621 | tracing_net.api.ws_server, connect, 280 | INFO | connect sid=2akWYYvM1RwiRYPmAAAB
+2021-10-20 01:25:25,143 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=1) values = {} {} {}
+2021-10-20 01:25:26,648 | 6621 | tracing_net.api.ws_server, disconnect, 285 | INFO | disconnect sid=2akWYYvM1RwiRYPmAAAB
+2021-10-20 01:25:27,132 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=2) values = {} {} {}
+2021-10-20 01:25:29,117 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=3) values = {} {} {}
+2021-10-20 01:25:31,115 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=4) values = {} {} {}
+2021-10-20 01:25:33,119 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=5) values = {} {} {}
+2021-10-20 01:25:33,228 | 6621 | tracing_net.api.ws_server, connect, 280 | INFO | connect sid=E3r41T6KaemqtesMAAAD
+2021-10-20 01:25:35,141 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=6) values = {} {} {}
+2021-10-20 01:25:37,249 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=7) values = {} {} {}
+2021-10-20 01:25:39,119 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=8) values = {} {} {}
+2021-10-20 01:25:41,121 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=9) values = {} {} {}
+2021-10-20 01:25:43,118 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=10) values = {} {} {}
+2021-10-20 01:25:45,115 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=11) values = {} {} {}
+2021-10-20 01:25:47,116 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=12) values = {} {} {}
+2021-10-20 01:25:49,115 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=13) values = {} {} {}
+2021-10-20 01:25:51,115 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=14) values = {} {} {}
+2021-10-20 01:25:53,115 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=15) values = {} {} {}
+2021-10-20 01:25:55,115 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=16) values = {} {} {}
+2021-10-20 01:25:57,115 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=17) values = {} {} {}
+2021-10-20 01:25:59,126 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=18) values = {} {} {}
+2021-10-20 01:26:01,115 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=19) values = {} {} {}
+2021-10-20 01:26:01,127 | 6621 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_SWITCH, param={'name': 's0', 'dpid': ''})
+2021-10-20 01:26:01,128 | 6609 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'add_switch', 'param': {'name': 's0', 'dpid': ''}})
+2021-10-20 01:26:01,150 | 6609 | tracing_net.net, add_switch, 116 | DEBUG | added the switch (s0)
+2021-10-20 01:26:02,391 | 6621 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_HOST, param={'name': 'h0', 'ip': '', 'mac': ''})
+2021-10-20 01:26:02,409 | 6609 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'add_host', 'param': {'name': 'h0', 'ip': '', 'mac': ''}})
+2021-10-20 01:26:02,418 | 6609 | tracing_net.net, add_host, 164 | DEBUG | added the host (h0)
+2021-10-20 01:26:03,117 | 6609 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:26:03,140 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=20) values = {} {} {}
+2021-10-20 01:26:03,445 | 6621 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_LINK, param={'link_name': 'e0', 'host_name1': 'h0', 'host_name2': 's0'})
+2021-10-20 01:26:03,446 | 6609 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'add_link', 'param': {'link_name': 'e0', 'host_name1': 'h0', 'host_name2': 's0'}})
+2021-10-20 01:26:03,454 | 6609 | tracing_net.net, add_link, 203 | DEBUG | added the link (e0) between h0 and s0
+2021-10-20 01:26:04,754 | 6621 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_HOST, param={'name': 'h1', 'ip': '', 'mac': ''})
+2021-10-20 01:26:04,756 | 6609 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'add_host', 'param': {'name': 'h1', 'ip': '', 'mac': ''}})
+2021-10-20 01:26:04,757 | 6609 | tracing_net.net, add_host, 164 | DEBUG | added the host (h1)
+2021-10-20 01:26:05,116 | 6609 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:26:05,120 | 6609 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:26:05,121 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=21) values = {'e0': []} {} {}
+2021-10-20 01:26:05,122 | 6609 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:26:05,896 | 6621 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_LINK, param={'link_name': 'e1', 'host_name1': 'h1', 'host_name2': 's0'})
+2021-10-20 01:26:05,905 | 6609 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'add_link', 'param': {'link_name': 'e1', 'host_name1': 'h1', 'host_name2': 's0'}})
+2021-10-20 01:26:05,909 | 6609 | tracing_net.net, add_link, 203 | DEBUG | added the link (e1) between h1 and s0
+2021-10-20 01:26:07,226 | 6609 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:26:07,277 | 6609 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:26:07,364 | 6609 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:26:07,374 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=22) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:26:07,378 | 6609 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:26:07,388 | 6609 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:26:09,115 | 6609 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:26:09,116 | 6609 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:26:09,117 | 6609 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:26:09,117 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=23) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:26:09,118 | 6609 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:26:09,118 | 6609 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:26:11,115 | 6609 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:26:11,116 | 6609 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:26:11,117 | 6609 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:26:11,121 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=24) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:26:11,122 | 6609 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:26:11,122 | 6609 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:26:13,120 | 6609 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:26:13,240 | 6609 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:26:13,332 | 6609 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:26:13,332 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=25) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:26:13,333 | 6609 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:26:13,333 | 6609 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:26:15,115 | 6609 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:26:15,116 | 6609 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:26:15,118 | 6609 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:26:15,119 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=26) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:26:15,120 | 6609 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:26:15,123 | 6609 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:26:17,115 | 6609 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:26:17,116 | 6609 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:26:17,117 | 6609 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:26:17,120 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=27) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:26:17,121 | 6609 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:26:17,122 | 6609 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:26:19,115 | 6609 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:26:19,115 | 6609 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:26:19,116 | 6609 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:26:19,116 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=28) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:26:19,117 | 6609 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:26:19,117 | 6609 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:26:21,117 | 6609 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:26:21,117 | 6609 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:26:21,118 | 6609 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:26:21,118 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=29) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:26:21,118 | 6609 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:26:21,119 | 6609 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:26:23,115 | 6609 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:26:23,116 | 6609 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:26:23,116 | 6609 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:26:23,117 | 6609 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634693121.114865, until=30) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:26:23,118 | 6609 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:26:23,118 | 6609 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:26:23,284 | 6609 | tracing_net.net, stop_tracing, 541 | INFO | tracing stop

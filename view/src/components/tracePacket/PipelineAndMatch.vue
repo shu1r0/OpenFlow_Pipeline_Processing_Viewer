@@ -27,7 +27,7 @@
         v-for="(tableNumber, index) in pipeline"
         :key="tableNumber.id">
         <span 
-          class="table"
+          :class="{'table': true, 'current-table': currentTable.value === index}"
           @click="changeTable(index)">
           {{ tableNumber }}
         </span>
@@ -35,6 +35,8 @@
           <use xlink:href="#pipeline-arrow" />
         </svg>
       </template>
+
+      <!-- Action Set (todo) -->
 
       <!-- out packet -->
       <span id="out-packet">Out packet</span>
@@ -63,8 +65,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { Flow } from '../../utils/tracing_packet'
+import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
   name: "PipelineAndMatch",
@@ -85,28 +86,42 @@ export default defineComponent({
     }
   },
   setup(props, ctx){
+
+    const currentTable = ref<number>(0)
+
+    /**
+     * send change table event
+     */
     const changeTable = (clickedIndex: number) => {
-      console.log("click index " + clickedIndex.toString())
+      console.log("click index " + clickedIndex)
       ctx.emit('change-table', clickedIndex)
+      currentTable.value = clickedIndex
     }
 
     return {
-      changeTable
+      changeTable,
+      currentTable
     }
   }
 })
 </script>
 
 <style lang="scss">
+$mached-color: #F5B674;
+$tableid-color: #89ACD7;
+
 #pipeline-and-match{
   display: grid;
   grid-template-areas: 
     "pipeline"
     "match";
-  grid-auto-rows: auto;
+  grid-auto-rows: 
+    10rem
+    minmax(20rem, auto);
   grid-auto-columns: auto;
   justify-content: center;
 
+  // pipeline style
   #pipeline{
     grid-area: "pipeline";
     display: inline-flex;
@@ -121,14 +136,25 @@ export default defineComponent({
       height: 4rem;
       margin: 2rem;
     }
+    // in packet / out packet
+    #in-packet{
+      font-weight: bold;
+    }
+    #out-packet{
+      font-weight: bold;
+    }
+    // flow table id
     .table{
       display: table-cell;
-      // background-color: red;
-      border: 1.5px solid #cccccc;
+      background-color: $tableid-color;
+      border: 1.5px solid $black;
       font-size: 2rem;
       padding: 0;
       text-align: center;
-      vertical-align: bottom;
+      vertical-align: auto;
+    }
+    .current-table{
+      background-color: $mached-color;
     }
     svg.pipeline-arrow{
       display: inline-block;
@@ -139,12 +165,12 @@ export default defineComponent({
   }
 
   table, th, td{
-    border: 1px solid black;
+    border: 1px solid #2A2A2A;
     border-collapse: collapse;
   }
   #match-container{
     overflow-y: scroll;
-    height: 10rem;
+    height: 20rem;
   }
   #match{
     grid-area: match;
@@ -153,7 +179,7 @@ export default defineComponent({
     text-align: center;
     margin: 0 auto;
     .matched_entry{
-      background-color: yellow;
+      background-color: $mached-color;
     }
     th{
       font-size: 1.7rem;

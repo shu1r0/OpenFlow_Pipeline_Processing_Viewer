@@ -1,0 +1,483 @@
+2021-11-09 06:50:12,776 | 2960 | tracing_net.net, __init__, 99 | INFO | set up on-demand mininet
+2021-11-09 06:50:12,781 | 2960 | tracing_of_pipeline, start, 124 | INFO | OpenFlow Tracer Start
+2021-11-09 06:50:12,796 | 2960 | tracing_net.net, start, 312 | INFO | mininet start
+2021-11-09 06:50:12,799 | 2960 | tracing_of_pipeline.analyzer, start_analyzing, 143 | INFO | start analyzing interval (start_time = 1636440612.799683, interval = 2)
+2021-11-09 06:50:12,824 | 2960 | tracing_net.net, add_switch, 116 | DEBUG | added the switch (s1)
+2021-11-09 06:50:13,195 | 2960 | tracing_net.net, add_host, 164 | DEBUG | added the host (h1)
+2021-11-09 06:50:13,292 | 2960 | tracing_net.net, add_link, 203 | DEBUG | added the link (l2) between s1 and h1
+2021-11-09 06:50:13,413 | 2960 | tracing_net.net, add_switch, 116 | DEBUG | added the switch (s2)
+2021-11-09 06:50:13,486 | 2960 | tracing_net.net, add_link, 203 | DEBUG | added the link (l1) between s1 and s2
+2021-11-09 06:50:13,596 | 2960 | tracing_net.net, add_host, 164 | DEBUG | added the host (h2)
+2021-11-09 06:50:13,640 | 2960 | tracing_net.net, add_link, 203 | DEBUG | added the link (l3) between s2 and h2
+2021-11-09 06:50:13,719 | 2960 | tracing_net.net, add_host, 164 | DEBUG | added the host (h3)
+2021-11-09 06:50:13,763 | 2960 | tracing_net.net, add_link, 203 | DEBUG | added the link (l4) between s1 and h3
+2021-11-09 06:50:13,833 | 2960 | tracing_net.net, start_tracing, 525 | INFO | tracing start
+2021-11-09 06:50:13,834 | 2960 | tracing_net.net, start_tracing, 527 | DEBUG | ipv6 is disable
+2021-11-09 06:50:14,015 | 2960 | tracing_net.packet_capture_manager, start_capture, 88 | DEBUG | capture process (s1-eth1:3136) started
+2021-11-09 06:50:14,022 | 3136 | tracing_net.util.packet_capture, start_capture, 65 | INFO | packet capture start on s1-eth1
+2021-11-09 06:50:14,041 | 2960 | tracing_net.packet_capture_manager, start_capture, 88 | DEBUG | capture process (s1-eth2:3138) started
+2021-11-09 06:50:14,046 | 3138 | tracing_net.util.packet_capture, start_capture, 65 | INFO | packet capture start on s1-eth2
+2021-11-09 06:50:14,076 | 2960 | tracing_net.packet_capture_manager, start_capture, 88 | DEBUG | capture process (s2-eth2:3141) started
+2021-11-09 06:50:14,095 | 3141 | tracing_net.util.packet_capture, start_capture, 65 | INFO | packet capture start on s2-eth2
+2021-11-09 06:50:14,115 | 2960 | tracing_net.packet_capture_manager, start_capture, 88 | DEBUG | capture process (s1-eth3:3144) started
+2021-11-09 06:50:14,130 | 2960 | tracing_net.flowtable.flow_monitor, __init__, 46 | INFO | flow monitor start : s1
+2021-11-09 06:50:14,130 | 3144 | tracing_net.util.packet_capture, start_capture, 65 | INFO | packet capture start on s1-eth3
+2021-11-09 06:50:14,181 | 2960 | tracing_net.flowtable.flow_monitor, __init__, 46 | INFO | flow monitor start : s2
+2021-11-09 06:50:14,427 | 3147 | tracing_net.flowtable.flow_monitor, flow_monitor, 99 | DEBUG | flow monitor get result_dict {'msg_type': 'NXST_FLOW_MONITOR', 'type': 'reply', 'xid': '0x4'}
+2021-11-09 06:50:14,432 | 3150 | tracing_net.flowtable.flow_monitor, flow_monitor, 99 | DEBUG | flow monitor get result_dict {'msg_type': 'NXST_FLOW_MONITOR', 'type': 'reply', 'xid': '0x4'}
+2021-11-09 06:50:14,801 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:14,802 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:14,803 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:14,803 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:14,804 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:50:14,804 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:50:14,805 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=0) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:50:14,805 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=0)
+2021-11-09 06:50:14,806 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:50:14,806 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:50:14,806 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:50:14,807 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:50:15,218 | 3147 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-09 06:50:15,220 | 3150 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-09 06:50:15,256 | 3147 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1636440615.230148 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-11-09 06:50:15,260 | 3150 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1636440615.238456 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-11-09 06:50:15,282 | 3150 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-09 06:50:15,281 | 3147 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-09 06:50:16,219 | 3147 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-09 06:50:16,220 | 3150 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-09 06:50:16,275 | 3147 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1636440616.254686 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-11-09 06:50:16,275 | 3147 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-09 06:50:16,292 | 3150 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1636440616.268496 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-11-09 06:50:16,295 | 3150 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-09 06:50:16,801 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:16,802 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:16,803 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:16,808 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:16,810 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:50:16,817 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:50:16,818 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=1) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:50:16,828 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=1)
+2021-11-09 06:50:16,835 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:50:16,836 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:50:16,837 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:50:16,840 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:50:17,217 | 3147 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-09 06:50:17,222 | 3150 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-09 06:50:17,253 | 3147 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1636440617.226403 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-11-09 06:50:17,254 | 3147 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-09 06:50:17,280 | 3150 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1636440617.270604 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-11-09 06:50:17,281 | 3150 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-09 06:50:18,219 | 3147 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-09 06:50:18,220 | 3150 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-09 06:50:18,346 | 3150 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1636440618.305274 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-11-09 06:50:18,352 | 3150 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-09 06:50:18,362 | 3147 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1636440618.292175 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-11-09 06:50:18,368 | 3147 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-09 06:50:18,814 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:18,816 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:18,844 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:18,852 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:18,854 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:50:18,870 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:50:18,885 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=2) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:50:18,890 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=2)
+2021-11-09 06:50:18,896 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:50:18,898 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:50:18,936 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:50:18,937 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:50:19,220 | 3147 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-09 06:50:19,220 | 3150 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-09 06:50:19,278 | 3150 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1636440619.231726 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-11-09 06:50:19,282 | 3150 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-09 06:50:19,304 | 3147 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1636440619.248445 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-11-09 06:50:19,305 | 3147 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-09 06:50:20,219 | 3147 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-09 06:50:20,220 | 3150 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-09 06:50:20,296 | 3150 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1636440620.255375 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-11-09 06:50:20,297 | 3150 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-09 06:50:20,380 | 3147 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1636440620.279431 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-11-09 06:50:20,381 | 3147 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-09 06:50:20,802 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:20,806 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:20,806 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:20,807 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:20,812 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:50:20,830 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:50:20,844 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=3) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:50:20,852 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=3)
+2021-11-09 06:50:20,908 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:50:20,912 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:50:20,951 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:50:20,952 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:50:21,225 | 3150 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-09 06:50:21,226 | 3147 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-09 06:50:22,681 | 3147 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-09 06:50:22,804 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:22,815 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:22,817 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:22,817 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:22,870 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:50:22,882 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:50:22,886 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=4) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:50:22,888 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=4)
+2021-11-09 06:50:22,926 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:50:22,927 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:50:22,928 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:50:22,928 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:50:22,931 | 3150 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-09 06:50:23,232 | 3147 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-09 06:50:23,656 | 3150 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-09 06:50:23,921 | 3147 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1636440623.808675 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-11-09 06:50:23,921 | 3147 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-09 06:50:23,922 | 3147 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1636440622.879852 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-11-09 06:50:23,923 | 3147 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-09 06:50:23,924 | 3147 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1636440623.924293 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-11-09 06:50:23,925 | 3147 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-09 06:50:23,928 | 3150 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1636440623.892749 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-11-09 06:50:23,930 | 3150 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-09 06:50:23,931 | 3150 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1636440622.986268 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-11-09 06:50:23,934 | 3150 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-09 06:50:23,982 | 3150 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1636440623.942391 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-11-09 06:50:23,990 | 3150 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-09 06:50:24,218 | 3147 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-09 06:50:24,220 | 3150 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-09 06:50:24,295 | 3150 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1636440624.26042 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-11-09 06:50:24,297 | 3150 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-09 06:50:24,296 | 3147 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1636440624.256608 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-11-09 06:50:24,298 | 3147 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-09 06:50:24,801 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:24,803 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:24,811 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:24,813 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:24,814 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:50:24,816 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:50:24,825 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=5) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:50:24,844 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=5)
+2021-11-09 06:50:24,845 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:50:24,852 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:50:24,864 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:50:24,868 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:50:25,217 | 3147 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-09 06:50:25,221 | 3150 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-09 06:50:25,290 | 3150 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1636440625.251055 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-11-09 06:50:25,291 | 3150 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-09 06:50:25,303 | 3147 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1636440625.246392 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-11-09 06:50:25,308 | 3147 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-09 06:50:26,218 | 3147 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-09 06:50:26,219 | 3150 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-09 06:50:26,238 | 3147 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1636440626.224016 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-11-09 06:50:26,238 | 3147 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-09 06:50:26,249 | 3150 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1636440626.232252 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-11-09 06:50:26,249 | 3150 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-09 06:50:26,801 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:26,802 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:26,804 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:26,805 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:26,806 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:50:26,808 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:50:26,809 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=6) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:50:26,809 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=6)
+2021-11-09 06:50:26,809 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:50:26,810 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:50:26,811 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:50:26,811 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:50:27,218 | 3147 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-09 06:50:27,219 | 3150 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-09 06:50:27,253 | 3147 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1636440627.230787 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-11-09 06:50:27,255 | 3150 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1636440627.233877 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-11-09 06:50:27,255 | 3147 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-09 06:50:27,257 | 3150 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-09 06:50:28,161 | 3147 | tracing_net.flowtable.flow_monitor, flow_monitor, 99 | DEBUG | flow monitor get result_dict {'msg_type': 'NXST_FLOW_MONITOR', 'type': 'reply', 'xid': '0x0'}
+2021-11-09 06:50:28,161 | 3150 | tracing_net.flowtable.flow_monitor, flow_monitor, 99 | DEBUG | flow monitor get result_dict {'msg_type': 'NXST_FLOW_MONITOR', 'type': 'reply', 'xid': '0x0'}
+2021-11-09 06:50:28,235 | 3150 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-09 06:50:28,237 | 3147 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-09 06:50:28,325 | 3147 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1636440628.298009 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=0.160s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-11-09 06:50:28,338 | 3150 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1636440628.304012 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=0.160s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-11-09 06:50:28,369 | 3147 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1636440628.298009 : <FlowTables(datapath=0, timestamp=1636440628.298009, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-11-09 06:50:28,376 | 3150 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1636440628.304012 : <FlowTables(datapath=0, timestamp=1636440628.304012, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-11-09 06:50:28,802 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:28,804 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:28,805 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:28,806 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:28,809 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:50:28,810 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:50:28,813 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=7) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:50:28,813 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=7)
+2021-11-09 06:50:28,814 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:50:28,814 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:50:28,816 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:50:28,817 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:50:30,801 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:30,802 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:30,803 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:30,803 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:30,807 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:50:30,808 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:50:30,808 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=8) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:50:30,809 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=8)
+2021-11-09 06:50:30,811 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:50:30,811 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:50:30,812 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:50:30,813 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:50:32,801 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:32,803 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:32,803 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:32,804 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:32,806 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:50:32,807 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:50:32,808 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=9) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:50:32,809 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=9)
+2021-11-09 06:50:32,810 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:50:32,811 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:50:32,812 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:50:32,813 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:50:34,803 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:34,804 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:34,804 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:34,805 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:34,805 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:50:34,806 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:50:34,807 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=10) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:50:34,807 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=10)
+2021-11-09 06:50:34,808 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:50:34,809 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:50:34,809 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:50:34,810 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:50:36,807 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:36,808 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:36,809 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:36,809 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:36,810 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:50:36,812 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:50:36,812 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=11) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:50:36,813 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=11)
+2021-11-09 06:50:36,813 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:50:36,814 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:50:36,814 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:50:36,814 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:50:38,808 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:38,809 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:38,810 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:38,811 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:38,811 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:50:38,814 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:50:38,814 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=12) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:50:38,815 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=12)
+2021-11-09 06:50:38,815 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:50:38,816 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:50:38,817 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:50:38,817 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:50:40,804 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:40,806 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:40,806 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:40,807 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:40,809 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:50:40,810 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:50:40,811 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=13) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:50:40,812 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=13)
+2021-11-09 06:50:40,812 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:50:40,813 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:50:40,814 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:50:40,814 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:50:42,811 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:42,812 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:42,812 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:42,813 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:42,814 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:50:42,816 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:50:42,816 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=14) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:50:42,817 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=14)
+2021-11-09 06:50:42,817 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:50:42,818 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:50:42,819 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:50:42,819 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:50:44,802 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:44,802 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:44,803 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:44,804 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:44,805 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:50:44,807 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:50:44,808 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=15) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:50:44,809 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=15)
+2021-11-09 06:50:44,819 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:50:44,820 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:50:44,821 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:50:44,821 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:50:46,811 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:46,823 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:46,824 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:46,825 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:46,826 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:50:46,827 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:50:46,828 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=16) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:50:46,828 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=16)
+2021-11-09 06:50:46,829 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:50:46,830 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:50:46,831 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:50:46,831 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:50:48,808 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:48,809 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:48,809 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:48,810 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:48,812 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:50:48,813 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:50:48,814 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=17) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:50:48,814 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=17)
+2021-11-09 06:50:48,815 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:50:48,815 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:50:48,816 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:50:48,816 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:50:50,817 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:50,818 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:50,819 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:50,820 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:50,821 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:50:50,822 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:50:50,823 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=18) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:50:50,824 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=18)
+2021-11-09 06:50:50,824 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:50:50,825 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:50:50,826 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:50:50,826 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:50:52,823 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:52,824 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:52,825 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:52,825 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:52,826 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:50:52,827 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:50:52,827 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=19) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:50:52,828 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=19)
+2021-11-09 06:50:52,828 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:50:52,828 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:50:52,829 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:50:52,829 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:50:54,802 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:54,804 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:54,804 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:54,805 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:54,806 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:50:54,806 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:50:54,807 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=20) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:50:54,808 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=20)
+2021-11-09 06:50:54,809 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:50:54,809 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:50:54,809 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:50:54,810 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:50:56,801 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:56,803 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:56,803 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:56,804 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:56,805 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:50:56,805 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:50:56,806 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=21) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:50:56,806 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=21)
+2021-11-09 06:50:56,807 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:50:56,807 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:50:56,807 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:50:56,808 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:50:58,829 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:58,829 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:58,830 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:58,830 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:50:58,831 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:50:58,832 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:50:58,832 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=22) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:50:58,833 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=22)
+2021-11-09 06:50:58,834 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:50:58,834 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:50:58,834 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:50:58,835 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:51:00,824 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:51:00,825 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:51:00,826 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:51:00,826 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:51:00,828 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:51:00,829 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:51:00,829 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=23) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:51:00,830 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=23)
+2021-11-09 06:51:00,830 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:51:00,831 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:51:00,831 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:51:00,832 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:51:02,804 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:51:02,810 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:51:02,810 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:51:02,811 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:51:02,812 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:51:02,812 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:51:02,812 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=24) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:51:02,813 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=24)
+2021-11-09 06:51:02,813 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:51:02,813 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:51:02,814 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:51:02,814 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:51:04,803 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:51:04,804 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:51:04,804 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:51:04,805 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:51:04,806 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:51:04,807 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:51:04,808 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=25) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:51:04,808 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=25)
+2021-11-09 06:51:04,809 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:51:04,809 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:51:04,810 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:51:04,811 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:51:06,801 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:51:06,802 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:51:06,803 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:51:06,804 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:51:06,805 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:51:06,807 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:51:06,808 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=26) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:51:06,809 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=26)
+2021-11-09 06:51:06,810 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:51:06,811 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:51:06,812 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:51:06,812 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:51:08,296 | 2960 | tracing_net.net, stop_tracing, 541 | INFO | tracing stop
+2021-11-09 06:51:08,297 | 2960 | tracing_net.packet_capture_manager, stop_capture, 121 | DEBUG | capture process (s1-eth1:3136) terminated
+2021-11-09 06:51:08,301 | 2960 | tracing_net.packet_capture_manager, stop_capture, 121 | DEBUG | capture process (s1-eth2:3138) terminated
+2021-11-09 06:51:08,303 | 2960 | tracing_net.packet_capture_manager, stop_capture, 121 | DEBUG | capture process (s2-eth2:3141) terminated
+2021-11-09 06:51:08,306 | 2960 | tracing_net.packet_capture_manager, stop_capture, 121 | DEBUG | capture process (s1-eth3:3144) terminated
+2021-11-09 06:51:08,314 | 2960 | tracing_net.flowtable.flow_table_manager, stop_poller, 102 | DEBUG | poller process (s1:3147) terminated
+2021-11-09 06:51:08,321 | 2960 | tracing_net.flowtable.flow_table_manager, stop_poller, 102 | DEBUG | poller process (s2:3150) terminated
+2021-11-09 06:51:08,323 | 2960 | tracing_of_pipeline.analyzer, stop_analyzing, 151 | INFO | stop analyzing interval. (last count = 27)
+2021-11-09 06:51:08,333 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:51:08,336 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:51:08,337 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:51:08,339 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:51:08,341 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:51:08,343 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:51:08,344 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=27) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:51:08,345 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=27)
+2021-11-09 06:51:08,346 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:51:08,348 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:51:08,352 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:51:08,356 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:51:08,357 | 2960 | tracing_of_pipeline.analyzer, analyze_rest, 163 | INFO | These packets could not be analyzed. {'l2': [], 'l1': [], 'l3': [], 'l4': []}
+2021-11-09 06:51:08,361 | 2960 | tracing_of_pipeline.analyzer, analyze_rest, 164 | INFO | These OpenFlowMessage could not be analyzed. {'s1': [], 's2': []}
+2021-11-09 06:51:08,364 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:51:08,365 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:51:08,365 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:51:08,365 | 2960 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-09 06:51:08,367 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-09 06:51:08,368 | 2960 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 600 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-09 06:51:08,369 | 2960 | tracing_of_pipeline.analyzer, _polling, 553 | DEBUG | polled repository (start_time=1636440612.799683, until=28) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-09 06:51:08,369 | 2960 | tracing_of_pipeline.analyzer, analyze, 198 | DEBUG | Analyzing 1... polled repository (count=28)
+2021-11-09 06:51:08,374 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-09 06:51:08,376 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-09 06:51:08,377 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-09 06:51:08,378 | 2960 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-09 06:51:08,379 | 2960 | tracing_of_pipeline.analyzer, analyze_rest, 163 | INFO | These packets could not be analyzed. {'l2': [], 'l1': [], 'l3': [], 'l4': []}
+2021-11-09 06:51:08,382 | 2960 | tracing_of_pipeline.analyzer, analyze_rest, 164 | INFO | These OpenFlowMessage could not be analyzed. {'s1': [], 's2': []}
+2021-11-09 06:51:08,385 | 2960 | tracing_of_pipeline, stop, 150 | INFO | OpenFlow Tracer Stop
+2021-11-09 06:51:08,389 | 2960 | tracing_net.net, stop_tracing, 541 | INFO | tracing stop
+2021-11-09 06:51:08,390 | 2960 | tracing_net.packet_capture_manager, stop_capture, 121 | DEBUG | capture process (s1-eth1:3136) terminated
+2021-11-09 06:51:08,391 | 2960 | tracing_net.packet_capture_manager, stop_capture, 121 | DEBUG | capture process (s1-eth2:3138) terminated
+2021-11-09 06:51:08,391 | 2960 | tracing_net.packet_capture_manager, stop_capture, 121 | DEBUG | capture process (s2-eth2:3141) terminated
+2021-11-09 06:51:08,392 | 2960 | tracing_net.packet_capture_manager, stop_capture, 121 | DEBUG | capture process (s1-eth3:3144) terminated
+2021-11-09 06:51:08,392 | 2960 | tracing_net.flowtable.flow_table_manager, stop_poller, 102 | DEBUG | poller process (s1:3147) terminated
+2021-11-09 06:51:08,392 | 2960 | tracing_net.flowtable.flow_table_manager, stop_poller, 102 | DEBUG | poller process (s2:3150) terminated
+2021-11-09 06:51:08,393 | 2960 | tracing_net.net, stop, 317 | INFO | mininet stop
+2021-11-09 06:51:09,053 | 2960 | tracing_net.net, stop, 550 | DEBUG | mininet stopped and all capture processes closed

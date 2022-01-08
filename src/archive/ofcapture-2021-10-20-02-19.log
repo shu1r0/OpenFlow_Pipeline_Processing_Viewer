@@ -1,0 +1,142 @@
+2021-10-20 02:19:29,789 | 12280 | ofcapture.proxy.proxy, start_server, 231 | INFO | Server on ('127.0.0.1', 63333)
+2021-10-20 02:19:29,792 | 12280 | ofcapture.proxy.proxy, start_server, 234 | INFO | Server serve forever ('127.0.0.1', 63333)
+2021-10-20 02:19:29,927 | 12280 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 32830) is connected
+2021-10-20 02:19:29,931 | 12280 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:19:30,255 | 12280 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 32834) is connected
+2021-10-20 02:19:30,256 | 12280 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:19:30,348 | 12280 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 32838) is connected
+2021-10-20 02:19:30,350 | 12280 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:19:31,257 | 12280 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 32842) is connected
+2021-10-20 02:19:31,258 | 12280 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 32844) is connected
+2021-10-20 02:19:31,265 | 12280 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:19:31,266 | 12280 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:19:31,783 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:31,794 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:32,255 | 12280 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 32910) is connected
+2021-10-20 02:19:32,256 | 12280 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 32912) is connected
+2021-10-20 02:19:32,257 | 12280 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:19:32,258 | 12280 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:19:33,264 | 12280 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 32978) is connected
+2021-10-20 02:19:33,265 | 12280 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 32980) is connected
+2021-10-20 02:19:33,266 | 12280 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:19:33,267 | 12280 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 02:19:33,776 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:33,777 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:34,274 | 12280 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 32986) is connected
+2021-10-20 02:19:34,284 | 12280 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 32988) is connected
+2021-10-20 02:19:34,290 | 12280 | ofcapture.proxy.proxy, handle_controller, 364 | INFO | connected Controller ('127.0.0.1', 6633)
+2021-10-20 02:19:34,292 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_HELLO Hello(xid=UBInt32(2090)) {'header': {'version': 4, 'message_type': 0, 'length': 8, 'xid': 2090}, 'elements': []}
+2021-10-20 02:19:34,297 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_HELLO Hello(xid=UBInt32(2091)) {'header': {'version': 4, 'message_type': 0, 'length': 8, 'xid': 2091}, 'elements': []}
+2021-10-20 02:19:34,301 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_HELLO Hello(xid=UBInt32(1829958140)) {'header': {'version': 4, 'message_type': 0, 'length': 8, 'xid': 1829958140}, 'elements': []}
+2021-10-20 02:19:34,302 | 12280 | ofcapture.proxy.proxy, handle_controller, 364 | INFO | connected Controller ('127.0.0.1', 6633)
+2021-10-20 02:19:34,303 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_HELLO Hello(xid=UBInt32(52074189)) {'header': {'version': 4, 'message_type': 0, 'length': 8, 'xid': 52074189}, 'elements': []}
+2021-10-20 02:19:34,304 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_FEATURES_REQUEST FeaturesRequest(xid=UBInt32(1829958141)) {'header': {'version': 4, 'message_type': 5, 'length': 8, 'xid': 1829958141}}
+2021-10-20 02:19:34,309 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_FEATURES_REQUEST FeaturesRequest(xid=UBInt32(52074190)) {'header': {'version': 4, 'message_type': 5, 'length': 8, 'xid': 52074190}}
+2021-10-20 02:19:34,311 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_FEATURES_REPLY FeaturesReply(xid=UBInt32(1829958141)) {'header': {'version': 4, 'message_type': 6, 'length': 32, 'xid': 1829958141}, 'datapath_id': '00:00:00:00:00:00:00:01', 'n_buffers': 0, 'n_tables': 254, 'auxiliary_id': 0, 'pad': None, 'capabilities': '79', 'reserved': 0}
+2021-10-20 02:19:34,312 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_FEATURES_REPLY FeaturesReply(xid=UBInt32(52074190)) {'header': {'version': 4, 'message_type': 6, 'length': 32, 'xid': 52074190}, 'datapath_id': '00:00:00:00:00:00:00:02', 'n_buffers': 0, 'n_tables': 254, 'auxiliary_id': 0, 'pad': None, 'capabilities': '79', 'reserved': 0}
+2021-10-20 02:19:34,314 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_MULTIPART_REQUEST MultipartRequest(xid=UBInt32(1829958142)) {'header': {'version': 4, 'message_type': 18, 'length': 16, 'xid': 1829958142}, 'multipart_type': 13, 'flags': {}, 'pad': None, 'body': b'\x04\x0e\x00Pm\x12\xf1\xff\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x04\x00\x00\x00\x00\x00\x04\x00\x18\x00\x00\x00\x00\x00\x00\x00\x10\xff\xff\xff\xfd\xff\xff\x00\x00\x00\x00\x00\x00'}
+2021-10-20 02:19:34,316 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_MULTIPART_REQUEST MultipartRequest(xid=UBInt32(52074191)) {'header': {'version': 4, 'message_type': 18, 'length': 16, 'xid': 52074191}, 'multipart_type': 13, 'flags': {}, 'pad': None, 'body': b'\x04\x0e\x00P\x03\x1a\x96\xd0\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x04\x00\x00\x00\x00\x00\x04\x00\x18\x00\x00\x00\x00\x00\x00\x00\x10\xff\xff\xff\xfd\xff\xff\x00\x00\x00\x00\x00\x00'}
+2021-10-20 02:19:34,319 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_MULTIPART_REPLY MultipartReply(xid=UBInt32(1829958142)) {'header': {'version': 4, 'message_type': 19, 'length': 208, 'xid': 1829958142}, 'multipart_type': 13, 'flags': 0, 'pad': None, 'body': [{'port_no': 4294967294, 'pad': None, 'hw_addr': 'a6:f0:12:6a:da:46', 'pad2': None, 'name': 's1', 'config': '1', 'state': '1', 'curr': '0', 'advertised': '0', 'supported': '0', 'peer': '0', 'curr_speed': 0, 'max_speed': 0}, {'port_no': 1, 'pad': None, 'hw_addr': 'ca:38:f1:33:4f:bd', 'pad2': None, 'name': 's1-eth1', 'config': '0', 'state': '4', 'curr': '2112', 'advertised': '0', 'supported': '0', 'peer': '0', 'curr_speed': 10000000, 'max_speed': 0}, {'port_no': 2, 'pad': None, 'hw_addr': '32:85:6e:ea:8f:31', 'pad2': None, 'name': 's1-eth2', 'config': '0', 'state': '4', 'curr': '2112', 'advertised': '0', 'supported': '0', 'peer': '0', 'curr_speed': 10000000, 'max_speed': 0}]}
+2021-10-20 02:19:34,322 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_MULTIPART_REPLY MultipartReply(xid=UBInt32(52074191)) {'header': {'version': 4, 'message_type': 19, 'length': 208, 'xid': 52074191}, 'multipart_type': 13, 'flags': 0, 'pad': None, 'body': [{'port_no': 4294967294, 'pad': None, 'hw_addr': '36:26:43:f9:7f:44', 'pad2': None, 'name': 's2', 'config': '1', 'state': '1', 'curr': '0', 'advertised': '0', 'supported': '0', 'peer': '0', 'curr_speed': 0, 'max_speed': 0}, {'port_no': 1, 'pad': None, 'hw_addr': '52:7e:0b:6e:58:59', 'pad2': None, 'name': 's2-eth1', 'config': '0', 'state': '4', 'curr': '2112', 'advertised': '0', 'supported': '0', 'peer': '0', 'curr_speed': 10000000, 'max_speed': 0}, {'port_no': 2, 'pad': None, 'hw_addr': 'b6:fd:46:bb:c9:60', 'pad2': None, 'name': 's2-eth2', 'config': '0', 'state': '4', 'curr': '2112', 'advertised': '0', 'supported': '0', 'peer': '0', 'curr_speed': 10000000, 'max_speed': 0}]}
+2021-10-20 02:19:35,775 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:35,776 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:37,815 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:37,818 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:39,256 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REQUEST EchoRequest(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 2, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:19:39,275 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REQUEST EchoRequest(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 2, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:19:39,291 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REPLY EchoReply(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 3, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:19:39,292 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REPLY EchoReply(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 3, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:19:39,779 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:39,780 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:41,776 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:41,777 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:43,776 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:43,777 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:44,257 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REQUEST EchoRequest(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 2, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:19:44,266 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REQUEST EchoRequest(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 2, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:19:44,268 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REPLY EchoReply(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 3, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:19:44,268 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REPLY EchoReply(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 3, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:19:45,778 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:45,779 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:47,802 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:47,831 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:49,256 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REQUEST EchoRequest(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 2, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:19:49,261 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REQUEST EchoRequest(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 2, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:19:49,263 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REPLY EchoReply(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 3, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:19:49,264 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REPLY EchoReply(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 3, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:19:49,809 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:49,811 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:51,781 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:51,782 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:53,777 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:53,779 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:54,255 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REQUEST EchoRequest(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 2, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:19:54,274 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REQUEST EchoRequest(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 2, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:19:54,276 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REPLY EchoReply(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 3, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:19:54,278 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REPLY EchoReply(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 3, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:19:55,789 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:55,792 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:57,776 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:57,780 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:59,255 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REQUEST EchoRequest(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 2, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:19:59,264 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REQUEST EchoRequest(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 2, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:19:59,266 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REPLY EchoReply(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 3, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:19:59,267 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REPLY EchoReply(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 3, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:19:59,790 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:19:59,792 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:01,798 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:01,800 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:03,791 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:03,793 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:04,255 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REQUEST EchoRequest(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 2, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:20:04,257 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REQUEST EchoRequest(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 2, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:20:04,258 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REPLY EchoReply(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 3, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:20:04,258 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REPLY EchoReply(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 3, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:20:05,778 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:05,781 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:07,786 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:07,787 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:09,280 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REQUEST EchoRequest(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 2, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:20:09,289 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REQUEST EchoRequest(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 2, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:20:09,291 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REPLY EchoReply(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 3, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:20:09,291 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REPLY EchoReply(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 3, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:20:09,791 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:09,795 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:11,790 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:11,791 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:13,789 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:13,793 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:14,265 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REQUEST EchoRequest(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 2, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:20:14,297 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REQUEST EchoRequest(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 2, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:20:14,300 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REPLY EchoReply(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 3, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:20:14,301 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REPLY EchoReply(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 3, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:20:15,788 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:15,789 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:17,776 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:17,777 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:19,256 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REQUEST EchoRequest(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 2, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:20:19,270 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REQUEST EchoRequest(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 2, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:20:19,282 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REPLY EchoReply(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 3, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:20:19,287 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REPLY EchoReply(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 3, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:20:19,775 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:19,777 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:21,788 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:21,794 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:23,781 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:23,784 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:24,268 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REQUEST EchoRequest(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 2, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:20:24,274 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REQUEST EchoRequest(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 2, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:20:24,278 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REPLY EchoReply(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 3, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:20:24,279 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REPLY EchoReply(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 3, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:20:25,776 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:25,777 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:27,787 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:27,788 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:29,376 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REQUEST EchoRequest(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 2, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:20:29,407 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REQUEST EchoRequest(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 2, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:20:29,410 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REPLY EchoReply(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 3, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:20:29,412 | 12280 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_ECHO_REPLY EchoReply(xid=UBInt32(0)) {'header': {'version': 4, 'message_type': 3, 'length': 8, 'xid': 0}, 'data': None}
+2021-10-20 02:20:29,793 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:29,809 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:31,802 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 02:20:31,804 | 12270 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})

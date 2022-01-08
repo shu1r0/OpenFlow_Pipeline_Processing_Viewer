@@ -4,9 +4,9 @@
     class="tracing_vnet">
 
   
-    <button @click="startTrace()">start trace</button>
-    <button @click="startTraceInterval()">get trace</button>
-    <button @click="stopTraceInterval()">stop</button>
+    <button class="start_trace" @click="startTrace()">start trace</button>
+    <button class="start_interval" @click="startTraceInterval()">start interval</button>
+    <button class="stop_interval" @click="stopTraceInterval()">stop interval</button>
 
     
     <div
@@ -17,6 +17,18 @@
       
       <!-- list -->
       <div id="packet_list" class="packet_list">
+        <!-- filter -->
+        <!-- <select name="nodes" id="node-select">
+          <option @click="getTrace()">all</option>
+          <option 
+            v-for="(trace, index) in trace_list"
+            :key="trace.id"
+            :value="index"
+            @click="getTrace(trace.getArcsList()[0].getSrc())">
+              {{ trace.getArcsList()[0].getSrc() }}
+          </option>
+        </select> -->
+
         <table id="packet_list_table">
           <tr>
             <th>protocol</th>
@@ -28,7 +40,7 @@
               v-for="(trace, index) in trace_list"
               :key="trace.id"
               @click="drawTrace(trace, index)">
-            <td>{{ trace.protocol }}</td>
+            <td>{{ trace.getProtocol() }}</td>
             <td>
               {{ traceToString(trace) }}
             </td>
@@ -37,6 +49,7 @@
         </table>
       </div>
 
+      <!-- Mininet CLI -->
       <Console />
     </div>
 
@@ -44,8 +57,7 @@
     <TracingPacket
       v-if="isShowingPacketProcessing"
       :getPacketProcessing="getPacketProcessingForTracinPacket"
-      @close="">
-    </TracingPacket>
+      @close="closePacketProcessing()" />
 
   </div>
 </template>
@@ -55,11 +67,11 @@ import { defineComponent, onActivated, onDeactivated, onMounted, ref, reactive }
 import TracingPacket from './TracingPacket.vue'
 import Console from '../components/tracingVNet/Console.vue'
 
-import { changeableVNet, TracingVNet } from '../vnet/vnet'
-import { proto } from '../api/net'
-import { PacketProcessingData } from '../utils/tracing_packet'
-import { traceToString, getPacketProcessing } from '../utils/tracing_vnet'
-import { packetTracesRepository } from '../utils/packet_traces_repository'
+import { changeableVNet, TracingVNet } from '../scripts/vnet/vnet'
+import { PacketProcessingData } from '../scripts/utils/tracing_packet'
+import { traceToString, getPacketProcessing } from '../scripts/utils/tracing_vnet'
+import { packetTracesRepository } from '../scripts/utils/packet_traces_repository'
+import { PacketTrace, PacketProcessing, PacketArc } from '../scripts/remote/net_pb'
 
 export default defineComponent({
   name: 'TracingVNet',
@@ -80,69 +92,31 @@ export default defineComponent({
     /**
      * 表示される経路情報のリスト
      */
-    // const trace_list = ref<proto.PacketTrace[]>([])
-    const trace_list = reactive([])
+    const trace_list = ref<PacketTrace[]>([])
+    // const trace_list = reactive([])
 
-
-    let getTraceInterval: number = -1
+    /**
+     * trace interval
+     */
+    let getTraceInterval: number = null
 
     /**
      * 現在，描画している経路
      */
-    let drawingPacketTrace: proto.PacketTrace = null
+    let drawingPacketTrace: PacketTrace = null
     let drawingPacketTraceid: number = null
 
     /**
      * パケットの処理
      */
     let isShowingPacketProcessing = ref(false)
-    let showingPacketProcessing = ref<proto.PacketProcessing>(null)
+    let showingPacketProcessing = ref<PacketProcessing>(null)
     let showingPacketProcessingSwitch = ref("")
-
-    /**
-     * テスト用
-     */
-    let trace_list_test: proto.PacketTrace[] = []
-    const trace1 = new proto.PacketTrace()
-    trace1.protocol = 'icmp'
-    const arc11 = new proto.PacketArc()
-    arc11.src = 'h0'
-    arc11.dst = 's1'
-    const arc12 = new proto.PacketArc()
-    arc12.src = 's1'
-    arc12.dst = 's0'
-    const arc13 = new proto.PacketArc()
-    arc13.src = 's0'
-    arc13.dst = 's2'
-    const arc14 = new proto.PacketArc()
-    arc14.src = 's2'
-    arc14.dst = 'h3'
-    trace1.arcs = [arc11, arc12, arc13, arc14]
-
-    const trace2 = new proto.PacketTrace()
-    trace2.protocol = 'icmp'
-    const arc21 = new proto.PacketArc()
-    arc21.src = 'h3'
-    arc21.dst = 's2'
-    const arc22 = new proto.PacketArc()
-    arc22.src = 's2'
-    arc22.dst = 's0'
-    const arc23 = new proto.PacketArc()
-    arc23.src = 's0'
-    arc23.dst = 's1'
-    const arc24 = new proto.PacketArc()
-    arc24.src = 's1'
-    arc24.dst = 'h0'
-    trace2.arcs = [arc21, arc22, arc23, arc24]
-
-    trace_list_test.push(trace1)
-    trace_list_test.push(trace2)
 
     /**
      * TracingVNetを初期化
      */
     onActivated(() => {
-      // trace_list.value = trace_list_test
       console.log("TracingVNet view activated")
       const e = document.getElementById("tracing_vnet_canvas")
       vnet = new TracingVNet(changeableVNet.getRemoteClient(), e, changeableVNet)
@@ -156,38 +130,52 @@ export default defineComponent({
       console.log("TracingVNet view deactivated")
       vnet.cytoscape.destroy()
       vnet = null
+      stopTraceInterval()
     })
 
     /**
      * draw a trace on vnet
      */
-    const drawTrace = (trace: proto.PacketTrace, index: number) => {
+    const drawTrace = (trace: PacketTrace, index: number) => {
       vnet.removeAllPacketEdges()
       drawingPacketTrace = trace
-      trace.arcs.forEach(arc => {
-        vnet.addPacketEdge(arc.src, arc.dst)
+      trace.getArcsList().forEach(arc => {
+        vnet.addPacketEdge(arc.getSrc(), arc.getDst())
       })
     }
 
     /**
      * パケットの処理の様子を可視化する機能
      */
-    const showPacketProcessing = (packetProcessing: proto.PacketProcessing) => {
+    const showPacketProcessing = (packetProcessing: PacketProcessing) => {
       isShowingPacketProcessing.value = true
       showingPacketProcessing.value = packetProcessing
-      showingPacketProcessingSwitch.value = packetProcessing.switch
+      showingPacketProcessingSwitch.value = packetProcessing.getSwitch()
+    }
+
+    /**
+     * close tracing packet processing
+     */
+    const closePacketProcessing = () => {
+      isShowingPacketProcessing.value = false
     }
 
     /**
      * スイッチがタップされたときの処理
      */
     const tapEventNodeHandler = (switchId: string) => {
-      const pktproc: proto.PacketProcessing = getPacketProcessing(drawingPacketTrace, switchId)[0]
-      showPacketProcessing(pktproc)
+      const pktprocs = getPacketProcessing(drawingPacketTrace, switchId)
+      console.log("show packet processing")
+      console.log(pktprocs)
+      if(pktprocs.length > 0){
+        showPacketProcessing(pktprocs[0])
+      }
     }
 
     /**
      * パイプライン可視化機能へ渡す関数
+     * 
+     * paketProcessingDataのゲッター
      */
     const getPacketProcessingForTracinPacket = (): PacketProcessingData => {
       const data: PacketProcessingData | any = {}
@@ -203,24 +191,43 @@ export default defineComponent({
     }
 
     /**
+     * Trace List Update
+     */
+    const getTrace = (src?: string, nodes?: string[], dst?: string) => {
+      changeableVNet.getRemoteClient().getTrace()
+      trace_list.value = packetTracesRepository.getPacketTraces(src, nodes, dst)
+    }
+
+    /**
      * set getTrace Interval
      */
     const startTraceInterval = () => {
-      const getTrace = () => {
-        changeableVNet.getRemoteClient().getTrace()
-        // reset trace list
-        trace_list.splice(0, trace_list.length)
-        packetTracesRepository.getPacketTraces().forEach(t => {
-          console.log("push to list")
-          console.log(t)
-          trace_list.push(t)
-        })
+      if(getTraceInterval === null){
+        getTraceInterval = setInterval(getTrace.bind(changeableVNet.getRemoteClient()), 1500)
       }
-      getTraceInterval = setInterval(getTrace.bind(changeableVNet.getRemoteClient()), 1000)
     }
 
+    /**
+     * stop Interval
+     */
     const stopTraceInterval = () => {
-      clearInterval(getTraceInterval)
+      if(getTraceInterval){
+        clearInterval(getTraceInterval)
+        getTraceInterval = null
+      }
+    }
+
+    const viewCommand = (args: string[]) => {
+      if(args.length < 2) {
+        return -1
+      }
+      switch (args[0]) {
+        case "filter":
+          
+          break;
+        default:
+          break;
+      }
     }
 
 
@@ -230,10 +237,14 @@ export default defineComponent({
       stopTraceInterval,
       drawTrace,
       traceToString,
+      getTrace,
       getPacketProcessingForTracinPacket,
       trace_list,
       vnet,
-      showingPacketProcessing
+      showingPacketProcessing,
+      closePacketProcessing,
+      isShowingPacketProcessing,
+      showingPacketProcessingSwitch
     }
   },
 })
@@ -243,6 +254,12 @@ export default defineComponent({
 <style lang="scss">
 .tracing_vnet{
   // background-color: #eeeeee;
+  position: relative;  // basis for the position of child elements
+
+  button {
+    background: $navy;
+    color: $white;
+  }
 
   #vnet_and_list{
     display: grid;
@@ -251,22 +268,17 @@ export default defineComponent({
       "vnet-canvas trace-list"
       "console trace-list";
     grid-auto-columns: 
-      minmax(70rem, 110rem)
+      minmax(70rem, 85rem)
       minmax(30rem, 50rem);
     grid-auto-rows: 
-      minmax(20rem, 70rem)
+      minmax(20rem, 60rem)
       20rem;
     
 
     #tracing_vnet_canvas{
       grid-area: vnet-canvas;
-      position: relative;  // basis for the position of child elements
-      height: 1000px;
+      height: 800px;
       width: auto;
-
-      *{
-        position: absolute;
-      }
     }
 
     #packet_list {
@@ -276,9 +288,11 @@ export default defineComponent({
 
   .packet_list{
   font-size: 2rem;
+  border: 1px solid $black;
+  border-collapse: collapse;
 
   table, tr, th, td{
-    border: 1px solid black;
+    border: 1px solid $black;
     border-collapse: collapse;
   }
 
@@ -286,11 +300,6 @@ export default defineComponent({
     width: 100%;
   }
 
-
-  // todo: 実装する
-  .tracing_packet{
-
-  }
 }
 }
 </style>

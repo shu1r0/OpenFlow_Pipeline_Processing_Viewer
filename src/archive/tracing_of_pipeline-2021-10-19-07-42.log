@@ -1,0 +1,8 @@
+2021-10-19 07:42:48,471 | 3324 | tracing_net.net, __init__, 99 | INFO | set up on-demand mininet
+2021-10-19 07:42:48,473 | 3324 | tracing_of_pipeline, start, 102 | INFO | OpenFlow Tracer Start
+2021-10-19 07:42:48,482 | 3324 | tracing_net.net, start, 312 | INFO | mininet start
+2021-10-19 07:43:15,200 | 3324 | tracing_net.net, stop_tracing, 541 | INFO | tracing stop
+2021-10-19 07:43:15,202 | 3324 | tracing_of_pipeline, stop, 118 | INFO | OpenFlow Tracer Stop
+2021-10-19 07:43:15,203 | 3324 | tracing_net.net, stop_tracing, 541 | INFO | tracing stop
+2021-10-19 07:43:15,206 | 3324 | tracing_net.net, stop, 317 | INFO | mininet stop
+2021-10-19 07:43:15,208 | 3324 | tracing_net.net, stop, 550 | DEBUG | mininet stopped and all capture processes closed

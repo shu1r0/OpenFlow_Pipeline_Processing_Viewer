@@ -16,9 +16,9 @@ from logging import getLogger, setLoggerClass, Logger
 
 from pyof.foundation.basic_types import UBInt16
 
-from src.tracing_net.ofproto.instruction import InstructionResult
 from src.api.proto import net_pb2
-
+from src.tracing_net.ofproto.match import OxmOfbMatchField2stringfield, mac_address2str, ipv4address2str, \
+    ipv6address2str
 
 setLoggerClass(Logger)
 logger = getLogger('tracing_net.action')
@@ -31,13 +31,14 @@ class ActionResult:
     Attributes:
         msg (Msg) : message applied action
         out_ports (list) : out port
-        changed_msg_history (dict) :  パケットの変更履歴 (e.g. {'ip': '192.168.11.4'})
     """
 
-    def __init__(self, msg, out_ports=None, chaged_msg_history=None, table_id=None):
+    def __init__(self, msg, out_ports=None):
         self.msg = msg
         self.out_ports = out_ports if out_ports else []
-        self.changed_msg_history = chaged_msg_history if chaged_msg_history else {}
+
+
+ACTIONS = {}
 
 
 class ActionType(IntEnum):
@@ -100,8 +101,6 @@ class ActionType(IntEnum):
 
 class ActionBase:
 
-    action_type = UBInt16(enum_ref=ActionType)
-
     def __init__(self, action_type=None):
         self.action_type = action_type
 
@@ -124,11 +123,15 @@ class ActionBase:
 
     def __eq__(self, other):
         if other is None or not isinstance(other, ActionBase):
-            raise TypeError("Action can not compare other type")
+            raise TypeError("Action can not compare other type (type={})".format(type(other)))
         return str(self) == str(other)
 
     def __str__(self):
-        """This str is used by the visualization feature"""
+        """This str is used by the visualization feature.
+
+        Examples:
+            ActionOutput(port=1)  # action_name(key=value)
+        """
         return "{}()".format(self.__class__.__name__)
 
     def __repr__(self):
@@ -180,6 +183,13 @@ class ActionGroup(ActionBase):
     def __str__(self):
         return "{}(group_id={})".format(self.__class__.__name__, self.group_id)
 
+    @classmethod
+    def parse_from_obj(cls, same_obj):
+        return cls(group_id=same_obj.group_id)
+
+
+ACTIONS[ActionType.OFPAT_GROUP] = ActionGroup
+
 
 class ActionDecMPLSTTL(ActionBase):
     """OFPAT_DEC_MPLS_TTL
@@ -194,6 +204,13 @@ class ActionDecMPLSTTL(ActionBase):
 
     def action(self, msg):
         raise NotImplementedError
+
+    @classmethod
+    def parse_from_obj(cls, same_obj):
+        return cls()
+
+
+ACTIONS[ActionType.OFPAT_DEC_MPLS_TTL] = ActionDecMPLSTTL
 
 
 class ActionSetMPLSTTL(ActionBase):
@@ -218,6 +235,13 @@ class ActionSetMPLSTTL(ActionBase):
     def __str__(self):
         return "{}(mpls_ttl={})".format(self.__class__.__name__, self.mpls_ttl)
 
+    @classmethod
+    def parse_from_obj(cls, same_obj):
+        return cls(same_obj.mpls_ttl)
+
+
+ACTIONS[ActionType.OFPAT_SET_MPLS_TTL] = ActionSetMPLSTTL
+
 
 class ActionCopyTTLIn(ActionBase):
     """OFPAT_COPY_TTL_IN
@@ -233,6 +257,13 @@ class ActionCopyTTLIn(ActionBase):
     def action(self, msg):
         raise NotImplementedError
 
+    @classmethod
+    def parse_from_obj(cls, same_obj):
+        return cls()
+
+
+ACTIONS[ActionType.OFPAT_COPY_TTL_IN] = ActionCopyTTLIn
+
 
 class ActionCopyTTLOut(ActionBase):
     """OFPAT_COPY_TTL_OUT
@@ -247,6 +278,13 @@ class ActionCopyTTLOut(ActionBase):
 
     def action(self, msg):
         raise NotImplementedError
+
+    @classmethod
+    def parse_from_obj(cls, same_obj):
+        return cls()
+
+
+ACTIONS[ActionType.OFPAT_COPY_TTL_OUT] = ActionCopyTTLOut
 
 
 class ActionPopVLAN(ActionBase):
@@ -265,6 +303,13 @@ class ActionPopVLAN(ActionBase):
         # result = ActionResult(msg=msg)
         raise NotImplementedError
 
+    @classmethod
+    def parse_from_obj(cls, same_obj):
+        return cls()
+
+
+ACTIONS[ActionType.OFPAT_POP_VLAN] = ActionPopVLAN
+
 
 class ActionPopPBB(ActionBase):
     """OFPAT_POP_PBB
@@ -280,6 +325,13 @@ class ActionPopPBB(ActionBase):
     def action(self, msg):
         raise NotImplementedError
 
+    @classmethod
+    def parse_from_obj(cls, same_obj):
+        return cls()
+
+
+ACTIONS[ActionType.OFPAT_POP_PBB] = ActionPopPBB
+
 
 class ActionDecNWTTL(ActionBase):
     """OFPAT_DEC_NW_TTL
@@ -294,6 +346,13 @@ class ActionDecNWTTL(ActionBase):
 
     def action(self, msg):
         raise NotImplementedError
+
+    @classmethod
+    def parse_from_obj(cls, same_obj):
+        return cls()
+
+
+ACTIONS[ActionType.OFPAT_DEC_NW_TTL] = ActionDecNWTTL
 
 
 class ActionSetNWTTL(ActionBase):
@@ -316,6 +375,13 @@ class ActionSetNWTTL(ActionBase):
 
     def __str__(self):
         return "{}(nw_ttl={})".format(self.__class__.__name__, self.nw_ttl)
+
+    @classmethod
+    def parse_from_obj(cls, same_obj):
+        return cls(same_obj.nw_ttl)
+
+
+ACTIONS[ActionType.OFPAT_SET_NW_TTL] = ActionSetNWTTL
 
 
 class ActionOutput(ActionBase):
@@ -366,6 +432,13 @@ class ActionOutput(ActionBase):
         elif controller:
             return cls(port=controller)
 
+    @classmethod
+    def parse_from_obj(cls, same_obj):
+        return cls(port=same_obj.port)
+
+
+ACTIONS[ActionType.OFPAT_OUTPUT] = ActionOutput
+
 
 class ActionDrop(ActionBase):
     """DropAction"""
@@ -379,6 +452,13 @@ class ActionDrop(ActionBase):
     @classmethod
     def parser(cls):
         return cls()
+
+    @classmethod
+    def parse_from_obj(cls, same_obj):
+        return cls()
+
+
+ACTIONS[ActionType.DROP] = ActionDrop
 
 
 class ActionPopMPLS(ActionBase):
@@ -401,6 +481,13 @@ class ActionPopMPLS(ActionBase):
 
     def __str__(self):
         return "{}(ethertype={})".format(self.__class__.__name__, self.ethertype)
+
+    @classmethod
+    def parse_from_obj(cls, same_obj):
+        return cls(ethertype=same_obj.ethertype)
+
+
+ACTIONS[ActionType.OFPAT_POP_MPLS] = ActionPopMPLS
 
 
 class ActionPush(ActionBase):
@@ -434,6 +521,36 @@ class ActionPush(ActionBase):
     def parser_mpls(cls, ethertype=None):
         return cls(action_type=ActionType.OFPAT_PUSH_MPLS, ethertype=ethertype)
 
+    @classmethod
+    def parse_from_obj(cls, same_obj):
+        return cls(same_obj.ethertype)
+
+
+class ActionPushMPLS(ActionPush):
+
+    def __init__(self, ethertype=None):
+        super(ActionPushMPLS, self).__init__(ActionType.OFPAT_PUSH_MPLS, ethertype)
+
+    @classmethod
+    def parser(cls, ethertype=None):
+        return cls.parser_mpls(ethertype)
+
+
+ACTIONS[ActionType.OFPAT_PUSH_MPLS] = ActionPushMPLS
+
+
+class ActionPushVLAN(ActionPush):
+
+    def __init__(self, ethertype=None):
+        super(ActionPushVLAN, self).__init__(ActionType.OFPAT_PUSH_VLAN, ethertype)
+
+    @classmethod
+    def parser(cls, ethertype=None):
+        return cls.parser_vlan(ethertype)
+
+
+ACTIONS[ActionType.OFPAT_PUSH_VLAN] = ActionPushVLAN
+
 
 class ActionSetField(ActionBase):
     """OFPAT_SET_FIELD
@@ -451,14 +568,18 @@ class ActionSetField(ActionBase):
         self.dst = dst
 
     def action(self, msg):
-        current_value = getattr(msg, self.value)
-        current_value = current_value & ~self.mask
-        dst = self.dst & self.mask
-        msg.set_properties(self.value, current_value + dst)
-        raise NotImplementedError
+        current_value = getattr(msg, self.dst)
+        value = self.value
+        if self.mask is not None:  # todo test
+            current_value = current_value & ~self.mask
+            value = self.value & self.mask
+            msg.set_properties(self.dst, current_value + value)
+        else:
+            msg.set_properties(self.dst, self.value)
+        return ActionResult(msg=msg)
 
     def __str__(self):
-        return "{}(value={}, mask={}, dst={})".format(self.__class__.__name__, self.value, self.mask, self.dst)
+        return "{}({}/{}, {})".format(self.__class__.__name__, self.value, self.mask, self.dst)
 
     # def __repr__(self):
     #     return (f"{type(self).__name__}({self.field.oxm_field!s}, "
@@ -467,6 +588,23 @@ class ActionSetField(ActionBase):
     @classmethod
     def parser(cls, value=None, mask=None, dst=None):
         return cls(value=value, mask=mask, dst=dst)
+
+    @classmethod
+    def parse_from_obj(cls, same_obj):
+        field_name = OxmOfbMatchField2stringfield(same_obj.field.oxm_field)
+        value = same_obj.field.oxm_value
+        if field_name in ["eth_dst", "eth_src"]:
+            value = mac_address2str(value)
+        elif field_name in ["ipv4_src", "ipv4_dst"]:
+            value = ipv4address2str(value)
+        elif field_name in ["ipv6_src", "ipv6_dst"]:
+            value = ipv6address2str(value)
+        else:
+            value = int.from_bytes(value, byteorder="big")
+        return cls(value=value, mask=0xfffffffffffff, dst=field_name)
+
+
+ACTIONS[ActionType.OFPAT_SET_FIELD] = ActionSetField
 
 
 class ActionSetQueue(ActionBase):
@@ -490,12 +628,12 @@ class ActionSetQueue(ActionBase):
     def __str__(self):
         return "{}(queue_id={})".format(self.__class__.__name__, self.queue_id)
 
+    @classmethod
+    def parse_from_obj(cls, same_obj):
+        return cls(same_obj.queue_id)
 
-class ActionsList:
-    """Action list"""
 
-    def __init__(self, actions=None):
-        self.actions = actions if actions else []
+ACTIONS[ActionType.OFPAT_SET_QUEUE] = ActionSetQueue
 
 
 class ActionSet:
@@ -522,6 +660,8 @@ class ActionSet:
         Returns:
             InstructionResult
         """
+        from src.tracing_net.ofproto.instruction import InstructionResult
+
         result = InstructionResult(msg=msg, action_set=self)
         self._sort()
         for action in self.actions:

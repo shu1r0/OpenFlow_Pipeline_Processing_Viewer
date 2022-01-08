@@ -1,0 +1,8 @@
+2021-09-22 05:11:25,405 | 3299 | tracing_net.net, __init__, 97 | INFO | set up on-demand mininet
+2021-09-22 05:11:25,437 | 3299 | tracing_net.net, start, 310 | INFO | mininet start
+2021-09-22 05:11:27,349 | 3311 | tracing_net.api.ws_server, connect, 152 | INFO | connect sid=FYdAEfcLxx_uEVpaAAAB
+2021-09-22 05:11:28,847 | 3311 | tracing_net.api.ws_server, connect, 152 | INFO | connect sid=525K8WOyx5lcOKjyAAAD
+2021-09-22 05:11:29,111 | 3311 | tracing_net.api.ws_server, connect, 152 | INFO | connect sid=H7ejHYuc9rO8dmQuAAAF
+2021-09-22 05:11:32,072 | 3311 | tracing_net.api.ws_server, emit2net, 96 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_SWITCH, param={'name': 's0', 'datapath_id': ''})
+2021-09-22 05:14:24,337 | 3299 | tracing_net.net, stop, 315 | INFO | mininet stop
+2021-09-22 05:14:24,339 | 3299 | tracing_net.net, stop, 542 | DEBUG | mininet stopped and all capture processes closed

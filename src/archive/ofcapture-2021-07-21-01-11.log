@@ -1,0 +1,26 @@
+2021-07-21 01:11:50,724 | 6635 | ofcapture.proxy.proxy, start_server, 231 | INFO | Server on ('127.0.0.1', 63333)
+2021-07-21 01:11:50,729 | 6635 | ofcapture.proxy.proxy, start_server, 234 | INFO | Server serve forever ('127.0.0.1', 63333)
+2021-07-21 01:11:50,824 | 6635 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 42672) is connected
+2021-07-21 01:11:50,825 | 6635 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-07-21 01:11:51,021 | 6635 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 42676) is connected
+2021-07-21 01:11:51,025 | 6635 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-07-21 01:11:51,796 | 6635 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 42680) is connected
+2021-07-21 01:11:51,797 | 6635 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 42682) is connected
+2021-07-21 01:11:51,798 | 6635 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-07-21 01:11:51,798 | 6635 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-07-21 01:11:52,802 | 6635 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 42748) is connected
+2021-07-21 01:11:52,834 | 6635 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 42750) is connected
+2021-07-21 01:11:52,843 | 6635 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-07-21 01:11:52,847 | 6635 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-07-21 01:11:53,471 | 6625 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-07-21 01:11:53,502 | 6625 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-07-21 01:11:53,812 | 6635 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 42756) is connected
+2021-07-21 01:11:53,815 | 6635 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 42758) is connected
+2021-07-21 01:11:53,817 | 6635 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-07-21 01:11:53,823 | 6635 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-07-21 01:11:54,795 | 6635 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 42826) is connected
+2021-07-21 01:11:54,796 | 6635 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 42828) is connected
+2021-07-21 01:11:54,799 | 6635 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-07-21 01:11:54,800 | 6635 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-07-21 01:11:55,436 | 6625 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-07-21 01:11:55,441 | 6625 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})

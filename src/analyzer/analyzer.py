@@ -17,17 +17,17 @@ Warnings:
     * PacketTraceに追加するパケットは実際に流れたパケットのオブジェクトでないと行けない
     * trace_listに追加するタイミングを気をつける
     * 送信されたパケットについて，ホストかの判定にmacアドレスを使用していることに注意
+    * applyed pipelineの前にUpdate MSGができているかを確認する
 """
 
 from abc import ABCMeta, abstractmethod
 import datetime
 import copy
+
 # only unix
 import signal
-import time
 from logging import getLogger, setLoggerClass, Logger
 
-from pyof.foundation.basic_types import UBInt32
 from pyof.v0x04.common.header import Type
 from pyof.v0x04.common.port import PortNo
 
@@ -38,8 +38,8 @@ from src.tracing_net.flowtable.table_repository import TableRepository
 from src.tracing_net.ofproto.table import FlowTables
 from src.tracing_net.ofproto.msg import Msg
 from src.ofcapture.capture.of_msg_repository import PacketInOutRepository
-from src.ofproto.pipeline import apply_pipeline, apply_pipeline_for_packetout
-from src.ofproto.msg import create_MsgForOFMsg, MsgForOFMsg
+from src.analyzer.ofproto.pipeline import apply_pipeline, apply_pipeline_for_packetout
+from src.analyzer.ofproto.msg import create_MsgForOFMsg
 from src.analyzer.packet_trace import PacketArc, PacketTrace
 from src.analyzer.packet_trace_handler import packet_trace_list
 from src.config import conf
@@ -58,7 +58,7 @@ class BFSQueue:
     def __init__(self):
         self._queue = []
 
-    def enqueue(self, src_node, msg, edge, next_tables, next_port):
+    def enqueue(self, src_node, msg, edge, next_tables, next_port, packet_processing=None):
         """append to queue
 
         Args:
@@ -68,7 +68,7 @@ class BFSQueue:
             next_tables (FlowTables or str) :
             next_port (str) : port name (e.g. h2-eth1)
         """
-        self._queue.append((src_node, msg, edge, next_tables, next_port))
+        self._queue.append((src_node, msg, edge, next_tables, next_port, packet_processing))
 
     def dequeue(self):
         """dequeue"""
@@ -131,7 +131,7 @@ class Analyzer(AbstractAnalyzer):
         # analyzing interval
         self._interval = 2
 
-        self.start_time = None
+        self.start_time = 0
         self.count = 0
 
         # tmp repo
@@ -194,7 +194,7 @@ class Analyzer(AbstractAnalyzer):
         else:
             self._polling(self.count)
 
-        if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
+        if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
             logger.debug("Analyzing 1... polled repository (count={})".format(self.count))
 
         # Search from packet out.
@@ -202,7 +202,7 @@ class Analyzer(AbstractAnalyzer):
             if p_io:
                 for p in p_io:
                     if p.message_type == Type.OFPT_PACKET_OUT:
-                        if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
+                        if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
                             logger.debug("Analyzing 2... analyze packet out (count={}, target={})".format(self.count, p))
                         analyzed = self._analyze_packet_out(p, s)
                         if analyzed:
@@ -215,40 +215,44 @@ class Analyzer(AbstractAnalyzer):
                     host, switch, switch_port = self.tracing_net.get_terminal_edge(edge)
 
                     for p in pkts:
-                        if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
+                        if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
                             logger.debug("Analyzing 3... analyze packet (count={}, target={})".format(self.count, p))
 
-                        if p.eth_src in self._get_hosts_mac():  # Is the packet from the host?
+                        # compare Mac address
+                        if p.eth_src == self.tracing_net.get(host).MAC():  # Is the packet from the host?
                             # set next port
                             self._update_msg(p, next_port=switch_port)
                             flow_table = self._get_flowtable(switch, p.sniff_timestamp)
-                            if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
+                            if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
                                 logger.debug("Analyzing 3.1... get flowtable (count={}, flow table={})".format(self.count, flow_table))
+
                             if flow_table:
                                 queue = BFSQueue()
                                 queue.enqueue(host, p, edge, flow_table, switch_port)
 
                                 trace = self.BFS(queue)
-                                if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
+                                if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
                                     logger.debug("Analyzing 5.1... After BFS (count={}, trace={})".format(self.count, trace))
 
                                 if trace.is_finish:
                                     packet_trace_list.append(trace)
                                     self._del_tmp_packet(trace)
-                                    if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
+                                    if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
                                         logger.debug("Analyzing 5.2... Trace is finish. (count={}, trace={})".format(self.count, trace))
                                 else:
                                     # todo: 失敗時の処理はこれでいいの？
-                                    if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
+                                    if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
                                         logger.debug("Analyzing 5.2... trace is not finished (count={}, trace={})".format(self.count, trace))
                         else:
                             logger.warning("Packet {} is not from host. "
-                                           "The analysis done before may not have been done properly.".format(p))
+                                           "The analysis done before may not have been done properly. "
+                                           "(host_mac={}, packet_ethsrc={})".format(p, self.tracing_net.get(host).MAC(), p.eth_src))
                 else:
                     logger.warning("edge {} is not terminal edge. "
                                    "The analysis done before may not have been done properly.".format(edge))
             else:
-                logger.warning("No packet in edge {}".format(edge))
+                if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
+                    logger.debug("Analyzing 1... No packet in edge {}".format(edge))
 
         self.count += 1
 
@@ -265,95 +269,104 @@ class Analyzer(AbstractAnalyzer):
         # apply action
         applied_result = apply_pipeline_for_packetout(packet_msg)
         out_ports = applied_result["port_to_msg"]
-        if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
+        if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
             logger.debug("Analyzing 2.1... analyze packet out, get out_ports (count={}, out_ports={})"
                          .format(self.count, out_ports))
+
+        next_and_edges = []
 
         # todo:  for文で実装 or FLOODなどを変換する仕組みの実装
         if out_ports[0][0] == PortNo.OFPP_FLOOD:
             packet_msg = out_ports[0][1]
-            if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
+            if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
                 logger.debug("Analyzing 2.2... get packer msg (count={}, packer msg={})"
                              .format(self.count, out_ports))
 
             ports_to_edges = self._get_flooding_ports_and_edges(switch, int(packet_msg.of_msg.in_port))
             # logger.debug("ports_to_edges {}".format(ports_to_edges))
+            next_and_edges = ports_to_edges.values()
+        else:
+            for p, m in out_ports:
+                next_and_edges.append(self._get_next_and_edge(self._ofport_to_interface(switch, p)))
 
-            # 次のポートとインターフェース
-            for intf, next_and_edge in ports_to_edges.items():
-                # packet traces
-                trace = PacketTrace()
-                packet_arc = PacketArc(src="controller",
-                                       msg=packet_msg,
-                                       edge=None,
-                                       dst=switch,
-                                       dst_interface="")
-                trace.add_arc(packet_arc)
+        # 次のポートとインターフェース
+        for next_and_edge in next_and_edges:
+            # packet traces
+            trace = PacketTrace()
+            packet_arc = PacketArc(src="controller",
+                                   msg=packet_msg,  # action に setfieldがない場合
+                                   edge=None,
+                                   dst=switch,
+                                   dst_interface="")
+            trace.add_arc(packet_arc)
 
-                # get next and OFMsg obj
-                next_node, next_port, edge = next_and_edge
+            # get next and OFMsg obj
+            next_node, next_port, edge = next_and_edge
 
-                msg = self._get_packet(edge, packet_msg)
+            msg = self._get_packet(edge, packet_msg)
 
-                if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
-                    logger.debug("Analyzing 2.3... get packet (count={}, packet={})"
-                                 .format(self.count, msg))
-                if msg:
-                    self._update_msg(msg, next_port=next_port)
+            if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
+                logger.debug("Analyzing 2.3... get packet (count={}, edge={}, packet={})"
+                             .format(self.count, edge, msg))
+            if msg:
+                self._update_msg(msg, next_port=next_port)
 
-                    if self._is_terminal_edge(edge):
-                        packet_arc = PacketArc(src=switch,
-                                               msg=msg,
-                                               edge=edge,
-                                               dst=next_node,
-                                               dst_interface=next_port)
-                        if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
-                            logger.debug("Analyzing 2.4... next_node is host. the trace is finish (count={}, next node={})"
-                                         .format(self.count, next_node))
-                        trace.add_arc(packet_arc)
-                        trace.is_finish = True
-                        packet_trace_list.append(trace)
-                        self._del_tmp_packet(trace)
-                        return packet_msg
-                    else:
-                        # The edge is not terminal edge. Run BFS and complete the trace.
-                        # logger.debug("Msg is not in terminal edge. ")
-                        queue = BFSQueue()
-                        visited_edges = [edge]
-                        flow_table = self._get_flowtable(switch, msg.sniff_timestamp)
-                        next_table = self._get_flowtable(next_node, msg.sniff_timestamp)
-                        if flow_table and next_table:
-                            queue.enqueue(src_node=flow_table, msg=msg, edge=edge,
-                                          next_tables=next_table, next_port=next_port)
-                            if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
-                                logger.debug("Analyzing 2.4... next_node is switch. run BFS (count={}, next node={})"
-                                             .format(self.count, next_node))
-                            trace = self.BFS(queue=queue, trace=trace, visited_edges=visited_edges)
-                            if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
-                                logger.debug("Analyzing 2.5... After BFS (count={}, trace={})"
-                                             .format(self.count, next_node))
-                            if trace.is_finish:
-                                if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
-                                    logger.debug("Analyzing 2.5... After BFS, trace is finish (count={}, trace={})"
-                                                 .format(self.count, next_node))
-                                packet_trace_list.append(trace)
-                                self._del_tmp_packet(trace)
-                                return packet_msg
-                            else:
-                                # todo: 失敗時の処理はこれでいいの？
-                                if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
-                                    logger.debug("Analyzing 2.4... packet out BFS is not finished (count={})".format(self.count))
-                        else:
-                            logger.warning("Flowtable wasn't got. "
-                                           "At this stage, we need to be able to retrieve the flow table. "
-                                           "If the flow table is not available, "
-                                           "this process will be skipped and the next packet analysis will be affected.")
+                if self._is_terminal_edge(edge):
+                    packet_arc = PacketArc(src=switch,
+                                           msg=msg,
+                                           edge=edge,
+                                           dst=next_node,
+                                           dst_interface=next_port)
+                    if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
+                        logger.debug("Analyzing 2.4... next_node is host. the trace is finish (count={}, next node={})"
+                                     .format(self.count, next_node))
+                    trace.add_arc(packet_arc)
+                    trace.is_finish = True
+                    packet_trace_list.append(trace)
+                    self._del_tmp_packet(trace)
+                    return packet_msg
                 else:
-                    if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
-                        logger.debug("Analyzing 2.3... cannot pop pakcet (count={} next_edge={} m={})".format(self.count, edge, packet_msg))
-                    # TODO:
-                    #   * If there is no matching packet, it is analyzed in the next interval
-                    return None
+                    # The edge is not terminal edge. Run BFS and complete the trace.
+                    # logger.debug("Msg is not in terminal edge. ")
+                    queue = BFSQueue()
+                    visited_edges = [edge]
+                    flow_table = self._get_flowtable(switch, msg.sniff_timestamp)
+                    next_table = self._get_flowtable(next_node, msg.sniff_timestamp)
+                    if flow_table and next_table:
+                        queue.enqueue(src_node=flow_table, msg=msg, edge=edge,
+                                      next_tables=next_table, next_port=next_port)
+                        if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
+                            logger.debug("Analyzing 2.4... next_node is switch. run BFS (count={}, next node={})"
+                                         .format(self.count, next_node))
+                        trace = self.BFS(queue=queue, trace=trace, visited_edges=visited_edges)
+                        if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
+                            logger.debug("Analyzing 2.5... After BFS (count={}, trace={})"
+                                         .format(self.count, next_node))
+                        if trace.is_finish:
+                            if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
+                                logger.debug("Analyzing 2.5... After BFS, trace is finish (count={}, trace={})"
+                                             .format(self.count, next_node))
+                            packet_trace_list.append(trace)
+                            self._del_tmp_packet(trace)
+                            return packet_msg
+                        else:
+                            # todo: 失敗時の処理はこれでいいの？
+                            if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
+                                logger.warning("Analyzing 2.4... packet out BFS is not finished (count={})".format(self.count))
+                    else:
+                        logger.warning("Flowtable wasn't got. "
+                                       "At this stage, we need to be able to retrieve the flow table. "
+                                       "If the flow table is not available, "
+                                       "this process will be skipped and the next packet analysis will be affected.")
+            else:
+                if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
+                    logger.warning("Analyzing 2.3... cannot pop pakcet (count={} next_edge={} m={})".format(self.count, edge, packet_msg))
+                # TODO:
+                #   * If there is no matching packet, it is analyzed in the next interval
+                return None
+        if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
+            logger.warning("Analyzing 2.3... no flooding ports")
+
 
     def BFS(self, queue, trace=None, visited_edges=None):
         """BFS
@@ -381,34 +394,36 @@ class Analyzer(AbstractAnalyzer):
         if visited_edges is None:
             visited_edges = []
 
-        if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
+        if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
             logger.debug("Analyzing 4... start BFS (count={})".format(self.count))
 
         # BFS loop
         while not queue.is_empty():
             # get processing data from queue
-            src_node, msg, edge, dst_node, dst_port = queue.dequeue()
-            if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
+            src_node, msg, edge, dst_node, dst_port, pp = queue.dequeue()
+            if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
                 logger.debug("Analyzing 4.1... processing msg (count={}, msg={})".format(self.count, msg))
             visited_edges.append(edge)
 
             # Packet Arc
             packet_arc = PacketArc(src=src_node, msg=msg, edge=edge, dst=dst_node, dst_interface=dst_port)
+            packet_arc.packet_processing = pp
             msg: Msg = msg
             trace.add_arc(copy.deepcopy(packet_arc))
             # trace.add_arc(packet_arc)
 
             # next node is Switch
             if isinstance(dst_node, FlowTables):
-                if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
+                if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
                     logger.debug("Analyzing 4.1... dst_node is FlowTables (count={})".format(self.count))
 
                 # Perform OpenFlow processing and get the port for the next packet
                 applied_pipeline_result = apply_pipeline(msg, flowtables=dst_node)
                 # todo : Floodingなどの処理を追加
                 ports_to_msg: list[tuple[str, Msg]] = applied_pipeline_result["port_to_msg"]
+                pp = applied_pipeline_result["packet_processing"]
 
-                if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
+                if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
                     logger.debug("Analyzing 4.2... After applied pipeline (count={}, out_ports_to_msg={})".format(self.count, ports_to_msg))
 
                 # out_portsから，次に向かうノードを特定する．
@@ -426,42 +441,44 @@ class Analyzer(AbstractAnalyzer):
                         # This will eventually be an enumerate
                         next_switch = "controller"
 
-                    if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
+                    if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
                         logger.debug("Analyzing 4.3... get next of dst_node (count={}, next_switch={})".format(self.count, next_switch))
 
                     # set next switch and port
                     # If the next node is a switch, it computes the OpenFlow processing and add it to the queue.
                     if isinstance(next_switch, str) and self._is_switch(next_switch):  # switch
-                        self._update_msg(msg, next_port=next_port)
+                        # self._update_msg(msg, next_port=next_port)  # とりま廃止
 
                         if next_edge not in visited_edges:  # loop?
                             # get packet
                             msg = self._get_packet(next_edge, m)
+
                             if msg:
                                 # get flowtable
                                 flowtable = self._get_flowtable(next_switch, m.sniff_timestamp)
-                                if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
+                                if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
                                     logger.debug("Analyzing 4.4... get flowtable (count={}, flow_table={})"
                                                  .format(self.count, flowtable))
                                 # todo: flowtableがNoneのときの処理
                                 if flowtable:
+                                    self._update_msg(msg, next_port=next_port)
                                     queue.enqueue(src_node=dst_node, msg=msg, edge=next_edge,
-                                                  next_tables=flowtable, next_port=next_port)
+                                                  next_tables=flowtable, next_port=next_port, packet_processing=pp)
                                     # continue explicitly
                                     continue
                                 else:
-                                    if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
+                                    if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
                                         logger.warning("Analyzing 4.4.. Getting flow_table is fail. "
                                                        "Although the packets are captured, the flow table is not got."
                                                        "This could be an error.  (count={})".format(self.count))
                             else:
-                                if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
-                                    logger.debug("Analyzing 4.4... cannot pop pachet. Therefore the trace is not finished (count={} next_edge={} m={})"
+                                if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
+                                    logger.warning("Analyzing 4.4... cannot pop packet. Therefore the trace is not finished (count={} next_edge={} m={})"
                                                  .format(self.count, next_edge, m))
                                 trace.is_finish = False
                                 return trace
                         else:
-                            if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
+                            if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
                                 logger.warning("Analyzing 4.4... already visited edge (count={}, next_edge={})".format(self.count, next_edge))
                             # TODO:
                             #   * Terminate the analysis or throw an error
@@ -471,7 +488,7 @@ class Analyzer(AbstractAnalyzer):
                         if next_switch == "controller":
                             # TODO: get packet in
                             #   まだ，packet_inメッセージの取得ができていない
-                            if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
+                            if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
                                 logger.debug("Analyzing 4.4... next switch is controller. Therefore trace is finished. "
                                              "(count={}, next_switch={})".format(self.count, next_switch))
                             packet_arc = PacketArc(src=dst_node,
@@ -479,11 +496,12 @@ class Analyzer(AbstractAnalyzer):
                                                    edge=next_edge,
                                                    dst="controller",
                                                    dst_interface="")
+                            packet_arc.packet_processing = pp
                             trace.add_arc(copy.deepcopy(packet_arc))
                             trace.is_finish = True
                             return trace
-                        elif self._is_terminal_edge(edge):
-                            if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
+                        elif self._is_terminal_edge(next_edge):
+                            if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
                                 logger.debug("Analyzing 4.4... next switch is host. Therefore trace is finished. (count={}, next_switch={})"
                                              .format(self.count, next_switch))
                             # next host
@@ -492,16 +510,21 @@ class Analyzer(AbstractAnalyzer):
                                                    edge=next_edge,
                                                    dst=next_switch,
                                                    dst_interface=next_port)
+                            packet_arc.packet_processing = pp
                             trace.add_arc(copy.deepcopy(packet_arc))
-                            trace.is_finish = True
+                            trace.is_finish = True  # todo Flooding
                             return trace
                         else:
-                            if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
+                            if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
                                 logger.error("Analyzing 4.4... next switch is no matching device ({})".format(next_switch))
                             trace.is_finish = False
                             return trace
+                else:
+                    if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
+                        logger.warning("Analyzing 4.2... no outports (count={}, applied_pipeline_result={})".format(self.count, applied_pipeline_result))
+
             else:  # not switch
-                if conf.OUTPUT_APPLY_PIPELINE_PROCESSING_TO_LOGFILE:
+                if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
                     logger.warning("Analyzing 4.1... dst is not flowtable(count={}, dst_node={})".format(self.count, dst_node))
                 # Note: then, the analysis done before may not have been done properly.
                 #    * この場合，BFSをする必要がないので，BFSする前に処理しておくべき．
@@ -550,8 +573,9 @@ class Analyzer(AbstractAnalyzer):
                 # It's already sorted, but it's sorted just in case.
                 self.tmp_packetinout[s].sort()
 
-        logger.debug("polled repository (start_time={}, until={}) values = {} {}"
-                     .format(self.start_time, self.count, self.tmp_packets, self.tmp_packetinout))
+        if conf.OUTPUT_ANALYZING_POLLING_TO_LOGFILE:
+            logger.debug("polled repository (start_time={}, until={}) values = {} {}"
+                         .format(self.start_time, self.count, self.tmp_packets, self.tmp_packetinout))
 
     def _poll_packet_repo(self, count, edges, get_all=False):
         """poll packet repository
@@ -569,8 +593,7 @@ class Analyzer(AbstractAnalyzer):
             until = None
 
         for edge in edges:
-            interface = self.tracing_net.get_interface_from_link(edge)
-            tmp_packets = none2emptylist(self.packet_repo.pop(interface, until=until))
+            tmp_packets = none2emptylist(self.packet_repo.pop(edge, until=until))
             packets[edge] = tmp_packets
         return packets
 
@@ -594,10 +617,11 @@ class Analyzer(AbstractAnalyzer):
 
         for switch in switches:
             # get datapath id
-            s_dpid = int(self.tracing_net.get_datapath_id(switch))
+            s_dpid = int(self.tracing_net.get_datapath_id(switch), 16)
             if s_dpid is not None:
                 tmp_p = none2emptylist(self.packet_inout_repo.pop(s_dpid, until=until))
-                logger.debug("tmp_p = {}, s_dpip = {}".format(tmp_p, s_dpid))
+                if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
+                    logger.debug("Analyzing 1.2... tmp_p = {}, s_dpip = {}".format(tmp_p, s_dpid))
 
                 # Msg to MsgForOFMsg
                 packet_inouts[switch] = []
@@ -634,10 +658,10 @@ class Analyzer(AbstractAnalyzer):
         if self.tmp_packets[edge]:
             for p in self.tmp_packets[edge]:
                 if conf.JUDGE_PACKETS_ONLY_BY_TIME:
-                    if p.sniff_timestamp >= msg.sniff_timestamp:
+                    if p.timestamp >= msg.timestamp:
                         return p
                 else:
-                    if p.sniff_timestamp >= msg.sniff_timestamp and p.is_equal_msg(msg):
+                    if p.timestamp >= msg.timestamp and p.is_equal_msg(msg):
                         return p
 
     def _del_tmp_packet(self, packet_trace: PacketTrace):
@@ -661,7 +685,8 @@ class Analyzer(AbstractAnalyzer):
                 if len(removed) > 1:
                     break
         if len(removed) == 0:
-            logger.warning("no packer are removed. (count={} packet_trace={})".format(self.count, packet_trace))
+            logger.warning("No packer are removed. (count={} packet_trace={})"
+                           "This may be a bug.".format(self.count, packet_trace))
 
     def _get_flowtable(self, switch, timestamp):
         """

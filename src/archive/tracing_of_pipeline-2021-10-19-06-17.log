@@ -1,0 +1,22 @@
+2021-10-19 06:17:45,236 | 5097 | tracing_net.net, __init__, 99 | INFO | set up on-demand mininet
+2021-10-19 06:17:45,247 | 5097 | tracing_of_pipeline, start, 102 | INFO | OpenFlow Tracer Start
+2021-10-19 06:17:45,286 | 5097 | tracing_net.net, start, 312 | INFO | mininet start
+2021-10-19 06:17:51,568 | 5109 | tracing_net.api.ws_server, connect, 267 | INFO | connect sid=HXAD4oCpYS54a4uoAAAB
+2021-10-19 06:18:49,262 | 5109 | tracing_net.api.ws_server, connect, 267 | INFO | connect sid=exVrFQKcaG4zbY60AAAD
+2021-10-19 06:19:12,559 | 5109 | tracing_net.api.ws_server, emit2net, 105 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_SWITCH, param={'name': 's0', 'dpid': ''})
+2021-10-19 06:19:12,561 | 5097 | tracing_net.api.ws_server, get_from_client, 119 | DEBUG | MessageHub receives messages from clients. (response={'event': 'add_switch', 'param': {'name': 's0', 'dpid': ''}})
+2021-10-19 06:19:12,564 | 5097 | tracing_net.net, add_switch, 116 | DEBUG | added the switch (s0)
+2021-10-19 06:19:29,878 | 5109 | tracing_net.api.ws_server, emit2net, 105 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.EXEC_MININET_COMMAND, param={'command': 'c0 ls'})
+2021-10-19 06:19:29,879 | 5097 | tracing_net.api.ws_server, get_from_client, 119 | DEBUG | MessageHub receives messages from clients. (response={'event': 'exec_mininet_cmd', 'param': {'command': 'c0 ls'}})
+2021-10-19 06:19:29,880 | 5097 | tracing_net.cli, input, 83 | DEBUG | CLI input c0 ls
+2021-10-19 06:20:58,918 | 5097 | tracing_net.cli, output, 89 | DEBUG | CLI output exited by user command
+2021-10-19 06:20:58,928 | 5097 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x16exited by user command')
+2021-10-19 06:20:58,929 | 5097 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 06:20:58,929 | 5097 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 06:20:58,930 | 5097 | tracing_net.net, stop_tracing, 541 | INFO | tracing stop
+2021-10-19 06:20:58,930 | 5097 | tracing_of_pipeline, stop, 118 | INFO | OpenFlow Tracer Stop
+2021-10-19 06:20:58,931 | 5097 | tracing_net.net, stop_tracing, 541 | INFO | tracing stop
+2021-10-19 06:20:58,931 | 5097 | tracing_net.net, stop, 317 | INFO | mininet stop
+2021-10-19 06:20:58,938 | 5109 | tracing_net.api.ws_server, disconnect, 272 | INFO | disconnect sid=HXAD4oCpYS54a4uoAAAB
+2021-10-19 06:20:58,947 | 5109 | tracing_net.api.ws_server, disconnect, 272 | INFO | disconnect sid=exVrFQKcaG4zbY60AAAD
+2021-10-19 06:20:59,188 | 5097 | tracing_net.net, stop, 550 | DEBUG | mininet stopped and all capture processes closed

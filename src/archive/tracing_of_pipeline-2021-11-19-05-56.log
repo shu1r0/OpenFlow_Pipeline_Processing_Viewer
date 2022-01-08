@@ -1,0 +1,9 @@
+2021-11-19 05:56:07,833 | 4164 | tracing_net.net, __init__, 117 | INFO | set up on-demand mininet
+2021-11-19 05:56:09,034 | 4164 | tracing_net.api.ws_server, connect, 230 | INFO | connect sid=Epk3kCqhDzfnGP5eAAAB
+2021-11-19 05:56:16,374 | 4164 | tracing_net.api.ws_server, emit2tracer, 134 | DEBUG | ws_server -> tracer (event=WSEvent.ADD_SWITCH, param={'name': 's0', 'dpid': ''})
+2021-11-19 05:56:16,376 | 4164 | tracing_net.net, add_switch, 134 | DEBUG | added the switch (s0)
+2021-11-19 05:56:19,810 | 4164 | tracing_net.api.ws_server, emit2tracer, 134 | DEBUG | ws_server -> tracer (event=WSEvent.ADD_HOST, param={'name': 'h0', 'ip': '', 'mac': ''})
+2021-11-19 05:56:19,819 | 4164 | tracing_net.net, add_host, 182 | DEBUG | added the host (h0)
+2021-11-19 05:56:21,051 | 4164 | tracing_net.api.ws_server, emit2tracer, 134 | DEBUG | ws_server -> tracer (event=WSEvent.ADD_LINK, param={'link_name': 'e0', 'host_name1': 'h0', 'host_name2': 's0'})
+2021-11-19 05:56:21,054 | 4164 | tracing_net.net, add_link, 221 | DEBUG | added the link (e0) between h0 and s0
+2021-11-19 05:57:10,660 | 4164 | tracing_net.net, stop_tracing, 557 | INFO | tracing stop

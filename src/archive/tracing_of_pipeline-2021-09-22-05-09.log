@@ -1,0 +1,25 @@
+2021-09-22 05:09:16,085 | 3181 | tracing_net.net, __init__, 97 | INFO | set up on-demand mininet
+2021-09-22 05:09:16,104 | 3181 | tracing_net.net, start, 310 | INFO | mininet start
+2021-09-22 05:09:19,089 | 3193 | tracing_net.api.ws_server, connect, 170 | INFO | connect sid=MUIfF_dtLJEeq0u0AAAB
+2021-09-22 05:09:19,325 | 3193 | tracing_net.api.ws_server, connect, 170 | INFO | connect sid=_ARwAX1WLlGVhcCfAAAD
+2021-09-22 05:09:19,505 | 3193 | tracing_net.api.ws_server, emit2net, 114 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_SWITCH, param={'name': 's0', 'datapath_id': ''})
+2021-09-22 05:09:19,509 | 3193 | tracing_net.api.ws_server, emit2net, 114 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_HOST, param={'name': 'h0', 'ip': '', 'mac': ''})
+2021-09-22 05:09:19,517 | 3193 | tracing_net.api.ws_server, emit2net, 114 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_LINK, param={'name': 'e0', 'host1': 'h0', 'host2': 's0'})
+2021-09-22 05:09:19,520 | 3193 | tracing_net.api.ws_server, emit2net, 114 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_HOST, param={'name': 'h1', 'ip': '', 'mac': ''})
+2021-09-22 05:09:19,541 | 3193 | tracing_net.api.ws_server, emit2net, 114 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_LINK, param={'name': 'e1', 'host1': 'h1', 'host2': 's0'})
+2021-09-22 05:09:20,020 | 3193 | tracing_net.api.ws_server, connect, 170 | INFO | connect sid=wy4HnTlX6-j2BSnSAAAF
+2021-09-22 05:09:20,048 | 3193 | tracing_net.api.ws_server, emit2net, 114 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_SWITCH, param={'name': 's0', 'datapath_id': ''})
+2021-09-22 05:09:20,050 | 3193 | tracing_net.api.ws_server, emit2net, 114 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_HOST, param={'name': 'h0', 'ip': '', 'mac': ''})
+2021-09-22 05:09:20,051 | 3193 | tracing_net.api.ws_server, emit2net, 114 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_LINK, param={'name': 'e0', 'host1': 'h0', 'host2': 's0'})
+2021-09-22 05:09:20,052 | 3193 | tracing_net.api.ws_server, emit2net, 114 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_HOST, param={'name': 'h1', 'ip': '', 'mac': ''})
+2021-09-22 05:09:20,054 | 3193 | tracing_net.api.ws_server, emit2net, 114 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_LINK, param={'name': 'e1', 'host1': 'h1', 'host2': 's0'})
+2021-09-22 05:09:33,914 | 3181 | tracing_net.net, stop, 315 | INFO | mininet stop
+2021-09-22 05:09:33,933 | 3181 | tracing_net.net, stop, 542 | DEBUG | mininet stopped and all capture processes closed
+2021-09-22 05:09:59,605 | 3238 | tracing_net.net, __init__, 97 | INFO | set up on-demand mininet
+2021-09-22 05:09:59,624 | 3238 | tracing_net.net, start, 310 | INFO | mininet start
+2021-09-22 05:10:02,058 | 3250 | tracing_net.api.ws_server, connect, 170 | INFO | connect sid=xU5CF9hFIzmRCq7BAAAB
+2021-09-22 05:10:02,146 | 3250 | tracing_net.api.ws_server, connect, 170 | INFO | connect sid=m7aObUY_sQBte_H7AAAD
+2021-09-22 05:10:04,481 | 3250 | tracing_net.api.ws_server, connect, 170 | INFO | connect sid=_hpHgnkuc2QhyyFwAAAF
+2021-09-22 05:10:05,877 | 3250 | tracing_net.api.ws_server, emit2net, 114 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_SWITCH, param={'name': 's0', 'datapath_id': ''})
+2021-09-22 05:11:19,156 | 3238 | tracing_net.net, stop, 315 | INFO | mininet stop
+2021-09-22 05:11:19,158 | 3238 | tracing_net.net, stop, 542 | DEBUG | mininet stopped and all capture processes closed

@@ -46,7 +46,7 @@ class PacketCapture(Capture):
         capture (pyshark.LiveCapture)
     """
 
-    def __init__(self, interface, parent_conn, output_file=None, event_loop=None):
+    def __init__(self, interface, edge, parent_conn, output_file=None, event_loop=None):
         """init
 
         Args:
@@ -55,18 +55,21 @@ class PacketCapture(Capture):
         """
         super(PacketCapture, self).__init__(parent_conn)
         self.interface = interface
-        self.event_loop = event_loop if event_loop is not None else asyncio.get_event_loop()
+        self.edge = edge
+        # self.event_loop = event_loop if event_loop is not None else asyncio.get_event_loop()
+        self.event_loop = asyncio.new_event_loop()
         self._output_file = output_file
         self.capture = pyshark.LiveCapture(interface=self.interface, eventloop=self.event_loop, use_json=True, include_raw=True)
 
     def start_capture(self):
         """packet capture run"""
         try:
-            logger.info("packet capture start on {}".format(self.interface))
+            logger.info("packet capture start on (interface={}, edge={})".format(self.interface, self.edge))
+            # print(asyncio.all_tasks())
             coroutine = self._get_packet_handler_coro()
             self.event_loop.run_until_complete(coroutine)
         except KeyboardInterrupt as e:
-            logger.info("finish packet capture on {}".format(self.interface))
+            logger.info("finish packet capture on (interface={}, edge={})".format(self.interface, self.edge))
 
     def _get_packet_handler_coro(self):
         return self.capture.packets_from_tshark(self._packet_handler)
@@ -79,8 +82,8 @@ class PacketCapture(Capture):
             pkt (Packet) : packet
         """
         if conf.OUTPUT_PACKETS_TO_LOGFILE:
-            logger.debug("sniff {} : {}".format(pkt.sniff_timestamp, pkt.__class__))
-        self.parent_conn.send([self.interface, Msg(self.interface, float(pkt.sniff_timestamp), pkt)])
+            logger.debug("sniff {} : {} on (interface={}, edge={})".format(pkt.sniff_timestamp, pkt.__class__, self.interface, self.edge))
+        self.parent_conn.send([self.edge, Msg(self.interface, float(pkt.sniff_timestamp), pkt)])
         if self._output_file:
             wrpcap(self._output_file, pkt.get_raw_packet(), append=True)
 

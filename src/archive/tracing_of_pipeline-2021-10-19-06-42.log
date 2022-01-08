@@ -1,0 +1,15 @@
+2021-10-19 06:42:08,309 | 5282 | tracing_net.net, __init__, 99 | INFO | set up on-demand mininet
+2021-10-19 06:42:08,316 | 5282 | tracing_of_pipeline, start, 102 | INFO | OpenFlow Tracer Start
+2021-10-19 06:42:08,340 | 5282 | tracing_net.net, start, 312 | INFO | mininet start
+2021-10-19 06:42:08,363 | 5282 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 06:42:08,368 | 5282 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 06:42:08,380 | 5282 | tracing_net.cli, output, 89 | DEBUG | CLI output exited by user command
+2021-10-19 06:42:08,381 | 5282 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x16exited by user command')
+2021-10-19 06:42:08,383 | 5282 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 06:42:08,385 | 5282 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 06:42:08,390 | 5282 | tracing_net.net, stop_tracing, 541 | INFO | tracing stop
+2021-10-19 06:42:08,418 | 5282 | tracing_of_pipeline, stop, 118 | INFO | OpenFlow Tracer Stop
+2021-10-19 06:42:08,421 | 5282 | tracing_net.net, stop_tracing, 541 | INFO | tracing stop
+2021-10-19 06:42:08,445 | 5282 | tracing_net.net, stop, 317 | INFO | mininet stop
+2021-10-19 06:42:08,446 | 5282 | tracing_net.net, stop, 550 | DEBUG | mininet stopped and all capture processes closed

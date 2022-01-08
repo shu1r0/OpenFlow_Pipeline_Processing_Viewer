@@ -310,7 +310,7 @@ def parse_actions(actions):
     actions_list = re.findall(re_action_entry, actions)
     obj_actions = []
     re_actions = {}
-    re_actions.update(**OVS_ACTIONS, **OVS_INSTRUCTIONS)
+    re_actions.update(**OVS_INSTRUCTIONS, **OVS_ACTIONS)
 
     for action in actions_list:
         for key, value in re_actions.items():  # value is re and parser
@@ -331,8 +331,15 @@ def parse_actions(actions):
                         obj_actions.append(parser())
                 else:
                     logger.warning("no parser (action: {})".format(key))
+                break
     return obj_actions
 
+
+# openflow properties
+convert_match_key = {
+    "nw_dst": "ipv4_dst",
+    "nw_src": "ipv4_src"
+}
 
 def match_to_obj(match):
     """
@@ -358,6 +365,8 @@ def match_to_obj(match):
         if value[0] == '"':
             value = value[1:-1]
         value = value.split('/')
+        if key in convert_match_key.keys():
+            key = convert_match_key[key]
         obj_match = Match(field_name=key)
         if len(value) == 1:
             obj_match.value = _value_to_int(value[0])
@@ -399,7 +408,10 @@ def parse_dump_flow(output_flow):
                     else:
                         instructions.append(a)
                 apply_actions_parser = OVS_INSTRUCTIONS['apply_actions']['parser']
-                dict_entry['actions'] = [apply_actions_parser(action_list)] + instructions
+                if len(action_list) > 0:
+                    dict_entry['actions'] = [apply_actions_parser(action_list)] + instructions
+                else:
+                    dict_entry['actions'] = instructions
         if 'match' in dict_entry.keys():
             if dict_entry['match']:
                 dict_entry['match'] = match_to_obj(dict_entry['match'])
@@ -487,7 +499,10 @@ def _parse_flow_monitor(result):
                     else:
                         instructions.append(a)
                 apply_actions_parser = OVS_INSTRUCTIONS['apply_actions']['parser']
-                dict_entry['actions'] = [apply_actions_parser(action_list)] + instructions
+                if len(action_list) > 0:
+                    dict_entry['actions'] = [apply_actions_parser(action_list)] + instructions
+                else:
+                    dict_entry['actions'] = instructions
         if 'match' in dict_entry.keys():
             if dict_entry['match']:
                 dict_entry['match'] = match_to_obj(dict_entry['match'])
@@ -514,10 +529,10 @@ def parse_flow_monitor(result):
 
     """
     result_list = result.split()
-    if result_list[0] == "NXST_FLOW_MONITOR":
+    if len(result_list) > 0 and result_list[0] == "NXST_FLOW_MONITOR":
         xid = re.search(r'0x\d', result_list[2]).group()
         return {"msg_type": result_list[0], "type": result_list[1], "xid": xid}
-    elif result_list[0].split("=")[0] == 'event':
+    elif len(result_list) > 0 and result_list[0].split("=")[0] == 'event':
         flow_dict = _parse_flow_monitor(result)
         # for r in result:
         #     r = r.split("=")

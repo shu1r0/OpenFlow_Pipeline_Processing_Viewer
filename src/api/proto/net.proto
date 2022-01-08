@@ -19,7 +19,9 @@ package proto;
  */
 message Host{
   optional string name = 1;
+  /** ip address (e.g. 192.168.1.1/24) */
   optional string ip = 2;
+  /** mac address */
   optional string mac = 3;
 }
 
@@ -41,51 +43,28 @@ message Link{
 }
 
 /**
+ * RemoteController
+ *
+ * todo:
+ *     * implement
+ */
+message RemoteController{
+  string controller_ip = 1;
+  int32 controller_port = 2;
+}
+
+/**
  * Packet
+ *
+ * todo:
+ *    implement
  */
 message Packet{
+  float timestamp = 2;
+  string in_port = 3;
+  string in_phy_port = 4;
+  /** packet fileds */
   map<string, string> fields = 1;
-
-//  optional string eth_dst = 1;
-//  optional string eth_src = 3;
-//  optional string eth_type = 5;
-//  optional string vlan_vid = 7;
-//  optional string vlan_pcp = 9;
-//  optional string ip_dscp = 11;
-//  optional string ip_ecn = 13;
-//  optional string ip_proto = 15;
-//  optional string ipv4_src = 17;
-//  optional string ipv4_dst = 19;
-//  optional string tcp_src = 21;
-//  optional string tcp_dst  = 23;
-//  optional string udp_src = 25;
-//  optional string udp_dst = 27;
-//  optional string sctp_src = 29;
-//  optional string sctp_dst = 31;
-//  optional string icmpv4_type = 33;
-//  optional string icmpv4_code = 35;
-//  optional string arp_op = 37;
-//  optional string arp_spa = 39;
-//  optional string arp_tpa = 41;
-//  optional string arp_sha = 43;
-//  optional string arp_tha = 45;
-//  optional string ipv6_src = 47;
-//  optional string ipv6_dst = 49;
-//  optional string ipv6_flabel = 51;
-//  optional string icmpv6_type = 53;
-//  optional string icmpv6_code = 55;
-//  optional string ipv6_nd_target = 57;
-//  optional string ipv6_nd_sll = 59;
-//  optional string ipv6_nd_tll = 61;
-//  optional string mpls_label = 63;
-//  optional string mpls_tc = 65;
-//  optional string mpls_bos = 67;
-//  optional string pbb_isid = 69;
-//  optional string tunnel_id = 71;
-//  optional string ipv6_exthdr = 73;
-//  optional string pbb_uca = 75;
-//  optional string tcp_flags = 77;
-//  optional string actset_output = 101;
 }
 
 /**
@@ -95,15 +74,15 @@ message Packet{
  *    * 対応していないものも含まれています．
  */
 enum InstructionType {
-    OFPIT_INVALID    = 0;
-    OFPIT_GOTO_TABLE = 1;
-    OFPIT_WRITE_METADATA = 2;
-    OFPIT_WRITE_ACTIONS = 3;
-    OFPIT_APPLY_ACTIONS = 4;
-    OFPIT_CLEAR_ACTIONS = 5;
-    OFPIT_METER = 6;
+  OFPIT_INVALID    = 0;
+  OFPIT_GOTO_TABLE = 1;
+  OFPIT_WRITE_METADATA = 2;
+  OFPIT_WRITE_ACTIONS = 3;
+  OFPIT_APPLY_ACTIONS = 4;
+  OFPIT_CLEAR_ACTIONS = 5;
+  OFPIT_METER = 6;
 
-    OFPIT_EXPERIMENTER = 0xFFFF;
+  OFPIT_EXPERIMENTER = 0xFFFF;
 };
 
 /**
@@ -112,7 +91,7 @@ enum InstructionType {
 message Action {
   /**
    * action string
-   * これは可視化するだけなので，とりあえず文字列だけでいいのでは???
+   * これは可視化するだけなので，とりあえず文字列のみ
    */
   optional string str = 1;
 }
@@ -121,6 +100,7 @@ message Action {
  * Action Set
  */
 message ActionSet{
+  // actions in Action Set
   repeated Action actions = 1;
 }
 
@@ -187,9 +167,7 @@ message Flow{
   optional sint32 priority = 6;
   repeated Match match = 7;
   repeated Instruction actions = 8;
-  /**
-   * flow identifier on the system
-   */
+  /** flow identifier on the system */
   optional sint32 flow_id = 9;
 }
 
@@ -205,79 +183,168 @@ message FlowTable{
  */
 message PacketProcessing{
   optional string switch = 1;
+  /** flow table */
   optional FlowTable flow_table = 4;
+  /** final action_set */
   optional ActionSet action_set = 5;
+  /** processing packet */
   repeated Packet pkts = 2;
+  /** list of matched flow id */
   repeated sint32 matched_flows = 3;
-
+  /** After applying actionset to packet*/
   optional Packet packet_after_action_set = 6;
+  /** out_port to packet Mapping */
   map<string, Packet> outs = 7;
 }
 
-// TODO 将来変える
 /*
- * なんか，マッチしたアクション欲しくね？？
-
- ソース化dstどちらかで，どのように処理されたかの情報を内包したい
+ * Packet Arc
  */
 message PacketArc{
   optional string src = 1;
   optional Packet pkt = 2;
+  /** packet processing information on src switch */
   optional PacketProcessing packet_processing = 4;
+
   optional string edge = 5;
   optional string dst = 3;
   optional string dst_interface = 6;
 }
 
 
+/**
+ * packet trace
+ */
 message PacketTrace{
+  float timestamp = 3;
   repeated PacketArc arcs = 1;
   optional string protocol = 2;
 }
 
-//message Port{
-//
-//}
 
+// ---------------------------------------------
+// Request/Reply Message
+// ---------------------------------------------
+
+
+/**
+ * Topology Request
+ *
+ * todo: implement
+ */ 
+message ChangeTopologyRequest{
+  repeated Switch switches = 1;
+  repeated Host hosts = 2;
+  repeated Link links = 3;
+  optional RemoteController controller = 4;
+}
+
+/**
+ * todo: implement
+ */
+message GetFeaturesRequest{
+  repeated Switch switches = 1;
+  repeated Host hosts = 2;
+  repeated Link links = 3;
+}
+
+/**
+ * StartNetworkOption
+ */
+enum StartNetworkOption {
+  NO_OPTION = 0;
+}
+
+/**
+ * Start Network Request
+ * 
+ * todo: implement
+ */
+message StartNetworkRequest {
+  StartNetworkOption option = 1;
+}
+
+/**
+ * start tracing request
+ */
 message StartTracingRequest {
   optional sint32 option = 1;
 }
 
+/**
+ * stop tracing request
+ */
 message StopTracingRequest {
   optional sint32 option = 1;
 }
 
+/**
+ * Get traces Request
+ */
 message GetTraceRequest {
   optional sint32 option = 1;
 }
 
+/**
+ * Get traces Result
+ *
+ * todo: optionをつけてみる？？
+ */
 message GetTraceResult {
+  optional int32 traces_length = 2;
   repeated PacketTrace packet_traces = 1;
 }
 
+/**
+ * Topology Change Result
+ */
 message TopoChangeResult{
   optional sint32 status = 1;
 }
 
+/**
+ * CommandType (todo later)
+ */
+enum CommandType{
+  NOMAL = 0;
+  SIGINT = 1;
+}
+
+/**
+ * Host Command Request
+ */
 message HostCommand{
   optional string host = 1;
   optional string command = 2;
+  optional CommandResultType type = 3;
 }
 
+/**
+ * Mininet Command Request
+ */
 message MininetCommand{
   optional string command = 1;
+  optional CommandType type = 2;
 }
 
 /**
  * comment result type
  */
 enum CommandResultType{
+  /** stdout */
   OUTPUT = 0;
+  /** stderr */
   ERROR = 1;
+  /** commad result end */
   END_SIGNAL = 100;
 }
 
+/**
+ * Command Result
+ */
 message CommandResult {
+  /** Command result type */
   optional CommandResultType type = 1;
+  /** Command result string */
   optional string result = 2;
 }

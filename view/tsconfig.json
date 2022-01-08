@@ -14,7 +14,8 @@
     "baseUrl": ".",
     "types": [
       "webpack-env",
-      "jest"
+      "jest",
+      "webrtc"  // added!
     ],
     "paths": {
       "@/*": [
@@ -30,6 +31,7 @@
   },
   "include": [
     "src/**/*.ts",
+    "src/scripts/remote/net_pb.d.ts",  // added!
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",

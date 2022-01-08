@@ -1,0 +1,16 @@
+2021-09-22 05:15:44,500 | 3439 | tracing_net.net, __init__, 97 | INFO | set up on-demand mininet
+2021-09-22 05:15:44,519 | 3439 | tracing_net.net, start, 310 | INFO | mininet start
+2021-09-22 05:15:45,418 | 3451 | tracing_net.api.ws_server, connect, 152 | INFO | connect sid=4wY0yK9FYqXn5ziPAAAB
+2021-09-22 05:15:47,168 | 3451 | tracing_net.api.ws_server, connect, 152 | INFO | connect sid=DC9t1K-SaD3ieoCtAAAD
+2021-09-22 05:15:47,296 | 3451 | tracing_net.api.ws_server, connect, 152 | INFO | connect sid=e1N9wXa5apYgP6G7AAAF
+2021-09-22 05:15:47,673 | 3451 | tracing_net.api.ws_server, disconnect, 157 | INFO | disconnect sid=DC9t1K-SaD3ieoCtAAAD
+2021-09-22 05:15:48,737 | 3451 | tracing_net.api.ws_server, connect, 152 | INFO | connect sid=M-NnDMserZ-OLpnIAAAH
+2021-09-22 05:15:50,390 | 3451 | tracing_net.api.ws_server, emit2net, 96 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_SWITCH, param={'name': 's0', 'dpid': ''})
+2021-09-22 05:15:50,395 | 3439 | tracing_net.net, add_switch, 114 | DEBUG | added the switch (s0)
+2021-09-22 05:15:52,384 | 3451 | tracing_net.api.ws_server, emit2net, 96 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_HOST, param={'name': 'h0', 'ip': '', 'mac': ''})
+2021-09-22 05:15:52,385 | 3439 | tracing_net.net, add_host, 162 | DEBUG | added the host (h0)
+2021-09-22 05:15:53,632 | 3451 | tracing_net.api.ws_server, emit2net, 96 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_LINK, param={'name': 'e0', 'host1': 'h0', 'host2': 's0'})
+2021-09-22 05:16:28,102 | 3451 | tracing_net.api.ws_server, disconnect, 157 | INFO | disconnect sid=M-NnDMserZ-OLpnIAAAH
+2021-09-22 05:16:29,924 | 3451 | tracing_net.api.ws_server, connect, 152 | INFO | connect sid=jjURUmHEGEMnWVEUAAAJ
+2021-09-22 05:16:30,416 | 3439 | tracing_net.net, stop, 315 | INFO | mininet stop
+2021-09-22 05:16:30,605 | 3439 | tracing_net.net, stop, 542 | DEBUG | mininet stopped and all capture processes closed

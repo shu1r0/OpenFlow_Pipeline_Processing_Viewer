@@ -1,0 +1,8 @@
+2021-11-19 04:57:10,141 | 3610 | tracing_net.net, __init__, 117 | INFO | set up on-demand mininet
+2021-11-19 04:58:32,038 | 3610 | tracing_net.net, stop_tracing, 557 | INFO | tracing stop
+2021-11-19 04:58:32,040 | 3610 | tracing_of_pipeline.analyzer, stop_analyzing, 149 | INFO | stop analyzing interval. (last count = 0)
+2021-11-19 04:58:32,041 | 3610 | tracing_of_pipeline.analyzer, _polling, 552 | DEBUG | polled repository (start_time=0, until=0) values = {} {}
+2021-11-19 04:58:32,041 | 3610 | tracing_of_pipeline.analyzer, analyze, 196 | DEBUG | Analyzing 1... polled repository (count=0)
+2021-11-19 04:58:32,041 | 3610 | tracing_of_pipeline.analyzer, analyze_rest, 161 | INFO | These packets could not be analyzed. {}
+2021-11-19 04:58:32,042 | 3610 | tracing_of_pipeline.analyzer, analyze_rest, 162 | INFO | These OpenFlowMessage could not be analyzed. {}
+2021-11-19 04:58:32,050 | 3610 | tracing_of_pipeline, stop, 139 | INFO | OpenFlow Tracer Stop

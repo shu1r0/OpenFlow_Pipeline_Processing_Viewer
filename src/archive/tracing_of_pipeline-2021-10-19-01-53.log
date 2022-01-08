@@ -1,0 +1,4 @@
+2021-10-19 01:53:30,057 | 3470 | tracing_net.net, __init__, 99 | INFO | set up on-demand mininet
+2021-10-19 01:53:30,059 | 3470 | tracing_of_pipeline, start, 102 | INFO | OpenFlow Tracer Start
+2021-10-19 01:53:30,079 | 3470 | tracing_net.net, start, 312 | INFO | mininet start
+2021-10-19 01:53:44,126 | 3470 | tracing_net.cli, send_end_command_signal, 103 | DEBUG | CLI send end command signal

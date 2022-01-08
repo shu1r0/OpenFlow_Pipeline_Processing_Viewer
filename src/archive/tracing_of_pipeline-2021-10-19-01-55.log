@@ -1,0 +1,7 @@
+2021-10-19 01:55:07,999 | 3525 | tracing_net.net, __init__, 99 | INFO | set up on-demand mininet
+2021-10-19 01:55:08,004 | 3525 | tracing_of_pipeline, start, 102 | INFO | OpenFlow Tracer Start
+2021-10-19 01:55:08,025 | 3525 | tracing_net.net, start, 312 | INFO | mininet start
+2021-10-19 02:01:39,342 | 3525 | tracing_net.cli, send_end_command_signal, 103 | DEBUG | CLI send end command signal
+2021-10-19 02:01:39,345 | 3525 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=type: END_SIGNAL
+result: ""
+)

@@ -1,0 +1,705 @@
+2021-10-19 07:16:24,736 | 3044 | tracing_net.net, __init__, 99 | INFO | set up on-demand mininet
+2021-10-19 07:16:24,738 | 3044 | tracing_of_pipeline, start, 102 | INFO | OpenFlow Tracer Start
+2021-10-19 07:16:24,753 | 3044 | tracing_net.net, start, 312 | INFO | mininet start
+2021-10-19 07:16:24,756 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:24,760 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:24,763 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:24,766 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:24,771 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:24,777 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:24,782 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:24,783 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:24,784 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:24,790 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:24,797 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:24,798 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:24,800 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:24,802 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:24,804 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:24,808 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:24,815 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:24,817 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:24,819 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:24,825 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:24,834 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:24,835 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:24,836 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:24,837 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:24,841 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:24,844 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:24,847 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:24,849 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:24,858 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:24,861 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:24,864 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:24,870 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:24,879 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:24,891 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:24,892 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:24,893 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:24,893 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:24,897 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:24,908 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:24,909 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:24,910 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:24,922 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:24,926 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:24,930 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:24,932 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:24,933 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:24,941 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:24,946 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:24,952 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:24,959 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:24,964 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:24,969 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:24,976 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:24,983 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:24,989 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,004 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,008 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,012 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,014 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,015 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,021 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,026 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,033 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,038 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,040 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,042 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,044 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,050 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,051 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,052 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,053 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,053 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,058 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,060 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,061 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,062 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,063 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,064 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,074 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,079 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,086 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,087 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,088 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,089 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,089 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,096 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,097 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,098 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,098 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,102 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,103 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,104 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,115 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,117 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,125 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,126 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,127 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,140 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,142 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,143 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,146 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,147 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,147 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,148 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,149 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,158 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,159 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,160 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,161 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,176 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,177 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,178 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,186 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,188 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,190 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,191 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,192 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,193 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,197 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,208 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,211 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,224 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,225 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,226 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,228 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,231 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,232 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,233 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,234 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,243 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,244 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,245 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,246 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,248 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,249 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,250 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,260 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,262 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,263 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,279 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,280 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,282 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,283 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,283 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,284 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,286 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,294 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,294 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,295 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,295 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,296 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,296 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,298 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,300 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,310 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,311 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,312 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,314 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,315 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,315 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,315 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,316 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,316 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,317 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,318 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,318 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,333 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,336 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,343 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,347 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,349 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,359 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,363 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,365 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,367 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,367 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,380 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,382 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,396 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,399 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,401 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,403 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,404 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,425 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,427 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,439 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,442 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,445 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,449 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,452 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,454 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,459 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,461 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,464 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,466 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,469 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,471 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,478 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,481 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,485 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,488 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,494 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,498 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,503 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,503 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,514 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,518 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,520 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,521 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,537 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,538 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,547 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,548 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,551 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,552 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,554 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,561 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,567 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,570 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,578 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,583 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,587 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,591 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,593 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,597 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,598 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,601 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,602 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,603 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,604 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,608 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,619 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,623 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,634 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,634 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,635 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,642 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,653 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,666 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,667 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,668 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,670 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,672 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,674 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,678 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,680 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,682 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,683 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,684 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,686 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,687 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,694 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,697 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,701 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,702 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,703 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,704 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,707 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,718 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,718 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,721 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,729 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,731 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,733 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,734 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,737 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,742 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,747 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,749 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,752 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,753 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,759 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,771 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,775 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,776 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,778 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,781 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,785 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,787 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,789 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,792 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,794 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,795 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,802 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,802 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,804 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,805 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,818 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,818 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,820 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,821 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,825 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,828 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,830 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,831 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,834 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,837 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,852 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,868 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,869 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,871 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,879 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,880 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,882 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,883 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,884 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,886 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,887 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,888 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,895 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,897 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,898 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,900 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,901 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,911 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,913 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,914 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,926 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,927 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,931 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,933 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,936 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,937 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,938 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,942 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,946 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,947 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,949 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,950 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,952 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,954 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,958 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,971 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,978 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,979 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,980 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:25,982 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:25,988 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:25,998 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:25,999 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,002 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,003 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,009 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,011 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,015 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,017 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,018 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,019 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,019 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,022 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,026 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,030 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,036 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,037 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,038 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,042 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,046 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,051 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,052 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,053 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,054 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,058 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,065 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,066 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,068 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,071 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,079 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,081 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,085 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,091 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,094 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,098 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,100 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,102 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,103 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,104 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,110 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,113 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,116 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,119 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,119 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,121 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,132 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,138 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,141 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,145 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,152 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,154 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,159 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,170 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,182 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,213 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,214 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,218 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,231 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,234 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,238 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,259 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,261 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,266 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,267 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,269 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,271 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,272 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,276 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,278 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,281 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,283 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,284 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,286 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,287 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,288 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,292 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,294 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,302 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,303 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,303 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,318 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,318 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,319 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,319 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,321 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,326 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,328 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,338 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,342 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,350 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,351 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,352 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,354 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,355 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,358 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,370 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,386 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,386 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,387 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,387 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,402 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,403 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,403 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,404 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,406 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,410 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,418 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,420 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,446 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,447 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,448 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,451 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,453 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,454 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,475 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,476 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,477 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,478 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,479 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,480 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,482 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,483 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,484 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,484 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,493 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,494 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,495 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,501 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,510 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,511 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,512 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,513 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,516 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,519 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,520 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,525 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,534 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,534 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,535 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,535 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,544 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,545 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,547 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,558 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,559 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,561 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,561 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,563 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,566 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,570 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,571 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,576 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,584 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,585 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,586 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,587 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,599 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,601 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,603 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,604 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,618 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,621 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,622 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,628 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,630 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,643 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,645 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,651 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,653 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,661 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,666 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,670 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,678 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,681 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,682 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,683 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,685 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,694 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,702 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,706 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,713 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,714 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,714 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,715 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,716 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,717 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,718 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,718 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,720 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,721 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,721 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,734 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,735 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,735 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,736 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,738 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,742 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,743 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,744 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,746 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,747 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,748 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,758 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,759 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,761 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,763 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,769 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,770 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,771 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,772 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,775 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,777 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,778 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,780 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,780 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,786 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,787 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,788 | 3044 | tracing_net.cli, send_end_command_signal, 105 | DEBUG | CLI send end command signal
+2021-10-19 07:16:26,789 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:16:26,794 | 3044 | tracing_net.cli, output, 89 | DEBUG | CLI output 
+
+2021-10-19 07:16:26,796 | 3044 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x01\n')
+2021-10-19 07:16:26,943 | 3056 | tracing_net.api.ws_server, connect, 267 | INFO | connect sid=z3mjxVao6VIhFebbAAAB
+2021-10-19 07:16:36,118 | 3056 | tracing_net.api.ws_server, emit2net, 105 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.EXEC_MININET_COMMAND, param={'command': 'c0 ls'})
+2021-10-19 07:16:36,119 | 3044 | tracing_net.api.ws_server, get_from_client, 119 | DEBUG | MessageHub receives messages from clients. (response={'event': 'exec_mininet_cmd', 'param': {'command': 'c0 ls'}})
+2021-10-19 07:16:36,120 | 3044 | tracing_net.cli, input, 83 | DEBUG | CLI input c0 ls

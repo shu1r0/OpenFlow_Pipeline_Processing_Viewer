@@ -1,0 +1,159 @@
+2021-10-20 00:10:10,648 | 3833 | tracing_net.net, __init__, 99 | INFO | set up on-demand mininet
+2021-10-20 00:10:10,651 | 3833 | tracing_of_pipeline, start, 105 | INFO | OpenFlow Tracer Start
+2021-10-20 00:10:10,665 | 3833 | tracing_net.net, start, 312 | INFO | mininet start
+2021-10-20 00:10:10,671 | 3833 | tracing_of_pipeline.analyzer, start_analyzing, 102 | INFO | start analyzing
+2021-10-20 00:10:12,675 | 3833 | tracing_of_pipeline.analyzer, _polling, 376 | DEBUG | polled repository (start_time=1634688610.673763, until=0) values = {} {} {}
+2021-10-20 00:10:14,675 | 3833 | tracing_of_pipeline.analyzer, _polling, 376 | DEBUG | polled repository (start_time=1634688610.673763, until=1) values = {} {} {}
+2021-10-20 00:10:15,450 | 3845 | tracing_net.api.ws_server, connect, 280 | INFO | connect sid=Hh57ZrXHwQbA2NLBAAAB
+2021-10-20 00:10:16,676 | 3833 | tracing_of_pipeline.analyzer, _polling, 376 | DEBUG | polled repository (start_time=1634688610.673763, until=2) values = {} {} {}
+2021-10-20 00:10:18,712 | 3833 | tracing_of_pipeline.analyzer, _polling, 376 | DEBUG | polled repository (start_time=1634688610.673763, until=3) values = {} {} {}
+2021-10-20 00:10:20,046 | 3845 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_SWITCH, param={'name': 's0', 'dpid': ''})
+2021-10-20 00:10:20,049 | 3833 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'add_switch', 'param': {'name': 's0', 'dpid': ''}})
+2021-10-20 00:10:20,050 | 3833 | tracing_net.net, add_switch, 116 | DEBUG | added the switch (s0)
+2021-10-20 00:10:20,680 | 3833 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 419 | ERROR | Failed to get datapath_id s0
+2021-10-20 00:10:20,685 | 3833 | tracing_of_pipeline.analyzer, _polling, 376 | DEBUG | polled repository (start_time=1634688610.673763, until=4) values = {} {} {}
+2021-10-20 00:10:21,923 | 3845 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_HOST, param={'name': 'h0', 'ip': '', 'mac': ''})
+2021-10-20 00:10:21,924 | 3833 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'add_host', 'param': {'name': 'h0', 'ip': '', 'mac': ''}})
+2021-10-20 00:10:21,926 | 3833 | tracing_net.net, add_host, 164 | DEBUG | added the host (h0)
+2021-10-20 00:10:22,674 | 3833 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 419 | ERROR | Failed to get datapath_id s0
+2021-10-20 00:10:22,680 | 3833 | tracing_of_pipeline.analyzer, _polling, 376 | DEBUG | polled repository (start_time=1634688610.673763, until=5) values = {} {} {}
+2021-10-20 00:10:23,972 | 3845 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_LINK, param={'link_name': 'e0', 'host_name1': 'h0', 'host_name2': 's0'})
+2021-10-20 00:10:23,979 | 3833 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'add_link', 'param': {'link_name': 'e0', 'host_name1': 'h0', 'host_name2': 's0'}})
+2021-10-20 00:10:23,982 | 3833 | tracing_net.net, add_link, 203 | DEBUG | added the link (e0) between h0 and s0
+2021-10-20 00:10:24,674 | 3833 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 00:10:24,675 | 3833 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 419 | ERROR | Failed to get datapath_id s0
+2021-10-20 00:10:24,678 | 3833 | tracing_of_pipeline.analyzer, _polling, 376 | DEBUG | polled repository (start_time=1634688610.673763, until=6) values = {'e0': []} {} {}
+2021-10-20 00:10:24,679 | 3833 | tracing_of_pipeline.analyzer, analyze, 160 | WARNING | No packet in edge e0
+2021-10-20 00:10:26,675 | 3833 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 00:10:26,677 | 3833 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 419 | ERROR | Failed to get datapath_id s0
+2021-10-20 00:10:26,677 | 3833 | tracing_of_pipeline.analyzer, _polling, 376 | DEBUG | polled repository (start_time=1634688610.673763, until=7) values = {'e0': []} {} {}
+2021-10-20 00:10:26,678 | 3833 | tracing_of_pipeline.analyzer, analyze, 160 | WARNING | No packet in edge e0
+2021-10-20 00:10:28,674 | 3833 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 00:10:28,675 | 3833 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 419 | ERROR | Failed to get datapath_id s0
+2021-10-20 00:10:28,676 | 3833 | tracing_of_pipeline.analyzer, _polling, 376 | DEBUG | polled repository (start_time=1634688610.673763, until=8) values = {'e0': []} {} {}
+2021-10-20 00:10:28,677 | 3833 | tracing_of_pipeline.analyzer, analyze, 160 | WARNING | No packet in edge e0
+2021-10-20 00:10:30,674 | 3833 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 00:10:30,675 | 3833 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 419 | ERROR | Failed to get datapath_id s0
+2021-10-20 00:10:30,675 | 3833 | tracing_of_pipeline.analyzer, _polling, 376 | DEBUG | polled repository (start_time=1634688610.673763, until=9) values = {'e0': []} {} {}
+2021-10-20 00:10:30,676 | 3833 | tracing_of_pipeline.analyzer, analyze, 160 | WARNING | No packet in edge e0
+2021-10-20 00:10:31,056 | 3845 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_HOST, param={'name': 'h1', 'ip': '', 'mac': ''})
+2021-10-20 00:10:31,057 | 3833 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'add_host', 'param': {'name': 'h1', 'ip': '', 'mac': ''}})
+2021-10-20 00:10:31,057 | 3833 | tracing_net.net, add_host, 164 | DEBUG | added the host (h1)
+2021-10-20 00:10:32,290 | 3845 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_LINK, param={'link_name': 'e1', 'host_name1': 'h1', 'host_name2': 's0'})
+2021-10-20 00:10:32,298 | 3833 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'add_link', 'param': {'link_name': 'e1', 'host_name1': 'h1', 'host_name2': 's0'}})
+2021-10-20 00:10:32,300 | 3833 | tracing_net.net, add_link, 203 | DEBUG | added the link (e1) between h1 and s0
+2021-10-20 00:10:32,674 | 3833 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 00:10:32,675 | 3833 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 00:10:32,676 | 3833 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 419 | ERROR | Failed to get datapath_id s0
+2021-10-20 00:10:32,676 | 3833 | tracing_of_pipeline.analyzer, _polling, 376 | DEBUG | polled repository (start_time=1634688610.673763, until=10) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 00:10:32,677 | 3833 | tracing_of_pipeline.analyzer, analyze, 160 | WARNING | No packet in edge e0
+2021-10-20 00:10:32,677 | 3833 | tracing_of_pipeline.analyzer, analyze, 160 | WARNING | No packet in edge e1
+2021-10-20 00:10:34,678 | 3833 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 00:10:34,682 | 3833 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 00:10:34,686 | 3833 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 419 | ERROR | Failed to get datapath_id s0
+2021-10-20 00:10:34,691 | 3833 | tracing_of_pipeline.analyzer, _polling, 376 | DEBUG | polled repository (start_time=1634688610.673763, until=11) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 00:10:34,696 | 3833 | tracing_of_pipeline.analyzer, analyze, 160 | WARNING | No packet in edge e0
+2021-10-20 00:10:34,697 | 3833 | tracing_of_pipeline.analyzer, analyze, 160 | WARNING | No packet in edge e1
+2021-10-20 00:10:36,674 | 3833 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 00:10:36,675 | 3833 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 00:10:36,676 | 3833 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 419 | ERROR | Failed to get datapath_id s0
+2021-10-20 00:10:36,680 | 3833 | tracing_of_pipeline.analyzer, _polling, 376 | DEBUG | polled repository (start_time=1634688610.673763, until=12) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 00:10:36,683 | 3833 | tracing_of_pipeline.analyzer, analyze, 160 | WARNING | No packet in edge e0
+2021-10-20 00:10:36,689 | 3833 | tracing_of_pipeline.analyzer, analyze, 160 | WARNING | No packet in edge e1
+2021-10-20 00:10:38,127 | 3845 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.START_TRACING, param={})
+2021-10-20 00:10:38,128 | 3833 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'start_tracing', 'param': {}})
+2021-10-20 00:10:38,128 | 3833 | tracing_net.net, start_tracing, 525 | INFO | tracing start
+2021-10-20 00:10:38,129 | 3833 | tracing_net.net, start_tracing, 527 | DEBUG | ipv6 is disable
+2021-10-20 00:10:38,162 | 3833 | tracing_net.packet_capture_manager, start_capture, 87 | DEBUG | capture process (h0-eth0:None) started
+2021-10-20 00:10:38,172 | 3833 | tracing_net.packet_capture_manager, start_capture, 87 | DEBUG | capture process (h1-eth0:None) started
+2021-10-20 00:10:38,172 | 3942 | tracing_net.util.packet_capture, start_capture, 58 | INFO | packet capture start on h0-eth0
+2021-10-20 00:10:38,180 | 3833 | tracing_net.flowtable.flow_monitor, __init__, 46 | INFO | flow monitor start : s0
+2021-10-20 00:10:38,197 | 3944 | tracing_net.util.packet_capture, start_capture, 58 | INFO | packet capture start on h1-eth0
+2021-10-20 00:10:38,678 | 3833 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 00:10:38,678 | 3833 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 00:10:38,679 | 3833 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 419 | ERROR | Failed to get datapath_id s0
+2021-10-20 00:10:38,679 | 3833 | tracing_of_pipeline.analyzer, _polling, 376 | DEBUG | polled repository (start_time=1634688610.673763, until=13) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 00:10:38,680 | 3833 | tracing_of_pipeline.analyzer, analyze, 160 | WARNING | No packet in edge e0
+2021-10-20 00:10:38,680 | 3833 | tracing_of_pipeline.analyzer, analyze, 160 | WARNING | No packet in edge e1
+2021-10-20 00:10:39,214 | 3947 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s0
+2021-10-20 00:10:39,250 | 3947 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634688639.236707 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=18.998s, table=0, n_packets=13, n_bytes=1062, priority=0 actions=CONTROLLER:65535']
+2021-10-20 00:10:39,342 | 3947 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634688639.236707 : <FlowTables(datapath=0, timestamp=1634688639.236707, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 00:10:40,215 | 3947 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s0
+2021-10-20 00:10:40,238 | 3947 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634688640.229255 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=19.987s, table=0, n_packets=13, n_bytes=1062, priority=0 actions=CONTROLLER:65535']
+2021-10-20 00:10:40,240 | 3947 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634688640.229255 : <FlowTables(datapath=0, timestamp=1634688640.229255, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 00:10:40,674 | 3833 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 00:10:40,675 | 3833 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 00:10:40,676 | 3833 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 419 | ERROR | Failed to get datapath_id s0
+2021-10-20 00:10:40,676 | 3833 | tracing_of_pipeline.analyzer, _polling, 376 | DEBUG | polled repository (start_time=1634688610.673763, until=14) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 00:10:40,677 | 3833 | tracing_of_pipeline.analyzer, analyze, 160 | WARNING | No packet in edge e0
+2021-10-20 00:10:40,678 | 3833 | tracing_of_pipeline.analyzer, analyze, 160 | WARNING | No packet in edge e1
+2021-10-20 00:10:41,217 | 3947 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s0
+2021-10-20 00:10:41,226 | 3947 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634688641.22273 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=20.975s, table=0, n_packets=13, n_bytes=1062, priority=0 actions=CONTROLLER:65535']
+2021-10-20 00:10:41,227 | 3947 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634688641.22273 : <FlowTables(datapath=0, timestamp=1634688641.22273, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 00:10:42,213 | 3947 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s0
+2021-10-20 00:10:42,228 | 3947 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634688642.220575 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=21.975s, table=0, n_packets=13, n_bytes=1062, priority=0 actions=CONTROLLER:65535']
+2021-10-20 00:10:42,229 | 3947 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634688642.220575 : <FlowTables(datapath=0, timestamp=1634688642.220575, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 00:10:42,677 | 3833 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 00:10:42,677 | 3833 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 00:10:42,678 | 3833 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 419 | ERROR | Failed to get datapath_id s0
+2021-10-20 00:10:42,678 | 3833 | tracing_of_pipeline.analyzer, _polling, 376 | DEBUG | polled repository (start_time=1634688610.673763, until=15) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 00:10:42,679 | 3833 | tracing_of_pipeline.analyzer, analyze, 160 | WARNING | No packet in edge e0
+2021-10-20 00:10:42,679 | 3833 | tracing_of_pipeline.analyzer, analyze, 160 | WARNING | No packet in edge e1
+2021-10-20 00:10:43,213 | 3947 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s0
+2021-10-20 00:10:43,226 | 3947 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634688643.219988 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=22.975s, table=0, n_packets=13, n_bytes=1062, priority=0 actions=CONTROLLER:65535']
+2021-10-20 00:10:43,227 | 3947 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634688643.219988 : <FlowTables(datapath=0, timestamp=1634688643.219988, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 00:10:44,213 | 3947 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s0
+2021-10-20 00:10:44,222 | 3947 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634688644.218852 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=23.971s, table=0, n_packets=13, n_bytes=1062, priority=0 actions=CONTROLLER:65535']
+2021-10-20 00:10:44,223 | 3947 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634688644.218852 : <FlowTables(datapath=0, timestamp=1634688644.218852, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 00:10:44,677 | 3833 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 00:10:44,678 | 3833 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 00:10:44,679 | 3833 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 419 | ERROR | Failed to get datapath_id s0
+2021-10-20 00:10:44,679 | 3833 | tracing_of_pipeline.analyzer, _polling, 376 | DEBUG | polled repository (start_time=1634688610.673763, until=16) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 00:10:44,679 | 3833 | tracing_of_pipeline.analyzer, analyze, 160 | WARNING | No packet in edge e0
+2021-10-20 00:10:44,680 | 3833 | tracing_of_pipeline.analyzer, analyze, 160 | WARNING | No packet in edge e1
+2021-10-20 00:10:45,217 | 3947 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s0
+2021-10-20 00:10:45,230 | 3947 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634688645.227056 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=24.979s, table=0, n_packets=13, n_bytes=1062, priority=0 actions=CONTROLLER:65535']
+2021-10-20 00:10:45,238 | 3947 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634688645.227056 : <FlowTables(datapath=0, timestamp=1634688645.227056, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 00:10:46,232 | 3947 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s0
+2021-10-20 00:10:46,251 | 3947 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634688646.246219 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=0.197s, table=0, n_packets=1, n_bytes=98, priority=1,in_port=2,dl_src=b2:2c:8e:67:85:11,dl_dst=b2:47:58:d9:22:87 actions=output:1', ' cookie=0x0, duration=0.165s, table=0, n_packets=0, n_bytes=0, priority=1,in_port=1,dl_src=b2:47:58:d9:22:87,dl_dst=b2:2c:8e:67:85:11 actions=output:2', ' cookie=0x0, duration=25.999s, table=0, n_packets=16, n_bytes=1244, priority=0 actions=CONTROLLER:65535']
+2021-10-20 00:10:46,254 | 3947 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634688646.246219 : <FlowTables(datapath=0, timestamp=1634688646.246219, flows=[<Flow(table=0, priority=1, match=[<in_port, 2/None>, <dl_src, b2:2c:8e:67:85:11/None>, <dl_dst, b2:47:58:d9:22:87/None>], actions=[<InstructionApplyAction type=4>])>, <Flow(table=0, priority=1, match=[<in_port, 1/None>, <dl_src, b2:47:58:d9:22:87/None>, <dl_dst, b2:2c:8e:67:85:11/None>], actions=[<InstructionApplyAction type=4>])>, <Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 00:10:46,674 | 3833 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 00:10:46,678 | 3833 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 00:10:46,688 | 3833 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 419 | ERROR | Failed to get datapath_id s0
+2021-10-20 00:10:46,689 | 3833 | tracing_of_pipeline.analyzer, _polling, 376 | DEBUG | polled repository (start_time=1634688610.673763, until=17) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 00:10:46,691 | 3833 | tracing_of_pipeline.analyzer, analyze, 160 | WARNING | No packet in edge e0
+2021-10-20 00:10:46,696 | 3833 | tracing_of_pipeline.analyzer, analyze, 160 | WARNING | No packet in edge e1
+2021-10-20 00:10:47,214 | 3947 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s0
+2021-10-20 00:10:47,236 | 3947 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634688647.226031 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=1.181s, table=0, n_packets=2, n_bytes=196, priority=1,in_port=2,dl_src=b2:2c:8e:67:85:11,dl_dst=b2:47:58:d9:22:87 actions=output:1', ' cookie=0x0, duration=1.149s, table=0, n_packets=1, n_bytes=98, priority=1,in_port=1,dl_src=b2:47:58:d9:22:87,dl_dst=b2:2c:8e:67:85:11 actions=output:2', ' cookie=0x0, duration=26.983s, table=0, n_packets=16, n_bytes=1244, priority=0 actions=CONTROLLER:65535']
+2021-10-20 00:10:47,240 | 3947 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634688647.226031 : <FlowTables(datapath=0, timestamp=1634688647.226031, flows=[<Flow(table=0, priority=1, match=[<in_port, 2/None>, <dl_src, b2:2c:8e:67:85:11/None>, <dl_dst, b2:47:58:d9:22:87/None>], actions=[<InstructionApplyAction type=4>])>, <Flow(table=0, priority=1, match=[<in_port, 1/None>, <dl_src, b2:47:58:d9:22:87/None>, <dl_dst, b2:2c:8e:67:85:11/None>], actions=[<InstructionApplyAction type=4>])>, <Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 00:10:48,215 | 3947 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s0
+2021-10-20 00:10:48,223 | 3947 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634688648.220155 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=2.170s, table=0, n_packets=3, n_bytes=294, priority=1,in_port=2,dl_src=b2:2c:8e:67:85:11,dl_dst=b2:47:58:d9:22:87 actions=output:1', ' cookie=0x0, duration=2.138s, table=0, n_packets=2, n_bytes=196, priority=1,in_port=1,dl_src=b2:47:58:d9:22:87,dl_dst=b2:2c:8e:67:85:11 actions=output:2', ' cookie=0x0, duration=27.972s, table=0, n_packets=16, n_bytes=1244, priority=0 actions=CONTROLLER:65535']
+2021-10-20 00:10:48,224 | 3947 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634688648.220155 : <FlowTables(datapath=0, timestamp=1634688648.220155, flows=[<Flow(table=0, priority=1, match=[<in_port, 2/None>, <dl_src, b2:2c:8e:67:85:11/None>, <dl_dst, b2:47:58:d9:22:87/None>], actions=[<InstructionApplyAction type=4>])>, <Flow(table=0, priority=1, match=[<in_port, 1/None>, <dl_src, b2:47:58:d9:22:87/None>, <dl_dst, b2:2c:8e:67:85:11/None>], actions=[<InstructionApplyAction type=4>])>, <Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 00:10:48,674 | 3833 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 00:10:48,682 | 3833 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 00:10:48,683 | 3833 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 419 | ERROR | Failed to get datapath_id s0
+2021-10-20 00:10:48,684 | 3833 | tracing_of_pipeline.analyzer, _polling, 376 | DEBUG | polled repository (start_time=1634688610.673763, until=18) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 00:10:48,687 | 3833 | tracing_of_pipeline.analyzer, analyze, 160 | WARNING | No packet in edge e0
+2021-10-20 00:10:48,689 | 3833 | tracing_of_pipeline.analyzer, analyze, 160 | WARNING | No packet in edge e1
+2021-10-20 00:10:49,213 | 3947 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s0
+2021-10-20 00:10:49,230 | 3947 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634688649.221556 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=3.174s, table=0, n_packets=4, n_bytes=392, priority=1,in_port=2,dl_src=b2:2c:8e:67:85:11,dl_dst=b2:47:58:d9:22:87 actions=output:1', ' cookie=0x0, duration=3.142s, table=0, n_packets=3, n_bytes=294, priority=1,in_port=1,dl_src=b2:47:58:d9:22:87,dl_dst=b2:2c:8e:67:85:11 actions=output:2', ' cookie=0x0, duration=28.976s, table=0, n_packets=16, n_bytes=1244, priority=0 actions=CONTROLLER:65535']
+2021-10-20 00:10:49,232 | 3947 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634688649.221556 : <FlowTables(datapath=0, timestamp=1634688649.221556, flows=[<Flow(table=0, priority=1, match=[<in_port, 2/None>, <dl_src, b2:2c:8e:67:85:11/None>, <dl_dst, b2:47:58:d9:22:87/None>], actions=[<InstructionApplyAction type=4>])>, <Flow(table=0, priority=1, match=[<in_port, 1/None>, <dl_src, b2:47:58:d9:22:87/None>, <dl_dst, b2:2c:8e:67:85:11/None>], actions=[<InstructionApplyAction type=4>])>, <Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 00:10:49,379 | 3944 | tracing_net.util.packet_capture, start_capture, 62 | INFO | finish packet capture on h1-eth0
+2021-10-20 00:10:49,379 | 3942 | tracing_net.util.packet_capture, start_capture, 62 | INFO | finish packet capture on h0-eth0
+2021-10-20 00:10:50,674 | 3833 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 00:10:50,674 | 3833 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 00:10:50,675 | 3833 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 419 | ERROR | Failed to get datapath_id s0
+2021-10-20 00:10:50,675 | 3833 | tracing_of_pipeline.analyzer, _polling, 376 | DEBUG | polled repository (start_time=1634688610.673763, until=19) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 00:10:50,676 | 3833 | tracing_of_pipeline.analyzer, analyze, 160 | WARNING | No packet in edge e0
+2021-10-20 00:10:50,676 | 3833 | tracing_of_pipeline.analyzer, analyze, 160 | WARNING | No packet in edge e1
+2021-10-20 00:10:50,825 | 3833 | tracing_net.net, stop_tracing, 541 | INFO | tracing stop
+2021-10-20 00:10:50,826 | 3833 | tracing_net.packet_capture_manager, stop_capture, 120 | DEBUG | capture process (h0-eth0:3942) terminated
+2021-10-20 00:10:50,827 | 3833 | tracing_net.packet_capture_manager, stop_capture, 120 | DEBUG | capture process (h1-eth0:3944) terminated
+2021-10-20 00:10:50,828 | 3833 | tracing_net.flowtable.flow_table_manager, stop_poller, 101 | DEBUG | poller process (s0:3947) terminated
+2021-10-20 00:10:50,829 | 3833 | tracing_of_pipeline, stop, 124 | INFO | OpenFlow Tracer Stop
+2021-10-20 00:10:50,833 | 3833 | tracing_net.net, stop_tracing, 541 | INFO | tracing stop
+2021-10-20 00:10:50,840 | 3833 | tracing_net.packet_capture_manager, stop_capture, 120 | DEBUG | capture process (h0-eth0:3942) terminated
+2021-10-20 00:10:50,847 | 3833 | tracing_net.packet_capture_manager, stop_capture, 120 | DEBUG | capture process (h1-eth0:3944) terminated
+2021-10-20 00:10:50,847 | 3833 | tracing_net.flowtable.flow_table_manager, stop_poller, 101 | DEBUG | poller process (s0:3947) terminated
+2021-10-20 00:10:50,848 | 3833 | tracing_net.net, stop, 317 | INFO | mininet stop
+2021-10-20 00:10:51,058 | 3833 | tracing_net.net, stop, 550 | DEBUG | mininet stopped and all capture processes closed

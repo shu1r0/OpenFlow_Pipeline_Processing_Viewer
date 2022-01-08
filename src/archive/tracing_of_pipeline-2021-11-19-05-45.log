@@ -1,0 +1,12 @@
+2021-11-19 05:45:07,063 | 4045 | tracing_net.net, __init__, 117 | INFO | set up on-demand mininet
+2021-11-19 05:45:07,212 | 4045 | tracing_net.api.ws_server, connect, 230 | INFO | connect sid=M5haE-8YY3hHC6edAAAB
+2021-11-19 05:45:30,015 | 4045 | tracing_net.api.ws_server, emit2tracer, 134 | DEBUG | ws_server -> tracer (event=WSEvent.ADD_SWITCH, param={'name': 's0', 'dpid': ''})
+2021-11-19 05:45:35,313 | 4045 | tracing_net.api.ws_server, emit2tracer, 134 | DEBUG | ws_server -> tracer (event=WSEvent.ADD_HOST, param={'name': 'h0', 'ip': '', 'mac': ''})
+2021-11-19 05:46:04,916 | 4045 | tracing_net.api.ws_server, emit2tracer, 134 | DEBUG | ws_server -> tracer (event=WSEvent.ADD_LINK, param={'link_name': 'e0', 'host_name1': 'h0', 'host_name2': 's0'})
+2021-11-19 05:50:14,653 | 4045 | tracing_net.net, stop_tracing, 557 | INFO | tracing stop
+2021-11-19 05:50:14,656 | 4045 | tracing_of_pipeline.analyzer, stop_analyzing, 149 | INFO | stop analyzing interval. (last count = 0)
+2021-11-19 05:50:14,657 | 4045 | tracing_of_pipeline.analyzer, _polling, 552 | DEBUG | polled repository (start_time=0, until=0) values = {} {}
+2021-11-19 05:50:14,657 | 4045 | tracing_of_pipeline.analyzer, analyze, 196 | DEBUG | Analyzing 1... polled repository (count=0)
+2021-11-19 05:50:14,657 | 4045 | tracing_of_pipeline.analyzer, analyze_rest, 161 | INFO | These packets could not be analyzed. {}
+2021-11-19 05:50:14,659 | 4045 | tracing_of_pipeline.analyzer, analyze_rest, 162 | INFO | These OpenFlowMessage could not be analyzed. {}
+2021-11-19 05:50:14,668 | 4045 | tracing_of_pipeline, stop, 138 | INFO | OpenFlow Tracer Stop

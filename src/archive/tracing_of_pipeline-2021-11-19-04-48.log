@@ -1,0 +1,3 @@
+2021-11-19 04:48:10,956 | 3405 | tracing_net.net, __init__, 117 | INFO | set up on-demand mininet
+2021-11-19 04:50:28,292 | 3405 | tracing_net.net, stop_tracing, 557 | INFO | tracing stop
+2021-11-19 04:50:28,293 | 3405 | tracing_of_pipeline.analyzer, stop_analyzing, 149 | INFO | stop analyzing interval. (last count = 0)

@@ -1,0 +1,18 @@
+2021-09-22 05:17:53,979 | 3696 | tracing_net.net, __init__, 97 | INFO | set up on-demand mininet
+2021-09-22 05:17:54,029 | 3696 | tracing_net.net, start, 310 | INFO | mininet start
+2021-09-22 05:17:55,563 | 3708 | tracing_net.api.ws_server, connect, 152 | INFO | connect sid=Upc-MdrIz04qe-hGAAAD
+2021-09-22 05:17:55,594 | 3708 | tracing_net.api.ws_server, connect, 152 | INFO | connect sid=YvkcZUKO-3WKL3ukAAAE
+2021-09-22 05:17:57,666 | 3708 | tracing_net.api.ws_server, connect, 152 | INFO | connect sid=SsygQM2bwKiaUc08AAAG
+2021-09-22 05:18:48,440 | 3708 | tracing_net.api.ws_server, emit2net, 96 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_SWITCH, param={'name': 's0', 'dpid': ''})
+2021-09-22 05:18:48,452 | 3696 | tracing_net.net, add_switch, 114 | DEBUG | added the switch (s0)
+2021-09-22 05:18:49,706 | 3708 | tracing_net.api.ws_server, emit2net, 96 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_HOST, param={'name': 'h0', 'ip': '', 'mac': ''})
+2021-09-22 05:18:49,708 | 3696 | tracing_net.net, add_host, 162 | DEBUG | added the host (h0)
+2021-09-22 05:18:50,852 | 3708 | tracing_net.api.ws_server, emit2net, 96 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_LINK, param={'link_name': 'e0', 'host_name1': 'h0', 'host_name2': 's0'})
+2021-09-22 05:18:50,854 | 3696 | tracing_net.net, add_link, 201 | DEBUG | added the link (e0) between h0 and s0
+2021-09-22 05:18:51,778 | 3708 | tracing_net.api.ws_server, emit2net, 96 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_HOST, param={'name': 'h1', 'ip': '', 'mac': ''})
+2021-09-22 05:18:51,780 | 3696 | tracing_net.net, add_host, 162 | DEBUG | added the host (h1)
+2021-09-22 05:18:52,740 | 3708 | tracing_net.api.ws_server, emit2net, 96 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_LINK, param={'link_name': 'e1', 'host_name1': 'h1', 'host_name2': 's0'})
+2021-09-22 05:18:52,744 | 3696 | tracing_net.net, add_link, 201 | DEBUG | added the link (e1) between h1 and s0
+2021-09-22 05:19:55,365 | 3708 | tracing_net.api.ws_server, disconnect, 157 | INFO | disconnect sid=YvkcZUKO-3WKL3ukAAAE
+2021-09-22 05:19:55,520 | 3708 | tracing_net.api.ws_server, disconnect, 157 | INFO | disconnect sid=Upc-MdrIz04qe-hGAAAD
+2021-09-22 05:19:57,457 | 3708 | tracing_net.api.ws_server, disconnect, 157 | INFO | disconnect sid=SsygQM2bwKiaUc08AAAG

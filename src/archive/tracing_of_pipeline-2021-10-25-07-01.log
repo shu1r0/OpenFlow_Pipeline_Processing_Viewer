@@ -1,0 +1,60 @@
+2021-10-25 07:01:09,247 | 5109 | tracing_net.net, __init__, 99 | INFO | set up on-demand mininet
+2021-10-25 07:01:09,249 | 5109 | tracing_of_pipeline, start, 113 | INFO | OpenFlow Tracer Start
+2021-10-25 07:01:09,261 | 5109 | tracing_net.net, start, 312 | INFO | mininet start
+2021-10-25 07:01:09,266 | 5109 | tracing_of_pipeline.analyzer, start_analyzing, 106 | INFO | start analyzing
+2021-10-25 07:01:09,274 | 5109 | tracing_net.net, add_switch, 116 | DEBUG | added the switch (s1)
+2021-10-25 07:01:09,385 | 5109 | tracing_net.net, add_host, 164 | DEBUG | added the host (h1)
+2021-10-25 07:01:09,466 | 5109 | tracing_net.net, add_link, 203 | DEBUG | added the link (l2) between s1 and h1
+2021-10-25 07:01:09,556 | 5109 | tracing_net.net, add_switch, 116 | DEBUG | added the switch (s2)
+2021-10-25 07:01:09,613 | 5109 | tracing_net.net, add_link, 203 | DEBUG | added the link (l1) between s1 and s2
+2021-10-25 07:01:09,770 | 5109 | tracing_net.net, add_host, 164 | DEBUG | added the host (h2)
+2021-10-25 07:01:09,829 | 5109 | tracing_net.net, add_link, 203 | DEBUG | added the link (l3) between s2 and h2
+2021-10-25 07:01:11,271 | 5109 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-25 07:01:11,272 | 5109 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-25 07:01:11,273 | 5109 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-25 07:01:11,274 | 5109 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 462 | DEBUG | tmp_p = [], s_dpip = 1
+2021-10-25 07:01:11,276 | 5109 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 462 | DEBUG | tmp_p = [], s_dpip = 2
+2021-10-25 07:01:11,276 | 5109 | tracing_of_pipeline.analyzer, _polling, 423 | DEBUG | polled repository (start_time=1635145269.270553, until=0) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-25 07:01:11,277 | 5109 | tracing_of_pipeline.analyzer, analyze, 175 | WARNING | No packet in edge l2
+2021-10-25 07:01:11,278 | 5109 | tracing_of_pipeline.analyzer, analyze, 175 | WARNING | No packet in edge l1
+2021-10-25 07:01:11,278 | 5109 | tracing_of_pipeline.analyzer, analyze, 175 | WARNING | No packet in edge l3
+2021-10-25 07:01:13,288 | 5109 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-25 07:01:13,289 | 5109 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-25 07:01:13,290 | 5109 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-25 07:01:13,291 | 5109 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 462 | DEBUG | tmp_p = [], s_dpip = 1
+2021-10-25 07:01:13,301 | 5109 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 462 | DEBUG | tmp_p = [], s_dpip = 2
+2021-10-25 07:01:13,302 | 5109 | tracing_of_pipeline.analyzer, _polling, 423 | DEBUG | polled repository (start_time=1635145269.270553, until=1) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-25 07:01:13,304 | 5109 | tracing_of_pipeline.analyzer, analyze, 175 | WARNING | No packet in edge l2
+2021-10-25 07:01:13,305 | 5109 | tracing_of_pipeline.analyzer, analyze, 175 | WARNING | No packet in edge l1
+2021-10-25 07:01:13,306 | 5109 | tracing_of_pipeline.analyzer, analyze, 175 | WARNING | No packet in edge l3
+2021-10-25 07:01:13,778 | 5109 | tracing_of_pipeline, _handle_ofc_child_conn, 167 | DEBUG | get from ofcapture <Message msg_name=OFPT_PACKET_IN of_msg=PacketIn(xid=UBInt32(0)) timestamp=1635145273.760136 local_port=40338 datapath_id=1>
+2021-10-25 07:01:13,786 | 5109 | tracing_of_pipeline, _handle_ofc_child_conn, 167 | DEBUG | get from ofcapture <Message msg_name=OFPT_PACKET_OUT of_msg=PacketOut(xid=UBInt32(3298273350)) timestamp=1635145273.775082 local_port=40338 datapath_id=1>
+2021-10-25 07:01:13,801 | 5109 | tracing_of_pipeline, _handle_ofc_child_conn, 167 | DEBUG | get from ofcapture <Message msg_name=OFPT_PACKET_IN of_msg=PacketIn(xid=UBInt32(0)) timestamp=1635145273.781669 local_port=40340 datapath_id=2>
+2021-10-25 07:01:13,810 | 5109 | tracing_of_pipeline, _handle_ofc_child_conn, 167 | DEBUG | get from ofcapture <Message msg_name=OFPT_PACKET_OUT of_msg=PacketOut(xid=UBInt32(3921568969)) timestamp=1635145273.798102 local_port=40340 datapath_id=2>
+2021-10-25 07:01:13,823 | 5109 | tracing_of_pipeline, _handle_ofc_child_conn, 167 | DEBUG | get from ofcapture <Message msg_name=OFPT_PACKET_IN of_msg=PacketIn(xid=UBInt32(0)) timestamp=1635145273.811067 local_port=40340 datapath_id=2>
+2021-10-25 07:01:15,307 | 5109 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-25 07:01:15,311 | 5109 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-25 07:01:15,319 | 5109 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-25 07:01:15,323 | 5109 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 462 | DEBUG | tmp_p = [], s_dpip = 1
+2021-10-25 07:01:15,324 | 5109 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 462 | DEBUG | tmp_p = [], s_dpip = 2
+2021-10-25 07:01:15,325 | 5109 | tracing_of_pipeline.analyzer, _polling, 423 | DEBUG | polled repository (start_time=1635145269.270553, until=2) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-25 07:01:15,325 | 5109 | tracing_of_pipeline.analyzer, analyze, 175 | WARNING | No packet in edge l2
+2021-10-25 07:01:15,326 | 5109 | tracing_of_pipeline.analyzer, analyze, 175 | WARNING | No packet in edge l1
+2021-10-25 07:01:15,327 | 5109 | tracing_of_pipeline.analyzer, analyze, 175 | WARNING | No packet in edge l3
+2021-10-25 07:01:17,310 | 5109 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-25 07:01:17,311 | 5109 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-25 07:01:17,312 | 5109 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-25 07:01:17,312 | 5109 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 462 | DEBUG | tmp_p = [<Message msg_name=OFPT_PACKET_IN of_msg=PacketIn(xid=UBInt32(0)) timestamp=1635145273.760136 local_port=40338 datapath_id=1>, <Message msg_name=OFPT_PACKET_OUT of_msg=PacketOut(xid=UBInt32(3298273350)) timestamp=1635145273.775082 local_port=40338 datapath_id=1>], s_dpip = 1
+2021-10-25 07:01:17,314 | 5109 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 462 | DEBUG | tmp_p = [<Message msg_name=OFPT_PACKET_IN of_msg=PacketIn(xid=UBInt32(0)) timestamp=1635145273.781669 local_port=40340 datapath_id=2>, <Message msg_name=OFPT_PACKET_OUT of_msg=PacketOut(xid=UBInt32(3921568969)) timestamp=1635145273.798102 local_port=40340 datapath_id=2>, <Message msg_name=OFPT_PACKET_IN of_msg=PacketIn(xid=UBInt32(0)) timestamp=1635145273.811067 local_port=40340 datapath_id=2>], s_dpip = 2
+2021-10-25 07:01:17,316 | 5109 | tracing_of_pipeline.analyzer, _polling, 423 | DEBUG | polled repository (start_time=1635145269.270553, until=3) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [<src.ofproto.msg.MsgForOFMsg object at 0x7f499e1f77f0>, <src.ofproto.msg.MsgForOFMsg object at 0x7f499e45eee0>], 's2': [<src.ofproto.msg.MsgForOFMsg object at 0x7f499d05a070>, <src.ofproto.msg.MsgForOFMsg object at 0x7f499d05a0a0>, <src.ofproto.msg.MsgForOFMsg object at 0x7f499d05a100>]}
+2021-10-25 07:01:17,316 | 5109 | tracing_of_pipeline.analyzer, _analyze_packet_out, 189 | DEBUG | I will processing packetout(<src.ofproto.msg.MsgForOFMsg object at 0x7f499e45eee0>)
+2021-10-25 07:01:17,317 | 5109 | tracing_of_pipeline.analyzer, _analyze_packet_out, 203 | DEBUG | packet out's in_port 1
+2021-10-25 07:01:17,317 | 5109 | tracing_of_pipeline.analyzer, _analyze_packet_out, 254 | WARNING | cannot pop pakcet next_edge=l1 m=<src.ofproto.msg.MsgForOFMsg object at 0x7f499e45eee0>
+2021-10-25 07:01:17,317 | 5109 | tracing_of_pipeline.analyzer, _analyze_packet_out, 189 | DEBUG | I will processing packetout(<src.ofproto.msg.MsgForOFMsg object at 0x7f499d05a0a0>)
+2021-10-25 07:01:17,318 | 5109 | tracing_of_pipeline.analyzer, _analyze_packet_out, 203 | DEBUG | packet out's in_port 1
+2021-10-25 07:01:17,319 | 5109 | tracing_of_pipeline.analyzer, _analyze_packet_out, 254 | WARNING | cannot pop pakcet next_edge=l3 m=<src.ofproto.msg.MsgForOFMsg object at 0x7f499d05a0a0>
+2021-10-25 07:01:17,319 | 5109 | tracing_of_pipeline.analyzer, analyze, 175 | WARNING | No packet in edge l2
+2021-10-25 07:01:17,319 | 5109 | tracing_of_pipeline.analyzer, analyze, 175 | WARNING | No packet in edge l1
+2021-10-25 07:01:17,320 | 5109 | tracing_of_pipeline.analyzer, analyze, 175 | WARNING | No packet in edge l3
+2021-10-25 07:01:17,481 | 5109 | tracing_of_pipeline, stop, 139 | INFO | OpenFlow Tracer Stop
+2021-10-25 07:01:17,488 | 5109 | tracing_net.net, stop_tracing, 541 | INFO | tracing stop

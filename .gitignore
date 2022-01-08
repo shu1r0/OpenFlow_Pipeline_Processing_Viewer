@@ -3,6 +3,8 @@ view/.DS_Store
 view/node_modules
 view/dist
 
+private/
+
 # vagrant
 .vagrant/
 .cache/

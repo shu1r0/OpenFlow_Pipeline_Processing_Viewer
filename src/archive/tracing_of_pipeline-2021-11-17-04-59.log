@@ -1,0 +1,853 @@
+2021-11-17 04:59:29,950 | 4297 | tracing_net.net, __init__, 99 | INFO | set up on-demand mininet
+2021-11-17 04:59:29,951 | 4297 | tracing_of_pipeline, start, 123 | INFO | OpenFlow Tracer Start
+2021-11-17 04:59:29,958 | 4297 | tracing_net.net, start, 312 | INFO | mininet start
+2021-11-17 04:59:29,961 | 4297 | tracing_of_pipeline.analyzer, start_analyzing, 141 | INFO | start analyzing interval (start_time = 1637125169.961023, interval = 2)
+2021-11-17 04:59:29,963 | 4297 | tracing_net.net, add_switch, 116 | DEBUG | added the switch (s1)
+2021-11-17 04:59:30,107 | 4297 | tracing_net.net, add_host, 164 | DEBUG | added the host (h1)
+2021-11-17 04:59:30,160 | 4297 | tracing_net.net, add_link, 203 | DEBUG | added the link (l2) between s1 and h1
+2021-11-17 04:59:30,208 | 4297 | tracing_net.net, add_switch, 116 | DEBUG | added the switch (s2)
+2021-11-17 04:59:30,267 | 4297 | tracing_net.net, add_link, 203 | DEBUG | added the link (l1) between s1 and s2
+2021-11-17 04:59:30,368 | 4297 | tracing_net.net, add_host, 164 | DEBUG | added the host (h2)
+2021-11-17 04:59:30,402 | 4297 | tracing_net.net, add_link, 203 | DEBUG | added the link (l3) between s2 and h2
+2021-11-17 04:59:30,491 | 4297 | tracing_net.net, add_host, 164 | DEBUG | added the host (h3)
+2021-11-17 04:59:30,530 | 4297 | tracing_net.net, add_link, 203 | DEBUG | added the link (l4) between s1 and h3
+2021-11-17 04:59:30,645 | 4297 | tracing_net.net, start_tracing, 526 | INFO | tracing start
+2021-11-17 04:59:30,646 | 4297 | tracing_net.net, start_tracing, 528 | DEBUG | ipv6 is disable
+2021-11-17 04:59:30,693 | 4297 | tracing_net.packet_capture_manager, start_capture, 88 | DEBUG | capture process (s1-eth1:4461) started
+2021-11-17 04:59:30,697 | 4461 | tracing_net.util.packet_capture, start_capture, 65 | INFO | packet capture start on s1-eth1
+2021-11-17 04:59:30,703 | 4297 | tracing_net.packet_capture_manager, start_capture, 88 | DEBUG | capture process (s1-eth2:4463) started
+2021-11-17 04:59:30,708 | 4463 | tracing_net.util.packet_capture, start_capture, 65 | INFO | packet capture start on s1-eth2
+2021-11-17 04:59:30,720 | 4297 | tracing_net.packet_capture_manager, start_capture, 88 | DEBUG | capture process (s2-eth2:4466) started
+2021-11-17 04:59:30,736 | 4466 | tracing_net.util.packet_capture, start_capture, 65 | INFO | packet capture start on s2-eth2
+2021-11-17 04:59:30,739 | 4297 | tracing_net.packet_capture_manager, start_capture, 88 | DEBUG | capture process (s1-eth3:4469) started
+2021-11-17 04:59:30,742 | 4297 | tracing_net.flowtable.flow_monitor, __init__, 46 | INFO | flow monitor start : s1
+2021-11-17 04:59:30,744 | 4469 | tracing_net.util.packet_capture, start_capture, 65 | INFO | packet capture start on s1-eth3
+2021-11-17 04:59:30,756 | 4297 | tracing_net.flowtable.flow_monitor, __init__, 46 | INFO | flow monitor start : s2
+2021-11-17 04:59:31,765 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:31,783 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:31,865 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:31,896 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:31,962 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-17 04:59:31,963 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-17 04:59:31,964 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-17 04:59:31,965 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-17 04:59:31,965 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:31,969 | 4297 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 598 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-17 04:59:31,971 | 4297 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 598 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-17 04:59:31,974 | 4297 | tracing_of_pipeline.analyzer, _polling, 551 | DEBUG | polled repository (start_time=1637125169.961023, until=0) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-17 04:59:31,975 | 4297 | tracing_of_pipeline.analyzer, analyze, 196 | DEBUG | Analyzing 1... polled repository (count=0)
+2021-11-17 04:59:31,978 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l2
+2021-11-17 04:59:31,979 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l1
+2021-11-17 04:59:31,980 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l3
+2021-11-17 04:59:31,980 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l4
+2021-11-17 04:59:31,986 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:32,065 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:32,083 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:32,165 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:32,183 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:32,265 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:32,284 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:32,372 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:32,386 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:32,466 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:32,483 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:32,565 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:32,583 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:32,665 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:32,683 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:32,767 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:32,789 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:32,869 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:32,883 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:32,966 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:32,986 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:33,069 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:33,083 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:33,166 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:33,183 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:33,265 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:33,283 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:33,385 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:33,386 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:33,487 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:33,487 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:33,573 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:33,583 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:33,678 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:33,683 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:33,770 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:33,783 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:33,872 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:33,883 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:33,962 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-17 04:59:33,963 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-17 04:59:33,964 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-17 04:59:33,965 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-17 04:59:33,965 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:33,970 | 4297 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 598 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-17 04:59:33,972 | 4297 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 598 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-17 04:59:33,972 | 4297 | tracing_of_pipeline.analyzer, _polling, 551 | DEBUG | polled repository (start_time=1637125169.961023, until=1) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-17 04:59:33,973 | 4297 | tracing_of_pipeline.analyzer, analyze, 196 | DEBUG | Analyzing 1... polled repository (count=1)
+2021-11-17 04:59:33,974 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l2
+2021-11-17 04:59:33,974 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l1
+2021-11-17 04:59:33,975 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l3
+2021-11-17 04:59:33,975 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l4
+2021-11-17 04:59:33,983 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:34,081 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:34,083 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:34,182 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:34,183 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:34,265 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:34,283 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:34,378 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:34,383 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:34,470 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:34,483 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:34,565 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:34,583 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:34,667 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:34,683 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:34,764 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:34,783 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:34,865 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:34,883 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:34,965 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:34,983 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:35,066 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:35,083 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:35,165 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:35,183 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:35,265 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:35,283 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:35,371 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:35,383 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:35,465 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:35,483 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:35,582 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:35,584 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:35,666 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:35,683 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:35,765 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:35,783 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:35,865 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:35,883 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:35,962 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-17 04:59:35,963 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-17 04:59:35,964 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-17 04:59:35,964 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-17 04:59:35,964 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:35,966 | 4297 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 598 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-17 04:59:35,967 | 4297 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 598 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-17 04:59:35,967 | 4297 | tracing_of_pipeline.analyzer, _polling, 551 | DEBUG | polled repository (start_time=1637125169.961023, until=2) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-17 04:59:35,967 | 4297 | tracing_of_pipeline.analyzer, analyze, 196 | DEBUG | Analyzing 1... polled repository (count=2)
+2021-11-17 04:59:35,967 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l2
+2021-11-17 04:59:35,968 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l1
+2021-11-17 04:59:35,969 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l3
+2021-11-17 04:59:35,969 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l4
+2021-11-17 04:59:35,983 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:36,068 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:36,083 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:36,165 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:36,183 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:36,286 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:36,286 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:36,365 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:36,383 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:36,464 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:36,483 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:36,565 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:36,583 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:36,665 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:36,683 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:36,765 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:36,783 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:36,865 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:36,883 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:36,982 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:36,983 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:37,071 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:37,083 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:37,165 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:37,183 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:37,287 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:37,287 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:37,365 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:37,383 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:37,482 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:37,483 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:37,565 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:37,615 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:37,666 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:37,683 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:37,765 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:37,784 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:37,870 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:37,883 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:37,984 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:37,985 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-17 04:59:37,984 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:38,001 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-17 04:59:38,003 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-17 04:59:38,003 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-17 04:59:38,006 | 4297 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 598 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-17 04:59:38,007 | 4297 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 598 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-17 04:59:38,007 | 4297 | tracing_of_pipeline.analyzer, _polling, 551 | DEBUG | polled repository (start_time=1637125169.961023, until=3) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-17 04:59:38,008 | 4297 | tracing_of_pipeline.analyzer, analyze, 196 | DEBUG | Analyzing 1... polled repository (count=3)
+2021-11-17 04:59:38,008 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l2
+2021-11-17 04:59:38,008 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l1
+2021-11-17 04:59:38,009 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l3
+2021-11-17 04:59:38,009 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l4
+2021-11-17 04:59:38,082 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:38,083 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:38,170 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:38,183 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:38,279 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:38,283 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:38,380 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:38,383 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:38,465 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:38,483 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:38,584 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:38,584 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:38,667 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:38,683 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:38,765 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:38,783 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:38,883 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:38,884 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:38,977 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:38,983 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:39,072 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:39,083 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:39,170 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:39,183 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:39,282 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:39,283 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:39,365 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:39,383 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:39,468 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:39,484 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:39,565 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:39,583 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:39,665 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:39,683 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:39,765 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:39,783 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:39,865 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:39,884 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:39,962 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-17 04:59:39,963 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-17 04:59:39,964 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-17 04:59:39,965 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:39,965 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-17 04:59:39,969 | 4297 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 598 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-17 04:59:39,971 | 4297 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 598 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-17 04:59:39,972 | 4297 | tracing_of_pipeline.analyzer, _polling, 551 | DEBUG | polled repository (start_time=1637125169.961023, until=4) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-17 04:59:39,972 | 4297 | tracing_of_pipeline.analyzer, analyze, 196 | DEBUG | Analyzing 1... polled repository (count=4)
+2021-11-17 04:59:39,973 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l2
+2021-11-17 04:59:39,973 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l1
+2021-11-17 04:59:39,974 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l3
+2021-11-17 04:59:39,975 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l4
+2021-11-17 04:59:39,983 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:40,106 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:40,106 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:40,165 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:40,186 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:40,321 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:40,321 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:40,365 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:40,383 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:40,465 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:40,483 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:40,570 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:40,584 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:40,689 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:40,688 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:40,765 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:40,783 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:40,865 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:40,883 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:40,991 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:40,991 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:41,065 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:41,083 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:41,179 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:41,183 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:41,265 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:41,283 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:41,365 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:41,386 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:41,465 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:41,483 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:41,564 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:41,583 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:41,665 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:41,683 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:41,765 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:41,783 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:41,865 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:41,883 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:41,964 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-17 04:59:41,965 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-17 04:59:41,965 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-17 04:59:41,965 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:41,966 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-17 04:59:41,967 | 4297 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 598 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-17 04:59:41,968 | 4297 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 598 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-17 04:59:41,969 | 4297 | tracing_of_pipeline.analyzer, _polling, 551 | DEBUG | polled repository (start_time=1637125169.961023, until=5) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-17 04:59:41,969 | 4297 | tracing_of_pipeline.analyzer, analyze, 196 | DEBUG | Analyzing 1... polled repository (count=5)
+2021-11-17 04:59:41,970 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l2
+2021-11-17 04:59:41,970 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l1
+2021-11-17 04:59:41,971 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l3
+2021-11-17 04:59:41,971 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l4
+2021-11-17 04:59:41,983 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:42,065 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:42,083 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:42,164 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:42,186 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:42,266 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:42,283 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:42,365 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:42,383 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:42,466 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:42,483 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:42,570 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:42,583 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:42,680 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:42,683 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:42,765 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:42,783 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:42,882 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:42,883 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:42,984 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:42,985 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:43,081 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:43,083 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:43,167 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:43,183 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:43,284 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:43,285 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:43,371 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:43,383 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:43,481 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:43,483 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:43,583 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:43,584 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:43,682 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:43,683 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:43,769 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:43,784 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:43,882 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:43,884 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:43,980 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={'s1-eth1': [<Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.037202, pkt=<ARP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>, <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891106, pkt=<ARP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>, <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891225, pkt=<ICMP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>], 's1-eth3': [<Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.043518, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>, <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.0435684, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>, <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.1390436, pkt=<ICMP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>]})
+2021-11-17 04:59:43,983 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={'s1-eth1': [<Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.037202, pkt=<ARP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>, <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891106, pkt=<ARP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>, <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891225, pkt=<ICMP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>], 's1-eth3': [<Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.043518, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>, <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.0435684, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>, <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.1390436, pkt=<ICMP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>]})
+2021-11-17 04:59:43,982 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:43,984 | 4297 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 598 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-17 04:59:43,984 | 4297 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 598 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-17 04:59:43,985 | 4297 | tracing_of_pipeline.analyzer, _polling, 551 | DEBUG | polled repository (start_time=1637125169.961023, until=6) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [], 's2': []}
+2021-11-17 04:59:43,983 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:43,988 | 4297 | tracing_of_pipeline.analyzer, analyze, 196 | DEBUG | Analyzing 1... polled repository (count=6)
+2021-11-17 04:59:43,989 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l2
+2021-11-17 04:59:43,990 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l1
+2021-11-17 04:59:43,990 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l3
+2021-11-17 04:59:43,990 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l4
+2021-11-17 04:59:44,071 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:44,083 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:44,165 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:44,183 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:44,271 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:44,283 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:44,365 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:44,383 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:44,464 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:44,483 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:44,588 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:44,588 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:44,682 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:44,683 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:44,765 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:44,783 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:44,883 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:44,881 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:44,965 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:44,983 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:45,068 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:45,083 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:45,171 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:45,183 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:45,266 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:45,284 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:45,381 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:45,383 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:45,479 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:45,483 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:45,584 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:45,585 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:45,682 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:45,683 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:45,765 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:45,783 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:45,869 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:45,883 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:45,970 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={'s1-eth1': [], 's1-eth3': [<Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.043518, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>, <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.0435684, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>, <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.1390436, pkt=<ICMP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>]})
+2021-11-17 04:59:45,971 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:45,971 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={'s1-eth1': [], 's1-eth3': [<Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.043518, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>, <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.0435684, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>, <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.1390436, pkt=<ICMP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>]})
+2021-11-17 04:59:45,973 | 4297 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 598 | DEBUG | tmp_p = [<Message msg_name=OFPT_PACKET_IN of_msg=PacketIn(xid=UBInt32(0)) timestamp=1637125182.037815 local_port=33514 datapath_id=1>, <Message msg_name=OFPT_PACKET_OUT of_msg=PacketOut(xid=UBInt32(454850830)) timestamp=1637125182.043093 local_port=33514 datapath_id=1>, <Message msg_name=OFPT_PACKET_IN of_msg=PacketIn(xid=UBInt32(0)) timestamp=1637125182.065648 local_port=33514 datapath_id=1>, <Message msg_name=OFPT_PACKET_OUT of_msg=PacketOut(xid=UBInt32(454850832)) timestamp=1637125182.088802 local_port=33514 datapath_id=1>, <Message msg_name=OFPT_PACKET_IN of_msg=PacketIn(xid=UBInt32(0)) timestamp=1637125182.130699 local_port=33514 datapath_id=1>, <Message msg_name=OFPT_PACKET_OUT of_msg=PacketOut(xid=UBInt32(454850834)) timestamp=1637125182.138747 local_port=33514 datapath_id=1>], s_dpip = 1
+2021-11-17 04:59:45,977 | 4297 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 598 | DEBUG | tmp_p = [<Message msg_name=OFPT_PACKET_IN of_msg=PacketIn(xid=UBInt32(0)) timestamp=1637125182.065776 local_port=33516 datapath_id=2>, <Message msg_name=OFPT_PACKET_OUT of_msg=PacketOut(xid=UBInt32(2343987036)) timestamp=1637125182.088938 local_port=33516 datapath_id=2>], s_dpip = 2
+2021-11-17 04:59:45,979 | 4297 | tracing_of_pipeline.analyzer, _polling, 551 | DEBUG | polled repository (start_time=1637125169.961023, until=7) values = {'l2': [<Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.037202, pkt=<ARP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>, <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891106, pkt=<ARP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>, <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891225, pkt=<ICMP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>], 'l1': [], 'l3': [], 'l4': [<Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.043518, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>, <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.0435684, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>, <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.1390436, pkt=<ICMP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>]} {'s1': [<MsgForOFMsg (timestamp=1637125182.037815 message_type=10)>, <MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>, <MsgForOFMsg (timestamp=1637125182.065648 message_type=10)>, <MsgForOFMsg (timestamp=1637125182.088802 message_type=13)>, <MsgForOFMsg (timestamp=1637125182.130699 message_type=10)>, <MsgForOFMsg (timestamp=1637125182.138747 message_type=13)>], 's2': [<MsgForOFMsg (timestamp=1637125182.065776 message_type=10)>, <MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>]}
+2021-11-17 04:59:45,979 | 4297 | tracing_of_pipeline.analyzer, analyze, 196 | DEBUG | Analyzing 1... polled repository (count=7)
+2021-11-17 04:59:45,980 | 4297 | tracing_of_pipeline.analyzer, analyze, 204 | DEBUG | Analyzing 2... analyze packet out (count=7, target=<MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>)
+2021-11-17 04:59:45,981 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 267 | DEBUG | Analyzing 2.1... analyze packet out, get out_ports (count=7, out_ports=[(<PortNo.OFPP_FLOOD: 4294967291>, <MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>)])
+2021-11-17 04:59:45,981 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 274 | DEBUG | Analyzing 2.2... get packer msg (count=7, packer msg=[(<PortNo.OFPP_FLOOD: 4294967291>, <MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>)])
+2021-11-17 04:59:45,982 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 297 | DEBUG | Analyzing 2.3... get packet (count=7, packet=None)
+2021-11-17 04:59:45,983 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:45,982 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 351 | DEBUG | Analyzing 2.3... cannot pop pakcet (count=7 next_edge=l1 m=<MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>)
+2021-11-17 04:59:45,984 | 4297 | tracing_of_pipeline.analyzer, analyze, 204 | DEBUG | Analyzing 2... analyze packet out (count=7, target=<MsgForOFMsg (timestamp=1637125182.088802 message_type=13)>)
+2021-11-17 04:59:45,985 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 267 | DEBUG | Analyzing 2.1... analyze packet out, get out_ports (count=7, out_ports=[(1, <MsgForOFMsg (timestamp=1637125182.088802 message_type=13)>)])
+2021-11-17 04:59:45,985 | 4297 | tracing_of_pipeline.analyzer, analyze, 204 | DEBUG | Analyzing 2... analyze packet out (count=7, target=<MsgForOFMsg (timestamp=1637125182.138747 message_type=13)>)
+2021-11-17 04:59:45,986 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 267 | DEBUG | Analyzing 2.1... analyze packet out, get out_ports (count=7, out_ports=[(3, <MsgForOFMsg (timestamp=1637125182.138747 message_type=13)>)])
+2021-11-17 04:59:45,986 | 4297 | tracing_of_pipeline.analyzer, analyze, 204 | DEBUG | Analyzing 2... analyze packet out (count=7, target=<MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>)
+2021-11-17 04:59:45,987 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 267 | DEBUG | Analyzing 2.1... analyze packet out, get out_ports (count=7, out_ports=[(<PortNo.OFPP_FLOOD: 4294967291>, <MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>)])
+2021-11-17 04:59:45,987 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 274 | DEBUG | Analyzing 2.2... get packer msg (count=7, packer msg=[(<PortNo.OFPP_FLOOD: 4294967291>, <MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>)])
+2021-11-17 04:59:45,988 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 297 | DEBUG | Analyzing 2.3... get packet (count=7, packet=None)
+2021-11-17 04:59:45,988 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 351 | DEBUG | Analyzing 2.3... cannot pop pakcet (count=7 next_edge=l3 m=<MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>)
+2021-11-17 04:59:45,988 | 4297 | tracing_of_pipeline.analyzer, analyze, 217 | DEBUG | Analyzing 3... analyze packet (count=7, target=<Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.037202, pkt=<ARP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>)
+2021-11-17 04:59:45,989 | 4297 | tracing_of_pipeline.analyzer, analyze, 224 | DEBUG | Analyzing 3.1... get flowtable (count=7, flow table=<FlowTables(datapath=0, timestamp=1637125174.272953, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>)
+2021-11-17 04:59:45,990 | 4297 | tracing_of_pipeline.analyzer, BFS, 383 | DEBUG | Analyzing 4... start BFS (count=7)
+2021-11-17 04:59:45,990 | 4297 | tracing_of_pipeline.analyzer, BFS, 390 | DEBUG | Analyzing 4.1... processing msg (count=7, msg=<Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.037202, pkt=<ARP_RAW Packet>, in_port=1, in_phy_port=s1-eth1>)
+2021-11-17 04:59:45,992 | 4297 | tracing_of_pipeline.analyzer, BFS, 402 | DEBUG | Analyzing 4.1... dst_node is FlowTables (count=7)
+2021-11-17 04:59:45,994 | 4297 | tracing_of_pipeline.analyzer, BFS, 410 | DEBUG | Analyzing 4.2... After applied pipeline (count=7, out_ports_to_msg=[('65535', <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.037202, pkt=<ARP_RAW Packet>, in_port=1, in_phy_port=s1-eth1>)])
+2021-11-17 04:59:45,994 | 4297 | tracing_of_pipeline.analyzer, BFS, 428 | DEBUG | Analyzing 4.3... get next of dst_node (count=7, next_switch=controller)
+2021-11-17 04:59:45,995 | 4297 | tracing_of_pipeline.analyzer, BFS, 473 | DEBUG | Analyzing 4.4... next switch is controller. Therefore trace is finished. (count=7, next_switch=controller)
+2021-11-17 04:59:45,997 | 4297 | tracing_of_pipeline.analyzer, analyze, 231 | DEBUG | Analyzing 5.1... After BFS (count=7, trace=0x00000806 : (h1, s1)(s1, controller))
+2021-11-17 04:59:45,997 | 4297 | tracing_of_pipeline.packet_trace_handler, append, 31 | DEBUG | 1637125182.037202 : 0x00000806 : (h1, s1)(s1, controller)
+2021-11-17 04:59:45,998 | 4297 | tracing_net.msg, is_equal_msg, 309 | DEBUG | Packet <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.037202, pkt=<ARP_RAW Packet>, in_port=1, in_phy_port=s1-eth1> and packet <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.0435684, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3> have different eth_dst. (self:ff:ff:ff:ff:ff:ff, other:5a:7a:c3:e2:a5:92)
+2021-11-17 04:59:45,999 | 4297 | tracing_net.msg, is_equal_msg, 309 | DEBUG | Packet <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.037202, pkt=<ARP_RAW Packet>, in_port=1, in_phy_port=s1-eth1> and packet <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.1390436, pkt=<ICMP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3> have different eth_dst. (self:ff:ff:ff:ff:ff:ff, other:16:8f:7e:35:ac:7a)
+2021-11-17 04:59:45,999 | 4297 | tracing_net.msg, is_equal_msg, 309 | DEBUG | Packet <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.037202, pkt=<ARP_RAW Packet>, in_port=1, in_phy_port=s1-eth1> and packet <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891106, pkt=<ARP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1> have different eth_dst. (self:ff:ff:ff:ff:ff:ff, other:5a:7a:c3:e2:a5:92)
+2021-11-17 04:59:46,000 | 4297 | tracing_net.msg, is_equal_msg, 309 | DEBUG | Packet <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.037202, pkt=<ARP_RAW Packet>, in_port=1, in_phy_port=s1-eth1> and packet <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891225, pkt=<ICMP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1> have different eth_dst. (self:ff:ff:ff:ff:ff:ff, other:16:8f:7e:35:ac:7a)
+2021-11-17 04:59:46,001 | 4297 | tracing_net.msg, is_equal_msg, 309 | DEBUG | Packet <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.037202, pkt=<ARP_RAW Packet>, in_port=1, in_phy_port=s1-eth1> and packet <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.0435684, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3> have different eth_dst. (self:ff:ff:ff:ff:ff:ff, other:5a:7a:c3:e2:a5:92)
+2021-11-17 04:59:46,001 | 4297 | tracing_net.msg, is_equal_msg, 309 | DEBUG | Packet <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.037202, pkt=<ARP_RAW Packet>, in_port=1, in_phy_port=s1-eth1> and packet <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.1390436, pkt=<ICMP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3> have different eth_dst. (self:ff:ff:ff:ff:ff:ff, other:16:8f:7e:35:ac:7a)
+2021-11-17 04:59:46,002 | 4297 | tracing_of_pipeline.analyzer, analyze, 237 | DEBUG | Analyzing 5.2... Trace is finish. (count=7, trace=0x00000806 : (h1, s1)(s1, controller))
+2021-11-17 04:59:46,002 | 4297 | tracing_of_pipeline.analyzer, analyze, 217 | DEBUG | Analyzing 3... analyze packet (count=7, target=<Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891225, pkt=<ICMP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>)
+2021-11-17 04:59:46,003 | 4297 | tracing_of_pipeline.analyzer, analyze, 224 | DEBUG | Analyzing 3.1... get flowtable (count=7, flow table=<FlowTables(datapath=0, timestamp=1637125182.074939, flows=[<Flow(table=0, priority=1, match=[<in_port, 3/None>, <dl_src, 16:8f:7e:35:ac:7a/None>, <dl_dst, 5a:7a:c3:e2:a5:92/None>], actions=[<InstructionApplyAction type=4>])>, <Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>)
+2021-11-17 04:59:46,003 | 4297 | tracing_of_pipeline.analyzer, BFS, 383 | DEBUG | Analyzing 4... start BFS (count=7)
+2021-11-17 04:59:46,004 | 4297 | tracing_of_pipeline.analyzer, BFS, 390 | DEBUG | Analyzing 4.1... processing msg (count=7, msg=<Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891225, pkt=<ICMP_RAW Packet>, in_port=1, in_phy_port=s1-eth1>)
+2021-11-17 04:59:46,005 | 4297 | tracing_of_pipeline.analyzer, BFS, 402 | DEBUG | Analyzing 4.1... dst_node is FlowTables (count=7)
+2021-11-17 04:59:46,008 | 4297 | tracing_of_pipeline.analyzer, BFS, 410 | DEBUG | Analyzing 4.2... After applied pipeline (count=7, out_ports_to_msg=[('65535', <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891225, pkt=<ICMP_RAW Packet>, in_port=1, in_phy_port=s1-eth1>)])
+2021-11-17 04:59:46,008 | 4297 | tracing_of_pipeline.analyzer, BFS, 428 | DEBUG | Analyzing 4.3... get next of dst_node (count=7, next_switch=controller)
+2021-11-17 04:59:46,009 | 4297 | tracing_of_pipeline.analyzer, BFS, 473 | DEBUG | Analyzing 4.4... next switch is controller. Therefore trace is finished. (count=7, next_switch=controller)
+2021-11-17 04:59:46,011 | 4297 | tracing_of_pipeline.analyzer, analyze, 231 | DEBUG | Analyzing 5.1... After BFS (count=7, trace=0x00000800 : (h1, s1)(s1, controller))
+2021-11-17 04:59:46,011 | 4297 | tracing_of_pipeline.packet_trace_handler, append, 31 | DEBUG | 1637125182.0891225 : 0x00000800 : (h1, s1)(s1, controller)
+2021-11-17 04:59:46,012 | 4297 | tracing_net.msg, is_equal_msg, 309 | DEBUG | Packet <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891225, pkt=<ICMP_RAW Packet>, in_port=1, in_phy_port=s1-eth1> and packet <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891106, pkt=<ARP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1> have different eth_dst. (self:16:8f:7e:35:ac:7a, other:5a:7a:c3:e2:a5:92)
+2021-11-17 04:59:46,013 | 4297 | tracing_net.msg, is_equal_msg, 309 | DEBUG | Packet <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891106, pkt=<ARP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1> and packet <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891225, pkt=<ICMP_RAW Packet>, in_port=1, in_phy_port=s1-eth1> have different eth_dst. (self:5a:7a:c3:e2:a5:92, other:16:8f:7e:35:ac:7a)
+2021-11-17 04:59:46,013 | 4297 | tracing_net.msg, is_equal_msg, 309 | DEBUG | Packet <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891225, pkt=<ICMP_RAW Packet>, in_port=1, in_phy_port=s1-eth1> and packet <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.043518, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3> have different eth_dst. (self:16:8f:7e:35:ac:7a, other:ff:ff:ff:ff:ff:ff)
+2021-11-17 04:59:46,014 | 4297 | tracing_net.msg, is_equal_msg, 309 | DEBUG | Packet <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891225, pkt=<ICMP_RAW Packet>, in_port=1, in_phy_port=s1-eth1> and packet <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.0435684, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3> have different eth_dst. (self:16:8f:7e:35:ac:7a, other:5a:7a:c3:e2:a5:92)
+2021-11-17 04:59:46,014 | 4297 | tracing_net.msg, is_equal_msg, 309 | DEBUG | Packet <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891225, pkt=<ICMP_RAW Packet>, in_port=1, in_phy_port=s1-eth1> and packet <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891106, pkt=<ARP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1> have different eth_dst. (self:16:8f:7e:35:ac:7a, other:5a:7a:c3:e2:a5:92)
+2021-11-17 04:59:46,015 | 4297 | tracing_net.msg, is_equal_msg, 309 | DEBUG | Packet <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891225, pkt=<ICMP_RAW Packet>, in_port=1, in_phy_port=s1-eth1> and packet <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.043518, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3> have different eth_dst. (self:16:8f:7e:35:ac:7a, other:ff:ff:ff:ff:ff:ff)
+2021-11-17 04:59:46,016 | 4297 | tracing_net.msg, is_equal_msg, 309 | DEBUG | Packet <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891225, pkt=<ICMP_RAW Packet>, in_port=1, in_phy_port=s1-eth1> and packet <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.0435684, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3> have different eth_dst. (self:16:8f:7e:35:ac:7a, other:5a:7a:c3:e2:a5:92)
+2021-11-17 04:59:46,017 | 4297 | tracing_of_pipeline.analyzer, analyze, 237 | DEBUG | Analyzing 5.2... Trace is finish. (count=7, trace=0x00000800 : (h1, s1)(s1, controller))
+2021-11-17 04:59:46,017 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l1
+2021-11-17 04:59:46,017 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l3
+2021-11-17 04:59:46,018 | 4297 | tracing_of_pipeline.analyzer, analyze, 217 | DEBUG | Analyzing 3... analyze packet (count=7, target=<Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.043518, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>)
+2021-11-17 04:59:46,018 | 4297 | tracing_of_pipeline.analyzer, analyze, 224 | DEBUG | Analyzing 3.1... get flowtable (count=7, flow table=<FlowTables(datapath=0, timestamp=1637125174.272953, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>)
+2021-11-17 04:59:46,018 | 4297 | tracing_of_pipeline.analyzer, BFS, 383 | DEBUG | Analyzing 4... start BFS (count=7)
+2021-11-17 04:59:46,019 | 4297 | tracing_of_pipeline.analyzer, BFS, 390 | DEBUG | Analyzing 4.1... processing msg (count=7, msg=<Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.043518, pkt=<ARP_RAW Packet>, in_port=3, in_phy_port=s1-eth3>)
+2021-11-17 04:59:46,020 | 4297 | tracing_of_pipeline.analyzer, BFS, 402 | DEBUG | Analyzing 4.1... dst_node is FlowTables (count=7)
+2021-11-17 04:59:46,021 | 4297 | tracing_of_pipeline.analyzer, BFS, 410 | DEBUG | Analyzing 4.2... After applied pipeline (count=7, out_ports_to_msg=[('65535', <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.043518, pkt=<ARP_RAW Packet>, in_port=3, in_phy_port=s1-eth3>)])
+2021-11-17 04:59:46,022 | 4297 | tracing_of_pipeline.analyzer, BFS, 428 | DEBUG | Analyzing 4.3... get next of dst_node (count=7, next_switch=controller)
+2021-11-17 04:59:46,022 | 4297 | tracing_of_pipeline.analyzer, BFS, 473 | DEBUG | Analyzing 4.4... next switch is controller. Therefore trace is finished. (count=7, next_switch=controller)
+2021-11-17 04:59:46,024 | 4297 | tracing_of_pipeline.analyzer, analyze, 231 | DEBUG | Analyzing 5.1... After BFS (count=7, trace=0x00000806 : (h3, s1)(s1, controller))
+2021-11-17 04:59:46,025 | 4297 | tracing_of_pipeline.packet_trace_handler, append, 31 | DEBUG | 1637125182.043518 : 0x00000806 : (h3, s1)(s1, controller)
+2021-11-17 04:59:46,025 | 4297 | tracing_net.msg, is_equal_msg, 309 | DEBUG | Packet <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.043518, pkt=<ARP_RAW Packet>, in_port=3, in_phy_port=s1-eth3> and packet <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891106, pkt=<ARP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1> have different eth_dst. (self:ff:ff:ff:ff:ff:ff, other:5a:7a:c3:e2:a5:92)
+2021-11-17 04:59:46,026 | 4297 | tracing_net.msg, is_equal_msg, 309 | DEBUG | Packet <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.043518, pkt=<ARP_RAW Packet>, in_port=3, in_phy_port=s1-eth3> and packet <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891106, pkt=<ARP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1> have different eth_dst. (self:ff:ff:ff:ff:ff:ff, other:5a:7a:c3:e2:a5:92)
+2021-11-17 04:59:46,027 | 4297 | tracing_net.msg, is_equal_msg, 309 | DEBUG | Packet <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.043518, pkt=<ARP_RAW Packet>, in_port=3, in_phy_port=s1-eth3> and packet <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.0435684, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3> have different eth_dst. (self:ff:ff:ff:ff:ff:ff, other:5a:7a:c3:e2:a5:92)
+2021-11-17 04:59:46,027 | 4297 | tracing_net.msg, is_equal_msg, 309 | DEBUG | Packet <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.043518, pkt=<ARP_RAW Packet>, in_port=3, in_phy_port=s1-eth3> and packet <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.1390436, pkt=<ICMP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3> have different eth_dst. (self:ff:ff:ff:ff:ff:ff, other:16:8f:7e:35:ac:7a)
+2021-11-17 04:59:46,028 | 4297 | tracing_of_pipeline.analyzer, analyze, 237 | DEBUG | Analyzing 5.2... Trace is finish. (count=7, trace=0x00000806 : (h3, s1)(s1, controller))
+2021-11-17 04:59:46,028 | 4297 | tracing_of_pipeline.analyzer, analyze, 217 | DEBUG | Analyzing 3... analyze packet (count=7, target=<Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.1390436, pkt=<ICMP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>)
+2021-11-17 04:59:46,028 | 4297 | tracing_of_pipeline.analyzer, analyze, 224 | DEBUG | Analyzing 3.1... get flowtable (count=7, flow table=<FlowTables(datapath=0, timestamp=1637125182.074939, flows=[<Flow(table=0, priority=1, match=[<in_port, 3/None>, <dl_src, 16:8f:7e:35:ac:7a/None>, <dl_dst, 5a:7a:c3:e2:a5:92/None>], actions=[<InstructionApplyAction type=4>])>, <Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>)
+2021-11-17 04:59:46,029 | 4297 | tracing_of_pipeline.analyzer, BFS, 383 | DEBUG | Analyzing 4... start BFS (count=7)
+2021-11-17 04:59:46,029 | 4297 | tracing_of_pipeline.analyzer, BFS, 390 | DEBUG | Analyzing 4.1... processing msg (count=7, msg=<Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.1390436, pkt=<ICMP_RAW Packet>, in_port=3, in_phy_port=s1-eth3>)
+2021-11-17 04:59:46,031 | 4297 | tracing_of_pipeline.analyzer, BFS, 402 | DEBUG | Analyzing 4.1... dst_node is FlowTables (count=7)
+2021-11-17 04:59:46,034 | 4297 | tracing_of_pipeline.analyzer, BFS, 410 | DEBUG | Analyzing 4.2... After applied pipeline (count=7, out_ports_to_msg=[('65535', <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.1390436, pkt=<ICMP_RAW Packet>, in_port=3, in_phy_port=s1-eth3>)])
+2021-11-17 04:59:46,034 | 4297 | tracing_of_pipeline.analyzer, BFS, 428 | DEBUG | Analyzing 4.3... get next of dst_node (count=7, next_switch=controller)
+2021-11-17 04:59:46,035 | 4297 | tracing_of_pipeline.analyzer, BFS, 473 | DEBUG | Analyzing 4.4... next switch is controller. Therefore trace is finished. (count=7, next_switch=controller)
+2021-11-17 04:59:46,037 | 4297 | tracing_of_pipeline.analyzer, analyze, 231 | DEBUG | Analyzing 5.1... After BFS (count=7, trace=0x00000800 : (h3, s1)(s1, controller))
+2021-11-17 04:59:46,038 | 4297 | tracing_of_pipeline.packet_trace_handler, append, 31 | DEBUG | 1637125182.1390436 : 0x00000800 : (h3, s1)(s1, controller)
+2021-11-17 04:59:46,038 | 4297 | tracing_net.msg, is_equal_msg, 309 | DEBUG | Packet <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.1390436, pkt=<ICMP_RAW Packet>, in_port=3, in_phy_port=s1-eth3> and packet <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891106, pkt=<ARP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1> have different eth_dst. (self:16:8f:7e:35:ac:7a, other:5a:7a:c3:e2:a5:92)
+2021-11-17 04:59:46,039 | 4297 | tracing_net.msg, is_equal_msg, 309 | DEBUG | Packet <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.1390436, pkt=<ICMP_RAW Packet>, in_port=3, in_phy_port=s1-eth3> and packet <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.0435684, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3> have different eth_dst. (self:16:8f:7e:35:ac:7a, other:5a:7a:c3:e2:a5:92)
+2021-11-17 04:59:46,040 | 4297 | tracing_net.msg, is_equal_msg, 309 | DEBUG | Packet <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.0435684, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3> and packet <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.1390436, pkt=<ICMP_RAW Packet>, in_port=3, in_phy_port=s1-eth3> have different eth_dst. (self:5a:7a:c3:e2:a5:92, other:16:8f:7e:35:ac:7a)
+2021-11-17 04:59:46,041 | 4297 | tracing_net.msg, is_equal_msg, 309 | DEBUG | Packet <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.1390436, pkt=<ICMP_RAW Packet>, in_port=3, in_phy_port=s1-eth3> and packet <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891106, pkt=<ARP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1> have different eth_dst. (self:16:8f:7e:35:ac:7a, other:5a:7a:c3:e2:a5:92)
+2021-11-17 04:59:46,041 | 4297 | tracing_net.msg, is_equal_msg, 309 | DEBUG | Packet <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.1390436, pkt=<ICMP_RAW Packet>, in_port=3, in_phy_port=s1-eth3> and packet <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.0435684, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3> have different eth_dst. (self:16:8f:7e:35:ac:7a, other:5a:7a:c3:e2:a5:92)
+2021-11-17 04:59:46,042 | 4297 | tracing_of_pipeline.analyzer, analyze, 237 | DEBUG | Analyzing 5.2... Trace is finish. (count=7, trace=0x00000800 : (h3, s1)(s1, controller))
+2021-11-17 04:59:46,066 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:46,083 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:46,173 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:46,183 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:46,266 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:46,283 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:46,384 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:46,384 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:46,477 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:46,483 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:46,583 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:46,584 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:46,683 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:46,685 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:46,765 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:46,783 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:46,880 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:46,883 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:46,983 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:46,984 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:47,066 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:47,083 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:47,173 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:47,183 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:47,281 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:47,283 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:47,382 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:47,383 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:47,470 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:47,483 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:47,565 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:47,583 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:47,680 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:47,684 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:47,765 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:47,786 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:47,888 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:47,888 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:47,986 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:47,986 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={'s1-eth1': [<Msg captured_interface=s1-eth1, sniff_timestamp=1637125187.38253, pkt=<ARP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>], 's1-eth3': [<Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.139066, pkt=<ICMP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>, <Msg captured_interface=s1-eth3, sniff_timestamp=1637125187.3821054, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>]})
+2021-11-17 04:59:47,988 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={'s1-eth1': [<Msg captured_interface=s1-eth1, sniff_timestamp=1637125187.38253, pkt=<ARP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>], 's1-eth3': [<Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.139066, pkt=<ICMP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>, <Msg captured_interface=s1-eth3, sniff_timestamp=1637125187.3821054, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>]})
+2021-11-17 04:59:47,988 | 4297 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 598 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-17 04:59:47,987 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:47,991 | 4297 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 598 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-17 04:59:47,996 | 4297 | tracing_of_pipeline.analyzer, _polling, 551 | DEBUG | polled repository (start_time=1637125169.961023, until=8) values = {'l2': [<Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891106, pkt=<ARP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>, <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.1391897, pkt=<ICMP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>], 'l1': [], 'l3': [], 'l4': [<Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.0435684, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>, <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.139066, pkt=<ICMP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>]} {'s1': [<MsgForOFMsg (timestamp=1637125182.037815 message_type=10)>, <MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>, <MsgForOFMsg (timestamp=1637125182.065648 message_type=10)>, <MsgForOFMsg (timestamp=1637125182.088802 message_type=13)>, <MsgForOFMsg (timestamp=1637125182.130699 message_type=10)>, <MsgForOFMsg (timestamp=1637125182.138747 message_type=13)>], 's2': [<MsgForOFMsg (timestamp=1637125182.065776 message_type=10)>, <MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>]}
+2021-11-17 04:59:47,996 | 4297 | tracing_of_pipeline.analyzer, analyze, 196 | DEBUG | Analyzing 1... polled repository (count=8)
+2021-11-17 04:59:47,997 | 4297 | tracing_of_pipeline.analyzer, analyze, 204 | DEBUG | Analyzing 2... analyze packet out (count=8, target=<MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>)
+2021-11-17 04:59:47,997 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 267 | DEBUG | Analyzing 2.1... analyze packet out, get out_ports (count=8, out_ports=[(<PortNo.OFPP_FLOOD: 4294967291>, <MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>)])
+2021-11-17 04:59:47,998 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 274 | DEBUG | Analyzing 2.2... get packer msg (count=8, packer msg=[(<PortNo.OFPP_FLOOD: 4294967291>, <MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>)])
+2021-11-17 04:59:47,998 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 297 | DEBUG | Analyzing 2.3... get packet (count=8, packet=None)
+2021-11-17 04:59:47,998 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 351 | DEBUG | Analyzing 2.3... cannot pop pakcet (count=8 next_edge=l1 m=<MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>)
+2021-11-17 04:59:47,999 | 4297 | tracing_of_pipeline.analyzer, analyze, 204 | DEBUG | Analyzing 2... analyze packet out (count=8, target=<MsgForOFMsg (timestamp=1637125182.088802 message_type=13)>)
+2021-11-17 04:59:47,999 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 267 | DEBUG | Analyzing 2.1... analyze packet out, get out_ports (count=8, out_ports=[(1, <MsgForOFMsg (timestamp=1637125182.088802 message_type=13)>)])
+2021-11-17 04:59:48,001 | 4297 | tracing_of_pipeline.analyzer, analyze, 204 | DEBUG | Analyzing 2... analyze packet out (count=8, target=<MsgForOFMsg (timestamp=1637125182.138747 message_type=13)>)
+2021-11-17 04:59:48,001 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 267 | DEBUG | Analyzing 2.1... analyze packet out, get out_ports (count=8, out_ports=[(3, <MsgForOFMsg (timestamp=1637125182.138747 message_type=13)>)])
+2021-11-17 04:59:48,002 | 4297 | tracing_of_pipeline.analyzer, analyze, 204 | DEBUG | Analyzing 2... analyze packet out (count=8, target=<MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>)
+2021-11-17 04:59:48,002 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 267 | DEBUG | Analyzing 2.1... analyze packet out, get out_ports (count=8, out_ports=[(<PortNo.OFPP_FLOOD: 4294967291>, <MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>)])
+2021-11-17 04:59:48,003 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 274 | DEBUG | Analyzing 2.2... get packer msg (count=8, packer msg=[(<PortNo.OFPP_FLOOD: 4294967291>, <MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>)])
+2021-11-17 04:59:48,004 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 297 | DEBUG | Analyzing 2.3... get packet (count=8, packet=None)
+2021-11-17 04:59:48,004 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 351 | DEBUG | Analyzing 2.3... cannot pop pakcet (count=8 next_edge=l3 m=<MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>)
+2021-11-17 04:59:48,005 | 4297 | tracing_of_pipeline.analyzer, analyze, 217 | DEBUG | Analyzing 3... analyze packet (count=8, target=<Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891106, pkt=<ARP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>)
+2021-11-17 04:59:48,005 | 4297 | tracing_of_pipeline.analyzer, analyze, 224 | DEBUG | Analyzing 3.1... get flowtable (count=8, flow table=<FlowTables(datapath=0, timestamp=1637125182.074939, flows=[<Flow(table=0, priority=1, match=[<in_port, 3/None>, <dl_src, 16:8f:7e:35:ac:7a/None>, <dl_dst, 5a:7a:c3:e2:a5:92/None>], actions=[<InstructionApplyAction type=4>])>, <Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>)
+2021-11-17 04:59:48,006 | 4297 | tracing_of_pipeline.analyzer, BFS, 383 | DEBUG | Analyzing 4... start BFS (count=8)
+2021-11-17 04:59:48,006 | 4297 | tracing_of_pipeline.analyzer, BFS, 390 | DEBUG | Analyzing 4.1... processing msg (count=8, msg=<Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891106, pkt=<ARP_RAW Packet>, in_port=1, in_phy_port=s1-eth1>)
+2021-11-17 04:59:48,008 | 4297 | tracing_of_pipeline.analyzer, BFS, 402 | DEBUG | Analyzing 4.1... dst_node is FlowTables (count=8)
+2021-11-17 04:59:48,010 | 4297 | tracing_of_pipeline.analyzer, BFS, 410 | DEBUG | Analyzing 4.2... After applied pipeline (count=8, out_ports_to_msg=[('65535', <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891106, pkt=<ARP_RAW Packet>, in_port=1, in_phy_port=s1-eth1>)])
+2021-11-17 04:59:48,010 | 4297 | tracing_of_pipeline.analyzer, BFS, 428 | DEBUG | Analyzing 4.3... get next of dst_node (count=8, next_switch=controller)
+2021-11-17 04:59:48,010 | 4297 | tracing_of_pipeline.analyzer, BFS, 473 | DEBUG | Analyzing 4.4... next switch is controller. Therefore trace is finished. (count=8, next_switch=controller)
+2021-11-17 04:59:48,012 | 4297 | tracing_of_pipeline.analyzer, analyze, 231 | DEBUG | Analyzing 5.1... After BFS (count=8, trace=0x00000806 : (h1, s1)(s1, controller))
+2021-11-17 04:59:48,013 | 4297 | tracing_of_pipeline.packet_trace_handler, append, 31 | DEBUG | 1637125182.0891106 : 0x00000806 : (h1, s1)(s1, controller)
+2021-11-17 04:59:48,013 | 4297 | tracing_net.msg, is_equal_msg, 309 | DEBUG | Packet <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891106, pkt=<ARP_RAW Packet>, in_port=1, in_phy_port=s1-eth1> and packet <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.139066, pkt=<ICMP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3> have different eth_type. (self:2054, other:2048)
+2021-11-17 04:59:48,014 | 4297 | tracing_net.msg, is_equal_msg, 309 | DEBUG | Packet <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891106, pkt=<ARP_RAW Packet>, in_port=1, in_phy_port=s1-eth1> and packet <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.1391897, pkt=<ICMP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1> have different eth_type. (self:2054, other:2048)
+2021-11-17 04:59:48,015 | 4297 | tracing_net.msg, is_equal_msg, 309 | DEBUG | Packet <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.0891106, pkt=<ARP_RAW Packet>, in_port=1, in_phy_port=s1-eth1> and packet <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.139066, pkt=<ICMP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3> have different eth_type. (self:2054, other:2048)
+2021-11-17 04:59:48,015 | 4297 | tracing_of_pipeline.analyzer, analyze, 237 | DEBUG | Analyzing 5.2... Trace is finish. (count=8, trace=0x00000806 : (h1, s1)(s1, controller))
+2021-11-17 04:59:48,016 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l1
+2021-11-17 04:59:48,016 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l3
+2021-11-17 04:59:48,017 | 4297 | tracing_of_pipeline.analyzer, analyze, 217 | DEBUG | Analyzing 3... analyze packet (count=8, target=<Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.0435684, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>)
+2021-11-17 04:59:48,017 | 4297 | tracing_of_pipeline.analyzer, analyze, 224 | DEBUG | Analyzing 3.1... get flowtable (count=8, flow table=<FlowTables(datapath=0, timestamp=1637125174.272953, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>)
+2021-11-17 04:59:48,017 | 4297 | tracing_of_pipeline.analyzer, BFS, 383 | DEBUG | Analyzing 4... start BFS (count=8)
+2021-11-17 04:59:48,018 | 4297 | tracing_of_pipeline.analyzer, BFS, 390 | DEBUG | Analyzing 4.1... processing msg (count=8, msg=<Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.0435684, pkt=<ARP_RAW Packet>, in_port=3, in_phy_port=s1-eth3>)
+2021-11-17 04:59:48,019 | 4297 | tracing_of_pipeline.analyzer, BFS, 402 | DEBUG | Analyzing 4.1... dst_node is FlowTables (count=8)
+2021-11-17 04:59:48,021 | 4297 | tracing_of_pipeline.analyzer, BFS, 410 | DEBUG | Analyzing 4.2... After applied pipeline (count=8, out_ports_to_msg=[('65535', <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.0435684, pkt=<ARP_RAW Packet>, in_port=3, in_phy_port=s1-eth3>)])
+2021-11-17 04:59:48,021 | 4297 | tracing_of_pipeline.analyzer, BFS, 428 | DEBUG | Analyzing 4.3... get next of dst_node (count=8, next_switch=controller)
+2021-11-17 04:59:48,022 | 4297 | tracing_of_pipeline.analyzer, BFS, 473 | DEBUG | Analyzing 4.4... next switch is controller. Therefore trace is finished. (count=8, next_switch=controller)
+2021-11-17 04:59:48,023 | 4297 | tracing_of_pipeline.analyzer, analyze, 231 | DEBUG | Analyzing 5.1... After BFS (count=8, trace=0x00000806 : (h3, s1)(s1, controller))
+2021-11-17 04:59:48,023 | 4297 | tracing_of_pipeline.packet_trace_handler, append, 31 | DEBUG | 1637125182.0435684 : 0x00000806 : (h3, s1)(s1, controller)
+2021-11-17 04:59:48,024 | 4297 | tracing_net.msg, is_equal_msg, 309 | DEBUG | Packet <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.0435684, pkt=<ARP_RAW Packet>, in_port=3, in_phy_port=s1-eth3> and packet <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.1391897, pkt=<ICMP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1> have different eth_type. (self:2054, other:2048)
+2021-11-17 04:59:48,025 | 4297 | tracing_net.msg, is_equal_msg, 309 | DEBUG | Packet <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.0435684, pkt=<ARP_RAW Packet>, in_port=3, in_phy_port=s1-eth3> and packet <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.1391897, pkt=<ICMP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1> have different eth_type. (self:2054, other:2048)
+2021-11-17 04:59:48,025 | 4297 | tracing_net.msg, is_equal_msg, 309 | DEBUG | Packet <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.0435684, pkt=<ARP_RAW Packet>, in_port=3, in_phy_port=s1-eth3> and packet <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.139066, pkt=<ICMP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3> have different eth_type. (self:2054, other:2048)
+2021-11-17 04:59:48,026 | 4297 | tracing_of_pipeline.analyzer, analyze, 237 | DEBUG | Analyzing 5.2... Trace is finish. (count=8, trace=0x00000806 : (h3, s1)(s1, controller))
+2021-11-17 04:59:48,065 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:48,083 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:48,165 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:48,183 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:48,265 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:48,283 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:48,386 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:48,386 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:48,465 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:48,483 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:48,565 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:48,586 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:48,683 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:48,686 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:48,765 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:48,783 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:48,866 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:48,883 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:48,981 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:48,983 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:49,072 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:49,085 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:49,166 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:49,183 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:49,310 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:49,311 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:49,382 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:49,383 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:49,477 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:49,483 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:49,575 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:49,583 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:49,680 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:49,683 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:49,765 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:49,783 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:49,869 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:49,883 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:49,984 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={'s1-eth1': [<Msg captured_interface=s1-eth1, sniff_timestamp=1637125187.38253, pkt=<ARP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>], 's1-eth3': [<Msg captured_interface=s1-eth3, sniff_timestamp=1637125187.3821054, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>]})
+2021-11-17 04:59:49,984 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:49,985 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:49,985 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={'s1-eth1': [<Msg captured_interface=s1-eth1, sniff_timestamp=1637125187.38253, pkt=<ARP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>], 's1-eth3': [<Msg captured_interface=s1-eth3, sniff_timestamp=1637125187.3821054, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>]})
+2021-11-17 04:59:49,989 | 4297 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 598 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-17 04:59:49,990 | 4297 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 598 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-17 04:59:49,990 | 4297 | tracing_of_pipeline.analyzer, _polling, 551 | DEBUG | polled repository (start_time=1637125169.961023, until=9) values = {'l2': [<Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.1391897, pkt=<ICMP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>], 'l1': [], 'l3': [], 'l4': [<Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.139066, pkt=<ICMP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>]} {'s1': [<MsgForOFMsg (timestamp=1637125182.037815 message_type=10)>, <MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>, <MsgForOFMsg (timestamp=1637125182.065648 message_type=10)>, <MsgForOFMsg (timestamp=1637125182.088802 message_type=13)>, <MsgForOFMsg (timestamp=1637125182.130699 message_type=10)>, <MsgForOFMsg (timestamp=1637125182.138747 message_type=13)>], 's2': [<MsgForOFMsg (timestamp=1637125182.065776 message_type=10)>, <MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>]}
+2021-11-17 04:59:49,990 | 4297 | tracing_of_pipeline.analyzer, analyze, 196 | DEBUG | Analyzing 1... polled repository (count=9)
+2021-11-17 04:59:49,991 | 4297 | tracing_of_pipeline.analyzer, analyze, 204 | DEBUG | Analyzing 2... analyze packet out (count=9, target=<MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>)
+2021-11-17 04:59:49,991 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 267 | DEBUG | Analyzing 2.1... analyze packet out, get out_ports (count=9, out_ports=[(<PortNo.OFPP_FLOOD: 4294967291>, <MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>)])
+2021-11-17 04:59:49,992 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 274 | DEBUG | Analyzing 2.2... get packer msg (count=9, packer msg=[(<PortNo.OFPP_FLOOD: 4294967291>, <MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>)])
+2021-11-17 04:59:49,992 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 297 | DEBUG | Analyzing 2.3... get packet (count=9, packet=None)
+2021-11-17 04:59:49,993 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 351 | DEBUG | Analyzing 2.3... cannot pop pakcet (count=9 next_edge=l1 m=<MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>)
+2021-11-17 04:59:49,993 | 4297 | tracing_of_pipeline.analyzer, analyze, 204 | DEBUG | Analyzing 2... analyze packet out (count=9, target=<MsgForOFMsg (timestamp=1637125182.088802 message_type=13)>)
+2021-11-17 04:59:49,993 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 267 | DEBUG | Analyzing 2.1... analyze packet out, get out_ports (count=9, out_ports=[(1, <MsgForOFMsg (timestamp=1637125182.088802 message_type=13)>)])
+2021-11-17 04:59:49,994 | 4297 | tracing_of_pipeline.analyzer, analyze, 204 | DEBUG | Analyzing 2... analyze packet out (count=9, target=<MsgForOFMsg (timestamp=1637125182.138747 message_type=13)>)
+2021-11-17 04:59:49,994 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 267 | DEBUG | Analyzing 2.1... analyze packet out, get out_ports (count=9, out_ports=[(3, <MsgForOFMsg (timestamp=1637125182.138747 message_type=13)>)])
+2021-11-17 04:59:49,994 | 4297 | tracing_of_pipeline.analyzer, analyze, 204 | DEBUG | Analyzing 2... analyze packet out (count=9, target=<MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>)
+2021-11-17 04:59:49,995 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 267 | DEBUG | Analyzing 2.1... analyze packet out, get out_ports (count=9, out_ports=[(<PortNo.OFPP_FLOOD: 4294967291>, <MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>)])
+2021-11-17 04:59:49,996 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 274 | DEBUG | Analyzing 2.2... get packer msg (count=9, packer msg=[(<PortNo.OFPP_FLOOD: 4294967291>, <MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>)])
+2021-11-17 04:59:49,996 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 297 | DEBUG | Analyzing 2.3... get packet (count=9, packet=None)
+2021-11-17 04:59:49,997 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 351 | DEBUG | Analyzing 2.3... cannot pop pakcet (count=9 next_edge=l3 m=<MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>)
+2021-11-17 04:59:49,997 | 4297 | tracing_of_pipeline.analyzer, analyze, 217 | DEBUG | Analyzing 3... analyze packet (count=9, target=<Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.1391897, pkt=<ICMP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>)
+2021-11-17 04:59:49,997 | 4297 | tracing_of_pipeline.analyzer, analyze, 224 | DEBUG | Analyzing 3.1... get flowtable (count=9, flow table=<FlowTables(datapath=0, timestamp=1637125182.074939, flows=[<Flow(table=0, priority=1, match=[<in_port, 3/None>, <dl_src, 16:8f:7e:35:ac:7a/None>, <dl_dst, 5a:7a:c3:e2:a5:92/None>], actions=[<InstructionApplyAction type=4>])>, <Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>)
+2021-11-17 04:59:49,998 | 4297 | tracing_of_pipeline.analyzer, BFS, 383 | DEBUG | Analyzing 4... start BFS (count=9)
+2021-11-17 04:59:49,998 | 4297 | tracing_of_pipeline.analyzer, BFS, 390 | DEBUG | Analyzing 4.1... processing msg (count=9, msg=<Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.1391897, pkt=<ICMP_RAW Packet>, in_port=1, in_phy_port=s1-eth1>)
+2021-11-17 04:59:50,002 | 4297 | tracing_of_pipeline.analyzer, BFS, 402 | DEBUG | Analyzing 4.1... dst_node is FlowTables (count=9)
+2021-11-17 04:59:50,005 | 4297 | tracing_of_pipeline.analyzer, BFS, 410 | DEBUG | Analyzing 4.2... After applied pipeline (count=9, out_ports_to_msg=[('65535', <Msg captured_interface=s1-eth1, sniff_timestamp=1637125182.1391897, pkt=<ICMP_RAW Packet>, in_port=1, in_phy_port=s1-eth1>)])
+2021-11-17 04:59:50,005 | 4297 | tracing_of_pipeline.analyzer, BFS, 428 | DEBUG | Analyzing 4.3... get next of dst_node (count=9, next_switch=controller)
+2021-11-17 04:59:50,006 | 4297 | tracing_of_pipeline.analyzer, BFS, 473 | DEBUG | Analyzing 4.4... next switch is controller. Therefore trace is finished. (count=9, next_switch=controller)
+2021-11-17 04:59:50,008 | 4297 | tracing_of_pipeline.analyzer, analyze, 231 | DEBUG | Analyzing 5.1... After BFS (count=9, trace=0x00000800 : (h1, s1)(s1, controller))
+2021-11-17 04:59:50,008 | 4297 | tracing_of_pipeline.packet_trace_handler, append, 31 | DEBUG | 1637125182.1391897 : 0x00000800 : (h1, s1)(s1, controller)
+2021-11-17 04:59:50,009 | 4297 | tracing_of_pipeline.analyzer, analyze, 237 | DEBUG | Analyzing 5.2... Trace is finish. (count=9, trace=0x00000800 : (h1, s1)(s1, controller))
+2021-11-17 04:59:50,009 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l1
+2021-11-17 04:59:50,010 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l3
+2021-11-17 04:59:50,010 | 4297 | tracing_of_pipeline.analyzer, analyze, 217 | DEBUG | Analyzing 3... analyze packet (count=9, target=<Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.139066, pkt=<ICMP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>)
+2021-11-17 04:59:50,011 | 4297 | tracing_of_pipeline.analyzer, analyze, 224 | DEBUG | Analyzing 3.1... get flowtable (count=9, flow table=<FlowTables(datapath=0, timestamp=1637125182.074939, flows=[<Flow(table=0, priority=1, match=[<in_port, 3/None>, <dl_src, 16:8f:7e:35:ac:7a/None>, <dl_dst, 5a:7a:c3:e2:a5:92/None>], actions=[<InstructionApplyAction type=4>])>, <Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>)
+2021-11-17 04:59:50,012 | 4297 | tracing_of_pipeline.analyzer, BFS, 383 | DEBUG | Analyzing 4... start BFS (count=9)
+2021-11-17 04:59:50,012 | 4297 | tracing_of_pipeline.analyzer, BFS, 390 | DEBUG | Analyzing 4.1... processing msg (count=9, msg=<Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.139066, pkt=<ICMP_RAW Packet>, in_port=3, in_phy_port=s1-eth3>)
+2021-11-17 04:59:50,014 | 4297 | tracing_of_pipeline.analyzer, BFS, 402 | DEBUG | Analyzing 4.1... dst_node is FlowTables (count=9)
+2021-11-17 04:59:50,017 | 4297 | tracing_of_pipeline.analyzer, BFS, 410 | DEBUG | Analyzing 4.2... After applied pipeline (count=9, out_ports_to_msg=[('1', <Msg captured_interface=s1-eth3, sniff_timestamp=1637125182.139066, pkt=<ICMP_RAW Packet>, in_port=3, in_phy_port=s1-eth3>)])
+2021-11-17 04:59:50,018 | 4297 | tracing_of_pipeline.analyzer, BFS, 428 | DEBUG | Analyzing 4.3... get next of dst_node (count=9, next_switch=h1)
+2021-11-17 04:59:50,018 | 4297 | tracing_of_pipeline.analyzer, BFS, 485 | DEBUG | Analyzing 4.4... next switch is host. Therefore trace is finished. (count=9, next_switch=h1)
+2021-11-17 04:59:50,020 | 4297 | tracing_of_pipeline.analyzer, analyze, 231 | DEBUG | Analyzing 5.1... After BFS (count=9, trace=0x00000800 : (h3, s1)(s1, h1))
+2021-11-17 04:59:50,021 | 4297 | tracing_of_pipeline.packet_trace_handler, append, 31 | DEBUG | 1637125182.139066 : 0x00000800 : (h3, s1)(s1, h1)
+2021-11-17 04:59:50,021 | 4297 | tracing_of_pipeline.analyzer, analyze, 237 | DEBUG | Analyzing 5.2... Trace is finish. (count=9, trace=0x00000800 : (h3, s1)(s1, h1))
+2021-11-17 04:59:50,077 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:50,083 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:50,175 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:50,183 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:50,281 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:50,283 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:50,378 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:50,383 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:50,478 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:50,484 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:50,576 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:50,583 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:50,668 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:50,687 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:50,764 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:50,783 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:50,869 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:50,883 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:50,973 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:50,983 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:51,079 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:51,084 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:51,169 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:51,224 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:51,265 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:51,284 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:51,428 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:51,428 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:51,469 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:51,494 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:51,565 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:51,588 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:51,692 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:51,692 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:51,780 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:51,798 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:51,877 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:51,883 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:51,965 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={'s1-eth1': [], 's1-eth3': [<Msg captured_interface=s1-eth3, sniff_timestamp=1637125187.3821054, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>]})
+2021-11-17 04:59:51,966 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={'s1-eth1': [], 's1-eth3': [<Msg captured_interface=s1-eth3, sniff_timestamp=1637125187.3821054, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>]})
+2021-11-17 04:59:51,966 | 4297 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 598 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-17 04:59:51,965 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:51,967 | 4297 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 598 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-17 04:59:51,969 | 4297 | tracing_of_pipeline.analyzer, _polling, 551 | DEBUG | polled repository (start_time=1637125169.961023, until=10) values = {'l2': [<Msg captured_interface=s1-eth1, sniff_timestamp=1637125187.38253, pkt=<ARP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>], 'l1': [], 'l3': [], 'l4': [<Msg captured_interface=s1-eth3, sniff_timestamp=1637125187.3821054, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>]} {'s1': [<MsgForOFMsg (timestamp=1637125182.037815 message_type=10)>, <MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>, <MsgForOFMsg (timestamp=1637125182.065648 message_type=10)>, <MsgForOFMsg (timestamp=1637125182.088802 message_type=13)>, <MsgForOFMsg (timestamp=1637125182.130699 message_type=10)>, <MsgForOFMsg (timestamp=1637125182.138747 message_type=13)>], 's2': [<MsgForOFMsg (timestamp=1637125182.065776 message_type=10)>, <MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>]}
+2021-11-17 04:59:51,970 | 4297 | tracing_of_pipeline.analyzer, analyze, 196 | DEBUG | Analyzing 1... polled repository (count=10)
+2021-11-17 04:59:51,970 | 4297 | tracing_of_pipeline.analyzer, analyze, 204 | DEBUG | Analyzing 2... analyze packet out (count=10, target=<MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>)
+2021-11-17 04:59:51,970 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 267 | DEBUG | Analyzing 2.1... analyze packet out, get out_ports (count=10, out_ports=[(<PortNo.OFPP_FLOOD: 4294967291>, <MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>)])
+2021-11-17 04:59:51,971 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 274 | DEBUG | Analyzing 2.2... get packer msg (count=10, packer msg=[(<PortNo.OFPP_FLOOD: 4294967291>, <MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>)])
+2021-11-17 04:59:51,971 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 297 | DEBUG | Analyzing 2.3... get packet (count=10, packet=None)
+2021-11-17 04:59:51,972 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 351 | DEBUG | Analyzing 2.3... cannot pop pakcet (count=10 next_edge=l1 m=<MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>)
+2021-11-17 04:59:51,973 | 4297 | tracing_of_pipeline.analyzer, analyze, 204 | DEBUG | Analyzing 2... analyze packet out (count=10, target=<MsgForOFMsg (timestamp=1637125182.088802 message_type=13)>)
+2021-11-17 04:59:51,973 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 267 | DEBUG | Analyzing 2.1... analyze packet out, get out_ports (count=10, out_ports=[(1, <MsgForOFMsg (timestamp=1637125182.088802 message_type=13)>)])
+2021-11-17 04:59:51,974 | 4297 | tracing_of_pipeline.analyzer, analyze, 204 | DEBUG | Analyzing 2... analyze packet out (count=10, target=<MsgForOFMsg (timestamp=1637125182.138747 message_type=13)>)
+2021-11-17 04:59:51,974 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 267 | DEBUG | Analyzing 2.1... analyze packet out, get out_ports (count=10, out_ports=[(3, <MsgForOFMsg (timestamp=1637125182.138747 message_type=13)>)])
+2021-11-17 04:59:51,974 | 4297 | tracing_of_pipeline.analyzer, analyze, 204 | DEBUG | Analyzing 2... analyze packet out (count=10, target=<MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>)
+2021-11-17 04:59:51,975 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 267 | DEBUG | Analyzing 2.1... analyze packet out, get out_ports (count=10, out_ports=[(<PortNo.OFPP_FLOOD: 4294967291>, <MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>)])
+2021-11-17 04:59:51,975 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 274 | DEBUG | Analyzing 2.2... get packer msg (count=10, packer msg=[(<PortNo.OFPP_FLOOD: 4294967291>, <MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>)])
+2021-11-17 04:59:51,975 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 297 | DEBUG | Analyzing 2.3... get packet (count=10, packet=None)
+2021-11-17 04:59:51,976 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 351 | DEBUG | Analyzing 2.3... cannot pop pakcet (count=10 next_edge=l3 m=<MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>)
+2021-11-17 04:59:51,976 | 4297 | tracing_of_pipeline.analyzer, analyze, 217 | DEBUG | Analyzing 3... analyze packet (count=10, target=<Msg captured_interface=s1-eth1, sniff_timestamp=1637125187.38253, pkt=<ARP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>)
+2021-11-17 04:59:51,976 | 4297 | tracing_of_pipeline.analyzer, analyze, 224 | DEBUG | Analyzing 3.1... get flowtable (count=10, flow table=<FlowTables(datapath=0, timestamp=1637125187.290192, flows=[<Flow(table=0, priority=1, match=[<in_port, 3/None>, <dl_src, 16:8f:7e:35:ac:7a/None>, <dl_dst, 5a:7a:c3:e2:a5:92/None>], actions=[<InstructionApplyAction type=4>])>, <Flow(table=0, priority=1, match=[<in_port, 1/None>, <dl_src, 5a:7a:c3:e2:a5:92/None>, <dl_dst, 16:8f:7e:35:ac:7a/None>], actions=[<InstructionApplyAction type=4>])>, <Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>)
+2021-11-17 04:59:51,977 | 4297 | tracing_of_pipeline.analyzer, BFS, 383 | DEBUG | Analyzing 4... start BFS (count=10)
+2021-11-17 04:59:51,977 | 4297 | tracing_of_pipeline.analyzer, BFS, 390 | DEBUG | Analyzing 4.1... processing msg (count=10, msg=<Msg captured_interface=s1-eth1, sniff_timestamp=1637125187.38253, pkt=<ARP_RAW Packet>, in_port=1, in_phy_port=s1-eth1>)
+2021-11-17 04:59:51,982 | 4297 | tracing_of_pipeline.analyzer, BFS, 402 | DEBUG | Analyzing 4.1... dst_node is FlowTables (count=10)
+2021-11-17 04:59:51,983 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:51,990 | 4297 | tracing_of_pipeline.analyzer, BFS, 410 | DEBUG | Analyzing 4.2... After applied pipeline (count=10, out_ports_to_msg=[('65535', <Msg captured_interface=s1-eth1, sniff_timestamp=1637125187.38253, pkt=<ARP_RAW Packet>, in_port=1, in_phy_port=s1-eth1>)])
+2021-11-17 04:59:51,993 | 4297 | tracing_of_pipeline.analyzer, BFS, 428 | DEBUG | Analyzing 4.3... get next of dst_node (count=10, next_switch=controller)
+2021-11-17 04:59:51,995 | 4297 | tracing_of_pipeline.analyzer, BFS, 473 | DEBUG | Analyzing 4.4... next switch is controller. Therefore trace is finished. (count=10, next_switch=controller)
+2021-11-17 04:59:51,999 | 4297 | tracing_of_pipeline.analyzer, analyze, 231 | DEBUG | Analyzing 5.1... After BFS (count=10, trace=0x00000806 : (h1, s1)(s1, controller))
+2021-11-17 04:59:52,000 | 4297 | tracing_of_pipeline.packet_trace_handler, append, 31 | DEBUG | 1637125187.38253 : 0x00000806 : (h1, s1)(s1, controller)
+2021-11-17 04:59:52,003 | 4297 | tracing_of_pipeline.analyzer, analyze, 237 | DEBUG | Analyzing 5.2... Trace is finish. (count=10, trace=0x00000806 : (h1, s1)(s1, controller))
+2021-11-17 04:59:52,005 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l1
+2021-11-17 04:59:52,005 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l3
+2021-11-17 04:59:52,007 | 4297 | tracing_of_pipeline.analyzer, analyze, 217 | DEBUG | Analyzing 3... analyze packet (count=10, target=<Msg captured_interface=s1-eth3, sniff_timestamp=1637125187.3821054, pkt=<ARP_RAW Packet>, in_port=s1-eth3, in_phy_port=s1-eth3>)
+2021-11-17 04:59:52,009 | 4297 | tracing_of_pipeline.analyzer, analyze, 224 | DEBUG | Analyzing 3.1... get flowtable (count=10, flow table=<FlowTables(datapath=0, timestamp=1637125187.290192, flows=[<Flow(table=0, priority=1, match=[<in_port, 3/None>, <dl_src, 16:8f:7e:35:ac:7a/None>, <dl_dst, 5a:7a:c3:e2:a5:92/None>], actions=[<InstructionApplyAction type=4>])>, <Flow(table=0, priority=1, match=[<in_port, 1/None>, <dl_src, 5a:7a:c3:e2:a5:92/None>, <dl_dst, 16:8f:7e:35:ac:7a/None>], actions=[<InstructionApplyAction type=4>])>, <Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>)
+2021-11-17 04:59:52,009 | 4297 | tracing_of_pipeline.analyzer, BFS, 383 | DEBUG | Analyzing 4... start BFS (count=10)
+2021-11-17 04:59:52,010 | 4297 | tracing_of_pipeline.analyzer, BFS, 390 | DEBUG | Analyzing 4.1... processing msg (count=10, msg=<Msg captured_interface=s1-eth3, sniff_timestamp=1637125187.3821054, pkt=<ARP_RAW Packet>, in_port=3, in_phy_port=s1-eth3>)
+2021-11-17 04:59:52,012 | 4297 | tracing_of_pipeline.analyzer, BFS, 402 | DEBUG | Analyzing 4.1... dst_node is FlowTables (count=10)
+2021-11-17 04:59:52,016 | 4297 | tracing_of_pipeline.analyzer, BFS, 410 | DEBUG | Analyzing 4.2... After applied pipeline (count=10, out_ports_to_msg=[('1', <Msg captured_interface=s1-eth3, sniff_timestamp=1637125187.3821054, pkt=<ARP_RAW Packet>, in_port=3, in_phy_port=s1-eth3>)])
+2021-11-17 04:59:52,017 | 4297 | tracing_of_pipeline.analyzer, BFS, 428 | DEBUG | Analyzing 4.3... get next of dst_node (count=10, next_switch=h1)
+2021-11-17 04:59:52,017 | 4297 | tracing_of_pipeline.analyzer, BFS, 485 | DEBUG | Analyzing 4.4... next switch is host. Therefore trace is finished. (count=10, next_switch=h1)
+2021-11-17 04:59:52,021 | 4297 | tracing_of_pipeline.analyzer, analyze, 231 | DEBUG | Analyzing 5.1... After BFS (count=10, trace=0x00000806 : (h3, s1)(s1, h1))
+2021-11-17 04:59:52,022 | 4297 | tracing_of_pipeline.packet_trace_handler, append, 31 | DEBUG | 1637125187.3821054 : 0x00000806 : (h3, s1)(s1, h1)
+2021-11-17 04:59:52,023 | 4297 | tracing_of_pipeline.analyzer, analyze, 237 | DEBUG | Analyzing 5.2... Trace is finish. (count=10, trace=0x00000806 : (h3, s1)(s1, h1))
+2021-11-17 04:59:52,082 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:52,083 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:52,173 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:52,183 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:52,266 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:52,283 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:52,366 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:52,383 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:52,482 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:52,483 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:52,565 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:52,583 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:52,665 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:52,683 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:52,765 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:52,783 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:52,866 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:52,883 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:52,965 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:52,983 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:53,065 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:53,083 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:53,165 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:53,183 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:53,265 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:53,283 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:53,365 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:53,383 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:53,465 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:53,483 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:53,566 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:53,583 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:53,666 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:53,683 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:53,766 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:53,783 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:53,865 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:53,883 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:53,962 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={'s1-eth1': [], 's1-eth3': []})
+2021-11-17 04:59:53,964 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={'s1-eth1': [], 's1-eth3': []})
+2021-11-17 04:59:53,966 | 4297 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 598 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-17 04:59:53,965 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:53,967 | 4297 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 598 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-17 04:59:53,974 | 4297 | tracing_of_pipeline.analyzer, _polling, 551 | DEBUG | polled repository (start_time=1637125169.961023, until=11) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [<MsgForOFMsg (timestamp=1637125182.037815 message_type=10)>, <MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>, <MsgForOFMsg (timestamp=1637125182.065648 message_type=10)>, <MsgForOFMsg (timestamp=1637125182.088802 message_type=13)>, <MsgForOFMsg (timestamp=1637125182.130699 message_type=10)>, <MsgForOFMsg (timestamp=1637125182.138747 message_type=13)>], 's2': [<MsgForOFMsg (timestamp=1637125182.065776 message_type=10)>, <MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>]}
+2021-11-17 04:59:53,976 | 4297 | tracing_of_pipeline.analyzer, analyze, 196 | DEBUG | Analyzing 1... polled repository (count=11)
+2021-11-17 04:59:53,979 | 4297 | tracing_of_pipeline.analyzer, analyze, 204 | DEBUG | Analyzing 2... analyze packet out (count=11, target=<MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>)
+2021-11-17 04:59:53,982 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 267 | DEBUG | Analyzing 2.1... analyze packet out, get out_ports (count=11, out_ports=[(<PortNo.OFPP_FLOOD: 4294967291>, <MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>)])
+2021-11-17 04:59:53,983 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:53,985 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 274 | DEBUG | Analyzing 2.2... get packer msg (count=11, packer msg=[(<PortNo.OFPP_FLOOD: 4294967291>, <MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>)])
+2021-11-17 04:59:53,996 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 297 | DEBUG | Analyzing 2.3... get packet (count=11, packet=None)
+2021-11-17 04:59:53,999 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 351 | DEBUG | Analyzing 2.3... cannot pop pakcet (count=11 next_edge=l1 m=<MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>)
+2021-11-17 04:59:54,001 | 4297 | tracing_of_pipeline.analyzer, analyze, 204 | DEBUG | Analyzing 2... analyze packet out (count=11, target=<MsgForOFMsg (timestamp=1637125182.088802 message_type=13)>)
+2021-11-17 04:59:54,002 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 267 | DEBUG | Analyzing 2.1... analyze packet out, get out_ports (count=11, out_ports=[(1, <MsgForOFMsg (timestamp=1637125182.088802 message_type=13)>)])
+2021-11-17 04:59:54,004 | 4297 | tracing_of_pipeline.analyzer, analyze, 204 | DEBUG | Analyzing 2... analyze packet out (count=11, target=<MsgForOFMsg (timestamp=1637125182.138747 message_type=13)>)
+2021-11-17 04:59:54,005 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 267 | DEBUG | Analyzing 2.1... analyze packet out, get out_ports (count=11, out_ports=[(3, <MsgForOFMsg (timestamp=1637125182.138747 message_type=13)>)])
+2021-11-17 04:59:54,006 | 4297 | tracing_of_pipeline.analyzer, analyze, 204 | DEBUG | Analyzing 2... analyze packet out (count=11, target=<MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>)
+2021-11-17 04:59:54,006 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 267 | DEBUG | Analyzing 2.1... analyze packet out, get out_ports (count=11, out_ports=[(<PortNo.OFPP_FLOOD: 4294967291>, <MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>)])
+2021-11-17 04:59:54,007 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 274 | DEBUG | Analyzing 2.2... get packer msg (count=11, packer msg=[(<PortNo.OFPP_FLOOD: 4294967291>, <MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>)])
+2021-11-17 04:59:54,007 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 297 | DEBUG | Analyzing 2.3... get packet (count=11, packet=None)
+2021-11-17 04:59:54,008 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 351 | DEBUG | Analyzing 2.3... cannot pop pakcet (count=11 next_edge=l3 m=<MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>)
+2021-11-17 04:59:54,008 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l2
+2021-11-17 04:59:54,008 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l1
+2021-11-17 04:59:54,009 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l3
+2021-11-17 04:59:54,010 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l4
+2021-11-17 04:59:54,065 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:54,083 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:54,165 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:54,183 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:54,278 | 4472 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-11-17 04:59:54,283 | 4475 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-11-17 04:59:54,294 | 4297 | tracing_net.net, stop_tracing, 542 | INFO | tracing stop
+2021-11-17 04:59:54,295 | 4297 | tracing_net.packet_capture_manager, stop_capture, 121 | DEBUG | capture process (s1-eth1:4461) terminated
+2021-11-17 04:59:54,298 | 4297 | tracing_net.packet_capture_manager, stop_capture, 121 | DEBUG | capture process (s1-eth2:4463) terminated
+2021-11-17 04:59:54,300 | 4297 | tracing_net.packet_capture_manager, stop_capture, 121 | DEBUG | capture process (s2-eth2:4466) terminated
+2021-11-17 04:59:54,312 | 4297 | tracing_net.packet_capture_manager, stop_capture, 121 | DEBUG | capture process (s1-eth3:4469) terminated
+2021-11-17 04:59:54,313 | 4297 | tracing_net.flowtable.flow_table_manager, stop_poller, 102 | DEBUG | poller process (s1:4472) terminated
+2021-11-17 04:59:54,315 | 4297 | tracing_net.flowtable.flow_table_manager, stop_poller, 102 | DEBUG | poller process (s2:4475) terminated
+2021-11-17 04:59:54,316 | 4297 | tracing_of_pipeline.analyzer, stop_analyzing, 149 | INFO | stop analyzing interval. (last count = 12)
+2021-11-17 04:59:54,317 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={'s1-eth3': []})
+2021-11-17 04:59:54,317 | 4297 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={'s1-eth3': []})
+2021-11-17 04:59:54,318 | 4297 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 598 | DEBUG | tmp_p = [], s_dpip = 1
+2021-11-17 04:59:54,318 | 4297 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 598 | DEBUG | tmp_p = [], s_dpip = 2
+2021-11-17 04:59:54,319 | 4297 | tracing_of_pipeline.analyzer, _polling, 551 | DEBUG | polled repository (start_time=1637125169.961023, until=12) values = {'l2': [], 'l1': [], 'l3': [], 'l4': []} {'s1': [<MsgForOFMsg (timestamp=1637125182.037815 message_type=10)>, <MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>, <MsgForOFMsg (timestamp=1637125182.065648 message_type=10)>, <MsgForOFMsg (timestamp=1637125182.088802 message_type=13)>, <MsgForOFMsg (timestamp=1637125182.130699 message_type=10)>, <MsgForOFMsg (timestamp=1637125182.138747 message_type=13)>], 's2': [<MsgForOFMsg (timestamp=1637125182.065776 message_type=10)>, <MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>]}
+2021-11-17 04:59:54,319 | 4297 | tracing_of_pipeline.analyzer, analyze, 196 | DEBUG | Analyzing 1... polled repository (count=12)
+2021-11-17 04:59:54,320 | 4297 | tracing_of_pipeline.analyzer, analyze, 204 | DEBUG | Analyzing 2... analyze packet out (count=12, target=<MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>)
+2021-11-17 04:59:54,320 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 267 | DEBUG | Analyzing 2.1... analyze packet out, get out_ports (count=12, out_ports=[(<PortNo.OFPP_FLOOD: 4294967291>, <MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>)])
+2021-11-17 04:59:54,321 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 274 | DEBUG | Analyzing 2.2... get packer msg (count=12, packer msg=[(<PortNo.OFPP_FLOOD: 4294967291>, <MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>)])
+2021-11-17 04:59:54,321 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 297 | DEBUG | Analyzing 2.3... get packet (count=12, packet=None)
+2021-11-17 04:59:54,322 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 351 | DEBUG | Analyzing 2.3... cannot pop pakcet (count=12 next_edge=l1 m=<MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>)
+2021-11-17 04:59:54,323 | 4297 | tracing_of_pipeline.analyzer, analyze, 204 | DEBUG | Analyzing 2... analyze packet out (count=12, target=<MsgForOFMsg (timestamp=1637125182.088802 message_type=13)>)
+2021-11-17 04:59:54,323 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 267 | DEBUG | Analyzing 2.1... analyze packet out, get out_ports (count=12, out_ports=[(1, <MsgForOFMsg (timestamp=1637125182.088802 message_type=13)>)])
+2021-11-17 04:59:54,324 | 4297 | tracing_of_pipeline.analyzer, analyze, 204 | DEBUG | Analyzing 2... analyze packet out (count=12, target=<MsgForOFMsg (timestamp=1637125182.138747 message_type=13)>)
+2021-11-17 04:59:54,324 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 267 | DEBUG | Analyzing 2.1... analyze packet out, get out_ports (count=12, out_ports=[(3, <MsgForOFMsg (timestamp=1637125182.138747 message_type=13)>)])
+2021-11-17 04:59:54,325 | 4297 | tracing_of_pipeline.analyzer, analyze, 204 | DEBUG | Analyzing 2... analyze packet out (count=12, target=<MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>)
+2021-11-17 04:59:54,326 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 267 | DEBUG | Analyzing 2.1... analyze packet out, get out_ports (count=12, out_ports=[(<PortNo.OFPP_FLOOD: 4294967291>, <MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>)])
+2021-11-17 04:59:54,326 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 274 | DEBUG | Analyzing 2.2... get packer msg (count=12, packer msg=[(<PortNo.OFPP_FLOOD: 4294967291>, <MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>)])
+2021-11-17 04:59:54,327 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 297 | DEBUG | Analyzing 2.3... get packet (count=12, packet=None)
+2021-11-17 04:59:54,327 | 4297 | tracing_of_pipeline.analyzer, _analyze_packet_out, 351 | DEBUG | Analyzing 2.3... cannot pop pakcet (count=12 next_edge=l3 m=<MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>)
+2021-11-17 04:59:54,328 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l2
+2021-11-17 04:59:54,328 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l1
+2021-11-17 04:59:54,329 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l3
+2021-11-17 04:59:54,329 | 4297 | tracing_of_pipeline.analyzer, analyze, 249 | WARNING | No packet in edge l4
+2021-11-17 04:59:54,330 | 4297 | tracing_of_pipeline.analyzer, analyze_rest, 161 | INFO | These packets could not be analyzed. {'l2': [], 'l1': [], 'l3': [], 'l4': []}
+2021-11-17 04:59:54,330 | 4297 | tracing_of_pipeline.analyzer, analyze_rest, 162 | INFO | These OpenFlowMessage could not be analyzed. {'s1': [<MsgForOFMsg (timestamp=1637125182.037815 message_type=10)>, <MsgForOFMsg (timestamp=1637125182.043093 message_type=13)>, <MsgForOFMsg (timestamp=1637125182.065648 message_type=10)>, <MsgForOFMsg (timestamp=1637125182.088802 message_type=13)>, <MsgForOFMsg (timestamp=1637125182.130699 message_type=10)>, <MsgForOFMsg (timestamp=1637125182.138747 message_type=13)>], 's2': [<MsgForOFMsg (timestamp=1637125182.065776 message_type=10)>, <MsgForOFMsg (timestamp=1637125182.088938 message_type=13)>]}
+2021-11-17 04:59:54,910 | 4297 | tracing_of_pipeline, stop, 137 | INFO | OpenFlow Tracer Stop
+2021-11-17 04:59:54,911 | 4297 | tracing_net.net, stop_tracing, 542 | INFO | tracing stop
+2021-11-17 04:59:54,914 | 4297 | tracing_net.packet_capture_manager, stop_capture, 121 | DEBUG | capture process (s1-eth1:4461) terminated
+2021-11-17 04:59:54,915 | 4297 | tracing_net.packet_capture_manager, stop_capture, 121 | DEBUG | capture process (s1-eth2:4463) terminated
+2021-11-17 04:59:54,916 | 4297 | tracing_net.packet_capture_manager, stop_capture, 121 | DEBUG | capture process (s2-eth2:4466) terminated
+2021-11-17 04:59:54,919 | 4297 | tracing_net.packet_capture_manager, stop_capture, 121 | DEBUG | capture process (s1-eth3:4469) terminated
+2021-11-17 04:59:54,920 | 4297 | tracing_net.flowtable.flow_table_manager, stop_poller, 102 | DEBUG | poller process (s1:4472) terminated
+2021-11-17 04:59:54,921 | 4297 | tracing_net.flowtable.flow_table_manager, stop_poller, 102 | DEBUG | poller process (s2:4475) terminated
+2021-11-17 04:59:54,923 | 4297 | tracing_net.net, stop, 317 | INFO | mininet stop
+2021-11-17 04:59:55,198 | 4297 | tracing_net.net, stop, 551 | DEBUG | mininet stopped and all capture processes closed

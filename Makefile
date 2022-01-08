@@ -2,7 +2,7 @@ up:
 	# cp -R ../ofcapture module/ofcapture
 	# cp -R ../tracer_net module/tracer_net
 	# rm -rf module/tracer_net/mininet*
-	cd view; npm run build; cd ..
+	# cd view; npm run build; cd ..
 	vagrant up 2>&1 | tee log/vagrant-`date +'%Y-%m-%d-%H-%M'`.log
 
 reload:
@@ -25,3 +25,5 @@ run:
 clean:
 	sudo mn -c
 	
+reference:
+	sphinx-apidoc -f -o docs/source/references/ ./src/

@@ -1,0 +1,4 @@
+2021-09-22 05:06:05,436 | 3119 | tracing_net.net, __init__, 97 | INFO | set up on-demand mininet
+2021-09-22 05:06:05,450 | 3119 | tracing_net.net, start, 310 | INFO | mininet start
+2021-09-22 05:08:39,711 | 3119 | tracing_net.net, stop, 315 | INFO | mininet stop
+2021-09-22 05:08:39,724 | 3119 | tracing_net.net, stop, 542 | DEBUG | mininet stopped and all capture processes closed

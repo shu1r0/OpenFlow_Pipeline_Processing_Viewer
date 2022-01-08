@@ -9,20 +9,19 @@ from abc import ABCMeta, abstractmethod
 from logging import getLogger, setLoggerClass, Logger
 
 from src.api.proto import net_pb2
+from src.tracing_net.ofproto.action import ACTIONS
 
 
 setLoggerClass(Logger)
 logger = getLogger('tracing_net.instruction')
 
 
+INSTRUCTIONS = {}
+
+
 class InstructionResult:
     """
     インストラクション実行後の結果．
-
-    TODO:
-        * 変更履歴を保存したい
-        * アクションセットをリストにすればよくね？？？
-        * 自分のインストラクションを保存したい気持ちあります．
     """
 
     def __init__(self, msg, action_set=None, out_ports=None, table_id=None):
@@ -107,6 +106,12 @@ class Instruction(metaclass=ABCMeta):
     def __repr__(self):
         return "<{} type={}>".format(self.__class__.__name__, self.instruction_type.value)
 
+    @classmethod
+    def parse_from_ofcapture(cls, instructions):
+        for inst in instructions:
+            pass
+        return None
+
 
 class InstructionApplyAction(Instruction):
     """OFPIT_APPLY_ACTIONS"""
@@ -158,6 +163,19 @@ class InstructionApplyAction(Instruction):
     def parser(cls, actions):
         return cls(actions=actions)
 
+    @classmethod
+    def parse_from_obj(cls, same_obj):
+        actions = same_obj.actions
+        tmp_actions = []
+        for action in actions:
+            action_cls = ACTIONS[int(action.action_type)]
+            action = action_cls.parse_from_obj(action)
+            tmp_actions.append(action)
+        return cls(tmp_actions)
+
+
+INSTRUCTIONS[InstructionType.OFPIT_APPLY_ACTIONS] = InstructionApplyAction
+
 
 class InstructionClearAction(Instruction):
     """OFPIT_CLEAR_ACTIONS"""
@@ -202,6 +220,20 @@ class InstructionClearAction(Instruction):
     def parser(cls):
         return cls()
 
+    @classmethod
+    def parse_from_obj(cls, same_obj):
+        actions = getattr(same_obj, 'actions', None)
+        tmp_actions = []
+        if actions:
+            for action in actions:
+                action_cls = ACTIONS[int(action.action_type)]
+                action = action_cls.parse_from_obj(action)
+                tmp_actions.append(action)
+        return cls(tmp_actions)
+
+
+INSTRUCTIONS[InstructionType.OFPIT_CLEAR_ACTIONS] = InstructionClearAction
+
 
 class InstructionGotoTable(Instruction):
     """OFPIT_GOTO_TABLE"""
@@ -213,6 +245,8 @@ class InstructionGotoTable(Instruction):
             table_id (int): set next table in the lookup pipeline.
         """
         super().__init__(InstructionType.OFPIT_GOTO_TABLE)
+        if not isinstance(table_id, int):
+            raise TypeError
         self.table_id = table_id
 
     def apply(self, msg, action_set=None):
@@ -244,7 +278,14 @@ class InstructionGotoTable(Instruction):
 
     @classmethod
     def parser(cls, table=None):
-        return cls(table_id=table)
+        return cls(table_id=int(table))
+
+    @classmethod
+    def parse_from_obj(cls, same_obj):
+        return cls(int(same_obj.table_id))
+
+
+INSTRUCTIONS[InstructionType.OFPIT_GOTO_TABLE] = InstructionGotoTable
 
 
 class InstructionMeter(Instruction):
@@ -290,6 +331,13 @@ class InstructionMeter(Instruction):
     @classmethod
     def parser(cls, meter_id=None):
         return cls(meter_id=meter_id)
+
+    @classmethod
+    def parse_from_obj(cls, same_obj):
+        return cls(same_obj.meter_id)
+
+
+INSTRUCTIONS[InstructionType.OFPIT_METER] = InstructionMeter
 
 
 class InstructionWriteAction(Instruction):
@@ -345,6 +393,19 @@ class InstructionWriteAction(Instruction):
         """
         return cls(actions=actions)
 
+    @classmethod
+    def parse_from_obj(cls, same_obj):
+        actions = same_obj.actions
+        tmp_actions = []
+        for action in actions:
+            action_cls = ACTIONS[int(action.action_type)]
+            action = action_cls.parse_from_obj(action)
+            tmp_actions.append(action)
+        return cls(tmp_actions)
+
+
+INSTRUCTIONS[InstructionType.OFPIT_WRITE_ACTIONS] = InstructionWriteAction
+
 
 class InstructionWriteMetadata(Instruction):
     """OFPIT_WRITE_METADATA.
@@ -353,7 +414,7 @@ class InstructionWriteMetadata(Instruction):
           * This class put on the back burner.
     """
 
-    def __init__(self, metadata=0, metadata_mask=0):
+    def __init__(self, metadata=0, metadata_mask=None):
         """Create InstructionWriteMetadata with the optional parameters below.
 
         Args:
@@ -362,7 +423,7 @@ class InstructionWriteMetadata(Instruction):
         """
         super().__init__(InstructionType.OFPIT_WRITE_METADATA)
         self.metadata = metadata
-        self.metadata_mask = metadata_mask
+        self.metadata_mask = metadata_mask if metadata_mask else 0xffffffffffffffff
 
     def apply(self, msg, action_set=None):
         """This instruction apply to msg and action set.
@@ -378,6 +439,8 @@ class InstructionWriteMetadata(Instruction):
         if msg.metadata is not None:
             msg.metadata = msg.metadata & ~self.metadata_mask
             msg.metadata = msg.metadata + (self.metadata & self.metadata_mask)
+        else:
+            msg.metadata = self.metadata & self.metadata_mask
         return result
 
     def get_protobuf_message(self):
@@ -388,14 +451,53 @@ class InstructionWriteMetadata(Instruction):
         """
         instruction_msg = net_pb2.Instruction()
         instruction_msg.type = net_pb2.InstructionType.OFPIT_WRITE_METADATA
-        write_metadata = net_pb2.InstructionWriteMetadata
+        write_metadata = net_pb2.InstructionWriteMetadata()
         write_metadata.metadata = self.metadata
         write_metadata.metadata_mask = self.metadata_mask
         instruction_msg.write_metadata.CopyFrom(write_metadata)
         return instruction_msg
 
     @classmethod
-    def parser(cls, metadata=0, mask=0):
+    def parser(cls, metadata=0, mask=0xffffffffffffffff):
+        """
+        todo:
+            parse前でintに
+        """
         if not (isinstance(metadata, int) and isinstance(mask, int)):
-            raise TypeError
+            metadata = int(metadata, 16)
+            mask = int(mask, 16)
+        else:
+            metadata = int(metadata)
+            mask = int(mask)
         return cls(metadata=metadata, metadata_mask=mask)
+
+    @classmethod
+    def parse_from_obj(cls, same_obj):
+        metadata = int(same_obj.metadata)
+        mask = getattr(same_obj, "metadata_mask", None)
+        if not isinstance(mask, int):
+            mask = int(mask)
+        return cls(metadata, mask)
+
+
+INSTRUCTIONS[InstructionType.OFPIT_WRITE_METADATA] = InstructionWriteMetadata
+
+
+def parse_from_obj(instructions):
+    parsed_insts = []
+    for inst in instructions:
+        inst = INSTRUCTIONS[int(inst.instruction_type)].parse_from_obj(inst)
+        parsed_insts.append(inst)
+    return parsed_insts
+
+
+if __name__ == '__main__':
+    apply_action = InstructionApplyAction()
+    clear_action = InstructionClearAction()
+    goto_table = InstructionGotoTable(1)
+    meter = InstructionMeter(1)
+    write_action = InstructionWriteAction()
+    write_metadata = InstructionWriteMetadata()
+
+    for inst in [apply_action, clear_action, goto_table, meter, write_action, write_metadata]:
+        print(inst.get_protobuf_message())

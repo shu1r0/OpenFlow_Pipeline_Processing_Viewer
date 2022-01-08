@@ -13,21 +13,21 @@ class AbstractPacketRepository(metaclass=ABCMeta):
         self.repository = {}
 
     @abstractmethod
-    def add(self, interface, msg):
+    def add(self, edge, msg):
         """add message to this repository
 
         Args:
-            interface (str) : interface name
+            edge (str) : edge name
             msg (Msg) : packet message
         """
         raise NotImplementedError
 
     @abstractmethod
-    def pop(self, interface, until=None, count=None):
+    def pop(self, edge, until=None, count=None):
         """
 
         Args:
-            interface (str) : interface name
+            edge (str) : edge name
             until (float) : unix timestamp
             count (int) :
         """
@@ -40,22 +40,25 @@ class PacketRepository(AbstractPacketRepository):
     def __init__(self):
         super(PacketRepository, self).__init__()
 
-    def add(self, interface, msg):
+    def add(self, edge, msg):
         """
 
         Args:
-            interface (str) :
+            edge (str) :
             msg (Msg) :
         """
-        self.repository.setdefault(interface, [])
-        self.repository[interface].append(msg)
+        self.repository.setdefault(edge, [])
+        self.repository[edge].append(msg)
         # logger.debug("added msg {} to packet repo {}".format(msg, self.repository))
 
-    def pop(self, interface, until=None, count=None):
+    def pop(self, edge, until=None, count=None):
         """
 
+        Notes:
+            * "Failed to pop" error log is no edge message
+
         Args:
-            interface (str) :
+            edge (str) :
             until (timestamp) :
             count (int) :
 
@@ -64,21 +67,23 @@ class PacketRepository(AbstractPacketRepository):
         """
         try:
             if until is not None:
-                return self._pop_until(interface, until)
+                return self._pop_until(edge, until)
             elif count is not None:
-                return self._pop_count(interface, count)
+                return self._pop_count(edge, count)
             else:
-                return self._pop(interface)
+                return self._pop(edge)
         except KeyError:
-            logger.error("Failed to pop from packet repository (repo={})".format(self.repository))
+            logger.error("Failed to pop from packet repository (repo={}). "
+                         "This may appear at the start of the system, but if it appears while the system is running, "
+                         "there may be a bug.".format(self.repository))
             return None
 
-    def _pop(self, interface):
-        return self.repository.pop(interface)
+    def _pop(self, edge):
+        return self.repository.pop(edge)
 
-    def _pop_until(self, interface, until):
+    def _pop_until(self, edge, until):
         tmp_i = []
-        packets = self.repository[interface]
+        packets = self.repository[edge]
         for i in range(len(packets)):
             if packets[i].sniff_timestamp < until:
                 tmp_i.append(i)
@@ -87,9 +92,9 @@ class PacketRepository(AbstractPacketRepository):
             tmp.insert(0, packets.pop(i))
         return tmp
 
-    def _pop_count(self, interface, count):
+    def _pop_count(self, edge, count):
         tmp_i = []
-        packets = self.repository[interface]
+        packets = self.repository[edge]
         for i in range(min(len(packets), count)):
                 tmp_i.append(i)
         tmp = []

@@ -1,0 +1,133 @@
+2021-11-10 02:59:29,366 | 6760 | tracing_net.net, __init__, 99 | INFO | set up on-demand mininet
+2021-11-10 02:59:29,369 | 6760 | tracing_of_pipeline, start, 125 | INFO | OpenFlow Tracer Start
+2021-11-10 02:59:29,375 | 6760 | tracing_net.net, start, 312 | INFO | mininet start
+2021-11-10 02:59:29,377 | 6760 | tracing_of_pipeline.analyzer, start_analyzing, 143 | INFO | start analyzing interval (start_time = 1636513169.377358, interval = 2)
+2021-11-10 02:59:30,099 | 6760 | tracing_net.net, start_tracing, 525 | INFO | tracing start
+2021-11-10 02:59:30,161 | 6924 | tracing_net.util.packet_capture, start_capture, 65 | INFO | packet capture start on s1-eth1
+2021-11-10 02:59:30,166 | 6928 | tracing_net.util.packet_capture, start_capture, 65 | INFO | packet capture start on s2-eth2
+2021-11-10 02:59:30,177 | 6760 | tracing_net.flowtable.flow_monitor, __init__, 46 | INFO | flow monitor start : s1
+2021-11-10 02:59:30,178 | 6930 | tracing_net.util.packet_capture, start_capture, 65 | INFO | packet capture start on s1-eth3
+2021-11-10 02:59:30,170 | 6926 | tracing_net.util.packet_capture, start_capture, 65 | INFO | packet capture start on s1-eth2
+2021-11-10 02:59:30,186 | 6760 | tracing_net.flowtable.flow_monitor, __init__, 46 | INFO | flow monitor start : s2
+2021-11-10 02:59:31,220 | 6934 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-10 02:59:31,253 | 6939 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-10 02:59:31,378 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:31,379 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:31,380 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:31,380 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:31,382 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-10 02:59:31,382 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-10 02:59:31,383 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-10 02:59:31,383 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-10 02:59:32,218 | 6934 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-10 02:59:32,246 | 6939 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-10 02:59:33,203 | 6934 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-10 02:59:33,232 | 6939 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-11-10 02:59:33,381 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:33,393 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:33,395 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:33,396 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:33,398 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-10 02:59:33,398 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-10 02:59:33,399 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-10 02:59:33,400 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-10 02:59:35,379 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:35,381 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:35,383 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:35,384 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:35,386 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-10 02:59:35,386 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-10 02:59:35,386 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-10 02:59:35,387 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-10 02:59:37,382 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:37,382 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:37,383 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:37,384 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:37,386 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-10 02:59:37,387 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-10 02:59:37,387 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-10 02:59:37,388 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-10 02:59:39,380 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:39,384 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:39,385 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:39,386 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:39,388 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-10 02:59:39,389 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-10 02:59:39,389 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-10 02:59:39,390 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-10 02:59:41,380 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:41,396 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:41,401 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:41,402 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:41,403 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-10 02:59:41,404 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-10 02:59:41,405 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-10 02:59:41,405 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-10 02:59:43,378 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:43,380 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:43,380 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:43,381 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:43,384 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-10 02:59:43,385 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-10 02:59:43,385 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-10 02:59:43,386 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-10 02:59:45,380 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:45,381 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:45,382 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:45,383 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 02:59:45,386 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-10 02:59:45,390 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-10 02:59:45,390 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-10 02:59:45,391 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-10 02:59:47,382 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={'s2-eth2': [<Msg captured_interface=s2-eth2, sniff_timestamp=1636513185.7647407, pkt=<ARP_RAW Packet>, in_port=s2-eth2, in_phy_port=s2-eth2>, <Msg captured_interface=s2-eth2, sniff_timestamp=1636513185.7647705, pkt=<ARP_RAW Packet>, in_port=s2-eth2, in_phy_port=s2-eth2>, <Msg captured_interface=s2-eth2, sniff_timestamp=1636513185.8439074, pkt=<ICMP_RAW Packet>, in_port=s2-eth2, in_phy_port=s2-eth2>], 's1-eth1': [<Msg captured_interface=s1-eth1, sniff_timestamp=1636513185.715423, pkt=<ARP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>, <Msg captured_interface=s1-eth1, sniff_timestamp=1636513185.8255591, pkt=<ARP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>, <Msg captured_interface=s1-eth1, sniff_timestamp=1636513185.8255718, pkt=<ICMP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>], 's1-eth2': [<Msg captured_interface=s1-eth2, sniff_timestamp=1636513185.7298377, pkt=<ARP_RAW Packet>, in_port=s1-eth2, in_phy_port=s1-eth2>, <Msg captured_interface=s1-eth2, sniff_timestamp=1636513185.8020449, pkt=<ARP_RAW Packet>, in_port=s1-eth2, in_phy_port=s1-eth2>, <Msg captured_interface=s1-eth2, sniff_timestamp=1636513185.833232, pkt=<ICMP_RAW Packet>, in_port=s1-eth2, in_phy_port=s1-eth2>]})
+2021-11-10 02:59:47,382 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-10 02:59:47,383 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l1
+2021-11-10 02:59:47,383 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l3
+2021-11-10 02:59:47,384 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-10 02:59:49,378 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={'s2-eth2': [], 's1-eth1': [], 's1-eth2': []})
+2021-11-10 02:59:49,408 | 6760 | tracing_of_pipeline.analyzer, analyze, 248 | WARNING | edge l1 is not terminal edge. The analysis done before may not have been done properly.
+2021-11-10 02:59:49,412 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-10 02:59:51,378 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={'s2-eth2': [<Msg captured_interface=s2-eth2, sniff_timestamp=1636513190.8728867, pkt=<ARP_RAW Packet>, in_port=s2-eth2, in_phy_port=s2-eth2>], 's1-eth1': [<Msg captured_interface=s1-eth1, sniff_timestamp=1636513190.8731678, pkt=<ARP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>], 's1-eth2': [<Msg captured_interface=s1-eth2, sniff_timestamp=1636513190.8730772, pkt=<ARP_RAW Packet>, in_port=s1-eth2, in_phy_port=s1-eth2>]})
+2021-11-10 02:59:51,391 | 6760 | tracing_of_pipeline.analyzer, analyze, 248 | WARNING | edge l1 is not terminal edge. The analysis done before may not have been done properly.
+2021-11-10 02:59:51,400 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-10 02:59:53,385 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={'s2-eth2': [<Msg captured_interface=s2-eth2, sniff_timestamp=1636513190.8728867, pkt=<ARP_RAW Packet>, in_port=s2-eth2, in_phy_port=s2-eth2>], 's1-eth1': [<Msg captured_interface=s1-eth1, sniff_timestamp=1636513190.8731678, pkt=<ARP_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>], 's1-eth2': [<Msg captured_interface=s1-eth2, sniff_timestamp=1636513190.8730772, pkt=<ARP_RAW Packet>, in_port=s1-eth2, in_phy_port=s1-eth2>]})
+2021-11-10 02:59:53,391 | 6760 | tracing_of_pipeline.analyzer, analyze, 248 | WARNING | edge l1 is not terminal edge. The analysis done before may not have been done properly.
+2021-11-10 02:59:53,407 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-10 02:59:55,378 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={'s2-eth2': [], 's1-eth1': [], 's1-eth2': []})
+2021-11-10 02:59:55,388 | 6760 | tracing_of_pipeline.analyzer, analyze, 248 | WARNING | edge l1 is not terminal edge. The analysis done before may not have been done properly.
+2021-11-10 02:59:55,396 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-10 02:59:57,378 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={'s2-eth2': [], 's1-eth1': [], 's1-eth2': []})
+2021-11-10 02:59:57,379 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-10 02:59:57,380 | 6760 | tracing_of_pipeline.analyzer, analyze, 248 | WARNING | edge l1 is not terminal edge. The analysis done before may not have been done properly.
+2021-11-10 02:59:57,383 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-10 02:59:59,378 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={'s2-eth2': [], 's1-eth1': [], 's1-eth2': []})
+2021-11-10 02:59:59,379 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-10 02:59:59,380 | 6760 | tracing_of_pipeline.analyzer, analyze, 248 | WARNING | edge l1 is not terminal edge. The analysis done before may not have been done properly.
+2021-11-10 02:59:59,385 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-10 03:00:01,386 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={'s2-eth2': [], 's1-eth1': [], 's1-eth2': []})
+2021-11-10 03:00:01,397 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-10 03:00:01,398 | 6760 | tracing_of_pipeline.analyzer, analyze, 248 | WARNING | edge l1 is not terminal edge. The analysis done before may not have been done properly.
+2021-11-10 03:00:01,401 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-10 03:00:03,379 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={'s2-eth2': [], 's1-eth1': [], 's1-eth2': []})
+2021-11-10 03:00:03,380 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-10 03:00:03,381 | 6760 | tracing_of_pipeline.analyzer, analyze, 248 | WARNING | edge l1 is not terminal edge. The analysis done before may not have been done properly.
+2021-11-10 03:00:03,384 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-10 03:00:05,379 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={'s2-eth2': [], 's1-eth1': [], 's1-eth2': []})
+2021-11-10 03:00:05,385 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-10 03:00:05,386 | 6760 | tracing_of_pipeline.analyzer, analyze, 248 | WARNING | edge l1 is not terminal edge. The analysis done before may not have been done properly.
+2021-11-10 03:00:05,389 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-10 03:00:07,379 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={'s2-eth2': [], 's1-eth1': [], 's1-eth2': []})
+2021-11-10 03:00:07,381 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-10 03:00:07,382 | 6760 | tracing_of_pipeline.analyzer, analyze, 248 | WARNING | edge l1 is not terminal edge. The analysis done before may not have been done properly.
+2021-11-10 03:00:07,391 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-10 03:00:07,800 | 6760 | tracing_net.net, stop_tracing, 541 | INFO | tracing stop
+2021-11-10 03:00:07,826 | 6760 | tracing_of_pipeline.analyzer, stop_analyzing, 151 | INFO | stop analyzing interval. (last count = 19)
+2021-11-10 03:00:07,833 | 6760 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-11-10 03:00:07,833 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l2
+2021-11-10 03:00:07,834 | 6760 | tracing_of_pipeline.analyzer, analyze, 248 | WARNING | edge l1 is not terminal edge. The analysis done before may not have been done properly.
+2021-11-10 03:00:07,837 | 6760 | tracing_of_pipeline.analyzer, analyze, 251 | WARNING | No packet in edge l4
+2021-11-10 03:00:07,838 | 6760 | tracing_of_pipeline.analyzer, analyze_rest, 163 | INFO | These packets could not be analyzed. {'l2': [], 'l1': [<Msg captured_interface=s1-eth2, sniff_timestamp=1636513185.8020449, pkt=<ARP_RAW Packet>, in_port=s1-eth2, in_phy_port=s1-eth2>, <Msg captured_interface=s1-eth2, sniff_timestamp=1636513185.833232, pkt=<ICMP_RAW Packet>, in_port=s1-eth2, in_phy_port=s1-eth2>, <Msg captured_interface=s1-eth2, sniff_timestamp=1636513185.8440094, pkt=<ICMP_RAW Packet>, in_port=s1-eth2, in_phy_port=s1-eth2>], 'l3': [<Msg captured_interface=s2-eth2, sniff_timestamp=1636513190.8728867, pkt=<ARP_RAW Packet>, in_port=2, in_phy_port=s1-eth2>], 'l4': []}
+2021-11-10 03:00:07,839 | 6760 | tracing_of_pipeline.analyzer, analyze_rest, 164 | INFO | These OpenFlowMessage could not be analyzed. {'s1': [<src.ofproto.msg.MsgForOFMsg object at 0x7fbe440fdbe0>, <src.ofproto.msg.MsgForOFMsg object at 0x7fbe440fdca0>, <src.ofproto.msg.MsgForOFMsg object at 0x7fbe440fde50>], 's2': [<src.ofproto.msg.MsgForOFMsg object at 0x7fbe440fdee0>, <src.ofproto.msg.MsgForOFMsg object at 0x7fbe440fdf40>, <src.ofproto.msg.MsgForOFMsg object at 0x7fbe4410a040>, <src.ofproto.msg.MsgForOFMsg object at 0x7fbe4410a130>]}
+2021-11-10 03:00:08,124 | 6760 | tracing_of_pipeline, stop, 151 | INFO | OpenFlow Tracer Stop
+2021-11-10 03:00:08,125 | 6760 | tracing_net.net, stop_tracing, 541 | INFO | tracing stop
+2021-11-10 03:00:08,126 | 6760 | tracing_net.net, stop, 317 | INFO | mininet stop

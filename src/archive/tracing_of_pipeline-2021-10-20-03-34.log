@@ -1,0 +1,74 @@
+2021-10-20 03:34:39,049 | 4145 | tracing_net.net, __init__, 99 | INFO | set up on-demand mininet
+2021-10-20 03:34:39,052 | 4145 | tracing_of_pipeline, start, 108 | INFO | OpenFlow Tracer Start
+2021-10-20 03:34:39,058 | 4145 | tracing_net.net, start, 312 | INFO | mininet start
+2021-10-20 03:34:39,060 | 4145 | tracing_of_pipeline.analyzer, start_analyzing, 103 | INFO | start analyzing
+2021-10-20 03:34:39,066 | 4145 | tracing_net.net, add_switch, 116 | DEBUG | added the switch (s0)
+2021-10-20 03:34:39,182 | 4145 | tracing_net.net, add_host, 164 | DEBUG | added the host (h0)
+2021-10-20 03:34:39,260 | 4145 | tracing_net.net, add_link, 203 | DEBUG | added the link (l2) between s0 and h0
+2021-10-20 03:34:39,377 | 4145 | tracing_net.net, add_switch, 116 | DEBUG | added the switch (s1)
+2021-10-20 03:34:39,430 | 4145 | tracing_net.net, add_link, 203 | DEBUG | added the link (l1) between s0 and s1
+2021-10-20 03:34:39,541 | 4145 | tracing_net.net, add_host, 164 | DEBUG | added the host (h1)
+2021-10-20 03:34:39,582 | 4145 | tracing_net.net, add_link, 203 | DEBUG | added the link (l3) between s1 and h1
+2021-10-20 03:34:39,659 | 4145 | tracing_net.net, start_tracing, 525 | INFO | tracing start
+2021-10-20 03:34:39,661 | 4145 | tracing_net.net, start_tracing, 527 | DEBUG | ipv6 is disable
+2021-10-20 03:34:39,690 | 4145 | tracing_net.packet_capture_manager, start_capture, 88 | DEBUG | capture process (s0-eth1:4282) started
+2021-10-20 03:34:39,696 | 4145 | tracing_net.packet_capture_manager, start_capture, 88 | DEBUG | capture process (s0-eth2:4284) started
+2021-10-20 03:34:39,699 | 4284 | tracing_net.util.packet_capture, start_capture, 58 | INFO | packet capture start on s0-eth2
+2021-10-20 03:34:39,702 | 4282 | tracing_net.util.packet_capture, start_capture, 58 | INFO | packet capture start on s0-eth1
+2021-10-20 03:34:39,706 | 4145 | tracing_net.packet_capture_manager, start_capture, 88 | DEBUG | capture process (s1-eth2:4286) started
+2021-10-20 03:34:39,707 | 4145 | tracing_net.flowtable.flow_monitor, __init__, 46 | INFO | flow monitor start : s0
+2021-10-20 03:34:39,714 | 4145 | tracing_net.flowtable.flow_monitor, __init__, 46 | INFO | flow monitor start : s1
+2021-10-20 03:34:39,718 | 4286 | tracing_net.util.packet_capture, start_capture, 58 | INFO | packet capture start on s1-eth2
+2021-10-20 03:34:40,721 | 4290 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s0
+2021-10-20 03:34:40,731 | 4293 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 03:34:40,797 | 4293 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634700880.755618 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-10-20 03:34:40,798 | 4293 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-10-20 03:34:40,810 | 4290 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634700880.759827 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-10-20 03:34:40,814 | 4290 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-10-20 03:34:41,064 | 4145 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 03:34:41,064 | 4145 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 03:34:41,065 | 4145 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 03:34:41,066 | 4145 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 03:34:41,067 | 4145 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 03:34:41,067 | 4145 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634700879.061909, until=0) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': []}
+2021-10-20 03:34:41,068 | 4145 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 03:34:41,068 | 4145 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 03:34:41,068 | 4145 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 03:34:41,720 | 4290 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s0
+2021-10-20 03:34:41,730 | 4293 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 03:34:41,777 | 4290 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634700881.749525 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-10-20 03:34:41,780 | 4290 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-10-20 03:34:41,819 | 4293 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634700881.778574 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-10-20 03:34:41,820 | 4293 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-10-20 03:34:42,721 | 4290 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s0
+2021-10-20 03:34:42,734 | 4293 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 03:34:42,770 | 4290 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634700882.737527 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-10-20 03:34:42,789 | 4290 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-10-20 03:34:42,826 | 4293 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634700882.780797 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-10-20 03:34:42,828 | 4293 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-10-20 03:34:43,064 | 4145 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 03:34:43,066 | 4145 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 03:34:43,066 | 4145 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 03:34:43,067 | 4145 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 03:34:43,068 | 4145 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 03:34:43,069 | 4145 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634700879.061909, until=1) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': []}
+2021-10-20 03:34:43,069 | 4145 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 03:34:43,071 | 4145 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 03:34:43,075 | 4145 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 03:34:43,704 | 4145 | tracing_net.net, stop_tracing, 541 | INFO | tracing stop
+2021-10-20 03:34:43,722 | 4290 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s0
+2021-10-20 03:34:43,706 | 4145 | tracing_net.packet_capture_manager, stop_capture, 120 | DEBUG | capture process (s0-eth1:4282) terminated
+2021-10-20 03:34:43,799 | 4145 | tracing_net.packet_capture_manager, stop_capture, 120 | DEBUG | capture process (s0-eth2:4284) terminated
+2021-10-20 03:34:43,800 | 4145 | tracing_net.packet_capture_manager, stop_capture, 120 | DEBUG | capture process (s1-eth2:4286) terminated
+2021-10-20 03:34:43,781 | 4293 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 03:34:43,804 | 4145 | tracing_net.flowtable.flow_table_manager, stop_poller, 101 | DEBUG | poller process (s0:4290) terminated
+2021-10-20 03:34:43,833 | 4145 | tracing_net.flowtable.flow_table_manager, stop_poller, 101 | DEBUG | poller process (s1:4293) terminated
+2021-10-20 03:34:43,908 | 4145 | tracing_of_pipeline, stop, 133 | INFO | OpenFlow Tracer Stop
+2021-10-20 03:34:43,923 | 4145 | tracing_net.net, stop_tracing, 541 | INFO | tracing stop
+2021-10-20 03:34:43,938 | 4145 | tracing_net.packet_capture_manager, stop_capture, 120 | DEBUG | capture process (s0-eth1:4282) terminated
+2021-10-20 03:34:43,939 | 4145 | tracing_net.packet_capture_manager, stop_capture, 120 | DEBUG | capture process (s0-eth2:4284) terminated
+2021-10-20 03:34:43,941 | 4145 | tracing_net.packet_capture_manager, stop_capture, 120 | DEBUG | capture process (s1-eth2:4286) terminated
+2021-10-20 03:34:43,942 | 4145 | tracing_net.flowtable.flow_table_manager, stop_poller, 101 | DEBUG | poller process (s0:4290) terminated
+2021-10-20 03:34:43,943 | 4145 | tracing_net.flowtable.flow_table_manager, stop_poller, 101 | DEBUG | poller process (s1:4293) terminated
+2021-10-20 03:34:43,947 | 4145 | tracing_net.net, stop, 317 | INFO | mininet stop
+2021-10-20 03:34:44,593 | 4145 | tracing_net.net, stop, 550 | DEBUG | mininet stopped and all capture processes closed

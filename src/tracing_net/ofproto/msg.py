@@ -253,16 +253,15 @@ class OpenFlowPacket(metaclass=ABCMeta):
 
 
 class MsgBase(OpenFlowPacket, metaclass=ABCMeta):
-    """
-
-    TODO:
-        * タイムスタンプで並び替えられるようにする
-    """
+    """packet wrapper """
 
     def __init__(self, pkt, timestamp):
         super(MsgBase, self).__init__()
+        # pkt data
         self.pkt = pkt
+        # timestamp
         self.timestamp = timestamp
+
         self.metadata = None
         self.pushed_vlan = None
         self.pushed_mpls = None
@@ -280,10 +279,15 @@ class MsgBase(OpenFlowPacket, metaclass=ABCMeta):
             net_pb2.Packet
         """
         packet_msg = net_pb2.Packet()
+        packet_msg.timestamp = self.timestamp
+        packet_msg.in_port = str(self.in_port)
+        packet_msg.in_phy_port = self.in_phy_port
         for p in OpenFlowMatchingProperties:
             v = getattr(self, p, None)
             if v:
                 packet_msg.fields[p] = str(v)
+        if self.metadata:
+            packet_msg.fields["metadata"] = str(self.metadata)
         return packet_msg
 
     def is_equal_msg(self, other):
@@ -297,18 +301,21 @@ class MsgBase(OpenFlowPacket, metaclass=ABCMeta):
 
         # Do the packet's attributes that can be handled by OpenFlow match?
         for p in MatchingProperties:
-            p1 = digitable2str(getattr(self, p, None))
-            p2 = digitable2str(getattr(other, p, None))
+            p1 = digitable2int(getattr(self, p, None))
+            p2 = digitable2int(getattr(other, p, None))
 
             if p1 is not None and p2 is not None and type(p1) != type(p2):
                 raise TypeError("Property TypeError (pro={}, type1={}{}, type2={}{})"
                                 .format(p, type(p1), p1, type(p2), p2))
 
             if p1 != p2:
-                if conf.OUTPUT_PACKET_MATTING_TO_LOGFILE:
+                if conf.OUTPUT_PACKET_MATCHING_TO_LOGFILE:
                     logger.debug("Packet {} and packet {} have different {}. (self:{}, other:{})"
                                  .format(self, other, p, p1, p2))
                 return False
+
+        if conf.OUTPUT_PACKET_MATCHING_TO_LOGFILE:
+            logger.debug("Packet {} and packet {} is equal. ".format(self, other))
         return True
 
     def __lt__(self, other):
@@ -744,7 +751,17 @@ def layer_to_dict(obj, expect_raw=True):
         return obj
 
 
-def digitable2str(digitable):
+def digitable2int(digitable):
+    """
+
+    Args:
+        digitable:
+
+    Returns:
+
+    Notes:
+        utilに移行
+    """
     if isinstance(digitable, str):
         if digitable.isdigit():
             return int(digitable)
@@ -755,3 +772,11 @@ def digitable2str(digitable):
         else:
             return digitable
     return digitable
+
+
+def field2bytes(field):
+    """
+    todo:
+        将来的にマッチの計算はバイトで行う
+    """
+    pass

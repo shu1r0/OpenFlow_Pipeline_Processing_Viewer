@@ -82,20 +82,21 @@ class PacketCaptureManager(AbstractPacketCaptureManager):
         self.pcap_file_directory = pacp_file_directory
 
     def start_capture(self, edge):
-        interface = self._get_int(edge)
-        process = self._create_packet_capture_process(interface)
+        interface = self.links.get_primary_interface(edge)
+        process = self._create_packet_capture_process(interface, edge)
         process.start()
-        logger.debug("capture process ({}:{}) started".format(interface, process.pid))
+        logger.debug("capture process (intf={} edge={} processid={}) started".format(interface, edge, process.pid))
 
     def start_captures(self, edges):
         for edge in edges:
             self.start_capture(edge)
 
-    def _create_packet_capture_process(self, interface_name):
+    def _create_packet_capture_process(self, interface_name, edge):
         """return packet capture process
 
         Args:
             interface_name (str) : target interface
+            edge (str) : edge
 
         Returns:
             Process : packet capture process
@@ -105,7 +106,7 @@ class PacketCaptureManager(AbstractPacketCaptureManager):
             date = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
             pcap_file = self.pcap_file_directory + interface_name + '-' + date + '.pcap'
         parent_conn, child_conn = multiprocessing.Pipe()
-        capture = PacketCapture(interface_name, parent_conn, output_file=pcap_file, event_loop=self.event_loop)
+        capture = PacketCapture(interface_name, edge, parent_conn, output_file=pcap_file, event_loop=self.event_loop)
         # server stop??
         p = multiprocessing.Process(target=capture.start_capture, daemon=True)
         t = threading.Thread(target=self._receive_data, args=(child_conn,))
@@ -116,7 +117,7 @@ class PacketCaptureManager(AbstractPacketCaptureManager):
         return p
 
     def stop_capture(self, edge):
-        interface = self._get_int(edge)
+        interface = self.links.get_primary_interface(edge)
         self.captures[interface].terminate()
         logger.debug("capture process ({}:{}) terminated".format(interface, self.captures[interface].pid))
 
@@ -125,11 +126,7 @@ class PacketCaptureManager(AbstractPacketCaptureManager):
             self.stop_capture(edge)
 
     def is_capturing(self, edge):
-        interface = self._get_int(edge)
         raise NotImplementedError
-
-    def _get_int(self, edge):
-        return self.links.get_int_name_pairs(edge)[0]
 
     def _receive_data(self, child_conn):
         while True:

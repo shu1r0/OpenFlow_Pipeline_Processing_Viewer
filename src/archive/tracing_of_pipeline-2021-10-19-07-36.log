@@ -1,0 +1,45 @@
+2021-10-19 07:36:21,901 | 3260 | tracing_net.net, __init__, 99 | INFO | set up on-demand mininet
+2021-10-19 07:36:21,905 | 3260 | tracing_of_pipeline, start, 102 | INFO | OpenFlow Tracer Start
+2021-10-19 07:36:21,920 | 3260 | tracing_net.net, start, 312 | INFO | mininet start
+2021-10-19 07:36:27,340 | 3272 | tracing_net.api.ws_server, connect, 267 | INFO | connect sid=1BcSalSMYv_RLfGqAAAB
+2021-10-19 07:36:59,227 | 3272 | tracing_net.api.ws_server, emit2net, 105 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.EXEC_MININET_COMMAND, param={'command': 'c0 ls'})
+2021-10-19 07:36:59,236 | 3260 | tracing_net.api.ws_server, get_from_client, 119 | DEBUG | MessageHub receives messages from clients. (response={'event': 'exec_mininet_cmd', 'param': {'command': 'c0 ls'}})
+2021-10-19 07:36:59,238 | 3260 | tracing_net.cli, input, 98 | DEBUG | CLI input c0 ls
+2021-10-19 07:36:59,448 | 3260 | tracing_net.cli, output, 105 | DEBUG | CLI output analyzer
+2021-10-19 07:36:59,483 | 3260 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x08analyzer')
+2021-10-19 07:36:59,484 | 3260 | tracing_net.cli, output, 105 | DEBUG | CLI output api
+config.py
+__init__.py
+log
+ofcapture
+ofproto
+__pycache__
+test
+tracing_net
+tracing_of_pipeline.py
+utils
+web_server
+2021-10-19 07:36:59,485 | 3260 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12tapi\nconfig.py\n__init__.py\nlog\nofcapture\nofproto\n__pycache__\ntest\ntracing_net\ntracing_of_pipeline.py\nutils\nweb_server')
+2021-10-19 07:36:59,488 | 3260 | tracing_net.cli, send_end_command_signal, 121 | DEBUG | CLI send end command signal
+2021-10-19 07:36:59,489 | 3260 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:38:31,467 | 3272 | tracing_net.api.ws_server, connect, 267 | INFO | connect sid=GeKQe6dxPoh4sBJmAAAD
+2021-10-19 07:38:43,114 | 3272 | tracing_net.api.ws_server, emit2net, 105 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.EXEC_MININET_COMMAND, param={'command': 'c0 ls'})
+2021-10-19 07:38:43,115 | 3260 | tracing_net.api.ws_server, get_from_client, 119 | DEBUG | MessageHub receives messages from clients. (response={'event': 'exec_mininet_cmd', 'param': {'command': 'c0 ls'}})
+2021-10-19 07:38:43,116 | 3260 | tracing_net.cli, input, 98 | DEBUG | CLI input c0 ls
+2021-10-19 07:38:43,146 | 3260 | tracing_net.cli, output, 105 | DEBUG | CLI output analyzer
+2021-10-19 07:38:43,161 | 3260 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x08analyzer')
+2021-10-19 07:38:43,165 | 3260 | tracing_net.cli, output, 105 | DEBUG | CLI output api
+config.py
+__init__.py
+log
+ofcapture
+ofproto
+__pycache__
+test
+tracing_net
+tracing_of_pipeline.py
+utils
+web_server
+2021-10-19 07:38:43,167 | 3260 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12tapi\nconfig.py\n__init__.py\nlog\nofcapture\nofproto\n__pycache__\ntest\ntracing_net\ntracing_of_pipeline.py\nutils\nweb_server')
+2021-10-19 07:38:43,171 | 3260 | tracing_net.cli, send_end_command_signal, 121 | DEBUG | CLI send end command signal
+2021-10-19 07:38:43,172 | 3260 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')

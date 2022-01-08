@@ -65,15 +65,20 @@ class Flow:
             * In the future, match may be Match Class instead of dict
         """
         matched = True
+        history = {}  # for debugging
         # match key is openflow packet field (e.g. eth_type, ip_proto and more)
         # match values is dict that is value and mask. If the values is able to convert digit, the value type is int.
         for match in self.match:
             msg_value = getattr(msg, match.field_name, None)
             if not match.is_match(msg_value):
                 matched = False
+                history[match.field_name] = "msg={} != match={}".format(msg_value, match)
+            else:
+                history[match.field_name] = "msg={} == match={}".format(msg_value, match)
 
         if conf.OUTPUT_FLOW_MATCHING_RESULT_TO_LOGFILE:
-            logger.debug("flow matching is {}: msg={}, match={}".format(str(matched), msg, self.match))
+            logger.debug("flow matching is {} (msg={}, history={})"
+                         .format(matched, msg, history))
         return matched
 
     def action(self, msg, action_set):
@@ -91,6 +96,7 @@ class Flow:
             * In the future, we would like to obtain information on the computation in progress.
         """
         instruction_result = InstructionResult(msg=msg, action_set=action_set)
+
         # Notes:
         #     * applied action(instruction) is only apply_actions
         for action in self.actions:
@@ -154,28 +160,40 @@ class Flow:
     def __repr__(self):
         return "<Flow(table={}, priority={}, match={}, actions={})>".format(self.table, self.priority, self.match, self.actions)
 
+    @classmethod
+    def parse_from_ofcapture(cls, of_msg):
+        flow = cls()
+        flow.priority = int(of_msg.priority)
+        flow.table = int(of_msg.table_id)
+        flow.cookie = str(of_msg.cookie)
+        flow.match = Match.parse_from_ofcapture(of_msg.match)
+        flow.actions = Instruction.parse_from_ofcapture(of_msg.instructions)
+        return flow
+
 
 class FlowTables:
     """Flow table.
     This also computes the match.
 
     Attributes:
-        datapath_id (int) : datapath id
+        datapath_id (int) : datapath id  (todo: 廃止したい)
         switch_name (str) : switch name
         timestamp (float) : unix time stamp
         flows (list) : list of flows
     """
 
     def __init__(self, datapath_id=0, switch_name=None, timestamp=None, flows=None):
+        # a counter to decide flow_id
+        self._flow_counter = 0
+        
         self.datapath_id = datapath_id
         self.switch_name = switch_name
         self.timestamp = timestamp if timestamp is not None else datetime.datetime.now().timestamp()
-        self.flows: list[Flow] = flows if flows is not None else []
+        self.flows: list[Flow] = []
+        for f in flows:
+            self.add(f)
 
         self.flows.sort(reverse=True)
-
-        # a counter to decide flow_id
-        self._flow_counter = 0
 
     def add(self, flow: Flow):
         """add flow

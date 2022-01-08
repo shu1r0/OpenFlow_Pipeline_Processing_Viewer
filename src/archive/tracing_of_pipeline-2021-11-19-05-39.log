@@ -1,0 +1,11 @@
+2021-11-19 05:39:35,389 | 3928 | tracing_net.net, __init__, 117 | INFO | set up on-demand mininet
+2021-11-19 05:39:40,250 | 3928 | tracing_net.api.ws_server, connect, 230 | INFO | connect sid=p75lIoNopTP40LYeAAAB
+2021-11-19 05:39:43,810 | 3928 | tracing_net.api.ws_server, disconnect, 235 | INFO | disconnect sid=p75lIoNopTP40LYeAAAB
+2021-11-19 05:39:47,155 | 3928 | tracing_net.api.ws_server, connect, 230 | INFO | connect sid=PiIDVNFEzwAwAwlCAAAD
+2021-11-19 05:41:38,529 | 3928 | tracing_net.net, stop_tracing, 557 | INFO | tracing stop
+2021-11-19 05:41:38,532 | 3928 | tracing_of_pipeline.analyzer, stop_analyzing, 149 | INFO | stop analyzing interval. (last count = 0)
+2021-11-19 05:41:38,534 | 3928 | tracing_of_pipeline.analyzer, _polling, 552 | DEBUG | polled repository (start_time=0, until=0) values = {} {}
+2021-11-19 05:41:38,535 | 3928 | tracing_of_pipeline.analyzer, analyze, 196 | DEBUG | Analyzing 1... polled repository (count=0)
+2021-11-19 05:41:38,537 | 3928 | tracing_of_pipeline.analyzer, analyze_rest, 161 | INFO | These packets could not be analyzed. {}
+2021-11-19 05:41:38,537 | 3928 | tracing_of_pipeline.analyzer, analyze_rest, 162 | INFO | These OpenFlowMessage could not be analyzed. {}
+2021-11-19 05:41:38,546 | 3928 | tracing_of_pipeline, stop, 138 | INFO | OpenFlow Tracer Stop

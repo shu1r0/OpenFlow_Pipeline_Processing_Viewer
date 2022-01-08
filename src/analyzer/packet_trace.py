@@ -3,6 +3,7 @@ Models of packet trace
 """
 
 from abc import ABCMeta, abstractmethod
+from google.protobuf.json_format import MessageToDict
 
 from src.tracing_net.ofproto.table import FlowTables
 from src.api.proto import net_pb2
@@ -149,6 +150,8 @@ class AbstractPacketTrace(metaclass=ABCMeta):
 
     def __init__(self):
         self.arcs: list[PacketArc] = []
+        # identifier for trace list
+        self.id = -1
 
     @abstractmethod
     def add_arc(self, arc):
@@ -189,10 +192,7 @@ class PacketTrace(AbstractPacketTrace):
             return self.arcs[0].protocol
 
     def to_dict(self):
-        l = []
-        for arc in self.arcs:
-            l.append(arc.to_dict())
-        return l
+        return MessageToDict(self.get_protobuf_message())
 
     def get_protobuf_message(self):
         """This method convert this instance to a protocol buffer's obj
@@ -201,6 +201,7 @@ class PacketTrace(AbstractPacketTrace):
             net_pb2.PacketTrace
         """
         packet_trace_msg = net_pb2.PacketTrace()
+        packet_trace_msg.timestamp = self.timestamp
         packet_trace_msg.protocol = str(self.protocol)
         for a in self.arcs:
             packet_trace_msg.arcs.append(a.get_protobuf_message())
@@ -283,12 +284,16 @@ class PacketProcessing:
         for f_i in self.matched_flowentry_list:
             packet_processing.matched_flows.append(f_i)
         for p2m in self.outport2msg:
-            packet_processing.outs[str(p2m[0])] = p2m[1].get_protobuf_message()
+            packet_processing.outs[str(p2m[0])].CopyFrom(p2m[1].get_protobuf_message())
         return packet_processing
+
+    def to_dict(self):
+        return MessageToDict(self.get_protobuf_message())
 
     def add_msg(self, msg, table_id):
         """処理されたパケット．
-        * 処理対象と処理後のパケットの列なので，配列はフローエントリの配列より1つ多い
+        * 処理対象と処理後のパケットの列
+        * 始めのパケットは table_id = -1
 
         Args:
             msg (Msg) :

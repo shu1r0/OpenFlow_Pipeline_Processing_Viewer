@@ -1,70 +1,32 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="ja" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>OpenFlowパイプラインの可視化によるOpenFlowコントローラ開発支援システム &mdash; trace_ovs_pipeline 1.0.0 ドキュメント</title>
-  
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+  <title>OpenFlowパイプラインの可視化によるOpenFlowコントローラ開発支援システム &mdash; trace_ovs_pipeline 1.0.0 ドキュメント</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
         <script src="_static/translations.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
     <link rel="next" title="要件定義" href="requirement_definition/rdd.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="#" class="icon icon-home"> trace_ovs_pipeline
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -72,18 +34,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="requirement_definition/rdd.html">要件定義</a></li>
@@ -94,71 +45,30 @@
 <li class="toctree-l1"><a class="reference internal" href="errors/BOFUSS_build.html">BOFUSSのビルド時エラー</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="#">trace_ovs_pipeline</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="#" class="icon icon-home"></a> &raquo;</li>
-        
       <li>OpenFlowパイプラインの可視化によるOpenFlowコントローラ開発支援システム</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="openflowopenflow">
 <h1>OpenFlowパイプラインの可視化によるOpenFlowコントローラ開発支援システム<a class="headerlink" href="#openflowopenflow" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="toctree-wrapper compound">
@@ -167,11 +77,13 @@
 <li class="toctree-l1"><a class="reference internal" href="requirement_definition/rdd.html">要件定義</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="requirement_definition/rdd.html#id2">目的</a></li>
 <li class="toctree-l2"><a class="reference internal" href="requirement_definition/rdd.html#id3">システム要件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="requirement_definition/rdd.html#id4">ユースケース1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="requirement_definition/rdd.html#id5">ユースケース2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="requirement_definition/rdd.html#id4">デバック要件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="requirement_definition/rdd.html#id5">ユースケース1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="requirement_definition/rdd.html#id6">ユースケース2</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="relate_technic/tec.html">関連技術</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="relate_technic/tec.html#sdn">SDN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="relate_technic/tec.html#openflow">OpenFlow</a></li>
 </ul>
 </li>
@@ -209,49 +121,32 @@
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="requirement_definition/rdd.html" class="btn btn-neutral float-right" title="要件定義" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, shimatani.
-
-    </p>
+    <p>&#169; Copyright 2021, shimatani.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

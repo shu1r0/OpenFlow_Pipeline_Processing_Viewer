@@ -1,0 +1,7 @@
+2021-10-19 14:24:21,077 | 3916 | ofcapture.proxy.proxy, start_server, 231 | INFO | Server on ('127.0.0.1', 63333)
+2021-10-19 14:24:21,103 | 3916 | ofcapture.proxy.proxy, start_server, 234 | INFO | Server serve forever ('127.0.0.1', 63333)
+2021-10-19 14:24:27,474 | 3916 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 34102) is connected
+2021-10-19 14:24:27,520 | 3916 | ofcapture.proxy.proxy, handle_controller, 364 | INFO | connected Controller ('127.0.0.1', 6633)
+2021-10-19 14:24:27,522 | 3916 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_HELLO Hello(xid=UBInt32(275)) {'header': {'version': 4, 'message_type': 0, 'length': 8, 'xid': 275}, 'elements': []}
+2021-10-19 14:24:27,605 | 3916 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_HELLO Hello(xid=UBInt32(1767707003)) {'header': {'version': 4, 'message_type': 0, 'length': 8, 'xid': 1767707003}, 'elements': [{'element_type': 1029, 'length': 8, 'content': b'i]\x11|'}]}
+2021-10-19 14:24:27,655 | 3916 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_FEATURES_REPLY FeaturesReply(xid=UBInt32(1767707004)) {'header': {'version': 4, 'message_type': 6, 'length': 32, 'xid': 1767707004}, 'datapath_id': '00:00:56:fa:83:29:31:40', 'n_buffers': 0, 'n_tables': 254, 'auxiliary_id': 0, 'pad': None, 'capabilities': '79', 'reserved': 0}

@@ -1,0 +1,10 @@
+2021-11-19 05:57:49,857 | 4318 | tracing_net.net, __init__, 117 | INFO | set up on-demand mininet
+2021-11-19 05:57:51,822 | 4318 | tracing_net.api.ws_server, connect, 230 | INFO | connect sid=T5ZoNAZB6cOHNt2pAAAB
+2021-11-19 05:57:56,612 | 4318 | tracing_net.api.ws_server, emit2tracer, 134 | DEBUG | ws_server -> tracer (event=WSEvent.EXEC_MININET_COMMAND, param={'command': 'ls'})
+2021-11-19 05:57:56,613 | 4318 | tracing_net.net, stop_tracing, 557 | INFO | tracing stop
+2021-11-19 05:57:56,614 | 4318 | tracing_of_pipeline.analyzer, stop_analyzing, 149 | INFO | stop analyzing interval. (last count = 0)
+2021-11-19 05:57:56,614 | 4318 | tracing_of_pipeline.analyzer, _polling, 552 | DEBUG | polled repository (start_time=0, until=0) values = {} {}
+2021-11-19 05:57:56,615 | 4318 | tracing_of_pipeline.analyzer, analyze, 196 | DEBUG | Analyzing 1... polled repository (count=0)
+2021-11-19 05:57:56,615 | 4318 | tracing_of_pipeline.analyzer, analyze_rest, 161 | INFO | These packets could not be analyzed. {}
+2021-11-19 05:57:56,615 | 4318 | tracing_of_pipeline.analyzer, analyze_rest, 162 | INFO | These OpenFlowMessage could not be analyzed. {}
+2021-11-19 05:57:56,634 | 4318 | tracing_of_pipeline, stop, 138 | INFO | OpenFlow Tracer Stop

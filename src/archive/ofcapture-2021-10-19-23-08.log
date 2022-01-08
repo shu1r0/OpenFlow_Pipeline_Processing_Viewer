@@ -1,0 +1,14 @@
+2021-10-19 23:08:04,055 | 4233 | ofcapture.proxy.proxy, start_server, 231 | INFO | Server on ('127.0.0.1', 63333)
+2021-10-19 23:08:04,058 | 4233 | ofcapture.proxy.proxy, start_server, 234 | INFO | Server serve forever ('127.0.0.1', 63333)
+2021-10-19 23:08:13,344 | 4233 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 57972) is connected
+2021-10-19 23:08:13,376 | 4233 | ofcapture.proxy.proxy, handle_controller, 364 | INFO | connected Controller ('127.0.0.1', 6633)
+2021-10-19 23:08:13,379 | 4233 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_HELLO Hello(xid=UBInt32(265)) {'header': {'version': 4, 'message_type': 0, 'length': 8, 'xid': 265}, 'elements': []}
+2021-10-19 23:08:13,394 | 4233 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_HELLO Hello(xid=UBInt32(2707409351)) {'header': {'version': 4, 'message_type': 0, 'length': 8, 'xid': 2707409351}, 'elements': [{'element_type': 1029, 'length': 8, 'content': b'\xa1_\xc9\xc8'}]}
+2021-10-19 23:08:13,402 | 4233 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_FEATURES_REPLY FeaturesReply(xid=UBInt32(2707409352)) {'header': {'version': 4, 'message_type': 6, 'length': 32, 'xid': 2707409352}, 'datapath_id': '00:00:32:89:27:d7:0f:4e', 'n_buffers': 0, 'n_tables': 254, 'auxiliary_id': 0, 'pad': None, 'capabilities': '79', 'reserved': 0}
+2021-10-19 23:08:44,653 | 4402 | ofcapture.proxy.proxy, start_server, 231 | INFO | Server on ('127.0.0.1', 63333)
+2021-10-19 23:08:44,660 | 4402 | ofcapture.proxy.proxy, start_server, 234 | INFO | Server serve forever ('127.0.0.1', 63333)
+2021-10-19 23:10:32,159 | 4402 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 57992) is connected
+2021-10-19 23:10:32,179 | 4402 | ofcapture.proxy.proxy, handle_controller, 364 | INFO | connected Controller ('127.0.0.1', 6633)
+2021-10-19 23:10:32,199 | 4402 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_HELLO Hello(xid=UBInt32(266)) {'header': {'version': 4, 'message_type': 0, 'length': 8, 'xid': 266}, 'elements': []}
+2021-10-19 23:10:32,208 | 4402 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_HELLO Hello(xid=UBInt32(3846906155)) {'header': {'version': 4, 'message_type': 0, 'length': 8, 'xid': 3846906155}, 'elements': [{'element_type': 1029, 'length': 8, 'content': b'\xe5K!,'}]}
+2021-10-19 23:10:32,223 | 4402 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_FEATURES_REPLY FeaturesReply(xid=UBInt32(3846906156)) {'header': {'version': 4, 'message_type': 6, 'length': 32, 'xid': 3846906156}, 'datapath_id': '00:00:de:7f:d5:b6:f8:48', 'n_buffers': 0, 'n_tables': 254, 'auxiliary_id': 0, 'pad': None, 'capabilities': '79', 'reserved': 0}

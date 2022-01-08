@@ -4,44 +4,82 @@
 
 <script lang="ts">
 import { defineComponent, onMounted, PropType } from 'vue'
-import { changeableVNet } from '../../vnet/vnet'
-import { proto } from '../../api/net'
+import { changeableVNet } from '../../scripts/vnet/vnet'
 
 import { Terminal } from 'xterm'
 import { FitAddon } from 'xterm-addon-fit'
 import 'xterm/css/xterm.css'
 import 'xterm/lib/xterm.js'
+import { CommandResult, CommandResultType } from '../../scripts/remote/net_pb'
 
 
 export default defineComponent({
-  // props: {
-  //   // todo: やや濃いからもう，remoteClientから受け取ることにする
-  //   commandHandler: {
-  //     type: Function as PropType<(command: string, writeln: (s: string)=> void, writePrompt: ()=> void) => void>
-  //   }
-  // },
-  setup(props){
+  setup(props, ctx){
+      // ansi code https://en.wikipedia.org/wiki/ANSI_escape_code
+      const ESCAPE = "\x1b["
+      const RED_ANSI = ESCAPE + "31m"
+      const GREEN_ANSI = ESCAPE + "32m"
+      const YELLOW_ANSI = ESCAPE + "33m"
+      const BLUE_ANSI = ESCAPE + "34m"
+      const CYAN_ANSI = ESCAPE + "36m"
+      const GRAY_ANSI = ESCAPE + "90m"
+      const BRIGHT_RED_ANSI = ESCAPE + "91m"
+      const BRIGHT_BLUE_ANSI = ESCAPE + "94m"
+      const RESET_STYLE = ESCAPE + "0m"
+      
+      const color = (color: string, str: string) => {
+          return color + str + RESET_STYLE
+      }
+
+      /**
+       *  pre command
+       */
+      const preCommand = (command: string): any => {
+        const commands = command.split(' ')
+        if(commands.length > 0){
+            if(commands[0] === "viewer"){
+                command = null  // no send server
+                commands.splice(0, 1)  // del viewer
+                ctx.emit("viewer", commands)
+            }
+        }
+        return command
+      }
 
     /**
+     * command callback 
+     * set command handler to remote client
      * 
      * @param command {string} : command
      * @param writeln {(s: string) => void} : write method (out)
      * @param writePrompt {() => void} : write prompt (out)
      */
-    const commandHandler = (command: string, writeln: (s: string)=> void, writePrompt: ()=> void): void => {
+    const commandHandler = (command: string, term: Terminal, writePrompt: ()=> void): void => {
       
-      const commandHandler = (command: proto.CommandResult) => {
-        const str = command.result
-        if(command.type === proto.CommandResultType.OUTPUT){
-          writeln(str)
-        }else if(command.type === proto.CommandResultType.ERROR){
-          writeln("Error!! " + str)
-        }else if(command.type === proto.CommandResultType.END_SIGNAL){
-          writePrompt
+      /**
+       * output command handler for remote client
+       */
+      const commandHandler = (command: CommandResult) => {
+        const str = command.getResult()
+        if(command.getType() === CommandResultType.OUTPUT){
+          term.write(str)
+        }else if(command.getType() === CommandResultType.ERROR){
+          term.write(color(BRIGHT_RED_ANSI, "Error!! " + str))
+        }else if(command.getType() === CommandResultType.END_SIGNAL){
+          writePrompt()
         }
       }
-      const remoteClient = changeableVNet.getRemoteClient()
-      remoteClient.execMininetCommand(command, commandHandler)
+
+      command = preCommand(command)
+
+      if(command){
+        /**
+         * exec on server
+         */
+        const remoteClient = changeableVNet.getRemoteClient()
+        // set command handler
+        remoteClient.execMininetCommand(command, commandHandler)
+      }
     }
 
       onMounted(()=>{
@@ -50,9 +88,9 @@ export default defineComponent({
            */
           const term = new Terminal({
               rendererType: "canvas", //Rendering type
-              rows: 20, //Rows 
+              rows: 15, //Rows 
               convertEol: true, //When enabled, the cursor will be set to the beginning of the next line
-              scrollback: 10, //The amount of rollback in the terminal
+              scrollback: 30, //The amount of rollback in the terminal
               disableStdin: false, //Whether input should be disabled
               cursorStyle: "underline", //Cursor style
               cursorBlink: true, //Cursor blinks
@@ -62,6 +100,7 @@ export default defineComponent({
                   cursor: "#fefefe" //Set cursor
               }
           })
+          
           // addon
           const fitAddon = new FitAddon()
           term.loadAddon(fitAddon)
@@ -77,27 +116,21 @@ export default defineComponent({
 
           // command buffer
           let buffer = ""
+          // command history
+          const history: string[] = []
 
-          // term.writeln('Hello')
+          // introduction
+          term.write(color(BRIGHT_BLUE_ANSI ," Wellcome! This is Web CLI like Mininet CLI. "))
           writePrompt()
 
           // Input key
+          // key code https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values
           term.onKey(e => {
               const ev = e.domEvent
-              const printable = !ev.altKey && !ev.ctrlKey && !ev.metaKey
+              const printable = !(ev.altKey || ev.ctrlKey || ev.metaKey)
 
-              if(ev.key === 'Enter'){
-                  // exec command
-                  if(buffer !== ""){
-                      term.writeln('')
-                      commandHandler(buffer, term.writeln, writePrompt)
-                      buffer = ""
-                  }
-
-                  // writePrompt()
-              }
               // note: ev.key causes Parsing Error
-              else if (ev.keyCode === 8){  // backspace
+              if (ev.keyCode === 8){  // backspace
                   // eslint-disable-next-line
                   // @ts-ignore
                   if(term._core.buffer.x > prompt.length){
@@ -105,8 +138,36 @@ export default defineComponent({
                       buffer = buffer.slice(0, -1)
                   }
               }else if(printable){
-                  term.write(e.key)
-                  buffer += e.key
+                  switch (ev.key){
+                    case "Enter":
+                        // exec command
+                        if(buffer !== ""){
+                            term.writeln('')
+                            history.push(buffer)
+                            commandHandler(buffer, term, writePrompt)
+                            buffer = ""
+                        }
+                        break
+                    case "Tab":
+                        console.log("tab")
+                        break
+                    case "ArrowDown":
+                        console.log("down")
+                        break
+                    case "ArrowLeft":
+                        console.log("left")
+                        break
+                    case "ArrowRight":
+                        console.log("right")
+                        break
+                    case "ArrowUp":
+                        console.log("up")
+                        break
+                    default:
+                        term.write(e.key)
+                        buffer += e.key
+                        break
+                  }
               }
           })
       })

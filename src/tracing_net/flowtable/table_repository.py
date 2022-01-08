@@ -1,9 +1,11 @@
 import datetime
 import yaml
+import copy
 from abc import ABCMeta, abstractmethod
 from logging import getLogger, setLoggerClass, Logger
 
 from src.config import conf
+from src.tracing_net.ofproto.table import FlowTables
 
 setLoggerClass(Logger)
 logger = getLogger('tracing_net.flowtable.table_repository')
@@ -32,7 +34,7 @@ class AbstractTableRepository(metaclass=ABCMeta):
         raise NotImplementedError
 
     @abstractmethod
-    def add_flow(self, switch, flow):
+    def add_flow(self, datapath_id, switch, flow, timestamp=None):
         """add flow to current flow table
 
         Args:
@@ -42,7 +44,7 @@ class AbstractTableRepository(metaclass=ABCMeta):
         raise NotImplementedError
 
     @abstractmethod
-    def remove_flow(self, switch, flow):
+    def remove_flow(self, switch, flow, timestamp=None):
         """remove flow from current flow table
 
         Args:
@@ -99,11 +101,39 @@ class TableRepository(AbstractTableRepository):
         else:
             return True
 
-    def add_flow(self, switch, flow):
-        self.repository[switch][-1].add(flow)
+    def add_flow(self, datapath_id, switch, flow, timestamp=None):
+        flow_tables = self.repository.setdefault(switch, [])
+        if len(flow_tables) == 0:
+            flow_table = FlowTables(datapath_id, switch, timestamp, flows=[flow])
+            self.repository[switch].append(flow_table)
+            return
 
-    def remove_flow(self, switch, flow):
-        self.repository[switch][-1].delete(flow)
+        if timestamp is None:
+            last_table: FlowTables = self.repository[switch][-1]
+            new_table = copy.deepcopy(last_table)
+            new_table.timestamp = datetime.datetime.now().timestamp()
+            new_table.add(flow)
+        else:
+            for i in range(len(self.repository[switch])):
+                if self.repository[switch][i].timestamp > timestamp:
+                    new_table = copy.deepcopy(self.repository[switch][i])
+                    new_table.timestamp = timestamp
+                    new_table.add(flow)
+                    self.repository[switch].insert(i+1, new_table)
+
+    def remove_flow(self, switch, flow, timestamp=None):
+        if timestamp is None:
+            last_table: FlowTables = self.repository[switch][-1]
+            new_table = copy.deepcopy(last_table)
+            new_table.timestamp = datetime.datetime.now().timestamp()
+            new_table.delete(flow)
+        else:
+            for i in range(len(self.repository[switch])):
+                if self.repository[switch][i].timestamp > timestamp:
+                    new_table = copy.deepcopy(self.repository[switch][i])
+                    new_table.timestamp = timestamp
+                    new_table.delete(flow)
+                    self.repository[switch].insert(i+1, flow)
 
     def pop(self, switch, until=None, count=None):
         """

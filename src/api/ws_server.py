@@ -55,9 +55,10 @@ class WSEvent(Enum):
     # TODO: 今後実装予定
     EXEC_NODE_COMMAND = "exec_cmd"
     # まだ，実装できていない
-    EXEC_MININET_COMMAND = "exec_mininet_cmd"
-    EXEC_MININET_COMMAND_RESULT = "exec_mininet_cmd_result"
-    EXEC_KEYBOARD_INTERRUPT = "exec_keyboard_interrupt"
+    EXEC_MININET_COMMAND = "exec_mininet_command"
+    EXEC_MININET_COMMAND_RESULT = "exec_mininet_command_result"
+
+    CHANGE_TOPOLOGY = "change_topology"
 
     # error
     TOPOLOGY_CHANGE_ERROR = "topology_change_error"
@@ -67,18 +68,27 @@ class WSEvent(Enum):
         """ws event name"""
         return self.name.lower()
 
+    @classmethod
+    def CHANGE_NET_EVENTS(cls):
+        return [
+            cls.ADD_SWITCH, cls.REMOVE_SWITCH,
+            cls.ADD_HOST, cls.REMOVE_HOST,
+            cls.ADD_LINK, cls.REMOVE_LINK
+        ]
+
 
 class MessageHubBase(metaclass=ABCMeta):
     """for multiprocess."""
 
-    def __init__(self, parent_con, child_con):
-        # sender
-        self.parent_con = parent_con
-        # receiver
-        self.child_con = child_con
+    def __init__(self):
+        self.tracer = None
+        self.socket = None
+
+        self.tracer_handler = None
+        self.ws_server_handler = None
 
     @abstractmethod
-    def emit2net(self, event: WSEvent, param):
+    def emit2tracer(self, event: WSEvent, param):
         """emit to net
 
         Args:
@@ -88,191 +98,149 @@ class MessageHubBase(metaclass=ABCMeta):
         raise NotImplementedError
 
     @abstractmethod
-    def emit2client(self, event: WSEvent, param):
+    def emit2ws_server(self, event: WSEvent, param):
         """emit to client"""
         raise NotImplementedError
 
-    @abstractmethod
-    def get_from_client(self, tracer, net, call_back):
-        """receive message sent from client"""
-        raise NotImplementedError
-
-
-class MessageHubForMultiprocess(MessageHubBase):
-    """for multiprocess."""
-
-    def __init__(self, parent_con=None, child_con=None):
-        super(MessageHubForMultiprocess, self).__init__(parent_con, child_con)
-        self.waiting_from_net = False
-
-    def emit2net(self, event: WSEvent, param):
-        if conf.OUTPUT_MESSAGE_HUB_TO_LOGFILE:
-            logger.debug("MessageHub receives messages from clients and emits them to the vnet. (event={}, param={})".format(event, param))
-        event = event.value
-        self.parent_con.send({'event': event, 'param': param})
-
-    def emit2client(self, event: WSEvent, protoMsg):
-        if conf.OUTPUT_MESSAGE_HUB_TO_LOGFILE:
-            logger.debug("MessageHub receives messages from net and emits them to clients. (event={}, param={})".format(event, protoMsg))
-        self.child_con.send({'event': event, 'proto': protoMsg})
-
-    def get_from_client(self, tracer, net, call_back):
-        while True:
-            if self.child_con.poll():
-                response = self.child_con.recv()
-                if conf.OUTPUT_MESSAGE_HUB_TO_LOGFILE:
-                    logger.debug("MessageHub receives messages from clients. (response={})".format(response))
-                call_back(tracer, net, event=response['event'], param=response['param'])
-
-    def wait_command_result(self, callback):
-        """This sends the command result to callback.
-        * This method waits for the command to finish
+    def set_tracer_handler(self, tracer):
+        """
 
         Args:
-            callback : call back
-
-        """
-        # 待機する
-        self.waiting_from_net = True
-        while True:
-            if not self.waiting_from_net:
-                break
-            if self.parent_con.poll():
-                # response from net
-                response = self.parent_con.recv()
-                response['proto'] = CommandResult.ParseFromString(response['proto'])
-                if conf.OUTPUT_MESSAGE_HUB_TO_LOGFILE:
-                    logger.debug("MessageHub receives command result from net. (response={})".format(response))
-                if isinstance(response['proto'], CommandResult):
-                    callback(response['event'], response['proto'])
-                    # Note: END_SIGNALが送られないとストップしない
-                    if response['proto'].type == CommandResultType.END_SIGNAL:
-                        self.waiting_from_net = False
-
-    def wait_traces(self):
-        """
+            tracer (AbstractTracingOFPipeline) :
+            tracer_handler:
 
         Returns:
-            string: trace trace
+
         """
-        if conf.OUTPUT_MESSAGE_HUB_TO_LOGFILE:
-            logger.debug("wait packet trace.....")
-        traces = self.parent_con.recv()['proto']
-        if conf.OUTPUT_MESSAGE_HUB_TO_LOGFILE:
-            logger.debug("MessageHub receives traces from vnet. (traces length={})".format(len(traces)))
-        return traces
+        self.tracer = tracer
+
+    def set_ws_server_handler(self, socket):
+        """
+
+        Args:
+            socket (AsyncServer)
+            ws_server_handler:
+
+        Returns:
+
+        """
+        self.socket = socket
 
 
 class MessageHub(MessageHubBase):
-    """for main process."""
+    """for main process.
 
-    def __init__(self, tracer=None, net=None, socketio=None):
-        super(MessageHub, self).__init__(None, None)
-        self.waiting_from_net = False
-
-        self.tracer = tracer
-        self.net = net
-        self.server_handler = None
-
-        self.socketio = socketio
-        self.client_handler = None
-
-    def emit2net(self, event: WSEvent, param):
-        """net is mininet"""
-        event = event.value
-        self.server_handler(self.tracer, self.net, event=event, param=param)
-
-    def emit2client(self, event: WSEvent, protoMsg):
-        """client is websocket server"""
-        self.child_con.send({'event': event, 'proto': protoMsg})
-
-    def get_from_client(self, tracer, net, call_back):
-        self.tracer = tracer
-        self.net = net
-        self.server_handler = call_back
-
-    def get_from_server(self, socketio, call_back):
-        self.socketio = socketio
-        self.client_handler = call_back
-
-    def wait_command_result(self, callback):
-        """This sends the command result to callback.
-        * This method waits for the command to finish
-
-        Args:
-            callback : call back
-
-        """
-        # 待機する
-        self.waiting_from_net = True
-        while True:
-            if not self.waiting_from_net:
-                break
-            if self.parent_con.poll():
-                # response from net
-                response = self.parent_con.recv()
-                response['proto'] = CommandResult.ParseFromString(response['proto'])
-                if conf.OUTPUT_MESSAGE_HUB_TO_LOGFILE:
-                    logger.debug("MessageHub receives command result from net. (response={})".format(response))
-                if isinstance(response['proto'], CommandResult):
-                    callback(response['event'], response['proto'])
-                    # Note: END_SIGNALが送られないとストップしない
-                    if response['proto'].type == CommandResultType.END_SIGNAL:
-                        self.waiting_from_net = False
-
-    def wait_traces(self):
-        """
-
-        Returns:
-            string: trace trace
-        """
-        if conf.OUTPUT_MESSAGE_HUB_TO_LOGFILE:
-            logger.debug("wait packet trace.....")
-        traces = self.parent_con.recv()['proto']
-
-
-class TestMessageHub(MessageHubBase):
-    """for debug"""
+    * この"set_tracer_handler "を指定する必要があります．
+    """
 
     def __init__(self):
-        super(TestMessageHub, self).__init__(None, None)
+        super(MessageHub, self).__init__()
 
-    def emit2net(self, event: WSEvent, param):
-        print("MessageHub receives messages from clients and emits them to the vnet. (event={}, param={})".format(event, param))
-        # event = event.value
-        # self.parent_con.send({'event': event, 'param': param})
+    def emit2tracer(self, event: WSEvent, param):
+        if conf.OUTPUT_MESSAGE_HUB_TO_LOGFILE:
+            logger.debug("ws_server -> tracer (event={}, param={})".format(event, param))
+        if self.tracer:
+            msg = self._tracer_handler(event=event, param=param)
+            return msg
+        else:
+            logger.error("no tracer error")
 
-    def emit2client(self, event: WSEvent, param):
-        pass
+    def emit2ws_server(self, event: WSEvent, protoMsg):
+        if conf.OUTPUT_MESSAGE_HUB_TO_LOGFILE:
+            logger.debug("tracer -> ws_server (event={}, protoMsgType={})".format(event, type(protoMsg)))
+        if self.socket:
+            self._ws_server_handler(event=event, protoMsg=protoMsg)
+        else:
+            logger.error("no socket error")
 
-    def get_from_client(self, tracer, net, call_back):
-        pass
+    def _tracer_handler(self, event: WSEvent, param):
+        """callback for messagehub
+
+        Args:
+            event:
+            param:
+        """
+        net = self.tracer.tracing_net
+        
+        if event in WSEvent.CHANGE_NET_EVENTS():
+            msg = self._change_net(event, param)
+            return msg
+        elif event == WSEvent.EXEC_MININET_COMMAND:
+            connection = net.cli.cli_connection
+            connection.input(param["command"])
+            return
+        elif event == WSEvent.GET_TRACE:
+            traces = packet_trace_list.pop_protobuf_message()
+            traces_msg = GetTraceResult()
+            count = 0
+            for t in traces:
+                traces_msg.packet_traces.append(t)
+                count += 1
+            traces_msg.traces_length = count
+            self.emit2ws_server(WSEvent.GET_TRACE, traces_msg)
+            return
+        elif event == WSEvent.START_TRACING:
+            self.tracer.start_tracing()
+            return
+        elif event == WSEvent.STOP_TRACING:
+            self.tracer.stop_tracing()
+            return
+        elif event == WSEvent.CHANGE_TOPOLOGY:
+            switches = param["switches"]
+            hosts = param["hosts"]
+            links = param["links"]
+            for switch in switches:
+                net.add_switch(switch.name, dpid=switch.datapath_id)
+            for host in hosts:
+                net.add_host(host.name, ip=host.ip, mac=host.mac)
+            for link in links:
+                net.add_link(link.name, link.host1, link.host2)
+            return
+        else:
+            logger.error("No Matching WebSocket Event (event={})".format(event))
+
+    def _change_net(self, event: WSEvent, param):
+        net = self.tracer.tracing_net
+        handler_string = event.value
+        handler = getattr(net, handler_string, None)
+        if event == WSEvent.ADD_SWITCH or event == WSEvent.REMOVE_SWITCH:
+            switch = handler(**param)
+            switch_msg = Switch()
+            switch_msg.name = switch.name
+            switch_msg.datapath_id = switch.dpid
+            return switch_msg
+        elif event == WSEvent.ADD_HOST or event == WSEvent.REMOVE_HOST:
+            host = handler(**param)
+            host_msg = Host()
+            host_msg.name = host.name
+            # warning: バグ回避
+            host_msg.ip = host.params["ip"]
+            host_msg.mac = host.params["mac"]
+            return host_msg
+        elif event == WSEvent.ADD_LINK or event == WSEvent.REMOVE_LINK:
+            link = handler(**param)
+            link_msg = Link()
+            # warning
+            link_msg.name = param['name']
+            link_msg.host1 = link.intf1.node.name
+            link_msg.host2 = link.intf2.node.name
+            return link_msg
+
+    def _ws_server_handler(self, event, protoMsg):
+        protoMsg = protoMsg.SerializeToString()
+        if isinstance(event, WSEvent):
+            event = event.event_name
+        asyncio.ensure_future(self.socket.emit(event=event, data=protoMsg))
+
+
+# message hub instance
+# もし，これを使う場合は，変数を初期化する
+message_hub: MessageHubBase = MessageHub()
 
 
 #
 # ↓ init variables
 #
-
-
-# message hub instance
-# もし，これを使う場合は，変数を初期化する
-message_hub = MessageHub()
-
-
-def get_messsage_hub(parent_con, child_con):
-    """getter for message hub
-
-    Args:
-        parent_con:
-        child_con:
-
-    Returns:
-        MessageHub
-    """
-    message_hub.parent_con = parent_con
-    message_hub.child_con = child_con
-    return message_hub
-
 
 # Web Socket Server Name space
 NAME_SPACE = ''
@@ -287,61 +255,7 @@ web_app = web.Application()
 socketio_server.attach(web_app)
 runner = web.AppRunner(web_app)
 
-
-
-#
-# ↓ Web Event Handler
-#
-
-def exec_wsevent_action(tracer, net, event: WSEvent, param):
-    """callback for messagehub
-
-    * get_from_client handler
-
-    Args:
-        tracer (AbstractTracingOFPipeline) :
-        net:
-        event:
-        param:
-
-    TODO:
-        * 経路情報に関して，インターフェースがnetで良いのか(Tracerにするか)要検討
-    """
-    if event == WSEvent.EXEC_MININET_COMMAND.value:
-        connection = net.cli.cli_connection
-        # todo: ここでBlockさせてもいいな
-        connection.input(param["command"])
-    elif event == WSEvent.GET_TRACE.value:
-        traces = packet_trace_list.pop_protobuf_message()
-        traces_msg = GetTraceResult()
-        traces_msg.packet_traces.extend(traces)
-        message_hub.emit2client(WSEvent.GET_TRACE, traces_msg.SerializeToString())
-    elif event == WSEvent.START_TRACING.value:
-        # 直接tracerにわたすと，cliにBlockされる？？？ => CLIにわたす
-        # tracer.start_tracing()
-        connection = net.cli.cli_connection
-        connection.input("starttracing")
-    elif event == WSEvent.STOP_TRACING.value:
-        tracer.stop_tracing()
-    else:
-        handler_string = event
-        if isinstance(handler_string, WSEvent):
-            handler_string = handler_string.value
-        handler = getattr(net, handler_string, None)
-        if not handler:
-            raise Exception("No WebSocket handler exception. event={}, {}".format(event, param))
-        if param:
-            handler(**param)
-        else:
-            handler()
-
-
-def exec_mininet_command_result_handler(event, result):
-    if event == WSEvent.EXEC_MININET_COMMAND_RESULT \
-            and isinstance(result, CommandResult):
-        socketio_server.emit(event.event_name, result)
-    else:
-        logger.error("type error")
+message_hub.set_ws_server_handler(socketio_server)
 
 
 #
@@ -368,7 +282,7 @@ def start_tracing(sid, data):
     event = WSEvent.START_TRACING
     req = StartTracingRequest()
     req.ParseFromString(data)
-    message_hub.emit2net(event=event, param={})
+    message_hub.emit2tracer(event=event, param={})
 
 
 @socketio_server.on(WSEvent.STOP_TRACING.event_name, namespace=NAME_SPACE)
@@ -376,7 +290,7 @@ def stop_tracing(sid, data):
     event = WSEvent.STOP_TRACING
     req = StopTracingRequest()
     req.ParseFromString(data)
-    message_hub.emit2net(event=event, param={})
+    message_hub.emit2tracer(event=event, param={})
 
 
 @socketio_server.on(WSEvent.ADD_HOST.event_name, namespace=NAME_SPACE)
@@ -394,7 +308,9 @@ def add_host(sid, data):
     host = Host()
     host.ParseFromString(data)
     param = {'name': host.name, 'ip': host.ip, 'mac': host.mac}
-    message_hub.emit2net(event=event, param=param)
+    msg = message_hub.emit2tracer(event=event, param=param)
+    if msg:
+        return msg.SerializeToString()
 
 
 @socketio_server.on(WSEvent.REMOVE_HOST.event_name, namespace=NAME_SPACE)
@@ -412,7 +328,9 @@ def remove_host(sid, data):
     host = Host()
     host.ParseFromString(data)
     param = {'name': host.name, 'ip': host.ip, 'mac': host.mac}
-    message_hub.emit2net(event=event, param=param)
+    msg = message_hub.emit2tracer(event=event, param=param)
+    if msg:
+        return msg.SerializeToString()
 
 
 @socketio_server.on(WSEvent.ADD_SWITCH.event_name, namespace=NAME_SPACE)
@@ -430,7 +348,9 @@ def add_switch(sid, data):
     switch = Switch()
     switch.ParseFromString(data)
     param = {'name': switch.name, 'dpid': switch.datapath_id}
-    message_hub.emit2net(event=event, param=param)
+    msg = message_hub.emit2tracer(event=event, param=param)
+    if msg:
+        return msg.SerializeToString()
 
 
 @socketio_server.on(WSEvent.REMOVE_SWITCH.event_name, namespace=NAME_SPACE)
@@ -448,7 +368,9 @@ def remove_switch(sid, data):
     switch = Switch()
     switch.ParseFromString(data)
     param = {'name': switch.name, 'datapath_id': switch.datapath_id}
-    message_hub.emit2net(event=event, param=param)
+    msg = message_hub.emit2tracer(event=event, param=param)
+    if msg:
+        return msg.SerializeToString()
 
 
 @socketio_server.on(WSEvent.ADD_LINK.event_name, namespace=NAME_SPACE)
@@ -465,8 +387,10 @@ def add_link(sid, data):
     event = WSEvent.ADD_LINK
     link = Link()
     link.ParseFromString(data)
-    param = {'link_name': link.name, 'host_name1': link.host1, 'host_name2': link.host2}
-    message_hub.emit2net(event=event, param=param)
+    param = {'name': link.name, 'node1': link.host1, 'node2': link.host2}
+    msg = message_hub.emit2tracer(event=event, param=param)
+    if msg:
+        return msg.SerializeToString()
 
 
 @socketio_server.on(WSEvent.REMOVE_LINK.event_name, namespace=NAME_SPACE)
@@ -484,35 +408,25 @@ def remove_link(sid, data):
     link = Link()
     link.ParseFromString(data)
     param = {'name': link.name, 'host1': link.host1, 'host2': link.host2}
-    message_hub.emit2net(event=event, param=param)
+    msg = message_hub.emit2tracer(event=event, param=param)
+    if msg:
+        return msg.SerializeToString()
 
 
 @socketio_server.on(WSEvent.GET_TRACE.event_name, namespace=NAME_SPACE)
 def get_trace(sid, data):
-    """
-    #. メッセージを受け取る
-    #. tracesを受け取るためのメッセージを送る
-    #. tracesを受け取るためにparent.recv()で待つ
-    #. tracesを受け取る
-    #. tracesをprotobufに変換(変換されていたらなし)
-    #. 送信する
-    """
     event = WSEvent.GET_TRACE
     get_trace_req = GetTraceRequest()
     get_trace_req.ParseFromString(data)
-    message_hub.emit2net(event=event, param={})
-    traces = message_hub.wait_traces()
-    asyncio.ensure_future(socketio_server.emit(event='get_trace', data=traces))
+    message_hub.emit2tracer(event=event, param={})
 
 
 @socketio_server.on(WSEvent.EXEC_MININET_COMMAND.event_name, namespace=NAME_SPACE)
-def exec_mininet_command(sid, data):
+def exec_mininet_cmd(sid, data):
     event = WSEvent.EXEC_MININET_COMMAND
     mininet_command = MininetCommand()
     mininet_command.ParseFromString(data)
-    message_hub.emit2net(event=event, param={"command": mininet_command.command})
-    logger.debug("wait mininet command")
-    message_hub.wait_command_result(exec_mininet_command_result_handler)
+    message_hub.emit2tracer(event=event, param={"command": mininet_command.command})
 
 
 @socketio_server.on(WSEvent.EXEC_NODE_COMMAND.event_name, namespace=NAME_SPACE)
@@ -533,13 +447,14 @@ def ws_server_stop():
 
 
 async def ws_server_start_coro(ip="0.0.0.0", port=8888):
+    """start server by asyncio"""
     await runner.setup()
     site = web.TCPSite(runner, host=ip, port=port)
     await site.start()
-    await asyncio.Event().wait()
 
 
 async def ws_server_stop_coro():
+    """stop server"""
     await runner.cleanup()
 
 

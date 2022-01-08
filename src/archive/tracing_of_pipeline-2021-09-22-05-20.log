@@ -1,0 +1,15 @@
+2021-09-22 05:20:10,986 | 3875 | tracing_net.net, __init__, 97 | INFO | set up on-demand mininet
+2021-09-22 05:20:11,017 | 3875 | tracing_net.net, start, 310 | INFO | mininet start
+2021-09-22 05:20:11,516 | 3887 | tracing_net.api.ws_server, connect, 152 | INFO | connect sid=364eFkELAbpohR1KAAAC
+2021-09-22 05:20:11,626 | 3887 | tracing_net.api.ws_server, connect, 152 | INFO | connect sid=iXYqpHynOrJb0jDKAAAD
+2021-09-22 05:20:16,370 | 3887 | tracing_net.api.ws_server, connect, 152 | INFO | connect sid=U9-B6hTNqHuVRvz4AAAF
+2021-09-22 05:21:15,929 | 3887 | tracing_net.api.ws_server, emit2net, 96 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_SWITCH, param={'name': 's0', 'dpid': ''})
+2021-09-22 05:21:15,940 | 3875 | tracing_net.net, add_switch, 114 | DEBUG | added the switch (s0)
+2021-09-22 05:21:17,220 | 3887 | tracing_net.api.ws_server, emit2net, 96 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_HOST, param={'name': 'h0', 'ip': '', 'mac': ''})
+2021-09-22 05:21:17,224 | 3875 | tracing_net.net, add_host, 162 | DEBUG | added the host (h0)
+2021-09-22 05:21:20,040 | 3887 | tracing_net.api.ws_server, emit2net, 96 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_LINK, param={'link_name': 'e0', 'host_name1': 'h0', 'host_name2': 's0'})
+2021-09-22 05:21:20,042 | 3875 | tracing_net.net, add_link, 201 | DEBUG | added the link (e0) between h0 and s0
+2021-09-22 05:21:21,135 | 3887 | tracing_net.api.ws_server, emit2net, 96 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_HOST, param={'name': 'h1', 'ip': '', 'mac': ''})
+2021-09-22 05:21:21,136 | 3875 | tracing_net.net, add_host, 162 | DEBUG | added the host (h1)
+2021-09-22 05:21:22,057 | 3887 | tracing_net.api.ws_server, emit2net, 96 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_LINK, param={'link_name': 'e1', 'host_name1': 'h1', 'host_name2': 's0'})
+2021-09-22 05:21:22,062 | 3875 | tracing_net.net, add_link, 201 | DEBUG | added the link (e1) between h1 and s0

@@ -9,6 +9,7 @@ import subprocess
 import re
 import datetime
 import signal
+import asyncio
 from abc import ABCMeta, abstractmethod
 from logging import getLogger, setLoggerClass, Logger
 
@@ -45,16 +46,17 @@ class FlowMonitor(Poller):
         super().__init__(repository)
         logger.info("flow monitor start : {}".format(switch))
         self.switch = str(switch)
-        self.event_loop = event_loop
+        self.event_loop = asyncio.new_event_loop()
 
     def start_poll(self):
         signal.signal(signal.SIGALRM, self.dump_flows)
-        signal.setitimer(signal.ITIMER_REAL, 1, 1)
+        signal.setitimer(signal.ITIMER_REAL, 1, conf.FLOW_MONITOR_INTERVAL)
         self.flow_monitor()
 
     def dump_flows(self, *args):
         """exec dump flow command"""
-        logger.debug("exec dump flows on {}".format(self.switch))
+        if conf.OUTPUT_DUMPFLOWS_TO_LOGFILE:
+            logger.debug("exec dump flows on {}".format(self.switch))
         dump_flows_cmd = "ovs-ofctl -O OpenFlow13 dump-flows " + self.switch
         # ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=10.143s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
         dump_flows_popen = subprocess.Popen(dump_flows_cmd, stderr=subprocess.STDOUT, stdout=subprocess.PIPE, shell=True)
@@ -92,9 +94,12 @@ class FlowMonitor(Poller):
         monitor_popen = subprocess.Popen(monitor_cmd, stderr=subprocess.STDOUT, stdout=subprocess.PIPE, shell=True)
         while monitor_popen.poll() is None:
             monitor_result = monitor_popen.stdout.readline().decode().strip()
-            monitor_result_dict = parse_flow_monitor(monitor_result)
-            if 'event' in monitor_result_dict.keys():
-                pass  # TODO: update flow table
-            if conf.OUTPUT_FLOWMONITOR_TO_LOGFILE:
-                logger.debug("flow monitor get result_dict {}".format(monitor_result_dict))
+            try:
+                monitor_result_dict = parse_flow_monitor(monitor_result)
+                if 'event' in monitor_result_dict.keys():
+                    pass  # TODO: update flow table
+                if conf.OUTPUT_FLOWMONITOR_TO_LOGFILE:
+                    logger.debug("flow monitor get result_dict {}".format(monitor_result_dict))
+            except Exception:
+                logger.error("flow monitor failed to parse {}".format(monitor_result))
         return monitor_popen.returncode

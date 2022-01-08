@@ -1,0 +1,874 @@
+2021-10-20 01:44:49,594 | 9132 | tracing_net.net, __init__, 99 | INFO | set up on-demand mininet
+2021-10-20 01:44:49,595 | 9132 | tracing_of_pipeline, start, 105 | INFO | OpenFlow Tracer Start
+2021-10-20 01:44:49,610 | 9132 | tracing_net.net, start, 312 | INFO | mininet start
+2021-10-20 01:44:49,612 | 9132 | tracing_of_pipeline.analyzer, start_analyzing, 103 | INFO | start analyzing
+2021-10-20 01:44:51,619 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=0) values = {} {} {}
+2021-10-20 01:44:53,589 | 9144 | tracing_net.api.ws_server, connect, 283 | INFO | connect sid=qJfbJJBQOC3MAG4XAAAB
+2021-10-20 01:44:53,638 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=1) values = {} {} {}
+2021-10-20 01:44:53,826 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:53,834 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:53,838 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:53,839 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:53,840 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:53,845 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:53,854 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:53,855 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:53,856 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:53,857 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:53,860 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:53,862 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:53,865 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:53,866 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:53,873 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:53,880 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:53,881 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:53,883 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:53,885 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:53,892 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,033 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:54,041 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:54,074 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:54,097 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:54,111 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,186 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:54,194 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:54,209 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:54,211 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:54,212 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,251 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:54,252 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:54,253 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:54,254 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:54,255 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,257 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:54,259 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:54,261 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:54,264 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:54,265 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,272 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:54,277 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:54,279 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:54,283 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:54,285 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,288 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:54,290 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:54,291 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:54,292 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:54,301 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,306 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:54,306 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:54,307 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:54,309 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:54,311 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,316 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:54,325 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:54,333 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:54,355 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:54,360 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,373 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:54,377 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:54,378 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:54,387 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:54,394 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,404 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:54,410 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:54,411 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:54,412 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:54,414 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,426 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:54,434 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:54,434 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:54,499 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:54,511 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,542 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:54,558 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:54,561 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:54,563 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:54,564 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,568 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:54,574 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:54,574 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:54,576 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:54,578 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,584 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:54,590 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:54,591 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:54,592 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:54,592 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,608 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:54,609 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:54,609 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:54,611 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:54,612 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,642 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:54,648 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:54,653 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:54,654 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:54,655 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,660 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:54,669 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:54,670 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:54,674 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:54,674 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,679 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:54,682 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:54,682 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:54,683 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:54,685 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,698 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:54,699 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:54,700 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:54,704 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:54,705 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,710 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:54,710 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:54,711 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:54,711 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:54,714 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,719 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:54,735 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:54,736 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:54,739 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:54,740 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,745 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:54,750 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:54,752 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:54,755 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:54,756 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,767 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:54,773 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:54,774 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:54,776 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:54,778 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,790 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:54,791 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:54,791 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:54,792 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:54,792 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,796 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:54,805 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:54,806 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:54,806 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:54,807 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,810 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:54,816 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:54,817 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:54,825 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:54,826 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,839 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:54,847 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:54,848 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:54,859 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:54,861 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,941 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:54,960 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:54,968 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:54,971 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:54,978 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:54,993 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:55,016 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:55,019 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:55,034 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:55,039 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:55,192 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:55,210 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:55,211 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:55,214 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:55,216 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:55,224 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:55,227 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:55,228 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:55,228 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:55,241 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:55,329 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:55,342 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:55,343 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:55,344 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:55,345 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:55,408 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:55,410 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:55,443 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:55,471 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:55,477 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:55,496 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:55,504 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:55,508 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:55,501 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:55,536 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:55,555 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:55,555 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:55,558 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:55,563 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:55,600 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:55,656 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=2) values = {} {} {}
+2021-10-20 01:44:55,675 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:55,686 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:55,687 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:55,689 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:55,690 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:55,696 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:55,701 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:55,702 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:55,704 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:55,710 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:55,716 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:55,760 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:55,762 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:55,769 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:55,771 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:55,778 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:55,780 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:55,780 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:55,786 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:55,791 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:55,818 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:55,819 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:55,822 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:55,823 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:55,827 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:55,859 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:55,880 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:55,881 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:55,891 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:55,905 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:55,910 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:55,914 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:55,924 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:55,928 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:55,930 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:55,934 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:55,940 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:55,940 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:55,942 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:55,944 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:55,954 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:55,956 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:55,955 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:55,958 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:55,966 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:55,970 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:55,973 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:55,975 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:55,976 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:55,977 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:55,980 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:55,990 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:55,991 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:55,992 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:55,993 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:55,996 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:55,998 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:55,999 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:56,000 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:56,006 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:56,011 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:56,017 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:56,017 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:56,018 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:56,020 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:56,025 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:56,045 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:56,047 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:56,047 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:56,054 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:56,060 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:56,061 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:56,061 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:56,128 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:56,154 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:56,161 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:56,200 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:56,200 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:56,202 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:56,204 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:56,211 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:56,353 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:56,361 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:56,361 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:56,369 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:56,374 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:56,375 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:56,376 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:56,377 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:56,385 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:56,393 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:56,403 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:56,404 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:56,406 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:56,407 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:56,410 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:56,411 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:56,412 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:56,416 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:56,420 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:56,425 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:56,434 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:56,435 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:56,435 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:56,436 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:56,439 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:56,439 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:56,440 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:56,441 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:56,442 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:56,455 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:56,461 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:56,463 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:56,475 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:56,478 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:56,485 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:56,490 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:56,491 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:56,491 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:56,492 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:56,495 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:56,501 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:56,502 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:56,502 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:56,503 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:56,507 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:56,508 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:56,508 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:56,509 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:56,510 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:56,515 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:56,525 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:56,526 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:56,528 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:56,528 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:56,531 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:56,533 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:56,534 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:56,535 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:56,536 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:56,541 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:56,542 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:56,542 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:56,542 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:56,543 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:56,545 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:56,545 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:56,546 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:56,546 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:56,547 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:56,549 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:56,557 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:56,557 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:56,558 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:56,559 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:56,560 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:56,561 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:56,561 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:56,562 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:56,562 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:56,564 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:56,568 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:56,569 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:56,573 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:56,574 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:56,577 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:56,578 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:56,579 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:56,579 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:56,580 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:56,581 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:56,590 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:56,590 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:56,590 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:56,591 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:56,593 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:56,594 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:56,594 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:56,595 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:56,596 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:56,598 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:56,605 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:56,606 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:56,606 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:56,607 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:56,610 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:56,622 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:56,623 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:56,658 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:56,678 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:56,806 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:44:56,820 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:44:56,820 | 9132 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:44:56,820 | 9144 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:44:56,831 | 9144 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:44:56,835 | 9144 | tracing_net.api.ws_server, disconnect, 288 | INFO | disconnect sid=qJfbJJBQOC3MAG4XAAAB
+2021-10-20 01:44:57,619 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=3) values = {} {} {}
+2021-10-20 01:44:59,696 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=4) values = {} {} {}
+2021-10-20 01:45:01,619 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=5) values = {} {} {}
+2021-10-20 01:45:02,344 | 9144 | tracing_net.api.ws_server, connect, 283 | INFO | connect sid=lnmLYiWts6qFu9E3AAAD
+2021-10-20 01:45:03,626 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=6) values = {} {} {}
+2021-10-20 01:45:05,631 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=7) values = {} {} {}
+2021-10-20 01:45:07,574 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_SWITCH, param={'name': 's0', 'dpid': ''})
+2021-10-20 01:45:07,588 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'add_switch', 'param': {'name': 's0', 'dpid': ''}})
+2021-10-20 01:45:07,598 | 9132 | tracing_net.net, add_switch, 116 | DEBUG | added the switch (s0)
+2021-10-20 01:45:07,619 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=8) values = {} {} {}
+2021-10-20 01:45:09,037 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_HOST, param={'name': 'h0', 'ip': '', 'mac': ''})
+2021-10-20 01:45:09,051 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'add_host', 'param': {'name': 'h0', 'ip': '', 'mac': ''}})
+2021-10-20 01:45:09,057 | 9132 | tracing_net.net, add_host, 164 | DEBUG | added the host (h0)
+2021-10-20 01:45:09,619 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:45:09,622 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=9) values = {} {} {}
+2021-10-20 01:45:10,223 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_LINK, param={'link_name': 'e0', 'host_name1': 'h0', 'host_name2': 's0'})
+2021-10-20 01:45:10,239 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'add_link', 'param': {'link_name': 'e0', 'host_name1': 'h0', 'host_name2': 's0'}})
+2021-10-20 01:45:10,240 | 9132 | tracing_net.net, add_link, 203 | DEBUG | added the link (e0) between h0 and s0
+2021-10-20 01:45:11,539 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_HOST, param={'name': 'h1', 'ip': '', 'mac': ''})
+2021-10-20 01:45:11,545 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'add_host', 'param': {'name': 'h1', 'ip': '', 'mac': ''}})
+2021-10-20 01:45:11,568 | 9132 | tracing_net.net, add_host, 164 | DEBUG | added the host (h1)
+2021-10-20 01:45:11,619 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:11,620 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:45:11,621 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=10) values = {'e0': []} {} {}
+2021-10-20 01:45:11,621 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:45:12,637 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_LINK, param={'link_name': 'e1', 'host_name1': 'h1', 'host_name2': 's0'})
+2021-10-20 01:45:12,640 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'add_link', 'param': {'link_name': 'e1', 'host_name1': 'h1', 'host_name2': 's0'}})
+2021-10-20 01:45:12,651 | 9132 | tracing_net.net, add_link, 203 | DEBUG | added the link (e1) between h1 and s0
+2021-10-20 01:45:13,619 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:13,621 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:13,621 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:45:13,622 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=11) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:45:13,622 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:45:13,623 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:45:15,619 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:15,621 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:15,622 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:45:15,623 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=12) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:45:15,623 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:45:15,624 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:45:15,801 | 9144 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.START_TRACING, param={})
+2021-10-20 01:45:15,806 | 9132 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'start_tracing', 'param': {}})
+2021-10-20 01:45:17,620 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:17,621 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:17,623 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:45:17,624 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=13) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:45:17,625 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:45:17,630 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:45:19,621 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:19,623 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:19,624 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:45:19,624 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=14) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:45:19,624 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:45:19,625 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:45:21,620 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:21,621 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:21,621 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:45:21,622 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=15) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:45:21,623 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:45:21,624 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:45:23,623 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:23,624 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:23,624 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:45:23,625 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=16) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:45:23,625 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:45:23,626 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:45:25,627 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:25,635 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:25,639 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:45:25,640 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=17) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:45:25,641 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:45:25,641 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:45:27,622 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:27,625 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:27,646 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:45:27,650 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=18) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:45:27,652 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:45:27,652 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:45:29,624 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:29,627 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:29,628 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:45:29,629 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=19) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:45:29,630 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:45:29,631 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:45:31,619 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:31,620 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:31,620 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:45:31,621 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=20) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:45:31,622 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:45:31,623 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:45:33,623 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:33,624 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:33,624 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:45:33,625 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=21) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:45:33,626 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:45:33,627 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:45:35,621 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:35,622 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:35,622 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:45:35,623 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=22) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:45:35,624 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:45:35,624 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:45:37,636 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:37,637 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:37,638 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:45:37,639 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=23) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:45:37,639 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:45:37,640 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:45:39,619 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:39,620 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:39,621 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:45:39,622 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=24) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:45:39,622 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:45:39,623 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:45:41,622 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:41,623 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:41,624 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:45:41,625 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=25) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:45:41,626 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:45:41,626 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:45:43,619 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:43,620 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:43,621 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:45:43,621 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=26) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:45:43,622 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:45:43,623 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:45:45,632 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:45,633 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:45,634 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:45:45,634 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=27) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:45:45,634 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:45:45,635 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:45:47,634 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:47,635 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:47,635 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:45:47,636 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=28) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:45:47,637 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:45:47,638 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:45:49,619 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:49,623 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:49,624 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:45:49,626 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=29) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:45:49,627 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:45:49,628 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:45:51,629 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:51,630 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:51,631 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:45:51,632 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=30) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:45:51,632 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:45:51,633 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:45:53,637 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:53,638 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:53,638 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:45:53,639 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=31) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:45:53,639 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:45:53,640 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:45:55,619 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:55,620 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:55,621 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:45:55,622 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=32) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:45:55,623 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:45:55,624 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:45:57,625 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:57,627 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:57,627 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:45:57,628 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=33) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:45:57,629 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:45:57,629 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:45:59,635 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:59,636 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:45:59,637 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:45:59,637 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=34) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:45:59,638 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:45:59,638 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:01,632 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:01,633 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:01,634 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:01,638 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=35) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:01,639 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:01,640 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:03,620 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:03,622 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:03,623 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:03,623 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=36) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:03,624 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:03,624 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:05,631 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:05,632 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:05,633 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:05,633 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=37) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:05,634 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:05,635 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:07,624 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:07,625 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:07,626 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:07,627 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=38) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:07,628 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:07,629 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:09,632 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:09,633 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:09,634 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:09,634 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=39) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:09,635 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:09,635 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:11,632 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:11,633 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:11,633 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:11,634 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=40) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:11,635 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:11,636 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:13,623 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:13,624 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:13,624 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:13,625 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=41) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:13,626 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:13,626 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:15,625 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:15,627 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:15,628 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:15,628 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=42) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:15,629 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:15,629 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:17,636 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:17,637 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:17,638 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:17,638 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=43) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:17,639 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:17,640 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:19,636 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:19,637 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:19,638 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:19,638 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=44) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:19,639 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:19,640 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:21,622 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:21,624 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:21,624 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:21,625 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=45) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:21,626 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:21,626 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:23,623 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:23,624 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:23,624 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:23,625 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=46) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:23,626 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:23,626 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:25,642 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:25,643 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:25,643 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:25,644 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=47) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:25,645 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:25,646 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:27,646 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:27,648 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:27,648 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:27,649 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=48) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:27,650 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:27,651 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:29,632 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:29,633 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:29,633 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:29,634 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=49) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:29,635 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:29,636 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:31,620 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:31,621 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:31,622 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:31,623 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=50) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:31,624 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:31,625 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:33,630 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:33,631 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:33,632 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:33,633 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=51) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:33,633 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:33,634 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:35,633 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:35,634 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:35,635 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:35,635 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=52) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:35,636 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:35,636 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:37,619 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:37,620 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:37,620 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:37,621 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=53) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:37,622 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:37,622 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:39,619 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:39,620 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:39,621 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:39,623 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=54) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:39,624 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:39,625 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:41,621 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:41,622 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:41,623 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:41,624 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=55) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:41,625 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:41,625 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:43,630 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:43,631 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:43,632 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:43,632 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=56) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:43,633 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:43,634 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:45,631 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:45,632 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:45,632 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:45,633 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=57) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:45,634 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:45,635 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:47,644 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:47,645 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:47,646 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:47,646 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=58) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:47,647 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:47,648 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:49,643 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:49,645 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:49,645 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:49,646 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=59) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:49,646 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:49,647 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:51,636 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:51,637 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:51,638 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:51,639 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=60) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:51,639 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:51,640 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:53,622 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:53,623 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:53,624 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:53,625 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=61) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:53,626 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:53,626 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:55,636 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:55,637 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:55,637 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:55,638 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=62) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:55,639 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:55,639 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:57,619 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:57,620 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:57,621 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:57,622 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=63) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:57,623 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:57,624 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:46:59,619 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:59,620 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:46:59,621 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:46:59,622 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=64) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:46:59,623 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:46:59,624 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:47:01,643 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:01,644 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:01,644 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:47:01,650 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=65) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:47:01,651 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:47:01,652 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:47:03,625 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:03,626 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:03,627 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:47:03,627 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=66) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:47:03,628 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:47:03,628 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:47:05,635 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:05,636 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:05,636 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:47:05,637 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=67) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:47:05,638 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:47:05,639 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:47:07,620 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:07,621 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:07,622 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:47:07,623 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=68) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:47:07,623 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:47:07,624 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:47:09,633 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:09,633 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:09,634 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:47:09,635 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=69) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:47:09,635 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:47:09,636 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:47:11,624 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:11,625 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:11,626 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:47:11,627 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=70) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:47:11,627 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:47:11,628 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:47:13,619 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:13,620 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:13,620 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:47:13,621 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=71) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:47:13,622 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:47:13,622 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:47:15,623 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:15,624 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:15,625 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:47:15,625 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=72) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:47:15,626 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:47:15,627 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:47:17,621 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:17,622 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:17,624 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:47:17,625 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=73) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:47:17,625 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:47:17,626 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:47:19,637 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:19,637 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:19,638 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:47:19,639 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=74) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:47:19,639 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:47:19,640 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:47:21,621 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:21,622 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:21,623 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:47:21,624 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=75) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:47:21,624 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:47:21,625 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:47:23,635 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:23,636 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:23,637 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:47:23,638 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=76) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:47:23,639 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:47:23,639 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:47:25,645 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:25,647 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:25,647 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:47:25,648 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=77) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:47:25,649 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:47:25,649 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:47:27,637 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:27,638 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:27,638 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:47:27,639 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=78) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:47:27,640 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:47:27,640 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:47:29,630 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:29,630 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:29,631 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:47:29,632 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=79) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:47:29,632 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:47:29,633 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:47:31,637 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:31,642 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:31,650 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:47:31,652 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=80) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:47:31,652 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:47:31,653 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:47:33,620 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:33,620 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:33,621 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:47:33,622 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=81) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:47:33,623 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:47:33,624 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:47:35,631 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:35,632 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:35,633 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:47:35,633 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=82) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:47:35,634 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:47:35,635 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:47:36,294 | 9132 | tracing_net.net, stop_tracing, 541 | INFO | tracing stop
+2021-10-20 01:47:37,635 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:37,636 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:37,637 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:47:37,637 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=83) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:47:37,638 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:47:37,639 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1
+2021-10-20 01:47:39,635 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:39,635 | 9132 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 01:47:39,636 | 9132 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 437 | ERROR | Failed to get datapath_id s0
+2021-10-20 01:47:39,636 | 9132 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694289.617051, until=84) values = {'e0': [], 'e1': []} {} {}
+2021-10-20 01:47:39,637 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e0
+2021-10-20 01:47:39,637 | 9132 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge e1

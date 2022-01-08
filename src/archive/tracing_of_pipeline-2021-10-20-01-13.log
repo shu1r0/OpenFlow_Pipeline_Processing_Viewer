@@ -1,0 +1,196 @@
+2021-10-20 01:13:34,556 | 5842 | tracing_net.net, __init__, 99 | INFO | set up on-demand mininet
+2021-10-20 01:13:34,560 | 5842 | tracing_of_pipeline, start, 105 | INFO | OpenFlow Tracer Start
+2021-10-20 01:13:34,594 | 5842 | tracing_net.net, start, 312 | INFO | mininet start
+2021-10-20 01:13:34,598 | 5842 | tracing_of_pipeline.analyzer, start_analyzing, 103 | INFO | start analyzing
+2021-10-20 01:13:36,601 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=0) values = {} {} {}
+2021-10-20 01:13:37,835 | 5854 | tracing_net.api.ws_server, connect, 280 | INFO | connect sid=Y48-qSYQfIi_y-5NAAAC
+2021-10-20 01:13:38,234 | 5854 | tracing_net.api.ws_server, connect, 280 | INFO | connect sid=-yo5w8mafPn2xeltAAAD
+2021-10-20 01:13:38,519 | 5854 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:13:38,601 | 5854 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:13:38,602 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=1) values = {} {} {}
+2021-10-20 01:13:38,605 | 5842 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:13:38,607 | 5842 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:13:38,613 | 5854 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:13:38,622 | 5854 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:13:38,624 | 5842 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:13:38,629 | 5842 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:13:38,624 | 5854 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:13:38,632 | 5854 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:13:38,641 | 5854 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:13:38,646 | 5842 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:13:38,647 | 5842 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:13:38,644 | 5854 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:13:38,669 | 5854 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:13:38,675 | 5854 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:13:38,679 | 5854 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:13:38,680 | 5842 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:13:38,682 | 5842 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:13:38,683 | 5854 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:13:38,741 | 5854 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:13:38,748 | 5854 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:13:38,750 | 5842 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:13:38,754 | 5842 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:13:38,755 | 5854 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:13:38,794 | 5854 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:13:38,797 | 5854 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:13:38,798 | 5842 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:13:38,800 | 5842 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:13:38,803 | 5854 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:13:38,809 | 5854 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:13:38,819 | 5854 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:13:38,819 | 5842 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:13:38,823 | 5842 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:13:38,824 | 5854 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:13:38,829 | 5854 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:13:38,838 | 5854 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:13:38,839 | 5842 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:13:38,846 | 5842 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:13:38,847 | 5854 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:13:38,851 | 5854 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:13:38,857 | 5854 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:13:38,858 | 5842 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:13:38,863 | 5842 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:13:38,864 | 5854 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:13:38,867 | 5854 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:13:38,870 | 5854 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:13:38,870 | 5842 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:13:38,875 | 5842 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:13:38,876 | 5854 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:13:38,879 | 5854 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:13:38,885 | 5854 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:13:38,886 | 5842 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:13:38,887 | 5842 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:13:38,890 | 5854 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:13:38,894 | 5854 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:13:38,905 | 5854 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:13:38,906 | 5842 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:13:38,907 | 5842 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:13:38,907 | 5854 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:13:38,910 | 5854 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:13:38,915 | 5854 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:13:38,916 | 5842 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:13:38,917 | 5842 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:13:38,921 | 5854 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:13:38,938 | 5854 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:13:38,946 | 5854 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:13:38,946 | 5842 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:13:38,947 | 5842 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:13:38,948 | 5854 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:13:38,958 | 5854 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:13:38,969 | 5854 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:13:38,970 | 5842 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:13:38,971 | 5842 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:13:38,971 | 5854 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:13:38,981 | 5854 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:13:38,994 | 5854 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:13:38,994 | 5842 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:13:38,995 | 5842 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:13:38,996 | 5854 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:13:39,010 | 5854 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:13:39,011 | 5854 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:13:39,012 | 5842 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:13:39,013 | 5842 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:13:39,013 | 5854 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:13:39,028 | 5854 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:13:39,034 | 5854 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:13:39,035 | 5842 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:13:39,037 | 5842 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:13:39,038 | 5854 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:13:40,601 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=2) values = {} {} {}
+2021-10-20 01:13:42,600 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=3) values = {} {} {}
+2021-10-20 01:13:44,601 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=4) values = {} {} {}
+2021-10-20 01:13:46,601 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=5) values = {} {} {}
+2021-10-20 01:13:48,600 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=6) values = {} {} {}
+2021-10-20 01:13:50,600 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=7) values = {} {} {}
+2021-10-20 01:13:52,264 | 5854 | tracing_net.api.ws_server, disconnect, 285 | INFO | disconnect sid=Y48-qSYQfIi_y-5NAAAC
+2021-10-20 01:13:52,267 | 5854 | tracing_net.api.ws_server, disconnect, 285 | INFO | disconnect sid=-yo5w8mafPn2xeltAAAD
+2021-10-20 01:13:52,749 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=8) values = {} {} {}
+2021-10-20 01:13:54,602 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=9) values = {} {} {}
+2021-10-20 01:13:56,603 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=10) values = {} {} {}
+2021-10-20 01:13:58,856 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=11) values = {} {} {}
+2021-10-20 01:14:00,600 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=12) values = {} {} {}
+2021-10-20 01:14:02,600 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=13) values = {} {} {}
+2021-10-20 01:14:04,607 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=14) values = {} {} {}
+2021-10-20 01:14:06,600 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=15) values = {} {} {}
+2021-10-20 01:14:08,601 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=16) values = {} {} {}
+2021-10-20 01:14:10,628 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=17) values = {} {} {}
+2021-10-20 01:14:12,613 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=18) values = {} {} {}
+2021-10-20 01:14:14,604 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=19) values = {} {} {}
+2021-10-20 01:14:16,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=20) values = {} {} {}
+2021-10-20 01:14:18,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=21) values = {} {} {}
+2021-10-20 01:14:20,619 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=22) values = {} {} {}
+2021-10-20 01:14:22,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=23) values = {} {} {}
+2021-10-20 01:14:24,613 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=24) values = {} {} {}
+2021-10-20 01:14:26,604 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=25) values = {} {} {}
+2021-10-20 01:14:28,603 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=26) values = {} {} {}
+2021-10-20 01:14:30,612 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=27) values = {} {} {}
+2021-10-20 01:14:32,600 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=28) values = {} {} {}
+2021-10-20 01:14:34,600 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=29) values = {} {} {}
+2021-10-20 01:14:36,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=30) values = {} {} {}
+2021-10-20 01:14:38,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=31) values = {} {} {}
+2021-10-20 01:14:40,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=32) values = {} {} {}
+2021-10-20 01:14:42,600 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=33) values = {} {} {}
+2021-10-20 01:14:44,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=34) values = {} {} {}
+2021-10-20 01:14:46,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=35) values = {} {} {}
+2021-10-20 01:14:48,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=36) values = {} {} {}
+2021-10-20 01:14:50,602 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=37) values = {} {} {}
+2021-10-20 01:14:52,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=38) values = {} {} {}
+2021-10-20 01:14:54,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=39) values = {} {} {}
+2021-10-20 01:14:56,603 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=40) values = {} {} {}
+2021-10-20 01:14:58,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=41) values = {} {} {}
+2021-10-20 01:15:00,600 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=42) values = {} {} {}
+2021-10-20 01:15:04,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=44) values = {} {} {}
+2021-10-20 01:15:06,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=45) values = {} {} {}
+2021-10-20 01:15:08,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=46) values = {} {} {}
+2021-10-20 01:15:10,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=47) values = {} {} {}
+2021-10-20 01:15:12,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=48) values = {} {} {}
+2021-10-20 01:15:14,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=49) values = {} {} {}
+2021-10-20 01:15:16,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=50) values = {} {} {}
+2021-10-20 01:15:18,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=51) values = {} {} {}
+2021-10-20 01:15:20,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=52) values = {} {} {}
+2021-10-20 01:15:22,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=53) values = {} {} {}
+2021-10-20 01:15:24,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=54) values = {} {} {}
+2021-10-20 01:15:26,600 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=55) values = {} {} {}
+2021-10-20 01:15:28,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=56) values = {} {} {}
+2021-10-20 01:15:30,600 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=57) values = {} {} {}
+2021-10-20 01:15:32,600 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=58) values = {} {} {}
+2021-10-20 01:15:34,600 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=59) values = {} {} {}
+2021-10-20 01:15:36,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=60) values = {} {} {}
+2021-10-20 01:15:38,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=61) values = {} {} {}
+2021-10-20 01:15:40,607 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=62) values = {} {} {}
+2021-10-20 01:15:42,600 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=63) values = {} {} {}
+2021-10-20 01:15:44,601 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=64) values = {} {} {}
+2021-10-20 01:15:46,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=65) values = {} {} {}
+2021-10-20 01:15:48,600 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=66) values = {} {} {}
+2021-10-20 01:15:50,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=67) values = {} {} {}
+2021-10-20 01:15:52,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=68) values = {} {} {}
+2021-10-20 01:15:54,600 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=69) values = {} {} {}
+2021-10-20 01:15:56,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=70) values = {} {} {}
+2021-10-20 01:15:58,600 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=71) values = {} {} {}
+2021-10-20 01:16:00,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=72) values = {} {} {}
+2021-10-20 01:16:02,600 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=73) values = {} {} {}
+2021-10-20 01:16:04,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=74) values = {} {} {}
+2021-10-20 01:16:06,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=75) values = {} {} {}
+2021-10-20 01:16:08,600 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=76) values = {} {} {}
+2021-10-20 01:16:10,601 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=77) values = {} {} {}
+2021-10-20 01:16:12,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=78) values = {} {} {}
+2021-10-20 01:16:14,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=79) values = {} {} {}
+2021-10-20 01:16:16,600 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=80) values = {} {} {}
+2021-10-20 01:16:18,600 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=81) values = {} {} {}
+2021-10-20 01:16:20,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=82) values = {} {} {}
+2021-10-20 01:16:22,603 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=83) values = {} {} {}
+2021-10-20 01:16:24,600 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=84) values = {} {} {}
+2021-10-20 01:16:26,600 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=85) values = {} {} {}
+2021-10-20 01:16:28,600 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=86) values = {} {} {}
+2021-10-20 01:16:30,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=87) values = {} {} {}
+2021-10-20 01:16:32,600 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=88) values = {} {} {}
+2021-10-20 01:16:34,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=89) values = {} {} {}
+2021-10-20 01:16:36,616 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=90) values = {} {} {}
+2021-10-20 01:16:38,600 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=91) values = {} {} {}
+2021-10-20 01:16:40,601 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=92) values = {} {} {}
+2021-10-20 01:16:42,599 | 5842 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634692414.598949, until=93) values = {} {} {}
+2021-10-20 01:16:43,591 | 5842 | tracing_net.net, stop_tracing, 541 | INFO | tracing stop
+2021-10-20 01:16:43,592 | 5842 | tracing_of_pipeline, stop, 124 | INFO | OpenFlow Tracer Stop
+2021-10-20 01:16:43,593 | 5842 | tracing_net.net, stop_tracing, 541 | INFO | tracing stop
+2021-10-20 01:16:43,614 | 5842 | tracing_net.net, stop, 317 | INFO | mininet stop
+2021-10-20 01:16:43,615 | 5842 | tracing_net.net, stop, 550 | DEBUG | mininet stopped and all capture processes closed

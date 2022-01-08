@@ -16,7 +16,10 @@
       
     <div class="action-set-update-arrow-container">
       <span class="write-action">
-          Write(Output1)
+        <template
+          v-for="action in applyedActionSet">
+            {{ action }}
+        </template>
       </span>
       <div class="action-set-update-arrow">
         <svg>
@@ -55,7 +58,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, PropType } from 'vue'
 
 export default defineComponent({
   name: "UpdateActionSet",
@@ -70,8 +73,11 @@ export default defineComponent({
     actionSetAfter: {
       type: Array,
       default: () => {
-        return ["output: 1"]
+        return [""]
       }
+    },
+    applyedActionSet: {
+      type: Array as PropType<string[]>
     }
   },
   setup(props){
@@ -92,6 +98,7 @@ export default defineComponent({
   align-items: center;
   font-size: 1.5rem;
 
+  // action set
   .action-set-table{
     display: flex;
     flex-direction: column-reverse;
@@ -117,7 +124,7 @@ export default defineComponent({
     width: 30rem;
     height: 20rem;
     font-size: 1.5rem;
-    color: #2F3437;
+    color: $black;
     .action-set-update-arrow{
       width: 30rem;
       height: 10rem;

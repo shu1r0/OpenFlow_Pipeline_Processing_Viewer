@@ -1,0 +1,123 @@
+2021-07-21 00:11:05,893 | 7454 | tracing_net.net, __init__, 96 | INFO | set up on-demand mininet
+2021-07-21 00:11:05,895 | 7454 | tracing_net.net, start, 307 | INFO | mininet start
+2021-07-21 00:11:05,898 | 7454 | tracing_net.net, add_switch, 113 | DEBUG | added the switch (s1)
+2021-07-21 00:11:06,024 | 7454 | tracing_net.net, add_host, 159 | DEBUG | added the host (h1)
+2021-07-21 00:11:06,087 | 7454 | tracing_net.net, add_link, 198 | DEBUG | added the link (l2) between s1 and h1
+2021-07-21 00:11:06,171 | 7454 | tracing_net.net, add_switch, 113 | DEBUG | added the switch (s2)
+2021-07-21 00:11:06,234 | 7454 | tracing_net.net, add_link, 198 | DEBUG | added the link (l1) between s1 and s2
+2021-07-21 00:11:06,357 | 7454 | tracing_net.net, add_host, 159 | DEBUG | added the host (h2)
+2021-07-21 00:11:06,397 | 7454 | tracing_net.net, add_link, 198 | DEBUG | added the link (l3) between s2 and h2
+2021-07-21 00:11:06,505 | 7454 | tracing_net.packet_capture_manager, start_capture, 85 | DEBUG | capture process (s1-eth1:None) started
+2021-07-21 00:11:06,518 | 7454 | tracing_net.packet_capture_manager, start_capture, 85 | DEBUG | capture process (s1-eth2:None) started
+2021-07-21 00:11:06,526 | 7572 | tracing_net.util.packet_capture, start_capture, 56 | INFO | capture start on s1-eth1
+2021-07-21 00:11:06,529 | 7574 | tracing_net.util.packet_capture, start_capture, 56 | INFO | capture start on s1-eth2
+2021-07-21 00:11:06,530 | 7454 | tracing_net.packet_capture_manager, start_capture, 85 | DEBUG | capture process (s2-eth2:None) started
+2021-07-21 00:11:06,551 | 7454 | tracing_net.flowtable.flow_monitor, __init__, 46 | INFO | flow monitor start : s1
+2021-07-21 00:11:06,557 | 7576 | tracing_net.util.packet_capture, start_capture, 56 | INFO | capture start on s2-eth2
+2021-07-21 00:11:06,581 | 7454 | tracing_net.flowtable.flow_monitor, __init__, 46 | INFO | flow monitor start : s2
+2021-07-21 00:11:06,686 | 7583 | tracing_net.flowtable.flow_monitor, flow_monitor, 89 | DEBUG | flow monitor get result {'msg_type': 'NXST_FLOW_MONITOR', 'type': 'reply', 'xid': '0x4'}
+2021-07-21 00:11:06,707 | 7580 | tracing_net.flowtable.flow_monitor, flow_monitor, 89 | DEBUG | flow monitor get result {'msg_type': 'NXST_FLOW_MONITOR', 'type': 'reply', 'xid': '0x4'}
+2021-07-21 00:11:07,598 | 7580 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | dump flows on s1
+2021-07-21 00:11:07,620 | 7583 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | dump flows on s2
+2021-07-21 00:11:07,650 | 7580 | tracing_net.flowtable.flow_monitor, read_dump_flow, 73 | DEBUG | get result for dump flow 1626826267.607238 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-07-21 00:11:07,666 | 7583 | tracing_net.flowtable.flow_monitor, read_dump_flow, 73 | DEBUG | get result for dump flow 1626826267.631463 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-07-21 00:11:08,597 | 7454 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-07-21 00:11:08,598 | 7454 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-07-21 00:11:08,598 | 7454 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-07-21 00:11:08,599 | 7454 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 276 | ERROR | Failed to get datapath_id s1
+2021-07-21 00:11:08,598 | 7580 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | dump flows on s1
+2021-07-21 00:11:08,600 | 7454 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 276 | ERROR | Failed to get datapath_id s2
+2021-07-21 00:11:08,602 | 7454 | tracing_of_pipeline.analyzer, _polling, 247 | DEBUG | polled (start_time=1626826266.596446, until=0) values = {'l2': [], 'l1': [], 'l3': []} {} {}
+2021-07-21 00:11:08,604 | 7454 | tracing_of_pipeline.analyzer, analyze, 133 | WARNING | Fuck!!!!!!!! s1-eth1
+2021-07-21 00:11:08,604 | 7454 | tracing_of_pipeline.analyzer, analyze, 133 | WARNING | Fuck!!!!!!!! s1-eth2
+2021-07-21 00:11:08,605 | 7454 | tracing_of_pipeline.analyzer, analyze, 133 | WARNING | Fuck!!!!!!!! s2-eth2
+2021-07-21 00:11:08,620 | 7583 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | dump flows on s2
+2021-07-21 00:11:08,633 | 7583 | tracing_net.flowtable.flow_monitor, read_dump_flow, 73 | DEBUG | get result for dump flow 1626826268.62993 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-07-21 00:11:08,651 | 7580 | tracing_net.flowtable.flow_monitor, read_dump_flow, 73 | DEBUG | get result for dump flow 1626826268.617034 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-07-21 00:11:08,848 | 7574 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826268.743020779 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:09,066 | 7576 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826268.616849892 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:09,088 | 7574 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826268.795768758 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:09,092 | 7572 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826268.794209271 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:09,101 | 7574 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826268.986205279 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:09,124 | 7574 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826268.998332541 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:09,129 | 7574 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826269.028565148 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:09,363 | 7574 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826269.078386044 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:09,591 | 7576 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826268.822830269 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:09,598 | 7580 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | dump flows on s1
+2021-07-21 00:11:09,623 | 7583 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | dump flows on s2
+2021-07-21 00:11:09,618 | 7580 | tracing_net.flowtable.flow_monitor, read_dump_flow, 73 | DEBUG | get result for dump flow 1626826269.608261 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-07-21 00:11:09,663 | 7583 | tracing_net.flowtable.flow_monitor, read_dump_flow, 73 | DEBUG | get result for dump flow 1626826269.642775 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-07-21 00:11:09,854 | 7574 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826269.285672975 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:10,109 | 7574 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826269.813590928 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:10,438 | 7572 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826269.064036256 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:10,598 | 7454 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 276 | ERROR | Failed to get datapath_id s1
+2021-07-21 00:11:10,598 | 7580 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | dump flows on s1
+2021-07-21 00:11:10,599 | 7454 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 276 | ERROR | Failed to get datapath_id s2
+2021-07-21 00:11:10,604 | 7454 | tracing_of_pipeline.analyzer, _polling, 247 | DEBUG | polled (start_time=1626826266.596446, until=1) values = {'l2': [], 'l1': [], 'l3': []} {} {}
+2021-07-21 00:11:10,604 | 7454 | tracing_of_pipeline.analyzer, analyze, 133 | WARNING | Fuck!!!!!!!! s1-eth1
+2021-07-21 00:11:10,605 | 7454 | tracing_of_pipeline.analyzer, analyze, 133 | WARNING | Fuck!!!!!!!! s1-eth2
+2021-07-21 00:11:10,605 | 7454 | tracing_of_pipeline.analyzer, analyze, 133 | WARNING | Fuck!!!!!!!! s2-eth2
+2021-07-21 00:11:10,608 | 7580 | tracing_net.flowtable.flow_monitor, read_dump_flow, 73 | DEBUG | get result for dump flow 1626826270.603875 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-07-21 00:11:10,620 | 7583 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | dump flows on s2
+2021-07-21 00:11:10,657 | 7580 | tracing_net.flowtable.flow_monitor, flow_monitor, 89 | DEBUG | flow monitor get result {'msg_type': 'NXST_FLOW_MONITOR', 'type': 'reply', 'xid': '0x0'}
+2021-07-21 00:11:10,658 | 7583 | tracing_net.flowtable.flow_monitor, read_dump_flow, 73 | DEBUG | get result for dump flow 1626826270.640978 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-07-21 00:11:10,658 | 7583 | tracing_net.flowtable.flow_monitor, flow_monitor, 89 | DEBUG | flow monitor get result {'msg_type': 'NXST_FLOW_MONITOR', 'type': 'reply', 'xid': '0x0'}
+2021-07-21 00:11:10,658 | 7580 | tracing_net.flowtable.flow_monitor, flow_monitor, 89 | DEBUG | flow monitor get result {'event': 'ADDED', 'table': '0', 'cookie': '0', 'actions': 'CONTROLLER:65535'}
+2021-07-21 00:11:10,660 | 7583 | tracing_net.flowtable.flow_monitor, flow_monitor, 89 | DEBUG | flow monitor get result {'event': 'ADDED', 'table': '0', 'cookie': '0', 'actions': 'CONTROLLER:65535'}
+2021-07-21 00:11:10,698 | 7576 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826269.391725418 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:11,181 | 7574 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826270.076532316 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:11,195 | 7572 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826270.293438680 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:11,201 | 7572 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826271.064701995 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:11,447 | 7576 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826270.617566537 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:11,452 | 7574 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826271.052156360 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:11,461 | 7576 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826271.306975106 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:11,598 | 7580 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | dump flows on s1
+2021-07-21 00:11:11,607 | 7580 | tracing_net.flowtable.flow_monitor, read_dump_flow, 73 | DEBUG | get result for dump flow 1626826271.604099 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=0.950s, table=0, n_packets=1, n_bytes=107, priority=0 actions=CONTROLLER:65535']
+2021-07-21 00:11:11,613 | 7454 | tracing_net.flowtable.table_repository, add, 88 | DEBUG | Table repo added table <FlowTables(datapath=0, timestamp=1626826271.604099, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-07-21 00:11:11,614 | 7580 | tracing_net.flowtable.flow_monitor, read_dump_flow, 78 | DEBUG | parsed result to table 1626826271.604099 : <FlowTables(datapath=0, timestamp=1626826271.604099, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-07-21 00:11:11,621 | 7583 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | dump flows on s2
+2021-07-21 00:11:11,629 | 7583 | tracing_net.flowtable.flow_monitor, read_dump_flow, 73 | DEBUG | get result for dump flow 1626826271.625658 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=0.973s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-07-21 00:11:11,634 | 7454 | tracing_net.flowtable.table_repository, add, 88 | DEBUG | Table repo added table <FlowTables(datapath=0, timestamp=1626826271.625658, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-07-21 00:11:11,635 | 7583 | tracing_net.flowtable.flow_monitor, read_dump_flow, 78 | DEBUG | parsed result to table 1626826271.625658 : <FlowTables(datapath=0, timestamp=1626826271.625658, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-07-21 00:11:11,708 | 7576 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826271.318482383 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:11,711 | 7572 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826271.132100746 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:11,712 | 7574 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826271.286999593 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:11,721 | 7572 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826271.574635675 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:11,722 | 7576 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826271.451438028 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:11,724 | 7574 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826271.574626222 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:11,727 | 7572 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826271.574626361 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:11,963 | 7574 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826271.579371527 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:11,967 | 7572 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826271.579323173 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:12,216 | 7576 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826271.595586241 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:12,223 | 7574 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826271.877411534 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:12,471 | 7572 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826271.884171629 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:12,473 | 7574 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826272.140844075 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:12,472 | 7576 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826272.163557632 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:12,605 | 7580 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | dump flows on s1
+2021-07-21 00:11:12,605 | 7454 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 276 | ERROR | Failed to get datapath_id s1
+2021-07-21 00:11:12,608 | 7454 | tracing_of_pipeline.analyzer, _polling, 247 | DEBUG | polled (start_time=1626826266.596446, until=2) values = {'l2': [<Msg captured_interface=s1-eth1, sniff_timestamp=1626826268.7942092, pkt=<ICMPV6_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>, <Msg captured_interface=s1-eth1, sniff_timestamp=1626826269.0640364, pkt=<UDP/MDNS_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>, <Msg captured_interface=s1-eth1, sniff_timestamp=1626826270.2934387, pkt=<UDP/MDNS_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>], 'l1': [<Msg captured_interface=s1-eth2, sniff_timestamp=1626826268.7430208, pkt=<UDP/MDNS_RAW Packet>, in_port=s1-eth2, in_phy_port=s1-eth2>, <Msg captured_interface=s1-eth2, sniff_timestamp=1626826268.7957687, pkt=<UDP/MDNS_RAW Packet>, in_port=s1-eth2, in_phy_port=s1-eth2>, <Msg captured_interface=s1-eth2, sniff_timestamp=1626826268.9862053, pkt=<ICMPV6_RAW Packet>, in_port=s1-eth2, in_phy_port=s1-eth2>, <Msg captured_interface=s1-eth2, sniff_timestamp=1626826268.9983325, pkt=<UDP/MDNS_RAW Packet>, in_port=s1-eth2, in_phy_port=s1-eth2>, <Msg captured_interface=s1-eth2, sniff_timestamp=1626826269.0285652, pkt=<UDP/MDNS_RAW Packet>, in_port=s1-eth2, in_phy_port=s1-eth2>, <Msg captured_interface=s1-eth2, sniff_timestamp=1626826269.078386, pkt=<ICMPV6_RAW Packet>, in_port=s1-eth2, in_phy_port=s1-eth2>, <Msg captured_interface=s1-eth2, sniff_timestamp=1626826269.285673, pkt=<UDP/MDNS_RAW Packet>, in_port=s1-eth2, in_phy_port=s1-eth2>, <Msg captured_interface=s1-eth2, sniff_timestamp=1626826269.813591, pkt=<UDP/MDNS_RAW Packet>, in_port=s1-eth2, in_phy_port=s1-eth2>, <Msg captured_interface=s1-eth2, sniff_timestamp=1626826270.0765324, pkt=<UDP/MDNS_RAW Packet>, in_port=s1-eth2, in_phy_port=s1-eth2>], 'l3': [<Msg captured_interface=s2-eth2, sniff_timestamp=1626826268.61685, pkt=<UDP/MDNS_RAW Packet>, in_port=s2-eth2, in_phy_port=s2-eth2>, <Msg captured_interface=s2-eth2, sniff_timestamp=1626826268.8228302, pkt=<ICMPV6_RAW Packet>, in_port=s2-eth2, in_phy_port=s2-eth2>, <Msg captured_interface=s2-eth2, sniff_timestamp=1626826269.3917253, pkt=<UDP/MDNS_RAW Packet>, in_port=s2-eth2, in_phy_port=s2-eth2>]} {} {'s': ['2']}
+2021-07-21 00:11:12,621 | 7580 | tracing_net.flowtable.flow_monitor, read_dump_flow, 73 | DEBUG | get result for dump flow 1626826272.61247 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=1.962s, table=0, n_packets=4, n_bytes=460, priority=0 actions=CONTROLLER:65535']
+2021-07-21 00:11:12,620 | 7583 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | dump flows on s2
+2021-07-21 00:11:12,624 | 7580 | tracing_net.flowtable.flow_monitor, read_dump_flow, 78 | DEBUG | parsed result to table 1626826272.61247 : <FlowTables(datapath=0, timestamp=1626826272.61247, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-07-21 00:11:12,625 | 7454 | tracing_net.flowtable.table_repository, add, 88 | DEBUG | Table repo added table <FlowTables(datapath=0, timestamp=1626826272.61247, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-07-21 00:11:12,643 | 7583 | tracing_net.flowtable.flow_monitor, read_dump_flow, 73 | DEBUG | get result for dump flow 1626826272.629299 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=1.983s, table=0, n_packets=3, n_bytes=390, priority=0 actions=CONTROLLER:65535']
+2021-07-21 00:11:12,653 | 7454 | tracing_net.flowtable.table_repository, add, 88 | DEBUG | Table repo added table <FlowTables(datapath=0, timestamp=1626826272.629299, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-07-21 00:11:12,653 | 7583 | tracing_net.flowtable.flow_monitor, read_dump_flow, 78 | DEBUG | parsed result to table 1626826272.629299 : <FlowTables(datapath=0, timestamp=1626826272.629299, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-07-21 00:11:12,734 | 7574 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826272.345716507 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:12,735 | 7576 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826272.342165956 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:13,599 | 7580 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | dump flows on s1
+2021-07-21 00:11:13,611 | 7580 | tracing_net.flowtable.flow_monitor, read_dump_flow, 73 | DEBUG | get result for dump flow 1626826273.604784 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=2.952s, table=0, n_packets=5, n_bytes=530, priority=0 actions=CONTROLLER:65535']
+2021-07-21 00:11:13,613 | 7580 | tracing_net.flowtable.flow_monitor, read_dump_flow, 78 | DEBUG | parsed result to table 1626826273.604784 : <FlowTables(datapath=0, timestamp=1626826273.604784, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-07-21 00:11:13,614 | 7454 | tracing_net.flowtable.table_repository, add, 88 | DEBUG | Table repo added table <FlowTables(datapath=0, timestamp=1626826273.604784, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-07-21 00:11:13,621 | 7583 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | dump flows on s2
+2021-07-21 00:11:13,630 | 7583 | tracing_net.flowtable.flow_monitor, read_dump_flow, 73 | DEBUG | get result for dump flow 1626826273.626337 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=2.974s, table=0, n_packets=5, n_bytes=530, priority=0 actions=CONTROLLER:65535']
+2021-07-21 00:11:13,632 | 7583 | tracing_net.flowtable.flow_monitor, read_dump_flow, 78 | DEBUG | parsed result to table 1626826273.626337 : <FlowTables(datapath=0, timestamp=1626826273.626337, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-07-21 00:11:13,633 | 7454 | tracing_net.flowtable.table_repository, add, 88 | DEBUG | Table repo added table <FlowTables(datapath=0, timestamp=1626826273.626337, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-07-21 00:11:14,527 | 7572 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626826272.355302477 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 00:11:14,600 | 7580 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | dump flows on s1
+2021-07-21 00:11:14,597 | 7454 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 276 | ERROR | Failed to get datapath_id s1
+2021-07-21 00:11:14,607 | 7454 | tracing_of_pipeline.analyzer, _polling, 247 | DEBUG | polled (start_time=1626826266.596446, until=2) values = {'l2': [<Msg captured_interface=s1-eth1, sniff_timestamp=1626826268.7942092, pkt=<ICMPV6_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>, <Msg captured_interface=s1-eth1, sniff_timestamp=1626826269.0640364, pkt=<UDP/MDNS_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>, <Msg captured_interface=s1-eth1, sniff_timestamp=1626826270.2934387, pkt=<UDP/MDNS_RAW Packet>, in_port=s1-eth1, in_phy_port=s1-eth1>], 'l1': [<Msg captured_interface=s1-eth2, sniff_timestamp=1626826268.7430208, pkt=<UDP/MDNS_RAW Packet>, in_port=s1-eth2, in_phy_port=s1-eth2>, <Msg captured_interface=s1-eth2, sniff_timestamp=1626826268.7957687, pkt=<UDP/MDNS_RAW Packet>, in_port=s1-eth2, in_phy_port=s1-eth2>, <Msg captured_interface=s1-eth2, sniff_timestamp=1626826268.9862053, pkt=<ICMPV6_RAW Packet>, in_port=s1-eth2, in_phy_port=s1-eth2>, <Msg captured_interface=s1-eth2, sniff_timestamp=1626826268.9983325, pkt=<UDP/MDNS_RAW Packet>, in_port=s1-eth2, in_phy_port=s1-eth2>, <Msg captured_interface=s1-eth2, sniff_timestamp=1626826269.0285652, pkt=<UDP/MDNS_RAW Packet>, in_port=s1-eth2, in_phy_port=s1-eth2>, <Msg captured_interface=s1-eth2, sniff_timestamp=1626826269.078386, pkt=<ICMPV6_RAW Packet>, in_port=s1-eth2, in_phy_port=s1-eth2>, <Msg captured_interface=s1-eth2, sniff_timestamp=1626826269.285673, pkt=<UDP/MDNS_RAW Packet>, in_port=s1-eth2, in_phy_port=s1-eth2>, <Msg captured_interface=s1-eth2, sniff_timestamp=1626826269.813591, pkt=<UDP/MDNS_RAW Packet>, in_port=s1-eth2, in_phy_port=s1-eth2>, <Msg captured_interface=s1-eth2, sniff_timestamp=1626826270.0765324, pkt=<UDP/MDNS_RAW Packet>, in_port=s1-eth2, in_phy_port=s1-eth2>], 'l3': [<Msg captured_interface=s2-eth2, sniff_timestamp=1626826268.61685, pkt=<UDP/MDNS_RAW Packet>, in_port=s2-eth2, in_phy_port=s2-eth2>, <Msg captured_interface=s2-eth2, sniff_timestamp=1626826268.8228302, pkt=<ICMPV6_RAW Packet>, in_port=s2-eth2, in_phy_port=s2-eth2>, <Msg captured_interface=s2-eth2, sniff_timestamp=1626826269.3917253, pkt=<UDP/MDNS_RAW Packet>, in_port=s2-eth2, in_phy_port=s2-eth2>]} {} {'s': ['2', '2']}
+2021-07-21 00:11:14,617 | 7580 | tracing_net.flowtable.flow_monitor, read_dump_flow, 73 | DEBUG | get result for dump flow 1626826274.610033 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=3.959s, table=0, n_packets=5, n_bytes=530, priority=0 actions=CONTROLLER:65535']
+2021-07-21 00:11:14,619 | 7580 | tracing_net.flowtable.flow_monitor, read_dump_flow, 78 | DEBUG | parsed result to table 1626826274.610033 : <FlowTables(datapath=0, timestamp=1626826274.610033, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-07-21 00:11:14,621 | 7583 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | dump flows on s2
+2021-07-21 00:11:14,642 | 7454 | tracing_net.flowtable.table_repository, add, 88 | DEBUG | Table repo added table <FlowTables(datapath=0, timestamp=1626826274.610033, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>

@@ -1,0 +1,15 @@
+2021-11-19 05:41:43,389 | 3985 | tracing_net.net, __init__, 117 | INFO | set up on-demand mininet
+2021-11-19 05:41:43,692 | 3985 | tracing_net.api.ws_server, connect, 230 | INFO | connect sid=RwscFsUR3HSif7WIAAAB
+2021-11-19 05:41:51,395 | 3985 | tracing_net.api.ws_server, disconnect, 235 | INFO | disconnect sid=RwscFsUR3HSif7WIAAAB
+2021-11-19 05:41:54,526 | 3985 | tracing_net.api.ws_server, connect, 230 | INFO | connect sid=il8K6rluoVksnEnaAAAD
+2021-11-19 05:43:36,782 | 3985 | tracing_net.api.ws_server, disconnect, 235 | INFO | disconnect sid=il8K6rluoVksnEnaAAAD
+2021-11-19 05:43:36,787 | 3985 | tracing_net.api.ws_server, connect, 230 | INFO | connect sid=QE_1A1jgPIqVaKFVAAAF
+2021-11-19 05:43:37,302 | 3985 | tracing_net.api.ws_server, disconnect, 235 | INFO | disconnect sid=QE_1A1jgPIqVaKFVAAAF
+2021-11-19 05:43:40,165 | 3985 | tracing_net.api.ws_server, connect, 230 | INFO | connect sid=5X7vxLTZaUxhW8UJAAAH
+2021-11-19 05:44:11,869 | 3985 | tracing_net.net, stop_tracing, 557 | INFO | tracing stop
+2021-11-19 05:44:11,872 | 3985 | tracing_of_pipeline.analyzer, stop_analyzing, 149 | INFO | stop analyzing interval. (last count = 0)
+2021-11-19 05:44:11,872 | 3985 | tracing_of_pipeline.analyzer, _polling, 552 | DEBUG | polled repository (start_time=0, until=0) values = {} {}
+2021-11-19 05:44:11,873 | 3985 | tracing_of_pipeline.analyzer, analyze, 196 | DEBUG | Analyzing 1... polled repository (count=0)
+2021-11-19 05:44:11,873 | 3985 | tracing_of_pipeline.analyzer, analyze_rest, 161 | INFO | These packets could not be analyzed. {}
+2021-11-19 05:44:11,874 | 3985 | tracing_of_pipeline.analyzer, analyze_rest, 162 | INFO | These OpenFlowMessage could not be analyzed. {}
+2021-11-19 05:44:11,882 | 3985 | tracing_of_pipeline, stop, 138 | INFO | OpenFlow Tracer Stop

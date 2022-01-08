@@ -1,0 +1,673 @@
+2021-10-20 02:19:29,757 | 12270 | tracing_net.net, __init__, 99 | INFO | set up on-demand mininet
+2021-10-20 02:19:29,759 | 12270 | tracing_of_pipeline, start, 105 | INFO | OpenFlow Tracer Start
+2021-10-20 02:19:29,769 | 12270 | tracing_net.net, start, 312 | INFO | mininet start
+2021-10-20 02:19:29,772 | 12270 | tracing_of_pipeline.analyzer, start_analyzing, 103 | INFO | start analyzing
+2021-10-20 02:19:29,776 | 12270 | tracing_net.net, add_switch, 116 | DEBUG | added the switch (s1)
+2021-10-20 02:19:29,948 | 12270 | tracing_net.net, add_host, 164 | DEBUG | added the host (h1)
+2021-10-20 02:19:30,071 | 12270 | tracing_net.net, add_link, 203 | DEBUG | added the link (l2) between s1 and h1
+2021-10-20 02:19:30,226 | 12270 | tracing_net.net, add_switch, 116 | DEBUG | added the switch (s2)
+2021-10-20 02:19:30,346 | 12270 | tracing_net.net, add_link, 203 | DEBUG | added the link (l1) between s1 and s2
+2021-10-20 02:19:30,492 | 12270 | tracing_net.net, add_host, 164 | DEBUG | added the host (h2)
+2021-10-20 02:19:30,551 | 12270 | tracing_net.net, add_link, 203 | DEBUG | added the link (l3) between s2 and h2
+2021-10-20 02:19:30,679 | 12270 | tracing_net.net, start_tracing, 525 | INFO | tracing start
+2021-10-20 02:19:30,684 | 12270 | tracing_net.net, start_tracing, 527 | DEBUG | ipv6 is disable
+2021-10-20 02:19:30,750 | 12270 | tracing_net.packet_capture_manager, start_capture, 88 | DEBUG | capture process (s1-eth1:12407) started
+2021-10-20 02:19:30,763 | 12407 | tracing_net.util.packet_capture, start_capture, 58 | INFO | packet capture start on s1-eth1
+2021-10-20 02:19:30,797 | 12270 | tracing_net.packet_capture_manager, start_capture, 88 | DEBUG | capture process (s1-eth2:12409) started
+2021-10-20 02:19:30,821 | 12409 | tracing_net.util.packet_capture, start_capture, 58 | INFO | packet capture start on s1-eth2
+2021-10-20 02:19:30,834 | 12270 | tracing_net.packet_capture_manager, start_capture, 88 | DEBUG | capture process (s2-eth2:12412) started
+2021-10-20 02:19:30,840 | 12270 | tracing_net.flowtable.flow_monitor, __init__, 46 | INFO | flow monitor start : s1
+2021-10-20 02:19:30,844 | 12412 | tracing_net.util.packet_capture, start_capture, 58 | INFO | packet capture start on s2-eth2
+2021-10-20 02:19:30,856 | 12270 | tracing_net.flowtable.flow_monitor, __init__, 46 | INFO | flow monitor start : s2
+2021-10-20 02:19:31,775 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:31,782 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:31,783 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:31,787 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:19:31,807 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:19:31,831 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=0) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:19:31,832 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:19:31,832 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:19:31,833 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:19:31,907 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:31,951 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:32,101 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696372.043713 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-10-20 02:19:32,108 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-10-20 02:19:32,208 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696372.186803 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-10-20 02:19:32,208 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-10-20 02:19:32,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:32,891 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:32,906 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696372.888946 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-10-20 02:19:32,906 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-10-20 02:19:32,915 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696372.904756 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-10-20 02:19:32,916 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-10-20 02:19:33,774 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:33,775 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:33,775 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:33,777 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:19:33,778 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:19:33,778 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=1) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:19:33,779 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:19:33,779 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:19:33,780 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:19:33,876 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:33,886 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696373.883325 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-10-20 02:19:33,887 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-10-20 02:19:33,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:33,899 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696373.895597 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-10-20 02:19:33,900 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 83 | WARNING | No result dump flows
+2021-10-20 02:19:34,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:34,883 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696374.880711 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=0.570s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:34,891 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:34,890 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696374.880711 : <FlowTables(datapath=0, timestamp=1634696374.880711, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:34,899 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696374.895996 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=0.585s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:34,905 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696374.895996 : <FlowTables(datapath=0, timestamp=1634696374.895996, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:35,773 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:35,774 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:35,774 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:35,775 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:19:35,776 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:19:35,777 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=2) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:19:35,777 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:19:35,778 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:19:35,778 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:19:35,907 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:35,907 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:35,915 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696375.912604 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=1.602s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:35,917 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696375.912604 : <FlowTables(datapath=0, timestamp=1634696375.912604, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:35,920 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696375.9165 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=1.606s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:35,921 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696375.9165 : <FlowTables(datapath=0, timestamp=1634696375.9165, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:36,910 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:36,911 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:36,921 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696376.919073 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=2.608s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:36,922 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696376.919073 : <FlowTables(datapath=0, timestamp=1634696376.919073, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:36,927 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696376.921473 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=2.612s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:36,928 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696376.921473 : <FlowTables(datapath=0, timestamp=1634696376.921473, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:37,781 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:37,796 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:37,797 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:37,818 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:19:37,818 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:19:37,819 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=3) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:19:37,819 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:19:37,819 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:19:37,819 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:19:37,876 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:37,886 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696377.88237 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=3.573s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:37,888 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696377.88237 : <FlowTables(datapath=0, timestamp=1634696377.88237, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:37,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:37,901 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696377.897588 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=3.586s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:37,902 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696377.897588 : <FlowTables(datapath=0, timestamp=1634696377.897588, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:38,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:38,887 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696378.881067 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=4.572s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:38,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:38,895 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696378.881067 : <FlowTables(datapath=0, timestamp=1634696378.881067, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:38,908 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696378.904197 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=4.594s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:38,909 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696378.904197 : <FlowTables(datapath=0, timestamp=1634696378.904197, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:39,773 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:39,776 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:39,777 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:39,779 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:19:39,781 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:19:39,781 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=4) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:19:39,781 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:19:39,782 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:19:39,782 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:19:39,876 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:39,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:39,916 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696379.900336 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=5.597s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:39,929 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696379.900336 : <FlowTables(datapath=0, timestamp=1634696379.900336, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:39,922 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696379.908717 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=5.605s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:39,937 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696379.908717 : <FlowTables(datapath=0, timestamp=1634696379.908717, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:40,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:40,884 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696380.881062 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=6.571s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:40,885 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696380.881062 : <FlowTables(datapath=0, timestamp=1634696380.881062, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:40,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:40,899 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696380.896108 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=6.585s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:40,900 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696380.896108 : <FlowTables(datapath=0, timestamp=1634696380.896108, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:41,774 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:41,775 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:41,775 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:41,776 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:19:41,777 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:19:41,778 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=5) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:19:41,778 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:19:41,779 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:19:41,779 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:19:41,878 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:41,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:41,892 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696381.887483 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=7.577s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:41,894 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696381.887483 : <FlowTables(datapath=0, timestamp=1634696381.887483, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:41,900 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696381.896546 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=7.586s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:41,901 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696381.896546 : <FlowTables(datapath=0, timestamp=1634696381.896546, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:42,884 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:42,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:42,897 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696382.891572 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=8.583s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:42,898 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696382.891572 : <FlowTables(datapath=0, timestamp=1634696382.891572, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:42,902 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696382.898074 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=8.588s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:42,903 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696382.898074 : <FlowTables(datapath=0, timestamp=1634696382.898074, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:43,774 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:43,775 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:43,775 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:43,776 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:19:43,777 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:19:43,777 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=6) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:19:43,778 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:19:43,778 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:19:43,779 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:19:43,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:43,886 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696383.881809 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=9.573s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:43,887 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696383.881809 : <FlowTables(datapath=0, timestamp=1634696383.881809, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:43,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:43,899 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696383.89601 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=9.585s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:43,901 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696383.89601 : <FlowTables(datapath=0, timestamp=1634696383.89601, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:44,876 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:44,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:44,895 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696384.88695 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=10.577s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:44,901 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696384.88695 : <FlowTables(datapath=0, timestamp=1634696384.88695, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:44,919 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696384.905469 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=10.603s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:44,921 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696384.905469 : <FlowTables(datapath=0, timestamp=1634696384.905469, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:45,773 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:45,776 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:45,777 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:45,778 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:19:45,779 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:19:45,780 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=7) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:19:45,781 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:19:45,783 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:19:45,784 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:19:45,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:45,891 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:45,900 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696385.887549 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=11.581s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:45,904 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696385.887549 : <FlowTables(datapath=0, timestamp=1634696385.887549, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:45,958 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696385.924274 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=11.639s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:45,967 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696385.924274 : <FlowTables(datapath=0, timestamp=1634696385.924274, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:46,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:46,889 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696386.883687 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=12.575s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:46,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:46,891 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696386.883687 : <FlowTables(datapath=0, timestamp=1634696386.883687, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:46,902 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696386.897024 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=12.587s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:46,904 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696386.897024 : <FlowTables(datapath=0, timestamp=1634696386.897024, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:47,773 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:47,774 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:47,787 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:47,825 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:19:47,832 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:19:47,833 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=8) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:19:47,833 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:19:47,834 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:19:47,834 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:19:47,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:47,891 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:47,896 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696387.882997 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=13.579s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:47,898 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696387.882997 : <FlowTables(datapath=0, timestamp=1634696387.882997, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:47,908 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696387.900039 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=13.594s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:47,910 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696387.900039 : <FlowTables(datapath=0, timestamp=1634696387.900039, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:48,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:48,884 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696388.880892 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=14.571s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:48,885 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696388.880892 : <FlowTables(datapath=0, timestamp=1634696388.880892, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:48,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:48,902 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696388.898721 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=14.588s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:48,905 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696388.898721 : <FlowTables(datapath=0, timestamp=1634696388.898721, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:49,804 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:49,807 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:49,808 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:49,811 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:19:49,813 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:19:49,816 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=9) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:19:49,816 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:19:49,817 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:19:49,817 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:19:49,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:49,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:49,898 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696389.885701 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=15.584s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:49,903 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696389.885701 : <FlowTables(datapath=0, timestamp=1634696389.885701, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:49,910 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696389.90093 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=15.593s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:49,912 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696389.90093 : <FlowTables(datapath=0, timestamp=1634696389.90093, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:50,892 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:50,893 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:50,914 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696390.906246 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=16.599s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:50,914 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696390.902487 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=16.600s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:50,916 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696390.906246 : <FlowTables(datapath=0, timestamp=1634696390.906246, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:50,919 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696390.902487 : <FlowTables(datapath=0, timestamp=1634696390.902487, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:51,779 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:51,779 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:51,780 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:51,781 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:19:51,783 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:19:51,783 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=10) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:19:51,784 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:19:51,784 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:19:51,785 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:19:51,877 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:51,888 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696391.884257 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=17.575s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:51,889 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696391.884257 : <FlowTables(datapath=0, timestamp=1634696391.884257, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:51,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:51,899 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696391.894773 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=17.584s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:51,900 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696391.894773 : <FlowTables(datapath=0, timestamp=1634696391.894773, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:52,879 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:52,891 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:52,901 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696392.89534 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=18.587s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:52,906 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696392.89534 : <FlowTables(datapath=0, timestamp=1634696392.89534, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:52,909 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696392.897661 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=18.590s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:52,910 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696392.897661 : <FlowTables(datapath=0, timestamp=1634696392.897661, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:53,775 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:53,776 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:53,777 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:53,778 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:19:53,779 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:19:53,780 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=11) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:19:53,780 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:19:53,781 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:19:53,781 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:19:53,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:53,885 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696393.880919 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=19.572s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:53,886 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696393.880919 : <FlowTables(datapath=0, timestamp=1634696393.880919, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:53,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:53,900 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696393.895802 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=19.585s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:53,902 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696393.895802 : <FlowTables(datapath=0, timestamp=1634696393.895802, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:54,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:54,885 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696394.881988 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=20.572s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:54,886 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696394.881988 : <FlowTables(datapath=0, timestamp=1634696394.881988, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:54,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:54,899 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696394.896032 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=20.585s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:54,900 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696394.896032 : <FlowTables(datapath=0, timestamp=1634696394.896032, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:55,787 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:55,788 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:55,789 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:55,791 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:19:55,793 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:19:55,794 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=12) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:19:55,795 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:19:55,795 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:19:55,795 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:19:55,876 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:55,887 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696395.883033 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=21.574s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:55,888 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696395.883033 : <FlowTables(datapath=0, timestamp=1634696395.883033, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:55,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:55,900 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696395.895961 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=21.586s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:55,901 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696395.895961 : <FlowTables(datapath=0, timestamp=1634696395.895961, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:56,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:56,883 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696396.880666 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=22.570s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:56,884 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696396.880666 : <FlowTables(datapath=0, timestamp=1634696396.880666, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:56,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:56,899 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696396.896102 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=22.585s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:56,900 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696396.896102 : <FlowTables(datapath=0, timestamp=1634696396.896102, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:57,773 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:57,774 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:57,775 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:57,779 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:19:57,781 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:19:57,781 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=13) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:19:57,782 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:19:57,783 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:19:57,783 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:19:57,889 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:57,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:57,913 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696397.902697 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=23.597s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:57,918 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696397.902993 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=23.601s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:57,920 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696397.902993 : <FlowTables(datapath=0, timestamp=1634696397.902993, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:57,919 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696397.902697 : <FlowTables(datapath=0, timestamp=1634696397.902697, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:58,896 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:58,896 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:58,906 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696398.902542 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=24.591s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:58,907 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696398.902542 : <FlowTables(datapath=0, timestamp=1634696398.902542, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:58,907 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696398.902542 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=24.594s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:58,908 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696398.902542 : <FlowTables(datapath=0, timestamp=1634696398.902542, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:59,787 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:59,788 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:59,789 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:19:59,790 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:19:59,792 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:19:59,794 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=14) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:19:59,795 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:19:59,796 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:19:59,796 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:19:59,876 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:19:59,887 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696399.88274 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=25.574s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:59,888 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696399.88274 : <FlowTables(datapath=0, timestamp=1634696399.88274, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:19:59,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:19:59,899 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696399.895521 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=25.585s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:19:59,902 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696399.895521 : <FlowTables(datapath=0, timestamp=1634696399.895521, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:00,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:00,885 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696400.881816 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=26.572s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:00,886 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696400.881816 : <FlowTables(datapath=0, timestamp=1634696400.881816, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:00,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:00,899 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696400.895801 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=26.585s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:00,900 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696400.895801 : <FlowTables(datapath=0, timestamp=1634696400.895801, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:01,796 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:01,797 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:01,797 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:01,799 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:20:01,800 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:20:01,800 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=15) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:20:01,801 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:20:01,801 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:20:01,802 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:20:01,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:01,884 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696401.880512 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=27.571s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:01,886 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696401.880512 : <FlowTables(datapath=0, timestamp=1634696401.880512, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:01,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:01,899 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696401.895908 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=27.585s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:01,901 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696401.895908 : <FlowTables(datapath=0, timestamp=1634696401.895908, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:02,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:02,884 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696402.881565 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=28.571s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:02,885 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696402.881565 : <FlowTables(datapath=0, timestamp=1634696402.881565, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:02,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:02,899 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696402.896272 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=28.585s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:02,900 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696402.896272 : <FlowTables(datapath=0, timestamp=1634696402.896272, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:03,788 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:03,790 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:03,790 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:03,792 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:20:03,795 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:20:03,799 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=16) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:20:03,799 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:20:03,800 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:20:03,804 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:20:03,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:03,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:03,896 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696403.887535 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=29.579s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:03,902 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696403.887535 : <FlowTables(datapath=0, timestamp=1634696403.887535, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:03,910 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696403.903936 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=29.596s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:03,916 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696403.903936 : <FlowTables(datapath=0, timestamp=1634696403.903936, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:04,878 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:04,891 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:04,901 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696404.885913 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=30.583s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:04,903 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696404.885913 : <FlowTables(datapath=0, timestamp=1634696404.885913, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:04,914 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696404.903404 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=30.600s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:04,917 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696404.903404 : <FlowTables(datapath=0, timestamp=1634696404.903404, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:05,774 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:05,776 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:05,778 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:05,780 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:20:05,781 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:20:05,783 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=17) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:20:05,784 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:20:05,786 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:20:05,787 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:20:05,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:05,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:05,903 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696405.887154 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=31.589s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:05,906 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696405.887154 : <FlowTables(datapath=0, timestamp=1634696405.887154, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:05,916 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696405.899627 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=31.597s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:05,922 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696405.899627 : <FlowTables(datapath=0, timestamp=1634696405.899627, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:06,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:06,884 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696406.8811 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=32.571s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:06,885 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696406.8811 : <FlowTables(datapath=0, timestamp=1634696406.8811, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:06,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:06,899 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696406.896226 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=32.585s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:06,900 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696406.896226 : <FlowTables(datapath=0, timestamp=1634696406.896226, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:07,784 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:07,785 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:07,786 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:07,787 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:20:07,788 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:20:07,790 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=18) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:20:07,790 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:20:07,791 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:20:07,791 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:20:07,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:07,886 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696407.881098 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=33.572s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:07,887 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696407.881098 : <FlowTables(datapath=0, timestamp=1634696407.881098, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:07,894 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:07,905 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696407.90068 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=33.590s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:07,909 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696407.90068 : <FlowTables(datapath=0, timestamp=1634696407.90068, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:08,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:08,884 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696408.880996 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=34.571s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:08,885 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696408.880996 : <FlowTables(datapath=0, timestamp=1634696408.880996, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:08,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:08,899 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696408.89637 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=34.585s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:08,900 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696408.89637 : <FlowTables(datapath=0, timestamp=1634696408.89637, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:09,789 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:09,790 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:09,791 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:09,793 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:20:09,795 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:20:09,796 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=19) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:20:09,797 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:20:09,797 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:20:09,798 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:20:09,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:09,886 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696409.880416 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=35.571s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:09,889 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696409.880416 : <FlowTables(datapath=0, timestamp=1634696409.880416, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:09,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:09,904 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696409.897094 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=35.589s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:09,907 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696409.897094 : <FlowTables(datapath=0, timestamp=1634696409.897094, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:10,899 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:10,899 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:10,912 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696410.907672 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=36.598s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:10,914 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696410.907672 : <FlowTables(datapath=0, timestamp=1634696410.907672, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:10,915 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696410.907474 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=36.598s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:10,916 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696410.907474 : <FlowTables(datapath=0, timestamp=1634696410.907474, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:11,787 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:11,788 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:11,789 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:11,790 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:20:11,792 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:20:11,792 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=20) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:20:11,793 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:20:11,793 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:20:11,794 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:20:11,876 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:11,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:11,893 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696411.885288 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=37.577s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:11,897 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696411.885288 : <FlowTables(datapath=0, timestamp=1634696411.885288, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:11,906 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696411.899938 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=37.591s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:11,907 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696411.899938 : <FlowTables(datapath=0, timestamp=1634696411.899938, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:12,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:12,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:12,893 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696412.884233 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=38.578s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:12,895 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696412.884233 : <FlowTables(datapath=0, timestamp=1634696412.884233, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:12,908 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696412.902878 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=38.594s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:12,910 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696412.902878 : <FlowTables(datapath=0, timestamp=1634696412.902878, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:13,786 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:13,787 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:13,788 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:13,792 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:20:13,793 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:20:13,794 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=21) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:20:13,795 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:20:13,795 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:20:13,796 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:20:13,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:13,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:13,894 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696413.884451 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=39.578s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:13,896 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696413.884451 : <FlowTables(datapath=0, timestamp=1634696413.884451, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:13,904 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696413.898809 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=39.589s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:13,906 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696413.898809 : <FlowTables(datapath=0, timestamp=1634696413.898809, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:14,890 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:14,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:14,901 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696414.896123 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=40.587s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:14,904 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696414.896123 : <FlowTables(datapath=0, timestamp=1634696414.896123, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:14,904 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696414.896106 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=40.590s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:14,907 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696414.896106 : <FlowTables(datapath=0, timestamp=1634696414.896106, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:15,787 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:15,787 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:15,788 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:15,789 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:20:15,790 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:20:15,791 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=22) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:20:15,791 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:20:15,792 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:20:15,792 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:20:15,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:15,886 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696415.881523 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=41.573s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:15,887 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696415.881523 : <FlowTables(datapath=0, timestamp=1634696415.881523, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:15,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:15,900 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696415.896344 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=41.585s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:15,903 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696415.896344 : <FlowTables(datapath=0, timestamp=1634696415.896344, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:16,884 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:16,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:16,899 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696416.895393 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=42.586s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:16,900 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696416.895393 : <FlowTables(datapath=0, timestamp=1634696416.895393, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:16,902 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696416.896596 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=42.588s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:16,904 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696416.896596 : <FlowTables(datapath=0, timestamp=1634696416.896596, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:17,774 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:17,775 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:17,775 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:17,777 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:20:17,778 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:20:17,778 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=23) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:20:17,779 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:20:17,779 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:20:17,780 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:20:17,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:17,888 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696417.882557 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=43.574s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:17,889 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696417.882557 : <FlowTables(datapath=0, timestamp=1634696417.882557, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:17,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:17,899 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696417.895723 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=43.585s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:17,901 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696417.895723 : <FlowTables(datapath=0, timestamp=1634696417.895723, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:18,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:18,883 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696418.880358 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=44.570s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:18,885 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696418.880358 : <FlowTables(datapath=0, timestamp=1634696418.880358, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:18,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:18,907 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696418.900493 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=44.593s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:18,908 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696418.900493 : <FlowTables(datapath=0, timestamp=1634696418.900493, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:19,773 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:19,774 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:19,775 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:19,776 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:20:19,778 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:20:19,779 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=24) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:20:19,779 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:20:19,780 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:20:19,780 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:20:19,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:19,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:19,901 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696419.895803 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=45.587s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:19,903 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696419.895803 : <FlowTables(datapath=0, timestamp=1634696419.895803, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:19,907 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696419.89887 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=45.592s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:19,908 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696419.89887 : <FlowTables(datapath=0, timestamp=1634696419.89887, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:20,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:20,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:20,893 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696420.884204 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=46.577s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:20,894 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696420.884204 : <FlowTables(datapath=0, timestamp=1634696420.884204, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:20,901 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696420.896942 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=46.586s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:20,902 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696420.896942 : <FlowTables(datapath=0, timestamp=1634696420.896942, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:21,773 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:21,779 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:21,785 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:21,793 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:20:21,799 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:20:21,808 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=25) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:20:21,811 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:20:21,815 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:20:21,817 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:20:21,886 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:21,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:21,902 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696421.896586 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=47.588s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:21,904 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696421.898857 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=47.590s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:21,905 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696421.896586 : <FlowTables(datapath=0, timestamp=1634696421.896586, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:21,907 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696421.898857 : <FlowTables(datapath=0, timestamp=1634696421.898857, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:22,877 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:22,893 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:22,905 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696422.89863 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=48.591s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:22,909 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696422.89863 : <FlowTables(datapath=0, timestamp=1634696422.89863, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:22,919 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696422.907137 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=48.602s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:22,927 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696422.907137 : <FlowTables(datapath=0, timestamp=1634696422.907137, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:23,780 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:23,780 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:23,781 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:23,783 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:20:23,784 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:20:23,784 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=26) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:20:23,785 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:20:23,785 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:20:23,786 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:20:23,876 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:23,887 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696423.882969 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=49.574s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:23,888 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696423.882969 : <FlowTables(datapath=0, timestamp=1634696423.882969, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:23,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:23,899 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696423.895616 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=49.585s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:23,901 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696423.895616 : <FlowTables(datapath=0, timestamp=1634696423.895616, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:24,876 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:24,887 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696424.882281 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=50.573s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:24,889 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696424.882281 : <FlowTables(datapath=0, timestamp=1634696424.882281, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:24,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:24,900 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696424.896613 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=50.586s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:24,902 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696424.896613 : <FlowTables(datapath=0, timestamp=1634696424.896613, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:25,774 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:25,775 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:25,775 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:25,776 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:20:25,777 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:20:25,778 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=27) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:20:25,778 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:20:25,779 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:20:25,779 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:20:25,877 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:25,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:25,894 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696425.883263 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=51.577s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:25,896 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696425.883263 : <FlowTables(datapath=0, timestamp=1634696425.883263, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:25,903 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696425.898724 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=51.589s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:25,904 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696425.898724 : <FlowTables(datapath=0, timestamp=1634696425.898724, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:26,877 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:26,891 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:26,903 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696426.888127 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=52.580s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:26,905 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696426.888127 : <FlowTables(datapath=0, timestamp=1634696426.888127, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:26,913 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696426.907014 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=52.598s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:26,915 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696426.907014 : <FlowTables(datapath=0, timestamp=1634696426.907014, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:27,785 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:27,786 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:27,786 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:27,787 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:20:27,788 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:20:27,789 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=28) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:20:27,789 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:20:27,790 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:20:27,790 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:20:27,876 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:27,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:27,894 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696427.888331 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=53.579s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:27,895 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696427.888331 : <FlowTables(datapath=0, timestamp=1634696427.888331, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:27,899 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696427.896235 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=53.585s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:27,900 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696427.896235 : <FlowTables(datapath=0, timestamp=1634696427.896235, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:28,877 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:28,935 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:29,181 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696428.953255 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=54.858s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:29,195 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696428.953255 : <FlowTables(datapath=0, timestamp=1634696428.953255, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:29,184 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696428.933174 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=54.819s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:29,376 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696428.933174 : <FlowTables(datapath=0, timestamp=1634696428.933174, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:29,780 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:29,782 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:29,787 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:29,808 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:20:29,811 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:20:29,813 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=29) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:20:29,815 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:20:29,820 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:20:29,825 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:20:29,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:29,891 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:29,903 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696429.888029 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=55.588s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:29,907 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696429.898536 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=55.591s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:29,907 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696429.888029 : <FlowTables(datapath=0, timestamp=1634696429.888029, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:29,914 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696429.898536 : <FlowTables(datapath=0, timestamp=1634696429.898536, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:30,875 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:30,895 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:30,921 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696430.909089 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=56.603s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:30,935 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696430.909089 : <FlowTables(datapath=0, timestamp=1634696430.909089, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:30,959 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696430.919215 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=56.642s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:30,965 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696430.919215 : <FlowTables(datapath=0, timestamp=1634696430.919215, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:31,800 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:31,801 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:31,802 | 12270 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-10-20 02:20:31,803 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 1
+2021-10-20 02:20:31,804 | 12270 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 434 | DEBUG | tmp_p = None, s_dpip = 2
+2021-10-20 02:20:31,805 | 12270 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634696369.772893, until=30) values = {'l2': [], 'l1': [], 'l3': []} {} {'s1': [], 's2': []}
+2021-10-20 02:20:31,805 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l2
+2021-10-20 02:20:31,806 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l1
+2021-10-20 02:20:31,806 | 12270 | tracing_of_pipeline.analyzer, analyze, 166 | WARNING | No packet in edge l3
+2021-10-20 02:20:31,876 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:31,890 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:31,897 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696431.887107 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=57.580s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:31,900 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696431.887107 : <FlowTables(datapath=0, timestamp=1634696431.887107, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:31,913 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696431.905579 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=57.598s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:31,915 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696431.905579 : <FlowTables(datapath=0, timestamp=1634696431.905579, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:32,885 | 12415 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s1
+2021-10-20 02:20:32,891 | 12419 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | exec dump flows on s2
+2021-10-20 02:20:32,908 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696432.899888 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=58.592s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:32,908 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 74 | DEBUG | get result for dump flows 1634696432.900245 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):', ' cookie=0x0, duration=58.593s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER:65535']
+2021-10-20 02:20:32,910 | 12415 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696432.900245 : <FlowTables(datapath=0, timestamp=1634696432.900245, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:32,911 | 12419 | tracing_net.flowtable.flow_monitor, read_dump_flow, 80 | DEBUG | parsed dump flows result to table 1634696432.899888 : <FlowTables(datapath=0, timestamp=1634696432.899888, flows=[<Flow(table=0, priority=0, match={}, actions=[<InstructionApplyAction type=4>])>])>
+2021-10-20 02:20:33,188 | 12407 | tracing_net.util.packet_capture, start_capture, 62 | INFO | finish packet capture on s1-eth1

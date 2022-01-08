@@ -1,0 +1,86 @@
+2021-11-19 06:01:04,720 | 4376 | tracing_net.net, __init__, 117 | INFO | set up on-demand mininet
+2021-11-19 06:01:05,541 | 4376 | tracing_net.api.ws_server, connect, 230 | INFO | connect sid=hEpFuu3JhLZRUUudAAAB
+2021-11-19 06:01:07,886 | 4376 | tracing_net.api.ws_server, connect, 230 | INFO | connect sid=idkYuY8UBM0XR2cVAAAD
+2021-11-19 06:01:11,403 | 4376 | tracing_net.api.ws_server, emit2tracer, 134 | DEBUG | ws_server -> tracer (event=WSEvent.EXEC_MININET_COMMAND, param={'command': 'ls'})
+2021-11-19 06:01:11,405 | 4376 | tracing_net.api.ws_server, emit2ws_server, 139 | DEBUG | tracer -> ws_server (event=WSEvent.EXEC_MININET_COMMAND_RESULT, protoMsg=type: ERROR
+result: "Unknown command: ls\n"
+)
+2021-11-19 06:01:11,406 | 4376 | tracing_net.api.ws_server, emit2ws_server, 139 | DEBUG | tracer -> ws_server (event=WSEvent.EXEC_MININET_COMMAND_RESULT, protoMsg=type: END_SIGNAL
+result: ""
+)
+2021-11-19 06:01:17,273 | 4376 | tracing_net.api.ws_server, emit2tracer, 134 | DEBUG | ws_server -> tracer (event=WSEvent.EXEC_MININET_COMMAND, param={'command': 'sh ls'})
+2021-11-19 06:01:17,296 | 4376 | tracing_net.api.ws_server, emit2ws_server, 139 | DEBUG | tracer -> ws_server (event=WSEvent.EXEC_MININET_COMMAND_RESULT, protoMsg=type: OUTPUT
+result: "analyzer\napi\nconfig.py\n__init__.py\nlog\nofcapture\n__pycache__\ntest\ntracing_net\ntracing_of_pipeline.py\nutils\nweb_server"
+)
+2021-11-19 06:01:17,297 | 4376 | tracing_net.api.ws_server, emit2ws_server, 139 | DEBUG | tracer -> ws_server (event=WSEvent.EXEC_MININET_COMMAND_RESULT, protoMsg=type: END_SIGNAL
+result: ""
+)
+2021-11-19 06:01:21,600 | 4376 | tracing_net.api.ws_server, emit2tracer, 134 | DEBUG | ws_server -> tracer (event=WSEvent.EXEC_MININET_COMMAND, param={'command': 'net'})
+2021-11-19 06:01:21,608 | 4376 | tracing_net.api.ws_server, emit2ws_server, 139 | DEBUG | tracer -> ws_server (event=WSEvent.EXEC_MININET_COMMAND_RESULT, protoMsg=type: OUTPUT
+result: "c0\n"
+)
+2021-11-19 06:01:21,610 | 4376 | tracing_net.api.ws_server, emit2ws_server, 139 | DEBUG | tracer -> ws_server (event=WSEvent.EXEC_MININET_COMMAND_RESULT, protoMsg=type: END_SIGNAL
+result: ""
+)
+2021-11-19 06:01:37,662 | 4376 | tracing_net.api.ws_server, emit2tracer, 134 | DEBUG | ws_server -> tracer (event=WSEvent.EXEC_MININET_COMMAND, param={'command': 'net'})
+2021-11-19 06:01:37,685 | 4376 | tracing_net.api.ws_server, emit2ws_server, 139 | DEBUG | tracer -> ws_server (event=WSEvent.EXEC_MININET_COMMAND_RESULT, protoMsg=type: OUTPUT
+result: "c0\n"
+)
+2021-11-19 06:01:37,697 | 4376 | tracing_net.api.ws_server, emit2ws_server, 139 | DEBUG | tracer -> ws_server (event=WSEvent.EXEC_MININET_COMMAND_RESULT, protoMsg=type: END_SIGNAL
+result: ""
+)
+2021-11-19 06:01:48,284 | 4376 | tracing_net.api.ws_server, emit2tracer, 134 | DEBUG | ws_server -> tracer (event=WSEvent.ADD_SWITCH, param={'name': 's1', 'dpid': ''})
+2021-11-19 06:01:48,302 | 4376 | tracing_net.net, add_switch, 134 | DEBUG | added the switch (s1)
+2021-11-19 06:01:49,422 | 4376 | tracing_net.api.ws_server, emit2tracer, 134 | DEBUG | ws_server -> tracer (event=WSEvent.ADD_HOST, param={'name': 'h1', 'ip': '', 'mac': ''})
+2021-11-19 06:01:49,431 | 4376 | tracing_net.net, add_host, 182 | DEBUG | added the host (h1)
+2021-11-19 06:01:50,645 | 4376 | tracing_net.api.ws_server, emit2tracer, 134 | DEBUG | ws_server -> tracer (event=WSEvent.ADD_LINK, param={'link_name': 'e3', 'host_name1': 'h1', 'host_name2': 's1'})
+2021-11-19 06:01:50,654 | 4376 | tracing_net.net, add_link, 221 | DEBUG | added the link (e3) between h1 and s1
+2021-11-19 06:01:52,592 | 4376 | tracing_net.api.ws_server, emit2tracer, 134 | DEBUG | ws_server -> tracer (event=WSEvent.ADD_HOST, param={'name': 'h2', 'ip': '', 'mac': ''})
+2021-11-19 06:01:52,602 | 4376 | tracing_net.net, add_host, 182 | DEBUG | added the host (h2)
+2021-11-19 06:01:53,632 | 4376 | tracing_net.api.ws_server, emit2tracer, 134 | DEBUG | ws_server -> tracer (event=WSEvent.ADD_LINK, param={'link_name': 'e4', 'host_name1': 'h2', 'host_name2': 's1'})
+2021-11-19 06:01:53,635 | 4376 | tracing_net.net, add_link, 221 | DEBUG | added the link (e4) between h2 and s1
+2021-11-19 06:01:55,981 | 4376 | tracing_net.api.ws_server, emit2tracer, 134 | DEBUG | ws_server -> tracer (event=WSEvent.ADD_SWITCH, param={'name': 's2', 'dpid': ''})
+2021-11-19 06:01:55,998 | 4376 | tracing_net.net, add_switch, 134 | DEBUG | added the switch (s2)
+2021-11-19 06:01:57,574 | 4376 | tracing_net.api.ws_server, emit2tracer, 134 | DEBUG | ws_server -> tracer (event=WSEvent.ADD_LINK, param={'link_name': 'e5', 'host_name1': 's1', 'host_name2': 's2'})
+2021-11-19 06:01:57,581 | 4376 | tracing_net.net, add_link, 221 | DEBUG | added the link (e5) between s1 and s2
+2021-11-19 06:01:59,751 | 4376 | tracing_net.api.ws_server, emit2tracer, 134 | DEBUG | ws_server -> tracer (event=WSEvent.ADD_HOST, param={'name': 'h3', 'ip': '', 'mac': ''})
+2021-11-19 06:01:59,759 | 4376 | tracing_net.net, add_host, 182 | DEBUG | added the host (h3)
+2021-11-19 06:02:00,994 | 4376 | tracing_net.api.ws_server, emit2tracer, 134 | DEBUG | ws_server -> tracer (event=WSEvent.ADD_LINK, param={'link_name': 'e6', 'host_name1': 'h3', 'host_name2': 's2'})
+2021-11-19 06:02:00,998 | 4376 | tracing_net.net, add_link, 221 | DEBUG | added the link (e6) between h3 and s2
+2021-11-19 06:02:02,556 | 4376 | tracing_net.api.ws_server, emit2tracer, 134 | DEBUG | ws_server -> tracer (event=WSEvent.ADD_HOST, param={'name': 'h4', 'ip': '', 'mac': ''})
+2021-11-19 06:02:02,565 | 4376 | tracing_net.net, add_host, 182 | DEBUG | added the host (h4)
+2021-11-19 06:02:03,795 | 4376 | tracing_net.api.ws_server, emit2tracer, 134 | DEBUG | ws_server -> tracer (event=WSEvent.ADD_LINK, param={'link_name': 'e7', 'host_name1': 'h4', 'host_name2': 's2'})
+2021-11-19 06:02:03,799 | 4376 | tracing_net.net, add_link, 221 | DEBUG | added the link (e7) between h4 and s2
+2021-11-19 06:02:25,295 | 4376 | tracing_net.api.ws_server, emit2tracer, 134 | DEBUG | ws_server -> tracer (event=WSEvent.EXEC_MININET_COMMAND, param={'command': 'net'})
+2021-11-19 06:02:25,306 | 4376 | tracing_net.api.ws_server, emit2ws_server, 139 | DEBUG | tracer -> ws_server (event=WSEvent.EXEC_MININET_COMMAND_RESULT, protoMsg=type: OUTPUT
+result: "h1 h1-eth0:s1-eth1\n"
+)
+2021-11-19 06:02:25,311 | 4376 | tracing_net.api.ws_server, emit2ws_server, 139 | DEBUG | tracer -> ws_server (event=WSEvent.EXEC_MININET_COMMAND_RESULT, protoMsg=type: OUTPUT
+result: "h2 h2-eth0:s1-eth2\n"
+)
+2021-11-19 06:02:25,315 | 4376 | tracing_net.api.ws_server, emit2ws_server, 139 | DEBUG | tracer -> ws_server (event=WSEvent.EXEC_MININET_COMMAND_RESULT, protoMsg=type: OUTPUT
+result: "h3 h3-eth0:s2-eth2\n"
+)
+2021-11-19 06:02:25,324 | 4376 | tracing_net.api.ws_server, emit2ws_server, 139 | DEBUG | tracer -> ws_server (event=WSEvent.EXEC_MININET_COMMAND_RESULT, protoMsg=type: OUTPUT
+result: "h4 h4-eth0:s2-eth3\n"
+)
+2021-11-19 06:02:25,329 | 4376 | tracing_net.api.ws_server, emit2ws_server, 139 | DEBUG | tracer -> ws_server (event=WSEvent.EXEC_MININET_COMMAND_RESULT, protoMsg=type: OUTPUT
+result: "s1 lo:  s1-eth1:h1-eth0 s1-eth2:h2-eth0 s1-eth3:s2-eth1\n"
+)
+2021-11-19 06:02:25,334 | 4376 | tracing_net.api.ws_server, emit2ws_server, 139 | DEBUG | tracer -> ws_server (event=WSEvent.EXEC_MININET_COMMAND_RESULT, protoMsg=type: OUTPUT
+result: "s2 lo:  s2-eth1:s1-eth3 s2-eth2:h3-eth0 s2-eth3:h4-eth0\n"
+)
+2021-11-19 06:02:25,337 | 4376 | tracing_net.api.ws_server, emit2ws_server, 139 | DEBUG | tracer -> ws_server (event=WSEvent.EXEC_MININET_COMMAND_RESULT, protoMsg=type: OUTPUT
+result: "c0\n"
+)
+2021-11-19 06:02:25,340 | 4376 | tracing_net.api.ws_server, emit2ws_server, 139 | DEBUG | tracer -> ws_server (event=WSEvent.EXEC_MININET_COMMAND_RESULT, protoMsg=type: END_SIGNAL
+result: ""
+)
+2021-11-19 06:02:47,959 | 4376 | tracing_net.api.ws_server, emit2tracer, 134 | DEBUG | ws_server -> tracer (event=WSEvent.EXEC_MININET_COMMAND, param={'command': 'exit'})
+2021-11-19 06:02:47,963 | 4376 | tracing_net.api.ws_server, emit2ws_server, 139 | DEBUG | tracer -> ws_server (event=WSEvent.EXEC_MININET_COMMAND_RESULT, protoMsg=type: OUTPUT
+result: "exited by user command"
+)
+2021-11-19 06:02:47,964 | 4376 | tracing_net.api.ws_server, emit2ws_server, 139 | DEBUG | tracer -> ws_server (event=WSEvent.EXEC_MININET_COMMAND_RESULT, protoMsg=type: END_SIGNAL
+result: ""
+)
+2021-11-19 06:02:47,967 | 4376 | tracing_net.net, stop_tracing, 557 | INFO | tracing stop

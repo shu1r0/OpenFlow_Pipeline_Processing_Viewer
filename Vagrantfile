@@ -54,6 +54,7 @@ sudo pip3 install nest_asyncio
 sudo pip3 install python-openflow
 sudo pip3 install flask
 sudo pip3 install flask_socketio
+sudo pip3 install macaddress
 SCRIPT
 
 # install mininet witch bofuss
@@ -171,7 +172,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         vb.gui = true
 
         vb.cpus = 2
-        vb.memory = "2048"
+        vb.memory = "4096"
     
         vb.customize [
             "modifyvm", :id,

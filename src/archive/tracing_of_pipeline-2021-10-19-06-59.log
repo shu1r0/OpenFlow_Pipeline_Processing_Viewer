@@ -1,0 +1,729 @@
+2021-10-19 06:59:50,956 | 5519 | tracing_net.net, __init__, 99 | INFO | set up on-demand mininet
+2021-10-19 06:59:50,958 | 5519 | tracing_of_pipeline, start, 102 | INFO | OpenFlow Tracer Start
+2021-10-19 06:59:50,977 | 5519 | tracing_net.net, start, 312 | INFO | mininet start
+2021-10-19 06:59:53,172 | 5531 | tracing_net.api.ws_server, connect, 267 | INFO | connect sid=5BsYPA7X5RdGa6cZAAAD
+2021-10-19 06:59:53,180 | 5531 | tracing_net.api.ws_server, connect, 267 | INFO | connect sid=6PW-w5WE5Ncwlp9CAAAE
+2021-10-19 06:59:53,202 | 5531 | tracing_net.api.ws_server, connect, 267 | INFO | connect sid=StjyEzaGhhknBxEWAAAF
+2021-10-19 06:59:56,933 | 5531 | tracing_net.api.ws_server, emit2net, 105 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.EXEC_MININET_COMMAND, param={'command': 'c0 ls'})
+2021-10-19 06:59:56,952 | 5519 | tracing_net.api.ws_server, get_from_client, 119 | DEBUG | MessageHub receives messages from clients. (response={'event': 'exec_mininet_cmd', 'param': {'command': 'c0 ls'}})
+2021-10-19 06:59:56,953 | 5519 | tracing_net.cli, input, 83 | DEBUG | CLI input c0 ls
+2021-10-19 07:01:02,693 | 5519 | tracing_net.cli, output, 90 | DEBUG | CLI output analyzer
+2021-10-19 07:01:02,695 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x08analyzer')
+2021-10-19 07:01:02,696 | 5519 | tracing_net.cli, output, 90 | DEBUG | CLI output api
+config.py
+__init__.py
+log
+ofcapture
+ofproto
+__pycache__
+test
+tracing_net
+tracing_of_pipeline.py
+utils
+web_server
+2021-10-19 07:01:02,696 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12tapi\nconfig.py\n__init__.py\nlog\nofcapture\nofproto\n__pycache__\ntest\ntracing_net\ntracing_of_pipeline.py\nutils\nweb_server')
+2021-10-19 07:01:02,698 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:02,698 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:02,709 | 5531 | tracing_net.api.ws_server, disconnect, 272 | INFO | disconnect sid=5BsYPA7X5RdGa6cZAAAD
+2021-10-19 07:01:02,720 | 5531 | tracing_net.api.ws_server, disconnect, 272 | INFO | disconnect sid=StjyEzaGhhknBxEWAAAF
+2021-10-19 07:01:02,722 | 5531 | tracing_net.api.ws_server, disconnect, 272 | INFO | disconnect sid=6PW-w5WE5Ncwlp9CAAAE
+2021-10-19 07:01:02,739 | 5519 | tracing_net.cli, output, 90 | DEBUG | CLI output analyzer
+2021-10-19 07:01:02,748 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12\x08analyzer')
+2021-10-19 07:01:02,749 | 5519 | tracing_net.cli, output, 90 | DEBUG | CLI output api
+config.py
+__init__.py
+log
+ofcapture
+ofproto
+__pycache__
+test
+tracing_net
+tracing_of_pipeline.py
+utils
+web_server
+2021-10-19 07:01:02,750 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x00\x12tapi\nconfig.py\n__init__.py\nlog\nofcapture\nofproto\n__pycache__\ntest\ntracing_net\ntracing_of_pipeline.py\nutils\nweb_server')
+2021-10-19 07:01:02,752 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:02,753 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:02,754 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:02,755 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:02,758 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:02,760 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:02,763 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:02,766 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:02,767 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:02,769 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:02,770 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:02,772 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:02,772 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:02,773 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:02,781 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:02,784 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:02,785 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:02,786 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:02,787 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:02,789 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:02,796 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:02,798 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:02,800 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:02,803 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:02,804 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:02,805 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:02,806 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:02,818 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:02,820 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:02,821 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:02,822 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:02,826 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:02,828 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:02,829 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:02,832 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:02,836 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:02,839 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:02,844 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:02,847 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:02,851 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:02,855 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:02,856 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:02,864 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:02,866 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:02,869 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:02,870 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:02,871 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:02,875 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:02,877 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:02,883 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:02,883 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:02,887 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:02,887 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:02,888 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:02,889 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:02,894 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:02,897 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:02,898 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:02,900 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:02,934 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:02,938 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:02,944 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:02,946 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:02,970 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:02,981 | 5531 | tracing_net.api.ws_server, connect, 267 | INFO | connect sid=nyqTfVvzEaHx1YhEAAAK
+2021-10-19 07:01:02,982 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,000 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,002 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,010 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,036 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,043 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,043 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,044 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,046 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,047 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,051 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,052 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,065 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,067 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,069 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,071 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,072 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,072 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,083 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,103 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,104 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,105 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,105 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,107 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,110 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,112 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,120 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,121 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,121 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,122 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,128 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,129 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,135 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,136 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,138 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,143 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,145 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,147 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,151 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,153 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,154 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,155 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,157 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,164 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,164 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,165 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,167 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,170 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,172 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,173 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,175 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,178 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,180 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,181 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,182 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,186 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,187 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,190 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,193 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,193 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,200 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,205 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,209 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,211 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,212 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,212 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,213 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,216 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,217 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,220 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,222 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,228 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,232 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,234 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,237 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,238 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,239 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,240 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,243 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,245 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,246 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,247 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,247 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,249 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,255 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,263 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,266 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,268 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,269 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,269 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,271 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,273 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,275 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,282 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,283 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,286 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,287 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,288 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,289 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,316 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,321 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,323 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,330 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,336 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,337 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,338 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,340 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,353 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,360 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,362 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,366 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,369 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,370 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,371 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,372 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,382 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,384 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,387 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,388 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,392 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,397 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,399 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,402 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,403 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,404 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,405 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,409 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,411 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,415 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,418 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,421 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,423 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,428 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,438 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,439 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,441 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,448 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,450 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,453 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,455 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,456 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,460 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,467 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,469 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,471 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,472 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,474 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,479 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,483 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,485 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,488 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,492 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,497 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,504 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,507 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,512 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,517 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,520 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,521 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,531 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,532 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,534 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,536 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,537 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,538 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,539 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,542 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,548 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,550 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,555 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,559 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,562 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,564 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,566 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,569 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,571 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,571 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,572 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,579 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,582 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,584 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,586 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,587 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,589 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,594 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,596 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,601 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,604 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,605 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,605 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,609 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,612 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,613 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,616 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,618 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,621 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,622 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,628 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,629 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,636 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,637 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,637 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,638 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,646 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,648 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,649 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,652 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,653 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,654 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,655 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,657 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,664 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,670 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,672 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,679 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,687 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,695 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,702 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,705 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,718 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,720 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,723 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,728 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,733 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,750 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,752 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,753 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,755 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,758 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,761 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,766 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,769 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,770 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,772 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,775 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,777 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,779 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,782 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,786 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,787 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,788 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,789 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,794 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,800 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,803 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,804 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,807 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,810 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,811 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,814 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,818 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,820 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,820 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,821 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,823 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,832 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,836 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,836 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,838 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,841 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,842 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,846 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,851 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,853 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,854 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,855 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,856 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,861 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,862 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,865 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,870 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,882 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,885 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,886 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,887 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,889 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,896 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,899 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,902 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,903 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,904 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,905 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,907 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,912 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,914 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,917 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,920 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,921 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,922 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,923 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,930 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,934 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,938 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,940 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,948 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,952 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,953 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,954 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,955 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,960 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,965 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,967 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,969 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,971 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,972 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,978 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,985 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:03,988 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:03,989 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:03,995 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:03,998 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,000 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,002 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,003 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,004 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,007 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,009 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,012 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,019 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,020 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,021 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,022 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,032 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,036 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,037 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,039 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,040 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,045 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,046 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,053 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,059 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,065 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,067 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,069 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,070 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,072 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,083 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,090 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,092 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,094 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,094 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,096 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,101 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,103 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,105 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,106 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,109 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,120 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,121 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,122 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,130 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,135 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,136 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,137 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,138 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,148 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,150 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,151 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,153 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,154 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,155 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,156 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,164 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,167 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,168 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,169 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,170 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,171 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,172 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,173 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,177 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,180 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,183 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,184 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,186 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,188 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,189 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,196 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,199 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,202 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,203 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,204 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,205 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,207 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,213 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,216 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,218 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,220 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,220 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,221 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,222 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,231 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,233 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,234 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,236 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,237 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,238 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,240 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,247 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,250 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,251 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,252 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,254 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,255 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,257 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,264 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,266 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,269 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,270 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,270 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,271 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,277 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,283 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,288 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,290 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,299 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,300 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,304 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,305 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,309 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,310 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,315 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,317 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,320 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,321 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,322 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,326 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,328 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,329 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,333 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,336 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,338 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,339 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,344 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,346 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,352 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,353 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,354 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,355 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,361 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,364 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,368 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,371 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,373 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,380 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,381 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,384 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,387 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,389 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,391 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,398 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,403 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,421 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,427 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,444 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,449 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,450 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,459 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,481 | 5531 | tracing_net.api.ws_server, connect, 267 | INFO | connect sid=n7mui8YQ0fWIngSNAAAN
+2021-10-19 07:01:04,497 | 5531 | tracing_net.api.ws_server, connect, 267 | INFO | connect sid=9W8aA_wf3xKF9mTIAAAO
+2021-10-19 07:01:04,491 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,519 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,536 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,538 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,542 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,546 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,548 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,549 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,558 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,563 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,568 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,570 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,571 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,586 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,603 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,606 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,611 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,613 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,628 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,646 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')
+2021-10-19 07:01:04,679 | 5519 | tracing_net.cli, error, 98 | DEBUG | CLI error *** Unknown command: EOF
+
+2021-10-19 07:01:04,695 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08\x01\x12\x19*** Unknown command: EOF\n')
+2021-10-19 07:01:04,697 | 5519 | tracing_net.cli, send_end_command_signal, 106 | DEBUG | CLI send end command signal
+2021-10-19 07:01:04,698 | 5519 | tracing_net.api.ws_server, emit2client, 111 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.EXEC_MININET_COMMAND_RESULT, param=b'\x08d\x12\x00')

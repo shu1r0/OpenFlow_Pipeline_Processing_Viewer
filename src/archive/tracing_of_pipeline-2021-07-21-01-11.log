@@ -1,0 +1,51 @@
+2021-07-21 01:11:50,700 | 6625 | tracing_net.net, __init__, 96 | INFO | set up on-demand mininet
+2021-07-21 01:11:50,706 | 6625 | tracing_net.net, start, 307 | INFO | mininet start
+2021-07-21 01:11:50,714 | 6625 | tracing_net.net, add_switch, 113 | DEBUG | added the switch (s1)
+2021-07-21 01:11:50,829 | 6625 | tracing_net.net, add_host, 159 | DEBUG | added the host (h1)
+2021-07-21 01:11:50,894 | 6625 | tracing_net.net, add_link, 198 | DEBUG | added the link (l2) between s1 and h1
+2021-07-21 01:11:50,978 | 6625 | tracing_net.net, add_switch, 113 | DEBUG | added the switch (s2)
+2021-07-21 01:11:51,029 | 6625 | tracing_net.net, add_link, 198 | DEBUG | added the link (l1) between s1 and s2
+2021-07-21 01:11:51,149 | 6625 | tracing_net.net, add_host, 159 | DEBUG | added the host (h2)
+2021-07-21 01:11:51,203 | 6625 | tracing_net.net, add_link, 198 | DEBUG | added the link (l3) between s2 and h2
+2021-07-21 01:11:51,346 | 6625 | tracing_net.packet_capture_manager, start_capture, 85 | DEBUG | capture process (s1-eth1:None) started
+2021-07-21 01:11:51,354 | 6746 | tracing_net.util.packet_capture, start_capture, 56 | INFO | capture start on s1-eth1
+2021-07-21 01:11:51,369 | 6625 | tracing_net.packet_capture_manager, start_capture, 85 | DEBUG | capture process (s1-eth2:None) started
+2021-07-21 01:11:51,382 | 6748 | tracing_net.util.packet_capture, start_capture, 56 | INFO | capture start on s1-eth2
+2021-07-21 01:11:51,392 | 6625 | tracing_net.packet_capture_manager, start_capture, 85 | DEBUG | capture process (s2-eth2:None) started
+2021-07-21 01:11:51,397 | 6625 | tracing_net.flowtable.flow_monitor, __init__, 46 | INFO | flow monitor start : s1
+2021-07-21 01:11:51,400 | 6751 | tracing_net.util.packet_capture, start_capture, 56 | INFO | capture start on s2-eth2
+2021-07-21 01:11:51,413 | 6625 | tracing_net.flowtable.flow_monitor, __init__, 46 | INFO | flow monitor start : s2
+2021-07-21 01:11:51,548 | 6754 | tracing_net.flowtable.flow_monitor, flow_monitor, 89 | DEBUG | flow monitor get result {'msg_type': 'NXST_FLOW_MONITOR', 'type': 'reply', 'xid': '0x4'}
+2021-07-21 01:11:51,557 | 6757 | tracing_net.flowtable.flow_monitor, flow_monitor, 89 | DEBUG | flow monitor get result {'msg_type': 'NXST_FLOW_MONITOR', 'type': 'reply', 'xid': '0x4'}
+2021-07-21 01:11:52,436 | 6754 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | dump flows on s1
+2021-07-21 01:11:52,462 | 6757 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | dump flows on s2
+2021-07-21 01:11:52,520 | 6754 | tracing_net.flowtable.flow_monitor, read_dump_flow, 73 | DEBUG | get result for dump flow 1626829912.459005 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-07-21 01:11:52,529 | 6757 | tracing_net.flowtable.flow_monitor, read_dump_flow, 73 | DEBUG | get result for dump flow 1626829912.506849 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-07-21 01:11:53,435 | 6754 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | dump flows on s1
+2021-07-21 01:11:53,436 | 6625 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-07-21 01:11:53,448 | 6625 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-07-21 01:11:53,456 | 6625 | tracing_net.packet_repository, pop, 73 | ERROR | Failed to pop from packet repository (repo={})
+2021-07-21 01:11:53,461 | 6757 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | dump flows on s2
+2021-07-21 01:11:53,480 | 6625 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 275 | DEBUG | tmp_p = None, s_dpip = 1
+2021-07-21 01:11:53,502 | 6754 | tracing_net.flowtable.flow_monitor, read_dump_flow, 73 | DEBUG | get result for dump flow 1626829913.471587 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-07-21 01:11:53,502 | 6625 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 275 | DEBUG | tmp_p = None, s_dpip = 2
+2021-07-21 01:11:53,503 | 6625 | tracing_of_pipeline.analyzer, _polling, 245 | DEBUG | s=s, pkts=1
+2021-07-21 01:11:53,506 | 6625 | tracing_of_pipeline.analyzer, _polling, 245 | DEBUG | s=s, pkts=2
+2021-07-21 01:11:53,512 | 6625 | tracing_of_pipeline.analyzer, _polling, 248 | DEBUG | polled (start_time=1626829911.434881, until=0) values = {'l2': [], 'l1': [], 'l3': []} {} {'s': ['1', '2']}
+2021-07-21 01:11:53,760 | 6757 | tracing_net.flowtable.flow_monitor, read_dump_flow, 73 | DEBUG | get result for dump flow 1626829913.691009 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-07-21 01:11:54,401 | 6751 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626829913.607124521 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 01:11:54,436 | 6754 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | dump flows on s1
+2021-07-21 01:11:54,532 | 6757 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | dump flows on s2
+2021-07-21 01:11:54,553 | 6754 | tracing_net.flowtable.flow_monitor, read_dump_flow, 73 | DEBUG | get result for dump flow 1626829914.512864 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-07-21 01:11:54,607 | 6757 | tracing_net.flowtable.flow_monitor, read_dump_flow, 73 | DEBUG | get result for dump flow 1626829914.588436 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-07-21 01:11:54,781 | 6748 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626829914.080234586 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 01:11:55,146 | 6746 | tracing_net.util.packet_capture, _packet_handler, 72 | DEBUG | sniff 1626829913.801779890 : <class 'pyshark.packet.packet.Packet'>
+2021-07-21 01:11:55,436 | 6754 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | dump flows on s1
+2021-07-21 01:11:55,440 | 6625 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 275 | DEBUG | tmp_p = None, s_dpip = 1
+2021-07-21 01:11:55,441 | 6625 | tracing_of_pipeline.analyzer, _poll_packet_inout_repo, 275 | DEBUG | tmp_p = None, s_dpip = 2
+2021-07-21 01:11:55,442 | 6625 | tracing_of_pipeline.analyzer, _polling, 245 | DEBUG | s=s, pkts=1
+2021-07-21 01:11:55,442 | 6625 | tracing_of_pipeline.analyzer, _polling, 245 | DEBUG | s=s, pkts=2
+2021-07-21 01:11:55,442 | 6625 | tracing_of_pipeline.analyzer, _polling, 248 | DEBUG | polled (start_time=1626829911.434881, until=0) values = {'l2': [], 'l1': [], 'l3': []} {} {'s': ['1', '2', '1', '2']}
+2021-07-21 01:11:55,469 | 6757 | tracing_net.flowtable.flow_monitor, dump_flows, 57 | DEBUG | dump flows on s2
+2021-07-21 01:11:55,481 | 6754 | tracing_net.flowtable.flow_monitor, read_dump_flow, 73 | DEBUG | get result for dump flow 1626829915.452316 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']
+2021-07-21 01:11:55,501 | 6757 | tracing_net.flowtable.flow_monitor, read_dump_flow, 73 | DEBUG | get result for dump flow 1626829915.492491 : ['OFPST_FLOW reply (OF1.3) (xid=0x2):']

@@ -9,6 +9,8 @@
     <mapping directory="$PROJECT_DIR$/module/oftest" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/module/openflow" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/module/pox" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/private/ryu_based_simple_router" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/private/simpleMonitor" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/python-openflow" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/python-openflow/src/kytos-sphinx-theme" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/ofcapture" vcs="Git" />

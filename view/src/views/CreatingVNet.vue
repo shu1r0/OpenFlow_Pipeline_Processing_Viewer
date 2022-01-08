@@ -3,6 +3,7 @@
     id="creating_vnet_view"
     class="creating_vnet">
 
+    <!-- device menu -->
     <MenuDevices
       id="device_menu"
       @setDragged="setDragged" />
@@ -15,9 +16,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from 'vue'
+import { defineComponent, onActivated, onDeactivated } from 'vue'
 import MenuDevices from '../components/MenuDevices.vue'
-import { changeableVNet } from '../vnet/vnet'
+import { changeableVNet } from '../scripts/vnet/vnet'
 import { CollectionReturnValue } from 'cytoscape'
 
 // import { DummyRemoteClient, RemoteClient } from '../api/remoteClient'
@@ -38,11 +39,13 @@ export default defineComponent({
     // client
     // const grpc_client: RemoteClient = new DummyRemoteClient('10.0.0.109', '50051')
 
-    onMounted(()=>{
+    onActivated(()=>{
       if(changeableVNet !== null){
         changeableVNet.setupCytoscape(document.getElementById('vnet_canvas'))
+        changeableVNet.setUpDefaultElements()
       }
     })
+
     
     /**
      * handle setDragged event from MenuDevices component
@@ -73,7 +76,7 @@ export default defineComponent({
       
       // where to make the switch
       if(dragged){
-        const createdDvice: CollectionReturnValue = changeableVNet.addDevice(dragged, offsetX, offsetY)
+        const createdDvice: CollectionReturnValue = changeableVNet.addDevice(dragged, offsetX, offsetY, undefined, true)
         // grpc_client.addDevice(dragged.className as DEVICE_TYPE, createdDvice.id())
         dragged = null
       }

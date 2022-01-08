@@ -1,10 +1,12 @@
 <template>
   <div id="update-packet">
 
+    <!-- Inport -->
     <transition name="packet-update-arrow">
-      <!-- before action -->
       <div class="packet-update-arrow-container before">
-        <span>Inport: 1</span>
+
+        <span>{{ input }}</span>
+
         <div class="packet-update-arrow before">
           <svg>
             <marker 
@@ -24,22 +26,27 @@
               marker-end="url(#arrow)" /> 
           </svg>
         </div>
+
       </div>
     </transition>
     
+
+    <!-- before action packet -->
     <transition name="packet-before-update">
       <table id="packet-before-update"
         class="packet-header-table">
         <tr 
-          v-for="(value, key) in packetBefore"
+          v-for="[key, value] in Array.from(packetBefore.entries())"
           :key="key">
           <th>{{ key }}</th><td>{{ value }}</td>
         </tr>
       </table>
     </transition>
       
+    <!-- before to after -->
     <transition name="packet-update-arrow">
       <div class="packet-update-arrow-container">
+        <!-- applyed action (Apply Action, Write Metadata) -->
         <span 
           class="packet-apply-action"
           v-for="applyedAction in applyedActions"
@@ -68,19 +75,21 @@
       </div>
     </transition>
 
+    <!-- After action packet -->
     <transition name="packet-update-arrow">
       <table id="packet-after-update"
         class="packet-header-table">
         <tr 
-          v-for="(value, key) in packetAfter"
+          v-for="[key, value] in Array.from(packetAfter.entries())"
           :key="key">
           <th>{{ key }}</th><td>{{ value }}</td>
         </tr>
       </table>
     </transition>
 
+    <!-- Out Port -->
     <transition name="packet-update-arrow">
-      <!-- after action -->
+
       <div class="packet-update-arrow-container after">
         <div class="packet-update-arrow after">
           <svg>
@@ -101,7 +110,9 @@
               marker-end="url(#arrow)" /> 
           </svg>
         </div>
-        <span>Goto: 2</span>
+
+        <span>{{ output }} <br> {{ goto_s }}</span>
+
       </div>
     </transition>
 
@@ -109,7 +120,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, watchEffect, PropType } from 'vue'
 
 /**
  * パケットのアップデートを表示．
@@ -118,6 +129,9 @@ import { defineComponent, ref } from 'vue'
  * * packet
  * * updated packet
  * * chaged information
+ * 
+ * @todo:
+ *    * インポートなどにどこのポートかを表示する
  */
 export default defineComponent({
   name: "UpdatePacket",
@@ -158,21 +172,79 @@ export default defineComponent({
       }
     },
     /**
-     * 適用されたアクション
+     * 適用されたアクション(Applyed Action, Write metadata)
      */
     applyedActions: {
       type: Array,
       default: ()=>{  // test data
-        return ["pushVlan: 1"]
+        return [""]
       }
+    },
+    /**
+     * in port
+     */
+    inPort: {
+      type: String
+    },
+    /**
+     * out ports
+     */
+    outPorts: {
+      type: Array as PropType<string[]>
+    },
+    /**
+     * before Table
+     */
+    beforeTable: {
+      type: Number
+    },
+    /**
+     * got table
+     */
+    goto: {
+      type: Number
     }
   },
   setup(props){
     // pass
     const arrowColor = ref("#2F3437")
+    const input = ref("")
+    const output = ref("")
+    const goto_s = ref("")
+
+    /**
+     * input string
+     * 
+     * todo: inputをrefで宣言しなくちゃいけなくね？
+     */
+    watchEffect(() => {
+      let i = ""
+      if(props.inPort){
+        i += "in: " + props.inPort
+      }
+      if(props.beforeTable){
+        i += "beforeTable: " + props.beforeTable
+      }
+      input.value = i
+    })
+
+    /**
+     * output string
+     */
+    watchEffect(() => {
+      if(props.outPorts){
+        output.value = "out: " + props.outPorts
+      }
+      if(props.goto){
+        goto_s.value = "goto: " + props.goto
+      }
+    })
 
     return {
-      arrowColor
+      arrowColor,
+      input,
+      output,
+      goto_s
     }
   }
 })
@@ -180,6 +252,8 @@ export default defineComponent({
 
 <style lang="scss">
 #update-packet{
+  $packet_frame_color: $black;
+
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -190,10 +264,10 @@ export default defineComponent({
     height: auto;
     // background-color: #ffeeee;
     font-size: 1.3rem;
-    border: 1px solid #dddddd;
+    border: 1px solid $packet_frame_color;
     border-collapse: collapse;
     th, td{
-      border: 0.5px solid #dddddd;
+      border: 0.5px solid $packet_frame_color;
       border-collapse: collapse;
       padding: 2px;
     }
@@ -218,10 +292,10 @@ export default defineComponent({
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 30rem;
+    width: 35rem;
     height: 20rem;
     font-size: 1.5rem;
-    color: #2F3437;
+    color: $black;
 
     &.before{
       display: flex;
@@ -246,6 +320,10 @@ export default defineComponent({
       }
       &.before{
         width: 4rem;
+      }
+
+      .packet-apply-action {
+        margin: 0 0.5rem;
       }
     }
   }

@@ -1,0 +1,130 @@
+2021-10-25 02:12:34,128 | 3069 | ofcapture.proxy.proxy, start_server, 231 | INFO | Server on ('127.0.0.1', 63333)
+2021-10-25 02:12:34,138 | 3069 | ofcapture.proxy.proxy, start_server, 234 | INFO | Server serve forever ('127.0.0.1', 63333)
+2021-10-25 02:12:34,333 | 3069 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 51386) is connected
+2021-10-25 02:12:34,335 | 3069 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-25 02:12:34,401 | 3069 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 51390) is connected
+2021-10-25 02:12:34,403 | 3069 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-25 02:12:34,594 | 3069 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 51394) is connected
+2021-10-25 02:12:34,595 | 3069 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-25 02:12:35,400 | 3069 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 51398) is connected
+2021-10-25 02:12:35,406 | 3069 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 51400) is connected
+2021-10-25 02:12:35,409 | 3069 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-25 02:12:35,410 | 3069 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-25 02:12:36,173 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:12:36,194 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:12:36,408 | 3069 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 51406) is connected
+2021-10-25 02:12:36,415 | 3069 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 51408) is connected
+2021-10-25 02:12:36,429 | 3069 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-25 02:12:36,437 | 3069 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-25 02:12:37,402 | 3069 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 51414) is connected
+2021-10-25 02:12:37,403 | 3069 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 51416) is connected
+2021-10-25 02:12:37,404 | 3069 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-25 02:12:37,405 | 3069 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-25 02:12:38,202 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:12:38,481 | 3069 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 51422) is connected
+2021-10-25 02:12:38,483 | 3069 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 51424) is connected
+2021-10-25 02:12:38,484 | 3069 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-25 02:12:38,486 | 3069 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-25 02:12:38,509 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:12:39,400 | 3069 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 51430) is connected
+2021-10-25 02:12:39,406 | 3069 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 51432) is connected
+2021-10-25 02:12:39,407 | 3069 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-25 02:12:39,407 | 3069 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-25 02:12:40,126 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:12:40,127 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:12:40,411 | 3069 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 51540) is connected
+2021-10-25 02:12:40,415 | 3069 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 51542) is connected
+2021-10-25 02:12:40,421 | 3069 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-25 02:12:40,423 | 3069 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-25 02:12:41,411 | 3069 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 51648) is connected
+2021-10-25 02:12:41,415 | 3069 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 51650) is connected
+2021-10-25 02:12:41,416 | 3069 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-25 02:12:41,424 | 3069 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-25 02:12:42,127 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:12:42,128 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:12:42,403 | 3069 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 51656) is connected
+2021-10-25 02:12:42,411 | 3069 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 51658) is connected
+2021-10-25 02:12:42,412 | 3069 | ofcapture.proxy.proxy, handle_controller, 364 | INFO | connected Controller ('127.0.0.1', 6633)
+2021-10-25 02:12:42,413 | 3069 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_HELLO Hello(xid=UBInt32(36)) {'header': {'version': 4, 'message_type': 0, 'length': 8, 'xid': 36}, 'elements': []}
+2021-10-25 02:12:42,427 | 3069 | ofcapture.proxy.proxy, handle_controller, 364 | INFO | connected Controller ('127.0.0.1', 6633)
+2021-10-25 02:12:42,429 | 3069 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_HELLO Hello(xid=UBInt32(37)) {'header': {'version': 4, 'message_type': 0, 'length': 8, 'xid': 37}, 'elements': []}
+2021-10-25 02:12:42,440 | 3069 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_HELLO Hello(xid=UBInt32(1073774564)) {'header': {'version': 4, 'message_type': 0, 'length': 8, 'xid': 1073774564}, 'elements': [{'element_type': 1029, 'length': 8, 'content': b'@\x00\x7f\xe5'}]}
+2021-10-25 02:12:42,441 | 3069 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_HELLO Hello(xid=UBInt32(1165920781)) {'header': {'version': 4, 'message_type': 0, 'length': 8, 'xid': 1165920781}, 'elements': []}
+2021-10-25 02:12:42,447 | 3069 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_FEATURES_REPLY FeaturesReply(xid=UBInt32(1073774565)) {'header': {'version': 4, 'message_type': 6, 'length': 32, 'xid': 1073774565}, 'datapath_id': '00:00:00:00:00:00:00:01', 'n_buffers': 0, 'n_tables': 254, 'auxiliary_id': 0, 'pad': None, 'capabilities': '79', 'reserved': 0}
+2021-10-25 02:12:42,450 | 3069 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_FEATURES_REQUEST FeaturesRequest(xid=UBInt32(1165920782)) {'header': {'version': 4, 'message_type': 5, 'length': 8, 'xid': 1165920782}}
+2021-10-25 02:12:42,460 | 3069 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_MULTIPART_REQUEST MultipartRequest(xid=UBInt32(1073774566)) {'header': {'version': 4, 'message_type': 18, 'length': 16, 'xid': 1073774566}, 'multipart_type': 13, 'flags': {}, 'pad': None, 'body': b'\x04\x0e\x00P@\x00\x7f\xe7\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xff\xff\xff\xff\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x04\x00\x00\x00\x00\x00\x04\x00\x18\x00\x00\x00\x00\x00\x00\x00\x10\xff\xff\xff\xfd\xff\xff\x00\x00\x00\x00\x00\x00'}
+2021-10-25 02:12:42,461 | 3069 | ofcapture.proxy.observer, parse, 35 | INFO | Parsed msg : OFPT_FEATURES_REPLY FeaturesReply(xid=UBInt32(1165920782)) {'header': {'version': 4, 'message_type': 6, 'length': 32, 'xid': 1165920782}, 'datapath_id': '00:00:32:61:b3:68:c2:47', 'n_buffers': 0, 'n_tables': 254, 'auxiliary_id': 0, 'pad': None, 'capabilities': '79', 'reserved': 0}
+2021-10-25 02:12:44,128 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:12:44,129 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:12:46,127 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:12:46,128 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:12:48,127 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:12:48,128 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:12:50,289 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:12:50,290 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:12:52,129 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:12:52,130 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:12:54,128 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:12:54,128 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:12:56,130 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:12:56,132 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:12:58,128 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:12:58,130 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:00,128 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:00,129 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:02,129 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:02,130 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:04,129 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:04,131 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:06,127 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:06,127 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:08,143 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:08,145 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:10,131 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:10,132 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:12,128 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:12,137 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:14,126 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:14,128 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:16,126 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:16,127 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:18,126 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:18,127 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:20,126 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:20,128 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:22,127 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:22,129 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:24,126 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:24,127 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:26,126 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:26,128 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:28,126 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:28,127 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:30,126 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:30,128 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:32,126 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:32,128 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:34,127 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:34,128 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:36,126 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:36,128 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:38,126 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:38,127 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:40,128 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:40,129 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:42,126 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:42,127 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:44,126 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:44,127 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:46,126 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:46,127 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:48,126 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:48,128 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:50,127 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:50,129 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:52,127 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:52,128 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:54,127 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:54,128 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:56,127 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-25 02:13:56,129 | 3059 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})

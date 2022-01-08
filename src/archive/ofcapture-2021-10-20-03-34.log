@@ -1,0 +1,28 @@
+2021-10-20 03:34:39,069 | 4155 | ofcapture.proxy.proxy, start_server, 231 | INFO | Server on ('127.0.0.1', 63333)
+2021-10-20 03:34:39,070 | 4155 | ofcapture.proxy.proxy, start_server, 234 | INFO | Server serve forever ('127.0.0.1', 63333)
+2021-10-20 03:34:39,173 | 4155 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 49506) is connected
+2021-10-20 03:34:39,175 | 4155 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 03:34:39,422 | 4155 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 49510) is connected
+2021-10-20 03:34:39,423 | 4155 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 03:34:39,503 | 4155 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 49514) is connected
+2021-10-20 03:34:39,504 | 4155 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 49516) is connected
+2021-10-20 03:34:39,505 | 4155 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 03:34:39,511 | 4155 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 03:34:40,503 | 4155 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 49542) is connected
+2021-10-20 03:34:40,506 | 4155 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 49544) is connected
+2021-10-20 03:34:40,507 | 4155 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 03:34:40,510 | 4155 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 03:34:41,066 | 4145 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 03:34:41,523 | 4155 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 49590) is connected
+2021-10-20 03:34:41,550 | 4155 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 49592) is connected
+2021-10-20 03:34:41,561 | 4155 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 03:34:41,568 | 4155 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 03:34:42,514 | 4155 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 49658) is connected
+2021-10-20 03:34:42,520 | 4155 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 49660) is connected
+2021-10-20 03:34:42,529 | 4155 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 03:34:42,535 | 4155 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 03:34:43,068 | 4145 | ofcapture.of_msg_repository, pop, 91 | ERROR | Failed to pop from of repository (repo={})
+2021-10-20 03:34:43,514 | 4155 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 49666) is connected
+2021-10-20 03:34:43,515 | 4155 | ofcapture.proxy.proxy, handle_switch, 252 | INFO | Client ('127.0.0.1', 49668) is connected
+2021-10-20 03:34:43,516 | 4155 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)
+2021-10-20 03:34:43,553 | 4155 | ofcapture.proxy.proxy, open_connection, 350 | ERROR | Failed to connect to controller : [Errno 111] Connect call failed ('127.0.0.1', 6633)

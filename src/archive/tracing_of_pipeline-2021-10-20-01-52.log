@@ -1,0 +1,356 @@
+2021-10-20 01:52:45,530 | 9898 | tracing_net.net, __init__, 99 | INFO | set up on-demand mininet
+2021-10-20 01:52:45,536 | 9898 | tracing_of_pipeline, start, 105 | INFO | OpenFlow Tracer Start
+2021-10-20 01:52:45,572 | 9898 | tracing_net.net, start, 312 | INFO | mininet start
+2021-10-20 01:52:45,574 | 9898 | tracing_of_pipeline.analyzer, start_analyzing, 103 | INFO | start analyzing
+2021-10-20 01:52:45,581 | 9898 | tracing_net.net, start_tracing, 525 | INFO | tracing start
+2021-10-20 01:52:45,593 | 9898 | tracing_net.net, start_tracing, 527 | DEBUG | ipv6 is disable
+2021-10-20 01:52:47,590 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=0) values = {} {} {}
+2021-10-20 01:52:49,728 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=1) values = {} {} {}
+2021-10-20 01:52:50,033 | 9910 | tracing_net.api.ws_server, connect, 283 | INFO | connect sid=wMbScvSY6kJ_9PJ2AAAB
+2021-10-20 01:52:50,889 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:50,894 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:50,896 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:50,898 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:50,901 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:50,923 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:50,926 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:50,928 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:50,929 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:50,937 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:50,963 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:50,978 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:50,978 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:50,979 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:50,980 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:50,994 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:51,001 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:51,004 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:51,005 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:51,007 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:51,022 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:51,023 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:51,025 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:51,026 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:51,027 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:51,029 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:51,031 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:51,037 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:51,040 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:51,046 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:51,052 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:51,054 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:51,055 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:51,056 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:51,061 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:51,068 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:51,077 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:51,078 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:51,079 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:51,080 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:51,085 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:51,087 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:51,087 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:51,094 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:51,098 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:51,103 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:51,106 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:51,107 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:51,108 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:51,109 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:51,125 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:51,135 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:51,136 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:51,136 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:51,137 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:51,142 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:51,143 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:51,145 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:51,145 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:51,152 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:51,157 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:51,162 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:51,162 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:51,163 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:51,164 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:51,171 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:51,177 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:51,178 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:51,179 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:51,179 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:51,183 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:51,185 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:51,187 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:51,188 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:51,191 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:51,201 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:51,202 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:51,204 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:51,204 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:51,208 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:51,213 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:51,226 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:51,228 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:51,255 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:51,256 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:51,588 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=2) values = {} {} {}
+2021-10-20 01:52:51,600 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:51,610 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:51,610 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:51,610 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:51,612 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:51,624 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:51,626 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:51,625 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:51,626 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:51,638 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:51,731 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:51,810 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:51,836 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:51,838 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:51,850 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:51,857 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:51,865 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:51,866 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:51,868 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:51,870 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:51,886 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:51,888 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:51,891 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:51,891 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:51,894 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:51,907 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:51,908 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:51,910 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:51,912 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:51,919 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:51,967 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:51,978 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:51,979 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:51,979 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:51,990 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,010 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,011 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,012 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,014 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:52,038 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,049 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,061 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,063 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,065 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:52,067 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,084 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,085 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,085 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,086 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:52,087 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,092 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,094 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,095 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,096 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:52,097 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,194 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,221 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,220 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,223 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:52,229 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,235 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,239 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,241 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,242 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:52,244 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,258 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,259 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,260 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,261 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:52,262 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,270 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,281 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,284 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,285 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:52,286 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,306 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,321 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,322 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,323 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:52,323 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,329 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,338 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,338 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,340 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:52,341 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,347 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,356 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,358 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,360 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:52,364 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,376 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,385 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,386 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,388 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:52,390 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,396 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,401 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,405 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,412 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:52,413 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,524 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,526 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,529 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,535 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:52,538 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,549 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,558 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,558 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,563 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:52,565 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,596 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,612 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,615 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,636 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:52,643 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,658 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,661 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,670 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,673 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:52,675 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,680 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,685 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,685 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,688 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:52,690 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,716 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,724 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,726 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,728 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:52,732 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,741 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,753 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,754 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,761 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:52,763 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,777 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,789 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,790 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,793 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:52,796 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,814 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,818 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,819 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,821 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:52,822 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,834 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,840 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,840 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,845 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:52,855 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,881 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,887 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,887 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,890 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:52,891 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,906 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,907 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,907 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,908 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:52,909 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,922 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,923 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,923 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,924 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:52,934 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,939 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,945 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,946 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,947 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:52,948 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,957 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,967 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,971 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,972 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:52,973 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:52,981 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:52,987 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:52,991 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:52,996 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:53,002 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:53,023 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:53,030 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:53,056 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:53,059 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:53,063 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:53,071 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:53,071 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:53,072 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:53,075 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:53,076 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:53,085 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:53,088 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:53,090 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:53,088 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:53,091 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:53,097 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:53,101 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:53,101 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:53,101 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:53,103 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:53,120 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:53,123 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:53,122 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:53,127 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:53,128 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:53,576 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=3) values = {} {} {}
+2021-10-20 01:52:53,671 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.GET_TRACE, param={})
+2021-10-20 01:52:53,679 | 9910 | tracing_net.api.ws_server, wait_traces, 159 | DEBUG | wait packet trace.....
+2021-10-20 01:52:53,681 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'get_trace', 'param': {}})
+2021-10-20 01:52:53,690 | 9898 | tracing_net.api.ws_server, emit2client, 116 | DEBUG | MessageHub receives messages from net and emits them to clients. (event=WSEvent.GET_TRACE, param=b'')
+2021-10-20 01:52:53,695 | 9910 | tracing_net.api.ws_server, wait_traces, 162 | DEBUG | MessageHub receives traces from vnet. (traces length=0)
+2021-10-20 01:52:53,878 | 9910 | tracing_net.api.ws_server, disconnect, 288 | INFO | disconnect sid=wMbScvSY6kJ_9PJ2AAAB
+2021-10-20 01:52:55,594 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=4) values = {} {} {}
+2021-10-20 01:52:57,287 | 9910 | tracing_net.api.ws_server, connect, 283 | INFO | connect sid=cUEMSuweeQVJK0p2AAAD
+2021-10-20 01:52:57,583 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=5) values = {} {} {}
+2021-10-20 01:52:59,576 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=6) values = {} {} {}
+2021-10-20 01:53:01,285 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_SWITCH, param={'name': 's0', 'dpid': ''})
+2021-10-20 01:53:01,309 | 9898 | tracing_net.api.ws_server, get_from_client, 124 | DEBUG | MessageHub receives messages from clients. (response={'event': 'add_switch', 'param': {'name': 's0', 'dpid': ''}})
+2021-10-20 01:53:01,583 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=7) values = {} {} {}
+2021-10-20 01:53:03,291 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_HOST, param={'name': 'h0', 'ip': '', 'mac': ''})
+2021-10-20 01:53:03,587 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=8) values = {} {} {}
+2021-10-20 01:53:04,383 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_LINK, param={'link_name': 'e0', 'host_name1': 'h0', 'host_name2': 's0'})
+2021-10-20 01:53:05,576 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=9) values = {} {} {}
+2021-10-20 01:53:06,580 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_HOST, param={'name': 'h1', 'ip': '', 'mac': ''})
+2021-10-20 01:53:07,577 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=10) values = {} {} {}
+2021-10-20 01:53:07,684 | 9910 | tracing_net.api.ws_server, emit2net, 110 | DEBUG | MessageHub receives messages from clients and emits them to the vnet. (event=WSEvent.ADD_LINK, param={'link_name': 'e1', 'host_name1': 'h1', 'host_name2': 's0'})
+2021-10-20 01:53:09,576 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=11) values = {} {} {}
+2021-10-20 01:53:11,578 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=12) values = {} {} {}
+2021-10-20 01:53:13,582 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=13) values = {} {} {}
+2021-10-20 01:53:15,596 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=14) values = {} {} {}
+2021-10-20 01:53:17,583 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=15) values = {} {} {}
+2021-10-20 01:53:19,588 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=16) values = {} {} {}
+2021-10-20 01:53:21,576 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=17) values = {} {} {}
+2021-10-20 01:53:23,589 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=18) values = {} {} {}
+2021-10-20 01:53:25,600 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=19) values = {} {} {}
+2021-10-20 01:53:27,630 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=20) values = {} {} {}
+2021-10-20 01:53:29,575 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=21) values = {} {} {}
+2021-10-20 01:53:31,601 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=22) values = {} {} {}
+2021-10-20 01:53:33,576 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=23) values = {} {} {}
+2021-10-20 01:53:35,601 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=24) values = {} {} {}
+2021-10-20 01:53:37,576 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=25) values = {} {} {}
+2021-10-20 01:53:39,576 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=26) values = {} {} {}
+2021-10-20 01:53:41,593 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=27) values = {} {} {}
+2021-10-20 01:53:43,589 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=28) values = {} {} {}
+2021-10-20 01:53:45,594 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=29) values = {} {} {}
+2021-10-20 01:53:47,575 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=30) values = {} {} {}
+2021-10-20 01:53:49,579 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=31) values = {} {} {}
+2021-10-20 01:53:51,595 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=32) values = {} {} {}
+2021-10-20 01:53:53,575 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=33) values = {} {} {}
+2021-10-20 01:53:55,576 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=34) values = {} {} {}
+2021-10-20 01:53:57,591 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=35) values = {} {} {}
+2021-10-20 01:53:59,576 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=36) values = {} {} {}
+2021-10-20 01:54:01,576 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=37) values = {} {} {}
+2021-10-20 01:54:03,576 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=38) values = {} {} {}
+2021-10-20 01:54:05,594 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=39) values = {} {} {}
+2021-10-20 01:54:07,584 | 9898 | tracing_of_pipeline.analyzer, _polling, 394 | DEBUG | polled repository (start_time=1634694765.575039, until=40) values = {} {} {}
+2021-10-20 01:54:07,846 | 9898 | tracing_net.net, stop_tracing, 541 | INFO | tracing stop
+2021-10-20 01:54:07,848 | 9898 | tracing_of_pipeline, stop, 124 | INFO | OpenFlow Tracer Stop
+2021-10-20 01:54:07,855 | 9898 | tracing_net.net, stop_tracing, 541 | INFO | tracing stop
+2021-10-20 01:54:07,864 | 9898 | tracing_net.net, stop, 317 | INFO | mininet stop
+2021-10-20 01:54:07,866 | 9898 | tracing_net.net, stop, 550 | DEBUG | mininet stopped and all capture processes closed
