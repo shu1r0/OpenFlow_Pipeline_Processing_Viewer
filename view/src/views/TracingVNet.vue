@@ -50,7 +50,8 @@
       </div>
 
       <!-- Mininet CLI -->
-      <Console />
+      <Console
+        @view="viewCommand" />
     </div>
 
     <!-- ここにレンダリング(予定) -->
@@ -112,6 +113,11 @@ export default defineComponent({
     let isShowingPacketProcessing = ref(false)
     let showingPacketProcessing = ref<PacketProcessing>(null)
     let showingPacketProcessingSwitch = ref("")
+
+    /**
+     * fileter
+     */
+    let filterSrc = ""
 
     /**
      * TracingVNetを初期化
@@ -193,9 +199,14 @@ export default defineComponent({
     /**
      * Trace List Update
      */
-    const getTrace = (src?: string, nodes?: string[], dst?: string) => {
+    const getTrace = () => {
       changeableVNet.getRemoteClient().getTrace()
-      trace_list.value = packetTracesRepository.getPacketTraces(src, nodes, dst)
+      if(filterSrc){
+        trace_list.value = packetTracesRepository.getPacketTraces(filterSrc)
+      }else{
+        trace_list.value = packetTracesRepository.getPacketTraces()
+      }
+      
     }
 
     /**
@@ -223,7 +234,10 @@ export default defineComponent({
       }
       switch (args[0]) {
         case "filter":
-          
+          const param: string[] = args[1].split("=")
+          if(param[0] == "src"){
+            filterSrc = param[1]
+          }
           break;
         default:
           break;
@@ -244,7 +258,8 @@ export default defineComponent({
       showingPacketProcessing,
       closePacketProcessing,
       isShowingPacketProcessing,
-      showingPacketProcessingSwitch
+      showingPacketProcessingSwitch,
+      viewCommand
     }
   },
 })

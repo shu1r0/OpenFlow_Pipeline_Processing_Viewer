@@ -20,8 +20,8 @@ class AbstractFlowTableManager(metaclass=ABCMeta):
         repository (FlowTableRepository) : repository
     """
 
-    def __init__(self, repository):
-        self.repository = repository
+    def __init__(self, repository=None):
+        self.repository = repository if repository else table_repository
 
     @abstractmethod
     def start_poller(self, switch):
@@ -73,8 +73,8 @@ class FlowTableManager(AbstractFlowTableManager):
         pollers (dict) : switch name to poller
     """
 
-    def __init__(self, event_loop):
-        super(FlowTableManager, self).__init__(table_repository)
+    def __init__(self, event_loop, repository=None):
+        super(FlowTableManager, self).__init__(repository)
         self.event_loop = event_loop
         self.pollers = {}
 

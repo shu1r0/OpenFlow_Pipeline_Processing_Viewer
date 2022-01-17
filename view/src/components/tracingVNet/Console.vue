@@ -37,10 +37,11 @@ export default defineComponent({
       const preCommand = (command: string): any => {
         const commands = command.split(' ')
         if(commands.length > 0){
-            if(commands[0] === "viewer"){
+            if(commands[0] === "view"){
                 command = null  // no send server
                 commands.splice(0, 1)  // del viewer
-                ctx.emit("viewer", commands)
+                ctx.emit("view", commands)
+                return ""
             }
         }
         return command
@@ -79,6 +80,8 @@ export default defineComponent({
         const remoteClient = changeableVNet.getRemoteClient()
         // set command handler
         remoteClient.execMininetCommand(command, commandHandler)
+      }else{
+        writePrompt()
       }
     }
 

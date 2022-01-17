@@ -45,17 +45,24 @@ class Links:
         self.links = {}
 
     def get(self, name):
+        """get link"""
         return self.links[name]
 
     def add(self, name, link):
+        """add link"""
         self.links[name] = link
 
     def pop(self, name):
+        """pop link"""
         return self.links.pop(name)
+
+    def is_link(self, name):
+        """is link"""
+        return name in self.links.keys()
 
     def get_primary_interface(self, name):
         """
-         * switch 側の
+
         Args:
             name (str) : link name
 
@@ -63,6 +70,14 @@ class Links:
 
         """
         link = self.get(name)
+        return self._primary_interface(link)
+
+    def _primary_interface(self, link):
+        """get primary interface from link
+
+        Returns:
+            str : primary interface
+        """
         if isinstance(link.intf1.node, OVSSwitch) and isinstance(link.intf2.node, OVSSwitch):
             return link.intf1.name
         else:
@@ -72,9 +87,10 @@ class Links:
                 return link.intf2.name
 
     def get_from_primary_interface(self, interface_name):
+        """get link from primary interface"""
         for link_name, link in self.links.items():
-            intf1 = link.intf1.name
-            if intf1 == interface_name:
+            pintf = self._primary_interface(link)
+            if pintf == interface_name:
                 return link_name
 
     def get_int_name_pairs(self, link_name):
@@ -112,7 +128,7 @@ class Links:
 
 
 class MininetWrapper(Mininet):
-    """On-demand Net
+    """Mininet Wrapper
 
     This provides APIs for access by external application
     and templates for launching mininet.
@@ -257,8 +273,7 @@ class MininetWrapper(Mininet):
             raise NameError("The link's name already exists")
 
     def addLink(self, node1, node2, port1=None, port2=None, cls=None, link_name=None, **params):
-        """For compatibility
-        """
+        """For compatibility"""
         added_link = super().addLink(node1, node2, port1=port1, port2=port2, cls=cls, **params)
         self.topology_changed()
         link_name = link_name if link_name is not None else "e" + str(node1) + str(node2)
@@ -393,7 +408,7 @@ class MininetWrapper(Mininet):
         Returns:
             bool
         """
-        return name in self.name_to_link.links.keys()
+        return self.name_to_link.is_link(name)
 
     def is_link_between(self, host1, host2):
         """
@@ -550,11 +565,15 @@ class TracingNet(MininetWrapper):
         # 廃止したい
         self.grpc_server = TracerNetServer(self)
 
+        # flow table poller manager
         self.table_manager = FlowTableManager(event_loop=self.event_loop)
-        self.capture_manager = PacketCaptureManager(self.name_to_link, event_loop=self.event_loop,
+        # packet capture manager
+        self.capture_manager = PacketCaptureManager(links=self.name_to_link,
+                                                    event_loop=self.event_loop,
                                                     packet_to_pcap_file=conf.OUTPUT_PACKETS_TO_PCAP_FILE,
                                                     pacp_file_directory=conf.PCAP_FILE_DIRECTORY)
 
+        # cli connection
         self.cli_connection = cli_connection
 
         self.cli = None
@@ -580,10 +599,10 @@ class TracingNet(MininetWrapper):
             raise ChangeTopologyException("Cannot change network while tracing")
         return super(TracingNet, self).remove_host(name)
 
-    def add_link(self, name, node1, node2, port1=None, port2=None, cls=None):
+    def add_link(self, name, node1, node2, port1=None, port2=None, cls=None, **params):
         if self.has_been_tracing:
             raise ChangeTopologyException("Cannot change network while tracing")
-        return super(TracingNet, self).add_link(name, node1=node1, node2=node2, port1=port1, port2=port2, cls=None)
+        return super(TracingNet, self).add_link(name, node1=node1, node2=node2, port1=port1, port2=port2, cls=None, **params)
 
     def remove_link(self, link_name):
         if self.has_been_tracing:
@@ -652,14 +671,7 @@ class TracingNet(MininetWrapper):
 
     def cli_run(self):
         """
-
-        Args:
-            cli_connection:
-
-        TODO:
-            * 実装する
-            * webサーバが無いときどうする？？？
-            * 廃止したい
+        Mininet CLI run
         """
         CLI(self)
 
@@ -727,7 +739,6 @@ def dafault_datapath_id():
     global datapath_id_base
     datapath_id_base += 1
     return datapath_id_base
-
 
 
 if __name__ == '__main__':
