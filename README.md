@@ -1,18 +1,23 @@
-# OpenFlowパイプライン可視化による可視化によるOpneFlowコントローラ開発支援システム
+# OpenFlow Pipeline Processing Viewer (OFP2V)
 
 詳細は`docs`参照
 
 
-## TODO
+## Directory
+```
+$ tree -F -L 1 --dirsfirst
+.
+├── docs/  # document
+├── log/  # log for vagrant
+├── module/  # basic module (mininet, netbee, ...)
+├── private/   # test openflow controller
+├── src/   # server source
+├── venv/   # python venv
+├── view/  # web client
+├── web_server/  # web server
+├── windows/  # environment for windows
+├── Makefile   # Make file
+├── README.md   # README
+└── Vagrantfile   # Vagrant file
 
-### トレース機能
-
-* モデル化を完成させる
-    * まず，Msgにエイリアスを作る
-    * 次にWalkのモデル化を行う
-
-* 複数のMsgやFlowTableのモデルから，Walkのモデルを生成する
-    * 何を対象としたActionsを生成するか
-    * どのようにしてパケットを関連付けるか(=> objidでもいいよね)
-
-とりま動くようにする
+```

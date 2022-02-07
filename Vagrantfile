@@ -1,20 +1,24 @@
-$name = "ubuntu-tracenet-dev"
+# vm name 
+$name = "ubuntu-OFP2V-dev"
 
+# ------------------------------------------------------------
+# Description
+# ------------------------------------------------------------
 $description = <<'EOS'
-<Environment to be used for graduation research>
+Environment for OFP2V (OpenFlow Pipeline Processing Viewer)
 
-It need the tools following:
-* BOFUSS
-* Mininet
+Tools that need to be installed manually following:
+* TShark
+
+
+user: vagrant
+password: vagrant
 EOS
 
-# install basic libraries
-# python, git ...etc
-# TODO:
-#    * tsharkを追加する
-# 
-# Notes:
-#    * 
+
+# ------------------------------------------------------------
+# install basic package
+# ------------------------------------------------------------
 $install_package = <<SCRIPT
 # install package
 sudo apt-get -y update
@@ -57,7 +61,20 @@ sudo pip3 install flask_socketio
 sudo pip3 install macaddress
 SCRIPT
 
-# install mininet witch bofuss
+# ------------------------------------------------------------
+# install Vue 3
+# ------------------------------------------------------------
+$install_package = <<SCRIPT
+sudo apt install -y nodejs npm
+
+npm install -g @vue/cli
+npm install -g n
+SCRIPT
+
+
+# ------------------------------------------------------------
+# install mininet with bofuss
+# ------------------------------------------------------------
 $install_mininet = <<SCRIPT
 cd module
 git clone git://github.com/mininet/mininet
@@ -72,8 +89,10 @@ sudo apt-get -y install openvswitch-switch
 sudo service openvswitch-switch start
 SCRIPT
 
+# ------------------------------------------------------------
 # install BOFUSS (build from source)
 #@link https://github.com/CPqD/ofsoftswitch13
+# ------------------------------------------------------------
 $install_bofuss = <<SCRIPT
 cd module
 sudo apt-get install -y cmake libpcap-dev libxerces-c3.2 libxerces-c-dev libpcre3 libpcre3-dev flex bison pkg-config autoconf libtool libboost-dev
@@ -97,16 +116,20 @@ sudo ./install.sh
 # export WIRESHARK=/usr/include/wireshark
 SCRIPT
 
+# ------------------------------------------------------------
 # install ryu 
 # Libraries dependent on ryu are added here as required
+# ------------------------------------------------------------
 $install_ryu = <<SCRIPT
 sudo apt install -y python3-ryu
 SCRIPT
 
+# ------------------------------------------------------------
 # install faucet
 # Notes:
 #   * faucet configuration `` /etc/faucet/faucet.yaml ``
 #@link: https://docs.faucet.nz/en/latest/tutorials/first_time.html#package-installation
+# ------------------------------------------------------------
 $install_faucet = <<SCRIPT
 sudo apt-get install -y curl gnupg apt-transport-https lsb-release
 echo "deb https://packagecloud.io/faucetsdn/faucet/$(lsb_release -si | awk '{print tolower($0)}')/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/faucet.list
@@ -115,7 +138,9 @@ sudo apt-get update
 sudo apt-get install -y faucet-all-in-one
 SCRIPT
 
-
+# ------------------------------------------------------------
+# install ONOS
+# ------------------------------------------------------------
 $install_onos = <<ONOS
 sudo apt install -y openjdk-11-jdk
 
@@ -130,8 +155,10 @@ sudo systemctl daemon-reload
 sudo systemctl enable onos
 ONOS
 
+# ------------------------------------------------------------
 #NOTE: I don't test
 #@link https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
+# ------------------------------------------------------------
 $install_mongodb = <<SCRIPT
 sudo apt-get install -y gnupg
 wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
@@ -141,14 +168,17 @@ sudo apt-get install -y mongodb-org
 # sudo systemctl start mongod
 SCRIPT
 
-# vagrant configure version 2
+# ------------------------------------------------------------
+# # vagrant configure version 2
+# ------------------------------------------------------------
 VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # vm name
     config.vm.hostname = $name + '.localhost'
     # ubuntu image
-    config.vm.box = 'bento/ubuntu-18.04'  # error
+    config.vm.box = 'bento/ubuntu-18.04'
     # config.vm.box = 'bento/ubuntu-16.04'
+
     # network
     config.vm.network 'private_network', ip: '10.0.0.100'
     # port forward for ONOS
@@ -158,8 +188,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     # share directory
     config.vm.synced_folder './', '/home/vagrant'
-    # config.vm.synced_folder '../tracer_net', '/home/vagrant/tracer_net'
-    # config.vm.synced_folder '../ofcapture', '/home/vagrant/ofcapture'
+
     # install package
     config.vm.provision 'shell', inline: $install_package
     config.vm.provision 'shell', inline: $install_mininet
@@ -176,7 +205,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     
         vb.customize [
             "modifyvm", :id,
-            "--vram", "256", # full screen
+            "--vram", "256", # vram
             "--clipboard", "bidirectional", # clip board
             "--draganddrop", "bidirectional", # drag and drop
             "--ioapic", "on", # enable I/O APIC

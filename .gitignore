@@ -12,11 +12,15 @@ private/
 .bash_history
 .sudo_as_admin_successful
 module/
-log/
+*.log
+*flowtable.yaml
+*.pcap
 
 .ICEauthority-c
 .mininet_history
 .python_history
+
+__pycache__
 
 # local env files
 view/.env.local
