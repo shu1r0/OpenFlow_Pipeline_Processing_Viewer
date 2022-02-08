@@ -20,7 +20,8 @@ module/
 .mininet_history
 .python_history
 
-__pycache__
+__pycache__/
+*.pyc
 
 # local env files
 view/.env.local

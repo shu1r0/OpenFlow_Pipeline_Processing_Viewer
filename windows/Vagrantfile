@@ -5,11 +5,13 @@ $name = "ubuntu-OFP2V-dev"
 # Description
 # ------------------------------------------------------------
 $description = <<'EOS'
-Environment for OFP2V (OpenFlow Pipeline Processing Viewer)
+Windows Environment for OFP2V (OpenFlow Pipeline Processing Viewer)
 
 Tools that need to be installed manually following:
 * TShark
-* ubuntu-desktop (optional)
+
+You may need vagrant plugin following:
+* vagrant-vbguest
 
 
 user: vagrant
@@ -24,6 +26,7 @@ $install_package = <<SCRIPT
 # install package
 sudo apt-get -y update
 sudo apt-get -y upgrade
+sudo apt-get -y install build-essential
 sudo apt-get -y install python3-pip
 sudo apt-get -y install sshpass
 sudo apt-get -y install python3.8-dev python3.8
@@ -41,9 +44,6 @@ sudo apt-get -y install libssl-dev libffi-dev libxml2-dev libxslt1-dev zlib1g-de
 sudo apt-get -y install git
 sudo apt-get -y install curl
 sudo apt-get -y install wireshark-dev
-# 途中に確認が入るので，手動でインストールする
-# sudo apt-get -y install tshark
-# sudo apt-get -y install ubuntu-desktop 
 
 #NOTE: Should is used venv???
 sudo pip3 install --upgrade pip
@@ -175,7 +175,7 @@ sudo apt-get install -y mongodb-org
 SCRIPT
 
 # ------------------------------------------------------------
-# vagrant configure version 2
+# # vagrant configure version 2
 # ------------------------------------------------------------
 VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
@@ -193,7 +193,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.network 'forwarded_port', guest: 8888, host: 8888
 
     # share directory
-    config.vm.synced_folder './', '/home/vagrant'
+    config.vm.synced_folder '../', '/home/vagrant'
 
     # install package
     config.vm.provision 'shell', inline: $install_package
@@ -201,6 +201,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.provision 'shell', inline: $install_ryu
     config.vm.provision 'shell', inline: $install_vue
     # config.vm.provision 'shell', inline: $install_onos
+
+
+    # ssh config
+    config.ssh.username = 'vagrant'
+    config.ssh.password = 'vagrant'
+    config.ssh.insert_key = false
+
+    config.vbguest.auto_update = false
 
     # config virtual box
     config.vm.provider "virtualbox" do |vb|
@@ -216,7 +224,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             "--clipboard", "bidirectional", # clip board
             "--draganddrop", "bidirectional", # drag and drop
             "--ioapic", "on", # enable I/O APIC
-            "--accelerate3d", "on",
+            "--accelerate3d", "off",  # avoid bug
             "--description", $description
         ]
     end
