@@ -15,6 +15,7 @@ const count: number[] = [0, 0, 0]
 export const createDevice = (element: HTMLImageElement, x: number, y: number, vnet?: VNet): ElementDefinition => {
   let deviceClass: string
   let id: string
+
   if(element.classList[0] === DEVICE_TYPE.OFSWITCH){
     id = 's' + count[0]++
     deviceClass = "switch"
@@ -22,6 +23,7 @@ export const createDevice = (element: HTMLImageElement, x: number, y: number, vn
     id = 'h' + count[1]++
     deviceClass = "host"
   }
+  
   vnet = vnet ?? null
   // fix position
   if(vnet){
@@ -30,6 +32,7 @@ export const createDevice = (element: HTMLImageElement, x: number, y: number, vn
     x = (x - position.x)/zoom
     y = (y - position.y)/zoom
   }
+
   const device: ElementDefinition = {
     group: 'nodes',
     data: {
@@ -47,6 +50,7 @@ export const createDevice = (element: HTMLImageElement, x: number, y: number, vn
       'background-image': element.src
     }
   }
+
   return device
 }
 
