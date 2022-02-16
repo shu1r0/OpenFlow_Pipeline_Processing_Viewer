@@ -75,6 +75,8 @@ sudo apt install -y nodejs
 sudo chown -R vagrant /usr/lib/node_modules/
 sudo npm install -g n
 sudo npm install -g @vue/cli
+
+sudo n install 10.16.0
 SCRIPT
 
 
@@ -193,7 +195,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.network 'forwarded_port', guest: 8888, host: 8888
 
     # share directory
-    config.vm.synced_folder '../', '/home/vagrant'
+    config.vm.synced_folder '../', '/home/vagrant/ofp2v'
 
     # install package
     config.vm.provision 'shell', inline: $install_package
@@ -220,12 +222,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     
         vb.customize [
             "modifyvm", :id,
-            "--vram", "256", # vram
+            "--vram", "16", # vram
             "--clipboard", "bidirectional", # clip board
-            "--draganddrop", "bidirectional", # drag and drop
+            # "--draganddrop", "bidirectional", # drag and drop
             "--ioapic", "on", # enable I/O APIC
-            "--accelerate3d", "off",  # avoid bug
-            "--description", $description
+            "--accelerate3d", "on",
+            "--description", $description,
+        ]
+
+        vb.customize ["setextradata", :id, 
+        "VBoxInternal2/SharedFoldersEnableSymlinksCreate/Folder_Name", "1"
         ]
     end
 end

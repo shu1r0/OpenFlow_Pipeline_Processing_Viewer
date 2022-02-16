@@ -471,6 +471,8 @@ class Analyzer(AbstractAnalyzer):
                                         logger.warning("Analyzing 4.4.. Getting flow_table is fail. "
                                                        "Although the packets are captured, the flow table is not got."
                                                        "This could be an error.  (count={})".format(self.count))
+                                    trace.is_finish = False
+                                    return trace
                             else:
                                 if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
                                     logger.warning("Analyzing 4.4... cannot pop packet. Therefore the trace is not finished (count={} next_edge={} m={})"
@@ -482,6 +484,8 @@ class Analyzer(AbstractAnalyzer):
                                 logger.warning("Analyzing 4.4... already visited edge (count={}, next_edge={})".format(self.count, next_edge))
                             # TODO:
                             #   * Terminate the analysis or throw an error
+                            trace.is_finish = False
+                            return trace
                     else:  # switch or controller or other
 
                         # If next node is not switch, it is considered as an endpoint adn add to PacketTrace.
@@ -499,7 +503,7 @@ class Analyzer(AbstractAnalyzer):
                             packet_arc.packet_processing = pp
                             trace.add_arc(copy.deepcopy(packet_arc))
                             trace.is_finish = True
-                            return trace
+                            # return trace
                         elif self._is_terminal_edge(next_edge):
                             if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
                                 logger.debug("Analyzing 4.4... next switch is host. Therefore trace is finished. (count={}, next_switch={})"
@@ -513,7 +517,7 @@ class Analyzer(AbstractAnalyzer):
                             packet_arc.packet_processing = pp
                             trace.add_arc(copy.deepcopy(packet_arc))
                             trace.is_finish = True  # todo Flooding
-                            return trace
+                            # return trace
                         else:
                             if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
                                 logger.error("Analyzing 4.4... next switch is no matching device ({})".format(next_switch))

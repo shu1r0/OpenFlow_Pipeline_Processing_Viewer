@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/mininet" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/module/mininet" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/module/netbee" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/module/oflops" vcs="Git" />

@@ -12,6 +12,8 @@ private/
 .bash_history
 .sudo_as_admin_successful
 module/
+.npm/
+.local/
 *.log
 *flowtable.yaml
 *.pcap
@@ -19,6 +21,7 @@ module/
 .ICEauthority-c
 .mininet_history
 .python_history
+.node_repl_history
 
 __pycache__/
 *.pyc

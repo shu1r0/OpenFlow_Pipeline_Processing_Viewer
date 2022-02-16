@@ -75,6 +75,8 @@ sudo apt install -y nodejs
 sudo chown -R vagrant /usr/lib/node_modules/
 sudo npm install -g n
 sudo npm install -g @vue/cli
+
+sudo n install 10.16.0
 SCRIPT
 
 

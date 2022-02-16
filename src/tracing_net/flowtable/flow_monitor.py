@@ -32,7 +32,7 @@ class Poller(metaclass=ABCMeta):
         self.parent_conn = parent_conn
 
     @abstractmethod
-    def start_poll(cls):
+    def start_poll(self):
         """start polling"""
         raise NotImplementedError
 
@@ -40,6 +40,10 @@ class Poller(metaclass=ABCMeta):
 class FlowMonitor(Poller):
     """
     フローテーブルをポーリングする
+
+    Attributes:
+        switch (str) : target switch name
+        event_loop (AbstractEventLoop) : event loop
     """
 
     def __init__(self, switch, repository, event_loop=None):
@@ -71,12 +75,14 @@ class FlowMonitor(Poller):
             popen (Popen) :
         """
         popen.wait()
+        # dump flow result
         result = popen.stdout.read().decode().strip().split('\n')
         if conf.OUTPUT_DUMPFLOWS_TO_LOGFILE:
             logger.debug("get result for dump flows {} : {}".format(time_stamp, result))
         if len(result) >= 2:
             flows = parse_dump_flows(result[1:])
             table = FlowTables(switch_name=self.switch, timestamp=time_stamp, flows=flows)
+            # send to Central controller
             self.parent_conn.send([self.switch, table])
             if conf.OUTPUT_DUMPFLOWS_TO_LOGFILE:
                 logger.debug("parsed dump flows result to table {} : {}".format(time_stamp, table))
@@ -92,7 +98,9 @@ class FlowMonitor(Poller):
         """
         monitor_cmd = "ovs-ofctl monitor " + self.switch + " watch:"
         monitor_popen = subprocess.Popen(monitor_cmd, stderr=subprocess.STDOUT, stdout=subprocess.PIPE, shell=True)
+
         while monitor_popen.poll() is None:
+            # monitor result
             monitor_result = monitor_popen.stdout.readline().decode().strip()
             try:
                 monitor_result_dict = parse_flow_monitor(monitor_result)

@@ -157,26 +157,26 @@ export class VNetConsole {
 
   /**
    * write
-   * @param s (string) - written string
+   * @param s {string} - written string
    */
   write(s: string){
-    this.term.wirte(s)
+    this.term.write(s)
   }
 
   /**
    * writeln
-   * @param s (string) - written string
+   * @param s {string} - written string
    */
   writeln(s: string){
-    this.term.wirteln(s)
+    this.term.writeln(s)
   }
 
   /**
    * write error
-   * @param s (string) - written string
+   * @param s {string} - written string
    */
   writeError(s: string){
-    this.term.wirte(color(BRIGHT_RED_ANSI, "ERROR: " + s))
+    this.term.write(color(BRIGHT_RED_ANSI, "ERROR: " + s))
   }
 
 
@@ -189,6 +189,7 @@ export class VNetConsole {
     const printable = !(ev.altKey || ev.altGraphKey || ev.ctrlKey || ev.metaKey)
 
     // eslint-disable-next-line
+    // @ts-ignore
     let cursorX: number = this.term._core.buffer.x
 
     // note: ev.key causes Parsing Error
