@@ -20,7 +20,7 @@ destroy:
 
 run:
 	make clean
-	cd src; sudo python3.8 tracing_of_pipeline.py
+	cd src; sudo python3.8 networking.py
 
 clean:
 	sudo mn -c

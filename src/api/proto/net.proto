@@ -4,6 +4,7 @@
  *
  * Notes:
  *     * あくまで，システム上で使用するものなので完全にOpenFlowプロトコルに準拠しているわけではない．
+ *     * protobuf version 3.15.8 で動作確認済み
  *
  * TODO:
  *    * テーブルの要素は単純にdictで読ませるのもあり
@@ -176,6 +177,7 @@ message Flow{
  */
 message FlowTable{
   repeated Flow flows = 1;
+  optional sint32 flowtables_id = 2;
 }
 
 /**
@@ -216,7 +218,7 @@ message PacketArc{
  * packet trace
  */
 message PacketTrace{
-  float timestamp = 3;
+  double timestamp = 3;
   repeated PacketArc arcs = 1;
   optional string protocol = 2;
 }
@@ -236,6 +238,7 @@ message ChangeTopologyRequest{
   repeated Switch switches = 1;
   repeated Host hosts = 2;
   repeated Link links = 3;
+  // todo: remove
   optional RemoteController controller = 4;
 }
 
@@ -348,3 +351,28 @@ message CommandResult {
   /** Command result string */
   optional string result = 2;
 }
+
+// ---------------------------------------------
+// Service
+// ---------------------------------------------
+
+message NoneReply {}
+
+service P2VService {
+  rpc StartTracing(StartTracingRequest) returns (NoneReply) {}
+  rpc StopTracing(StopTracingRequest) returns (NoneReply) {}
+
+  rpc AddHost(Host) returns (Host) {}
+  rpc RemoveHost(Host) returns (Host) {}
+  rpc AddSwitch(Switch) returns (Switch) {}
+  rpc RemoveSwitch(Switch) returns (Switch) {}
+  rpc AddLink(Link) returns (Link) {}
+  rpc RemoveLink(Link) returns (Link) {}
+  rpc ChangeTopology(ChangeTopologyRequest) returns (NoneReply) {}
+
+  rpc GetTrace(GetTraceRequest) returns (GetTraceResult) {}
+
+  // to be stream
+  rpc ExecMininetCommand(MininetCommand) returns (CommandResult) {}
+}
+

@@ -5,7 +5,7 @@ Models of packet trace
 from abc import ABCMeta, abstractmethod
 from google.protobuf.json_format import MessageToDict
 
-from src.tracing_net.ofproto.table import FlowTables
+from src.vnet.ofproto.table import FlowTables
 from src.api.proto import net_pb2
 
 
@@ -176,6 +176,8 @@ class PacketTrace(AbstractPacketTrace):
         super(PacketTrace, self).__init__()
         self.is_finish = False
 
+        self.packet_trace_id = -1
+
     def add_arc(self, arc):
         self.arcs.append(arc)
 
@@ -308,3 +310,11 @@ class PacketProcessing:
             flow_id (int) :
         """
         self.matched_flowentry_list.append(flow_id)
+
+
+packet_trace_id = 0
+def get_packet_trace_id():
+    global packet_trace_id
+    packet_trace_id += 1
+    return packet_trace_id
+

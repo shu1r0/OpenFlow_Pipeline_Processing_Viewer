@@ -4,6 +4,7 @@ from abc import ABCMeta, abstractmethod
 from logging import getLogger, setLoggerClass, Logger
 
 from src.config import conf
+from src.analyzer.packet_trace import PacketTrace, get_packet_trace_id
 
 
 setLoggerClass(Logger)
@@ -17,7 +18,7 @@ class AbstractPacketTraceList(metaclass=ABCMeta):
     """
 
     def __init__(self):
-        self.traces = []
+        self.traces: list[PacketTrace] = []
 
     @abstractmethod
     def append(self, trace):
@@ -25,14 +26,19 @@ class AbstractPacketTraceList(metaclass=ABCMeta):
 
 
 class PacketTraceList(AbstractPacketTraceList):
+    """Packet Trace Repository
+
+    Notes:
+        * This list is not order
+    """
 
     def __init__(self):
         super(PacketTraceList, self).__init__()
         # pop trace max id
         self._max_id = -1
 
-    def append(self, trace):
-        trace.id = default_id()
+    def append(self, trace: PacketTrace):
+        trace.packet_trace_id = get_packet_trace_id()
         self.traces.append(trace)
         logger.debug("{} : {}".format(trace.arcs[0].timestamp, trace))
 
@@ -56,10 +62,10 @@ class PacketTraceList(AbstractPacketTraceList):
         traces = []
         max = self._max_id
         for t in self.traces:
-            if t.id > self._max_id:
+            if t.packet_trace_id > self._max_id:
                 traces.append(t.get_protobuf_message())
-                if t.id > max:
-                    max = t.id
+                if t.packet_trace_id > max:
+                    max = t.packet_trace_id
         self._max_id = max
         return traces
 

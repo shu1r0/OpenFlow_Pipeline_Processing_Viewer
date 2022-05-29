@@ -84,8 +84,7 @@ SCRIPT
 # install mininet with bofuss
 # ------------------------------------------------------------
 $install_mininet = <<SCRIPT
-cd module
-git clone git://github.com/mininet/mininet
+git clone https://github.com/mininet/mininet
 cd mininet
 # git tag  # list available versions
 git checkout -b mininet-2.3.0 2.3.0  # or whatever version you wish to install
@@ -102,7 +101,7 @@ SCRIPT
 #@link https://github.com/CPqD/ofsoftswitch13
 # ------------------------------------------------------------
 $install_bofuss = <<SCRIPT
-cd module
+
 sudo apt-get install -y cmake libpcap-dev libxerces-c3.2 libxerces-c-dev libpcre3 libpcre3-dev flex bison pkg-config autoconf libtool libboost-dev
 
 # Clone and build netbee
@@ -224,14 +223,21 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             "modifyvm", :id,
             "--vram", "16", # vram
             "--clipboard", "bidirectional", # clip board
-            # "--draganddrop", "bidirectional", # drag and drop
-            "--ioapic", "on", # enable I/O APIC
-            "--accelerate3d", "on",
-            "--description", $description,
+            "--draganddrop", "bidirectional", # drag and drop
+            "--ioapic", "off", # enable I/O APIC
+            '--graphicscontroller', 'vmsvga',
+            "--accelerate3d", "off",
+            "--hwvirtex", "on",
+            "--nestedpaging", "on",
+            "--largepages", "on",
+            "--pae", "off",
+            '--audio', 'none',
+            "--description", $description
         ]
 
-        vb.customize ["setextradata", :id, 
-        "VBoxInternal2/SharedFoldersEnableSymlinksCreate/Folder_Name", "1"
+        vb.customize [
+            "setextradata", :id, 
+            "VBoxInternal2/SharedFoldersEnableSymlinksCreate/Folder_Name", "1"
         ]
     end
 end

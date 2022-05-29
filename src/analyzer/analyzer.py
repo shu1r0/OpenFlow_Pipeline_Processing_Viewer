@@ -27,16 +27,17 @@ import copy
 # only unix
 import signal
 from logging import getLogger, setLoggerClass, Logger
+from typing import Tuple
 
 from pyof.v0x04.common.header import Type
 from pyof.v0x04.common.port import PortNo
 
 from src.ofcapture.ofcapture import OFCaptureBase
-from src.tracing_net.net.net import TracingNet
-from src.tracing_net.packet.packet_repository import PacketRepository
-from src.tracing_net.flowtable.table_repository import TableRepository
-from src.tracing_net.ofproto.table import FlowTables
-from src.tracing_net.ofproto.msg import Msg
+from src.vnet.net.net import NetworkGatheringInfo
+from src.vnet.packet.packet_repository import PacketRepository
+from src.vnet.flowtable.table_repository import TableRepository
+from src.vnet.ofproto.table import FlowTables
+from src.vnet.ofproto.msg import Msg
 from src.ofcapture.capture.of_msg_repository import PacketInOutRepository
 from src.analyzer.ofproto.pipeline import apply_pipeline, apply_pipeline_for_packetout
 from src.analyzer.ofproto.msg import create_MsgForOFMsg
@@ -83,25 +84,25 @@ class AbstractAnalyzer(metaclass=ABCMeta):
     """This integrates information and computes packet trace.
 
     Attributes:
-        tracing_net (TracingNet) : Mininet
-        of_capture (OFCaptureBase) : Proxy
+        net (NetworkGatheringInfo) : Mininet
+        ofcapture (OFCaptureBase) : Proxy
         packet_repo (PacketRepository) : Packet repository
         table_repo (TableRepository) : Flow Table repository
         packet_inout_repo (PacketInOutRepository) : Packet In/Out repository
     """
 
-    def __init__(self, tracing_net, of_capture, packet_repo, table_repo, packet_inout_repo):
+    def __init__(self, net, ofcapture, packet_repo, table_repo, packet_inout_repo):
         """Init
 
         Args:
-            tracing_net (TracingNet) : Mininet
-            of_capture (OFCaptureBase) : Proxy
+            net (NetworkGatheringInfo) : Mininet
+            ofcapture (OFCaptureBase) : Proxy
             packet_repo (PacketRepository) : Packet repository
             table_repo (TableRepository) : Flow Table repository
             packet_inout_repo (PacketInOutRepository) : Packet In/Out repository
         """
-        self.tracing_net = tracing_net
-        self.of_capture = of_capture
+        self.net = net
+        self.ofcapture = ofcapture
         self.packet_repo = packet_repo
         self.table_repo = table_repo
         self.packet_inout_repo = packet_inout_repo
@@ -212,14 +213,14 @@ class Analyzer(AbstractAnalyzer):
         for edge, pkts in self.tmp_packets.items():
             if pkts:  # Do the packets exist?
                 if self._is_terminal_edge(edge):
-                    host, switch, switch_port = self.tracing_net.get_terminal_edge(edge)
+                    host, switch, switch_port = self.net.get_terminal_edge(edge)
 
                     for p in pkts:
                         if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
                             logger.debug("Analyzing 3... analyze packet (count={}, target={})".format(self.count, p))
 
                         # compare Mac address
-                        if p.eth_src == self.tracing_net.get(host).MAC():  # Is the packet from the host?
+                        if p.eth_src == self.net.get(host).MAC():  # Is the packet from the host?
                             # set next port
                             self._update_msg(p, next_port=switch_port)
                             flow_table = self._get_flowtable(switch, p.sniff_timestamp)
@@ -246,7 +247,7 @@ class Analyzer(AbstractAnalyzer):
                         else:
                             logger.warning("Packet {} is not from host. "
                                            "The analysis done before may not have been done properly. "
-                                           "(host_mac={}, packet_ethsrc={})".format(p, self.tracing_net.get(host).MAC(), p.eth_src))
+                                           "(host_mac={}, packet_ethsrc={})".format(p, self.net.get(host).MAC(), p.eth_src))
                 else:
                     logger.warning("edge {} is not terminal edge. "
                                    "The analysis done before may not have been done properly.".format(edge))
@@ -367,7 +368,6 @@ class Analyzer(AbstractAnalyzer):
         if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
             logger.warning("Analyzing 2.3... no flooding ports")
 
-
     def BFS(self, queue, trace=None, visited_edges=None):
         """BFS
 
@@ -431,14 +431,17 @@ class Analyzer(AbstractAnalyzer):
                     # next switch, port, edge
                     next_switch, next_port, next_edge = None, None, None
                     # convert interface
-                    p = self._ofport_to_interface(dst_node.switch_name, p)
+                    i = self._ofport_to_interface(dst_node.switch_name, p)
 
                     # get where packet is going next.
-                    if not self._is_controller(p):
-                        next_switch, next_port, next_edge = self._get_next_and_edge(p)
+                    if i is not None and not self._is_controller(p):
+                        next_switch, next_port, next_edge = self._get_next_and_edge(i)
                     else:
                         #@Note:
                         # This will eventually be an enumerate
+                        print("this port s={} p={} i={} is controller".format(dst_node.switch_name, p, i))
+                        if p == 1:
+                            print("interface is {}".format(self.net.get(dst_node.switch_name).intfs[p].name))
                         next_switch = "controller"
 
                     if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
@@ -548,7 +551,7 @@ class Analyzer(AbstractAnalyzer):
             * update in_port
         """
         msg.in_phy_port = next_port
-        msg.in_port = self.tracing_net.get_ofport_from_interface(next_port.split("-")[0], next_port)
+        msg.in_port = self.net.get_ofport_from_interface(next_port.split("-")[0], next_port)
 
     #
     #  Poller
@@ -561,7 +564,7 @@ class Analyzer(AbstractAnalyzer):
             count (int) : polling interval counte
         """
         # Packet
-        tmp_packets = self._poll_packet_repo(count=count, edges=self.tracing_net.name_to_link.get_edges(), get_all=get_all)
+        tmp_packets = self._poll_packet_repo(count=count, edges=self.net.link_manager.get_edges(), get_all=get_all)
         for e, pkts in tmp_packets.items():
             self.tmp_packets.setdefault(e, [])
             if pkts:
@@ -569,7 +572,7 @@ class Analyzer(AbstractAnalyzer):
                 self.tmp_packets[e].sort()
 
         # Packet Out and Packet In
-        tmp_packetinout = self._poll_packet_inout_repo(count=count, switches=self.tracing_net.get_switch_names(), get_all=get_all)
+        tmp_packetinout = self._poll_packet_inout_repo(count=count, switches=self.net.get_switch_names(), get_all=get_all)
         for s, pkts in tmp_packetinout.items():
             self.tmp_packetinout.setdefault(s, [])
             if pkts:
@@ -621,7 +624,7 @@ class Analyzer(AbstractAnalyzer):
 
         for switch in switches:
             # get datapath id
-            s_dpid = int(self.tracing_net.get_datapath_id(switch), 16)
+            s_dpid = int(self.net.get_datapath_id(switch), 16)
             if s_dpid is not None:
                 tmp_p = none2emptylist(self.packet_inout_repo.pop(s_dpid, until=until))
                 if conf.OUTPUT_ANALYZING_PACKET_PROCESS_TO_LOGFILE:
@@ -641,12 +644,12 @@ class Analyzer(AbstractAnalyzer):
 
     def _get_topo(self):
         """get nodes and links"""
-        topo = self.tracing_net.get_topo()
+        topo = self.net.get_topo()
         return topo
 
-    def _get_next_and_edge(self, interface):
+    def _get_next_and_edge(self, interface) -> Tuple[str, str, str]:
         """get next node, interface, edge name"""
-        return self.tracing_net.name_to_link.get_next_and_edge(interface)
+        return self.net.link_manager.get_next_and_edge(interface)
 
     def _get_packet(self, edge, msg):
         """Get the same packet as the msg.
@@ -726,7 +729,7 @@ class Analyzer(AbstractAnalyzer):
         return packet
 
     def _is_switch(self, switch):
-        return self.tracing_net.is_switch(switch)
+        return self.net.is_switch(switch)
 
     def _is_controller(self, port: str):
         """Is the port connected controller?
@@ -741,7 +744,7 @@ class Analyzer(AbstractAnalyzer):
         return False
 
     def _is_terminal_edge(self, edge):
-        return self.tracing_net.is_terminal_edge(edge)
+        return self.net.is_terminal_edge(edge)
 
     def _ofport_to_interface(self, switch, ofport):
         """ofport to interface
@@ -753,12 +756,11 @@ class Analyzer(AbstractAnalyzer):
         Returns:
             str : interface (e.g. "s1-eth0")
         """
-        if isinstance(ofport, str) and ofport.isdigit():
-            ofport = int(ofport)
-
+        # if isinstance(ofport, str):
+        #     ofport = int(ofport)
+        ofport = int(ofport)
         if isinstance(ofport, int) and ofport < 1000:
-            return self.tracing_net.get_interface_from_ofport(switch, ofport)
-        return ofport
+            return self.net.get_interface_from_ofport(switch, ofport)
 
     def _get_hosts_mac(self):
         """
@@ -766,7 +768,7 @@ class Analyzer(AbstractAnalyzer):
         Returns:
             list[str] : mac addresses
         """
-        hosts = self.tracing_net.hosts
+        hosts = self.net.hosts
         mac_addresses = [host.MAC() for host in hosts]
         return mac_addresses
 
@@ -781,7 +783,7 @@ class Analyzer(AbstractAnalyzer):
             dict[str, (str, str, str)] : interface to (next node, next interface, next edge)
         """
         pe = {}
-        for intf, port in self.tracing_net.get(switch).ports.items():
+        for intf, port in self.net.get(switch).ports.items():
             if port != of_port and intf.name != 'lo':
                 pe[intf.name] = self._get_next_and_edge(intf.name)
         return pe

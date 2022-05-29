@@ -96,14 +96,16 @@ class PacketTracesRepository{
   add(packetTrace: PacketTrace): number{
     let index: number
     let add = false
-    for(let i = 0; i > this.packetTraces.length; i++){
-      if(packetTrace.getTimestamp() >= this.packetTraces[i].getTimestamp()){
+    for(let i = 0; i < this.packetTraces.length; i++){
+      if(packetTrace.getTimestamp() <= this.packetTraces[i].getTimestamp()){
         this.packetTraces.splice(i, 0, packetTrace)
         add = true
         index = i
+        break
       }
     }
     if(!add){
+      console.log("push last")
       index = this.packetTraces.push(packetTrace)
       index = index - 1
     }

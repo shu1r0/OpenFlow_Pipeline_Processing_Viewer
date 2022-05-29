@@ -4865,7 +4865,7 @@ proto.proto.PacketTrace.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 3:
-      var value = /** @type {number} */ (reader.readFloat());
+      var value = /** @type {number} */ (reader.readDouble());
       msg.setTimestamp(value);
       break;
     case 1:
@@ -4908,7 +4908,7 @@ proto.proto.PacketTrace.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTimestamp();
   if (f !== 0.0) {
-    writer.writeFloat(
+    writer.writeDouble(
       3,
       f
     );
@@ -4932,7 +4932,7 @@ proto.proto.PacketTrace.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional float timestamp = 3;
+ * optional double timestamp = 3;
  * @return {number}
  */
 proto.proto.PacketTrace.prototype.getTimestamp = function() {

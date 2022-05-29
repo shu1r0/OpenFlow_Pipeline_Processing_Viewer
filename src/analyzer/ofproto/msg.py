@@ -12,7 +12,7 @@ from scapy.all import *
 from pyof.v0x04.common.port import PortNo
 from pyof.v0x04.common.header import Type
 
-from src.tracing_net.ofproto.msg import MsgBase
+from src.vnet.ofproto.msg import MsgBase
 
 
 class MsgForOFMsg(MsgBase):

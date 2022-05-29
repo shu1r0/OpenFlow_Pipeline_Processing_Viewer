@@ -5,6 +5,8 @@ view/dist
 
 private/
 
+venv/
+
 # vagrant
 .vagrant/
 .cache/

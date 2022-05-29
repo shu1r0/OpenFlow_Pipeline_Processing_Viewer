@@ -1,6 +1,6 @@
 import { io, Socket } from 'socket.io-client';
 
-import { DEVICE_TYPE } from '@/scripts/vnet/devices';
+import * as devices from '@/scripts/vnet/devices';
 
 import { packetTracesRepository } from '../utils/packet_traces_repository'
 import { topologyRepository } from '../utils/topology_repository'
@@ -47,7 +47,7 @@ export abstract class RemoteClient{
    * @param type : device type
    * @param name : device name
    */
-  abstract addDevice(type: DEVICE_TYPE, name: string): void
+  abstract addDevice(device: devices.Device): void
 
   /**
    * add host to mininet
@@ -55,7 +55,7 @@ export abstract class RemoteClient{
    * @param ip : host ip address
    * @param mac : host mac address
    */
-  abstract addHost(name: string, ip?: string, mac?: string): void
+  abstract addHost(host: devices.Host): void
 
   /**
    * remove host
@@ -68,7 +68,7 @@ export abstract class RemoteClient{
    * @param name : switch name
    * @param datapath_id : switch datapath id
    */
-  abstract addSwitch(name: string, datapath_id: string): void
+  abstract addSwitch(ofswitch: devices.Switch): void
 
   /**
    * remove openflow switch
@@ -82,7 +82,7 @@ export abstract class RemoteClient{
    * @param node1 : node1
    * @param node2 : node2
    */
-  abstract addLink(link: string, node1: string, node2: string): void
+  abstract addLink(link: devices.Edge): void
 
   /**
    * remove link
@@ -140,24 +140,24 @@ export class DummyRemoteClient extends RemoteClient{
     console.log("stop tracing")
   }
 
-  addDevice(type: DEVICE_TYPE, name: string): void{
+  addDevice(device: devices.Device): void{
     console.log("add Device")
   }
 
-  addHost(name: string, ip?: string, mac?: string): void {
+  addHost(host: devices.Host): void {
     console.log("add host!!")
   }
   removeHost(name: string): void {
     console.log("remove host!!")
   }
-  addSwitch(name: string, datapath_id: string): void {
+  addSwitch(ofswitch: devices.Switch): void {
     console.log("add switch!!")
   }
   removeSwitch(name: string): void {
     console.log("remove switch!!")
   }
 
-  addLink(link: string, node1: string, node2: string): void {
+  addLink(link: devices.Edge): void {
     console.log("add link!!")
   }
 
@@ -294,20 +294,20 @@ export class WSClient extends RemoteClient {
     this.emit('stop_tracing', req.serializeBinary())
   }
 
-  addDevice(type: DEVICE_TYPE, name: string): void {
-    if(type === DEVICE_TYPE.OFSWITCH){
-      this.addSwitch(name)
-    }else if(type === DEVICE_TYPE.HOST){
-      this.addHost(name)
+  addDevice(device: devices.Device): void {
+    if(device instanceof devices.Switch){
+      this.addSwitch(device)
+    }else if(device instanceof devices.Host){
+      this.addHost(device)
     }
   }
 
-  addHost(name: string, ip?: string, mac?: string): void {
-    const host = new Host()
-    host.setName(name)
-    host.setIp(ip)
-    host.setMac(mac)
-    this.emit('add_host', host.serializeBinary(), (data) => {
+  addHost(host: devices.Host): void {
+    const hostMsg = new Host()
+    hostMsg.setName(host.getName())
+    hostMsg.setIp(host.getIp())
+    hostMsg.setMac(host.getMac())
+    this.emit('add_host', hostMsg.serializeBinary(), (data) => {
       const ackHost = Host.deserializeBinary(data)
       console.log(ackHost)
       // add repository
@@ -321,10 +321,10 @@ export class WSClient extends RemoteClient {
     this.emit('remove_host', host.serializeBinary())
   }
 
-  addSwitch(name: string, datapath_id?: string): void {
+  addSwitch(ofswitch: devices.Switch): void {
     const sw = new Switch()
-    sw.setName(name)
-    sw.setDatapathId(datapath_id)
+    sw.setName(ofswitch.getId())
+    sw.setDatapathId(ofswitch.getDpid())
     this.emit('add_switch', sw.serializeBinary(), (data) => {
       const ackSwitch = Switch.deserializeBinary(data)
       console.log(ackSwitch)
@@ -339,11 +339,11 @@ export class WSClient extends RemoteClient {
     this.emit('remove_switch', sw.serializeBinary())
   }
 
-  addLink(link: string, node1: string, node2: string): void {
+  addLink(link: devices.Edge): void {
     const l = new Link()
-    l.setName(link)
-    l.setHost1(node1)
-    l.setHost2(node2)
+    l.setName(link.getId())
+    l.setHost1(link.getNode1())
+    l.setHost2(link.getNode2())
     this.emit('add_link', l.serializeBinary(), (data) => {
       const ackLink = Link.deserializeBinary(data)
       console.log(ackLink)

@@ -9,9 +9,9 @@ from logging import getLogger, setLoggerClass, Logger
 from pyof.foundation.basic_types import UBInt32
 from pyof.v0x04.common.port import PortNo
 
-from src.tracing_net.ofproto.table import FlowTables
-from src.tracing_net.ofproto.msg import Msg
-from src.tracing_net.ofproto.action import ActionSet
+from src.vnet.ofproto.table import FlowTables
+from src.vnet.ofproto.msg import Msg
+from src.vnet.ofproto.action import ActionSet
 from src.analyzer.ofproto.msg import MsgForOFMsg
 
 # analyzerに依存しているので変更するのもあり

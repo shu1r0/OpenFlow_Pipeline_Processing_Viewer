@@ -23,3 +23,8 @@ def setup_logger(log_level=INFO, log_handler=None):
     logger.setLevel(log_level)
     if log_handler:
         logger.addHandler(log_handler)
+
+
+def get_logger():
+    setLoggerClass(Logger)
+    return getLogger('networking')

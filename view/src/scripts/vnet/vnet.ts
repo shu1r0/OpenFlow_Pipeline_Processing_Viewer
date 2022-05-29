@@ -11,7 +11,7 @@
  */
 
 import cytoscape, { EventObject, Core, CollectionReturnValue, CytoscapeOptions, NodeSingular, EdgeSingular, ElementDefinition, CollectionArgument } from 'cytoscape'
-import { DEVICE_TYPE } from './devices'
+import { Host, Switch, Edge } from './devices'
 import { createDevice, createEdge, createPacketEdge, createController } from './factory'
 import { RemoteClient } from '../remote/remoteClient'
 // @ts-ignore
@@ -54,17 +54,17 @@ abstract class VirtualNetworkBase{
   /**
    * Element Definitions of ofswitch
    */
-  switches: {[key: string]: ElementDefinition} = {}
+  switches: {[key: string]: Switch} = {}
 
   /**
    * Element Definitions of host
    */
-  hosts: {[key: string]: ElementDefinition} = {}
+  hosts: {[key: string]: Host} = {}
 
   /**
    * Element Definitions of edge
    */
-  edges: {[key: string]: ElementDefinition} = {}
+  edges: {[key: string]: Edge} = {}
 
   /**
    * add device from HTMLImageElement
@@ -263,9 +263,9 @@ export class VNet extends VirtualNetworkBase{
    */
   addDevice(element: HTMLImageElement, x: number, y: number, style?: StyleSheet, remote=false){
     const addedNode = createDevice(element, x, y, this)
-    if(addedNode.classes === "switch"){
+    if(addedNode instanceof Switch){
       this.switches[addedNode.data.id] = addedNode
-    }else if(addedNode.classes === "host"){
+    }else if(addedNode instanceof Host){
       this.hosts[addedNode.data.id] = addedNode
     }
     if(style){
@@ -274,7 +274,7 @@ export class VNet extends VirtualNetworkBase{
     const collection: CollectionReturnValue = this.cytoscape.add(Object.assign(addedNode))
 
     if(this.remoteClient && remote){
-      this.remoteClient.addDevice(element.className as DEVICE_TYPE, collection.id())
+      this.remoteClient.addDevice(addedNode)
     }else{
       console.warn("There is no remote client.")
     }
@@ -297,7 +297,7 @@ export class VNet extends VirtualNetworkBase{
     const collection: CollectionReturnValue = this.cytoscape.add(Object.assign(addedEdge))
 
     if(this.remoteClient && remote){
-      this.remoteClient.addLink(collection.id(), node1, node2)
+      this.remoteClient.addLink(addedEdge)
     }else{
       console.warn("There is no remote client.")
     }
@@ -355,7 +355,7 @@ class ChangeableVNet extends VNet implements Mountable{
     this.options.style = [{
       selector: '*',
       style: {
-        'label': 'data(id)'
+        'label': 'data(name)'
       }
     }]
     this.cytoscape = cytoscape(this.options)
@@ -407,7 +407,7 @@ export class TracingVNet extends VNet implements Mountable{
     this.options.style = [{
       selector: 'nodes',
       style: {
-        'label': 'data(id)'
+        'label': 'data(name)'
       }
     },{
       selector: '.link',
@@ -441,7 +441,7 @@ export class TracingVNet extends VNet implements Mountable{
     this.addController((shape.right - shape.left)/2 + shape.left, shape.top - 50)
   }
 
-  private setProperties(switches: {[key: string]: ElementDefinition}, hosts: {[key: string]: ElementDefinition}, edges: {[key: string]: ElementDefinition}){
+  private setProperties(switches: {[key: string]: Switch}, hosts: {[key: string]: Host}, edges: {[key: string]: Edge}){
     this.switches = switches
     this.hosts = hosts
     this.edges = edges

@@ -21,11 +21,17 @@ export const BRIGHT_RED_ANSI = ESCAPE + "91m"
 export const BRIGHT_BLUE_ANSI = ESCAPE + "94m"
 export const RESET_STYLE = ESCAPE + "0m"
 
-
+/**
+ * color string
+ * @param color {string} - ansi color code
+ * @param str {string} - target string
+ * @returns string
+ */
 export const color = (color: string, str: string): string => {
   return color + str + RESET_STYLE
 }
 
+// Cursor code
 const ERASE_FROM_CURSOR_THROUGH_END = ESCAPE + "0K"
 const ERASE_FROM_BEGINNING_THROUGH_CURSOR = ESCAPE + "1K"
 const ERASE_LINE = ESCAPE + "2K"
@@ -58,6 +64,11 @@ export class VNetConsole {
    * xterm instance
    */
   private term: Terminal
+
+  /**
+   * HTML Element
+   */
+  private consoleElement: HTMLElement
 
   /**
    * virtual network instance
@@ -96,6 +107,11 @@ export class VNetConsole {
    */
   history: string[] = []
 
+  /**
+   * print command to console (for debug)
+   */
+  private print_command_to_console = true
+
 
   constructor(vnet?: VNet) {
     this.vnet = vnet ?? changeableVNet
@@ -121,11 +137,15 @@ export class VNetConsole {
    * Console start
    * @param elementId (string) - mount element
    */
-  start(elementId: string) {
+  start(elementId: string, vnet?: VNet) {
+    this.vnet = vnet ?? changeableVNet
+    this.remoteClient = this.vnet.getRemoteClient()
+    this.consoleElement = document.getElementById(elementId)
+
     // setup xterm
     const fitAddon = new FitAddon()
     this.term.loadAddon(fitAddon)
-    this.term.open(document.getElementById(elementId) as HTMLElement)
+    this.term.open(this.consoleElement)
     fitAddon.fit()
 
     // write introduction
@@ -138,13 +158,27 @@ export class VNetConsole {
 
     // enable copy and paste
     this.term.attachCustomKeyEventHandler((key: KeyboardEvent) => {
-      if (key.code === 'KeyC' || key.code === 'KeyV') {
-        if (key.ctrlKey) {
-          return false
-        }
+      if (key.code === 'KeyC' && key.ctrlKey) {
+        return false
+      }else if (key.code === 'KeyV' && key.ctrlKey) {
+        return false
       }
       return true
     })
+
+    // enable copy and paste
+    this.term.textarea.addEventListener("paste", (e) => {
+      const s = e.clipboardData.getData("text")
+      this.insert(s)
+      e.preventDefault()
+    })
+    this.term.textarea.addEventListener("copy", (event) => {
+      event.preventDefault()
+    })
+
+
+    // write prompt
+    this.writePrompt()
   }
 
   /**
@@ -179,6 +213,18 @@ export class VNetConsole {
     this.term.write(color(BRIGHT_RED_ANSI, "ERROR: " + s))
   }
 
+  private insert(s: string){
+    // eslint-disable-next-line
+    // @ts-ignore
+    const cursorX: number = this.term._core.buffer.x
+
+    const lengthFromCursor = this.prompt.length + this.buffer.length - cursorX
+    this.write(ERASE_FROM_CURSOR_THROUGH_END)
+    this.write(s + this.buffer.slice(cursorX - this.prompt.length))
+    this.write(cursorBack(lengthFromCursor))
+    this.buffer = this.buffer.slice(0, cursorX - this.prompt.length) + s + this.buffer.slice(cursorX - this.prompt.length)
+  }
+
 
   /**
    * onKey Event Handler
@@ -190,11 +236,11 @@ export class VNetConsole {
 
     // eslint-disable-next-line
     // @ts-ignore
-    let cursorX: number = this.term._core.buffer.x
+    const cursorX: number = this.term._core.buffer.x
 
     // note: ev.key causes Parsing Error
     if (ev.keyCode === 8){  // backspace
-      if(cursorX > prompt.length){
+      if(cursorX > this.prompt.length){
         const lengthFromCursor = this.prompt.length + this.buffer.length - cursorX
         const beforeCursorX = cursorX
         this.write(cursorBack(1))
@@ -212,6 +258,8 @@ export class VNetConsole {
               this.history.push(this.buffer)
               this.commandHandler(this.buffer)
               this.buffer = ""
+          }else{
+            this.writePrompt()
           }
           break
         case "Tab":
@@ -226,7 +274,7 @@ export class VNetConsole {
           }
           break
         case "ArrowRight":
-          if(cursorX < this.prompt.length + this.prompt.length){
+          if(cursorX < this.prompt.length + this.buffer.length){
             this.write(e.key)
           }
           break
@@ -238,11 +286,7 @@ export class VNetConsole {
             this.write(e.key)
             this.buffer += e.key
           }else{
-            const lengthFromCursor = this.prompt.length + this.buffer.length - cursorX
-            this.write(ERASE_FROM_CURSOR_THROUGH_END)
-            this.write(e.key + this.buffer.slice(cursorX - this.prompt.length))
-            this.write(cursorBack(lengthFromCursor))
-            this.buffer = this.buffer.slice(0, cursorX - this.prompt.length) + e.key + this.buffer.slice(cursorX - this.prompt.length)
+            this.insert(e.key)
           }
           break
       }
@@ -254,6 +298,10 @@ export class VNetConsole {
    * @param command {string} - command
    */
   private commandHandler(command: string){
+    if(this.print_command_to_console){
+      console.log(command)
+    }
+
     /**
      * output command handler for remote client
      */

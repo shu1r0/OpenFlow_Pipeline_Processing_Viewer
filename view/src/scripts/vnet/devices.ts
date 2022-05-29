@@ -1,3 +1,5 @@
+import { Css, EdgeDataDefinition, ElementDefinition, ElementGroup, NodeDataDefinition, Position } from 'cytoscape'
+
 
 /**
  * device type
@@ -9,39 +11,6 @@ export const DEVICE_TYPE = {
 export type DEVICE_TYPE = typeof DEVICE_TYPE[keyof typeof DEVICE_TYPE]
 
 
-export interface cytoscapeData{
-  /** id (required) */
-  id: string
-}
-
-export interface cytoscapeStyle{
-  /** id (required) */
-  selector: string
-  style: {
-    'label': ''
-  }
-}
-
-/**
- * device position on vnet_canvas
- */
-class Pos{
-  x: number
-  y: number
-
-  constructor(x: number, y: number){
-    this.x = x
-    this.y = y
-  }
-
-  public getPos(){
-    return {
-      'x': this.x,
-      'y': this.y
-    }
-  }
-}
-
 /**
  * Device class.
  * * provide an interface to interact with cytoscape
@@ -50,29 +19,71 @@ class Pos{
  * @note
  * maybe delete this
  */
-export abstract class Device{
-  /** cytoscape data */
-  private data: cytoscapeData
-  /** position */
-  private pos: Pos
-  /** cytoscape style */
-  private style: cytoscapeStyle
+export class CytoscapeElement implements ElementDefinition{
+  group?: ElementGroup;
+  data: NodeDataDefinition | EdgeDataDefinition;
+  scratch?: any;
+  position?: Position;
+  renderedPosition?: Position;
+  selected?: boolean;
+  selectable?: boolean;
+  locked?: boolean;
+  grabbable?: boolean;
+  classes?: string;
+  style?: any;
+  css?: Css.Node | Css.Edge;
 
-  constructor(data: cytoscapeData, pos: Pos, style: cytoscapeStyle){
-    this.data = data
-    this.pos = pos
-    this.style = style
+  getId(){
+    return this.data.id
   }
 
-  public getData(){
-    return this.data
-  }
-
-  public getPos(){
-    return this.pos.getPos()
-  }
-
-  public getStyle(){
-    return this.style
+  getName(){
+    return this.data.name
   }
 }
+
+export class Host extends CytoscapeElement {
+  private ip?: string
+  private mac?: string
+
+  constructor(){
+    super();
+  }
+
+  getIp(){
+    return this.ip
+  }
+
+  getMac(){
+    return this.mac
+  }
+}
+
+export class Switch extends CytoscapeElement {
+  private dpid?: string
+
+  constructor(){
+    super();
+  }
+
+  getDpid(){
+    return this.dpid
+  }
+}
+
+export class Edge extends CytoscapeElement {
+
+  constructor(){
+    super();
+  }
+
+  getNode1(){
+    return this.data.source
+  }
+
+  getNode2(){
+    return this.data.target
+  }
+}
+
+export type Device = Host | Switch
