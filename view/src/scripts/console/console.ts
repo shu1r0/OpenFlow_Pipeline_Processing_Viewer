@@ -8,7 +8,8 @@ import { changeableVNet, VNet } from '../../scripts/vnet/vnet'
 import { RemoteClient } from '../remote/remoteClient'
 
 
-// ansi code https://en.wikipedia.org/wiki/ANSI_escape_code
+// ansi code 
+// ref: https://en.wikipedia.org/wiki/ANSI_escape_code
 const ESCAPE = "\x1b["
 
 export const RED_ANSI = ESCAPE + "31m"
@@ -206,13 +207,17 @@ export class VNetConsole {
   }
 
   /**
-   * write error
+   * エラーを書く用
    * @param s {string} - written string
    */
   writeError(s: string){
     this.term.write(color(BRIGHT_RED_ANSI, "ERROR: " + s))
   }
 
+  /**
+   * 文字列を現在のカーソル位置に挿入
+   * @param s {string} - 挿入する文字列
+   */
   private insert(s: string){
     // eslint-disable-next-line
     // @ts-ignore
@@ -239,15 +244,15 @@ export class VNetConsole {
     const cursorX: number = this.term._core.buffer.x
 
     // note: ev.key causes Parsing Error
-    if (ev.keyCode === 8){  // backspace
+    if (ev.keyCode === 8){  // BackSpcase
       if(cursorX > this.prompt.length){
-        const lengthFromCursor = this.prompt.length + this.buffer.length - cursorX
-        const beforeCursorX = cursorX
-        this.write(cursorBack(1))
-        this.write(ERASE_FROM_CURSOR_THROUGH_END)
-        this.write(this.buffer.slice(beforeCursorX - this.prompt.length))
-        this.write(cursorBack(lengthFromCursor))
-        this.buffer = this.buffer = this.buffer.slice(0, beforeCursorX - this.prompt.length - 1) + this.buffer.slice(beforeCursorX - this.prompt.length)
+        const lengthFromCursor = this.prompt.length + this.buffer.length - cursorX  // カーソルから右端の間の長さ
+        const beforeCursorX = cursorX  // 文字削除前のカーソル位置
+        this.write(cursorBack(1))  // カーソルを戻す
+        this.write(ERASE_FROM_CURSOR_THROUGH_END)  // カーソルから右端まで消す．
+        this.write(this.buffer.slice(beforeCursorX - this.prompt.length))  // 文字列を戻す
+        this.write(cursorBack(lengthFromCursor))  // カーソルが右端になるので，カーソル位置戻す
+        this.buffer = this.buffer.slice(0, beforeCursorX - this.prompt.length - 1) + this.buffer.slice(beforeCursorX - this.prompt.length)
       }
     }else if(printable){
       switch (ev.key){
@@ -263,10 +268,10 @@ export class VNetConsole {
           }
           break
         case "Tab":
-          console.log("tab")
+          // TODO
           break
         case "ArrowDown":
-          // this.write(e.key)
+          // TODO
           break
         case "ArrowLeft":
           if(cursorX > this.prompt.length){
@@ -279,7 +284,7 @@ export class VNetConsole {
           }
           break
         case "ArrowUp":
-          // this.write(e.key)
+          // TODO
           break
         default:  // print key
           if(cursorX >= this.prompt.length + this.buffer.length) {
@@ -294,7 +299,7 @@ export class VNetConsole {
   }
 
   /**
-   * command handler
+   * コマンド実行
    * @param command {string} - command
    */
   private commandHandler(command: string){
@@ -317,7 +322,6 @@ export class VNetConsole {
     }
 
     command = this.preCommand(command)
-
     if(command){
       // set command handler
       this.remoteClient.execMininetCommand(command, commandResultHandler)

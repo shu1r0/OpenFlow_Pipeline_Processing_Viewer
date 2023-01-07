@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BOFUSSのビルド時エラー &mdash; trace_ovs_pipeline 1.0.0 ドキュメント</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="prev" title="クラス設計" href="../design/class_design.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> trace_ovs_pipeline
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../requirement_definition/rdd.html">要件定義</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../relate_technic/tec.html">関連技術</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/abstract_design.html">基本設計</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/abstract_design.html#api">API設計</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/class_design.html">クラス設計</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">BOFUSSのビルド時エラー</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#gitwiki-the-shortest-path-ofdissector-config-h">gitのwiki の&quot;The shortest path...&quot;を参考にビルドするが，<code class="docutils literal notranslate"><span class="pre">ofdissector</span></code> のソースの一部で <code class="docutils literal notranslate"><span class="pre">config.h</span></code> のファイルが見つからないエラー</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">解決</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#mininetwarning">mininetのインストールでwarning出しまくっている問題</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wireshark">wiresharkとの互換性の問題</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bofuss-vagrat-2021-04-29-11-38-log">BOFUSSに依存するライブラリがインストールできない( <code class="docutils literal notranslate"><span class="pre">vagrat-2021-04-29-11-38.log</span></code> )</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">解決策</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">trace_ovs_pipeline</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>BOFUSSのビルド時エラー</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/errors/BOFUSS_build.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="bofuss">
+<h1>BOFUSSのビルド時エラー<a class="headerlink" href="#bofuss" title="この見出しへのパーマリンク"></a></h1>
+<section id="gitwiki-the-shortest-path-ofdissector-config-h">
+<h2><a class="reference external" href="https://github.com/CPqD/ofsoftswitch13/wiki/OpenFlow-1.3-Tutorial">gitのwiki</a> の&quot;The shortest path...&quot;を参考にビルドするが，<code class="docutils literal notranslate"><span class="pre">ofdissector</span></code> のソースの一部で <code class="docutils literal notranslate"><span class="pre">config.h</span></code> のファイルが見つからないエラー<a class="headerlink" href="#gitwiki-the-shortest-path-ofdissector-config-h" title="この見出しへのパーマリンク"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">default</span><span class="p">:</span> <span class="n">scons</span><span class="p">:</span> <span class="n">Reading</span> <span class="n">SConscript</span> <span class="n">files</span> <span class="o">...</span>
+    <span class="n">default</span><span class="p">:</span> <span class="n">scons</span><span class="p">:</span> <span class="n">done</span> <span class="n">reading</span> <span class="n">SConscript</span> <span class="n">files</span><span class="o">.</span>
+    <span class="n">default</span><span class="p">:</span> <span class="n">scons</span><span class="p">:</span> <span class="n">Building</span> <span class="n">targets</span> <span class="o">...</span>
+    <span class="n">default</span><span class="p">:</span> <span class="n">g</span><span class="o">++</span> <span class="o">-</span><span class="n">o</span> <span class="n">openflow</span><span class="o">-</span><span class="n">common</span><span class="o">.</span><span class="n">os</span> <span class="o">-</span><span class="n">c</span> <span class="o">-</span><span class="n">fPIC</span> <span class="o">-</span><span class="n">I</span><span class="o">.</span> <span class="o">-</span><span class="n">I</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">wireshark</span> <span class="o">-</span><span class="n">I</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">glib</span><span class="o">-</span><span class="mf">2.0</span> <span class="o">-</span><span class="n">I</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">x86_64</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">/</span><span class="n">glib</span><span class="o">-</span><span class="mf">2.0</span><span class="o">/</span><span class="n">include</span> <span class="n">openflow</span><span class="o">-</span><span class="n">common</span><span class="o">.</span><span class="n">cpp</span>
+    <span class="n">default</span><span class="p">:</span> <span class="n">In</span> <span class="n">file</span> <span class="n">included</span> <span class="kn">from</span> <span class="nn">openflow</span><span class="o">-</span><span class="n">common</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span><span class="mi">5</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span>
+    <span class="n">default</span><span class="p">:</span> <span class="o">./</span><span class="n">openflow</span><span class="o">-</span><span class="n">common</span><span class="o">.</span><span class="n">hpp</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span> <span class="n">fatal</span> <span class="n">error</span><span class="p">:</span> <span class="n">config</span><span class="o">.</span><span class="n">h</span><span class="p">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span>
+    <span class="n">default</span><span class="p">:</span>  <span class="c1">#include &lt;config.h&gt;</span>
+    <span class="n">default</span><span class="p">:</span>           <span class="o">^~~~~~~~~~</span>
+    <span class="n">default</span><span class="p">:</span> <span class="n">compilation</span> <span class="n">terminated</span><span class="o">.</span>
+    <span class="n">default</span><span class="p">:</span> <span class="n">scons</span><span class="p">:</span> <span class="n">building</span> <span class="n">terminated</span> <span class="n">because</span> <span class="n">of</span> <span class="n">errors</span><span class="o">.</span>
+    <span class="n">default</span><span class="p">:</span> <span class="n">scons</span><span class="p">:</span> <span class="o">***</span> <span class="p">[</span><span class="n">openflow</span><span class="o">-</span><span class="n">common</span><span class="o">.</span><span class="n">os</span><span class="p">]</span> <span class="n">Error</span> <span class="mi">1</span>
+<span class="n">The</span> <span class="n">SSH</span> <span class="n">command</span> <span class="n">responded</span> <span class="k">with</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">zero</span> <span class="n">exit</span> <span class="n">status</span><span class="o">.</span> <span class="n">Vagrant</span>
+<span class="n">assumes</span> <span class="n">that</span> <span class="n">this</span> <span class="n">means</span> <span class="n">the</span> <span class="n">command</span> <span class="n">failed</span><span class="o">.</span> <span class="n">The</span> <span class="n">output</span> <span class="k">for</span> <span class="n">this</span> <span class="n">command</span>
+<span class="n">should</span> <span class="n">be</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">log</span> <span class="n">above</span><span class="o">.</span> <span class="n">Please</span> <span class="n">read</span> <span class="n">the</span> <span class="n">output</span> <span class="n">to</span> <span class="n">determine</span> <span class="n">what</span>
+<span class="n">went</span> <span class="n">wrong</span><span class="o">.</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>モジュールが足りない？？？</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">libconfig-dev</span></code> を試す =&gt; だめ</p></li>
+</ul>
+</li>
+<li><p>vagrantなので仕様が違う？？？</p>
+<ul>
+<li><p>わかんない</p></li>
+</ul>
+</li>
+<li><p>ubuntuのバージョンのせい？？</p>
+<ul>
+<li><p>どっちかというとツールのバージョンのせい</p></li>
+</ul>
+</li>
+<li><p>issueにはない</p>
+<ul>
+<li><p>ofdissector側にあった</p></li>
+</ul>
+</li>
+</ul>
+<section id="id1">
+<h3>解決<a class="headerlink" href="#id1" title="この見出しへのパーマリンク"></a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">install</span> <span class="pre">-y</span> <span class="pre">wireshark-dev</span></code> で解決(mininetのインストールでうまく行ってない？？)</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/CPqD/ofdissector/issues/13">参考</a></p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<section id="mininetwarning">
+<h2>mininetのインストールでwarning出しまくっている問題<a class="headerlink" href="#mininetwarning" title="この見出しへのパーマリンク"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>default: CMake Warning (dev) at nbnetvm/CMakeLists.txt:883 (GET_TARGET_PROPERTY):
+default:   Policy CMP0026 is not set: Disallow use of the LOCATION target property.
+default:   Run &quot;cmake --help-policy CMP0026&quot; for policy details.  Use the cmake_policy
+default:   command to set the policy and suppress this warning.
+default:
+default:   The LOCATION property should not be read from target &quot;makenetilscanner&quot;.
+default:   Use the target name directly with add_custom_command, or use the generator
+default:   expression $&lt;TARGET_FILE&gt;, as appropriate.
+default:
+default: This warning is for project developers.  Use -Wno-dev to suppress it.
+default: CMake Warning (dev) at nbnetvm/CMakeLists.txt:884 (GET_TARGET_PROPERTY):
+default:   Policy CMP0026 is not set: Disallow use of the LOCATION target property.
+default:   Run &quot;cmake --help-policy CMP0026&quot; for policy details.  Use the cmake_policy
+default:   command to set the policy and suppress this warning.
+default:
+default:   The LOCATION property should not be read from target &quot;makeopcodetable&quot;.
+default:   Use the target name directly with add_custom_command, or use the generator
+default:   expression $&lt;TARGET_FILE&gt;, as appropriate.
+default:
+default: This warning is for project developers.  Use -Wno-dev to suppress it.
+default: CMake Warning (dev) at nbnetvm/CMakeLists.txt:885 (GET_TARGET_PROPERTY):
+default:   Policy CMP0026 is not set: Disallow use of the LOCATION target property.
+default:   Run &quot;cmake --help-policy CMP0026&quot; for policy details.  Use the cmake_policy
+default:   command to set the policy and suppress this warning.
+default:
+default:   The LOCATION property should not be read from target &quot;netvmburg&quot;.  Use the
+default:   target name directly with add_custom_command, or use the generator
+default:   expression $&lt;TARGET_FILE&gt;, as appropriate.
+default:
+default: This warning is for project developers.  Use -Wno-dev to suppress it.
+default: -- Configuring done
+default: -- Generating done
+default: -- Build files have been written to: /home/vagrant/module/netbee/src
+default: make: Warning: File &#39;Makefile&#39; has modification time 0.73 s in the future
+default: make[1]: Warning: File &#39;CMakeFiles/Makefile2&#39; has modification time 1.7 s in the future
+default: make[2]: Warning: File &#39;nbsockutils/CMakeFiles/nbsockutils.dir/flags.make&#39; has modification time 1.7 s in the future
+default: Scanning dependencies of target nbsockutils
+default: make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+default: make[2]: Warning: File &#39;nbsockutils/CMakeFiles/nbsockutils.dir/flags.make&#39; has modification time 1.6 s in the future
+default: [  0%] Building C object nbsockutils/CMakeFiles/nbsockutils.dir/__/nbee/globals/debug.c.o
+default: cc1: warning: command line option ‘-std=c++11’ is valid for C++/ObjC++ but not for C
+default: [  1%] Building C object nbsockutils/CMakeFiles/nbsockutils.dir/__/nbee/globals/utils.c.o
+default: cc1: warning: command line option ‘-std=c++11’ is valid for C++/ObjC++ but not for C
+default: [  1%] Building C object nbsockutils/CMakeFiles/nbsockutils.dir/sockutils.c.o
+default: cc1: warning: command line option ‘-std=c++11’ is valid for C++/ObjC++ but not for C
+default: [  2%] Linking C shared library libnbsockutils.so
+default: make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+default: [  2%] Built target nbsockutils
+default: make[2]: Warning: File &#39;nbnetvm/tools/netvmburg/CMakeFiles/netvmburg.dir/flags.make&#39; has modification time 0.98 s in the future
+default: [  3%] Generating parser.cpp
+default: Scanning dependencies of target netvmburg
+default: make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+default: make[2]: Warning: File &#39;nbnetvm/tools/netvmburg/CMakeFiles/netvmburg.dir/flags.make&#39; has modification time 0.81 s in the future
+
+(略)
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>mininetのissue確認すべし</p></li>
+</ul>
+</section>
+<section id="wireshark">
+<h2>wiresharkとの互換性の問題<a class="headerlink" href="#wireshark" title="この見出しへのパーマリンク"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scons</span><span class="p">:</span> <span class="n">Reading</span> <span class="n">SConscript</span> <span class="n">files</span> <span class="o">...</span>
+<span class="n">scons</span><span class="p">:</span> <span class="n">done</span> <span class="n">reading</span> <span class="n">SConscript</span> <span class="n">files</span><span class="o">.</span>
+<span class="n">scons</span><span class="p">:</span> <span class="n">Building</span> <span class="n">targets</span> <span class="o">...</span>
+<span class="n">g</span><span class="o">++</span> <span class="o">-</span><span class="n">o</span> <span class="n">openflow</span><span class="o">-</span><span class="n">common</span><span class="o">.</span><span class="n">os</span> <span class="o">-</span><span class="n">c</span> <span class="o">-</span><span class="n">fPIC</span> <span class="o">-</span><span class="n">I</span><span class="o">.</span> <span class="o">-</span><span class="n">I</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">wireshark</span> <span class="o">-</span><span class="n">I</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">glib</span><span class="o">-</span><span class="mf">2.0</span> <span class="o">-</span><span class="n">I</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">x86_64</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">/</span><span class="n">glib</span><span class="o">-</span><span class="mf">2.0</span><span class="o">/</span><span class="n">include</span> <span class="n">openflow</span><span class="o">-</span><span class="n">common</span><span class="o">.</span><span class="n">cpp</span>
+<span class="n">In</span> <span class="n">file</span> <span class="n">included</span> <span class="kn">from</span> <span class="nn">openflow</span><span class="o">-</span><span class="n">common</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span><span class="mi">9</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span>
+<span class="o">./</span><span class="n">of13</span><span class="o">/</span><span class="n">openflow</span><span class="o">-</span><span class="mf">130.</span><span class="n">hpp</span><span class="p">:</span><span class="mi">12</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span> <span class="n">warning</span><span class="p">:</span> <span class="s2">&quot;PROTO_TAG_OPENFLOW_VER&quot;</span> <span class="n">redefined</span>
+<span class="c1">#define PROTO_TAG_OPENFLOW_VER &quot;OFP 1.3&quot;</span>
+
+<span class="n">In</span> <span class="n">file</span> <span class="n">included</span> <span class="kn">from</span> <span class="nn">openflow</span><span class="o">-</span><span class="n">common</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span><span class="mi">8</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span>
+<span class="o">./</span><span class="n">of12</span><span class="o">/</span><span class="n">openflow</span><span class="o">-</span><span class="mf">120.</span><span class="n">hpp</span><span class="p">:</span><span class="mi">13</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span> <span class="n">note</span><span class="p">:</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">location</span> <span class="n">of</span> <span class="n">the</span> <span class="n">previous</span> <span class="n">definition</span>
+<span class="c1">#define PROTO_TAG_OPENFLOW_VER &quot;OFP 1.2&quot;</span>
+
+<span class="n">openflow</span><span class="o">-</span><span class="n">common</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span> <span class="n">In</span> <span class="n">function</span> <span class="s1">&#39;void dissect_openflow(tvbuff_t*, packet_info*, proto_tree*)&#39;</span><span class="p">:</span>
+<span class="n">openflow</span><span class="o">-</span><span class="n">common</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span><span class="mi">27</span><span class="p">:</span><span class="mi">7</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="s1">&#39;tvb_length&#39;</span> <span class="n">was</span> <span class="ow">not</span> <span class="n">declared</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">scope</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">tvb_length</span><span class="p">(</span><span class="n">tvb</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">OFP_MIN_PACKET_SIZE</span><span class="p">)</span> <span class="o">//</span> <span class="n">This</span> <span class="n">isn</span><span class="s1">&#39;t openflow</span>
+      <span class="o">^~~~~~~~~~</span>
+<span class="n">openflow</span><span class="o">-</span><span class="n">common</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span><span class="mi">27</span><span class="p">:</span><span class="mi">7</span><span class="p">:</span> <span class="n">note</span><span class="p">:</span> <span class="n">suggested</span> <span class="n">alternative</span><span class="p">:</span> <span class="s1">&#39;ftype_length&#39;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">tvb_length</span><span class="p">(</span><span class="n">tvb</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">OFP_MIN_PACKET_SIZE</span><span class="p">)</span> <span class="o">//</span> <span class="n">This</span> <span class="n">isn</span><span class="s1">&#39;t openflow</span>
+      <span class="o">^~~~~~~~~~</span>
+      <span class="n">ftype_length</span>
+<span class="n">openflow</span><span class="o">-</span><span class="n">common</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span> <span class="n">In</span> <span class="n">function</span> <span class="s1">&#39;void proto_reg_handoff_openflow()&#39;</span><span class="p">:</span>
+<span class="n">openflow</span><span class="o">-</span><span class="n">common</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span><span class="mi">58</span><span class="p">:</span><span class="mi">79</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">conversion</span> <span class="kn">from</span> <span class="s1">&#39;void (*)(tvbuff_t*, packet_info*, proto_tree*) {aka void (*)(tvbuff*, _packet_info*, _proto_node*)}&#39;</span> <span class="n">to</span> <span class="s1">&#39;dissector_t {aka int (*)(tvbuff*, _packet_info*, _proto_node*, void*)}&#39;</span> <span class="p">[</span><span class="o">-</span><span class="n">fpermissive</span><span class="p">]</span>
+    <span class="n">openflow_handle</span> <span class="o">=</span> <span class="n">create_dissector_handle</span><span class="p">(</span><span class="n">dissect_openflow</span><span class="p">,</span> <span class="n">proto_openflow</span><span class="p">);</span>
+                                                                              <span class="o">^</span>
+<span class="n">In</span> <span class="n">file</span> <span class="n">included</span> <span class="kn">from</span> <span class="nn">.</span><span class="o">/</span><span class="n">openflow</span><span class="o">-</span><span class="n">common</span><span class="o">.</span><span class="n">hpp</span><span class="p">:</span><span class="mi">28</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+                <span class="kn">from</span> <span class="nn">openflow</span><span class="o">-</span><span class="n">common</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span><span class="mi">5</span><span class="p">:</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">wireshark</span><span class="o">/</span><span class="n">epan</span><span class="o">/</span><span class="n">packet</span><span class="o">.</span><span class="n">h</span><span class="p">:</span><span class="mi">550</span><span class="p">:</span><span class="mi">34</span><span class="p">:</span> <span class="n">note</span><span class="p">:</span>   <span class="n">initializing</span> <span class="n">argument</span> <span class="mi">1</span> <span class="n">of</span> <span class="s1">&#39;dissector_handle* create_dissector_handle(dissector_t, int)&#39;</span>
+<span class="n">WS_DLL_PUBLIC</span> <span class="n">dissector_handle_t</span> <span class="n">create_dissector_handle</span><span class="p">(</span><span class="n">dissector_t</span> <span class="n">dissector</span><span class="p">,</span>
+                                  <span class="o">^~~~~~~~~~~~~~~~~~~~~~~</span>
+<span class="n">openflow</span><span class="o">-</span><span class="n">common</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">5</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="s1">&#39;dissector_add&#39;</span> <span class="n">was</span> <span class="ow">not</span> <span class="n">declared</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">scope</span>
+    <span class="n">dissector_add</span><span class="p">(</span><span class="s2">&quot;tcp.port&quot;</span><span class="p">,</span> <span class="n">OFP_TCP_PORT</span><span class="p">,</span> <span class="n">openflow_handle</span><span class="p">);</span>
+    <span class="o">^~~~~~~~~~~~~</span>
+<span class="n">openflow</span><span class="o">-</span><span class="n">common</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">5</span><span class="p">:</span> <span class="n">note</span><span class="p">:</span> <span class="n">suggested</span> <span class="n">alternative</span><span class="p">:</span> <span class="s1">&#39;dissector_t&#39;</span>
+    <span class="n">dissector_add</span><span class="p">(</span><span class="s2">&quot;tcp.port&quot;</span><span class="p">,</span> <span class="n">OFP_TCP_PORT</span><span class="p">,</span> <span class="n">openflow_handle</span><span class="p">);</span>
+    <span class="o">^~~~~~~~~~~~~</span>
+    <span class="n">dissector_t</span>
+<span class="n">openflow</span><span class="o">-</span><span class="n">common</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span> <span class="n">In</span> <span class="n">function</span> <span class="s1">&#39;void proto_register_openflow()&#39;</span><span class="p">:</span>
+<span class="n">openflow</span><span class="o">-</span><span class="n">common</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span><span class="mi">78</span><span class="p">:</span><span class="mi">66</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">conversion</span> <span class="kn">from</span> <span class="s1">&#39;void (*)(tvbuff_t*, packet_info*, proto_tree*) {aka void (*)(tvbuff*, _packet_info*, _proto_node*)}&#39;</span> <span class="n">to</span> <span class="s1">&#39;dissector_t {aka int (*)(tvbuff*, _packet_info*, _proto_node*, void*)}&#39;</span> <span class="p">[</span><span class="o">-</span><span class="n">fpermissive</span><span class="p">]</span>
+  <span class="n">register_dissector</span><span class="p">(</span><span class="s2">&quot;openflow&quot;</span><span class="p">,</span> <span class="n">dissect_openflow</span><span class="p">,</span> <span class="n">proto_openflow</span><span class="p">);</span>
+                                                                  <span class="o">^</span>
+<span class="n">In</span> <span class="n">file</span> <span class="n">included</span> <span class="kn">from</span> <span class="nn">.</span><span class="o">/</span><span class="n">openflow</span><span class="o">-</span><span class="n">common</span><span class="o">.</span><span class="n">hpp</span><span class="p">:</span><span class="mi">28</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+                <span class="kn">from</span> <span class="nn">openflow</span><span class="o">-</span><span class="n">common</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span><span class="mi">5</span><span class="p">:</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">wireshark</span><span class="o">/</span><span class="n">epan</span><span class="o">/</span><span class="n">packet</span><span class="o">.</span><span class="n">h</span><span class="p">:</span><span class="mi">520</span><span class="p">:</span><span class="mi">34</span><span class="p">:</span> <span class="n">note</span><span class="p">:</span>   <span class="n">initializing</span> <span class="n">argument</span> <span class="mi">2</span> <span class="n">of</span> <span class="s1">&#39;dissector_handle* register_dissector(const char*, dissector_t, int)&#39;</span>
+<span class="n">WS_DLL_PUBLIC</span> <span class="n">dissector_handle_t</span> <span class="n">register_dissector</span><span class="p">(</span><span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">name</span><span class="p">,</span> <span class="n">dissector_t</span> <span class="n">dissector</span><span class="p">,</span> <span class="n">const</span> <span class="nb">int</span> <span class="n">proto</span><span class="p">);</span>
+                                  <span class="o">^~~~~~~~~~~~~~~~~~</span>
+<span class="n">scons</span><span class="p">:</span> <span class="o">***</span> <span class="p">[</span><span class="n">openflow</span><span class="o">-</span><span class="n">common</span><span class="o">.</span><span class="n">os</span><span class="p">]</span> <span class="n">Error</span> <span class="mi">1</span>
+<span class="n">scons</span><span class="p">:</span> <span class="n">building</span> <span class="n">terminated</span> <span class="n">because</span> <span class="n">of</span> <span class="n">errors</span><span class="o">.</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/legoscia/ofdissector.git">これ</a> を試してみる( <a class="reference external" href="https://github.com/CPqD/ofdissector/issues/2">issue 2</a> )</p></li>
+</ul>
+</section>
+<section id="bofuss-vagrat-2021-04-29-11-38-log">
+<h2>BOFUSSに依存するライブラリがインストールできない( <code class="docutils literal notranslate"><span class="pre">vagrat-2021-04-29-11-38.log</span></code> )<a class="headerlink" href="#bofuss-vagrat-2021-04-29-11-38-log" title="この見出しへのパーマリンク"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">==&gt;</span> <span class="n">default</span><span class="p">:</span> <span class="n">Running</span> <span class="n">provisioner</span><span class="p">:</span> <span class="n">shell</span><span class="o">...</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">Running</span><span class="p">:</span> <span class="n">inline</span> <span class="n">script</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">WARNING</span><span class="p">:</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">apt</span>
+  <span class="n">default</span><span class="p">:</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">have</span> <span class="n">a</span> <span class="n">stable</span> <span class="n">CLI</span> <span class="n">interface</span><span class="o">.</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">Use</span> <span class="k">with</span> <span class="n">caution</span> <span class="ow">in</span> <span class="n">scripts</span><span class="o">.</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">Reading</span> <span class="n">package</span> <span class="n">lists</span><span class="o">...</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">Building</span> <span class="n">dependency</span> <span class="n">tree</span><span class="o">...</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">Reading</span> <span class="n">state</span> <span class="n">information</span><span class="o">...</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">E</span>
+  <span class="n">default</span><span class="p">:</span> <span class="p">:</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">Unable</span> <span class="n">to</span> <span class="n">locate</span> <span class="n">package</span> <span class="n">libxerces</span><span class="o">-</span><span class="n">c3</span><span class="mf">.1</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">E</span>
+  <span class="n">default</span><span class="p">:</span> <span class="p">:</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">Couldn</span><span class="s1">&#39;t find any package by glob &#39;</span><span class="n">libxerces</span><span class="o">-</span><span class="n">c3</span><span class="mf">.1</span><span class="s1">&#39;</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">E</span>
+  <span class="n">default</span><span class="p">:</span> <span class="p">:</span>
+  <span class="n">default</span><span class="p">:</span> <span class="n">Couldn</span><span class="s1">&#39;t find any package by regex &#39;</span><span class="n">libxerces</span><span class="o">-</span><span class="n">c3</span><span class="mf">.1</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<section id="id4">
+<h3>解決策<a class="headerlink" href="#id4" title="この見出しへのパーマリンク"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">libxerces-c3.2</span></code> を変わりにインストールする</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../design/class_design.html" class="btn btn-neutral float-left" title="クラス設計" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, shimatani.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

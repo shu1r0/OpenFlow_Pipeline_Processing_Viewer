@@ -16,7 +16,7 @@
         id="tracing_vnet_canvas" />
       
       <!-- list -->
-      <div id="packet_list" class="packet_list">
+      
         <!-- filter -->
         <!-- <select name="nodes" id="node-select">
           <option @click="getTrace()">all</option>
